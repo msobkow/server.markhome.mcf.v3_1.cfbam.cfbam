@@ -1959,7 +1959,7 @@ public class CFBamSecSessionTableObj
 		if( sessionObj == null ) {
 			sessionObj = newInstance();
 			ICFSecSecSessionEditObj sessionEdit = sessionObj.beginEdit();
-			sessionEdit.setRequiredContainerSecUser( userObj );
+			sessionEdit.setRequiredSecUserId( userObj.getPKey() );
 			sessionEdit.setRequiredStart( LocalDateTime.now() );
 			sessionEdit.setOptionalFinish( null );
 			sessionObj = sessionEdit.create();

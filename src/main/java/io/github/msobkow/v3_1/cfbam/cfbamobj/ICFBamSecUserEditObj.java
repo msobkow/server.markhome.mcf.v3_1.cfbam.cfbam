@@ -118,20 +118,6 @@ public interface ICFBamSecUserEditObj
 	void setOptionalLookupDefDev( ICFSecSecDeviceObj value );
 
 	/**
-	 *	Get a list ICFSecSecSessionObj instances referenced by the SecSess key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecSecSessionObj instances referenced by the SecSess key.
-	 */
-	List<ICFSecSecSessionObj> getOptionalComponentsSecSess();
-
-	/**
-	 *	Get a list ICFSecSecSessionObj instances referenced by the SecProxy key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecSecSessionObj instances referenced by the SecProxy key.
-	 */
-	List<ICFSecSecSessionObj> getOptionalChildrenSecProxy();
-
-	/**
 	 *	Get a list ICFSecSecGrpMembObj instances referenced by the SecGrpMemb key.
 	 *
 	 *	@return	The (potentially empty) list of ICFSecSecGrpMembObj instances referenced by the SecGrpMemb key.

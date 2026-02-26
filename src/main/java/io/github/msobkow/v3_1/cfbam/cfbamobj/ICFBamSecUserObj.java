@@ -237,34 +237,6 @@ public interface ICFBamSecUserObj
 	ICFSecSecDeviceObj getOptionalLookupDefDev( boolean forceRead );
 
 	/**
-	 *	Get the array of optional ICFSecSecSessionObj array of instances referenced by the SecSess key.
-	 *
-	 *	@return	The optional ICFSecSecSessionObj[] array of instances referenced by the SecSess key.
-	 */
-	List<ICFSecSecSessionObj> getOptionalComponentsSecSess();
-
-	/**
-	 *	Get the array of optional ICFSecSecSessionObj array of instances referenced by the SecSess key.
-	 *
-	 *	@return	The optional ICFSecSecSessionObj[] array of instances referenced by the SecSess key.
-	 */
-	List<ICFSecSecSessionObj> getOptionalComponentsSecSess( boolean forceRead );
-
-	/**
-	 *	Get the array of optional ICFSecSecSessionObj array of instances referenced by the SecProxy key.
-	 *
-	 *	@return	The optional ICFSecSecSessionObj[] array of instances referenced by the SecProxy key.
-	 */
-	List<ICFSecSecSessionObj> getOptionalChildrenSecProxy();
-
-	/**
-	 *	Get the array of optional ICFSecSecSessionObj array of instances referenced by the SecProxy key.
-	 *
-	 *	@return	The optional ICFSecSecSessionObj[] array of instances referenced by the SecProxy key.
-	 */
-	List<ICFSecSecSessionObj> getOptionalChildrenSecProxy( boolean forceRead );
-
-	/**
 	 *	Get the array of optional ICFSecSecGrpMembObj array of instances referenced by the SecGrpMemb key.
 	 *
 	 *	@return	The optional ICFSecSecGrpMembObj[] array of instances referenced by the SecGrpMemb key.

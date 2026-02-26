@@ -182,34 +182,6 @@ public interface ICFBamSecSessionObj
 	void setIsNew( boolean value );
 
 	/**
-	 *	Get the required ICFBamSecUserObj instance referenced by the SecUser key.
-	 *
-	 *	@return	The required ICFBamSecUserObj instance referenced by the SecUser key.
-	 */
-	ICFSecSecUserObj getRequiredContainerSecUser();
-
-	/**
-	 *	Get the required ICFSecSecUserObj instance referenced by the SecUser key.
-	 *
-	 *	@return	The required ICFSecSecUserObj instance referenced by the SecUser key.
-	 */
-	ICFSecSecUserObj getRequiredContainerSecUser( boolean forceRead );
-
-	/**
-	 *	Get the required ICFBamSecUserObj instance referenced by the SecProxy key.
-	 *
-	 *	@return	The required ICFBamSecUserObj instance referenced by the SecProxy key.
-	 */
-	ICFSecSecUserObj getRequiredParentSecProxy();
-
-	/**
-	 *	Get the required ICFSecSecUserObj instance referenced by the SecProxy key.
-	 *
-	 *	@return	The required ICFSecSecUserObj instance referenced by the SecProxy key.
-	 */
-	ICFSecSecUserObj getRequiredParentSecProxy( boolean forceRead );
-
-	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecSessionId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecSessionId.

@@ -54,16 +54,12 @@ public class CFBamSecSessionEditObj
 {
 	protected ICFSecSecSessionObj orig;
 	protected ICFSecSecSession rec;
-	protected ICFSecSecUserObj requiredContainerSecUser;
-	protected ICFSecSecUserObj requiredParentSecProxy;
 
 	public CFBamSecSessionEditObj( ICFSecSecSessionObj argOrig ) {
 		orig = argOrig;
 		getRec();
 		ICFSecSecSession origRec = orig.getRec();
 		rec.set( origRec );
-		requiredContainerSecUser = null;
-		requiredParentSecProxy = null;
 	}
 
 	@Override
@@ -78,8 +74,7 @@ public class CFBamSecSessionEditObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		ICFSecSecUserObj scope = getRequiredContainerSecUser();
-		return( scope );
+		return( null );
 	}
 
 	@Override
@@ -320,8 +315,6 @@ public class CFBamSecSessionEditObj
 	public void setRec( ICFSecSecSession value ) {
 		if( rec != value ) {
 			rec = value;
-			requiredContainerSecUser = null;
-			requiredParentSecProxy = null;
 		}
 	}
 
@@ -369,6 +362,13 @@ public class CFBamSecSessionEditObj
 	}
 
 	@Override
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value ) {
+		if( getSecSessionRec().getRequiredSecUserId() != value ) {
+			getSecSessionRec().setRequiredSecUserId( value );
+		}
+	}
+
+	@Override
 	public String getOptionalSecDevName() {
 		return( getSecSessionRec().getOptionalSecDevName() );
 	}
@@ -410,71 +410,10 @@ public class CFBamSecSessionEditObj
 	}
 
 	@Override
-	public ICFSecSecUserObj getRequiredContainerSecUser() {
-		return( getRequiredContainerSecUser( false ) );
-	}
-
-	@Override
-	public ICFSecSecUserObj getRequiredContainerSecUser( boolean forceRead ) {
-		if( forceRead || ( requiredContainerSecUser == null ) ) {
-			boolean anyMissing = false;
-			if( ! anyMissing ) {
-				ICFSecSecUserObj obj = ((ICFBamSchemaObj)getOrigAsSecSession().getSchema()).getSecUserTableObj().readSecUserByIdIdx( getSecSessionRec().getRequiredSecUserId() );
-				requiredContainerSecUser = obj;
-				if( obj != null ) {
-					requiredContainerSecUser = obj;
-				}
-			}
+	public void setOptionalSecProxyId( CFLibDbKeyHash256 value ) {
+		if( getSecSessionRec().getOptionalSecProxyId() != value ) {
+			getSecSessionRec().setOptionalSecProxyId( value );
 		}
-		return( requiredContainerSecUser );
-	}
-
-	@Override
-	public void setRequiredContainerSecUser( ICFSecSecUserObj value ) {
-		if( rec == null ) {
-			getSecSessionRec();
-		}
-		if( value != null ) {
-			requiredContainerSecUser = value;
-			getSecSessionRec().setRequiredContainerSecUser(value.getSecUserRec());
-		}
-		requiredContainerSecUser = value;
-	}
-
-	@Override
-	public ICFSecSecUserObj getRequiredParentSecProxy() {
-		return( getRequiredParentSecProxy( false ) );
-	}
-
-	@Override
-	public ICFSecSecUserObj getRequiredParentSecProxy( boolean forceRead ) {
-		if( forceRead || ( requiredParentSecProxy == null ) ) {
-			boolean anyMissing = false;
-			if( getSecSessionRec().getOptionalSecProxyId() == null ) {
-				anyMissing = true;
-			}
-			if( ! anyMissing ) {
-				ICFSecSecUserObj obj = ((ICFBamSchemaObj)getOrigAsSecSession().getSchema()).getSecUserTableObj().readSecUserByIdIdx( getSecSessionRec().getOptionalSecProxyId() );
-				requiredParentSecProxy = obj;
-			}
-		}
-		return( requiredParentSecProxy );
-	}
-
-	@Override
-	public void setRequiredParentSecProxy( ICFSecSecUserObj value ) {
-		if( rec == null ) {
-			getSecSessionRec();
-		}
-		if( value != null ) {
-			requiredParentSecProxy = value;
-			getSecSessionRec().setRequiredParentSecProxy(value.getSecUserRec());
-		}
-		else {
-			requiredParentSecProxy = null;
-			getSecSessionRec().setRequiredParentSecProxy((ICFSecSecUser)null);
-		}
-		requiredParentSecProxy = value;
 	}
 
 	@Override
