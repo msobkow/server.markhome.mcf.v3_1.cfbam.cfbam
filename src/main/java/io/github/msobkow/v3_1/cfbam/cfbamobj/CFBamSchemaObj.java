@@ -54,7 +54,7 @@ public class CFBamSchemaObj
 	implements ICFBamSchemaObj
 {
 	public static String SCHEMA_NAME = "CFBam";
-	public static String SCHEMA_DBNAME = "cfbam31";
+	public static String SCHEMA_DBNAME = "CFBam31";
 	protected ICFSecAuthorization authorization = null;
 	protected String secClusterName = "system";
 	protected String secTenantName = "system";
