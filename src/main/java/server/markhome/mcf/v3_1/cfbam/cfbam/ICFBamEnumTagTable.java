@@ -1,0 +1,460 @@
+
+// Description: Java 25 DbIO interface for EnumTag.
+
+/*
+ *	server.markhome.mcf.CFBam
+ *
+ *	Copyright (c) 2016-2026 Mark Stephen Sobkow
+ *	
+ *	Mark's Code Fractal 3.1 CFBam - Business Application Model
+ *	
+ *	This file is part of Mark's Code Fractal CFBam.
+ *	
+ *	Mark's Code Fractal CFBam is available under dual commercial license from
+ *	Mark Stephen Sobkow, or under the terms of the GNU General Public License,
+ *	Version 3 or later.
+ *	
+ *	Mark's Code Fractal CFBam is free software: you can redistribute it and/or
+ *	modify it under the terms of the GNU General Public License as published by
+ *	the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
+ *	
+ *	Mark's Code Fractal CFBam is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU General Public License for more details.
+ *	
+ *	You should have received a copy of the GNU General Public License
+ *	along with Mark's Code Fractal CFBam.  If not, see <https://www.gnu.org/licenses/>.
+ *	
+ *	If you wish to modify and use this code without publishing your changes,
+ *	or integrate it with proprietary code, please contact Mark Stephen Sobkow
+ *	for a commercial license at mark.sobkow@gmail.com
+ *	
+ */
+
+package server.markhome.mcf.v3_1.cfbam.cfbam;
+
+import java.lang.reflect.*;
+import java.net.*;
+import java.rmi.*;
+import java.sql.*;
+import java.text.*;
+import java.time.*;
+import java.util.*;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.text.StringEscapeUtils;
+import server.markhome.mcf.v3_1.cflib.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
+
+/*
+ *	CFBamEnumTagTable database interface for EnumTag
+ */
+public interface ICFBamEnumTagTable
+{
+
+	/**
+	 *	Create the instance in the database, and update the specified record
+	 *	with the assigned primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	rec	The instance interface to be created.
+	 */
+	ICFBamEnumTag createEnumTag( ICFSecAuthorization Authorization,
+		ICFBamEnumTag rec );
+
+
+	/**
+	 *	Update the instance in the database, and update the specified record
+	 *	with any calculated changes imposed by the associated stored procedure.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	rec	The instance interface to be updated
+	 */
+	ICFBamEnumTag updateEnumTag( ICFSecAuthorization Authorization,
+		ICFBamEnumTag rec );
+
+
+	/**
+	 *	Delete the instance from the database.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	rec	The instance interface to be deleted.
+	 */
+	void deleteEnumTag( ICFSecAuthorization Authorization,
+		ICFBamEnumTag rec );
+	/**
+	 *	Delete the EnumTag instance identified by the primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The primary key identifying the instance to be deleted.
+	 */
+	void deleteEnumTagByIdIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 argKey );
+	/**
+	 *	Delete the EnumTag instances identified by the key EnumIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	EnumId	The EnumTag key attribute of the instance generating the id.
+	 */
+	void deleteEnumTagByEnumIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 argEnumId );
+
+	/**
+	 *	Delete the EnumTag instances identified by the key EnumIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteEnumTagByEnumIdx( ICFSecAuthorization Authorization,
+		ICFBamEnumTagByEnumIdxKey argKey );
+	/**
+	 *	Delete the EnumTag instances identified by the key DefSchemaIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	DefSchemaId	The EnumTag key attribute of the instance generating the id.
+	 */
+	void deleteEnumTagByDefSchemaIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 argDefSchemaId );
+
+	/**
+	 *	Delete the EnumTag instances identified by the key DefSchemaIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteEnumTagByDefSchemaIdx( ICFSecAuthorization Authorization,
+		ICFBamEnumTagByDefSchemaIdxKey argKey );
+	/**
+	 *	Delete the EnumTag instances identified by the key EnumNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	EnumId	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@param	Name	The EnumTag key attribute of the instance generating the id.
+	 */
+	void deleteEnumTagByEnumNameIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 argEnumId,
+		String argName );
+
+	/**
+	 *	Delete the EnumTag instances identified by the key EnumNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteEnumTagByEnumNameIdx( ICFSecAuthorization Authorization,
+		ICFBamEnumTagByEnumNameIdxKey argKey );
+	/**
+	 *	Delete the EnumTag instances identified by the key PrevIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PrevId	The EnumTag key attribute of the instance generating the id.
+	 */
+	void deleteEnumTagByPrevIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 argPrevId );
+
+	/**
+	 *	Delete the EnumTag instances identified by the key PrevIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteEnumTagByPrevIdx( ICFSecAuthorization Authorization,
+		ICFBamEnumTagByPrevIdxKey argKey );
+	/**
+	 *	Delete the EnumTag instances identified by the key NextIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	NextId	The EnumTag key attribute of the instance generating the id.
+	 */
+	void deleteEnumTagByNextIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 argNextId );
+
+	/**
+	 *	Delete the EnumTag instances identified by the key NextIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteEnumTagByNextIdx( ICFSecAuthorization Authorization,
+		ICFBamEnumTagByNextIdxKey argKey );
+
+
+	/**
+	 *	Read the derived EnumTag record instance by primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the EnumTag instance to be read.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 */
+	ICFBamEnumTag readDerived( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Lock the derived EnumTag record instance by primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the EnumTag instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 */
+	ICFBamEnumTag lockDerived( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Read all EnumTag instances.
+	 *
+	 *	@param	Authorization	The session authorization information.	
+	 *
+	 *	@return An array of derived record instances, potentially with 0 elements in the set.
+	 */
+	ICFBamEnumTag[] readAllDerived( ICFSecAuthorization Authorization );
+
+	/**
+	 *	Read the derived EnumTag record instance identified by the unique key IdIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	Id	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@return The record instance for the specified key, or null if there is
+	 *		no such existing key value.
+	 */
+	ICFBamEnumTag readDerivedByIdIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 Id );
+
+	/**
+	 *	Read an array of the derived EnumTag record instances identified by the duplicate key EnumIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	EnumId	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	ICFBamEnumTag[] readDerivedByEnumIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 EnumId );
+
+	/**
+	 *	Read an array of the derived EnumTag record instances identified by the duplicate key DefSchemaIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	DefSchemaId	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	ICFBamEnumTag[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 DefSchemaId );
+
+	/**
+	 *	Read the derived EnumTag record instance identified by the unique key EnumNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	EnumId	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@param	Name	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@return The record instance for the specified key, or null if there is
+	 *		no such existing key value.
+	 */
+	ICFBamEnumTag readDerivedByEnumNameIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 EnumId,
+		String Name );
+
+	/**
+	 *	Read an array of the derived EnumTag record instances identified by the duplicate key PrevIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PrevId	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	ICFBamEnumTag[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 PrevId );
+
+	/**
+	 *	Read an array of the derived EnumTag record instances identified by the duplicate key NextIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	NextId	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	ICFBamEnumTag[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 NextId );
+
+	/**
+	 *	Read the specific EnumTag record instance identified by the primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the EnumTag instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamEnumTag readRec( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Lock the specific EnumTag record instance identified by the primary key.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PKey	The primary key of the EnumTag instance to be locked.
+	 *
+	 *	@return The record instance for the specified primary key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamEnumTag lockRec( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 PKey );
+
+	/**
+	 *	Read all the specific EnumTag record instances.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@return All the specific EnumTag instances in the database accessible for the Authorization.
+	 */
+	ICFBamEnumTag[] readAllRec( ICFSecAuthorization Authorization );
+
+	/**
+	 *	Read the specific EnumTag record instance identified by the unique key IdIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	Id	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@return The record instance for the specified key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamEnumTag readRecByIdIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 Id );
+
+	/**
+	 *	Read an array of the specific EnumTag record instances identified by the duplicate key EnumIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	EnumId	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamEnumTag[] readRecByEnumIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 EnumId );
+
+	/**
+	 *	Read an array of the specific EnumTag record instances identified by the duplicate key DefSchemaIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	DefSchemaId	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamEnumTag[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 DefSchemaId );
+
+	/**
+	 *	Read the specific EnumTag record instance identified by the unique key EnumNameIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	EnumId	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@param	Name	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@return The record instance for the specified key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamEnumTag readRecByEnumNameIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 EnumId,
+		String Name );
+
+	/**
+	 *	Read an array of the specific EnumTag record instances identified by the duplicate key PrevIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	PrevId	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamEnumTag[] readRecByPrevIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 PrevId );
+
+	/**
+	 *	Read an array of the specific EnumTag record instances identified by the duplicate key NextIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	NextId	The EnumTag key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamEnumTag[] readRecByNextIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 NextId );
+
+	/**
+	 *	Move the specified record up in the chain (i.e. to the previous position.)
+	 *
+	 *	@return	The refreshed record after it has been moved
+	 */
+	ICFBamEnumTag moveRecUp( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 Id,
+		int revision );
+
+	/**
+	 *	Move the specified record down in the chain (i.e. to the next position.)
+	 *
+	 *	@return	The refreshed record after it has been moved
+	 */
+	ICFBamEnumTag moveRecDown( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 Id,
+		int revision );
+}

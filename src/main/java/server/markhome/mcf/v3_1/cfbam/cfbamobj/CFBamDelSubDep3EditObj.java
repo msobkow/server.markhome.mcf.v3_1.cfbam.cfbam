@@ -1,0 +1,317 @@
+// Description: Java 25 edit object instance implementation for CFBam DelSubDep3.
+
+/*
+ *	server.markhome.mcf.CFBam
+ *
+ *	Copyright (c) 2016-2026 Mark Stephen Sobkow
+ *	
+ *	Mark's Code Fractal 3.1 CFBam - Business Application Model
+ *	
+ *	This file is part of Mark's Code Fractal CFBam.
+ *	
+ *	Mark's Code Fractal CFBam is available under dual commercial license from
+ *	Mark Stephen Sobkow, or under the terms of the GNU General Public License,
+ *	Version 3 or later.
+ *	
+ *	Mark's Code Fractal CFBam is free software: you can redistribute it and/or
+ *	modify it under the terms of the GNU General Public License as published by
+ *	the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
+ *	
+ *	Mark's Code Fractal CFBam is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU General Public License for more details.
+ *	
+ *	You should have received a copy of the GNU General Public License
+ *	along with Mark's Code Fractal CFBam.  If not, see <https://www.gnu.org/licenses/>.
+ *	
+ *	If you wish to modify and use this code without publishing your changes,
+ *	or integrate it with proprietary code, please contact Mark Stephen Sobkow
+ *	for a commercial license at mark.sobkow@gmail.com
+ *	
+ */
+
+package server.markhome.mcf.v3_1.cfbam.cfbamobj;
+
+import java.math.*;
+import java.sql.*;
+import java.text.*;
+import java.time.*;
+import java.util.*;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.text.StringEscapeUtils;
+import server.markhome.mcf.v3_1.cflib.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+
+public class CFBamDelSubDep3EditObj
+	extends CFBamDelDepEditObj
+
+	implements ICFBamDelSubDep3EditObj
+{
+	protected ICFBamDelSubDep2Obj requiredContainerDelSubDep2;
+
+	public CFBamDelSubDep3EditObj( ICFBamDelSubDep3Obj argOrig ) {
+		super( argOrig );
+		requiredContainerDelSubDep2 = null;
+	}
+
+	@Override
+	public int getClassCode() {
+		return( ((ICFBamSchemaObj)orig.getSchema()).getDelSubDep3TableObj().getClassCode() );
+	}
+
+	@Override
+	public String getGenDefName() {
+		return( "DelSubDep3" );
+	}
+
+	@Override
+	public ICFLibAnyObj getObjScope() {
+		ICFBamDelSubDep2Obj scope = getRequiredContainerDelSubDep2();
+		return( scope );
+	}
+
+	@Override
+	public String getObjName() {
+		String objName;
+		objName = getRequiredName();
+		return( objName );
+	}
+
+	@Override
+	public ICFLibAnyObj getObjQualifier( Class qualifyingClass ) {
+		ICFLibAnyObj container = this;
+		if( qualifyingClass != null ) {
+			while( container != null ) {
+				if( container instanceof ICFBamClusterObj ) {
+					break;
+				}
+				else if( container instanceof ICFBamTenantObj ) {
+					break;
+				}
+				else if( qualifyingClass.isInstance( container ) ) {
+					break;
+				}
+				container = container.getObjScope();
+			}
+		}
+		else {
+			while( container != null ) {
+				if( container instanceof ICFBamClusterObj ) {
+					break;
+				}
+				else if( container instanceof ICFBamTenantObj ) {
+					break;
+				}
+				container = container.getObjScope();
+			}
+		}
+		return( container );
+	}
+
+	@Override
+	public ICFLibAnyObj getNamedObject( String objName ) {
+		String nextName;
+		String remainingName;
+		ICFLibAnyObj subObj = null;
+		ICFLibAnyObj retObj;
+		int nextDot = objName.indexOf( '.' );
+		if( nextDot >= 0 ) {
+			nextName = objName.substring( 0, nextDot );
+			remainingName = objName.substring( nextDot + 1 );
+		}
+		else {
+			nextName = objName;
+			remainingName = null;
+		}
+		if( remainingName == null ) {
+			retObj = subObj;
+		}
+		else if( subObj == null ) {
+			retObj = null;
+		}
+		else {
+			retObj = subObj.getNamedObject( remainingName );
+		}
+		return( retObj );
+	}
+
+	@Override
+	public String getObjQualifiedName() {
+		String qualName = getObjName();
+		ICFLibAnyObj container = getObjScope();
+		String containerName;
+		while( container != null ) {
+			if( container instanceof ICFSecClusterObj ) {
+				container = null;
+			}
+			else if( container instanceof ICFSecTenantObj ) {
+				container = null;
+			}
+			else if( container instanceof ICFBamSchemaDefObj ) {
+				container = null;
+			}
+			else {
+				containerName = container.getObjName();
+				qualName = containerName + "." + qualName;
+				container = container.getObjScope();
+			}
+		}
+		return( qualName );
+	}
+
+	@Override
+	public ICFBamScopeObj realise() {
+		// We realise this so that it's record will get copied to orig during realization
+		ICFBamDelSubDep3Obj retobj = getSchema().getDelSubDep3TableObj().realiseDelSubDep3( (ICFBamDelSubDep3Obj)this );
+		return( retobj );
+	}
+
+	@Override
+	public void forget() {
+		getOrigAsDelSubDep3().forget();
+	}
+
+	@Override
+	public ICFBamScopeObj create() {
+		copyRecToOrig();
+		ICFBamDelSubDep3Obj retobj = ((ICFBamSchemaObj)getOrigAsDelSubDep3().getSchema()).getDelSubDep3TableObj().createDelSubDep3( getOrigAsDelSubDep3() );
+		if( retobj == getOrigAsDelSubDep3() ) {
+			copyOrigToRec();
+		}
+		return( retobj );
+	}
+
+	@Override
+	public CFBamScopeEditObj update() {
+		getSchema().getDelSubDep3TableObj().updateDelSubDep3( (ICFBamDelSubDep3Obj)this );
+		return( null );
+	}
+
+	@Override
+	public CFBamScopeEditObj deleteInstance() {
+		if( getIsNew() ) {
+			throw new CFLibCannotDeleteNewInstanceException( getClass(), "delete" );
+		}
+		getSchema().getDelSubDep3TableObj().deleteDelSubDep3( getOrigAsDelSubDep3() );
+		return( null );
+	}
+
+	@Override
+	public ICFBamDelSubDep3TableObj getDelSubDep3Table() {
+		return( orig.getSchema().getDelSubDep3TableObj() );
+	}
+
+	@Override
+	public ICFBamDelSubDep3EditObj getEditAsDelSubDep3() {
+		return( (ICFBamDelSubDep3EditObj)this );
+	}
+
+	@Override
+	public ICFBamDelSubDep3Obj getOrigAsDelSubDep3() {
+		return( (ICFBamDelSubDep3Obj)orig );
+	}
+
+	@Override
+	public ICFBamScope getRec() {
+		if( rec == null ) {
+			rec = getOrigAsDelSubDep3().getSchema().getCFBamBackingStore().getFactoryDelSubDep3().newRec();
+			rec.set( orig.getRec() );
+		}
+		return( rec );
+	}
+
+	@Override
+	public void setRec( ICFBamScope value ) {
+		if( rec != value ) {
+			super.setRec( value );
+			requiredContainerDelSubDep2 = null;
+		}
+	}
+
+	@Override
+	public ICFBamDelSubDep3 getDelSubDep3Rec() {
+		return( (ICFBamDelSubDep3)getRec() );
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return( getPKey() );
+	}
+
+	@Override
+	public void setRequiredId(CFLibDbKeyHash256 id) {
+		if (getPKey() != id) {
+			setPKey(id);
+		}
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredDelSubDep2Id() {
+		return( getDelSubDep3Rec().getRequiredDelSubDep2Id() );
+	}
+
+	@Override
+	public String getRequiredName() {
+		return( getDelSubDep3Rec().getRequiredName() );
+	}
+
+	@Override
+	public void setRequiredName( String value ) {
+		if( getDelSubDep3Rec().getRequiredName() != value ) {
+			getDelSubDep3Rec().setRequiredName( value );
+		}
+	}
+
+	@Override
+	public ICFBamDelSubDep2Obj getRequiredContainerDelSubDep2() {
+		return( getRequiredContainerDelSubDep2( false ) );
+	}
+
+	@Override
+	public ICFBamDelSubDep2Obj getRequiredContainerDelSubDep2( boolean forceRead ) {
+		if( forceRead || ( requiredContainerDelSubDep2 == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFBamDelSubDep2Obj obj = ((ICFBamSchemaObj)getOrigAsDelSubDep3().getSchema()).getDelSubDep2TableObj().readDelSubDep2ByIdIdx( getDelSubDep3Rec().getRequiredDelSubDep2Id() );
+				requiredContainerDelSubDep2 = obj;
+				if( obj != null ) {
+					requiredContainerDelSubDep2 = obj;
+				}
+			}
+		}
+		return( requiredContainerDelSubDep2 );
+	}
+
+	@Override
+	public void setRequiredContainerDelSubDep2( ICFBamDelSubDep2Obj value ) {
+		if( rec == null ) {
+			getDelSubDep3Rec();
+		}
+		if( value != null ) {
+			requiredContainerDelSubDep2 = value;
+			getDelSubDep3Rec().setRequiredContainerDelSubDep2(value.getDelSubDep2Rec());
+		}
+		requiredContainerDelSubDep2 = value;
+	}
+
+	@Override
+	public void copyRecToOrig() {
+		ICFBamDelSubDep3 origRec = getOrigAsDelSubDep3().getDelSubDep3Rec();
+		ICFBamDelSubDep3 myRec = getDelSubDep3Rec();
+		origRec.set( myRec );
+	}
+
+	@Override
+	public void copyOrigToRec() {
+		ICFBamDelSubDep3 origRec = getOrigAsDelSubDep3().getDelSubDep3Rec();
+		ICFBamDelSubDep3 myRec = getDelSubDep3Rec();
+		myRec.set( origRec );
+	}
+}
