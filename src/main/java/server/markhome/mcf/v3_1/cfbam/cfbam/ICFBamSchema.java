@@ -303,7 +303,10 @@ extends ICFSecSchema,
 		None,
 		System,
 		Cluster,
-		Tenant
+		Tenant,
+		SystemGroup,
+		ClusterGroup,
+		TenantGroup
 	};
 
 	static HashMap<String,SecScopeEnum> lookupSecScopeEnum = new HashMap<String,SecScopeEnum>();
@@ -320,6 +323,9 @@ extends ICFSecSchema,
 			lookupSecScopeEnum.put( "System", SecScopeEnum.System );
 			lookupSecScopeEnum.put( "Cluster", SecScopeEnum.Cluster );
 			lookupSecScopeEnum.put( "Tenant", SecScopeEnum.Tenant );
+			lookupSecScopeEnum.put( "SystemGroup", SecScopeEnum.SystemGroup );
+			lookupSecScopeEnum.put( "ClusterGroup", SecScopeEnum.ClusterGroup );
+			lookupSecScopeEnum.put( "TenantGroup", SecScopeEnum.TenantGroup );
 		}
 		SecScopeEnum retval;
 		if( ( value == null ) || ( value.length() <= 0 ) ) {
@@ -382,6 +388,9 @@ extends ICFSecSchema,
 			lookupOrdinalSecScopeEnum.put( Integer.valueOf( SecScopeEnum.System.ordinal() ), SecScopeEnum.System );
 			lookupOrdinalSecScopeEnum.put( Integer.valueOf( SecScopeEnum.Cluster.ordinal() ), SecScopeEnum.Cluster );
 			lookupOrdinalSecScopeEnum.put( Integer.valueOf( SecScopeEnum.Tenant.ordinal() ), SecScopeEnum.Tenant );
+			lookupOrdinalSecScopeEnum.put( Integer.valueOf( SecScopeEnum.SystemGroup.ordinal() ), SecScopeEnum.SystemGroup );
+			lookupOrdinalSecScopeEnum.put( Integer.valueOf( SecScopeEnum.ClusterGroup.ordinal() ), SecScopeEnum.ClusterGroup );
+			lookupOrdinalSecScopeEnum.put( Integer.valueOf( SecScopeEnum.TenantGroup.ordinal() ), SecScopeEnum.TenantGroup );
 		}
 		SecScopeEnum retval;
 		if( value == null ) {
