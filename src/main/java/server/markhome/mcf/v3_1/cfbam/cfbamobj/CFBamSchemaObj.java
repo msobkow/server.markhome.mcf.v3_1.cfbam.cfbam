@@ -139,7 +139,6 @@ public class CFBamSchemaObj
 	protected ICFBamFloatColTableObj floatColTableObj;
 	protected ICFBamFloatDefTableObj floatDefTableObj;
 	protected ICFBamFloatTypeTableObj floatTypeTableObj;
-	protected ICFBamHostNodeTableObj hostNodeTableObj;
 	protected ICFBamISOCcyTableObj iSOCcyTableObj;
 	protected ICFBamISOCtryTableObj iSOCtryTableObj;
 	protected ICFBamISOCtryCcyTableObj iSOCtryCcyTableObj;
@@ -184,26 +183,28 @@ public class CFBamSchemaObj
 	protected ICFBamSchemaDefTableObj schemaDefTableObj;
 	protected ICFBamSchemaRefTableObj schemaRefTableObj;
 	protected ICFBamScopeTableObj scopeTableObj;
-	protected ICFBamSecDeviceTableObj secDeviceTableObj;
-	protected ICFBamSecGroupTableObj secGroupTableObj;
-	protected ICFBamSecGrpIncTableObj secGrpIncTableObj;
-	protected ICFBamSecGrpMembTableObj secGrpMembTableObj;
+	protected ICFBamSecClusGrpTableObj secClusGrpTableObj;
+	protected ICFBamSecClusGrpIncTableObj secClusGrpIncTableObj;
+	protected ICFBamSecClusGrpMembTableObj secClusGrpMembTableObj;
 	protected ICFBamSecSessionTableObj secSessionTableObj;
+	protected ICFBamSecSysGrpTableObj secSysGrpTableObj;
+	protected ICFBamSecSysGrpIncTableObj secSysGrpIncTableObj;
+	protected ICFBamSecSysGrpMembTableObj secSysGrpMembTableObj;
+	protected ICFBamSecTentGrpTableObj secTentGrpTableObj;
+	protected ICFBamSecTentGrpIncTableObj secTentGrpIncTableObj;
+	protected ICFBamSecTentGrpMembTableObj secTentGrpMembTableObj;
 	protected ICFBamSecUserTableObj secUserTableObj;
+	protected ICFBamSecUserPWHistoryTableObj secUserPWHistoryTableObj;
+	protected ICFBamSecUserPasswordTableObj secUserPasswordTableObj;
 	protected ICFBamServerListFuncTableObj serverListFuncTableObj;
 	protected ICFBamServerMethodTableObj serverMethodTableObj;
 	protected ICFBamServerObjFuncTableObj serverObjFuncTableObj;
 	protected ICFBamServerProcTableObj serverProcTableObj;
-	protected ICFBamServiceTableObj serviceTableObj;
-	protected ICFBamServiceTypeTableObj serviceTypeTableObj;
 	protected ICFBamStringColTableObj stringColTableObj;
 	protected ICFBamStringDefTableObj stringDefTableObj;
 	protected ICFBamStringTypeTableObj stringTypeTableObj;
 	protected ICFBamSubProjectTableObj subProjectTableObj;
 	protected ICFBamSysClusterTableObj sysClusterTableObj;
-	protected ICFBamTSecGroupTableObj tSecGroupTableObj;
-	protected ICFBamTSecGrpIncTableObj tSecGrpIncTableObj;
-	protected ICFBamTSecGrpMembTableObj tSecGrpMembTableObj;
 	protected ICFBamTZDateColTableObj tZDateColTableObj;
 	protected ICFBamTZDateDefTableObj tZDateDefTableObj;
 	protected ICFBamTZDateTypeTableObj tZDateTypeTableObj;
@@ -311,7 +312,6 @@ public class CFBamSchemaObj
 		floatColTableObj = new CFBamFloatColTableObj( this );
 		floatDefTableObj = new CFBamFloatDefTableObj( this );
 		floatTypeTableObj = new CFBamFloatTypeTableObj( this );
-		hostNodeTableObj = new CFBamHostNodeTableObj( this );
 		iSOCcyTableObj = new CFBamISOCcyTableObj( this );
 		iSOCtryTableObj = new CFBamISOCtryTableObj( this );
 		iSOCtryCcyTableObj = new CFBamISOCtryCcyTableObj( this );
@@ -356,26 +356,28 @@ public class CFBamSchemaObj
 		schemaDefTableObj = new CFBamSchemaDefTableObj( this );
 		schemaRefTableObj = new CFBamSchemaRefTableObj( this );
 		scopeTableObj = new CFBamScopeTableObj( this );
-		secDeviceTableObj = new CFBamSecDeviceTableObj( this );
-		secGroupTableObj = new CFBamSecGroupTableObj( this );
-		secGrpIncTableObj = new CFBamSecGrpIncTableObj( this );
-		secGrpMembTableObj = new CFBamSecGrpMembTableObj( this );
+		secClusGrpTableObj = new CFBamSecClusGrpTableObj( this );
+		secClusGrpIncTableObj = new CFBamSecClusGrpIncTableObj( this );
+		secClusGrpMembTableObj = new CFBamSecClusGrpMembTableObj( this );
 		secSessionTableObj = new CFBamSecSessionTableObj( this );
+		secSysGrpTableObj = new CFBamSecSysGrpTableObj( this );
+		secSysGrpIncTableObj = new CFBamSecSysGrpIncTableObj( this );
+		secSysGrpMembTableObj = new CFBamSecSysGrpMembTableObj( this );
+		secTentGrpTableObj = new CFBamSecTentGrpTableObj( this );
+		secTentGrpIncTableObj = new CFBamSecTentGrpIncTableObj( this );
+		secTentGrpMembTableObj = new CFBamSecTentGrpMembTableObj( this );
 		secUserTableObj = new CFBamSecUserTableObj( this );
+		secUserPWHistoryTableObj = new CFBamSecUserPWHistoryTableObj( this );
+		secUserPasswordTableObj = new CFBamSecUserPasswordTableObj( this );
 		serverListFuncTableObj = new CFBamServerListFuncTableObj( this );
 		serverMethodTableObj = new CFBamServerMethodTableObj( this );
 		serverObjFuncTableObj = new CFBamServerObjFuncTableObj( this );
 		serverProcTableObj = new CFBamServerProcTableObj( this );
-		serviceTableObj = new CFBamServiceTableObj( this );
-		serviceTypeTableObj = new CFBamServiceTypeTableObj( this );
 		stringColTableObj = new CFBamStringColTableObj( this );
 		stringDefTableObj = new CFBamStringDefTableObj( this );
 		stringTypeTableObj = new CFBamStringTypeTableObj( this );
 		subProjectTableObj = new CFBamSubProjectTableObj( this );
 		sysClusterTableObj = new CFBamSysClusterTableObj( this );
-		tSecGroupTableObj = new CFBamTSecGroupTableObj( this );
-		tSecGrpIncTableObj = new CFBamTSecGrpIncTableObj( this );
-		tSecGrpMembTableObj = new CFBamTSecGrpMembTableObj( this );
 		tZDateColTableObj = new CFBamTZDateColTableObj( this );
 		tZDateDefTableObj = new CFBamTZDateDefTableObj( this );
 		tZDateTypeTableObj = new CFBamTZDateTypeTableObj( this );
@@ -828,9 +830,6 @@ public class CFBamSchemaObj
 		if( floatTypeTableObj != null ) {
 			floatTypeTableObj.minimizeMemory();
 		}
-		if( hostNodeTableObj != null ) {
-			hostNodeTableObj.minimizeMemory();
-		}
 		if( iSOCcyTableObj != null ) {
 			iSOCcyTableObj.minimizeMemory();
 		}
@@ -963,23 +962,44 @@ public class CFBamSchemaObj
 		if( scopeTableObj != null ) {
 			scopeTableObj.minimizeMemory();
 		}
-		if( secDeviceTableObj != null ) {
-			secDeviceTableObj.minimizeMemory();
+		if( secClusGrpTableObj != null ) {
+			secClusGrpTableObj.minimizeMemory();
 		}
-		if( secGroupTableObj != null ) {
-			secGroupTableObj.minimizeMemory();
+		if( secClusGrpIncTableObj != null ) {
+			secClusGrpIncTableObj.minimizeMemory();
 		}
-		if( secGrpIncTableObj != null ) {
-			secGrpIncTableObj.minimizeMemory();
-		}
-		if( secGrpMembTableObj != null ) {
-			secGrpMembTableObj.minimizeMemory();
+		if( secClusGrpMembTableObj != null ) {
+			secClusGrpMembTableObj.minimizeMemory();
 		}
 		if( secSessionTableObj != null ) {
 			secSessionTableObj.minimizeMemory();
 		}
+		if( secSysGrpTableObj != null ) {
+			secSysGrpTableObj.minimizeMemory();
+		}
+		if( secSysGrpIncTableObj != null ) {
+			secSysGrpIncTableObj.minimizeMemory();
+		}
+		if( secSysGrpMembTableObj != null ) {
+			secSysGrpMembTableObj.minimizeMemory();
+		}
+		if( secTentGrpTableObj != null ) {
+			secTentGrpTableObj.minimizeMemory();
+		}
+		if( secTentGrpIncTableObj != null ) {
+			secTentGrpIncTableObj.minimizeMemory();
+		}
+		if( secTentGrpMembTableObj != null ) {
+			secTentGrpMembTableObj.minimizeMemory();
+		}
 		if( secUserTableObj != null ) {
 			secUserTableObj.minimizeMemory();
+		}
+		if( secUserPWHistoryTableObj != null ) {
+			secUserPWHistoryTableObj.minimizeMemory();
+		}
+		if( secUserPasswordTableObj != null ) {
+			secUserPasswordTableObj.minimizeMemory();
 		}
 		if( serverListFuncTableObj != null ) {
 			serverListFuncTableObj.minimizeMemory();
@@ -992,12 +1012,6 @@ public class CFBamSchemaObj
 		}
 		if( serverProcTableObj != null ) {
 			serverProcTableObj.minimizeMemory();
-		}
-		if( serviceTableObj != null ) {
-			serviceTableObj.minimizeMemory();
-		}
-		if( serviceTypeTableObj != null ) {
-			serviceTypeTableObj.minimizeMemory();
 		}
 		if( stringColTableObj != null ) {
 			stringColTableObj.minimizeMemory();
@@ -1013,15 +1027,6 @@ public class CFBamSchemaObj
 		}
 		if( sysClusterTableObj != null ) {
 			sysClusterTableObj.minimizeMemory();
-		}
-		if( tSecGroupTableObj != null ) {
-			tSecGroupTableObj.minimizeMemory();
-		}
-		if( tSecGrpIncTableObj != null ) {
-			tSecGrpIncTableObj.minimizeMemory();
-		}
-		if( tSecGrpMembTableObj != null ) {
-			tSecGrpMembTableObj.minimizeMemory();
 		}
 		if( tZDateColTableObj != null ) {
 			tZDateColTableObj.minimizeMemory();
@@ -1402,10 +1407,6 @@ public class CFBamSchemaObj
 		return( floatTypeTableObj );
 	}
 
-	public ICFBamHostNodeTableObj getHostNodeTableObj() {
-		return( hostNodeTableObj );
-	}
-
 	public ICFBamISOCcyTableObj getISOCcyTableObj() {
 		return( iSOCcyTableObj );
 	}
@@ -1582,28 +1583,56 @@ public class CFBamSchemaObj
 		return( scopeTableObj );
 	}
 
-	public ICFBamSecDeviceTableObj getSecDeviceTableObj() {
-		return( secDeviceTableObj );
+	public ICFBamSecClusGrpTableObj getSecClusGrpTableObj() {
+		return( secClusGrpTableObj );
 	}
 
-	public ICFBamSecGroupTableObj getSecGroupTableObj() {
-		return( secGroupTableObj );
+	public ICFBamSecClusGrpIncTableObj getSecClusGrpIncTableObj() {
+		return( secClusGrpIncTableObj );
 	}
 
-	public ICFBamSecGrpIncTableObj getSecGrpIncTableObj() {
-		return( secGrpIncTableObj );
-	}
-
-	public ICFBamSecGrpMembTableObj getSecGrpMembTableObj() {
-		return( secGrpMembTableObj );
+	public ICFBamSecClusGrpMembTableObj getSecClusGrpMembTableObj() {
+		return( secClusGrpMembTableObj );
 	}
 
 	public ICFBamSecSessionTableObj getSecSessionTableObj() {
 		return( secSessionTableObj );
 	}
 
+	public ICFBamSecSysGrpTableObj getSecSysGrpTableObj() {
+		return( secSysGrpTableObj );
+	}
+
+	public ICFBamSecSysGrpIncTableObj getSecSysGrpIncTableObj() {
+		return( secSysGrpIncTableObj );
+	}
+
+	public ICFBamSecSysGrpMembTableObj getSecSysGrpMembTableObj() {
+		return( secSysGrpMembTableObj );
+	}
+
+	public ICFBamSecTentGrpTableObj getSecTentGrpTableObj() {
+		return( secTentGrpTableObj );
+	}
+
+	public ICFBamSecTentGrpIncTableObj getSecTentGrpIncTableObj() {
+		return( secTentGrpIncTableObj );
+	}
+
+	public ICFBamSecTentGrpMembTableObj getSecTentGrpMembTableObj() {
+		return( secTentGrpMembTableObj );
+	}
+
 	public ICFBamSecUserTableObj getSecUserTableObj() {
 		return( secUserTableObj );
+	}
+
+	public ICFBamSecUserPWHistoryTableObj getSecUserPWHistoryTableObj() {
+		return( secUserPWHistoryTableObj );
+	}
+
+	public ICFBamSecUserPasswordTableObj getSecUserPasswordTableObj() {
+		return( secUserPasswordTableObj );
 	}
 
 	public ICFBamServerListFuncTableObj getServerListFuncTableObj() {
@@ -1620,14 +1649,6 @@ public class CFBamSchemaObj
 
 	public ICFBamServerProcTableObj getServerProcTableObj() {
 		return( serverProcTableObj );
-	}
-
-	public ICFBamServiceTableObj getServiceTableObj() {
-		return( serviceTableObj );
-	}
-
-	public ICFBamServiceTypeTableObj getServiceTypeTableObj() {
-		return( serviceTypeTableObj );
 	}
 
 	public ICFBamStringColTableObj getStringColTableObj() {
@@ -1648,18 +1669,6 @@ public class CFBamSchemaObj
 
 	public ICFBamSysClusterTableObj getSysClusterTableObj() {
 		return( sysClusterTableObj );
-	}
-
-	public ICFBamTSecGroupTableObj getTSecGroupTableObj() {
-		return( tSecGroupTableObj );
-	}
-
-	public ICFBamTSecGrpIncTableObj getTSecGrpIncTableObj() {
-		return( tSecGrpIncTableObj );
-	}
-
-	public ICFBamTSecGrpMembTableObj getTSecGrpMembTableObj() {
-		return( tSecGrpMembTableObj );
 	}
 
 	public ICFBamTZDateColTableObj getTZDateColTableObj() {

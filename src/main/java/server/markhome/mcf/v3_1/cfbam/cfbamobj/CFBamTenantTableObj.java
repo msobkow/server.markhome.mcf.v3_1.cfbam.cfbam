@@ -424,34 +424,7 @@ public class CFBamTenantTableObj
 		}
 					schema.getSchemaDefTableObj().deepDisposeSchemaDefByCTenantIdx( existing.getRequiredId() );
 					schema.getTldTableObj().deepDisposeTldByTenantIdx( existing.getRequiredId() );
-		ICFSecTSecGroupObj objDelIncludedByGroup;
-		List<ICFSecTSecGroupObj> arrDelIncludedByGroup = schema.getTSecGroupTableObj().readCachedTSecGroupByTenantIdx( existing.getRequiredId() );
-		Iterator<ICFSecTSecGroupObj> iterDelIncludedByGroup = arrDelIncludedByGroup.iterator();
-		while( iterDelIncludedByGroup.hasNext() ) {
-			objDelIncludedByGroup = iterDelIncludedByGroup.next();
-			if( objDelIncludedByGroup != null ) {
-						schema.getTSecGrpIncTableObj().deepDisposeTSecGrpIncByIncludeIdx( objDelIncludedByGroup.getRequiredTSecGroupId() );
-			}
-		}
-		ICFSecTSecGroupObj objDelGrpMembs;
-		List<ICFSecTSecGroupObj> arrDelGrpMembs = schema.getTSecGroupTableObj().readCachedTSecGroupByTenantIdx( existing.getRequiredId() );
-		Iterator<ICFSecTSecGroupObj> iterDelGrpMembs = arrDelGrpMembs.iterator();
-		while( iterDelGrpMembs.hasNext() ) {
-			objDelGrpMembs = iterDelGrpMembs.next();
-			if( objDelGrpMembs != null ) {
-						schema.getTSecGrpMembTableObj().deepDisposeTSecGrpMembByGroupIdx( objDelGrpMembs.getRequiredTSecGroupId() );
-			}
-		}
-		ICFSecTSecGroupObj objDelGrpIncs;
-		List<ICFSecTSecGroupObj> arrDelGrpIncs = schema.getTSecGroupTableObj().readCachedTSecGroupByTenantIdx( existing.getRequiredId() );
-		Iterator<ICFSecTSecGroupObj> iterDelGrpIncs = arrDelGrpIncs.iterator();
-		while( iterDelGrpIncs.hasNext() ) {
-			objDelGrpIncs = iterDelGrpIncs.next();
-			if( objDelGrpIncs != null ) {
-						schema.getTSecGrpIncTableObj().deepDisposeTSecGrpIncByGroupIdx( objDelGrpIncs.getRequiredTSecGroupId() );
-			}
-		}
-					schema.getTSecGroupTableObj().deepDisposeTSecGroupByTenantIdx( existing.getRequiredId() );
+					schema.getSecTentGrpTableObj().deepDisposeSecTentGrpByTenantIdx( existing.getRequiredId() );
 
 		if( indexByClusterIdx != null ) {
 			if( indexByClusterIdx.containsKey( keyClusterIdx ) ) {
@@ -1100,20 +1073,5 @@ public class CFBamTenantTableObj
 		}
 		deepDisposeTenantByUNameIdx( ClusterId,
 				TenantName );
-	}
-
-	public ICFSecTenantObj getSystemTenant() {
-		ICFSecTenantObj tenantObj;
-		ICFSecClusterObj clusterObj = schema.getClusterTableObj().getSystemCluster();
-		tenantObj = readTenantByUNameIdx( clusterObj.getRequiredId(), "system" );
-		if( tenantObj == null ) {
-			tenantObj = newInstance();
-			ICFSecTenantEditObj tenantEdit = tenantObj.beginEdit();
-			tenantEdit.setRequiredContainerCluster( clusterObj );
-			tenantEdit.setRequiredTenantName( "system" );
-			tenantObj = tenantEdit.create();
-			tenantEdit = null;
-		}
-		return( tenantObj );
 	}
 }

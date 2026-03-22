@@ -108,39 +108,11 @@ public interface ICFBamSecUserEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
-	 *	Get a list ICFSecSecDeviceObj instances referenced by the SecDev key.
+	 *	Get a list ICFSecSecSysGrpMembObj instances referenced by the SysSecGrpMemb key.
 	 *
-	 *	@return	The (potentially empty) list of ICFSecSecDeviceObj instances referenced by the SecDev key.
+	 *	@return	The (potentially empty) list of ICFSecSecSysGrpMembObj instances referenced by the SysSecGrpMemb key.
 	 */
-	List<ICFSecSecDeviceObj> getOptionalComponentsSecDev();
-
-	/**
-	 *	Get the ICFSecSecDeviceObj instance referenced by the DefDev key.
-	 *
-	 *	@return	The ICFSecSecDeviceObj instance referenced by the DefDev key.
-	 */
-	ICFSecSecDeviceObj getOptionalLookupDefDev();
-
-	/**
-	 *	Set the ICFSecSecDeviceObj instance referenced by the DefDev key.
-	 *
-	 *	@param	value	the ICFSecSecDeviceObj instance to be referenced by the DefDev key.
-	 */
-	void setOptionalLookupDefDev( ICFSecSecDeviceObj value );
-
-	/**
-	 *	Get a list ICFSecSecGrpMembObj instances referenced by the SecGrpMemb key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecSecGrpMembObj instances referenced by the SecGrpMemb key.
-	 */
-	List<ICFSecSecGrpMembObj> getOptionalChildrenSecGrpMemb();
-
-	/**
-	 *	Get a list ICFSecTSecGrpMembObj instances referenced by the TSecGrpMemb key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecTSecGrpMembObj instances referenced by the TSecGrpMemb key.
-	 */
-	List<ICFSecTSecGrpMembObj> getOptionalChildrenTSecGrpMemb();
+	List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

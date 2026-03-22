@@ -72,8 +72,6 @@ public class CFBamSecUserTableObj
 		Map<CFLibDbKeyHash256, ICFSecSecUserObj > > indexByEMConfIdx;
 	private Map< ICFSecSecUserByPwdResetIdxKey,
 		Map<CFLibDbKeyHash256, ICFSecSecUserObj > > indexByPwdResetIdx;
-	private Map< ICFSecSecUserByDefDevIdxKey,
-		Map<CFLibDbKeyHash256, ICFSecSecUserObj > > indexByDefDevIdx;
 	public static String TABLE_NAME = "SecUser";
 	public static String TABLE_DBNAME = "secuser";
 
@@ -84,7 +82,6 @@ public class CFBamSecUserTableObj
 		indexByULoginIdx = null;
 		indexByEMConfIdx = null;
 		indexByPwdResetIdx = null;
-		indexByDefDevIdx = null;
 	}
 
 	public CFBamSecUserTableObj( ICFSecSchemaObj argSchema ) {
@@ -94,7 +91,6 @@ public class CFBamSecUserTableObj
 		indexByULoginIdx = null;
 		indexByEMConfIdx = null;
 		indexByPwdResetIdx = null;
-		indexByDefDevIdx = null;
 	}
 	
 	/**
@@ -157,7 +153,6 @@ public class CFBamSecUserTableObj
 		indexByULoginIdx = null;
 		indexByEMConfIdx = null;
 		indexByPwdResetIdx = null;
-		indexByDefDevIdx = null;
 		List<ICFSecSecUserObj> toForget = new LinkedList<ICFSecSecUserObj>();
 		ICFSecSecUserObj cur = null;
 		Iterator<ICFSecSecUserObj> iter = members.values().iterator();
@@ -250,20 +245,6 @@ public class CFBamSecUserTableObj
 				}
 			}
 
-			if( indexByDefDevIdx != null ) {
-				ICFSecSecUserByDefDevIdxKey keyDefDevIdx =
-					schema.getCFSecBackingStore().getFactorySecUser().newByDefDevIdxKey();
-				keyDefDevIdx.setOptionalDfltDevUserId( keepObj.getOptionalDfltDevUserId() );
-				keyDefDevIdx.setOptionalDfltDevName( keepObj.getOptionalDfltDevName() );
-				Map<CFLibDbKeyHash256, ICFSecSecUserObj > mapDefDevIdx = indexByDefDevIdx.get( keyDefDevIdx );
-				if( mapDefDevIdx != null ) {
-					mapDefDevIdx.remove( keepObj.getPKey() );
-					if( mapDefDevIdx.size() <= 0 ) {
-						indexByDefDevIdx.remove( keyDefDevIdx );
-					}
-				}
-			}
-
 			keepObj.setRec( Obj.getRec() );
 			// Attach new object to alternate and duplicate indexes -- PKey stay stable
 
@@ -291,17 +272,6 @@ public class CFBamSecUserTableObj
 				Map<CFLibDbKeyHash256, ICFSecSecUserObj > mapPwdResetIdx = indexByPwdResetIdx.get( keyPwdResetIdx );
 				if( mapPwdResetIdx != null ) {
 					mapPwdResetIdx.put( keepObj.getPKey(), keepObj );
-				}
-			}
-
-			if( indexByDefDevIdx != null ) {
-				ICFSecSecUserByDefDevIdxKey keyDefDevIdx =
-					schema.getCFSecBackingStore().getFactorySecUser().newByDefDevIdxKey();
-				keyDefDevIdx.setOptionalDfltDevUserId( keepObj.getOptionalDfltDevUserId() );
-				keyDefDevIdx.setOptionalDfltDevName( keepObj.getOptionalDfltDevName() );
-				Map<CFLibDbKeyHash256, ICFSecSecUserObj > mapDefDevIdx = indexByDefDevIdx.get( keyDefDevIdx );
-				if( mapDefDevIdx != null ) {
-					mapDefDevIdx.put( keepObj.getPKey(), keepObj );
 				}
 			}
 
@@ -343,17 +313,6 @@ public class CFBamSecUserTableObj
 				Map<CFLibDbKeyHash256, ICFSecSecUserObj > mapPwdResetIdx = indexByPwdResetIdx.get( keyPwdResetIdx );
 				if( mapPwdResetIdx != null ) {
 					mapPwdResetIdx.put( keepObj.getPKey(), keepObj );
-				}
-			}
-
-			if( indexByDefDevIdx != null ) {
-				ICFSecSecUserByDefDevIdxKey keyDefDevIdx =
-					schema.getCFSecBackingStore().getFactorySecUser().newByDefDevIdxKey();
-				keyDefDevIdx.setOptionalDfltDevUserId( keepObj.getOptionalDfltDevUserId() );
-				keyDefDevIdx.setOptionalDfltDevName( keepObj.getOptionalDfltDevName() );
-				Map<CFLibDbKeyHash256, ICFSecSecUserObj > mapDefDevIdx = indexByDefDevIdx.get( keyDefDevIdx );
-				if( mapDefDevIdx != null ) {
-					mapDefDevIdx.put( keepObj.getPKey(), keepObj );
 				}
 			}
 
@@ -430,14 +389,8 @@ public class CFBamSecUserTableObj
 		ICFSecSecUserByPwdResetIdxKey keyPwdResetIdx = schema.getCFSecBackingStore().getFactorySecUser().newByPwdResetIdxKey();
 		keyPwdResetIdx.setOptionalPasswordResetUuid6( existing.getOptionalPasswordResetUuid6() );
 
-		ICFSecSecUserByDefDevIdxKey keyDefDevIdx = schema.getCFSecBackingStore().getFactorySecUser().newByDefDevIdxKey();
-		keyDefDevIdx.setOptionalDfltDevUserId( existing.getOptionalDfltDevUserId() );
-		keyDefDevIdx.setOptionalDfltDevName( existing.getOptionalDfltDevName() );
 
-
-					schema.getTSecGrpMembTableObj().deepDisposeTSecGrpMembByUserIdx( existing.getRequiredSecUserId() );
-					schema.getSecGrpMembTableObj().deepDisposeSecGrpMembByUserIdx( existing.getRequiredSecUserId() );
-					schema.getSecDeviceTableObj().deepDisposeSecDeviceByUserIdx( existing.getRequiredSecUserId() );
+		schema.getSecSysGrpMembTableObj().deepDisposeSecSysGrpMembByUserIdx( existing.getRequiredSecUserId() );
 
 		if( indexByULoginIdx != null ) {
 			indexByULoginIdx.remove( keyULoginIdx );
@@ -457,15 +410,6 @@ public class CFBamSecUserTableObj
 				indexByPwdResetIdx.get( keyPwdResetIdx ).remove( pkey );
 				if( indexByPwdResetIdx.get( keyPwdResetIdx ).size() <= 0 ) {
 					indexByPwdResetIdx.remove( keyPwdResetIdx );
-				}
-			}
-		}
-
-		if( indexByDefDevIdx != null ) {
-			if( indexByDefDevIdx.containsKey( keyDefDevIdx ) ) {
-				indexByDefDevIdx.get( keyDefDevIdx ).remove( pkey );
-				if( indexByDefDevIdx.get( keyDefDevIdx ).size() <= 0 ) {
-					indexByDefDevIdx.remove( keyDefDevIdx );
 				}
 			}
 		}
@@ -892,104 +836,6 @@ public class CFBamSecUserTableObj
 	}
 
 	@Override
-	public List<ICFSecSecUserObj> readSecUserByDefDevIdx( CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName )
-	{
-		return( readSecUserByDefDevIdx( DfltDevUserId,
-			DfltDevName,
-			false ) );
-	}
-
-	@Override
-	public List<ICFSecSecUserObj> readSecUserByDefDevIdx( CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName,
-		boolean forceRead )
-	{
-		final String S_ProcName = "readSecUserByDefDevIdx";
-		ICFSecSecUserByDefDevIdxKey key = schema.getCFSecBackingStore().getFactorySecUser().newByDefDevIdxKey();
-		key.setOptionalDfltDevUserId( DfltDevUserId );
-		key.setOptionalDfltDevName( DfltDevName );
-		Map<CFLibDbKeyHash256, ICFSecSecUserObj> dict;
-		if( indexByDefDevIdx == null ) {
-			indexByDefDevIdx = new HashMap< ICFSecSecUserByDefDevIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecUserObj > >();
-		}
-		if( ( ! forceRead ) && indexByDefDevIdx.containsKey( key ) ) {
-			dict = indexByDefDevIdx.get( key );
-		}
-		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFSecSecUserObj>();
-			ICFSecSecUserObj obj;
-			ICFSecSecUser[] recList = schema.getCFSecBackingStore().getTableSecUser().readDerivedByDefDevIdx( null,
-				DfltDevUserId,
-				DfltDevName );
-			ICFSecSecUser rec;
-			for( int idx = 0; idx < recList.length; idx ++ ) {
-				rec = recList[ idx ];
-				obj = schema.getSecUserTableObj().newInstance();
-				obj.setPKey( rec.getPKey() );
-				obj.setRec( rec );
-				ICFSecSecUserObj realised = (ICFSecSecUserObj)obj.realise();
-				dict.put( realised.getPKey(), realised );
-			}
-			indexByDefDevIdx.put( key, dict );
-		}
-		int len = dict.size();
-		ICFSecSecUserObj arr[] = new ICFSecSecUserObj[len];
-		Iterator<ICFSecSecUserObj> valIter = dict.values().iterator();
-		int idx = 0;
-		while( ( idx < len ) && valIter.hasNext() ) {
-			arr[idx++] = valIter.next();
-		}
-		if( idx < len ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				S_ProcName,
-				0,
-				"idx",
-				idx,
-				len );
-		}
-		else if( valIter.hasNext() ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-					S_ProcName,
-					0,
-					"idx",
-					idx,
-					len );
-		}
-		ArrayList<ICFSecSecUserObj> arrayList = new ArrayList<ICFSecSecUserObj>(len);
-		for( idx = 0; idx < len; idx ++ ) {
-			arrayList.add( arr[idx] );
-		}
-
-		Comparator<ICFSecSecUserObj> cmp = new Comparator<ICFSecSecUserObj>() {
-			@Override
-			public int compare( ICFSecSecUserObj lhs, ICFSecSecUserObj rhs ) {
-				if( lhs == null ) {
-					if( rhs == null ) {
-						return( 0 );
-					}
-					else {
-						return( -1 );
-					}
-				}
-				else if( rhs == null ) {
-					return( 1 );
-				}
-				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
-					int ret = lhsPKey.compareTo( rhsPKey );
-					return( ret );
-				}
-			}
-		};
-		Collections.sort( arrayList, cmp );
-		List<ICFSecSecUserObj> sortedList = arrayList;
-		return( sortedList );
-	}
-
-	@Override
 	public ICFSecSecUserObj readCachedSecUserByIdIdx( CFLibDbKeyHash256 SecUserId )
 	{
 		ICFSecSecUserObj obj = null;
@@ -1188,85 +1034,6 @@ public class CFBamSecUserTableObj
 	}
 
 	@Override
-	public List<ICFSecSecUserObj> readCachedSecUserByDefDevIdx( CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName )
-	{
-		final String S_ProcName = "readCachedSecUserByDefDevIdx";
-		ICFSecSecUserByDefDevIdxKey key = schema.getCFSecBackingStore().getFactorySecUser().newByDefDevIdxKey();
-		key.setOptionalDfltDevUserId( DfltDevUserId );
-		key.setOptionalDfltDevName( DfltDevName );
-		ArrayList<ICFSecSecUserObj> arrayList = new ArrayList<ICFSecSecUserObj>();
-		if( indexByDefDevIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFSecSecUserObj> dict;
-			if( indexByDefDevIdx.containsKey( key ) ) {
-				dict = indexByDefDevIdx.get( key );
-				int len = dict.size();
-				ICFSecSecUserObj arr[] = new ICFSecSecUserObj[len];
-				Iterator<ICFSecSecUserObj> valIter = dict.values().iterator();
-				int idx = 0;
-				while( ( idx < len ) && valIter.hasNext() ) {
-					arr[idx++] = valIter.next();
-				}
-				if( idx < len ) {
-					throw new CFLibArgumentUnderflowException( getClass(),
-						S_ProcName,
-						0,
-						"idx",
-						idx,
-						len );
-				}
-				else if( valIter.hasNext() ) {
-					throw new CFLibArgumentOverflowException( getClass(),
-							S_ProcName,
-							0,
-							"idx",
-							idx,
-							len );
-				}
-				for( idx = 0; idx < len; idx ++ ) {
-					arrayList.add( arr[idx] );
-				}
-			}
-		}
-		else {
-			ICFSecSecUserObj obj;
-			Iterator<ICFSecSecUserObj> valIter = members.values().iterator();
-			while( valIter.hasNext() ) {
-				obj = valIter.next();
-				if( obj != null ) {
-					if( obj.getRec().compareTo( key ) == 0 ) {
-						arrayList.add( obj );
-					}
-				}
-			}
-		}
-		Comparator<ICFSecSecUserObj> cmp = new Comparator<ICFSecSecUserObj>() {
-			@Override
-			public int compare( ICFSecSecUserObj lhs, ICFSecSecUserObj rhs ) {
-				if( lhs == null ) {
-					if( rhs == null ) {
-						return( 0 );
-					}
-					else {
-						return( -1 );
-					}
-				}
-				else if( rhs == null ) {
-					return( 1 );
-				}
-				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
-					int ret = lhsPKey.compareTo( rhsPKey );
-					return( ret );
-				}
-			}
-		};
-		Collections.sort( arrayList, cmp );
-		return( arrayList );
-	}
-
-	@Override
 	public void deepDisposeSecUserByIdIdx( CFLibDbKeyHash256 SecUserId )
 	{
 		ICFSecSecUserObj obj = readCachedSecUserByIdIdx( SecUserId );
@@ -1307,25 +1074,6 @@ public class CFBamSecUserTableObj
 		final String S_ProcName = "deepDisposeSecUserByPwdResetIdx";
 		ICFSecSecUserObj obj;
 		List<ICFSecSecUserObj> arrayList = readCachedSecUserByPwdResetIdx( PasswordResetUuid6 );
-		if( arrayList != null )  {
-			Iterator<ICFSecSecUserObj> arrayIter = arrayList.iterator();
-			while( arrayIter.hasNext() ) {
-				obj = arrayIter.next();
-				if( obj != null ) {
-					obj.forget();
-				}
-			}
-		}
-	}
-
-	@Override
-	public void deepDisposeSecUserByDefDevIdx( CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName )
-	{
-		final String S_ProcName = "deepDisposeSecUserByDefDevIdx";
-		ICFSecSecUserObj obj;
-		List<ICFSecSecUserObj> arrayList = readCachedSecUserByDefDevIdx( DfltDevUserId,
-				DfltDevName );
 		if( arrayList != null )  {
 			Iterator<ICFSecSecUserObj> arrayIter = arrayList.iterator();
 			while( arrayIter.hasNext() ) {
@@ -1390,44 +1138,6 @@ public class CFBamSecUserTableObj
 		ICFSecSecUserObj obj;
 		ICFSecSecUser[] recList = schema.getCFSecBackingStore().getTableSecUser().pageRecByPwdResetIdx( null,
 				PasswordResetUuid6,
-			priorSecUserId );
-		ICFSecSecUser rec;
-		for( int idx = 0; idx < recList.length; idx ++ ) {
-			rec = recList[ idx ];
-				obj = schema.getSecUserTableObj().newInstance();
-			obj.setPKey( rec.getPKey() );
-			obj.setRec( rec );
-			ICFSecSecUserObj realised = (ICFSecSecUserObj)obj.realise();
-			retList.add( realised );
-		}
-		return( retList );
-	}
-
-	/**
-	 *	Read a page of data as a List of SecUser-derived instances sorted by their primary keys,
-	 *	as identified by the duplicate DefDevIdx key attributes.
-	 *
-	 *	@param	DfltDevUserId	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@param	DfltDevName	The SecUser key attribute of the instance generating the id.
-	 *
-	 *	@return	A List of SecUser-derived instances sorted by their primary keys,
-	 *		as identified by the key attributes, which may be an empty set.
-	 */
-	@Override
-	public List<ICFSecSecUserObj> pageSecUserByDefDevIdx( CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName,
-		CFLibDbKeyHash256 priorSecUserId )
-	{
-		final String S_ProcName = "pageSecUserByDefDevIdx";
-		ICFSecSecUserByDefDevIdxKey key = schema.getCFSecBackingStore().getFactorySecUser().newByDefDevIdxKey();
-		key.setOptionalDfltDevUserId( DfltDevUserId );
-		key.setOptionalDfltDevName( DfltDevName );
-		List<ICFSecSecUserObj> retList = new LinkedList<ICFSecSecUserObj>();
-		ICFSecSecUserObj obj;
-		ICFSecSecUser[] recList = schema.getCFSecBackingStore().getTableSecUser().pageRecByDefDevIdx( null,
-				DfltDevUserId,
-				DfltDevName,
 			priorSecUserId );
 		ICFSecSecUser rec;
 		for( int idx = 0; idx < recList.length; idx ++ ) {
@@ -1578,57 +1288,5 @@ public class CFBamSecUserTableObj
 				PasswordResetUuid6 );
 		}
 		deepDisposeSecUserByPwdResetIdx( PasswordResetUuid6 );
-	}
-
-	@Override
-	public void deleteSecUserByDefDevIdx( CFLibDbKeyHash256 DfltDevUserId,
-		String DfltDevName )
-	{
-		ICFSecSecUserByDefDevIdxKey key = schema.getCFSecBackingStore().getFactorySecUser().newByDefDevIdxKey();
-		key.setOptionalDfltDevUserId( DfltDevUserId );
-		key.setOptionalDfltDevName( DfltDevName );
-		if( indexByDefDevIdx == null ) {
-			indexByDefDevIdx = new HashMap< ICFSecSecUserByDefDevIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecUserObj > >();
-		}
-		if( indexByDefDevIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFSecSecUserObj> dict = indexByDefDevIdx.get( key );
-			schema.getCFSecBackingStore().getTableSecUser().deleteSecUserByDefDevIdx( null,
-				DfltDevUserId,
-				DfltDevName );
-			Iterator<ICFSecSecUserObj> iter = dict.values().iterator();
-			ICFSecSecUserObj obj;
-			List<ICFSecSecUserObj> toForget = new LinkedList<ICFSecSecUserObj>();
-			while( iter.hasNext() ) {
-				obj = iter.next();
-				toForget.add( obj );
-			}
-			iter = toForget.iterator();
-			while( iter.hasNext() ) {
-				obj = iter.next();
-				obj.forget();
-			}
-			indexByDefDevIdx.remove( key );
-		}
-		else {
-			schema.getCFSecBackingStore().getTableSecUser().deleteSecUserByDefDevIdx( null,
-				DfltDevUserId,
-				DfltDevName );
-		}
-		deepDisposeSecUserByDefDevIdx( DfltDevUserId,
-				DfltDevName );
-	}
-
-	public ICFSecSecUserObj getSystemUser() {
-		ICFSecSecUserObj secUserObj;
-		secUserObj = schema.getSecUserTableObj().readSecUserByULoginIdx( "system" );
-		if( secUserObj == null ) {
-			secUserObj = newInstance();
-			ICFSecSecUserEditObj secUserEdit = secUserObj.beginEdit();
-			secUserEdit.setRequiredEMailAddress( "system" );
-			secUserObj = secUserEdit.create();
-			secUserEdit = null;
-		}
-		return( secUserObj );
 	}
 }

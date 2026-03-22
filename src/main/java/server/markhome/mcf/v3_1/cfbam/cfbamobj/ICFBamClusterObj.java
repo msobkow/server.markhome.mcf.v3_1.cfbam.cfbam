@@ -220,20 +220,6 @@ public interface ICFBamClusterObj
 	void setIsNew( boolean value );
 
 	/**
-	 *	Get the array of optional ICFSecHostNodeObj array of instances referenced by the HostNode key.
-	 *
-	 *	@return	The optional ICFSecHostNodeObj[] array of instances referenced by the HostNode key.
-	 */
-	List<ICFSecHostNodeObj> getOptionalComponentsHostNode();
-
-	/**
-	 *	Get the array of optional ICFSecHostNodeObj array of instances referenced by the HostNode key.
-	 *
-	 *	@return	The optional ICFSecHostNodeObj[] array of instances referenced by the HostNode key.
-	 */
-	List<ICFSecHostNodeObj> getOptionalComponentsHostNode( boolean forceRead );
-
-	/**
 	 *	Get the array of optional ICFSecTenantObj array of instances referenced by the Tenant key.
 	 *
 	 *	@return	The optional ICFSecTenantObj[] array of instances referenced by the Tenant key.
@@ -248,18 +234,18 @@ public interface ICFBamClusterObj
 	List<ICFSecTenantObj> getOptionalComponentsTenant( boolean forceRead );
 
 	/**
-	 *	Get the array of optional ICFSecSecGroupObj array of instances referenced by the SecGroup key.
+	 *	Get the array of optional ICFSecSecClusGrpObj array of instances referenced by the SecGroup key.
 	 *
-	 *	@return	The optional ICFSecSecGroupObj[] array of instances referenced by the SecGroup key.
+	 *	@return	The optional ICFSecSecClusGrpObj[] array of instances referenced by the SecGroup key.
 	 */
-	List<ICFSecSecGroupObj> getOptionalComponentsSecGroup();
+	List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup();
 
 	/**
-	 *	Get the array of optional ICFSecSecGroupObj array of instances referenced by the SecGroup key.
+	 *	Get the array of optional ICFSecSecClusGrpObj array of instances referenced by the SecGroup key.
 	 *
-	 *	@return	The optional ICFSecSecGroupObj[] array of instances referenced by the SecGroup key.
+	 *	@return	The optional ICFSecSecClusGrpObj[] array of instances referenced by the SecGroup key.
 	 */
-	List<ICFSecSecGroupObj> getOptionalComponentsSecGroup( boolean forceRead );
+	List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFSecSysClusterObj array of instances referenced by the SysCluster key.

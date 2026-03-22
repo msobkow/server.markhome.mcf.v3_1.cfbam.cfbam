@@ -68,7 +68,7 @@ public class CFBamTenantEditObj
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
 	protected ICFSecClusterObj requiredContainerCluster;
-	protected List<ICFSecTSecGroupObj> optionalComponentsTSecGroup;
+	protected List<ICFSecSecTentGrpObj> optionalComponentsSecGroup;
 	protected List<ICFIntTldObj> optionalComponentsTld;
 	protected List<ICFBamSchemaDefObj> optionalComponentsSchema;
 
@@ -214,7 +214,7 @@ public class CFBamTenantEditObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
-			subObj = ((ICFBamSchemaObj)getSchema()).getTSecGroupTableObj().readTSecGroupByUNameIdx( getRequiredId(),
+			subObj = ((ICFBamSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByUNameIdx( getRequiredId(),
 				nextName, false );
 		}
 		if( subObj == null ) {
@@ -429,7 +429,7 @@ public class CFBamTenantEditObj
 		if (getPKey() != id) {
 			setPKey(id);
 			requiredContainerCluster = null;
-			optionalComponentsTSecGroup = null;
+			optionalComponentsSecGroup = null;
 			optionalComponentsTld = null;
 			optionalComponentsSchema = null;
 		}
@@ -485,17 +485,17 @@ public class CFBamTenantEditObj
 	}
 
 	@Override
-	public List<ICFSecTSecGroupObj> getOptionalComponentsTSecGroup() {
-		List<ICFSecTSecGroupObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getTSecGroupTableObj().readTSecGroupByTenantIdx( getPKey(),
+	public List<ICFSecSecTentGrpObj> getOptionalComponentsSecGroup() {
+		List<ICFSecSecTentGrpObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByTenantIdx( getPKey(),
 			false );
 		return( retval );
 	}
 
 	@Override
-	public List<ICFSecTSecGroupObj> getOptionalComponentsTSecGroup( boolean forceRead ) {
-		List<ICFSecTSecGroupObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getTSecGroupTableObj().readTSecGroupByTenantIdx( getPKey(),
+	public List<ICFSecSecTentGrpObj> getOptionalComponentsSecGroup( boolean forceRead ) {
+		List<ICFSecSecTentGrpObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByTenantIdx( getPKey(),
 			forceRead );
 		return( retval );
 	}

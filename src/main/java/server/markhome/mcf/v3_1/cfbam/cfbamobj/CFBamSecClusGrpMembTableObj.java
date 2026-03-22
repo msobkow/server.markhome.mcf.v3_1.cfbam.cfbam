@@ -1,0 +1,1204 @@
+// Description: Java 25 Table Object implementation for SecClusGrpMemb.
+
+/*
+ *	server.markhome.mcf.CFBam
+ *
+ *	Copyright (c) 2016-2026 Mark Stephen Sobkow
+ *	
+ *	Mark's Code Fractal CFBam 3.1 Business Application Model
+ *	
+ *	Copyright 2016-2026 Mark Stephen Sobkow
+ *	
+ *	This file is part of Mark's Code Fractal CFBam.
+ *	
+ *	Mark's Code Fractal CFBam is available under dual commercial license from
+ *	Mark Stephen Sobkow, or under the terms of the GNU General Public License,
+ *	Version 3 or later with classpath and static linking exceptions.
+ *	
+ *	As a special exception, Mark Sobkow gives you permission to link this library
+ *	with independent modules to produce an executable, provided that none of them
+ *	conflict with the intent of the GPLv3; that is, you are not allowed to invoke
+ *	the methods of this library from non-GPLv3-compatibly licensed code. You may not
+ *	implement an LPGLv3 "wedge" to try to bypass this restriction. That said, code which
+ *	does not rely on this library is free to specify whatever license its authors decide
+ *	to use. Mark Sobkow specifically rejects the infectious nature of the GPLv3, and
+ *	considers the mere act of including GPLv3 modules in an executable to be perfectly
+ *	reasonable given tools like modern Java's single-jar deployment options.
+ *	
+ *	Mark's Code Fractal CFBam is free software: you can redistribute it and/or
+ *	modify it under the terms of the GNU General Public License as published by
+ *	the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
+ *	
+ *	Mark's Code Fractal CFBam is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU General Public License for more details.
+ *	
+ *	You should have received a copy of the GNU General Public License
+ *	along with Mark's Code Fractal CFBam.  If not, see <https://www.gnu.org/licenses/>.
+ *	
+ *	If you wish to modify and use this code without publishing your changes,
+ *	or integrate it with proprietary code, please contact Mark Stephen Sobkow
+ *	for a commercial license at mark.sobkow@gmail.com
+ */
+
+package server.markhome.mcf.v3_1.cfbam.cfbamobj;
+
+import java.math.*;
+import java.sql.*;
+import java.text.*;
+import java.time.*;
+import java.util.*;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.text.StringEscapeUtils;
+import server.markhome.mcf.v3_1.cflib.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+
+public class CFBamSecClusGrpMembTableObj
+	implements ICFBamSecClusGrpMembTableObj
+{
+	protected ICFBamSchemaObj schema;
+	private Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj> members;
+	private Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj> allSecClusGrpMemb;
+	private Map< ICFSecSecClusGrpMembByClusGrpIdxKey,
+		Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj > > indexByClusGrpIdx;
+	private Map< ICFSecSecClusGrpMembByUserIdxKey,
+		Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj > > indexByUserIdx;
+	public static String TABLE_NAME = "SecClusGrpMemb";
+	public static String TABLE_DBNAME = "secclusgrpmemb";
+
+	public CFBamSecClusGrpMembTableObj() {
+		schema = null;
+		members = new HashMap<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj>();
+		allSecClusGrpMemb = null;
+		indexByClusGrpIdx = null;
+		indexByUserIdx = null;
+	}
+
+	public CFBamSecClusGrpMembTableObj( ICFSecSchemaObj argSchema ) {
+		schema = (ICFBamSchemaObj)argSchema;
+		members = new HashMap<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj>();
+		allSecClusGrpMemb = null;
+		indexByClusGrpIdx = null;
+		indexByUserIdx = null;
+	}
+	
+	/**
+	 *	Get class code always returns the runtime class code for the objects, which is not stable until the application is done initializing and registering its objects.
+	 *
+	 *	@return runtime classcode
+	 */ 
+	@Override
+	public int getClassCode() {
+		return CFSecSecClusGrpMembTableObj.getRuntimeClassCode();
+	}	
+
+	/**
+	 *	Get the backing store schema's class code, which is hard-coded into the object hierarchy.
+	 *
+	 *	@return The hardcoded backing store class code for this object, which is only valid in that schema.
+	 */
+	public static int getBackingClassCode() {
+		return( CFSecSecClusGrpMembTableObj.getBackingClassCode() );
+	}
+
+	/**
+	 *	Get the runtime class code for this table; this value is only stable after the application is fully initialized.
+	 *
+	 *	@return runtimeClassCode
+	 */
+	public static int getRuntimeClassCode() {
+		return( CFSecSecClusGrpMembTableObj.getRuntimeClassCode() );
+	}
+
+	@Override
+	public ICFSecSchemaObj getSchema() {
+		return( schema );
+	}
+
+	@Override
+	public void setSchema( ICFSecSchemaObj value ) {
+		schema = (ICFBamSchemaObj)value;
+	}
+
+	@Override
+	public String getTableName() {
+		return( TABLE_NAME );
+	}
+
+	@Override
+	public String getTableDbName() {
+		return( TABLE_DBNAME );
+	}
+
+	@Override
+	public Class getObjQualifyingClass() {
+		return( null );
+	}
+
+
+	@Override
+	public void minimizeMemory() {
+		allSecClusGrpMemb = null;
+		indexByClusGrpIdx = null;
+		indexByUserIdx = null;
+		List<ICFSecSecClusGrpMembObj> toForget = new LinkedList<ICFSecSecClusGrpMembObj>();
+		ICFSecSecClusGrpMembObj cur = null;
+		Iterator<ICFSecSecClusGrpMembObj> iter = members.values().iterator();
+		while( iter.hasNext() ) {
+			cur = iter.next();
+			toForget.add( cur );
+		}
+		iter = toForget.iterator();
+		while( iter.hasNext() ) {
+			cur = iter.next();
+			cur.forget();
+		}
+	}
+	/**
+	 *	If your implementation subclasses the objects,
+	 *	you'll want to overload the constructByClassCode()
+	 *	implementation to return your implementation's
+	 *	instances instead of the base implementation.
+	 *
+	 *	This is the sole factory for instances derived from
+	 *	CFBamSecClusGrpMembObj.
+	 */
+	@Override
+	public ICFSecSecClusGrpMembObj newInstance() {
+		ICFSecSecClusGrpMembObj inst = new CFBamSecClusGrpMembObj( schema );
+		return( inst );
+	}
+
+	/**
+	 *	If your implementation subclasses the objects,
+	 *	you'll want to overload the constructByClassCode()
+	 *	implementation to return your implementation's
+	 *	instances instead of the base implementation.
+	 *
+	 *	This is the sole factory for instances derived from
+	 *	CFBamSecClusGrpMembObj.
+	 */
+	@Override
+	public ICFSecSecClusGrpMembEditObj newEditInstance( ICFSecSecClusGrpMembObj orig ) {
+		ICFSecSecClusGrpMembEditObj edit = new CFBamSecClusGrpMembEditObj( orig );
+		return( edit );
+	}
+
+	@Override
+	public ICFSecSecClusGrpMembObj realiseSecClusGrpMemb( ICFSecSecClusGrpMembObj Obj ) {
+		ICFSecSecClusGrpMembObj obj = Obj;
+		ICFSecSecClusGrpMembPKey pkey = obj.getPKey();
+		ICFSecSecClusGrpMembObj keepObj = null;
+		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
+			ICFSecSecClusGrpMembObj existingObj = members.get( pkey );
+			keepObj = existingObj;
+
+			/*
+			 *	We always rebind the data because if we're being called, some index has
+			 *	been updated and is refreshing it's data, which may or may not have changed
+			 */
+
+			// Detach object from alternate and duplicate indexes, leave PKey alone
+
+			if( indexByClusGrpIdx != null ) {
+				ICFSecSecClusGrpMembByClusGrpIdxKey keyClusGrpIdx =
+					schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByClusGrpIdxKey();
+				keyClusGrpIdx.setRequiredSecClusGrpId( keepObj.getRequiredSecClusGrpId() );
+				Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj > mapClusGrpIdx = indexByClusGrpIdx.get( keyClusGrpIdx );
+				if( mapClusGrpIdx != null ) {
+					mapClusGrpIdx.remove( keepObj.getPKey() );
+					if( mapClusGrpIdx.size() <= 0 ) {
+						indexByClusGrpIdx.remove( keyClusGrpIdx );
+					}
+				}
+			}
+
+			if( indexByUserIdx != null ) {
+				ICFSecSecClusGrpMembByUserIdxKey keyUserIdx =
+					schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByUserIdxKey();
+				keyUserIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
+				Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj > mapUserIdx = indexByUserIdx.get( keyUserIdx );
+				if( mapUserIdx != null ) {
+					mapUserIdx.remove( keepObj.getPKey() );
+					if( mapUserIdx.size() <= 0 ) {
+						indexByUserIdx.remove( keyUserIdx );
+					}
+				}
+			}
+
+			keepObj.setRec( Obj.getRec() );
+			// Attach new object to alternate and duplicate indexes -- PKey stay stable
+
+			if( indexByClusGrpIdx != null ) {
+				ICFSecSecClusGrpMembByClusGrpIdxKey keyClusGrpIdx =
+					schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByClusGrpIdxKey();
+				keyClusGrpIdx.setRequiredSecClusGrpId( keepObj.getRequiredSecClusGrpId() );
+				Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj > mapClusGrpIdx = indexByClusGrpIdx.get( keyClusGrpIdx );
+				if( mapClusGrpIdx != null ) {
+					mapClusGrpIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByUserIdx != null ) {
+				ICFSecSecClusGrpMembByUserIdxKey keyUserIdx =
+					schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByUserIdxKey();
+				keyUserIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
+				Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj > mapUserIdx = indexByUserIdx.get( keyUserIdx );
+				if( mapUserIdx != null ) {
+					mapUserIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( allSecClusGrpMemb != null ) {
+				allSecClusGrpMemb.put( keepObj.getPKey(), keepObj );
+			}
+		}
+		else {
+			keepObj = obj;
+			keepObj.setIsNew( false );
+
+			// Attach new object to PKey, all, alternate, and duplicate indexes
+			members.put( keepObj.getPKey(), keepObj );
+			if( allSecClusGrpMemb != null ) {
+				allSecClusGrpMemb.put( keepObj.getPKey(), keepObj );
+			}
+
+			if( indexByClusGrpIdx != null ) {
+				ICFSecSecClusGrpMembByClusGrpIdxKey keyClusGrpIdx =
+					schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByClusGrpIdxKey();
+				keyClusGrpIdx.setRequiredSecClusGrpId( keepObj.getRequiredSecClusGrpId() );
+				Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj > mapClusGrpIdx = indexByClusGrpIdx.get( keyClusGrpIdx );
+				if( mapClusGrpIdx != null ) {
+					mapClusGrpIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByUserIdx != null ) {
+				ICFSecSecClusGrpMembByUserIdxKey keyUserIdx =
+					schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByUserIdxKey();
+				keyUserIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
+				Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj > mapUserIdx = indexByUserIdx.get( keyUserIdx );
+				if( mapUserIdx != null ) {
+					mapUserIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+		}
+		return( keepObj );
+	}
+
+	@Override
+	public ICFSecSecClusGrpMembObj createSecClusGrpMemb( ICFSecSecClusGrpMembObj Obj ) {
+		ICFSecSecClusGrpMembObj obj = Obj;
+		ICFSecSecClusGrpMemb rec = obj.getSecClusGrpMembRec();
+		schema.getCFSecBackingStore().getTableSecClusGrpMemb().createSecClusGrpMemb(
+			null,
+			rec );
+		obj.copyRecToPKey();
+		obj = obj.realise();
+		obj.endEdit();
+		return( obj );
+	}
+
+	@Override
+	public ICFSecSecClusGrpMembObj readSecClusGrpMemb( ICFSecSecClusGrpMembPKey pkey ) {
+		return( readSecClusGrpMemb( pkey, false ) );
+	}
+
+	@Override
+	public ICFSecSecClusGrpMembObj readSecClusGrpMemb( ICFSecSecClusGrpMembPKey pkey, boolean forceRead ) {
+		ICFSecSecClusGrpMembObj obj = null;
+		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
+			obj = members.get( pkey );
+		}
+		else {
+			ICFSecSecClusGrpMemb readRec = schema.getCFSecBackingStore().getTableSecClusGrpMemb().readDerivedByIdIdx( null,
+						pkey.getRequiredSecClusGrpId(),
+						pkey.getRequiredSecUserId() );
+			if( readRec != null ) {
+				obj = schema.getSecClusGrpMembTableObj().newInstance();
+				obj.setPKey( readRec.getPKey() );
+				obj.setRec( readRec );
+				obj = (ICFSecSecClusGrpMembObj)obj.realise();
+			}
+		}
+		return( obj );
+	}
+
+	@Override
+	public ICFSecSecClusGrpMembObj readSecClusGrpMemb( CFLibDbKeyHash256 SecClusGrpId,
+		CFLibDbKeyHash256 SecUserId ) {
+		return( readSecClusGrpMemb( SecClusGrpId,
+			SecUserId, false ) );
+	}
+
+	@Override
+	public ICFSecSecClusGrpMembObj readSecClusGrpMemb( CFLibDbKeyHash256 SecClusGrpId,
+		CFLibDbKeyHash256 SecUserId, boolean forceRead ) {
+		ICFSecSecClusGrpMembObj obj = null;
+		ICFSecSecClusGrpMemb readRec = schema.getCFSecBackingStore().getTableSecClusGrpMemb().readDerivedByIdIdx( null,
+			SecClusGrpId,
+			SecUserId );
+		if( readRec != null ) {
+				obj = schema.getSecClusGrpMembTableObj().newInstance();
+			obj.setPKey( readRec.getPKey() );
+			obj.setRec( readRec );
+			obj = (ICFSecSecClusGrpMembObj)obj.realise();
+		}
+		return( obj );
+	}
+
+	@Override
+	public ICFSecSecClusGrpMembObj readCachedSecClusGrpMemb( ICFSecSecClusGrpMembPKey pkey ) {
+		ICFSecSecClusGrpMembObj obj = null;
+		if( members.containsKey( pkey ) ) {
+			obj = members.get( pkey );
+		}
+		return( obj );
+	}
+
+	@Override
+	public void reallyDeepDisposeSecClusGrpMemb( ICFSecSecClusGrpMembObj obj )
+	{
+		final String S_ProcName = "CFBamSecClusGrpMembTableObj.reallyDeepDisposeSecClusGrpMemb() ";
+		String classCode;
+		if( obj == null ) {
+			return;
+		}
+		ICFSecSecClusGrpMembPKey pkey = obj.getPKey();
+		ICFSecSecClusGrpMembObj existing = readCachedSecClusGrpMemb( pkey );
+		if( existing == null ) {
+			return;
+		}
+		members.remove( pkey );
+		ICFSecSecClusGrpMembByClusGrpIdxKey keyClusGrpIdx = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByClusGrpIdxKey();
+		keyClusGrpIdx.setRequiredSecClusGrpId( existing.getRequiredSecClusGrpId() );
+
+		ICFSecSecClusGrpMembByUserIdxKey keyUserIdx = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByUserIdxKey();
+		keyUserIdx.setRequiredSecUserId( existing.getRequiredSecUserId() );
+
+
+
+		if( indexByClusGrpIdx != null ) {
+			if( indexByClusGrpIdx.containsKey( keyClusGrpIdx ) ) {
+				indexByClusGrpIdx.get( keyClusGrpIdx ).remove( pkey );
+				if( indexByClusGrpIdx.get( keyClusGrpIdx ).size() <= 0 ) {
+					indexByClusGrpIdx.remove( keyClusGrpIdx );
+				}
+			}
+		}
+
+		if( indexByUserIdx != null ) {
+			if( indexByUserIdx.containsKey( keyUserIdx ) ) {
+				indexByUserIdx.get( keyUserIdx ).remove( pkey );
+				if( indexByUserIdx.get( keyUserIdx ).size() <= 0 ) {
+					indexByUserIdx.remove( keyUserIdx );
+				}
+			}
+		}
+
+
+	}
+	@Override
+	public void deepDisposeSecClusGrpMemb( ICFSecSecClusGrpMembPKey pkey ) {
+		ICFSecSecClusGrpMembObj obj = readCachedSecClusGrpMemb( pkey );
+		if( obj != null ) {
+			obj.forget();
+		}
+	}
+
+	@Override
+	public ICFSecSecClusGrpMembObj lockSecClusGrpMemb( ICFSecSecClusGrpMembPKey pkey ) {
+		ICFSecSecClusGrpMembObj locked = null;
+		ICFSecSecClusGrpMemb lockRec = schema.getCFSecBackingStore().getTableSecClusGrpMemb().lockDerived( null, pkey );
+		if( lockRec != null ) {
+				locked = schema.getSecClusGrpMembTableObj().newInstance();
+			locked.setRec( lockRec );
+			locked.setPKey( lockRec.getPKey() );
+			locked = (ICFSecSecClusGrpMembObj)locked.realise();
+		}
+		else {
+			throw new CFLibCollisionDetectedException( getClass(), "lockSecClusGrpMemb", pkey );
+		}
+		return( locked );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMembObj> readAllSecClusGrpMemb() {
+		return( readAllSecClusGrpMemb( false ) );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMembObj> readAllSecClusGrpMemb( boolean forceRead ) {
+		final String S_ProcName = "readAllSecClusGrpMemb";
+		if( ( allSecClusGrpMemb == null ) || forceRead ) {
+			Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj> map = new HashMap<ICFSecSecClusGrpMembPKey,ICFSecSecClusGrpMembObj>();
+			allSecClusGrpMemb = map;
+			ICFSecSecClusGrpMemb[] recList = schema.getCFSecBackingStore().getTableSecClusGrpMemb().readAllDerived( null );
+			ICFSecSecClusGrpMemb rec;
+			ICFSecSecClusGrpMembObj obj;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = newInstance();
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFSecSecClusGrpMembObj realised = (ICFSecSecClusGrpMembObj)obj.realise();
+			}
+		}
+		int len = allSecClusGrpMemb.size();
+		ICFSecSecClusGrpMembObj arr[] = new ICFSecSecClusGrpMembObj[len];
+		Iterator<ICFSecSecClusGrpMembObj> valIter = allSecClusGrpMemb.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFSecSecClusGrpMembObj> arrayList = new ArrayList<ICFSecSecClusGrpMembObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFSecSecClusGrpMembObj> cmp = new Comparator<ICFSecSecClusGrpMembObj>() {
+			@Override
+			public int compare( ICFSecSecClusGrpMembObj lhs, ICFSecSecClusGrpMembObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					ICFSecSecClusGrpMembPKey lhsPKey = lhs.getPKey();
+					ICFSecSecClusGrpMembPKey rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFSecSecClusGrpMembObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMembObj> readCachedAllSecClusGrpMemb() {
+		final String S_ProcName = "readCachedAllSecClusGrpMemb";
+		ArrayList<ICFSecSecClusGrpMembObj> arrayList = new ArrayList<ICFSecSecClusGrpMembObj>();
+		if( allSecClusGrpMemb != null ) {
+			int len = allSecClusGrpMemb.size();
+			ICFSecSecClusGrpMembObj arr[] = new ICFSecSecClusGrpMembObj[len];
+			Iterator<ICFSecSecClusGrpMembObj> valIter = allSecClusGrpMemb.values().iterator();
+			int idx = 0;
+			while( ( idx < len ) && valIter.hasNext() ) {
+				arr[idx++] = valIter.next();
+			}
+			if( idx < len ) {
+				throw new CFLibArgumentUnderflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+			}
+			else if( valIter.hasNext() ) {
+				throw new CFLibArgumentOverflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+			}
+			for( idx = 0; idx < len; idx ++ ) {
+				arrayList.add( arr[idx] );
+			}
+		}
+		Comparator<ICFSecSecClusGrpMembObj> cmp = new Comparator<ICFSecSecClusGrpMembObj>() {
+			public int compare( ICFSecSecClusGrpMembObj lhs, ICFSecSecClusGrpMembObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					ICFSecSecClusGrpMembPKey lhsPKey = lhs.getPKey();
+					ICFSecSecClusGrpMembPKey rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	/**
+	 *	Return a sorted map of a page of the SecClusGrpMemb-derived instances in the database.
+	 *
+	 *	@return	List of ICFSecSecClusGrpMembObj instance, sorted by their primary keys, which
+	 *		may include an empty set.
+	 */
+	@Override
+	public List<ICFSecSecClusGrpMembObj> pageAllSecClusGrpMemb(CFLibDbKeyHash256 priorSecClusGrpId,
+		CFLibDbKeyHash256 priorSecUserId )
+	{
+		final String S_ProcName = "pageAllSecClusGrpMemb";
+		Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj> map = new HashMap<ICFSecSecClusGrpMembPKey,ICFSecSecClusGrpMembObj>();
+		ICFSecSecClusGrpMemb[] recList = schema.getCFSecBackingStore().getTableSecClusGrpMemb().pageAllRec( null,
+			priorSecClusGrpId,
+			priorSecUserId );
+		ICFSecSecClusGrpMemb rec;
+		ICFSecSecClusGrpMembObj obj;
+		ICFSecSecClusGrpMembObj realised;
+		ArrayList<ICFSecSecClusGrpMembObj> arrayList = new ArrayList<ICFSecSecClusGrpMembObj>( recList.length );
+		for( int idx = 0; idx < recList.length; idx ++ ) {
+			rec = recList[ idx ];
+				obj = newInstance();
+			obj.setPKey( rec.getPKey() );
+			obj.setRec( rec );
+			realised = (ICFSecSecClusGrpMembObj)obj.realise();
+			arrayList.add( realised );
+		}
+		return( arrayList );
+	}
+
+	@Override
+	public ICFSecSecClusGrpMembObj readSecClusGrpMembByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
+		CFLibDbKeyHash256 SecUserId )
+	{
+		return( readSecClusGrpMembByIdIdx( SecClusGrpId,
+			SecUserId,
+			false ) );
+	}
+
+	@Override
+	public ICFSecSecClusGrpMembObj readSecClusGrpMembByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
+		CFLibDbKeyHash256 SecUserId, boolean forceRead )
+	{
+		ICFSecSecClusGrpMembPKey pkey = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newPKey();
+		pkey.setRequiredSecClusGrpId( SecClusGrpId );
+		pkey.setRequiredSecUserId( SecUserId );
+		ICFSecSecClusGrpMembObj obj = readSecClusGrpMemb( pkey, forceRead );
+		return( obj );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByClusGrpIdx( CFLibDbKeyHash256 SecClusGrpId )
+	{
+		return( readSecClusGrpMembByClusGrpIdx( SecClusGrpId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByClusGrpIdx( CFLibDbKeyHash256 SecClusGrpId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readSecClusGrpMembByClusGrpIdx";
+		ICFSecSecClusGrpMembByClusGrpIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByClusGrpIdxKey();
+		key.setRequiredSecClusGrpId( SecClusGrpId );
+		Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj> dict;
+		if( indexByClusGrpIdx == null ) {
+			indexByClusGrpIdx = new HashMap< ICFSecSecClusGrpMembByClusGrpIdxKey,
+				Map< ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj > >();
+		}
+		if( ( ! forceRead ) && indexByClusGrpIdx.containsKey( key ) ) {
+			dict = indexByClusGrpIdx.get( key );
+		}
+		else {
+			dict = new HashMap<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj>();
+			ICFSecSecClusGrpMembObj obj;
+			ICFSecSecClusGrpMemb[] recList = schema.getCFSecBackingStore().getTableSecClusGrpMemb().readDerivedByClusGrpIdx( null,
+				SecClusGrpId );
+			ICFSecSecClusGrpMemb rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = schema.getSecClusGrpMembTableObj().newInstance();
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFSecSecClusGrpMembObj realised = (ICFSecSecClusGrpMembObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByClusGrpIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFSecSecClusGrpMembObj arr[] = new ICFSecSecClusGrpMembObj[len];
+		Iterator<ICFSecSecClusGrpMembObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFSecSecClusGrpMembObj> arrayList = new ArrayList<ICFSecSecClusGrpMembObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFSecSecClusGrpMembObj> cmp = new Comparator<ICFSecSecClusGrpMembObj>() {
+			@Override
+			public int compare( ICFSecSecClusGrpMembObj lhs, ICFSecSecClusGrpMembObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					ICFSecSecClusGrpMembPKey lhsPKey = lhs.getPKey();
+					ICFSecSecClusGrpMembPKey rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFSecSecClusGrpMembObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByUserIdx( CFLibDbKeyHash256 SecUserId )
+	{
+		return( readSecClusGrpMembByUserIdx( SecUserId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMembObj> readSecClusGrpMembByUserIdx( CFLibDbKeyHash256 SecUserId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readSecClusGrpMembByUserIdx";
+		ICFSecSecClusGrpMembByUserIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByUserIdxKey();
+		key.setRequiredSecUserId( SecUserId );
+		Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj> dict;
+		if( indexByUserIdx == null ) {
+			indexByUserIdx = new HashMap< ICFSecSecClusGrpMembByUserIdxKey,
+				Map< ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj > >();
+		}
+		if( ( ! forceRead ) && indexByUserIdx.containsKey( key ) ) {
+			dict = indexByUserIdx.get( key );
+		}
+		else {
+			dict = new HashMap<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj>();
+			ICFSecSecClusGrpMembObj obj;
+			ICFSecSecClusGrpMemb[] recList = schema.getCFSecBackingStore().getTableSecClusGrpMemb().readDerivedByUserIdx( null,
+				SecUserId );
+			ICFSecSecClusGrpMemb rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = schema.getSecClusGrpMembTableObj().newInstance();
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFSecSecClusGrpMembObj realised = (ICFSecSecClusGrpMembObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByUserIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFSecSecClusGrpMembObj arr[] = new ICFSecSecClusGrpMembObj[len];
+		Iterator<ICFSecSecClusGrpMembObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFSecSecClusGrpMembObj> arrayList = new ArrayList<ICFSecSecClusGrpMembObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFSecSecClusGrpMembObj> cmp = new Comparator<ICFSecSecClusGrpMembObj>() {
+			@Override
+			public int compare( ICFSecSecClusGrpMembObj lhs, ICFSecSecClusGrpMembObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					ICFSecSecClusGrpMembPKey lhsPKey = lhs.getPKey();
+					ICFSecSecClusGrpMembPKey rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFSecSecClusGrpMembObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public ICFSecSecClusGrpMembObj readCachedSecClusGrpMembByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
+		CFLibDbKeyHash256 SecUserId )
+	{
+		ICFSecSecClusGrpMembObj obj = null;
+		ICFSecSecClusGrpMembPKey pkey = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newPKey();
+		pkey.setRequiredSecClusGrpId( SecClusGrpId );
+		pkey.setRequiredSecUserId( SecUserId );
+		pkey.setRequiredSecClusGrpId( SecClusGrpId );
+		pkey.setRequiredSecUserId( SecUserId );
+		obj = readCachedSecClusGrpMemb( pkey );
+		return( obj );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMembObj> readCachedSecClusGrpMembByClusGrpIdx( CFLibDbKeyHash256 SecClusGrpId )
+	{
+		final String S_ProcName = "readCachedSecClusGrpMembByClusGrpIdx";
+		ICFSecSecClusGrpMembByClusGrpIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByClusGrpIdxKey();
+		key.setRequiredSecClusGrpId( SecClusGrpId );
+		ArrayList<ICFSecSecClusGrpMembObj> arrayList = new ArrayList<ICFSecSecClusGrpMembObj>();
+		if( indexByClusGrpIdx != null ) {
+			Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj> dict;
+			if( indexByClusGrpIdx.containsKey( key ) ) {
+				dict = indexByClusGrpIdx.get( key );
+				int len = dict.size();
+				ICFSecSecClusGrpMembObj arr[] = new ICFSecSecClusGrpMembObj[len];
+				Iterator<ICFSecSecClusGrpMembObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFSecSecClusGrpMembObj obj;
+			Iterator<ICFSecSecClusGrpMembObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFSecSecClusGrpMembObj> cmp = new Comparator<ICFSecSecClusGrpMembObj>() {
+			@Override
+			public int compare( ICFSecSecClusGrpMembObj lhs, ICFSecSecClusGrpMembObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					ICFSecSecClusGrpMembPKey lhsPKey = lhs.getPKey();
+					ICFSecSecClusGrpMembPKey rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMembObj> readCachedSecClusGrpMembByUserIdx( CFLibDbKeyHash256 SecUserId )
+	{
+		final String S_ProcName = "readCachedSecClusGrpMembByUserIdx";
+		ICFSecSecClusGrpMembByUserIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByUserIdxKey();
+		key.setRequiredSecUserId( SecUserId );
+		ArrayList<ICFSecSecClusGrpMembObj> arrayList = new ArrayList<ICFSecSecClusGrpMembObj>();
+		if( indexByUserIdx != null ) {
+			Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj> dict;
+			if( indexByUserIdx.containsKey( key ) ) {
+				dict = indexByUserIdx.get( key );
+				int len = dict.size();
+				ICFSecSecClusGrpMembObj arr[] = new ICFSecSecClusGrpMembObj[len];
+				Iterator<ICFSecSecClusGrpMembObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFSecSecClusGrpMembObj obj;
+			Iterator<ICFSecSecClusGrpMembObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFSecSecClusGrpMembObj> cmp = new Comparator<ICFSecSecClusGrpMembObj>() {
+			@Override
+			public int compare( ICFSecSecClusGrpMembObj lhs, ICFSecSecClusGrpMembObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					ICFSecSecClusGrpMembPKey lhsPKey = lhs.getPKey();
+					ICFSecSecClusGrpMembPKey rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public void deepDisposeSecClusGrpMembByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
+		CFLibDbKeyHash256 SecUserId )
+	{
+		ICFSecSecClusGrpMembObj obj = readCachedSecClusGrpMembByIdIdx( SecClusGrpId,
+				SecUserId );
+		if( obj != null ) {
+			obj.forget();
+		}
+	}
+
+	@Override
+	public void deepDisposeSecClusGrpMembByClusGrpIdx( CFLibDbKeyHash256 SecClusGrpId )
+	{
+		final String S_ProcName = "deepDisposeSecClusGrpMembByClusGrpIdx";
+		ICFSecSecClusGrpMembObj obj;
+		List<ICFSecSecClusGrpMembObj> arrayList = readCachedSecClusGrpMembByClusGrpIdx( SecClusGrpId );
+		if( arrayList != null )  {
+			Iterator<ICFSecSecClusGrpMembObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeSecClusGrpMembByUserIdx( CFLibDbKeyHash256 SecUserId )
+	{
+		final String S_ProcName = "deepDisposeSecClusGrpMembByUserIdx";
+		ICFSecSecClusGrpMembObj obj;
+		List<ICFSecSecClusGrpMembObj> arrayList = readCachedSecClusGrpMembByUserIdx( SecUserId );
+		if( arrayList != null )  {
+			Iterator<ICFSecSecClusGrpMembObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	/**
+	 *	Read a page of data as a List of SecClusGrpMemb-derived instances sorted by their primary keys,
+	 *	as identified by the duplicate ClusGrpIdx key attributes.
+	 *
+	 *	@param	SecClusGrpId	The SecClusGrpMemb key attribute of the instance generating the id.
+	 *
+	 *	@return	A List of SecClusGrpMemb-derived instances sorted by their primary keys,
+	 *		as identified by the key attributes, which may be an empty set.
+	 */
+	@Override
+	public List<ICFSecSecClusGrpMembObj> pageSecClusGrpMembByClusGrpIdx( CFLibDbKeyHash256 SecClusGrpId,
+		CFLibDbKeyHash256 priorSecClusGrpId,
+		CFLibDbKeyHash256 priorSecUserId )
+	{
+		final String S_ProcName = "pageSecClusGrpMembByClusGrpIdx";
+		ICFSecSecClusGrpMembByClusGrpIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByClusGrpIdxKey();
+		key.setRequiredSecClusGrpId( SecClusGrpId );
+		List<ICFSecSecClusGrpMembObj> retList = new LinkedList<ICFSecSecClusGrpMembObj>();
+		ICFSecSecClusGrpMembObj obj;
+		ICFSecSecClusGrpMemb[] recList = schema.getCFSecBackingStore().getTableSecClusGrpMemb().pageRecByClusGrpIdx( null,
+				SecClusGrpId,
+			priorSecClusGrpId,
+			priorSecUserId );
+		ICFSecSecClusGrpMemb rec;
+		for( int idx = 0; idx < recList.length; idx ++ ) {
+			rec = recList[ idx ];
+				obj = schema.getSecClusGrpMembTableObj().newInstance();
+			obj.setPKey( rec.getPKey() );
+			obj.setRec( rec );
+			ICFSecSecClusGrpMembObj realised = (ICFSecSecClusGrpMembObj)obj.realise();
+			retList.add( realised );
+		}
+		return( retList );
+	}
+
+	/**
+	 *	Read a page of data as a List of SecClusGrpMemb-derived instances sorted by their primary keys,
+	 *	as identified by the duplicate UserIdx key attributes.
+	 *
+	 *	@param	SecUserId	The SecClusGrpMemb key attribute of the instance generating the id.
+	 *
+	 *	@return	A List of SecClusGrpMemb-derived instances sorted by their primary keys,
+	 *		as identified by the key attributes, which may be an empty set.
+	 */
+	@Override
+	public List<ICFSecSecClusGrpMembObj> pageSecClusGrpMembByUserIdx( CFLibDbKeyHash256 SecUserId,
+		CFLibDbKeyHash256 priorSecClusGrpId,
+		CFLibDbKeyHash256 priorSecUserId )
+	{
+		final String S_ProcName = "pageSecClusGrpMembByUserIdx";
+		ICFSecSecClusGrpMembByUserIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByUserIdxKey();
+		key.setRequiredSecUserId( SecUserId );
+		List<ICFSecSecClusGrpMembObj> retList = new LinkedList<ICFSecSecClusGrpMembObj>();
+		ICFSecSecClusGrpMembObj obj;
+		ICFSecSecClusGrpMemb[] recList = schema.getCFSecBackingStore().getTableSecClusGrpMemb().pageRecByUserIdx( null,
+				SecUserId,
+			priorSecClusGrpId,
+			priorSecUserId );
+		ICFSecSecClusGrpMemb rec;
+		for( int idx = 0; idx < recList.length; idx ++ ) {
+			rec = recList[ idx ];
+				obj = schema.getSecClusGrpMembTableObj().newInstance();
+			obj.setPKey( rec.getPKey() );
+			obj.setRec( rec );
+			ICFSecSecClusGrpMembObj realised = (ICFSecSecClusGrpMembObj)obj.realise();
+			retList.add( realised );
+		}
+		return( retList );
+	}
+
+	@Override
+	public ICFSecSecClusGrpMembObj updateSecClusGrpMemb( ICFSecSecClusGrpMembObj Obj ) {
+		ICFSecSecClusGrpMembObj obj = Obj;
+		schema.getCFSecBackingStore().getTableSecClusGrpMemb().updateSecClusGrpMemb( null,
+			Obj.getSecClusGrpMembRec() );
+		obj = (ICFSecSecClusGrpMembObj)Obj.realise();
+		obj.endEdit();
+		return( obj );
+	}
+
+	@Override
+	public void deleteSecClusGrpMemb( ICFSecSecClusGrpMembObj Obj ) {
+		ICFSecSecClusGrpMembObj obj = Obj;
+		schema.getCFSecBackingStore().getTableSecClusGrpMemb().deleteSecClusGrpMemb( null,
+			obj.getSecClusGrpMembRec() );
+		Obj.forget();
+	}
+
+	@Override
+	public void deleteSecClusGrpMembByIdIdx( CFLibDbKeyHash256 SecClusGrpId,
+		CFLibDbKeyHash256 SecUserId )
+	{
+		ICFSecSecClusGrpMembObj obj = readSecClusGrpMemb(SecClusGrpId,
+				SecUserId);
+		if( obj != null ) {
+			ICFSecSecClusGrpMembEditObj editObj = (ICFSecSecClusGrpMembEditObj)obj.getEdit();
+			boolean editStarted;
+			if( editObj == null ) {
+				editObj = (ICFSecSecClusGrpMembEditObj)obj.beginEdit();
+				if( editObj != null ) {
+					editStarted = true;
+				}
+				else {
+					editStarted = false;
+				}
+			}
+			else {
+				editStarted = false;
+			}
+			if( editObj != null ) {
+				editObj.deleteInstance();
+				if( editStarted ) {
+					editObj.endEdit();
+				}
+			}
+			obj.forget();
+		}
+		deepDisposeSecClusGrpMembByIdIdx( SecClusGrpId,
+				SecUserId );
+	}
+
+	@Override
+	public void deleteSecClusGrpMembByClusGrpIdx( CFLibDbKeyHash256 SecClusGrpId )
+	{
+		ICFSecSecClusGrpMembByClusGrpIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByClusGrpIdxKey();
+		key.setRequiredSecClusGrpId( SecClusGrpId );
+		if( indexByClusGrpIdx == null ) {
+			indexByClusGrpIdx = new HashMap< ICFSecSecClusGrpMembByClusGrpIdxKey,
+				Map< ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj > >();
+		}
+		if( indexByClusGrpIdx.containsKey( key ) ) {
+			Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj> dict = indexByClusGrpIdx.get( key );
+			schema.getCFSecBackingStore().getTableSecClusGrpMemb().deleteSecClusGrpMembByClusGrpIdx( null,
+				SecClusGrpId );
+			Iterator<ICFSecSecClusGrpMembObj> iter = dict.values().iterator();
+			ICFSecSecClusGrpMembObj obj;
+			List<ICFSecSecClusGrpMembObj> toForget = new LinkedList<ICFSecSecClusGrpMembObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByClusGrpIdx.remove( key );
+		}
+		else {
+			schema.getCFSecBackingStore().getTableSecClusGrpMemb().deleteSecClusGrpMembByClusGrpIdx( null,
+				SecClusGrpId );
+		}
+		deepDisposeSecClusGrpMembByClusGrpIdx( SecClusGrpId );
+	}
+
+	@Override
+	public void deleteSecClusGrpMembByUserIdx( CFLibDbKeyHash256 SecUserId )
+	{
+		ICFSecSecClusGrpMembByUserIdxKey key = schema.getCFSecBackingStore().getFactorySecClusGrpMemb().newByUserIdxKey();
+		key.setRequiredSecUserId( SecUserId );
+		if( indexByUserIdx == null ) {
+			indexByUserIdx = new HashMap< ICFSecSecClusGrpMembByUserIdxKey,
+				Map< ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj > >();
+		}
+		if( indexByUserIdx.containsKey( key ) ) {
+			Map<ICFSecSecClusGrpMembPKey, ICFSecSecClusGrpMembObj> dict = indexByUserIdx.get( key );
+			schema.getCFSecBackingStore().getTableSecClusGrpMemb().deleteSecClusGrpMembByUserIdx( null,
+				SecUserId );
+			Iterator<ICFSecSecClusGrpMembObj> iter = dict.values().iterator();
+			ICFSecSecClusGrpMembObj obj;
+			List<ICFSecSecClusGrpMembObj> toForget = new LinkedList<ICFSecSecClusGrpMembObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByUserIdx.remove( key );
+		}
+		else {
+			schema.getCFSecBackingStore().getTableSecClusGrpMemb().deleteSecClusGrpMembByUserIdx( null,
+				SecUserId );
+		}
+		deepDisposeSecClusGrpMembByUserIdx( SecUserId );
+	}
+}

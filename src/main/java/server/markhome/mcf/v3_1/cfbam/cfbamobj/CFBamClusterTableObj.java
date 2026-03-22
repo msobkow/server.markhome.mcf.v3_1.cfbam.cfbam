@@ -337,36 +337,26 @@ public class CFBamClusterTableObj
 		keyUDescrIdx.setRequiredDescription( existing.getRequiredDescription() );
 
 
-		ICFSecSecGroupObj objDelSecGrpIncByGroup;
-		List<ICFSecSecGroupObj> arrDelSecGrpIncByGroup = schema.getSecGroupTableObj().readCachedSecGroupByClusterIdx( existing.getRequiredId() );
-		Iterator<ICFSecSecGroupObj> iterDelSecGrpIncByGroup = arrDelSecGrpIncByGroup.iterator();
-		while( iterDelSecGrpIncByGroup.hasNext() ) {
-			objDelSecGrpIncByGroup = iterDelSecGrpIncByGroup.next();
-			if( objDelSecGrpIncByGroup != null ) {
-						schema.getSecGrpIncTableObj().deepDisposeSecGrpIncByIncludeIdx( objDelSecGrpIncByGroup.getRequiredSecGroupId() );
-			}
-		}
-		ICFSecSecGroupObj objDelSecGrpMembs;
-		List<ICFSecSecGroupObj> arrDelSecGrpMembs = schema.getSecGroupTableObj().readCachedSecGroupByClusterIdx( existing.getRequiredId() );
-		Iterator<ICFSecSecGroupObj> iterDelSecGrpMembs = arrDelSecGrpMembs.iterator();
+		ICFSecSecClusGrpObj objDelSecGrpMembs;
+		List<ICFSecSecClusGrpObj> arrDelSecGrpMembs = schema.getSecClusGrpTableObj().readCachedSecClusGrpByClusterIdx( existing.getRequiredId() );
+		Iterator<ICFSecSecClusGrpObj> iterDelSecGrpMembs = arrDelSecGrpMembs.iterator();
 		while( iterDelSecGrpMembs.hasNext() ) {
 			objDelSecGrpMembs = iterDelSecGrpMembs.next();
 			if( objDelSecGrpMembs != null ) {
-						schema.getSecGrpMembTableObj().deepDisposeSecGrpMembByGroupIdx( objDelSecGrpMembs.getRequiredSecGroupId() );
+						schema.getSecClusGrpMembTableObj().deepDisposeSecClusGrpMembByClusGrpIdx( objDelSecGrpMembs.getRequiredSecClusGrpId() );
 			}
 		}
-		ICFSecSecGroupObj objDelSecGrpIncs;
-		List<ICFSecSecGroupObj> arrDelSecGrpIncs = schema.getSecGroupTableObj().readCachedSecGroupByClusterIdx( existing.getRequiredId() );
-		Iterator<ICFSecSecGroupObj> iterDelSecGrpIncs = arrDelSecGrpIncs.iterator();
+		ICFSecSecClusGrpObj objDelSecGrpIncs;
+		List<ICFSecSecClusGrpObj> arrDelSecGrpIncs = schema.getSecClusGrpTableObj().readCachedSecClusGrpByClusterIdx( existing.getRequiredId() );
+		Iterator<ICFSecSecClusGrpObj> iterDelSecGrpIncs = arrDelSecGrpIncs.iterator();
 		while( iterDelSecGrpIncs.hasNext() ) {
 			objDelSecGrpIncs = iterDelSecGrpIncs.next();
 			if( objDelSecGrpIncs != null ) {
-						schema.getSecGrpIncTableObj().deepDisposeSecGrpIncByGroupIdx( objDelSecGrpIncs.getRequiredSecGroupId() );
+						schema.getSecClusGrpIncTableObj().deepDisposeSecClusGrpIncByClusGrpIdx( objDelSecGrpIncs.getRequiredSecClusGrpId() );
 			}
 		}
-					schema.getSecGroupTableObj().deepDisposeSecGroupByClusterIdx( existing.getRequiredId() );
+					schema.getSecClusGrpTableObj().deepDisposeSecClusGrpByClusterIdx( existing.getRequiredId() );
 					schema.getTenantTableObj().deepDisposeTenantByClusterIdx( existing.getRequiredId() );
-					schema.getHostNodeTableObj().deepDisposeHostNodeByClusterIdx( existing.getRequiredId() );
 
 		if( indexByUDomNameIdx != null ) {
 			indexByUDomNameIdx.remove( keyUDomNameIdx );
@@ -843,18 +833,5 @@ public class CFBamClusterTableObj
 				Description );
 		}
 		deepDisposeClusterByUDescrIdx( Description );
-	}
-
-	public ICFSecClusterObj getSystemCluster() {
-		ICFSecClusterObj clusterObj;
-		clusterObj = readClusterByUDomNameIdx( "system" );
-		if( clusterObj == null ) {
-			clusterObj = newInstance();
-			ICFSecClusterEditObj clusterEdit = clusterObj.beginEdit();
-			clusterEdit.setRequiredFullDomName( "system" );
-			clusterObj = clusterEdit.create();
-			clusterEdit = null;
-		}
-		return( clusterObj );
 	}
 }
