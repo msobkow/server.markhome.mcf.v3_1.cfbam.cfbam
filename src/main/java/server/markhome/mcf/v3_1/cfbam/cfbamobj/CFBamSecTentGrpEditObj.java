@@ -54,6 +54,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
@@ -411,9 +412,9 @@ public class CFBamSecTentGrpEditObj
 	}
 
 	@Override
-	public void setRequiredSecTentGrpId(CFLibDbKeyHash256 secTentGrpId) {
-		if (getPKey() != secTentGrpId) {
-			setPKey(secTentGrpId);
+	public void setRequiredSecTentGrpId(CFLibDbKeyHash256 value) {
+		if (getPKey() != value) {
+			setPKey(value);
 		}
 	}
 

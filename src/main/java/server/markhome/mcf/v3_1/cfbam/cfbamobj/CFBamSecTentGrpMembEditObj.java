@@ -54,6 +54,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
@@ -417,10 +418,10 @@ public class CFBamSecTentGrpMembEditObj
 	}
 
 	@Override
-	public void setRequiredSecTentGrpId(CFLibDbKeyHash256 secTentGrpId) {
-		if ((getPKey().getRequiredSecTentGrpId() != secTentGrpId ) || ( getSecTentGrpMembRec().getRequiredSecTentGrpId() != secTentGrpId )) {
-			getPKey().setRequiredSecTentGrpId(secTentGrpId);
-			getSecTentGrpMembRec().setRequiredSecTentGrpId( secTentGrpId );
+	public void setRequiredSecTentGrpId(CFLibDbKeyHash256 value) {
+		if ((getPKey().getRequiredSecTentGrpId() != value ) || ( getSecTentGrpMembRec().getRequiredSecTentGrpId() != value )) {
+			getPKey().setRequiredSecTentGrpId(value);
+			getSecTentGrpMembRec().setRequiredSecTentGrpId( value );
 		}
 	}
 
@@ -430,10 +431,10 @@ public class CFBamSecTentGrpMembEditObj
 	}
 
 	@Override
-	public void setRequiredSecUserId(CFLibDbKeyHash256 secUserId) {
-		if ((getPKey().getRequiredSecUserId() != secUserId ) || ( getSecTentGrpMembRec().getRequiredSecUserId() != secUserId )) {
-			getPKey().setRequiredSecUserId(secUserId);
-			getSecTentGrpMembRec().setRequiredSecUserId( secUserId );
+	public void setRequiredSecUserId(CFLibDbKeyHash256 value) {
+		if ((getPKey().getRequiredSecUserId() != value ) || ( getSecTentGrpMembRec().getRequiredSecUserId() != value )) {
+			getPKey().setRequiredSecUserId(value);
+			getSecTentGrpMembRec().setRequiredSecUserId( value );
 		}
 	}
 
