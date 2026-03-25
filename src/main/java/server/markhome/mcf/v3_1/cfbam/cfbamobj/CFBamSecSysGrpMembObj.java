@@ -107,13 +107,7 @@ public class CFBamSecSysGrpMembObj
 	@Override
 	public String getObjName() {
 		String objName;
-		CFLibDbKeyHash256 val = rec.getRequiredSecUserId();
-		if (val != null) {
-			objName = val.toString();
-		}
-		else {
-			objName = "";
-		}
+		objName = getRequiredLoginId();
 		return( objName );
 	}
 
@@ -242,14 +236,14 @@ public class CFBamSecSysGrpMembObj
 	@Override
 	public ICFSecSecSysGrpMembObj read() {
 		ICFSecSecSysGrpMembObj retobj = ((ICFBamSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByIdIdx( getPKey().getRequiredSecSysGrpId(),
-			getPKey().getRequiredSecUserId(), false );
+			getPKey().getRequiredLoginId(), false );
 		return( (ICFSecSecSysGrpMembObj)retobj );
 	}
 
 	@Override
 	public ICFSecSecSysGrpMembObj read( boolean forceRead ) {
 		ICFSecSecSysGrpMembObj retobj = ((ICFBamSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByIdIdx( getPKey().getRequiredSecSysGrpId(),
-			getPKey().getRequiredSecUserId(), forceRead );
+			getPKey().getRequiredLoginId(), forceRead );
 		return( (ICFSecSecSysGrpMembObj)retobj );
 	}
 
@@ -278,7 +272,7 @@ public class CFBamSecSysGrpMembObj
 				// Read the data rec via the backing store
 				rec = getSchema().getCFSecBackingStore().getTableSecSysGrpMemb().readDerivedByIdIdx( ((ICFBamSchemaObj)getSchema()).getAuthorization(),
 						getPKey().getRequiredSecSysGrpId(),
-						getPKey().getRequiredSecUserId() );
+						getPKey().getRequiredLoginId() );
 				if( rec != null ) {
 					copyRecToPKey();
 				}
@@ -398,8 +392,8 @@ public class CFBamSecSysGrpMembObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( getPKey().getRequiredSecUserId() );
+	public String getRequiredLoginId() {
+		return( getPKey().getRequiredLoginId() );
 	}
 
 	@Override
@@ -428,7 +422,7 @@ public class CFBamSecSysGrpMembObj
 		if( ( requiredParentUser == null ) || forceRead ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
-				requiredParentUser = ((ICFBamSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( getPKey().getRequiredSecUserId(), forceRead );
+				requiredParentUser = ((ICFBamSchemaObj)getSchema()).getSecUserTableObj().readSecUserByULoginIdx( getPKey().getRequiredLoginId(), forceRead );
 			}
 		}
 		return( requiredParentUser );

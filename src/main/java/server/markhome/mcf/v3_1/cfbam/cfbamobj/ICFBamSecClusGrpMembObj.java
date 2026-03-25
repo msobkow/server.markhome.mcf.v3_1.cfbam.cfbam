@@ -227,11 +227,11 @@ public interface ICFBamSecClusGrpMembObj
 	CFLibDbKeyHash256 getRequiredSecClusGrpId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecUserId.
+	 *	Get the required String attribute LoginId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecUserId.
+	 *	@return	The required String attribute LoginId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecUserId();
+	String getRequiredLoginId();
 
 	/**
 	 *	Internal use only.

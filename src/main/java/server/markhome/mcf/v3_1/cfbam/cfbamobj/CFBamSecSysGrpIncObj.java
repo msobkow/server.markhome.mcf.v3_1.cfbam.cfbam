@@ -107,7 +107,7 @@ public class CFBamSecSysGrpIncObj
 	@Override
 	public String getObjName() {
 		String objName;
-		objName = getRequiredIncName();
+		objName = getRequiredInclName();
 		return( objName );
 	}
 
@@ -236,14 +236,14 @@ public class CFBamSecSysGrpIncObj
 	@Override
 	public ICFSecSecSysGrpIncObj read() {
 		ICFSecSecSysGrpIncObj retobj = ((ICFBamSchemaObj)getSchema()).getSecSysGrpIncTableObj().readSecSysGrpIncByIdIdx( getPKey().getRequiredSecSysGrpId(),
-			getPKey().getRequiredIncName(), false );
+			getPKey().getRequiredInclName(), false );
 		return( (ICFSecSecSysGrpIncObj)retobj );
 	}
 
 	@Override
 	public ICFSecSecSysGrpIncObj read( boolean forceRead ) {
 		ICFSecSecSysGrpIncObj retobj = ((ICFBamSchemaObj)getSchema()).getSecSysGrpIncTableObj().readSecSysGrpIncByIdIdx( getPKey().getRequiredSecSysGrpId(),
-			getPKey().getRequiredIncName(), forceRead );
+			getPKey().getRequiredInclName(), forceRead );
 		return( (ICFSecSecSysGrpIncObj)retobj );
 	}
 
@@ -272,7 +272,7 @@ public class CFBamSecSysGrpIncObj
 				// Read the data rec via the backing store
 				rec = getSchema().getCFSecBackingStore().getTableSecSysGrpInc().readDerivedByIdIdx( ((ICFBamSchemaObj)getSchema()).getAuthorization(),
 						getPKey().getRequiredSecSysGrpId(),
-						getPKey().getRequiredIncName() );
+						getPKey().getRequiredInclName() );
 				if( rec != null ) {
 					copyRecToPKey();
 				}
@@ -392,8 +392,8 @@ public class CFBamSecSysGrpIncObj
 	}
 
 	@Override
-	public String getRequiredIncName() {
-		return( getPKey().getRequiredIncName() );
+	public String getRequiredInclName() {
+		return( getPKey().getRequiredInclName() );
 	}
 
 	@Override
@@ -422,7 +422,7 @@ public class CFBamSecSysGrpIncObj
 		if( ( requiredParentSubGroup == null ) || forceRead ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
-				requiredParentSubGroup = ((ICFBamSchemaObj)getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getPKey().getRequiredIncName(), forceRead );
+				requiredParentSubGroup = ((ICFBamSchemaObj)getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getPKey().getRequiredInclName(), forceRead );
 			}
 		}
 		return( requiredParentSubGroup );

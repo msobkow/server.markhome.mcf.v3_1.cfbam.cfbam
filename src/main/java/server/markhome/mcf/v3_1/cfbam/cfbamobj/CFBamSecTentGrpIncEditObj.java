@@ -148,7 +148,7 @@ public class CFBamSecTentGrpIncEditObj
 	@Override
 	public String getObjName() {
 		String objName;
-		objName = getRequiredIncName();
+		objName = getRequiredInclName();
 		return( objName );
 	}
 
@@ -420,15 +420,15 @@ public class CFBamSecTentGrpIncEditObj
 	}
 
 	@Override
-	public String getRequiredIncName() {
-		return( getPKey().getRequiredIncName() );
+	public String getRequiredInclName() {
+		return( getPKey().getRequiredInclName() );
 	}
 
 	@Override
-	public void setRequiredIncName(String value) {
-		getPKey().setRequiredIncName(value);
-		if( getSecTentGrpIncRec().getRequiredIncName() != value ) {
-			getSecTentGrpIncRec().setRequiredIncName( value );
+	public void setRequiredInclName(String value) {
+		if ((getPKey().getRequiredInclName() != value ) || ( getSecTentGrpIncRec().getRequiredInclName() != value )) {
+			getPKey().setRequiredInclName(value);
+			getSecTentGrpIncRec().setRequiredInclName( value );
 		}
 	}
 
@@ -436,7 +436,7 @@ public class CFBamSecTentGrpIncEditObj
 	public void copyPKeyToRec() {
 		if( rec != null ) {
 			rec.getPKey().setRequiredSecTentGrpId(getPKey().getRequiredSecTentGrpId());
-			rec.getPKey().setRequiredIncName(getPKey().getRequiredIncName());
+			rec.getPKey().setRequiredInclName(getPKey().getRequiredInclName());
 		}
 	}
 
@@ -444,7 +444,7 @@ public class CFBamSecTentGrpIncEditObj
 	public void copyRecToPKey() {
 		if( rec != null ) {
 			getPKey().setRequiredSecTentGrpId(rec.getPKey().getRequiredSecTentGrpId());
-			getPKey().setRequiredIncName(rec.getPKey().getRequiredIncName());
+			getPKey().setRequiredInclName(rec.getPKey().getRequiredInclName());
 		}
 	}
 

@@ -148,13 +148,7 @@ public class CFBamSecClusGrpMembEditObj
 	@Override
 	public String getObjName() {
 		String objName;
-		CFLibDbKeyHash256 val = rec.getRequiredSecUserId();
-		if (val != null) {
-			objName = val.toString();
-		}
-		else {
-			objName = "";
-		}
+		objName = getRequiredLoginId();
 		return( objName );
 	}
 
@@ -426,15 +420,15 @@ public class CFBamSecClusGrpMembEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
-		return( getPKey().getRequiredSecUserId() );
+	public String getRequiredLoginId() {
+		return( getPKey().getRequiredLoginId() );
 	}
 
 	@Override
-	public void setRequiredSecUserId(CFLibDbKeyHash256 value) {
-		if ((getPKey().getRequiredSecUserId() != value ) || ( getSecClusGrpMembRec().getRequiredSecUserId() != value )) {
-			getPKey().setRequiredSecUserId(value);
-			getSecClusGrpMembRec().setRequiredSecUserId( value );
+	public void setRequiredLoginId(String value) {
+		if ((getPKey().getRequiredLoginId() != value ) || ( getSecClusGrpMembRec().getRequiredLoginId() != value )) {
+			getPKey().setRequiredLoginId(value);
+			getSecClusGrpMembRec().setRequiredLoginId( value );
 		}
 	}
 
@@ -442,7 +436,7 @@ public class CFBamSecClusGrpMembEditObj
 	public void copyPKeyToRec() {
 		if( rec != null ) {
 			rec.getPKey().setRequiredSecClusGrpId(getPKey().getRequiredSecClusGrpId());
-			rec.getPKey().setRequiredSecUserId(getPKey().getRequiredSecUserId());
+			rec.getPKey().setRequiredLoginId(getPKey().getRequiredLoginId());
 		}
 	}
 
@@ -450,7 +444,7 @@ public class CFBamSecClusGrpMembEditObj
 	public void copyRecToPKey() {
 		if( rec != null ) {
 			getPKey().setRequiredSecClusGrpId(rec.getPKey().getRequiredSecClusGrpId());
-			getPKey().setRequiredSecUserId(rec.getPKey().getRequiredSecUserId());
+			getPKey().setRequiredLoginId(rec.getPKey().getRequiredLoginId());
 		}
 	}
 

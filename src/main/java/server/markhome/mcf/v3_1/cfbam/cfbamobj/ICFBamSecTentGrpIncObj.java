@@ -227,11 +227,11 @@ public interface ICFBamSecTentGrpIncObj
 	CFLibDbKeyHash256 getRequiredSecTentGrpId();
 
 	/**
-	 *	Get the required String attribute IncName.
+	 *	Get the required String attribute InclName.
 	 *
-	 *	@return	The required String attribute IncName.
+	 *	@return	The required String attribute InclName.
 	 */
-	String getRequiredIncName();
+	String getRequiredInclName();
 
 	/**
 	 *	Internal use only.
