@@ -107,6 +107,34 @@ public interface ICFBamSecClusGrpIncEditObj
 	 */
 	void setUpdatedAt( LocalDateTime value );
 
+	/**
+	 *	Get the ICFSecSecClusGrpObj instance referenced by the Group key.
+	 *
+	 *	@return	The ICFSecSecClusGrpObj instance referenced by the Group key.
+	 */
+	ICFSecSecClusGrpObj getRequiredContainerGroup();
+
+	/**
+	 *	Set the ICFSecSecClusGrpObj instance referenced by the Group key.
+	 *
+	 *	@param	value	the ICFSecSecClusGrpObj instance to be referenced by the Group key.
+	 */
+	void setRequiredContainerGroup( ICFSecSecClusGrpObj value );
+
+	/**
+	 *	Get the ICFSecSecSysGrpObj instance referenced by the SubGroup key.
+	 *
+	 *	@return	The ICFSecSecSysGrpObj instance referenced by the SubGroup key.
+	 */
+	ICFSecSecSysGrpObj getRequiredParentSubGroup();
+
+	/**
+	 *	Set the ICFSecSecSysGrpObj instance referenced by the SubGroup key.
+	 *
+	 *	@param	value	the ICFSecSecSysGrpObj instance to be referenced by the SubGroup key.
+	 */
+	void setRequiredParentSubGroup( ICFSecSecSysGrpObj value );
+
 	public void copyRecToOrig();
 	public void copyOrigToRec();
 

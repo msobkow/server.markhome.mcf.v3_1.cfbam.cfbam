@@ -69,6 +69,8 @@ public class CFBamSecUserEditObj
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
 	protected List<ICFSecSecSysGrpMembObj> optionalChildrenSysSecGrpMemb;
+	protected List<ICFSecSecClusGrpMembObj> optionalChildrenClusSecGrpMemb;
+	protected List<ICFSecSecTentGrpMembObj> optionalChildrenTentSecGrpMemb;
 
 	public CFBamSecUserEditObj( ICFSecSecUserObj argOrig ) {
 		orig = argOrig;
@@ -429,6 +431,8 @@ public class CFBamSecUserEditObj
 		if( getSecUserRec().getRequiredLoginId() != value ) {
 			getSecUserRec().setRequiredLoginId( value );
 			optionalChildrenSysSecGrpMemb = null;
+			optionalChildrenClusSecGrpMemb = null;
+			optionalChildrenTentSecGrpMemb = null;
 		}
 	}
 
@@ -528,6 +532,38 @@ public class CFBamSecUserEditObj
 	public List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb( boolean forceRead ) {
 		List<ICFSecSecSysGrpMembObj> retval;
 		retval = ((ICFBamSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByLoginIdx( getSecUserRec().getRequiredLoginId(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMembObj> getOptionalChildrenClusSecGrpMemb() {
+		List<ICFSecSecClusGrpMembObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecClusGrpMembTableObj().readSecClusGrpMembByLoginIdx( getSecUserRec().getRequiredLoginId(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMembObj> getOptionalChildrenClusSecGrpMemb( boolean forceRead ) {
+		List<ICFSecSecClusGrpMembObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecClusGrpMembTableObj().readSecClusGrpMembByLoginIdx( getSecUserRec().getRequiredLoginId(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentGrpMembObj> getOptionalChildrenTentSecGrpMemb() {
+		List<ICFSecSecTentGrpMembObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecTentGrpMembTableObj().readSecTentGrpMembByUserIdx( getSecUserRec().getRequiredLoginId(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentGrpMembObj> getOptionalChildrenTentSecGrpMemb( boolean forceRead ) {
+		List<ICFSecSecTentGrpMembObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecTentGrpMembTableObj().readSecTentGrpMembByUserIdx( getSecUserRec().getRequiredLoginId(),
 			forceRead );
 		return( retval );
 	}

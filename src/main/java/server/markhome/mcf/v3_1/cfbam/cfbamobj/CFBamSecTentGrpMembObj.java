@@ -71,15 +71,21 @@ public class CFBamSecTentGrpMembObj
 	protected ICFSecSchemaObj schema;
 	protected ICFSecSecTentGrpMembPKey pKey;
 	protected ICFSecSecTentGrpMemb rec;
+	protected ICFSecSecTentGrpObj requiredContainerGroup;
+	protected ICFSecSecUserObj requiredParentUser;
 
 	public CFBamSecTentGrpMembObj() {
 		isNew = true;
+		requiredContainerGroup = null;
+		requiredParentUser = null;
 	}
 
 	public CFBamSecTentGrpMembObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
+		requiredContainerGroup = null;
+		requiredParentUser = null;
 	}
 
 	@Override
@@ -94,7 +100,8 @@ public class CFBamSecTentGrpMembObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecSecTentGrpObj scope = getRequiredContainerGroup();
+		return( scope );
 	}
 
 	@Override
@@ -285,6 +292,8 @@ public class CFBamSecTentGrpMembObj
 		}
 		rec = value;
 		copyRecToPKey();
+		requiredContainerGroup = null;
+		requiredParentUser = null;
 	}
 
 	@Override
@@ -388,10 +397,42 @@ public class CFBamSecTentGrpMembObj
 	}
 
 	@Override
+	public ICFSecSecTentGrpObj getRequiredContainerGroup() {
+		return( getRequiredContainerGroup( false ) );
+	}
+
+	@Override
+	public ICFSecSecTentGrpObj getRequiredContainerGroup( boolean forceRead ) {
+		if( ( requiredContainerGroup == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				requiredContainerGroup = ((ICFBamSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByIdIdx( getPKey().getRequiredSecTentGrpId(), forceRead );
+			}
+		}
+		return( requiredContainerGroup );
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredParentUser() {
+		return( getRequiredParentUser( false ) );
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredParentUser( boolean forceRead ) {
+		if( ( requiredParentUser == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				requiredParentUser = ((ICFBamSchemaObj)getSchema()).getSecUserTableObj().readSecUserByULoginIdx( getPKey().getRequiredLoginId(), forceRead );
+			}
+		}
+		return( requiredParentUser );
+	}
+
+	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
-			rec.getPKey().setRequiredSecTentGrpId(getPKey().getRequiredSecTentGrpId());
-			rec.getPKey().setRequiredLoginId(getPKey().getRequiredLoginId());
+			rec.getPKey().setRequiredContainerGroup(getPKey().getRequiredContainerGroup());
+			rec.getPKey().setRequiredParentUser(getPKey().getRequiredParentUser());
 		}
 		if( edit != null ) {
 			edit.copyPKeyToRec();
@@ -401,8 +442,8 @@ public class CFBamSecTentGrpMembObj
 	@Override
 	public void copyRecToPKey() {
 		if( rec != null ) {
-			getPKey().setRequiredSecTentGrpId(rec.getPKey().getRequiredSecTentGrpId());
-			getPKey().setRequiredLoginId(rec.getPKey().getRequiredLoginId());
+			getPKey().setRequiredContainerGroup(rec.getPKey().getRequiredContainerGroup());
+			getPKey().setRequiredParentUser(rec.getPKey().getRequiredParentUser());
 		}
 	}
 }

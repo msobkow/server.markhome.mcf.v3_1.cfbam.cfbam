@@ -608,8 +608,8 @@ public class CFBamSecTentGrpIncTableObj
 		String InclName, boolean forceRead )
 	{
 		ICFSecSecTentGrpIncPKey pkey = schema.getCFSecBackingStore().getFactorySecTentGrpInc().newPKey();
-		pkey.setRequiredSecTentGrpId( SecTentGrpId );
-		pkey.setRequiredInclName( InclName );
+		pkey.setRequiredContainerGroup(SecTentGrpId);
+		pkey.setRequiredParentSubGroup(InclName);
 		ICFSecSecTentGrpIncObj obj = readSecTentGrpInc( pkey, forceRead );
 		return( obj );
 	}
@@ -806,10 +806,10 @@ public class CFBamSecTentGrpIncTableObj
 	{
 		ICFSecSecTentGrpIncObj obj = null;
 		ICFSecSecTentGrpIncPKey pkey = schema.getCFSecBackingStore().getFactorySecTentGrpInc().newPKey();
-		pkey.setRequiredSecTentGrpId( SecTentGrpId );
-		pkey.setRequiredInclName( InclName );
-		pkey.setRequiredSecTentGrpId( SecTentGrpId );
-		pkey.setRequiredInclName( InclName );
+		pkey.setRequiredContainerGroup(SecTentGrpId);
+		pkey.setRequiredParentSubGroup(InclName);
+		pkey.setRequiredContainerGroup(SecTentGrpId);
+		pkey.setRequiredParentSubGroup(InclName);
 		obj = readCachedSecTentGrpInc( pkey );
 		return( obj );
 	}

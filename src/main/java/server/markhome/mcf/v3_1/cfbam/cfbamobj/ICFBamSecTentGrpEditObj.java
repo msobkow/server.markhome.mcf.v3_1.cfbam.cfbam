@@ -107,6 +107,34 @@ public interface ICFBamSecTentGrpEditObj
 	 */
 	void setUpdatedAt( LocalDateTime value );
 
+	/**
+	 *	Get the ICFSecTenantObj instance referenced by the Tenant key.
+	 *
+	 *	@return	The ICFSecTenantObj instance referenced by the Tenant key.
+	 */
+	ICFSecTenantObj getRequiredOwnerTenant();
+
+	/**
+	 *	Set the ICFSecTenantObj instance referenced by the Tenant key.
+	 *
+	 *	@param	value	the ICFSecTenantObj instance to be referenced by the Tenant key.
+	 */
+	void setRequiredOwnerTenant( ICFSecTenantObj value );
+
+	/**
+	 *	Get a list ICFSecSecTentGrpIncObj instances referenced by the IncByGrp key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecTentGrpIncObj instances referenced by the IncByGrp key.
+	 */
+	List<ICFSecSecTentGrpIncObj> getOptionalChildrenIncByGrp();
+
+	/**
+	 *	Get a list ICFSecSecTentGrpMembObj instances referenced by the MembByGrp key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecTentGrpMembObj instances referenced by the MembByGrp key.
+	 */
+	List<ICFSecSecTentGrpMembObj> getOptionalChildrenMembByGrp();
+
 	public void copyRecToOrig();
 	public void copyOrigToRec();
 

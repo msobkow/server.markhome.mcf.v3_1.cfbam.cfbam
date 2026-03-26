@@ -107,6 +107,34 @@ public interface ICFBamSecTentGrpMembEditObj
 	 */
 	void setUpdatedAt( LocalDateTime value );
 
+	/**
+	 *	Get the ICFSecSecTentGrpObj instance referenced by the Group key.
+	 *
+	 *	@return	The ICFSecSecTentGrpObj instance referenced by the Group key.
+	 */
+	ICFSecSecTentGrpObj getRequiredContainerGroup();
+
+	/**
+	 *	Set the ICFSecSecTentGrpObj instance referenced by the Group key.
+	 *
+	 *	@param	value	the ICFSecSecTentGrpObj instance to be referenced by the Group key.
+	 */
+	void setRequiredContainerGroup( ICFSecSecTentGrpObj value );
+
+	/**
+	 *	Get the ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The ICFSecSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredParentUser();
+
+	/**
+	 *	Set the ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@param	value	the ICFSecSecUserObj instance to be referenced by the User key.
+	 */
+	void setRequiredParentUser( ICFSecSecUserObj value );
+
 	public void copyRecToOrig();
 	public void copyOrigToRec();
 

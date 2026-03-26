@@ -114,6 +114,20 @@ public interface ICFBamSecUserEditObj
 	 */
 	List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb();
 
+	/**
+	 *	Get a list ICFSecSecClusGrpMembObj instances referenced by the ClusSecGrpMemb key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecClusGrpMembObj instances referenced by the ClusSecGrpMemb key.
+	 */
+	List<ICFSecSecClusGrpMembObj> getOptionalChildrenClusSecGrpMemb();
+
+	/**
+	 *	Get a list ICFSecSecTentGrpMembObj instances referenced by the TentSecGrpMemb key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecTentGrpMembObj instances referenced by the TentSecGrpMemb key.
+	 */
+	List<ICFSecSecTentGrpMembObj> getOptionalChildrenTentSecGrpMemb();
+
 	public void copyRecToOrig();
 	public void copyOrigToRec();
 

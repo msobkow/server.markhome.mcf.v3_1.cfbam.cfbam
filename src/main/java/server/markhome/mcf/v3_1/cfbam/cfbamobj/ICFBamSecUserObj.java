@@ -234,6 +234,34 @@ public interface ICFBamSecUserObj
 	List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb( boolean forceRead );
 
 	/**
+	 *	Get the array of optional ICFSecSecClusGrpMembObj array of instances referenced by the ClusSecGrpMemb key.
+	 *
+	 *	@return	The optional ICFSecSecClusGrpMembObj[] array of instances referenced by the ClusSecGrpMemb key.
+	 */
+	List<ICFSecSecClusGrpMembObj> getOptionalChildrenClusSecGrpMemb();
+
+	/**
+	 *	Get the array of optional ICFSecSecClusGrpMembObj array of instances referenced by the ClusSecGrpMemb key.
+	 *
+	 *	@return	The optional ICFSecSecClusGrpMembObj[] array of instances referenced by the ClusSecGrpMemb key.
+	 */
+	List<ICFSecSecClusGrpMembObj> getOptionalChildrenClusSecGrpMemb( boolean forceRead );
+
+	/**
+	 *	Get the array of optional ICFSecSecTentGrpMembObj array of instances referenced by the TentSecGrpMemb key.
+	 *
+	 *	@return	The optional ICFSecSecTentGrpMembObj[] array of instances referenced by the TentSecGrpMemb key.
+	 */
+	List<ICFSecSecTentGrpMembObj> getOptionalChildrenTentSecGrpMemb();
+
+	/**
+	 *	Get the array of optional ICFSecSecTentGrpMembObj array of instances referenced by the TentSecGrpMemb key.
+	 *
+	 *	@return	The optional ICFSecSecTentGrpMembObj[] array of instances referenced by the TentSecGrpMemb key.
+	 */
+	List<ICFSecSecTentGrpMembObj> getOptionalChildrenTentSecGrpMemb( boolean forceRead );
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecUserId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecUserId.

@@ -391,6 +391,8 @@ public class CFBamSecUserTableObj
 
 
 		schema.getSecSysGrpMembTableObj().deepDisposeSecSysGrpMembByLoginIdx( existing.getRequiredLoginId() );
+		schema.getSecClusGrpMembTableObj().deepDisposeSecClusGrpMembByLoginIdx( existing.getRequiredLoginId() );
+		schema.getSecTentGrpMembTableObj().deepDisposeSecTentGrpMembByUserIdx( existing.getRequiredLoginId() );
 
 		if( indexByULoginIdx != null ) {
 			indexByULoginIdx.remove( keyULoginIdx );

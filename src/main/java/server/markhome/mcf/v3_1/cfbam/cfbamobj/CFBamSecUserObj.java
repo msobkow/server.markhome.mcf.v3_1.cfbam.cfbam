@@ -72,6 +72,8 @@ public class CFBamSecUserObj
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecUser rec;
 	protected List<ICFSecSecSysGrpMembObj> optionalChildrenSysSecGrpMemb;
+	protected List<ICFSecSecClusGrpMembObj> optionalChildrenClusSecGrpMemb;
+	protected List<ICFSecSecTentGrpMembObj> optionalChildrenTentSecGrpMemb;
 
 	public CFBamSecUserObj() {
 		isNew = true;
@@ -389,6 +391,38 @@ public class CFBamSecUserObj
 	public List<ICFSecSecSysGrpMembObj> getOptionalChildrenSysSecGrpMemb( boolean forceRead ) {
 		List<ICFSecSecSysGrpMembObj> retval;
 		retval = ((ICFBamSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembByLoginIdx( getSecUserRec().getRequiredLoginId(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMembObj> getOptionalChildrenClusSecGrpMemb() {
+		List<ICFSecSecClusGrpMembObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecClusGrpMembTableObj().readSecClusGrpMembByLoginIdx( getSecUserRec().getRequiredLoginId(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpMembObj> getOptionalChildrenClusSecGrpMemb( boolean forceRead ) {
+		List<ICFSecSecClusGrpMembObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecClusGrpMembTableObj().readSecClusGrpMembByLoginIdx( getSecUserRec().getRequiredLoginId(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentGrpMembObj> getOptionalChildrenTentSecGrpMemb() {
+		List<ICFSecSecTentGrpMembObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecTentGrpMembTableObj().readSecTentGrpMembByUserIdx( getSecUserRec().getRequiredLoginId(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentGrpMembObj> getOptionalChildrenTentSecGrpMemb( boolean forceRead ) {
+		List<ICFSecSecTentGrpMembObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecTentGrpMembTableObj().readSecTentGrpMembByUserIdx( getSecUserRec().getRequiredLoginId(),
 			forceRead );
 		return( retval );
 	}

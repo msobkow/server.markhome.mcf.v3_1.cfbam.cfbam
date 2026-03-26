@@ -220,6 +220,48 @@ public interface ICFBamSecTentGrpObj
 	void setIsNew( boolean value );
 
 	/**
+	 *	Get the required ICFBamTenantObj instance referenced by the Tenant key.
+	 *
+	 *	@return	The required ICFBamTenantObj instance referenced by the Tenant key.
+	 */
+	ICFSecTenantObj getRequiredOwnerTenant();
+
+	/**
+	 *	Get the required ICFSecTenantObj instance referenced by the Tenant key.
+	 *
+	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
+	 */
+	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
+
+	/**
+	 *	Get the array of optional ICFSecSecTentGrpIncObj array of instances referenced by the IncByGrp key.
+	 *
+	 *	@return	The optional ICFSecSecTentGrpIncObj[] array of instances referenced by the IncByGrp key.
+	 */
+	List<ICFSecSecTentGrpIncObj> getOptionalChildrenIncByGrp();
+
+	/**
+	 *	Get the array of optional ICFSecSecTentGrpIncObj array of instances referenced by the IncByGrp key.
+	 *
+	 *	@return	The optional ICFSecSecTentGrpIncObj[] array of instances referenced by the IncByGrp key.
+	 */
+	List<ICFSecSecTentGrpIncObj> getOptionalChildrenIncByGrp( boolean forceRead );
+
+	/**
+	 *	Get the array of optional ICFSecSecTentGrpMembObj array of instances referenced by the MembByGrp key.
+	 *
+	 *	@return	The optional ICFSecSecTentGrpMembObj[] array of instances referenced by the MembByGrp key.
+	 */
+	List<ICFSecSecTentGrpMembObj> getOptionalChildrenMembByGrp();
+
+	/**
+	 *	Get the array of optional ICFSecSecTentGrpMembObj array of instances referenced by the MembByGrp key.
+	 *
+	 *	@return	The optional ICFSecSecTentGrpMembObj[] array of instances referenced by the MembByGrp key.
+	 */
+	List<ICFSecSecTentGrpMembObj> getOptionalChildrenMembByGrp( boolean forceRead );
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecTentGrpId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecTentGrpId.

@@ -74,6 +74,8 @@ public class CFBamSecSysGrpObj
 	protected List<ICFSecSecSysGrpIncObj> optionalChildrenIncByGrp;
 	protected List<ICFSecSecSysGrpMembObj> optionalChildrenMembByGrp;
 	protected List<ICFSecSecSysGrpIncObj> optionalChildrenSysGrpByName;
+	protected List<ICFSecSecClusGrpIncObj> optionalChildrenClusGrpByName;
+	protected List<ICFSecSecTentGrpIncObj> optionalChildrenTentGrpByName;
 
 	public CFBamSecSysGrpObj() {
 		isNew = true;
@@ -423,6 +425,38 @@ public class CFBamSecSysGrpObj
 	public List<ICFSecSecSysGrpIncObj> getOptionalChildrenSysGrpByName( boolean forceRead ) {
 		List<ICFSecSecSysGrpIncObj> retval;
 		retval = ((ICFBamSchemaObj)getSchema()).getSecSysGrpIncTableObj().readSecSysGrpIncByNameIdx( getSecSysGrpRec().getRequiredName(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpIncObj> getOptionalChildrenClusGrpByName() {
+		List<ICFSecSecClusGrpIncObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecClusGrpIncTableObj().readSecClusGrpIncByNameIdx( getSecSysGrpRec().getRequiredName(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpIncObj> getOptionalChildrenClusGrpByName( boolean forceRead ) {
+		List<ICFSecSecClusGrpIncObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecClusGrpIncTableObj().readSecClusGrpIncByNameIdx( getSecSysGrpRec().getRequiredName(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentGrpIncObj> getOptionalChildrenTentGrpByName() {
+		List<ICFSecSecTentGrpIncObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecTentGrpIncTableObj().readSecTentGrpIncByNameIdx( getSecSysGrpRec().getRequiredName(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentGrpIncObj> getOptionalChildrenTentGrpByName( boolean forceRead ) {
+		List<ICFSecSecTentGrpIncObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecTentGrpIncTableObj().readSecTentGrpIncByNameIdx( getSecSysGrpRec().getRequiredName(),
 			forceRead );
 		return( retval );
 	}

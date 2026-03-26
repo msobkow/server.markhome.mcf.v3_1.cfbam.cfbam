@@ -128,6 +128,20 @@ public interface ICFBamSecSysGrpEditObj
 	 */
 	List<ICFSecSecSysGrpIncObj> getOptionalChildrenSysGrpByName();
 
+	/**
+	 *	Get a list ICFSecSecClusGrpIncObj instances referenced by the ClusGrpByName key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecClusGrpIncObj instances referenced by the ClusGrpByName key.
+	 */
+	List<ICFSecSecClusGrpIncObj> getOptionalChildrenClusGrpByName();
+
+	/**
+	 *	Get a list ICFSecSecTentGrpIncObj instances referenced by the TentGrpByName key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecTentGrpIncObj instances referenced by the TentGrpByName key.
+	 */
+	List<ICFSecSecTentGrpIncObj> getOptionalChildrenTentGrpByName();
+
 	public void copyRecToOrig();
 	public void copyOrigToRec();
 

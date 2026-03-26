@@ -262,6 +262,34 @@ public interface ICFBamSecSysGrpObj
 	List<ICFSecSecSysGrpIncObj> getOptionalChildrenSysGrpByName( boolean forceRead );
 
 	/**
+	 *	Get the array of optional ICFSecSecClusGrpIncObj array of instances referenced by the ClusGrpByName key.
+	 *
+	 *	@return	The optional ICFSecSecClusGrpIncObj[] array of instances referenced by the ClusGrpByName key.
+	 */
+	List<ICFSecSecClusGrpIncObj> getOptionalChildrenClusGrpByName();
+
+	/**
+	 *	Get the array of optional ICFSecSecClusGrpIncObj array of instances referenced by the ClusGrpByName key.
+	 *
+	 *	@return	The optional ICFSecSecClusGrpIncObj[] array of instances referenced by the ClusGrpByName key.
+	 */
+	List<ICFSecSecClusGrpIncObj> getOptionalChildrenClusGrpByName( boolean forceRead );
+
+	/**
+	 *	Get the array of optional ICFSecSecTentGrpIncObj array of instances referenced by the TentGrpByName key.
+	 *
+	 *	@return	The optional ICFSecSecTentGrpIncObj[] array of instances referenced by the TentGrpByName key.
+	 */
+	List<ICFSecSecTentGrpIncObj> getOptionalChildrenTentGrpByName();
+
+	/**
+	 *	Get the array of optional ICFSecSecTentGrpIncObj array of instances referenced by the TentGrpByName key.
+	 *
+	 *	@return	The optional ICFSecSecTentGrpIncObj[] array of instances referenced by the TentGrpByName key.
+	 */
+	List<ICFSecSecTentGrpIncObj> getOptionalChildrenTentGrpByName( boolean forceRead );
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecSysGrpId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecSysGrpId.
