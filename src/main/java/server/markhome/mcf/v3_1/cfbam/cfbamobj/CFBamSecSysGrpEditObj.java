@@ -70,6 +70,7 @@ public class CFBamSecSysGrpEditObj
 	protected ICFSecSecUserObj updatedBy = null;
 	protected List<ICFSecSecSysGrpIncObj> optionalChildrenIncByGrp;
 	protected List<ICFSecSecSysGrpMembObj> optionalChildrenMembByGrp;
+	protected List<ICFSecSecSysGrpIncObj> optionalChildrenSysGrpByName;
 
 	public CFBamSecSysGrpEditObj( ICFSecSecSysGrpObj argOrig ) {
 		orig = argOrig;
@@ -419,6 +420,7 @@ public class CFBamSecSysGrpEditObj
 			setPKey(value);
 			optionalChildrenIncByGrp = null;
 			optionalChildrenMembByGrp = null;
+			optionalChildrenSysGrpByName = null;
 		}
 	}
 
@@ -431,6 +433,9 @@ public class CFBamSecSysGrpEditObj
 	public void setRequiredName( String value ) {
 		if( getSecSysGrpRec().getRequiredName() != value ) {
 			getSecSysGrpRec().setRequiredName( value );
+			optionalChildrenIncByGrp = null;
+			optionalChildrenMembByGrp = null;
+			optionalChildrenSysGrpByName = null;
 		}
 	}
 
@@ -474,6 +479,22 @@ public class CFBamSecSysGrpEditObj
 	public List<ICFSecSecSysGrpMembObj> getOptionalChildrenMembByGrp( boolean forceRead ) {
 		List<ICFSecSecSysGrpMembObj> retval;
 		retval = ((ICFBamSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembBySysGrpIdx( getPKey(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecSysGrpIncObj> getOptionalChildrenSysGrpByName() {
+		List<ICFSecSecSysGrpIncObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecSysGrpIncTableObj().readSecSysGrpIncByNameIdx( getSecSysGrpRec().getRequiredName(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecSysGrpIncObj> getOptionalChildrenSysGrpByName( boolean forceRead ) {
+		List<ICFSecSecSysGrpIncObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecSysGrpIncTableObj().readSecSysGrpIncByNameIdx( getSecSysGrpRec().getRequiredName(),
 			forceRead );
 		return( retval );
 	}

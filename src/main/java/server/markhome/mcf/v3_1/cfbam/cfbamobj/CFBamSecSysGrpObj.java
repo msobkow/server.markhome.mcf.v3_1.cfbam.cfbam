@@ -73,6 +73,7 @@ public class CFBamSecSysGrpObj
 	protected ICFSecSecSysGrp rec;
 	protected List<ICFSecSecSysGrpIncObj> optionalChildrenIncByGrp;
 	protected List<ICFSecSecSysGrpMembObj> optionalChildrenMembByGrp;
+	protected List<ICFSecSecSysGrpIncObj> optionalChildrenSysGrpByName;
 
 	public CFBamSecSysGrpObj() {
 		isNew = true;
@@ -406,6 +407,22 @@ public class CFBamSecSysGrpObj
 	public List<ICFSecSecSysGrpMembObj> getOptionalChildrenMembByGrp( boolean forceRead ) {
 		List<ICFSecSecSysGrpMembObj> retval;
 		retval = ((ICFBamSchemaObj)getSchema()).getSecSysGrpMembTableObj().readSecSysGrpMembBySysGrpIdx( getPKey(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecSysGrpIncObj> getOptionalChildrenSysGrpByName() {
+		List<ICFSecSecSysGrpIncObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecSysGrpIncTableObj().readSecSysGrpIncByNameIdx( getSecSysGrpRec().getRequiredName(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecSysGrpIncObj> getOptionalChildrenSysGrpByName( boolean forceRead ) {
+		List<ICFSecSecSysGrpIncObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecSysGrpIncTableObj().readSecSysGrpIncByNameIdx( getSecSysGrpRec().getRequiredName(),
 			forceRead );
 		return( retval );
 	}
