@@ -67,7 +67,7 @@ public class CFBamSecUserPasswordTableObj
 	private Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj> members;
 	private Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj> allSecUserPassword;
 	private Map< ICFSecSecUserPasswordBySetStampIdxKey,
-		ICFSecSecUserPasswordObj > indexBySetStampIdx;
+		Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj > > indexBySetStampIdx;
 	public static String TABLE_NAME = "SecUserPassword";
 	public static String TABLE_DBNAME = "secuserpw";
 
@@ -206,7 +206,13 @@ public class CFBamSecUserPasswordTableObj
 				ICFSecSecUserPasswordBySetStampIdxKey keySetStampIdx =
 					schema.getCFSecBackingStore().getFactorySecUserPassword().newBySetStampIdxKey();
 				keySetStampIdx.setRequiredPWSetStamp( keepObj.getRequiredPWSetStamp() );
-				indexBySetStampIdx.remove( keySetStampIdx );
+				Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
+				if( mapSetStampIdx != null ) {
+					mapSetStampIdx.remove( keepObj.getPKey() );
+					if( mapSetStampIdx.size() <= 0 ) {
+						indexBySetStampIdx.remove( keySetStampIdx );
+					}
+				}
 			}
 
 			keepObj.setRec( Obj.getRec() );
@@ -216,7 +222,10 @@ public class CFBamSecUserPasswordTableObj
 				ICFSecSecUserPasswordBySetStampIdxKey keySetStampIdx =
 					schema.getCFSecBackingStore().getFactorySecUserPassword().newBySetStampIdxKey();
 				keySetStampIdx.setRequiredPWSetStamp( keepObj.getRequiredPWSetStamp() );
-				indexBySetStampIdx.put( keySetStampIdx, keepObj );
+				Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
+				if( mapSetStampIdx != null ) {
+					mapSetStampIdx.put( keepObj.getPKey(), keepObj );
+				}
 			}
 
 			if( allSecUserPassword != null ) {
@@ -237,7 +246,10 @@ public class CFBamSecUserPasswordTableObj
 				ICFSecSecUserPasswordBySetStampIdxKey keySetStampIdx =
 					schema.getCFSecBackingStore().getFactorySecUserPassword().newBySetStampIdxKey();
 				keySetStampIdx.setRequiredPWSetStamp( keepObj.getRequiredPWSetStamp() );
-				indexBySetStampIdx.put( keySetStampIdx, keepObj );
+				Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
+				if( mapSetStampIdx != null ) {
+					mapSetStampIdx.put( keepObj.getPKey(), keepObj );
+				}
 			}
 
 		}
@@ -310,7 +322,12 @@ public class CFBamSecUserPasswordTableObj
 
 
 		if( indexBySetStampIdx != null ) {
-			indexBySetStampIdx.remove( keySetStampIdx );
+			if( indexBySetStampIdx.containsKey( keySetStampIdx ) ) {
+				indexBySetStampIdx.get( keySetStampIdx ).remove( pkey );
+				if( indexBySetStampIdx.get( keySetStampIdx ).size() <= 0 ) {
+					indexBySetStampIdx.remove( keySetStampIdx );
+				}
+			}
 		}
 
 
@@ -488,36 +505,96 @@ public class CFBamSecUserPasswordTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp )
+	public List<ICFSecSecUserPasswordObj> readSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp )
 	{
 		return( readSecUserPasswordBySetStampIdx( PWSetStamp,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp, boolean forceRead )
+	public List<ICFSecSecUserPasswordObj> readSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp,
+		boolean forceRead )
 	{
-		if( indexBySetStampIdx == null ) {
-			indexBySetStampIdx = new HashMap< ICFSecSecUserPasswordBySetStampIdxKey,
-				ICFSecSecUserPasswordObj >();
-		}
+		final String S_ProcName = "readSecUserPasswordBySetStampIdx";
 		ICFSecSecUserPasswordBySetStampIdxKey key = schema.getCFSecBackingStore().getFactorySecUserPassword().newBySetStampIdxKey();
 		key.setRequiredPWSetStamp( PWSetStamp );
-		ICFSecSecUserPasswordObj obj = null;
+		Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj> dict;
+		if( indexBySetStampIdx == null ) {
+			indexBySetStampIdx = new HashMap< ICFSecSecUserPasswordBySetStampIdxKey,
+				Map< CFLibDbKeyHash256, ICFSecSecUserPasswordObj > >();
+		}
 		if( ( ! forceRead ) && indexBySetStampIdx.containsKey( key ) ) {
-			obj = indexBySetStampIdx.get( key );
+			dict = indexBySetStampIdx.get( key );
 		}
 		else {
-			ICFSecSecUserPassword rec = schema.getCFSecBackingStore().getTableSecUserPassword().readDerivedBySetStampIdx( null,
+			dict = new HashMap<CFLibDbKeyHash256, ICFSecSecUserPasswordObj>();
+			ICFSecSecUserPasswordObj obj;
+			ICFSecSecUserPassword[] recList = schema.getCFSecBackingStore().getTableSecUserPassword().readDerivedBySetStampIdx( null,
 				PWSetStamp );
-			if( rec != null ) {
+			ICFSecSecUserPassword rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
 				obj = schema.getSecUserPasswordTableObj().newInstance();
-				obj.setRec( rec );
 				obj.setPKey( rec.getPKey() );
-				obj = (ICFSecSecUserPasswordObj)obj.realise();
+				obj.setRec( rec );
+				ICFSecSecUserPasswordObj realised = (ICFSecSecUserPasswordObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
 			}
+			indexBySetStampIdx.put( key, dict );
 		}
-		return( obj );
+		int len = dict.size();
+		ICFSecSecUserPasswordObj arr[] = new ICFSecSecUserPasswordObj[len];
+		Iterator<ICFSecSecUserPasswordObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFSecSecUserPasswordObj> arrayList = new ArrayList<ICFSecSecUserPasswordObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFSecSecUserPasswordObj> cmp = new Comparator<ICFSecSecUserPasswordObj>() {
+			@Override
+			public int compare( ICFSecSecUserPasswordObj lhs, ICFSecSecUserPasswordObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
+					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFSecSecUserPasswordObj> sortedList = arrayList;
+		return( sortedList );
 	}
 
 	@Override
@@ -529,39 +606,80 @@ public class CFBamSecUserPasswordTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readCachedSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp )
+	public List<ICFSecSecUserPasswordObj> readCachedSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp )
 	{
-		ICFSecSecUserPasswordObj obj = null;
+		final String S_ProcName = "readCachedSecUserPasswordBySetStampIdx";
 		ICFSecSecUserPasswordBySetStampIdxKey key = schema.getCFSecBackingStore().getFactorySecUserPassword().newBySetStampIdxKey();
 		key.setRequiredPWSetStamp( PWSetStamp );
+		ArrayList<ICFSecSecUserPasswordObj> arrayList = new ArrayList<ICFSecSecUserPasswordObj>();
 		if( indexBySetStampIdx != null ) {
+			Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj> dict;
 			if( indexBySetStampIdx.containsKey( key ) ) {
-				obj = indexBySetStampIdx.get( key );
-			}
-			else {
-				Iterator<ICFSecSecUserPasswordObj> valIter = members.values().iterator();
-				while( ( obj == null ) && valIter.hasNext() ) {
-					obj = valIter.next();
-					if( obj != null ) {
-						if( obj.getRec().compareTo( key ) != 0 ) {
-							obj = null;
-						}
-					}
+				dict = indexBySetStampIdx.get( key );
+				int len = dict.size();
+				ICFSecSecUserPasswordObj arr[] = new ICFSecSecUserPasswordObj[len];
+				Iterator<ICFSecSecUserPasswordObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
 				}
 			}
 		}
 		else {
+			ICFSecSecUserPasswordObj obj;
 			Iterator<ICFSecSecUserPasswordObj> valIter = members.values().iterator();
 			while( valIter.hasNext() ) {
 				obj = valIter.next();
 				if( obj != null ) {
-					if( obj.getRec().compareTo( key ) != 0 ) {
-						obj = null;
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
 					}
 				}
 			}
 		}
-		return( obj );
+		Comparator<ICFSecSecUserPasswordObj> cmp = new Comparator<ICFSecSecUserPasswordObj>() {
+			@Override
+			public int compare( ICFSecSecUserPasswordObj lhs, ICFSecSecUserPasswordObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
+					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
 	}
 
 	@Override
@@ -576,9 +694,17 @@ public class CFBamSecUserPasswordTableObj
 	@Override
 	public void deepDisposeSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp )
 	{
-		ICFSecSecUserPasswordObj obj = readCachedSecUserPasswordBySetStampIdx( PWSetStamp );
-		if( obj != null ) {
-			obj.forget();
+		final String S_ProcName = "deepDisposeSecUserPasswordBySetStampIdx";
+		ICFSecSecUserPasswordObj obj;
+		List<ICFSecSecUserPasswordObj> arrayList = readCachedSecUserPasswordBySetStampIdx( PWSetStamp );
+		if( arrayList != null )  {
+			Iterator<ICFSecSecUserPasswordObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
 		}
 	}
 
@@ -633,18 +759,29 @@ public class CFBamSecUserPasswordTableObj
 	@Override
 	public void deleteSecUserPasswordBySetStampIdx( LocalDateTime PWSetStamp )
 	{
-		if( indexBySetStampIdx == null ) {
-			indexBySetStampIdx = new HashMap< ICFSecSecUserPasswordBySetStampIdxKey,
-				ICFSecSecUserPasswordObj >();
-		}
 		ICFSecSecUserPasswordBySetStampIdxKey key = schema.getCFSecBackingStore().getFactorySecUserPassword().newBySetStampIdxKey();
 		key.setRequiredPWSetStamp( PWSetStamp );
-		ICFSecSecUserPasswordObj obj = null;
+		if( indexBySetStampIdx == null ) {
+			indexBySetStampIdx = new HashMap< ICFSecSecUserPasswordBySetStampIdxKey,
+				Map< CFLibDbKeyHash256, ICFSecSecUserPasswordObj > >();
+		}
 		if( indexBySetStampIdx.containsKey( key ) ) {
-			obj = indexBySetStampIdx.get( key );
+			Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj> dict = indexBySetStampIdx.get( key );
 			schema.getCFSecBackingStore().getTableSecUserPassword().deleteSecUserPasswordBySetStampIdx( null,
 				PWSetStamp );
-			obj.forget();
+			Iterator<ICFSecSecUserPasswordObj> iter = dict.values().iterator();
+			ICFSecSecUserPasswordObj obj;
+			List<ICFSecSecUserPasswordObj> toForget = new LinkedList<ICFSecSecUserPasswordObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexBySetStampIdx.remove( key );
 		}
 		else {
 			schema.getCFSecBackingStore().getTableSecUserPassword().deleteSecUserPasswordBySetStampIdx( null,
