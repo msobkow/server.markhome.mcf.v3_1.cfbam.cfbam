@@ -211,6 +211,13 @@ public interface ICFBamTableEditObj
 	List<ICFBamServerMethodObj> getOptionalComponentsServerMethods();
 
 	/**
+	 *	Get a list ICFBamTweakObj instances referenced by the Tweaks key.
+	 *
+	 *	@return	The (potentially empty) list of ICFBamTweakObj instances referenced by the Tweaks key.
+	 */
+	List<ICFBamTweakObj> getOptionalComponentsTweaks();
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SchemaDefId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SchemaDefId.

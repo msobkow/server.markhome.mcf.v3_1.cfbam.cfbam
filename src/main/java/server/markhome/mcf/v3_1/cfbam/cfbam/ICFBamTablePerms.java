@@ -2499,6 +2499,34 @@ extends ICFSecTablePerms,
 	boolean allowDeleteSchemaRef( CFSecAuthorization Authorization );
 
 	/**
+	 *	Is the session allowed to create SchemaTweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateSchemaTweak( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read SchemaTweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadSchemaTweak( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update SchemaTweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateSchemaTweak( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete SchemaTweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteSchemaTweak( CFSecAuthorization Authorization );
+
+	/**
 	 *	Is the session allowed to create Scope instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -3031,6 +3059,34 @@ extends ICFSecTablePerms,
 	boolean allowDeleteTableCol( CFSecAuthorization Authorization );
 
 	/**
+	 *	Is the session allowed to create TableTweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateTableTweak( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read TableTweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadTableTweak( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update TableTweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateTableTweak( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete TableTweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteTableTweak( CFSecAuthorization Authorization );
+
+	/**
 	 *	Is the session allowed to create TextCol instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -3365,6 +3421,34 @@ extends ICFSecTablePerms,
 	 *	@param	Authorization	The session authorization information.
 	 */
 	boolean allowDeleteTokenType( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to create Tweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateTweak( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read Tweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadTweak( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update Tweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateTweak( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete Tweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteTweak( CFSecAuthorization Authorization );
 
 	/**
 	 *	Is the session allowed to create UInt16Col instances?

@@ -77,6 +77,7 @@ public interface ICFBamSchemaDef extends ICFBamScope
 	public List<ICFBamTable> getOptionalComponentsTables();
 	public List<ICFBamValue> getOptionalComponentsTypes();
 	public List<ICFBamSchemaRef> getOptionalComponentsSchemaRefs();
+	public List<ICFBamTweak> getOptionalComponentsTweaks();
 	public ICFSecTenant getRequiredOwnerCTenant();
 	public void setRequiredContainerMinorVersion(ICFIntMinorVersion argObj);
 	public void setRequiredContainerMinorVersion(CFLibDbKeyHash256 argMinorVersionId);

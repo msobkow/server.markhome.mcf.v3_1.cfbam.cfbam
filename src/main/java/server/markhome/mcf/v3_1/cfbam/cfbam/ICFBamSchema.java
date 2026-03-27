@@ -441,6 +441,12 @@ extends ICFSecSchema,
 				ICFBamSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFBamSchema.SCHEMA_NAME, "Table", ICFBamTable.CLASS_CODE);
 				ICFBamSchema.entries.add(entry);
+				entry = new ICFSecSchema.ClassMapEntry(ICFBamSchema.SCHEMA_NAME, "Tweak", ICFBamTweak.CLASS_CODE);
+				ICFBamSchema.entries.add(entry);
+				entry = new ICFSecSchema.ClassMapEntry(ICFBamSchema.SCHEMA_NAME, "TableTweak", ICFBamTableTweak.CLASS_CODE);
+				ICFBamSchema.entries.add(entry);
+				entry = new ICFSecSchema.ClassMapEntry(ICFBamSchema.SCHEMA_NAME, "SchemaTweak", ICFBamSchemaTweak.CLASS_CODE);
+				ICFBamSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFBamSchema.SCHEMA_NAME, "Value", ICFBamValue.CLASS_CODE);
 				ICFBamSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFBamSchema.SCHEMA_NAME, "Atom", ICFBamAtom.CLASS_CODE);
@@ -981,6 +987,15 @@ extends ICFSecSchema,
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public CFLibDbKeyHash256 nextRelationColIdGen();
+
+	/**
+	 *	Get the next TweakIdGen identifier.
+	 *
+	 *	@return	The next TweakIdGen identifier.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public CFLibDbKeyHash256 nextTweakIdGen();
 
 	/**
 	 *	Get the next ScopeIdGen identifier.
@@ -2765,6 +2780,24 @@ extends ICFSecSchema,
 	public ICFBamSchemaRefFactory getFactorySchemaRef();
 
 	/**
+	 *	Get the SchemaTweak Table interface for the schema.
+	 *
+	 *	@return	The SchemaTweak Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFBamSchemaTweakTable getTableSchemaTweak();
+
+	/**
+	 *	Get the SchemaTweak Factory interface for the schema.
+	 *
+	 *	@return	The SchemaTweak Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFBamSchemaTweakFactory getFactorySchemaTweak();
+
+	/**
 	 *	Get the Scope Table interface for the schema.
 	 *
 	 *	@return	The Scope Table interface for the schema.
@@ -3377,6 +3410,24 @@ extends ICFSecSchema,
 	public ICFBamTableColFactory getFactoryTableCol();
 
 	/**
+	 *	Get the TableTweak Table interface for the schema.
+	 *
+	 *	@return	The TableTweak Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFBamTableTweakTable getTableTableTweak();
+
+	/**
+	 *	Get the TableTweak Factory interface for the schema.
+	 *
+	 *	@return	The TableTweak Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFBamTableTweakFactory getFactoryTableTweak();
+
+	/**
 	 *	Get the Tenant Table interface for the schema.
 	 *
 	 *	@return	The Tenant Table interface for the schema.
@@ -3663,6 +3714,24 @@ extends ICFSecSchema,
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFIntTopProjectFactory getFactoryTopProject();
+
+	/**
+	 *	Get the Tweak Table interface for the schema.
+	 *
+	 *	@return	The Tweak Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFBamTweakTable getTableTweak();
+
+	/**
+	 *	Get the Tweak Factory interface for the schema.
+	 *
+	 *	@return	The Tweak Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFBamTweakFactory getFactoryTweak();
 
 	/**
 	 *	Get the UInt16Col Table interface for the schema.

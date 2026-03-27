@@ -106,6 +106,13 @@ public interface ICFBamSchemaDefEditObj
 	List<ICFBamSchemaRefObj> getOptionalComponentsSchemaRefs();
 
 	/**
+	 *	Get a list ICFBamTweakObj instances referenced by the Tweaks key.
+	 *
+	 *	@return	The (potentially empty) list of ICFBamTweakObj instances referenced by the Tweaks key.
+	 */
+	List<ICFBamTweakObj> getOptionalComponentsTweaks();
+
+	/**
 	 *	Get the ICFSecTenantObj instance referenced by the CTenant key.
 	 *
 	 *	@return	The ICFSecTenantObj instance referenced by the CTenant key.

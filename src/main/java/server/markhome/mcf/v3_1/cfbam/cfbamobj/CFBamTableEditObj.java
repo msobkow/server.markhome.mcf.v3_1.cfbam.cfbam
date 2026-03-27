@@ -80,6 +80,7 @@ public class CFBamTableEditObj
 	protected List<ICFBamDelTopDepObj> optionalComponentsDelDep;
 	protected List<ICFBamClearTopDepObj> optionalComponentsClearDep;
 	protected List<ICFBamServerMethodObj> optionalComponentsServerMethods;
+	protected List<ICFBamTweakObj> optionalComponentsTweaks;
 
 	public CFBamTableEditObj( ICFBamTableObj argOrig ) {
 		super( argOrig );
@@ -178,6 +179,10 @@ public class CFBamTableEditObj
 		}
 		if( subObj == null ) {
 			subObj = ((ICFBamSchemaObj)getSchema()).getServerMethodTableObj().readServerMethodByUNameIdx( getRequiredId(),
+				nextName, false );
+		}
+		if( subObj == null ) {
+			subObj = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByUNameIdx( getRequiredId(),
 				nextName, false );
 		}
 		if( remainingName == null ) {
@@ -853,6 +858,22 @@ public class CFBamTableEditObj
 	public List<ICFBamServerMethodObj> getOptionalComponentsServerMethods( boolean forceRead ) {
 		List<ICFBamServerMethodObj> retval;
 		retval = ((ICFBamSchemaObj)getSchema()).getServerMethodTableObj().readServerMethodByMethTableIdx( getPKey(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFBamTweakObj> getOptionalComponentsTweaks() {
+		List<ICFBamTweakObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByScopeIdx( getPKey(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFBamTweakObj> getOptionalComponentsTweaks( boolean forceRead ) {
+		List<ICFBamTweakObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByScopeIdx( getPKey(),
 			forceRead );
 		return( retval );
 	}

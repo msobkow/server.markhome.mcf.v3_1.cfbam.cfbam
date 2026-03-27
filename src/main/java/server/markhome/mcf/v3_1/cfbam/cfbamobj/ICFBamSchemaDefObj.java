@@ -144,6 +144,20 @@ public interface ICFBamSchemaDefObj
 	List<ICFBamSchemaRefObj> getOptionalComponentsSchemaRefs( boolean forceRead );
 
 	/**
+	 *	Get the array of optional ICFBamTweakObj array of instances referenced by the Tweaks key.
+	 *
+	 *	@return	The optional ICFBamTweakObj[] array of instances referenced by the Tweaks key.
+	 */
+	List<ICFBamTweakObj> getOptionalComponentsTweaks();
+
+	/**
+	 *	Get the array of optional ICFBamTweakObj array of instances referenced by the Tweaks key.
+	 *
+	 *	@return	The optional ICFBamTweakObj[] array of instances referenced by the Tweaks key.
+	 */
+	List<ICFBamTweakObj> getOptionalComponentsTweaks( boolean forceRead );
+
+	/**
 	 *	Get the required ICFBamTenantObj instance referenced by the CTenant key.
 	 *
 	 *	@return	The required ICFBamTenantObj instance referenced by the CTenant key.

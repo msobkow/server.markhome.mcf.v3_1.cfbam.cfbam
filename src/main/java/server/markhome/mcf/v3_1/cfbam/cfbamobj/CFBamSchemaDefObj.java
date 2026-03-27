@@ -69,6 +69,7 @@ public class CFBamSchemaDefObj
 	protected List<ICFBamTableObj> optionalComponentsTables;
 	protected List<ICFBamValueObj> optionalComponentsTypes;
 	protected List<ICFBamSchemaRefObj> optionalComponentsSchemaRefs;
+	protected List<ICFBamTweakObj> optionalComponentsTweaks;
 	protected ICFSecTenantObj requiredOwnerCTenant;
 
 	public CFBamSchemaDefObj() {
@@ -158,6 +159,10 @@ public class CFBamSchemaDefObj
 		}
 		if( subObj == null ) {
 			subObj = ((ICFBamSchemaObj)getSchema()).getValueTableObj().readValueByUNameIdx( getRequiredId(),
+				nextName, false );
+		}
+		if( subObj == null ) {
+			subObj = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByUNameIdx( getRequiredId(),
 				nextName, false );
 		}
 		if( remainingName == null ) {
@@ -378,6 +383,22 @@ public class CFBamSchemaDefObj
 	public List<ICFBamSchemaRefObj> getOptionalComponentsSchemaRefs( boolean forceRead ) {
 		List<ICFBamSchemaRefObj> retval;
 		retval = ((ICFBamSchemaObj)getSchema()).getSchemaRefTableObj().readSchemaRefBySchemaIdx( getPKey(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFBamTweakObj> getOptionalComponentsTweaks() {
+		List<ICFBamTweakObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByScopeIdx( getPKey(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFBamTweakObj> getOptionalComponentsTweaks( boolean forceRead ) {
+		List<ICFBamTweakObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByScopeIdx( getPKey(),
 			forceRead );
 		return( retval );
 	}

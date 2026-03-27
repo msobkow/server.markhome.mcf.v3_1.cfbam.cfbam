@@ -103,6 +103,7 @@ public interface ICFBamTable extends ICFBamScope
 	public List<ICFBamDelTopDep> getOptionalComponentsDelDep();
 	public List<ICFBamClearTopDep> getOptionalComponentsClearDep();
 	public List<ICFBamServerMethod> getOptionalComponentsServerMethods();
+	public List<ICFBamTweak> getOptionalComponentsTweaks();
 	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
 	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId);
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
