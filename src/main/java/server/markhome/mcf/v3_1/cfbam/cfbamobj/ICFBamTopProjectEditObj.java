@@ -115,6 +115,13 @@ public interface ICFBamTopProjectEditObj
 	ICFSecTenantObj getRequiredOwnerTenant();
 
 	/**
+	 *	Get the required ICFSecTenantObj instance referenced by the Tenant key.
+	 *
+	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
+	 */
+	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
+
+	/**
 	 *	Set the ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@param	value	the ICFSecTenantObj instance to be referenced by the Tenant key.
@@ -127,6 +134,13 @@ public interface ICFBamTopProjectEditObj
 	 *	@return	The ICFIntTopDomainObj instance referenced by the ParentSDom key.
 	 */
 	ICFIntTopDomainObj getRequiredContainerParentSDom();
+
+	/**
+	 *	Get the required ICFIntTopDomainObj instance referenced by the ParentSDom key.
+	 *
+	 *	@return	The required ICFIntTopDomainObj instance referenced by the ParentSDom key.
+	 */
+	ICFIntTopDomainObj getRequiredContainerParentSDom( boolean forceRead );
 
 	/**
 	 *	Set the ICFIntTopDomainObj instance referenced by the ParentSDom key.

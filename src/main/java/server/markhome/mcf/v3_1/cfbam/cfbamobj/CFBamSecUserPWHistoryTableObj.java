@@ -563,6 +563,36 @@ public class CFBamSecUserPWHistoryTableObj
 		return( arrayList );
 	}
 
+	/**
+	 *	Return a sorted map of a page of the SecUserPWHistory-derived instances in the database.
+	 *
+	 *	@return	List of ICFSecSecUserPWHistoryObj instance, sorted by their primary keys, which
+	 *		may include an empty set.
+	 */
+	@Override
+	public List<ICFSecSecUserPWHistoryObj> pageAllSecUserPWHistory(CFLibDbKeyHash256 priorSecUserId,
+		LocalDateTime priorPWSetStamp )
+	{
+		final String S_ProcName = "pageAllSecUserPWHistory";
+		Map<ICFSecSecUserPWHistoryPKey, ICFSecSecUserPWHistoryObj> map = new HashMap<ICFSecSecUserPWHistoryPKey,ICFSecSecUserPWHistoryObj>();
+		ICFSecSecUserPWHistory[] recList = schema.getCFSecBackingStore().getTableSecUserPWHistory().pageAllRec( null,
+			priorSecUserId,
+			priorPWSetStamp );
+		ICFSecSecUserPWHistory rec;
+		ICFSecSecUserPWHistoryObj obj;
+		ICFSecSecUserPWHistoryObj realised;
+		ArrayList<ICFSecSecUserPWHistoryObj> arrayList = new ArrayList<ICFSecSecUserPWHistoryObj>( recList.length );
+		for( int idx = 0; idx < recList.length; idx ++ ) {
+			rec = recList[ idx ];
+				obj = newInstance();
+			obj.setPKey( rec.getPKey() );
+			obj.setRec( rec );
+			realised = (ICFSecSecUserPWHistoryObj)obj.realise();
+			arrayList.add( realised );
+		}
+		return( arrayList );
+	}
+
 	@Override
 	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByIdIdx( CFLibDbKeyHash256 SecUserId,
 		LocalDateTime PWSetStamp )

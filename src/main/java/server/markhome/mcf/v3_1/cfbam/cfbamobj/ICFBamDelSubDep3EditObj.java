@@ -78,6 +78,13 @@ public interface ICFBamDelSubDep3EditObj
 	ICFBamDelSubDep2Obj getRequiredContainerDelSubDep2();
 
 	/**
+	 *	Get the required ICFBamDelSubDep2Obj instance referenced by the DelSubDep2 key.
+	 *
+	 *	@return	The required ICFBamDelSubDep2Obj instance referenced by the DelSubDep2 key.
+	 */
+	ICFBamDelSubDep2Obj getRequiredContainerDelSubDep2( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamDelSubDep2Obj instance referenced by the DelSubDep2 key.
 	 *
 	 *	@param	value	the ICFBamDelSubDep2Obj instance to be referenced by the DelSubDep2 key.

@@ -115,6 +115,13 @@ public interface ICFBamISOCtryLangEditObj
 	ICFSecISOCtryObj getRequiredContainerCtry();
 
 	/**
+	 *	Get the required ICFSecISOCtryObj instance referenced by the Ctry key.
+	 *
+	 *	@return	The required ICFSecISOCtryObj instance referenced by the Ctry key.
+	 */
+	ICFSecISOCtryObj getRequiredContainerCtry( boolean forceRead );
+
+	/**
 	 *	Set the ICFSecISOCtryObj instance referenced by the Ctry key.
 	 *
 	 *	@param	value	the ICFSecISOCtryObj instance to be referenced by the Ctry key.
@@ -127,6 +134,13 @@ public interface ICFBamISOCtryLangEditObj
 	 *	@return	The ICFSecISOLangObj instance referenced by the Lang key.
 	 */
 	ICFSecISOLangObj getRequiredParentLang();
+
+	/**
+	 *	Get the required ICFSecISOLangObj instance referenced by the Lang key.
+	 *
+	 *	@return	The required ICFSecISOLangObj instance referenced by the Lang key.
+	 */
+	ICFSecISOLangObj getRequiredParentLang( boolean forceRead );
 
 	/**
 	 *	Set the ICFSecISOLangObj instance referenced by the Lang key.

@@ -134,6 +134,13 @@ public interface ICFBamRelationColEditObj
 	ICFBamRelationObj getRequiredContainerRelation();
 
 	/**
+	 *	Get the required ICFBamRelationObj instance referenced by the Relation key.
+	 *
+	 *	@return	The required ICFBamRelationObj instance referenced by the Relation key.
+	 */
+	ICFBamRelationObj getRequiredContainerRelation( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamRelationObj instance referenced by the Relation key.
 	 *
 	 *	@param	value	the ICFBamRelationObj instance to be referenced by the Relation key.
@@ -146,6 +153,13 @@ public interface ICFBamRelationColEditObj
 	 *	@return	The ICFBamSchemaDefObj instance referenced by the DefSchema key.
 	 */
 	ICFBamSchemaDefObj getOptionalLookupDefSchema();
+
+	/**
+	 *	Get the optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 *
+	 *	@return	The optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 */
+	ICFBamSchemaDefObj getOptionalLookupDefSchema( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the DefSchema key.
@@ -162,6 +176,13 @@ public interface ICFBamRelationColEditObj
 	ICFBamRelationColObj getOptionalLookupPrev();
 
 	/**
+	 *	Get the optional ICFBamRelationColObj instance referenced by the Prev key.
+	 *
+	 *	@return	The optional ICFBamRelationColObj instance referenced by the Prev key.
+	 */
+	ICFBamRelationColObj getOptionalLookupPrev( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamRelationColObj instance referenced by the Prev key.
 	 *
 	 *	@param	value	the ICFBamRelationColObj instance to be referenced by the Prev key.
@@ -174,6 +195,13 @@ public interface ICFBamRelationColEditObj
 	 *	@return	The ICFBamRelationColObj instance referenced by the Next key.
 	 */
 	ICFBamRelationColObj getOptionalLookupNext();
+
+	/**
+	 *	Get the optional ICFBamRelationColObj instance referenced by the Next key.
+	 *
+	 *	@return	The optional ICFBamRelationColObj instance referenced by the Next key.
+	 */
+	ICFBamRelationColObj getOptionalLookupNext( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamRelationColObj instance referenced by the Next key.
@@ -190,6 +218,13 @@ public interface ICFBamRelationColEditObj
 	ICFBamIndexColObj getRequiredLookupFromCol();
 
 	/**
+	 *	Get the required ICFBamIndexColObj instance referenced by the FromCol key.
+	 *
+	 *	@return	The required ICFBamIndexColObj instance referenced by the FromCol key.
+	 */
+	ICFBamIndexColObj getRequiredLookupFromCol( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamIndexColObj instance referenced by the FromCol key.
 	 *
 	 *	@param	value	the ICFBamIndexColObj instance to be referenced by the FromCol key.
@@ -202,6 +237,13 @@ public interface ICFBamRelationColEditObj
 	 *	@return	The ICFBamIndexColObj instance referenced by the ToCol key.
 	 */
 	ICFBamIndexColObj getRequiredLookupToCol();
+
+	/**
+	 *	Get the required ICFBamIndexColObj instance referenced by the ToCol key.
+	 *
+	 *	@return	The required ICFBamIndexColObj instance referenced by the ToCol key.
+	 */
+	ICFBamIndexColObj getRequiredLookupToCol( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamIndexColObj instance referenced by the ToCol key.

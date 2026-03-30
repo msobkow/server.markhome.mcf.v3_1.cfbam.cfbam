@@ -134,6 +134,13 @@ public interface ICFBamIndexColEditObj
 	ICFBamIndexObj getRequiredContainerIndex();
 
 	/**
+	 *	Get the required ICFBamIndexObj instance referenced by the Index key.
+	 *
+	 *	@return	The required ICFBamIndexObj instance referenced by the Index key.
+	 */
+	ICFBamIndexObj getRequiredContainerIndex( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamIndexObj instance referenced by the Index key.
 	 *
 	 *	@param	value	the ICFBamIndexObj instance to be referenced by the Index key.
@@ -146,6 +153,13 @@ public interface ICFBamIndexColEditObj
 	 *	@return	The ICFBamSchemaDefObj instance referenced by the DefSchema key.
 	 */
 	ICFBamSchemaDefObj getOptionalLookupDefSchema();
+
+	/**
+	 *	Get the optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 *
+	 *	@return	The optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 */
+	ICFBamSchemaDefObj getOptionalLookupDefSchema( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the DefSchema key.
@@ -176,6 +190,13 @@ public interface ICFBamIndexColEditObj
 	ICFBamIndexColObj getOptionalLookupPrev();
 
 	/**
+	 *	Get the optional ICFBamIndexColObj instance referenced by the Prev key.
+	 *
+	 *	@return	The optional ICFBamIndexColObj instance referenced by the Prev key.
+	 */
+	ICFBamIndexColObj getOptionalLookupPrev( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamIndexColObj instance referenced by the Prev key.
 	 *
 	 *	@param	value	the ICFBamIndexColObj instance to be referenced by the Prev key.
@@ -190,6 +211,13 @@ public interface ICFBamIndexColEditObj
 	ICFBamIndexColObj getOptionalLookupNext();
 
 	/**
+	 *	Get the optional ICFBamIndexColObj instance referenced by the Next key.
+	 *
+	 *	@return	The optional ICFBamIndexColObj instance referenced by the Next key.
+	 */
+	ICFBamIndexColObj getOptionalLookupNext( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamIndexColObj instance referenced by the Next key.
 	 *
 	 *	@param	value	the ICFBamIndexColObj instance to be referenced by the Next key.
@@ -202,6 +230,13 @@ public interface ICFBamIndexColEditObj
 	 *	@return	The ICFBamValueObj instance referenced by the Column key.
 	 */
 	ICFBamValueObj getRequiredLookupColumn();
+
+	/**
+	 *	Get the required ICFBamValueObj instance referenced by the Column key.
+	 *
+	 *	@return	The required ICFBamValueObj instance referenced by the Column key.
+	 */
+	ICFBamValueObj getRequiredLookupColumn( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamValueObj instance referenced by the Column key.

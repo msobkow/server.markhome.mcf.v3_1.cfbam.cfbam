@@ -78,6 +78,13 @@ public interface ICFBamServerListFuncEditObj
 	ICFBamTableObj getOptionalLookupRetTable();
 
 	/**
+	 *	Get the optional ICFBamTableObj instance referenced by the RetTable key.
+	 *
+	 *	@return	The optional ICFBamTableObj instance referenced by the RetTable key.
+	 */
+	ICFBamTableObj getOptionalLookupRetTable( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamTableObj instance referenced by the RetTable key.
 	 *
 	 *	@param	value	the ICFBamTableObj instance to be referenced by the RetTable key.

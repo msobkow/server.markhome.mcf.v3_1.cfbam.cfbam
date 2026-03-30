@@ -78,6 +78,13 @@ public interface ICFBamTextColEditObj
 	ICFBamTableObj getRequiredContainerTable();
 
 	/**
+	 *	Get the required ICFBamTableObj instance referenced by the Table key.
+	 *
+	 *	@return	The required ICFBamTableObj instance referenced by the Table key.
+	 */
+	ICFBamTableObj getRequiredContainerTable( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamTableObj instance referenced by the Table key.
 	 *
 	 *	@param	value	the ICFBamTableObj instance to be referenced by the Table key.

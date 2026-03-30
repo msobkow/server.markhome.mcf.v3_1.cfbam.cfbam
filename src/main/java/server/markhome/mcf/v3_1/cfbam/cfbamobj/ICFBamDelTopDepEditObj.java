@@ -78,6 +78,13 @@ public interface ICFBamDelTopDepEditObj
 	ICFBamTableObj getRequiredContainerTable();
 
 	/**
+	 *	Get the required ICFBamTableObj instance referenced by the Table key.
+	 *
+	 *	@return	The required ICFBamTableObj instance referenced by the Table key.
+	 */
+	ICFBamTableObj getRequiredContainerTable( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamTableObj instance referenced by the Table key.
 	 *
 	 *	@param	value	the ICFBamTableObj instance to be referenced by the Table key.
@@ -99,6 +106,13 @@ public interface ICFBamDelTopDepEditObj
 	ICFBamDelTopDepObj getOptionalLookupPrev();
 
 	/**
+	 *	Get the optional ICFBamDelTopDepObj instance referenced by the Prev key.
+	 *
+	 *	@return	The optional ICFBamDelTopDepObj instance referenced by the Prev key.
+	 */
+	ICFBamDelTopDepObj getOptionalLookupPrev( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamDelTopDepObj instance referenced by the Prev key.
 	 *
 	 *	@param	value	the ICFBamDelTopDepObj instance to be referenced by the Prev key.
@@ -111,6 +125,13 @@ public interface ICFBamDelTopDepEditObj
 	 *	@return	The ICFBamDelTopDepObj instance referenced by the Next key.
 	 */
 	ICFBamDelTopDepObj getOptionalLookupNext();
+
+	/**
+	 *	Get the optional ICFBamDelTopDepObj instance referenced by the Next key.
+	 *
+	 *	@return	The optional ICFBamDelTopDepObj instance referenced by the Next key.
+	 */
+	ICFBamDelTopDepObj getOptionalLookupNext( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamDelTopDepObj instance referenced by the Next key.

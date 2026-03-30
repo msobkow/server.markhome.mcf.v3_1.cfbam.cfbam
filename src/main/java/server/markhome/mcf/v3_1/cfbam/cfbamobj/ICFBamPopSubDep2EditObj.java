@@ -78,6 +78,13 @@ public interface ICFBamPopSubDep2EditObj
 	ICFBamPopSubDep1Obj getRequiredContainerPopSubDep1();
 
 	/**
+	 *	Get the required ICFBamPopSubDep1Obj instance referenced by the PopSubDep1 key.
+	 *
+	 *	@return	The required ICFBamPopSubDep1Obj instance referenced by the PopSubDep1 key.
+	 */
+	ICFBamPopSubDep1Obj getRequiredContainerPopSubDep1( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamPopSubDep1Obj instance referenced by the PopSubDep1 key.
 	 *
 	 *	@param	value	the ICFBamPopSubDep1Obj instance to be referenced by the PopSubDep1 key.

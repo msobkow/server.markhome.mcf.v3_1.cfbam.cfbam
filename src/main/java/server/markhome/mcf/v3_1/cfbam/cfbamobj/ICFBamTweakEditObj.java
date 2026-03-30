@@ -134,6 +134,13 @@ public interface ICFBamTweakEditObj
 	ICFBamScopeObj getRequiredContainerScopeDef();
 
 	/**
+	 *	Get the required ICFBamScopeObj instance referenced by the ScopeDef key.
+	 *
+	 *	@return	The required ICFBamScopeObj instance referenced by the ScopeDef key.
+	 */
+	ICFBamScopeObj getRequiredContainerScopeDef( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamScopeObj instance referenced by the ScopeDef key.
 	 *
 	 *	@param	value	the ICFBamScopeObj instance to be referenced by the ScopeDef key.
@@ -146,6 +153,13 @@ public interface ICFBamTweakEditObj
 	 *	@return	The ICFBamSchemaDefObj instance referenced by the DefSchema key.
 	 */
 	ICFBamSchemaDefObj getOptionalLookupDefSchema();
+
+	/**
+	 *	Get the optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 *
+	 *	@return	The optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 */
+	ICFBamSchemaDefObj getOptionalLookupDefSchema( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the DefSchema key.

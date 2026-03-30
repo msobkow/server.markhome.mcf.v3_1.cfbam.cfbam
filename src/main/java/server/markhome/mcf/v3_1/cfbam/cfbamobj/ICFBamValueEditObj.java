@@ -134,6 +134,13 @@ public interface ICFBamValueEditObj
 	ICFBamScopeObj getRequiredContainerScope();
 
 	/**
+	 *	Get the required ICFBamScopeObj instance referenced by the Scope key.
+	 *
+	 *	@return	The required ICFBamScopeObj instance referenced by the Scope key.
+	 */
+	ICFBamScopeObj getRequiredContainerScope( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamScopeObj instance referenced by the Scope key.
 	 *
 	 *	@param	value	the ICFBamScopeObj instance to be referenced by the Scope key.
@@ -146,6 +153,13 @@ public interface ICFBamValueEditObj
 	 *	@return	The ICFBamSchemaDefObj instance referenced by the DefSchema key.
 	 */
 	ICFBamSchemaDefObj getOptionalLookupDefSchema();
+
+	/**
+	 *	Get the optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 *
+	 *	@return	The optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 */
+	ICFBamSchemaDefObj getOptionalLookupDefSchema( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the DefSchema key.
@@ -176,6 +190,13 @@ public interface ICFBamValueEditObj
 	ICFBamValueObj getOptionalLookupPrev();
 
 	/**
+	 *	Get the optional ICFBamValueObj instance referenced by the Prev key.
+	 *
+	 *	@return	The optional ICFBamValueObj instance referenced by the Prev key.
+	 */
+	ICFBamValueObj getOptionalLookupPrev( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamValueObj instance referenced by the Prev key.
 	 *
 	 *	@param	value	the ICFBamValueObj instance to be referenced by the Prev key.
@@ -188,6 +209,13 @@ public interface ICFBamValueEditObj
 	 *	@return	The ICFBamValueObj instance referenced by the Next key.
 	 */
 	ICFBamValueObj getOptionalLookupNext();
+
+	/**
+	 *	Get the optional ICFBamValueObj instance referenced by the Next key.
+	 *
+	 *	@return	The optional ICFBamValueObj instance referenced by the Next key.
+	 */
+	ICFBamValueObj getOptionalLookupNext( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamValueObj instance referenced by the Next key.

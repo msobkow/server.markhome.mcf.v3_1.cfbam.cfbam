@@ -3014,6 +3014,24 @@ extends ICFSecSchema,
 	public ICFSecSecUserFactory getFactorySecUser();
 
 	/**
+	 *	Get the SecUserEMConf Table interface for the schema.
+	 *
+	 *	@return	The SecUserEMConf Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecUserEMConfTable getTableSecUserEMConf();
+
+	/**
+	 *	Get the SecUserEMConf Factory interface for the schema.
+	 *
+	 *	@return	The SecUserEMConf Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecUserEMConfFactory getFactorySecUserEMConf();
+
+	/**
 	 *	Get the SecUserPWHistory Table interface for the schema.
 	 *
 	 *	@return	The SecUserPWHistory Table interface for the schema.
@@ -3030,6 +3048,24 @@ extends ICFSecSchema,
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFSecSecUserPWHistoryFactory getFactorySecUserPWHistory();
+
+	/**
+	 *	Get the SecUserPWReset Table interface for the schema.
+	 *
+	 *	@return	The SecUserPWReset Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecUserPWResetTable getTableSecUserPWReset();
+
+	/**
+	 *	Get the SecUserPWReset Factory interface for the schema.
+	 *
+	 *	@return	The SecUserPWReset Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFSecSecUserPWResetFactory getFactorySecUserPWReset();
 
 	/**
 	 *	Get the SecUserPassword Table interface for the schema.

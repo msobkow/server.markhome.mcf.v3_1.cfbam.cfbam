@@ -68,6 +68,9 @@ public class CFBamSecUserEditObj
 	protected ICFSecSecUser rec;
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
+	protected ICFSecSecUserPasswordObj optionalComponentsPassword;
+	protected ICFSecSecUserEMConfObj optionalComponentsEMConf;
+	protected ICFSecSecUserPWResetObj optionalComponentsPWReset;
 	protected List<ICFSecSecSysGrpMembObj> optionalChildrenSysSecGrpMemb;
 	protected List<ICFSecSecClusGrpMembObj> optionalChildrenClusSecGrpMemb;
 	protected List<ICFSecSecTentGrpMembObj> optionalChildrenTentSecGrpMemb;
@@ -418,6 +421,12 @@ public class CFBamSecUserEditObj
 	public void setRequiredSecUserId(CFLibDbKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
+			optionalComponentsPassword = null;
+			optionalComponentsEMConf = null;
+			optionalComponentsPWReset = null;
+			optionalChildrenSysSecGrpMemb = null;
+			optionalChildrenClusSecGrpMemb = null;
+			optionalChildrenTentSecGrpMemb = null;
 		}
 	}
 
@@ -430,6 +439,9 @@ public class CFBamSecUserEditObj
 	public void setRequiredLoginId( String value ) {
 		if( getSecUserRec().getRequiredLoginId() != value ) {
 			getSecUserRec().setRequiredLoginId( value );
+			optionalComponentsPassword = null;
+			optionalComponentsEMConf = null;
+			optionalComponentsPWReset = null;
 			optionalChildrenSysSecGrpMemb = null;
 			optionalChildrenClusSecGrpMemb = null;
 			optionalChildrenTentSecGrpMemb = null;
@@ -437,38 +449,38 @@ public class CFBamSecUserEditObj
 	}
 
 	@Override
-	public String getRequiredDfltSysGrpName() {
-		return( getSecUserRec().getRequiredDfltSysGrpName() );
+	public String getOptionalDfltSysGrpName() {
+		return( getSecUserRec().getOptionalDfltSysGrpName() );
 	}
 
 	@Override
-	public void setRequiredDfltSysGrpName( String value ) {
-		if( getSecUserRec().getRequiredDfltSysGrpName() != value ) {
-			getSecUserRec().setRequiredDfltSysGrpName( value );
+	public void setOptionalDfltSysGrpName( String value ) {
+		if( getSecUserRec().getOptionalDfltSysGrpName() != value ) {
+			getSecUserRec().setOptionalDfltSysGrpName( value );
 		}
 	}
 
 	@Override
-	public String getRequiredDfltClusGrpName() {
-		return( getSecUserRec().getRequiredDfltClusGrpName() );
+	public String getOptionalDfltClusGrpName() {
+		return( getSecUserRec().getOptionalDfltClusGrpName() );
 	}
 
 	@Override
-	public void setRequiredDfltClusGrpName( String value ) {
-		if( getSecUserRec().getRequiredDfltClusGrpName() != value ) {
-			getSecUserRec().setRequiredDfltClusGrpName( value );
+	public void setOptionalDfltClusGrpName( String value ) {
+		if( getSecUserRec().getOptionalDfltClusGrpName() != value ) {
+			getSecUserRec().setOptionalDfltClusGrpName( value );
 		}
 	}
 
 	@Override
-	public String getRequiredDfltTentGrpName() {
-		return( getSecUserRec().getRequiredDfltTentGrpName() );
+	public String getOptionalDfltTentGrpName() {
+		return( getSecUserRec().getOptionalDfltTentGrpName() );
 	}
 
 	@Override
-	public void setRequiredDfltTentGrpName( String value ) {
-		if( getSecUserRec().getRequiredDfltTentGrpName() != value ) {
-			getSecUserRec().setRequiredDfltTentGrpName( value );
+	public void setOptionalDfltTentGrpName( String value ) {
+		if( getSecUserRec().getOptionalDfltTentGrpName() != value ) {
+			getSecUserRec().setOptionalDfltTentGrpName( value );
 		}
 	}
 
@@ -485,39 +497,54 @@ public class CFBamSecUserEditObj
 	}
 
 	@Override
-	public CFLibUuid6 getOptionalEMailConfirmUuid6() {
-		return( getSecUserRec().getOptionalEMailConfirmUuid6() );
+	public ICFSecSecUserPasswordObj getOptionalComponentsPassword() {
+		return( getOptionalComponentsPassword( false ) );
 	}
 
 	@Override
-	public void setOptionalEMailConfirmUuid6( CFLibUuid6 value ) {
-		if( getSecUserRec().getOptionalEMailConfirmUuid6() != value ) {
-			getSecUserRec().setOptionalEMailConfirmUuid6( value );
+	public ICFSecSecUserPasswordObj getOptionalComponentsPassword( boolean forceRead ) {
+		if( forceRead || ( optionalComponentsPassword == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFSecSecUserPasswordObj obj = ((ICFBamSchemaObj)getOrigAsSecUser().getSchema()).getSecUserPasswordTableObj().readSecUserPasswordByIdIdx( getPKey() );
+				optionalComponentsPassword = obj;
+			}
 		}
+		return( optionalComponentsPassword );
 	}
 
 	@Override
-	public String getRequiredPasswordHash() {
-		return( getSecUserRec().getRequiredPasswordHash() );
+	public ICFSecSecUserEMConfObj getOptionalComponentsEMConf() {
+		return( getOptionalComponentsEMConf( false ) );
 	}
 
 	@Override
-	public void setRequiredPasswordHash( String value ) {
-		if( getSecUserRec().getRequiredPasswordHash() != value ) {
-			getSecUserRec().setRequiredPasswordHash( value );
+	public ICFSecSecUserEMConfObj getOptionalComponentsEMConf( boolean forceRead ) {
+		if( forceRead || ( optionalComponentsEMConf == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFSecSecUserEMConfObj obj = ((ICFBamSchemaObj)getOrigAsSecUser().getSchema()).getSecUserEMConfTableObj().readSecUserEMConfByIdIdx( getPKey() );
+				optionalComponentsEMConf = obj;
+			}
 		}
+		return( optionalComponentsEMConf );
 	}
 
 	@Override
-	public CFLibUuid6 getOptionalPasswordResetUuid6() {
-		return( getSecUserRec().getOptionalPasswordResetUuid6() );
+	public ICFSecSecUserPWResetObj getOptionalComponentsPWReset() {
+		return( getOptionalComponentsPWReset( false ) );
 	}
 
 	@Override
-	public void setOptionalPasswordResetUuid6( CFLibUuid6 value ) {
-		if( getSecUserRec().getOptionalPasswordResetUuid6() != value ) {
-			getSecUserRec().setOptionalPasswordResetUuid6( value );
+	public ICFSecSecUserPWResetObj getOptionalComponentsPWReset( boolean forceRead ) {
+		if( forceRead || ( optionalComponentsPWReset == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFSecSecUserPWResetObj obj = ((ICFBamSchemaObj)getOrigAsSecUser().getSchema()).getSecUserPWResetTableObj().readSecUserPWResetByIdIdx( getPKey() );
+				optionalComponentsPWReset = obj;
+			}
 		}
+		return( optionalComponentsPWReset );
 	}
 
 	@Override

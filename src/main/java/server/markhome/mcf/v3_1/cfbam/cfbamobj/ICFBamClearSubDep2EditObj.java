@@ -78,6 +78,13 @@ public interface ICFBamClearSubDep2EditObj
 	ICFBamClearSubDep1Obj getRequiredContainerClearSubDep1();
 
 	/**
+	 *	Get the required ICFBamClearSubDep1Obj instance referenced by the ClearSubDep1 key.
+	 *
+	 *	@return	The required ICFBamClearSubDep1Obj instance referenced by the ClearSubDep1 key.
+	 */
+	ICFBamClearSubDep1Obj getRequiredContainerClearSubDep1( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamClearSubDep1Obj instance referenced by the ClearSubDep1 key.
 	 *
 	 *	@param	value	the ICFBamClearSubDep1Obj instance to be referenced by the ClearSubDep1 key.

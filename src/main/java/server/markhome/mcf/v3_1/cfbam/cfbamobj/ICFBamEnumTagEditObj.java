@@ -134,6 +134,13 @@ public interface ICFBamEnumTagEditObj
 	ICFBamEnumDefObj getRequiredContainerEnumDef();
 
 	/**
+	 *	Get the required ICFBamEnumDefObj instance referenced by the EnumDef key.
+	 *
+	 *	@return	The required ICFBamEnumDefObj instance referenced by the EnumDef key.
+	 */
+	ICFBamEnumDefObj getRequiredContainerEnumDef( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamEnumDefObj instance referenced by the EnumDef key.
 	 *
 	 *	@param	value	the ICFBamEnumDefObj instance to be referenced by the EnumDef key.
@@ -146,6 +153,13 @@ public interface ICFBamEnumTagEditObj
 	 *	@return	The ICFBamSchemaDefObj instance referenced by the DefSchema key.
 	 */
 	ICFBamSchemaDefObj getOptionalLookupDefSchema();
+
+	/**
+	 *	Get the optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 *
+	 *	@return	The optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 */
+	ICFBamSchemaDefObj getOptionalLookupDefSchema( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the DefSchema key.
@@ -162,6 +176,13 @@ public interface ICFBamEnumTagEditObj
 	ICFBamEnumTagObj getOptionalLookupPrev();
 
 	/**
+	 *	Get the optional ICFBamEnumTagObj instance referenced by the Prev key.
+	 *
+	 *	@return	The optional ICFBamEnumTagObj instance referenced by the Prev key.
+	 */
+	ICFBamEnumTagObj getOptionalLookupPrev( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamEnumTagObj instance referenced by the Prev key.
 	 *
 	 *	@param	value	the ICFBamEnumTagObj instance to be referenced by the Prev key.
@@ -174,6 +195,13 @@ public interface ICFBamEnumTagEditObj
 	 *	@return	The ICFBamEnumTagObj instance referenced by the Next key.
 	 */
 	ICFBamEnumTagObj getOptionalLookupNext();
+
+	/**
+	 *	Get the optional ICFBamEnumTagObj instance referenced by the Next key.
+	 *
+	 *	@return	The optional ICFBamEnumTagObj instance referenced by the Next key.
+	 */
+	ICFBamEnumTagObj getOptionalLookupNext( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamEnumTagObj instance referenced by the Next key.

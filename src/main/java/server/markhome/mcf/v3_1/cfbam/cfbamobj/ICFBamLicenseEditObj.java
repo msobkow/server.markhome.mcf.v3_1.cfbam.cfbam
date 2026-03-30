@@ -87,6 +87,13 @@ public interface ICFBamLicenseEditObj
 	ICFSecTenantObj getRequiredOwnerTenant();
 
 	/**
+	 *	Get the required ICFSecTenantObj instance referenced by the Tenant key.
+	 *
+	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
+	 */
+	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
+
+	/**
 	 *	Set the ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@param	value	the ICFSecTenantObj instance to be referenced by the Tenant key.
@@ -99,6 +106,13 @@ public interface ICFBamLicenseEditObj
 	 *	@return	The ICFIntTopDomainObj instance referenced by the TopDomain key.
 	 */
 	ICFIntTopDomainObj getRequiredContainerTopDomain();
+
+	/**
+	 *	Get the required ICFIntTopDomainObj instance referenced by the TopDomain key.
+	 *
+	 *	@return	The required ICFIntTopDomainObj instance referenced by the TopDomain key.
+	 */
+	ICFIntTopDomainObj getRequiredContainerTopDomain( boolean forceRead );
 
 	/**
 	 *	Set the ICFIntTopDomainObj instance referenced by the TopDomain key.

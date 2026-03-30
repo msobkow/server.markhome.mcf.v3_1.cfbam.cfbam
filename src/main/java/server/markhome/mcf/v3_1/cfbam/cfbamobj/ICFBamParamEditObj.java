@@ -134,6 +134,13 @@ public interface ICFBamParamEditObj
 	ICFBamServerMethodObj getRequiredContainerServerMeth();
 
 	/**
+	 *	Get the required ICFBamServerMethodObj instance referenced by the ServerMeth key.
+	 *
+	 *	@return	The required ICFBamServerMethodObj instance referenced by the ServerMeth key.
+	 */
+	ICFBamServerMethodObj getRequiredContainerServerMeth( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamServerMethodObj instance referenced by the ServerMeth key.
 	 *
 	 *	@param	value	the ICFBamServerMethodObj instance to be referenced by the ServerMeth key.
@@ -146,6 +153,13 @@ public interface ICFBamParamEditObj
 	 *	@return	The ICFBamSchemaDefObj instance referenced by the DefSchema key.
 	 */
 	ICFBamSchemaDefObj getOptionalLookupDefSchema();
+
+	/**
+	 *	Get the optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 *
+	 *	@return	The optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 */
+	ICFBamSchemaDefObj getOptionalLookupDefSchema( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the DefSchema key.
@@ -162,6 +176,13 @@ public interface ICFBamParamEditObj
 	ICFBamParamObj getOptionalLookupPrev();
 
 	/**
+	 *	Get the optional ICFBamParamObj instance referenced by the Prev key.
+	 *
+	 *	@return	The optional ICFBamParamObj instance referenced by the Prev key.
+	 */
+	ICFBamParamObj getOptionalLookupPrev( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamParamObj instance referenced by the Prev key.
 	 *
 	 *	@param	value	the ICFBamParamObj instance to be referenced by the Prev key.
@@ -176,6 +197,13 @@ public interface ICFBamParamEditObj
 	ICFBamParamObj getOptionalLookupNext();
 
 	/**
+	 *	Get the optional ICFBamParamObj instance referenced by the Next key.
+	 *
+	 *	@return	The optional ICFBamParamObj instance referenced by the Next key.
+	 */
+	ICFBamParamObj getOptionalLookupNext( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamParamObj instance referenced by the Next key.
 	 *
 	 *	@param	value	the ICFBamParamObj instance to be referenced by the Next key.
@@ -188,6 +216,13 @@ public interface ICFBamParamEditObj
 	 *	@return	The ICFBamValueObj instance referenced by the Type key.
 	 */
 	ICFBamValueObj getRequiredLookupType();
+
+	/**
+	 *	Get the required ICFBamValueObj instance referenced by the Type key.
+	 *
+	 *	@return	The required ICFBamValueObj instance referenced by the Type key.
+	 */
+	ICFBamValueObj getRequiredLookupType( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamValueObj instance referenced by the Type key.

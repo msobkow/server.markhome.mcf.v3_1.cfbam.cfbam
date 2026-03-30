@@ -78,6 +78,13 @@ public interface ICFBamTableEditObj
 	ICFBamSchemaDefObj getRequiredContainerSchemaDef();
 
 	/**
+	 *	Get the required ICFBamSchemaDefObj instance referenced by the SchemaDef key.
+	 *
+	 *	@return	The required ICFBamSchemaDefObj instance referenced by the SchemaDef key.
+	 */
+	ICFBamSchemaDefObj getRequiredContainerSchemaDef( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the SchemaDef key.
 	 *
 	 *	@param	value	the ICFBamSchemaDefObj instance to be referenced by the SchemaDef key.
@@ -90,6 +97,13 @@ public interface ICFBamTableEditObj
 	 *	@return	The ICFBamSchemaDefObj instance referenced by the DefSchema key.
 	 */
 	ICFBamSchemaDefObj getOptionalLookupDefSchema();
+
+	/**
+	 *	Get the optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 *
+	 *	@return	The optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 */
+	ICFBamSchemaDefObj getOptionalLookupDefSchema( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the DefSchema key.
@@ -113,6 +127,13 @@ public interface ICFBamTableEditObj
 	ICFBamIndexObj getOptionalLookupLookupIndex();
 
 	/**
+	 *	Get the optional ICFBamIndexObj instance referenced by the LookupIndex key.
+	 *
+	 *	@return	The optional ICFBamIndexObj instance referenced by the LookupIndex key.
+	 */
+	ICFBamIndexObj getOptionalLookupLookupIndex( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamIndexObj instance referenced by the LookupIndex key.
 	 *
 	 *	@param	value	the ICFBamIndexObj instance to be referenced by the LookupIndex key.
@@ -127,6 +148,13 @@ public interface ICFBamTableEditObj
 	ICFBamIndexObj getOptionalLookupAltIndex();
 
 	/**
+	 *	Get the optional ICFBamIndexObj instance referenced by the AltIndex key.
+	 *
+	 *	@return	The optional ICFBamIndexObj instance referenced by the AltIndex key.
+	 */
+	ICFBamIndexObj getOptionalLookupAltIndex( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamIndexObj instance referenced by the AltIndex key.
 	 *
 	 *	@param	value	the ICFBamIndexObj instance to be referenced by the AltIndex key.
@@ -139,6 +167,13 @@ public interface ICFBamTableEditObj
 	 *	@return	The ICFBamTableObj instance referenced by the QualTable key.
 	 */
 	ICFBamTableObj getOptionalLookupQualTable();
+
+	/**
+	 *	Get the optional ICFBamTableObj instance referenced by the QualTable key.
+	 *
+	 *	@return	The optional ICFBamTableObj instance referenced by the QualTable key.
+	 */
+	ICFBamTableObj getOptionalLookupQualTable( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamTableObj instance referenced by the QualTable key.
@@ -160,6 +195,13 @@ public interface ICFBamTableEditObj
 	 *	@return	The ICFBamIndexObj instance referenced by the PrimaryIndex key.
 	 */
 	ICFBamIndexObj getOptionalLookupPrimaryIndex();
+
+	/**
+	 *	Get the optional ICFBamIndexObj instance referenced by the PrimaryIndex key.
+	 *
+	 *	@return	The optional ICFBamIndexObj instance referenced by the PrimaryIndex key.
+	 */
+	ICFBamIndexObj getOptionalLookupPrimaryIndex( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamIndexObj instance referenced by the PrimaryIndex key.

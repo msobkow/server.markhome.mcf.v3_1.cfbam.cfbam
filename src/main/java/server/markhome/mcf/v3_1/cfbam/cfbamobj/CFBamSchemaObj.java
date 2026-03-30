@@ -195,7 +195,9 @@ public class CFBamSchemaObj
 	protected ICFBamSecTentGrpIncTableObj secTentGrpIncTableObj;
 	protected ICFBamSecTentGrpMembTableObj secTentGrpMembTableObj;
 	protected ICFBamSecUserTableObj secUserTableObj;
+	protected ICFBamSecUserEMConfTableObj secUserEMConfTableObj;
 	protected ICFBamSecUserPWHistoryTableObj secUserPWHistoryTableObj;
+	protected ICFBamSecUserPWResetTableObj secUserPWResetTableObj;
 	protected ICFBamSecUserPasswordTableObj secUserPasswordTableObj;
 	protected ICFBamServerListFuncTableObj serverListFuncTableObj;
 	protected ICFBamServerMethodTableObj serverMethodTableObj;
@@ -371,7 +373,9 @@ public class CFBamSchemaObj
 		secTentGrpIncTableObj = new CFBamSecTentGrpIncTableObj( this );
 		secTentGrpMembTableObj = new CFBamSecTentGrpMembTableObj( this );
 		secUserTableObj = new CFBamSecUserTableObj( this );
+		secUserEMConfTableObj = new CFBamSecUserEMConfTableObj( this );
 		secUserPWHistoryTableObj = new CFBamSecUserPWHistoryTableObj( this );
+		secUserPWResetTableObj = new CFBamSecUserPWResetTableObj( this );
 		secUserPasswordTableObj = new CFBamSecUserPasswordTableObj( this );
 		serverListFuncTableObj = new CFBamServerListFuncTableObj( this );
 		serverMethodTableObj = new CFBamServerMethodTableObj( this );
@@ -1004,8 +1008,14 @@ public class CFBamSchemaObj
 		if( secUserTableObj != null ) {
 			secUserTableObj.minimizeMemory();
 		}
+		if( secUserEMConfTableObj != null ) {
+			secUserEMConfTableObj.minimizeMemory();
+		}
 		if( secUserPWHistoryTableObj != null ) {
 			secUserPWHistoryTableObj.minimizeMemory();
+		}
+		if( secUserPWResetTableObj != null ) {
+			secUserPWResetTableObj.minimizeMemory();
 		}
 		if( secUserPasswordTableObj != null ) {
 			secUserPasswordTableObj.minimizeMemory();
@@ -1646,8 +1656,16 @@ public class CFBamSchemaObj
 		return( secUserTableObj );
 	}
 
+	public ICFBamSecUserEMConfTableObj getSecUserEMConfTableObj() {
+		return( secUserEMConfTableObj );
+	}
+
 	public ICFBamSecUserPWHistoryTableObj getSecUserPWHistoryTableObj() {
 		return( secUserPWHistoryTableObj );
+	}
+
+	public ICFBamSecUserPWResetTableObj getSecUserPWResetTableObj() {
+		return( secUserPWResetTableObj );
 	}
 
 	public ICFBamSecUserPasswordTableObj getSecUserPasswordTableObj() {

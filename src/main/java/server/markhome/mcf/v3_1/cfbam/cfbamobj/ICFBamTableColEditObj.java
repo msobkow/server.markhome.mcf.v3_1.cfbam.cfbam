@@ -78,6 +78,13 @@ public interface ICFBamTableColEditObj
 	ICFBamTableObj getRequiredContainerTable();
 
 	/**
+	 *	Get the required ICFBamTableObj instance referenced by the Table key.
+	 *
+	 *	@return	The required ICFBamTableObj instance referenced by the Table key.
+	 */
+	ICFBamTableObj getRequiredContainerTable( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamTableObj instance referenced by the Table key.
 	 *
 	 *	@param	value	the ICFBamTableObj instance to be referenced by the Table key.
@@ -90,6 +97,13 @@ public interface ICFBamTableColEditObj
 	 *	@return	The ICFBamValueObj instance referenced by the DataType key.
 	 */
 	ICFBamValueObj getRequiredParentDataType();
+
+	/**
+	 *	Get the required ICFBamValueObj instance referenced by the DataType key.
+	 *
+	 *	@return	The required ICFBamValueObj instance referenced by the DataType key.
+	 */
+	ICFBamValueObj getRequiredParentDataType( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamValueObj instance referenced by the DataType key.

@@ -78,6 +78,13 @@ public interface ICFBamSchemaDefEditObj
 	ICFIntMinorVersionObj getRequiredContainerMinorVersion();
 
 	/**
+	 *	Get the required ICFIntMinorVersionObj instance referenced by the MinorVersion key.
+	 *
+	 *	@return	The required ICFIntMinorVersionObj instance referenced by the MinorVersion key.
+	 */
+	ICFIntMinorVersionObj getRequiredContainerMinorVersion( boolean forceRead );
+
+	/**
 	 *	Set the ICFIntMinorVersionObj instance referenced by the MinorVersion key.
 	 *
 	 *	@param	value	the ICFIntMinorVersionObj instance to be referenced by the MinorVersion key.
@@ -118,6 +125,13 @@ public interface ICFBamSchemaDefEditObj
 	 *	@return	The ICFSecTenantObj instance referenced by the CTenant key.
 	 */
 	ICFSecTenantObj getRequiredOwnerCTenant();
+
+	/**
+	 *	Get the required ICFSecTenantObj instance referenced by the CTenant key.
+	 *
+	 *	@return	The required ICFSecTenantObj instance referenced by the CTenant key.
+	 */
+	ICFSecTenantObj getRequiredOwnerCTenant( boolean forceRead );
 
 	/**
 	 *	Set the ICFSecTenantObj instance referenced by the CTenant key.

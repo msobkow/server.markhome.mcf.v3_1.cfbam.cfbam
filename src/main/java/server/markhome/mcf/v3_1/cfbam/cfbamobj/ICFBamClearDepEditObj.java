@@ -78,6 +78,13 @@ public interface ICFBamClearDepEditObj
 	ICFBamRelationObj getRequiredLookupRelation();
 
 	/**
+	 *	Get the required ICFBamRelationObj instance referenced by the Relation key.
+	 *
+	 *	@return	The required ICFBamRelationObj instance referenced by the Relation key.
+	 */
+	ICFBamRelationObj getRequiredLookupRelation( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamRelationObj instance referenced by the Relation key.
 	 *
 	 *	@param	value	the ICFBamRelationObj instance to be referenced by the Relation key.
@@ -90,6 +97,13 @@ public interface ICFBamClearDepEditObj
 	 *	@return	The ICFBamSchemaDefObj instance referenced by the DefSchema key.
 	 */
 	ICFBamSchemaDefObj getOptionalLookupDefSchema();
+
+	/**
+	 *	Get the optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 *
+	 *	@return	The optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 */
+	ICFBamSchemaDefObj getOptionalLookupDefSchema( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the DefSchema key.

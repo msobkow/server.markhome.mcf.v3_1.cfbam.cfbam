@@ -115,6 +115,13 @@ public interface ICFBamSecSysGrpMembEditObj
 	ICFSecSecSysGrpObj getRequiredContainerGroup();
 
 	/**
+	 *	Get the required ICFSecSecSysGrpObj instance referenced by the Group key.
+	 *
+	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the Group key.
+	 */
+	ICFSecSecSysGrpObj getRequiredContainerGroup( boolean forceRead );
+
+	/**
 	 *	Set the ICFSecSecSysGrpObj instance referenced by the Group key.
 	 *
 	 *	@param	value	the ICFSecSecSysGrpObj instance to be referenced by the Group key.
@@ -127,6 +134,13 @@ public interface ICFBamSecSysGrpMembEditObj
 	 *	@return	The ICFSecSecUserObj instance referenced by the User key.
 	 */
 	ICFSecSecUserObj getRequiredParentUser();
+
+	/**
+	 *	Get the required ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The required ICFSecSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredParentUser( boolean forceRead );
 
 	/**
 	 *	Set the ICFSecSecUserObj instance referenced by the User key.

@@ -78,6 +78,13 @@ public interface ICFBamTableTweakEditObj
 	ICFBamTableObj getRequiredContainerTableDef();
 
 	/**
+	 *	Get the required ICFBamTableObj instance referenced by the TableDef key.
+	 *
+	 *	@return	The required ICFBamTableObj instance referenced by the TableDef key.
+	 */
+	ICFBamTableObj getRequiredContainerTableDef( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamTableObj instance referenced by the TableDef key.
 	 *
 	 *	@param	value	the ICFBamTableObj instance to be referenced by the TableDef key.

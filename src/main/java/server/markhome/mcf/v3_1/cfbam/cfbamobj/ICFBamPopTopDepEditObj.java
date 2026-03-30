@@ -78,6 +78,13 @@ public interface ICFBamPopTopDepEditObj
 	ICFBamRelationObj getRequiredContainerContRelation();
 
 	/**
+	 *	Get the required ICFBamRelationObj instance referenced by the ContRelation key.
+	 *
+	 *	@return	The required ICFBamRelationObj instance referenced by the ContRelation key.
+	 */
+	ICFBamRelationObj getRequiredContainerContRelation( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamRelationObj instance referenced by the ContRelation key.
 	 *
 	 *	@param	value	the ICFBamRelationObj instance to be referenced by the ContRelation key.

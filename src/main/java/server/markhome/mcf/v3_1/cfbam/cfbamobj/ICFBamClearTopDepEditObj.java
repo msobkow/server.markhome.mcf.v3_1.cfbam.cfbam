@@ -78,6 +78,13 @@ public interface ICFBamClearTopDepEditObj
 	ICFBamTableObj getRequiredContainerTable();
 
 	/**
+	 *	Get the required ICFBamTableObj instance referenced by the Table key.
+	 *
+	 *	@return	The required ICFBamTableObj instance referenced by the Table key.
+	 */
+	ICFBamTableObj getRequiredContainerTable( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamTableObj instance referenced by the Table key.
 	 *
 	 *	@param	value	the ICFBamTableObj instance to be referenced by the Table key.
@@ -99,6 +106,13 @@ public interface ICFBamClearTopDepEditObj
 	ICFBamClearTopDepObj getOptionalLookupPrev();
 
 	/**
+	 *	Get the optional ICFBamClearTopDepObj instance referenced by the Prev key.
+	 *
+	 *	@return	The optional ICFBamClearTopDepObj instance referenced by the Prev key.
+	 */
+	ICFBamClearTopDepObj getOptionalLookupPrev( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamClearTopDepObj instance referenced by the Prev key.
 	 *
 	 *	@param	value	the ICFBamClearTopDepObj instance to be referenced by the Prev key.
@@ -111,6 +125,13 @@ public interface ICFBamClearTopDepEditObj
 	 *	@return	The ICFBamClearTopDepObj instance referenced by the Next key.
 	 */
 	ICFBamClearTopDepObj getOptionalLookupNext();
+
+	/**
+	 *	Get the optional ICFBamClearTopDepObj instance referenced by the Next key.
+	 *
+	 *	@return	The optional ICFBamClearTopDepObj instance referenced by the Next key.
+	 */
+	ICFBamClearTopDepObj getOptionalLookupNext( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamClearTopDepObj instance referenced by the Next key.

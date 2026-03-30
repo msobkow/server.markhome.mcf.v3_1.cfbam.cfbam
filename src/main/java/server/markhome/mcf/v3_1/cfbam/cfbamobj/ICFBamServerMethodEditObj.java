@@ -78,6 +78,13 @@ public interface ICFBamServerMethodEditObj
 	ICFBamSchemaDefObj getOptionalLookupDefSchema();
 
 	/**
+	 *	Get the optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 *
+	 *	@return	The optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 */
+	ICFBamSchemaDefObj getOptionalLookupDefSchema( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the DefSchema key.
 	 *
 	 *	@param	value	the ICFBamSchemaDefObj instance to be referenced by the DefSchema key.
@@ -90,6 +97,13 @@ public interface ICFBamServerMethodEditObj
 	 *	@return	The ICFBamTableObj instance referenced by the ForTable key.
 	 */
 	ICFBamTableObj getRequiredContainerForTable();
+
+	/**
+	 *	Get the required ICFBamTableObj instance referenced by the ForTable key.
+	 *
+	 *	@return	The required ICFBamTableObj instance referenced by the ForTable key.
+	 */
+	ICFBamTableObj getRequiredContainerForTable( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamTableObj instance referenced by the ForTable key.

@@ -134,6 +134,13 @@ public interface ICFBamChainEditObj
 	ICFBamTableObj getRequiredContainerTable();
 
 	/**
+	 *	Get the required ICFBamTableObj instance referenced by the Table key.
+	 *
+	 *	@return	The required ICFBamTableObj instance referenced by the Table key.
+	 */
+	ICFBamTableObj getRequiredContainerTable( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamTableObj instance referenced by the Table key.
 	 *
 	 *	@param	value	the ICFBamTableObj instance to be referenced by the Table key.
@@ -146,6 +153,13 @@ public interface ICFBamChainEditObj
 	 *	@return	The ICFBamSchemaDefObj instance referenced by the DefSchema key.
 	 */
 	ICFBamSchemaDefObj getOptionalLookupDefSchema();
+
+	/**
+	 *	Get the optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 *
+	 *	@return	The optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 */
+	ICFBamSchemaDefObj getOptionalLookupDefSchema( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the DefSchema key.
@@ -162,6 +176,13 @@ public interface ICFBamChainEditObj
 	ICFBamRelationObj getRequiredLookupPrevRel();
 
 	/**
+	 *	Get the required ICFBamRelationObj instance referenced by the PrevRel key.
+	 *
+	 *	@return	The required ICFBamRelationObj instance referenced by the PrevRel key.
+	 */
+	ICFBamRelationObj getRequiredLookupPrevRel( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamRelationObj instance referenced by the PrevRel key.
 	 *
 	 *	@param	value	the ICFBamRelationObj instance to be referenced by the PrevRel key.
@@ -174,6 +195,13 @@ public interface ICFBamChainEditObj
 	 *	@return	The ICFBamRelationObj instance referenced by the NextRel key.
 	 */
 	ICFBamRelationObj getRequiredLookupNextRel();
+
+	/**
+	 *	Get the required ICFBamRelationObj instance referenced by the NextRel key.
+	 *
+	 *	@return	The required ICFBamRelationObj instance referenced by the NextRel key.
+	 */
+	ICFBamRelationObj getRequiredLookupNextRel( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamRelationObj instance referenced by the NextRel key.

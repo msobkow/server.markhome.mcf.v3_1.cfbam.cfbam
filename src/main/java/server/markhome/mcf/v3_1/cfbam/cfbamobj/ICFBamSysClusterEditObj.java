@@ -87,6 +87,13 @@ public interface ICFBamSysClusterEditObj
 	ICFSecClusterObj getRequiredContainerCluster();
 
 	/**
+	 *	Get the required ICFSecClusterObj instance referenced by the Cluster key.
+	 *
+	 *	@return	The required ICFSecClusterObj instance referenced by the Cluster key.
+	 */
+	ICFSecClusterObj getRequiredContainerCluster( boolean forceRead );
+
+	/**
 	 *	Set the ICFSecClusterObj instance referenced by the Cluster key.
 	 *
 	 *	@param	value	the ICFSecClusterObj instance to be referenced by the Cluster key.

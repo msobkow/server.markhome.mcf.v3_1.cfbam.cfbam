@@ -78,6 +78,13 @@ public interface ICFBamDbKeyHash128TypeEditObj
 	ICFBamSchemaDefObj getRequiredContainerSchemaDef();
 
 	/**
+	 *	Get the required ICFBamSchemaDefObj instance referenced by the SchemaDef key.
+	 *
+	 *	@return	The required ICFBamSchemaDefObj instance referenced by the SchemaDef key.
+	 */
+	ICFBamSchemaDefObj getRequiredContainerSchemaDef( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the SchemaDef key.
 	 *
 	 *	@param	value	the ICFBamSchemaDefObj instance to be referenced by the SchemaDef key.

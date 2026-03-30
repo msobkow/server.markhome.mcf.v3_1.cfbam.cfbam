@@ -78,6 +78,13 @@ public interface ICFBamSchemaRefEditObj
 	ICFBamSchemaDefObj getRequiredContainerSchema();
 
 	/**
+	 *	Get the required ICFBamSchemaDefObj instance referenced by the Schema key.
+	 *
+	 *	@return	The required ICFBamSchemaDefObj instance referenced by the Schema key.
+	 */
+	ICFBamSchemaDefObj getRequiredContainerSchema( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the Schema key.
 	 *
 	 *	@param	value	the ICFBamSchemaDefObj instance to be referenced by the Schema key.
@@ -90,6 +97,13 @@ public interface ICFBamSchemaRefEditObj
 	 *	@return	The ICFBamSchemaDefObj instance referenced by the RefSchema key.
 	 */
 	ICFBamSchemaDefObj getOptionalLookupRefSchema();
+
+	/**
+	 *	Get the optional ICFBamSchemaDefObj instance referenced by the RefSchema key.
+	 *
+	 *	@return	The optional ICFBamSchemaDefObj instance referenced by the RefSchema key.
+	 */
+	ICFBamSchemaDefObj getOptionalLookupRefSchema( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the RefSchema key.
@@ -106,6 +120,13 @@ public interface ICFBamSchemaRefEditObj
 	ICFBamSchemaRefObj getOptionalLookupPrev();
 
 	/**
+	 *	Get the optional ICFBamSchemaRefObj instance referenced by the Prev key.
+	 *
+	 *	@return	The optional ICFBamSchemaRefObj instance referenced by the Prev key.
+	 */
+	ICFBamSchemaRefObj getOptionalLookupPrev( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamSchemaRefObj instance referenced by the Prev key.
 	 *
 	 *	@param	value	the ICFBamSchemaRefObj instance to be referenced by the Prev key.
@@ -118,6 +139,13 @@ public interface ICFBamSchemaRefEditObj
 	 *	@return	The ICFBamSchemaRefObj instance referenced by the Next key.
 	 */
 	ICFBamSchemaRefObj getOptionalLookupNext();
+
+	/**
+	 *	Get the optional ICFBamSchemaRefObj instance referenced by the Next key.
+	 *
+	 *	@return	The optional ICFBamSchemaRefObj instance referenced by the Next key.
+	 */
+	ICFBamSchemaRefObj getOptionalLookupNext( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamSchemaRefObj instance referenced by the Next key.

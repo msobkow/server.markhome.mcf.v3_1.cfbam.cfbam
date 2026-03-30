@@ -108,6 +108,48 @@ public interface ICFBamSecUserEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
+	 *	Get the ICFSecSecUserPasswordObj instance referenced by the Password key.
+	 *
+	 *	@return	The ICFSecSecUserPasswordObj instance referenced by the Password key.
+	 */
+	ICFSecSecUserPasswordObj getOptionalComponentsPassword();
+
+	/**
+	 *	Get the optional ICFSecSecUserPasswordObj instance referenced by the Password key.
+	 *
+	 *	@return	The optional ICFSecSecUserPasswordObj instance referenced by the Password key.
+	 */
+	ICFSecSecUserPasswordObj getOptionalComponentsPassword( boolean forceRead );
+
+	/**
+	 *	Get the ICFSecSecUserEMConfObj instance referenced by the EMConf key.
+	 *
+	 *	@return	The ICFSecSecUserEMConfObj instance referenced by the EMConf key.
+	 */
+	ICFSecSecUserEMConfObj getOptionalComponentsEMConf();
+
+	/**
+	 *	Get the optional ICFSecSecUserEMConfObj instance referenced by the EMConf key.
+	 *
+	 *	@return	The optional ICFSecSecUserEMConfObj instance referenced by the EMConf key.
+	 */
+	ICFSecSecUserEMConfObj getOptionalComponentsEMConf( boolean forceRead );
+
+	/**
+	 *	Get the ICFSecSecUserPWResetObj instance referenced by the PWReset key.
+	 *
+	 *	@return	The ICFSecSecUserPWResetObj instance referenced by the PWReset key.
+	 */
+	ICFSecSecUserPWResetObj getOptionalComponentsPWReset();
+
+	/**
+	 *	Get the optional ICFSecSecUserPWResetObj instance referenced by the PWReset key.
+	 *
+	 *	@return	The optional ICFSecSecUserPWResetObj instance referenced by the PWReset key.
+	 */
+	ICFSecSecUserPWResetObj getOptionalComponentsPWReset( boolean forceRead );
+
+	/**
 	 *	Get a list ICFSecSecSysGrpMembObj instances referenced by the SysSecGrpMemb key.
 	 *
 	 *	@return	The (potentially empty) list of ICFSecSecSysGrpMembObj instances referenced by the SysSecGrpMemb key.

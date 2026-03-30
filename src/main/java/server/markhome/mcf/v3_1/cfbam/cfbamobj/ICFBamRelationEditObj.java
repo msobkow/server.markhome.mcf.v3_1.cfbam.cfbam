@@ -78,6 +78,13 @@ public interface ICFBamRelationEditObj
 	ICFBamSchemaDefObj getOptionalLookupDefSchema();
 
 	/**
+	 *	Get the optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 *
+	 *	@return	The optional ICFBamSchemaDefObj instance referenced by the DefSchema key.
+	 */
+	ICFBamSchemaDefObj getOptionalLookupDefSchema( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamSchemaDefObj instance referenced by the DefSchema key.
 	 *
 	 *	@param	value	the ICFBamSchemaDefObj instance to be referenced by the DefSchema key.
@@ -90,6 +97,13 @@ public interface ICFBamRelationEditObj
 	 *	@return	The ICFBamTableObj instance referenced by the FromTable key.
 	 */
 	ICFBamTableObj getRequiredContainerFromTable();
+
+	/**
+	 *	Get the required ICFBamTableObj instance referenced by the FromTable key.
+	 *
+	 *	@return	The required ICFBamTableObj instance referenced by the FromTable key.
+	 */
+	ICFBamTableObj getRequiredContainerFromTable( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamTableObj instance referenced by the FromTable key.
@@ -120,6 +134,13 @@ public interface ICFBamRelationEditObj
 	ICFBamIndexObj getRequiredLookupFromIndex();
 
 	/**
+	 *	Get the required ICFBamIndexObj instance referenced by the FromIndex key.
+	 *
+	 *	@return	The required ICFBamIndexObj instance referenced by the FromIndex key.
+	 */
+	ICFBamIndexObj getRequiredLookupFromIndex( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamIndexObj instance referenced by the FromIndex key.
 	 *
 	 *	@param	value	the ICFBamIndexObj instance to be referenced by the FromIndex key.
@@ -132,6 +153,13 @@ public interface ICFBamRelationEditObj
 	 *	@return	The ICFBamTableObj instance referenced by the ToTable key.
 	 */
 	ICFBamTableObj getRequiredLookupToTable();
+
+	/**
+	 *	Get the required ICFBamTableObj instance referenced by the ToTable key.
+	 *
+	 *	@return	The required ICFBamTableObj instance referenced by the ToTable key.
+	 */
+	ICFBamTableObj getRequiredLookupToTable( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamTableObj instance referenced by the ToTable key.
@@ -148,6 +176,13 @@ public interface ICFBamRelationEditObj
 	ICFBamIndexObj getRequiredLookupToIndex();
 
 	/**
+	 *	Get the required ICFBamIndexObj instance referenced by the ToIndex key.
+	 *
+	 *	@return	The required ICFBamIndexObj instance referenced by the ToIndex key.
+	 */
+	ICFBamIndexObj getRequiredLookupToIndex( boolean forceRead );
+
+	/**
 	 *	Set the ICFBamIndexObj instance referenced by the ToIndex key.
 	 *
 	 *	@param	value	the ICFBamIndexObj instance to be referenced by the ToIndex key.
@@ -160,6 +195,13 @@ public interface ICFBamRelationEditObj
 	 *	@return	The ICFBamRelationObj instance referenced by the Narrowed key.
 	 */
 	ICFBamRelationObj getOptionalLookupNarrowed();
+
+	/**
+	 *	Get the optional ICFBamRelationObj instance referenced by the Narrowed key.
+	 *
+	 *	@return	The optional ICFBamRelationObj instance referenced by the Narrowed key.
+	 */
+	ICFBamRelationObj getOptionalLookupNarrowed( boolean forceRead );
 
 	/**
 	 *	Set the ICFBamRelationObj instance referenced by the Narrowed key.

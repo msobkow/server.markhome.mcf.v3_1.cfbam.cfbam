@@ -220,6 +220,48 @@ public interface ICFBamSecUserObj
 	void setIsNew( boolean value );
 
 	/**
+	 *	Get the optional ICFBamSecUserPasswordObj instance referenced by the Password key.
+	 *
+	 *	@return	The optional ICFBamSecUserPasswordObj instance referenced by the Password key.
+	 */
+	ICFSecSecUserPasswordObj getOptionalComponentsPassword();
+
+	/**
+	 *	Get the optional ICFSecSecUserPasswordObj instance referenced by the Password key.
+	 *
+	 *	@return	The optional ICFSecSecUserPasswordObj instance referenced by the Password key.
+	 */
+	ICFSecSecUserPasswordObj getOptionalComponentsPassword( boolean forceRead );
+
+	/**
+	 *	Get the optional ICFBamSecUserEMConfObj instance referenced by the EMConf key.
+	 *
+	 *	@return	The optional ICFBamSecUserEMConfObj instance referenced by the EMConf key.
+	 */
+	ICFSecSecUserEMConfObj getOptionalComponentsEMConf();
+
+	/**
+	 *	Get the optional ICFSecSecUserEMConfObj instance referenced by the EMConf key.
+	 *
+	 *	@return	The optional ICFSecSecUserEMConfObj instance referenced by the EMConf key.
+	 */
+	ICFSecSecUserEMConfObj getOptionalComponentsEMConf( boolean forceRead );
+
+	/**
+	 *	Get the optional ICFBamSecUserPWResetObj instance referenced by the PWReset key.
+	 *
+	 *	@return	The optional ICFBamSecUserPWResetObj instance referenced by the PWReset key.
+	 */
+	ICFSecSecUserPWResetObj getOptionalComponentsPWReset();
+
+	/**
+	 *	Get the optional ICFSecSecUserPWResetObj instance referenced by the PWReset key.
+	 *
+	 *	@return	The optional ICFSecSecUserPWResetObj instance referenced by the PWReset key.
+	 */
+	ICFSecSecUserPWResetObj getOptionalComponentsPWReset( boolean forceRead );
+
+	/**
 	 *	Get the array of optional ICFSecSecSysGrpMembObj array of instances referenced by the SysSecGrpMemb key.
 	 *
 	 *	@return	The optional ICFSecSecSysGrpMembObj[] array of instances referenced by the SysSecGrpMemb key.
@@ -276,25 +318,25 @@ public interface ICFBamSecUserObj
 	String getRequiredLoginId();
 
 	/**
-	 *	Get the required String attribute DfltSysGrpName.
+	 *	Get the optional String attribute DfltSysGrpName.
 	 *
-	 *	@return	The required String attribute DfltSysGrpName.
+	 *	@return	The optional String attribute DfltSysGrpName.
 	 */
-	String getRequiredDfltSysGrpName();
+	String getOptionalDfltSysGrpName();
 
 	/**
-	 *	Get the required String attribute DfltClusGrpName.
+	 *	Get the optional String attribute DfltClusGrpName.
 	 *
-	 *	@return	The required String attribute DfltClusGrpName.
+	 *	@return	The optional String attribute DfltClusGrpName.
 	 */
-	String getRequiredDfltClusGrpName();
+	String getOptionalDfltClusGrpName();
 
 	/**
-	 *	Get the required String attribute DfltTentGrpName.
+	 *	Get the optional String attribute DfltTentGrpName.
 	 *
-	 *	@return	The required String attribute DfltTentGrpName.
+	 *	@return	The optional String attribute DfltTentGrpName.
 	 */
-	String getRequiredDfltTentGrpName();
+	String getOptionalDfltTentGrpName();
 
 	/**
 	 *	Get the required String attribute EMailAddress.
@@ -302,27 +344,6 @@ public interface ICFBamSecUserObj
 	 *	@return	The required String attribute EMailAddress.
 	 */
 	String getRequiredEMailAddress();
-
-	/**
-	 *	Get the optional CFLibUuid6 attribute EMailConfirmUuid6.
-	 *
-	 *	@return	The optional CFLibUuid6 attribute EMailConfirmUuid6.
-	 */
-	CFLibUuid6 getOptionalEMailConfirmUuid6();
-
-	/**
-	 *	Get the required String attribute PasswordHash.
-	 *
-	 *	@return	The required String attribute PasswordHash.
-	 */
-	String getRequiredPasswordHash();
-
-	/**
-	 *	Get the optional CFLibUuid6 attribute PasswordResetUuid6.
-	 *
-	 *	@return	The optional CFLibUuid6 attribute PasswordResetUuid6.
-	 */
-	CFLibUuid6 getOptionalPasswordResetUuid6();
 
 	/**
 	 *	Internal use only.
