@@ -349,12 +349,12 @@ public class CFBamSecUserTableObj
 		keyEMAddrIdx.setRequiredEMailAddress( existing.getRequiredEMailAddress() );
 
 
-		schema.getSecUserPasswordTableObj().deepDisposeSecUserPasswordByIdIdx( existing.getRequiredSecUserId() );
-		schema.getSecUserEMConfTableObj().deepDisposeSecUserEMConfByIdIdx( existing.getRequiredSecUserId() );
-		schema.getSecUserPWResetTableObj().deepDisposeSecUserPWResetByIdIdx( existing.getRequiredSecUserId() );
-		schema.getSecSysGrpMembTableObj().deepDisposeSecSysGrpMembByLoginIdx( existing.getRequiredLoginId() );
-		schema.getSecClusGrpMembTableObj().deepDisposeSecClusGrpMembByLoginIdx( existing.getRequiredLoginId() );
-		schema.getSecTentGrpMembTableObj().deepDisposeSecTentGrpMembByUserIdx( existing.getRequiredLoginId() );
+					schema.getSecUserPasswordTableObj().deepDisposeSecUserPasswordByIdIdx( existing.getRequiredSecUserId() );
+					schema.getSecSysGrpMembTableObj().deepDisposeSecSysGrpMembByLoginIdx( existing.getRequiredLoginId() );
+					schema.getSecClusGrpMembTableObj().deepDisposeSecClusGrpMembByLoginIdx( existing.getRequiredLoginId() );
+					schema.getSecTentGrpMembTableObj().deepDisposeSecTentGrpMembByUserIdx( existing.getRequiredLoginId() );
+					schema.getSecUserPWResetTableObj().deepDisposeSecUserPWResetByIdIdx( existing.getRequiredSecUserId() );
+					schema.getSecUserEMConfTableObj().deepDisposeSecUserEMConfByIdIdx( existing.getRequiredSecUserId() );
 
 		if( indexByULoginIdx != null ) {
 			indexByULoginIdx.remove( keyULoginIdx );

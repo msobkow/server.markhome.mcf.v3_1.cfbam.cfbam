@@ -394,8 +394,8 @@ public class CFBamSecTentGrpTableObj
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
 
-		schema.getSecTentGrpIncTableObj().deepDisposeSecTentGrpIncByTentGrpIdx( existing.getRequiredSecTentGrpId() );
-		schema.getSecTentGrpMembTableObj().deepDisposeSecTentGrpMembByTentGrpIdx( existing.getRequiredSecTentGrpId() );
+					schema.getSecTentGrpMembTableObj().deepDisposeSecTentGrpMembByTentGrpIdx( existing.getRequiredSecTentGrpId() );
+					schema.getSecTentGrpIncTableObj().deepDisposeSecTentGrpIncByTentGrpIdx( existing.getRequiredSecTentGrpId() );
 
 		if( indexByTenantIdx != null ) {
 			if( indexByTenantIdx.containsKey( keyTenantIdx ) ) {

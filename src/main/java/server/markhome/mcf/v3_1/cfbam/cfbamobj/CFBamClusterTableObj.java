@@ -337,24 +337,6 @@ public class CFBamClusterTableObj
 		keyUDescrIdx.setRequiredDescription( existing.getRequiredDescription() );
 
 
-		ICFSecSecClusGrpObj objDelSecGrpMembs;
-		List<ICFSecSecClusGrpObj> arrDelSecGrpMembs = schema.getSecClusGrpTableObj().readCachedSecClusGrpByClusterIdx( existing.getRequiredId() );
-		Iterator<ICFSecSecClusGrpObj> iterDelSecGrpMembs = arrDelSecGrpMembs.iterator();
-		while( iterDelSecGrpMembs.hasNext() ) {
-			objDelSecGrpMembs = iterDelSecGrpMembs.next();
-			if( objDelSecGrpMembs != null ) {
-						schema.getSecClusGrpMembTableObj().deepDisposeSecClusGrpMembByClusGrpIdx( objDelSecGrpMembs.getRequiredSecClusGrpId() );
-			}
-		}
-		ICFSecSecClusGrpObj objDelSecGrpIncs;
-		List<ICFSecSecClusGrpObj> arrDelSecGrpIncs = schema.getSecClusGrpTableObj().readCachedSecClusGrpByClusterIdx( existing.getRequiredId() );
-		Iterator<ICFSecSecClusGrpObj> iterDelSecGrpIncs = arrDelSecGrpIncs.iterator();
-		while( iterDelSecGrpIncs.hasNext() ) {
-			objDelSecGrpIncs = iterDelSecGrpIncs.next();
-			if( objDelSecGrpIncs != null ) {
-						schema.getSecClusGrpIncTableObj().deepDisposeSecClusGrpIncByClusGrpIdx( objDelSecGrpIncs.getRequiredSecClusGrpId() );
-			}
-		}
 					schema.getSecClusGrpTableObj().deepDisposeSecClusGrpByClusterIdx( existing.getRequiredId() );
 					schema.getTenantTableObj().deepDisposeTenantByClusterIdx( existing.getRequiredId() );
 
