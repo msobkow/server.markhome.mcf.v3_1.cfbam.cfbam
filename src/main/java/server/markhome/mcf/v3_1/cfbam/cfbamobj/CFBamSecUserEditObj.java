@@ -214,6 +214,12 @@ public class CFBamSecUserEditObj
 			nextName = objName;
 			remainingName = null;
 		}
+		if( subObj == null ) {
+			subObj = ((ICFBamSchemaObj)getSchema()).getSecUserEMConfTableObj().readSecUserEMConfByUUuid6Idx( nextName, false );
+		}
+		if( subObj == null ) {
+			subObj = ((ICFBamSchemaObj)getSchema()).getSecUserPWResetTableObj().readSecUserPWResetByUUuid6Idx( nextName, false );
+		}
 		if( remainingName == null ) {
 			retObj = subObj;
 		}
