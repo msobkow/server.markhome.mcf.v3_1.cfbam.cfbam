@@ -168,19 +168,29 @@ public class CFBamTenantObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
-			if (nextName == null) {
+			try {
+				if (nextName == null) {
 				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 			}
 			String natNextName = nextName;
-			subObj = ((ICFBamSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByUNameIdx( getRequiredId(),
+				subObj = ((ICFBamSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByUNameIdx( getRequiredId(),
 				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( subObj == null ) {
-			if (nextName == null) {
+			try {
+				if (nextName == null) {
 				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 			}
 			String natNextName = nextName;
-			subObj = ((ICFBamSchemaObj)getSchema()).getTldTableObj().readTldByNameIdx( natNextName, false );
+				subObj = ((ICFBamSchemaObj)getSchema()).getTldTableObj().readTldByNameIdx( natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( remainingName == null ) {
 			retObj = subObj;

@@ -155,12 +155,17 @@ public class CFBamRelationEditObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
-			if (nextName == null) {
+			try {
+				if (nextName == null) {
 				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 			}
 			String natNextName = nextName;
-			subObj = ((ICFBamSchemaObj)getSchema()).getRelationColTableObj().readRelationColByUNameIdx( getRequiredId(),
+				subObj = ((ICFBamSchemaObj)getSchema()).getRelationColTableObj().readRelationColByUNameIdx( getRequiredId(),
 				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( remainingName == null ) {
 			retObj = subObj;

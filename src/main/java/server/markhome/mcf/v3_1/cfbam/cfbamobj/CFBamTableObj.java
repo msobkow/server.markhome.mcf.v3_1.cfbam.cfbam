@@ -171,52 +171,82 @@ public class CFBamTableObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
-			if (nextName == null) {
+			try {
+				if (nextName == null) {
 				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 			}
 			String natNextName = nextName;
-			subObj = ((ICFBamSchemaObj)getSchema()).getRelationTableObj().readRelationByUNameIdx( getRequiredId(),
+				subObj = ((ICFBamSchemaObj)getSchema()).getRelationTableObj().readRelationByUNameIdx( getRequiredId(),
 				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( subObj == null ) {
-			if (nextName == null) {
+			try {
+				if (nextName == null) {
 				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 			}
 			String natNextName = nextName;
-			subObj = ((ICFBamSchemaObj)getSchema()).getIndexTableObj().readIndexByUNameIdx( getRequiredId(),
+				subObj = ((ICFBamSchemaObj)getSchema()).getIndexTableObj().readIndexByUNameIdx( getRequiredId(),
 				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( subObj == null ) {
-			if (nextName == null) {
+			try {
+				if (nextName == null) {
 				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 			}
 			String natNextName = nextName;
-			subObj = ((ICFBamSchemaObj)getSchema()).getValueTableObj().readValueByUNameIdx( getRequiredId(),
+				subObj = ((ICFBamSchemaObj)getSchema()).getValueTableObj().readValueByUNameIdx( getRequiredId(),
 				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( subObj == null ) {
-			if (nextName == null) {
+			try {
+				if (nextName == null) {
 				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 			}
 			String natNextName = nextName;
-			subObj = ((ICFBamSchemaObj)getSchema()).getChainTableObj().readChainByUNameIdx( getRequiredId(),
+				subObj = ((ICFBamSchemaObj)getSchema()).getChainTableObj().readChainByUNameIdx( getRequiredId(),
 				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( subObj == null ) {
-			if (nextName == null) {
+			try {
+				if (nextName == null) {
 				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 			}
 			String natNextName = nextName;
-			subObj = ((ICFBamSchemaObj)getSchema()).getServerMethodTableObj().readServerMethodByUNameIdx( getRequiredId(),
+				subObj = ((ICFBamSchemaObj)getSchema()).getServerMethodTableObj().readServerMethodByUNameIdx( getRequiredId(),
 				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( subObj == null ) {
-			if (nextName == null) {
+			try {
+				if (nextName == null) {
 				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 			}
 			String natNextName = nextName;
-			subObj = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByUNameIdx( getRequiredId(),
+				subObj = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByUNameIdx( getRequiredId(),
 				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( remainingName == null ) {
 			retObj = subObj;

@@ -215,12 +215,17 @@ public class CFBamTopProjectEditObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
-			if (nextName == null) {
+			try {
+				if (nextName == null) {
 				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 			}
 			String natNextName = nextName;
-			subObj = ((ICFBamSchemaObj)getSchema()).getSubProjectTableObj().readSubProjectByNameIdx( getRequiredId(),
+				subObj = ((ICFBamSchemaObj)getSchema()).getSubProjectTableObj().readSubProjectByNameIdx( getRequiredId(),
 				natNextName, false );
+			}
+			catch (Throwable th) {
+				subObj = null;
+			}
 		}
 		if( remainingName == null ) {
 			retObj = subObj;
