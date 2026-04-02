@@ -170,12 +170,20 @@ public class CFBamTopDomainObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getTopProjectTableObj().readTopProjectByNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getLicenseTableObj().readLicenseByUNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( remainingName == null ) {
 			retObj = subObj;

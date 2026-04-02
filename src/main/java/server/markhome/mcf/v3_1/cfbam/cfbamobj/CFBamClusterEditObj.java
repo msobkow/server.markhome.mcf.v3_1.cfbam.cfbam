@@ -212,12 +212,20 @@ public class CFBamClusterEditObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredTenantName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getTenantTableObj().readTenantByUNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByUNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( remainingName == null ) {
 			retObj = subObj;

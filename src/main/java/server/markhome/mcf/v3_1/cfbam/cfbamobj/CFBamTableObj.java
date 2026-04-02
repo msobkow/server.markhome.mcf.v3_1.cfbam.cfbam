@@ -171,28 +171,52 @@ public class CFBamTableObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getRelationTableObj().readRelationByUNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getIndexTableObj().readIndexByUNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getValueTableObj().readValueByUNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getChainTableObj().readChainByUNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getServerMethodTableObj().readServerMethodByUNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByUNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( remainingName == null ) {
 			retObj = subObj;

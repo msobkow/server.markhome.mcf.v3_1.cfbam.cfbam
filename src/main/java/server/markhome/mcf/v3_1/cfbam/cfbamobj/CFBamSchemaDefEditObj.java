@@ -149,16 +149,28 @@ public class CFBamSchemaDefEditObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getTableTableObj().readTableByUNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getValueTableObj().readValueByUNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByUNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( remainingName == null ) {
 			retObj = subObj;

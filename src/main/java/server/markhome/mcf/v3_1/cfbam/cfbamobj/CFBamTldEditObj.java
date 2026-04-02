@@ -212,8 +212,12 @@ public class CFBamTldEditObj
 			remainingName = null;
 		}
 		if( subObj == null ) {
+			if (nextName == null) {
+				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+			}
+			String natNextName = nextName;
 			subObj = ((ICFBamSchemaObj)getSchema()).getTopDomainTableObj().readTopDomainByNameIdx( getRequiredId(),
-				nextName, false );
+				natNextName, false );
 		}
 		if( remainingName == null ) {
 			retObj = subObj;
