@@ -214,9 +214,9 @@ public class CFBamClusterEditObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredTenantName");
-			}
-			String natNextName = nextName;
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredTenantName");
+				}
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTenantTableObj().readTenantByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -227,9 +227,9 @@ public class CFBamClusterEditObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
-			}
-			String natNextName = nextName;
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}

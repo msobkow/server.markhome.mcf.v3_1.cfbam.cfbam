@@ -151,9 +151,9 @@ public class CFBamSchemaDefEditObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
-			}
-			String natNextName = nextName;
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTableTableObj().readTableByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -164,9 +164,9 @@ public class CFBamSchemaDefEditObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
-			}
-			String natNextName = nextName;
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getValueTableObj().readValueByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -177,9 +177,9 @@ public class CFBamSchemaDefEditObj
 		if( subObj == null ) {
 			try {
 				if (nextName == null) {
-				throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
-			}
-			String natNextName = nextName;
+					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
+				}
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
