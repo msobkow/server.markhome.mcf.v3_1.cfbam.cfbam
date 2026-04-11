@@ -272,6 +272,51 @@ public interface ICFBamTableTweakTableObj
 		boolean forceRead );
 
 	/**
+	 *	Get the CFBamTweakObj instance for the unique UDefIdx key.
+	 *
+	 *	@param	TenantId	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@param	ScopeId	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@param	DefSchemaTenantId	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@param	DefSchemaId	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@param	Name	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@return	CFBamTweakObj cached instance for the unique UDefIdx key, or
+	 *		null if no such instance exists.
+	 */
+	ICFBamTableTweakObj readTableTweakByUDefIdx( CFLibDbKeyHash256 TenantId,
+		CFLibDbKeyHash256 ScopeId,
+		CFLibDbKeyHash256 DefSchemaTenantId,
+		CFLibDbKeyHash256 DefSchemaId,
+		String Name );
+
+	/**
+	 *	Get the CFBamTweakObj instance for the unique UDefIdx key.
+	 *
+	 *	@param	TenantId	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@param	ScopeId	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@param	DefSchemaTenantId	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@param	DefSchemaId	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@param	Name	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@return	CFBamTweakObj refreshed instance for the unique UDefIdx key, or
+	 *		null if no such instance exists.
+	 */
+	ICFBamTableTweakObj readTableTweakByUDefIdx( CFLibDbKeyHash256 TenantId,
+		CFLibDbKeyHash256 ScopeId,
+		CFLibDbKeyHash256 DefSchemaTenantId,
+		CFLibDbKeyHash256 DefSchemaId,
+		String Name,
+		boolean forceRead );
+
+	/**
 	 *	Get the map of CFBamTableTweakObj instances sorted by their primary keys for the duplicate TableIdx key.
 	 *
 	 *	@param	TableId	The TableTweak key attribute of the instance generating the id.
@@ -303,6 +348,12 @@ public interface ICFBamTableTweakTableObj
 
 	List<ICFBamTableTweakObj> readCachedTableTweakByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
 
+	ICFBamTableTweakObj readCachedTableTweakByUDefIdx( CFLibDbKeyHash256 TenantId,
+		CFLibDbKeyHash256 ScopeId,
+		CFLibDbKeyHash256 DefSchemaTenantId,
+		CFLibDbKeyHash256 DefSchemaId,
+		String Name );
+
 	List<ICFBamTableTweakObj> readCachedTableTweakByTableIdx( CFLibDbKeyHash256 TableId );
 
 	void deepDisposeTableTweakByIdIdx( CFLibDbKeyHash256 Id );
@@ -315,6 +366,12 @@ public interface ICFBamTableTweakTableObj
 	void deepDisposeTableTweakByScopeIdx( CFLibDbKeyHash256 ScopeId );
 
 	void deepDisposeTableTweakByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+
+	void deepDisposeTableTweakByUDefIdx( CFLibDbKeyHash256 TenantId,
+		CFLibDbKeyHash256 ScopeId,
+		CFLibDbKeyHash256 DefSchemaTenantId,
+		CFLibDbKeyHash256 DefSchemaId,
+		String Name );
 
 	void deepDisposeTableTweakByTableIdx( CFLibDbKeyHash256 TableId );
 
@@ -365,6 +422,25 @@ public interface ICFBamTableTweakTableObj
 	 *	@param	DefSchemaId	The TableTweak key attribute of the instance generating the id.
 	 */
 	void deleteTableTweakByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+
+	/**
+	 *	Internal use only.
+	 *
+	 *	@param	TenantId	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@param	ScopeId	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@param	DefSchemaTenantId	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@param	DefSchemaId	The TableTweak key attribute of the instance generating the id.
+	 *
+	 *	@param	Name	The TableTweak key attribute of the instance generating the id.
+	 */
+	void deleteTableTweakByUDefIdx( CFLibDbKeyHash256 TenantId,
+		CFLibDbKeyHash256 ScopeId,
+		CFLibDbKeyHash256 DefSchemaTenantId,
+		CFLibDbKeyHash256 DefSchemaId,
+		String Name );
 
 	/**
 	 *	Internal use only.

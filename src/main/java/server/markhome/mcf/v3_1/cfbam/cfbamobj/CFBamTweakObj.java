@@ -449,6 +449,11 @@ public class CFBamTweakObj
 	}
 
 	@Override
+	public boolean getRequiredReplacesInherited() {
+		return( getTweakRec().getRequiredReplacesInherited() );
+	}
+
+	@Override
 	public String getRequiredTweakGelText() {
 		return( getTweakRec().getRequiredTweakGelText() );
 	}

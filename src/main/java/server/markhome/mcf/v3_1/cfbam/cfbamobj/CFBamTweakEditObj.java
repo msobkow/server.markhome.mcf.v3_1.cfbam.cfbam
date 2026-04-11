@@ -475,6 +475,18 @@ public class CFBamTweakEditObj
 	}
 
 	@Override
+	public boolean getRequiredReplacesInherited() {
+		return( getTweakRec().getRequiredReplacesInherited() );
+	}
+
+	@Override
+	public void setRequiredReplacesInherited( boolean value ) {
+		if( getTweakRec().getRequiredReplacesInherited() != value ) {
+			getTweakRec().setRequiredReplacesInherited( value );
+		}
+	}
+
+	@Override
 	public String getRequiredTweakGelText() {
 		return( getTweakRec().getRequiredTweakGelText() );
 	}

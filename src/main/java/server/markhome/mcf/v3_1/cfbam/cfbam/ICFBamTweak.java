@@ -75,6 +75,7 @@ public interface ICFBamTweak
 	public static final String S_DEFSCHEMAID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 DEFSCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
+	public final static boolean REPLACESINHERITED_INIT_VALUE = false;
 	public static final String TWEAKGELTEXT_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa88a;
 	public final static String S_CLASS_CODE = "a88a";
@@ -112,6 +113,8 @@ public interface ICFBamTweak
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();
 	public void setRequiredName( String value );
+	public boolean getRequiredReplacesInherited();
+	public void setRequiredReplacesInherited( boolean value );
 	public String getRequiredTweakGelText();
 	public void setRequiredTweakGelText( String value );
 	@Override

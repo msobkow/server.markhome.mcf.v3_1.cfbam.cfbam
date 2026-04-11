@@ -190,6 +190,37 @@ public interface ICFBamTweakTable
 	 */
 	void deleteTweakByDefSchemaIdx( ICFSecAuthorization Authorization,
 		ICFBamTweakByDefSchemaIdxKey argKey );
+	/**
+	 *	Delete the Tweak instances identified by the key UDefIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	TenantId	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@param	ScopeId	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@param	DefSchemaTenantId	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@param	DefSchemaId	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@param	Name	The Tweak key attribute of the instance generating the id.
+	 */
+	void deleteTweakByUDefIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 argTenantId,
+		CFLibDbKeyHash256 argScopeId,
+		CFLibDbKeyHash256 argDefSchemaTenantId,
+		CFLibDbKeyHash256 argDefSchemaId,
+		String argName );
+
+	/**
+	 *	Delete the Tweak instances identified by the key UDefIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteTweakByUDefIdx( ICFSecAuthorization Authorization,
+		ICFBamTweakByUDefIdxKey argKey );
 
 
 	/**
@@ -291,6 +322,31 @@ public interface ICFBamTweakTable
 	 */
 	ICFBamTweak[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 DefSchemaId );
+
+	/**
+	 *	Read the derived Tweak record instance identified by the unique key UDefIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	TenantId	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@param	ScopeId	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@param	DefSchemaTenantId	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@param	DefSchemaId	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@param	Name	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@return The record instance for the specified key, or null if there is
+	 *		no such existing key value.
+	 */
+	ICFBamTweak readDerivedByUDefIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 TenantId,
+		CFLibDbKeyHash256 ScopeId,
+		CFLibDbKeyHash256 DefSchemaTenantId,
+		CFLibDbKeyHash256 DefSchemaId,
+		String Name );
 
 	/**
 	 *	Read the specific Tweak record instance identified by the primary key.
@@ -405,4 +461,31 @@ public interface ICFBamTweakTable
 	 */
 	ICFBamTweak[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 DefSchemaId );
+
+	/**
+	 *	Read the specific Tweak record instance identified by the unique key UDefIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	TenantId	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@param	ScopeId	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@param	DefSchemaTenantId	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@param	DefSchemaId	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@param	Name	The Tweak key attribute of the instance generating the id.
+	 *
+	 *	@return The record instance for the specified key, or null if there is
+	 *		no such existing key value.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamTweak readRecByUDefIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 TenantId,
+		CFLibDbKeyHash256 ScopeId,
+		CFLibDbKeyHash256 DefSchemaTenantId,
+		CFLibDbKeyHash256 DefSchemaId,
+		String Name );
 }
