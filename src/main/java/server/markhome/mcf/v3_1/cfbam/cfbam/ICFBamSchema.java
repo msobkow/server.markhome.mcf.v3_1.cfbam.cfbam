@@ -71,6 +71,175 @@ extends ICFSecSchema,
 	public static final String SCHEMA_NAME = "CFBam";
 	public static final String DBSCHEMA_NAME = "CFBam31";
 	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>();
+	public static final CFSecTableInfo TABLE_INFO[] = {new CFSecTableInfo("Atom", true, false, "Tenant"),
+		new CFSecTableInfo("BlobCol", true, false, "Tenant"),
+		new CFSecTableInfo("BlobDef", true, false, "Tenant"),
+		new CFSecTableInfo("BlobType", true, false, "Tenant"),
+		new CFSecTableInfo("BoolCol", true, false, "Tenant"),
+		new CFSecTableInfo("BoolDef", true, false, "Tenant"),
+		new CFSecTableInfo("BoolType", true, false, "Tenant"),
+		new CFSecTableInfo("Chain", true, false, "Tenant"),
+		new CFSecTableInfo("ClearDep", true, false, "Tenant"),
+		new CFSecTableInfo("ClearSubDep1", true, false, "Tenant"),
+		new CFSecTableInfo("ClearSubDep2", true, false, "Tenant"),
+		new CFSecTableInfo("ClearSubDep3", true, false, "Tenant"),
+		new CFSecTableInfo("ClearTopDep", true, false, "Tenant"),
+		new CFSecTableInfo("DateCol", true, false, "Tenant"),
+		new CFSecTableInfo("DateDef", true, false, "Tenant"),
+		new CFSecTableInfo("DateType", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash128Col", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash128Def", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash128Gen", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash128Type", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash160Col", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash160Def", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash160Gen", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash160Type", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash224Col", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash224Def", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash224Gen", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash224Type", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash256Col", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash256Def", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash256Gen", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash256Type", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash384Col", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash384Def", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash384Gen", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash384Type", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash512Col", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash512Def", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash512Gen", true, false, "Tenant"),
+		new CFSecTableInfo("DbKeyHash512Type", true, false, "Tenant"),
+		new CFSecTableInfo("DelDep", true, false, "Tenant"),
+		new CFSecTableInfo("DelSubDep1", true, false, "Tenant"),
+		new CFSecTableInfo("DelSubDep2", true, false, "Tenant"),
+		new CFSecTableInfo("DelSubDep3", true, false, "Tenant"),
+		new CFSecTableInfo("DelTopDep", true, false, "Tenant"),
+		new CFSecTableInfo("DoubleCol", true, false, "Tenant"),
+		new CFSecTableInfo("DoubleDef", true, false, "Tenant"),
+		new CFSecTableInfo("DoubleType", true, false, "Tenant"),
+		new CFSecTableInfo("EnumDef", true, false, "Tenant"),
+		new CFSecTableInfo("EnumTag", true, false, "Tenant"),
+		new CFSecTableInfo("EnumType", true, false, "Tenant"),
+		new CFSecTableInfo("FloatCol", true, false, "Tenant"),
+		new CFSecTableInfo("FloatDef", true, false, "Tenant"),
+		new CFSecTableInfo("FloatType", true, false, "Tenant"),
+		new CFSecTableInfo("Id16Gen", true, false, "Tenant"),
+		new CFSecTableInfo("Id32Gen", true, false, "Tenant"),
+		new CFSecTableInfo("Id64Gen", true, false, "Tenant"),
+		new CFSecTableInfo("Index", true, false, "Tenant"),
+		new CFSecTableInfo("IndexCol", true, false, "Tenant"),
+		new CFSecTableInfo("Int16Col", true, false, "Tenant"),
+		new CFSecTableInfo("Int16Def", true, false, "Tenant"),
+		new CFSecTableInfo("Int16Type", true, false, "Tenant"),
+		new CFSecTableInfo("Int32Col", true, false, "Tenant"),
+		new CFSecTableInfo("Int32Def", true, false, "Tenant"),
+		new CFSecTableInfo("Int32Type", true, false, "Tenant"),
+		new CFSecTableInfo("Int64Col", true, false, "Tenant"),
+		new CFSecTableInfo("Int64Def", true, false, "Tenant"),
+		new CFSecTableInfo("Int64Type", true, false, "Tenant"),
+		new CFSecTableInfo("NmTokenCol", true, false, "Tenant"),
+		new CFSecTableInfo("NmTokenDef", true, false, "Tenant"),
+		new CFSecTableInfo("NmTokenType", true, false, "Tenant"),
+		new CFSecTableInfo("NmTokensCol", true, false, "Tenant"),
+		new CFSecTableInfo("NmTokensDef", true, false, "Tenant"),
+		new CFSecTableInfo("NmTokensType", true, false, "Tenant"),
+		new CFSecTableInfo("NumberCol", true, false, "Tenant"),
+		new CFSecTableInfo("NumberDef", true, false, "Tenant"),
+		new CFSecTableInfo("NumberType", true, false, "Tenant"),
+		new CFSecTableInfo("Param", true, false, "Tenant"),
+		new CFSecTableInfo("PopDep", true, false, "Tenant"),
+		new CFSecTableInfo("PopSubDep1", true, false, "Tenant"),
+		new CFSecTableInfo("PopSubDep2", true, false, "Tenant"),
+		new CFSecTableInfo("PopSubDep3", true, false, "Tenant"),
+		new CFSecTableInfo("PopTopDep", true, false, "Tenant"),
+		new CFSecTableInfo("Relation", true, false, "Tenant"),
+		new CFSecTableInfo("RelationCol", true, false, "Tenant"),
+		new CFSecTableInfo("SchemaDef", true, false, "Tenant"),
+		new CFSecTableInfo("SchemaRef", true, false, "Tenant"),
+		new CFSecTableInfo("SchemaTweak", true, false, "Tenant"),
+		new CFSecTableInfo("Scope", true, false, "Tenant"),
+		new CFSecTableInfo("ServerListFunc", true, false, "Tenant"),
+		new CFSecTableInfo("ServerMethod", true, false, "Tenant"),
+		new CFSecTableInfo("ServerObjFunc", true, false, "Tenant"),
+		new CFSecTableInfo("ServerProc", true, false, "Tenant"),
+		new CFSecTableInfo("StringCol", true, false, "Tenant"),
+		new CFSecTableInfo("StringDef", true, false, "Tenant"),
+		new CFSecTableInfo("StringType", true, false, "Tenant"),
+		new CFSecTableInfo("TZDateCol", true, false, "Tenant"),
+		new CFSecTableInfo("TZDateDef", true, false, "Tenant"),
+		new CFSecTableInfo("TZDateType", true, false, "Tenant"),
+		new CFSecTableInfo("TZTimeCol", true, false, "Tenant"),
+		new CFSecTableInfo("TZTimeDef", true, false, "Tenant"),
+		new CFSecTableInfo("TZTimeType", true, false, "Tenant"),
+		new CFSecTableInfo("TZTimestampCol", true, false, "Tenant"),
+		new CFSecTableInfo("TZTimestampDef", true, false, "Tenant"),
+		new CFSecTableInfo("TZTimestampType", true, false, "Tenant"),
+		new CFSecTableInfo("Table", true, false, "Tenant"),
+		new CFSecTableInfo("TableCol", true, false, "Tenant"),
+		new CFSecTableInfo("TableTweak", true, false, "Tenant"),
+		new CFSecTableInfo("TextCol", true, false, "Tenant"),
+		new CFSecTableInfo("TextDef", true, false, "Tenant"),
+		new CFSecTableInfo("TextType", true, false, "Tenant"),
+		new CFSecTableInfo("TimeCol", true, false, "Tenant"),
+		new CFSecTableInfo("TimeDef", true, false, "Tenant"),
+		new CFSecTableInfo("TimeType", true, false, "Tenant"),
+		new CFSecTableInfo("TimestampCol", true, false, "Tenant"),
+		new CFSecTableInfo("TimestampDef", true, false, "Tenant"),
+		new CFSecTableInfo("TimestampType", true, false, "Tenant"),
+		new CFSecTableInfo("TokenCol", true, false, "Tenant"),
+		new CFSecTableInfo("TokenDef", true, false, "Tenant"),
+		new CFSecTableInfo("TokenType", true, false, "Tenant"),
+		new CFSecTableInfo("Tweak", true, false, "Tenant"),
+		new CFSecTableInfo("UInt16Col", true, false, "Tenant"),
+		new CFSecTableInfo("UInt16Def", true, false, "Tenant"),
+		new CFSecTableInfo("UInt16Type", true, false, "Tenant"),
+		new CFSecTableInfo("UInt32Col", true, false, "Tenant"),
+		new CFSecTableInfo("UInt32Def", true, false, "Tenant"),
+		new CFSecTableInfo("UInt32Type", true, false, "Tenant"),
+		new CFSecTableInfo("UInt64Col", true, false, "Tenant"),
+		new CFSecTableInfo("UInt64Def", true, false, "Tenant"),
+		new CFSecTableInfo("UInt64Type", true, false, "Tenant"),
+		new CFSecTableInfo("Uuid6Col", true, false, "Tenant"),
+		new CFSecTableInfo("Uuid6Def", true, false, "Tenant"),
+		new CFSecTableInfo("Uuid6Gen", true, false, "Tenant"),
+		new CFSecTableInfo("Uuid6Type", true, false, "Tenant"),
+		new CFSecTableInfo("UuidCol", true, false, "Tenant"),
+		new CFSecTableInfo("UuidDef", true, false, "Tenant"),
+		new CFSecTableInfo("UuidGen", true, false, "Tenant"),
+		new CFSecTableInfo("UuidType", true, false, "Tenant"),
+		new CFSecTableInfo("Value", true, false, "Tenant")};
+	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>();
+	
+	public static CFSecTableInfo[] getTableInfo() {
+		return TABLE_INFO;
+	}
+	
+	public static CFSecTableInfo[] getConsolidatedTableInfo() {
+		if (consolidatedTableInfo.get() == null) {
+			ArrayList<CFSecTableInfo> lst = new ArrayList<>();
+			for( CFSecTableInfo info: ICFSecSchema.getTableInfo()) {
+				lst.add(info);
+			}
+			for( CFSecTableInfo info: ICFIntSchema.getTableInfo()) {
+				lst.add(info);
+			}
+			for( CFSecTableInfo info: TABLE_INFO) {
+				lst.add(info);
+			}
+			lst.sort((o1, o2) -> {
+				return o1.getTableName().compareTo(o2.getTableName());
+			});
+			CFSecTableInfo arr[] = new CFSecTableInfo[lst.size()];
+			int idx = 0;
+			for(CFSecTableInfo info: lst) {
+				arr[idx++] = info;
+			}
+			consolidatedTableInfo.compareAndSet(arr, null);
+		}
+		return(consolidatedTableInfo.get());
+	}
 
 	public default void setApplicationContext(final ApplicationContext applicationContext) throws BeansException {
 		arApplicationContext.compareAndSet(arApplicationContext.get(), applicationContext);
@@ -4138,5 +4307,6 @@ extends ICFSecSchema,
 	 */
 	//public static void setTablePerms( ICFSecTablePerms value );
 
-	public void bootstrapSchema();
+	public void bootstrapSchema(CFSecTableInfo tableInfo[]);
+	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecTableInfo tableInfo[]);
 }
