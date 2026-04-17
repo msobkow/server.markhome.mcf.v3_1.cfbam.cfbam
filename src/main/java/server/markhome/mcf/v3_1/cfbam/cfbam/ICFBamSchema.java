@@ -70,7 +70,7 @@ extends ICFSecSchema,
 {
 	public static final String SCHEMA_NAME = "CFBam";
 	public static final String DBSCHEMA_NAME = "CFBam31";
-	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>();
+	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>(null);
 	public static final CFSecTableInfo TABLE_INFO[] = {new CFSecTableInfo("Atom", true, false, "Tenant"),
 		new CFSecTableInfo("BlobCol", true, false, "Tenant"),
 		new CFSecTableInfo("BlobDef", true, false, "Tenant"),
@@ -210,7 +210,7 @@ extends ICFSecSchema,
 		new CFSecTableInfo("UuidGen", true, false, "Tenant"),
 		new CFSecTableInfo("UuidType", true, false, "Tenant"),
 		new CFSecTableInfo("Value", true, false, "Tenant")};
-	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>();
+	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>(null);
 	
 	public static CFSecTableInfo[] getTableInfo() {
 		return TABLE_INFO;
@@ -236,7 +236,7 @@ extends ICFSecSchema,
 			for(CFSecTableInfo info: lst) {
 				arr[idx++] = info;
 			}
-			consolidatedTableInfo.compareAndSet(arr, null);
+			consolidatedTableInfo.compareAndSet(null, arr);
 		}
 		return(consolidatedTableInfo.get());
 	}

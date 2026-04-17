@@ -60,18 +60,17 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamClearTopDep extends ICFBamClearDep
 {
-	public static final String S_TABLEID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
-	public static final String S_PREVID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_PREVID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 PREVID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_PREVID_INIT_VALUE );
-	public static final String S_NEXTID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_NEXTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 NEXTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_NEXTID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa814;
 	public final static String S_CLASS_CODE = "a814";
 
 	public ICFBamTable getRequiredContainerTable();
-	public List<ICFBamClearSubDep1> getOptionalComponentsClearDep();
 	public ICFBamClearTopDep getOptionalLookupPrev();
 	public ICFBamClearTopDep getOptionalLookupNext();
 	public void setRequiredContainerTable(ICFBamTable argObj);

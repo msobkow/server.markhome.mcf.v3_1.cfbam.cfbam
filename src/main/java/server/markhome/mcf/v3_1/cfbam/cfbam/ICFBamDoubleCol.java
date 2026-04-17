@@ -60,7 +60,7 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamDoubleCol extends ICFBamDoubleDef
 {
-	public static final String S_TABLEID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa86e;
 	public final static String S_CLASS_CODE = "a86e";

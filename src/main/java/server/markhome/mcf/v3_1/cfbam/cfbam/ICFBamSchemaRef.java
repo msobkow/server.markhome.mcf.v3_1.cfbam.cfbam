@@ -60,16 +60,16 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamSchemaRef extends ICFBamScope
 {
-	public static final String S_SCHEMAID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_SCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SCHEMAID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public static final String REFMODELNAME_INIT_VALUE = new String( "" );
 	public static final String INCLUDEROOT_INIT_VALUE = new String( "" );
-	public static final String S_REFSCHEMAID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_REFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 REFSCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_REFSCHEMAID_INIT_VALUE );
-	public static final String S_PREVID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_PREVID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 PREVID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_PREVID_INIT_VALUE );
-	public static final String S_NEXTID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_NEXTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 NEXTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_NEXTID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa804;
 	public final static String S_CLASS_CODE = "a804";

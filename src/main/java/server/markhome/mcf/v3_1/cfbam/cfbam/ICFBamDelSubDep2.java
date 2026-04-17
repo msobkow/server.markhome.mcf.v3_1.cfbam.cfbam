@@ -60,14 +60,13 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamDelSubDep2 extends ICFBamDelDep
 {
-	public static final String S_DELSUBDEP1ID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_DELSUBDEP1ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 DELSUBDEP1ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DELSUBDEP1ID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa819;
 	public final static String S_CLASS_CODE = "a819";
 
 	public ICFBamDelSubDep1 getRequiredContainerDelSubDep1();
-	public List<ICFBamDelSubDep3> getOptionalComponentsDelDep();
 	public void setRequiredContainerDelSubDep1(ICFBamDelSubDep1 argObj);
 	public void setRequiredContainerDelSubDep1(CFLibDbKeyHash256 argDelSubDep1Id);
 	public CFLibDbKeyHash256 getRequiredDelSubDep1Id();

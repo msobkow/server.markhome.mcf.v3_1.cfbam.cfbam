@@ -60,9 +60,9 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamIndex extends ICFBamScope
 {
-	public static final String S_TABLEID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
-	public static final String S_DEFSCHEMAID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_DEFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 DEFSCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static boolean ISUNIQUE_INIT_VALUE = false;
@@ -72,7 +72,6 @@ public interface ICFBamIndex extends ICFBamScope
 
 	public ICFBamTable getRequiredContainerTable();
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-	public List<ICFBamIndexCol> getOptionalComponentsColumns();
 	public void setRequiredContainerTable(ICFBamTable argObj);
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId);
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);

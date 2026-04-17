@@ -60,9 +60,9 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamSchemaDef extends ICFBamScope
 {
-	public static final String S_CTENANTID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_CTENANTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 CTENANTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CTENANTID_INIT_VALUE );
-	public static final String S_MINORVERSIONID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_MINORVERSIONID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 MINORVERSIONID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_MINORVERSIONID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public static final String COPYRIGHTPERIOD_INIT_VALUE = new String( "2020" );
@@ -74,10 +74,6 @@ public interface ICFBamSchemaDef extends ICFBamScope
 	public final static String S_CLASS_CODE = "a802";
 
 	public ICFIntMinorVersion getRequiredContainerMinorVersion();
-	public List<ICFBamTable> getOptionalComponentsTables();
-	public List<ICFBamValue> getOptionalComponentsTypes();
-	public List<ICFBamSchemaRef> getOptionalComponentsSchemaRefs();
-	public List<ICFBamTweak> getOptionalComponentsTweaks();
 	public ICFSecTenant getRequiredOwnerCTenant();
 	public void setRequiredContainerMinorVersion(ICFIntMinorVersion argObj);
 	public void setRequiredContainerMinorVersion(CFLibDbKeyHash256 argMinorVersionId);

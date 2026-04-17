@@ -60,14 +60,13 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamPopSubDep2 extends ICFBamPopDep
 {
-	public static final String S_POPSUBDEP1ID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_POPSUBDEP1ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 POPSUBDEP1ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_POPSUBDEP1ID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa832;
 	public final static String S_CLASS_CODE = "a832";
 
 	public ICFBamPopSubDep1 getRequiredContainerPopSubDep1();
-	public List<ICFBamPopSubDep3> getOptionalComponentsPopDep();
 	public void setRequiredContainerPopSubDep1(ICFBamPopSubDep1 argObj);
 	public void setRequiredContainerPopSubDep1(CFLibDbKeyHash256 argPopSubDep1Id);
 	public CFLibDbKeyHash256 getRequiredPopSubDep1Id();

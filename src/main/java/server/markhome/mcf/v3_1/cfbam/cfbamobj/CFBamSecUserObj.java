@@ -508,6 +508,11 @@ public class CFBamSecUserObj
 	}
 
 	@Override
+	public ICFSecSchema.SecAccountStatusEnum getRequiredAccountStatus() {
+		return( getSecUserRec().getRequiredAccountStatus() );
+	}
+
+	@Override
 	public String getOptionalDfltSysGrpName() {
 		return( getSecUserRec().getOptionalDfltSysGrpName() );
 	}

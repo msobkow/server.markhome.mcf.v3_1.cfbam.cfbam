@@ -318,6 +318,13 @@ public interface ICFBamSecUserObj
 	String getRequiredLoginId();
 
 	/**
+	 *	Get the required ICFSecSchema.SecAccountStatusEnum attribute AccountStatus.
+	 *
+	 *	@return	The required ICFSecSchema.SecAccountStatusEnum attribute AccountStatus.
+	 */
+	ICFSecSchema.SecAccountStatusEnum getRequiredAccountStatus();
+
+	/**
 	 *	Get the optional String attribute DfltSysGrpName.
 	 *
 	 *	@return	The optional String attribute DfltSysGrpName.

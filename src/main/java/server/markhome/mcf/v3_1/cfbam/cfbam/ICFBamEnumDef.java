@@ -63,7 +63,6 @@ public interface ICFBamEnumDef extends ICFBamInt16Def
 	public final static int CLASS_CODE = 0xa86f;
 	public final static String S_CLASS_CODE = "a86f";
 
-	public List<ICFBamEnumTag> getRequiredComponentsTag();
 	@Override
 	public boolean equals( Object obj );
 	

@@ -62,31 +62,29 @@ public interface ICFBamRelation extends ICFBamScope
 {
 	public static final ICFBamSchema.RelationTypeEnum RELATIONTYPE_MIN_VALUE = ICFBamSchema.RelationTypeEnum.Unknown;
 	public static final ICFBamSchema.RelationTypeEnum RELATIONTYPE_MAX_VALUE = ICFBamSchema.RelationTypeEnum.Children;
-	public static final String S_TABLEID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
-	public static final String S_DEFSCHEMAID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_DEFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 DEFSCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public static final ICFBamSchema.RelationTypeEnum RELATIONTYPE_INIT_VALUE = ICFBamSchema.ordinalToRelationTypeEnum( 0 );
-	public static final String S_FROMINDEXID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_FROMINDEXID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 FROMINDEXID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_FROMINDEXID_INIT_VALUE );
-	public static final String S_TOTABLEID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_TOTABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 TOTABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TOTABLEID_INIT_VALUE );
-	public static final String S_TOINDEXID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_TOINDEXID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 TOINDEXID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TOINDEXID_INIT_VALUE );
 	public final static boolean ISREQUIRED_INIT_VALUE = false;
 	public final static boolean ISXSDCONTAINER_INIT_VALUE = false;
 	public final static boolean ISLATERESOLVER_INIT_VALUE = false;
 	public final static boolean ALLOWADDENDUM_INIT_VALUE = false;
-	public static final String S_NARROWEDID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_NARROWEDID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 NARROWEDID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_NARROWEDID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa835;
 	public final static String S_CLASS_CODE = "a835";
 
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
 	public ICFBamTable getRequiredContainerFromTable();
-	public List<ICFBamRelationCol> getOptionalComponentsColumns();
-	public List<ICFBamPopTopDep> getOptionalComponentsPopDep();
 	public ICFBamIndex getRequiredLookupFromIndex();
 	public ICFBamTable getRequiredLookupToTable();
 	public ICFBamIndex getRequiredLookupToIndex();

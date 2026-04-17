@@ -473,6 +473,18 @@ public class CFBamSecUserEditObj
 	}
 
 	@Override
+	public ICFSecSchema.SecAccountStatusEnum getRequiredAccountStatus() {
+		return( getSecUserRec().getRequiredAccountStatus() );
+	}
+
+	@Override
+	public void setRequiredAccountStatus( ICFSecSchema.SecAccountStatusEnum value ) {
+		if( getSecUserRec().getRequiredAccountStatus() != value ) {
+			getSecUserRec().setRequiredAccountStatus( value );
+		}
+	}
+
+	@Override
 	public String getOptionalDfltSysGrpName() {
 		return( getSecUserRec().getOptionalDfltSysGrpName() );
 	}

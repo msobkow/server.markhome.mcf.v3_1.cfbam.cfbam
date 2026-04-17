@@ -60,7 +60,7 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamPopSubDep3 extends ICFBamPopDep
 {
-	public static final String S_POPSUBDEP2ID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_POPSUBDEP2ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 POPSUBDEP2ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_POPSUBDEP2ID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa833;

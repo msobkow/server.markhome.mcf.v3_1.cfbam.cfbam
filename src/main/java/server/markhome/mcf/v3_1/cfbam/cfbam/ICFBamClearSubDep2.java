@@ -60,14 +60,13 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamClearSubDep2 extends ICFBamClearDep
 {
-	public static final String S_CLEARSUBDEP1ID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final String S_CLEARSUBDEP1ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 CLEARSUBDEP1ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLEARSUBDEP1ID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa812;
 	public final static String S_CLASS_CODE = "a812";
 
 	public ICFBamClearSubDep1 getRequiredContainerClearSubDep1();
-	public List<ICFBamClearSubDep3> getOptionalComponentsClearDep();
 	public void setRequiredContainerClearSubDep1(ICFBamClearSubDep1 argObj);
 	public void setRequiredContainerClearSubDep1(CFLibDbKeyHash256 argClearSubDep1Id);
 	public CFLibDbKeyHash256 getRequiredClearSubDep1Id();
