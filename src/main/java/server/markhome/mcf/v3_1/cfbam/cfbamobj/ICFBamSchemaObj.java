@@ -488,6 +488,13 @@ public interface ICFBamSchemaObj
 	ICFBamIndexColTableObj getIndexColTableObj();
 
 	/**
+	 *	Get the IndexTweak interface for the schema.
+	 *
+	 *	@return	The ICFBamIndexTweakTableObj interface implementation for the schema.
+	 */
+	ICFBamIndexTweakTableObj getIndexTweakTableObj();
+
+	/**
 	 *	Get the Int16Col interface for the schema.
 	 *
 	 *	@return	The ICFBamInt16ColTableObj interface implementation for the schema.

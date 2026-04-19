@@ -1,4 +1,4 @@
-// Description: Java 25 base object instance implementation for Index
+// Description: Java 25 base object instance implementation for IndexTweak
 
 /*
  *	server.markhome.mcf.CFBam
@@ -61,40 +61,35 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
-public class CFBamIndexObj
-	extends CFBamScopeObj
-	implements ICFBamIndexObj
+public class CFBamIndexTweakObj
+	extends CFBamTweakObj
+	implements ICFBamIndexTweakObj
 {
-	protected ICFBamTableObj requiredContainerTable;
-	protected ICFBamSchemaDefObj optionalLookupDefSchema;
-	protected List<ICFBamIndexColObj> optionalComponentsColumns;
-	protected List<ICFBamIndexTweakObj> optionalComponentsTweaks;
+	protected ICFBamIndexObj requiredContainerIndexDef;
 
-	public CFBamIndexObj() {
+	public CFBamIndexTweakObj() {
 		super();
-		requiredContainerTable = null;
-		optionalLookupDefSchema = null;
+		requiredContainerIndexDef = null;
 	}
 
-	public CFBamIndexObj( ICFBamSchemaObj argSchema ) {
+	public CFBamIndexTweakObj( ICFBamSchemaObj argSchema ) {
 		super( argSchema );
-		requiredContainerTable = null;
-		optionalLookupDefSchema = null;
+		requiredContainerIndexDef = null;
 	}
 
 	@Override
 	public int getClassCode() {
-		return( ((ICFBamSchemaObj)schema).getIndexTableObj().getClassCode() );
+		return( ((ICFBamSchemaObj)schema).getIndexTweakTableObj().getClassCode() );
 	}
 
 	@Override
 	public String getGenDefName() {
-		return( "Index" );
+		return( "IndexTweak" );
 	}
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		ICFBamTableObj scope = getRequiredContainerTable();
+		ICFBamIndexObj scope = getRequiredContainerIndexDef();
 		return( scope );
 	}
 
@@ -151,21 +146,6 @@ public class CFBamIndexObj
 			nextName = objName;
 			remainingName = null;
 		}
-		if( subObj == null ) {
-			try {
-				if (nextName == null) {
-					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
-				}
-				String natNextName = nextName;
-				subObj = ((ICFBamSchemaObj)getSchema()).getIndexColTableObj().readIndexColByUNameIdx( getRequiredId(),
-				natNextName, false );
-			}
-			catch (Throwable th) {
-				subObj = null;
-			}
-		}
-		if( subObj == null ) {
-		}
 		if( remainingName == null ) {
 			retObj = subObj;
 		}
@@ -203,43 +183,43 @@ public class CFBamIndexObj
 	}
 
 	@Override
-	public ICFBamScopeObj realise() {
-		ICFBamIndexObj retobj = ((ICFBamSchemaObj)getSchema()).getIndexTableObj().realiseIndex(
-			(ICFBamIndexObj)this );
-		return( (ICFBamScopeObj)retobj );
+	public ICFBamTweakObj realise() {
+		ICFBamIndexTweakObj retobj = ((ICFBamSchemaObj)getSchema()).getIndexTweakTableObj().realiseIndexTweak(
+			(ICFBamIndexTweakObj)this );
+		return( (ICFBamTweakObj)retobj );
 	}
 
 	@Override
 	public void forget() {
-		((ICFBamSchemaObj)getSchema()).getIndexTableObj().reallyDeepDisposeIndex( (ICFBamIndexObj)this );
+		((ICFBamSchemaObj)getSchema()).getIndexTweakTableObj().reallyDeepDisposeIndexTweak( (ICFBamIndexTweakObj)this );
 	}
 
 	@Override
-	public ICFBamScopeObj read() {
-		ICFBamIndexObj retobj = ((ICFBamSchemaObj)getSchema()).getIndexTableObj().readIndexByIdIdx( getPKey(), false );
-		return( (ICFBamScopeObj)retobj );
+	public ICFBamTweakObj read() {
+		ICFBamIndexTweakObj retobj = ((ICFBamSchemaObj)getSchema()).getIndexTweakTableObj().readIndexTweakByIdIdx( getPKey(), false );
+		return( (ICFBamTweakObj)retobj );
 	}
 
 	@Override
-	public ICFBamScopeObj read( boolean forceRead ) {
-		ICFBamIndexObj retobj = ((ICFBamSchemaObj)getSchema()).getIndexTableObj().readIndexByIdIdx( getPKey(), forceRead );
-		return( (ICFBamScopeObj)retobj );
+	public ICFBamTweakObj read( boolean forceRead ) {
+		ICFBamIndexTweakObj retobj = ((ICFBamSchemaObj)getSchema()).getIndexTweakTableObj().readIndexTweakByIdIdx( getPKey(), forceRead );
+		return( (ICFBamTweakObj)retobj );
 	}
 
 	@Override
-	public ICFBamIndexTableObj getIndexTable() {
-		return( ((ICFBamSchemaObj)getSchema()).getIndexTableObj() );
+	public ICFBamIndexTweakTableObj getIndexTweakTable() {
+		return( ((ICFBamSchemaObj)getSchema()).getIndexTweakTableObj() );
 	}
 
 	@Override
-	public ICFBamScope getRec() {
+	public ICFBamTweak getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryIndex().newRec();
+				rec = getSchema().getCFBamBackingStore().getFactoryIndexTweak().newRec();
 			}
 			else {
 				// Read the data rec via the backing store
-				rec = getSchema().getCFBamBackingStore().getTableIndex().readDerivedByIdIdx( ((ICFBamSchemaObj)getSchema()).getAuthorization(),
+				rec = getSchema().getCFBamBackingStore().getTableIndexTweak().readDerivedByIdIdx( ((ICFBamSchemaObj)getSchema()).getAuthorization(),
 						getPKey() );
 				if( rec != null ) {
 					copyRecToPKey();
@@ -250,51 +230,51 @@ public class CFBamIndexObj
 	}
 
 	@Override
-	public void setRec( ICFBamScope value ) {
-		if( ! ( ( value == null ) || ! ( value instanceof ICFBamIndex ) ) ) {
+	public void setRec( ICFBamTweak value ) {
+		if( ! ( ( value == null ) || ! ( value instanceof ICFBamIndexTweak ) ) ) {
 			throw new CFLibUnsupportedClassException( getClass(),
 				"setRec",
 				"value",
 				value,
-				"CFBamIndexRec" );
+				"CFBamIndexTweakRec" );
 		}
 		rec = value;
 		copyRecToPKey();
-		requiredOwnerTenant = null;
-		requiredContainerTable = null;
+		requiredContainerScopeDef = null;
 		optionalLookupDefSchema = null;
+		requiredContainerIndexDef = null;
 	}
 
 	@Override
-	public ICFBamIndex getIndexRec() {
-		return( (ICFBamIndex)getRec() );
+	public ICFBamIndexTweak getIndexTweakRec() {
+		return( (ICFBamIndexTweak)getRec() );
 	}
 
 	@Override
-	public ICFBamScopeEditObj beginEdit() {
+	public ICFBamTweakEditObj beginEdit() {
 		if( edit != null ) {
 			throw new CFLibEditAlreadyOpenException( getClass(), "beginEdit" );
 		}
-		ICFBamIndexObj lockobj;
+		ICFBamIndexTweakObj lockobj;
 		if( getIsNew() ) {
-			lockobj = (ICFBamIndexObj)this;
+			lockobj = (ICFBamIndexTweakObj)this;
 		}
 		else {
-			lockobj = ((ICFBamSchemaObj)getSchema()).getIndexTableObj().lockIndex( getPKey() );
+			lockobj = ((ICFBamSchemaObj)getSchema()).getIndexTweakTableObj().lockIndexTweak( getPKey() );
 		}
-		edit = ((ICFBamSchemaObj)getSchema()).getIndexTableObj().newEditInstance( lockobj );
-		return( (ICFBamScopeEditObj)edit );
+		edit = ((ICFBamSchemaObj)getSchema()).getIndexTweakTableObj().newEditInstance( lockobj );
+		return( (ICFBamTweakEditObj)edit );
 	}
 
 	@Override
-	public ICFBamIndexEditObj getEditAsIndex() {
-		return( (ICFBamIndexEditObj)edit );
+	public ICFBamIndexTweakEditObj getEditAsIndexTweak() {
+		return( (ICFBamIndexTweakEditObj)edit );
 	}
 
 	@Override
 	public ICFSecSecUserObj getCreatedBy() {
 		if( createdBy == null ) {
-			ICFBamScope rec = getRec();
+			ICFBamTweak rec = getRec();
 			createdBy = ((ICFBamSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( rec.getCreatedByUserId() );
 		}
 		return( createdBy );
@@ -308,7 +288,7 @@ public class CFBamIndexObj
 	@Override
 	public ICFSecSecUserObj getUpdatedBy() {
 		if( updatedBy == null ) {
-			ICFBamScope rec = getRec();
+			ICFBamTweak rec = getRec();
 			updatedBy = ((ICFBamSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( rec.getUpdatedByUserId() );
 		}
 		return( updatedBy );
@@ -325,124 +305,23 @@ public class CFBamIndexObj
 	}
 
 	@Override
-	public ICFBamTableObj getRequiredContainerTable() {
-		return( getRequiredContainerTable( false ) );
+	public ICFBamIndexObj getRequiredContainerIndexDef() {
+		return( getRequiredContainerIndexDef( false ) );
 	}
 
 	@Override
-	public ICFBamTableObj getRequiredContainerTable( boolean forceRead ) {
-		if( ( requiredContainerTable == null ) || forceRead ) {
+	public ICFBamIndexObj getRequiredContainerIndexDef( boolean forceRead ) {
+		if( ( requiredContainerIndexDef == null ) || forceRead ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
-				requiredContainerTable = ((ICFBamSchemaObj)getSchema()).getTableTableObj().readTableByIdIdx( getIndexRec().getRequiredTableId(), forceRead );
+				requiredContainerIndexDef = ((ICFBamSchemaObj)getSchema()).getIndexTableObj().readIndexByIdIdx( getIndexTweakRec().getRequiredIndexId(), forceRead );
 			}
 		}
-		return( requiredContainerTable );
+		return( requiredContainerIndexDef );
 	}
 
 	@Override
-	public ICFBamSchemaDefObj getOptionalLookupDefSchema() {
-		return( getOptionalLookupDefSchema( false ) );
-	}
-
-	@Override
-	public ICFBamSchemaDefObj getOptionalLookupDefSchema( boolean forceRead ) {
-		if( ( optionalLookupDefSchema == null ) || forceRead ) {
-			boolean anyMissing = false;
-			if( getIndexRec().getOptionalDefSchemaId() == null ) {
-				anyMissing = true;
-			}
-			if( ! anyMissing ) {
-				optionalLookupDefSchema = ((ICFBamSchemaObj)getSchema()).getSchemaDefTableObj().readSchemaDefByIdIdx( getIndexRec().getOptionalDefSchemaId(), forceRead );
-			}
-		}
-		return( optionalLookupDefSchema );
-	}
-
-	@Override
-	public List<ICFBamIndexColObj> getOptionalComponentsColumns() {
-		List<ICFBamIndexColObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getIndexColTableObj().readIndexColByIndexIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFBamIndexColObj> getOptionalComponentsColumns( boolean forceRead ) {
-		List<ICFBamIndexColObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getIndexColTableObj().readIndexColByIndexIdx( getPKey(),
-			forceRead );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFBamIndexTweakObj> getOptionalComponentsTweaks() {
-		List<ICFBamIndexTweakObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getIndexTweakTableObj().readIndexTweakByIndexIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFBamIndexTweakObj> getOptionalComponentsTweaks( boolean forceRead ) {
-		List<ICFBamIndexTweakObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getIndexTweakTableObj().readIndexTweakByIndexIdx( getPKey(),
-			forceRead );
-		return( retval );
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredTableId() {
-		return( getIndexRec().getRequiredTableId() );
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
-		return( getIndexRec().getOptionalDefSchemaId() );
-	}
-
-	@Override
-	public String getRequiredName() {
-		return( getIndexRec().getRequiredName() );
-	}
-
-	@Override
-	public String getOptionalShortName() {
-		return( getIndexRec().getOptionalShortName() );
-	}
-
-	@Override
-	public String getOptionalLabel() {
-		return( getIndexRec().getOptionalLabel() );
-	}
-
-	@Override
-	public String getOptionalShortDescription() {
-		return( getIndexRec().getOptionalShortDescription() );
-	}
-
-	@Override
-	public String getOptionalDescription() {
-		return( getIndexRec().getOptionalDescription() );
-	}
-
-	@Override
-	public String getOptionalDbName() {
-		return( getIndexRec().getOptionalDbName() );
-	}
-
-	@Override
-	public String getOptionalSuffix() {
-		return( getIndexRec().getOptionalSuffix() );
-	}
-
-	@Override
-	public boolean getRequiredIsUnique() {
-		return( getIndexRec().getRequiredIsUnique() );
-	}
-
-	@Override
-	public boolean getRequiredIsDbMapped() {
-		return( getIndexRec().getRequiredIsDbMapped() );
+	public CFLibDbKeyHash256 getRequiredIndexId() {
+		return( getIndexTweakRec().getRequiredIndexId() );
 	}
 }

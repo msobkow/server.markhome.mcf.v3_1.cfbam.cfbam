@@ -69,6 +69,7 @@ public class CFBamIndexEditObj
 	protected ICFBamTableObj requiredContainerTable;
 	protected ICFBamSchemaDefObj optionalLookupDefSchema;
 	protected List<ICFBamIndexColObj> optionalComponentsColumns;
+	protected List<ICFBamIndexTweakObj> optionalComponentsTweaks;
 
 	public CFBamIndexEditObj( ICFBamIndexObj argOrig ) {
 		super( argOrig );
@@ -157,6 +158,8 @@ public class CFBamIndexEditObj
 			catch (Throwable th) {
 				subObj = null;
 			}
+		}
+		if( subObj == null ) {
 		}
 		if( remainingName == null ) {
 			retObj = subObj;
@@ -479,6 +482,22 @@ public class CFBamIndexEditObj
 	public List<ICFBamIndexColObj> getOptionalComponentsColumns( boolean forceRead ) {
 		List<ICFBamIndexColObj> retval;
 		retval = ((ICFBamSchemaObj)getSchema()).getIndexColTableObj().readIndexColByIndexIdx( getPKey(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFBamIndexTweakObj> getOptionalComponentsTweaks() {
+		List<ICFBamIndexTweakObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getIndexTweakTableObj().readIndexTweakByIndexIdx( getPKey(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFBamIndexTweakObj> getOptionalComponentsTweaks( boolean forceRead ) {
+		List<ICFBamIndexTweakObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getIndexTweakTableObj().readIndexTweakByIndexIdx( getPKey(),
 			forceRead );
 		return( retval );
 	}

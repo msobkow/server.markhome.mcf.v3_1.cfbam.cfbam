@@ -1715,6 +1715,34 @@ extends ICFSecTablePerms,
 	boolean allowDeleteIndexCol( CFSecAuthorization Authorization );
 
 	/**
+	 *	Is the session allowed to create IndexTweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateIndexTweak( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read IndexTweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadIndexTweak( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update IndexTweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateIndexTweak( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete IndexTweak instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteIndexTweak( CFSecAuthorization Authorization );
+
+	/**
 	 *	Is the session allowed to create Int16Col instances?
 	 *
 	 *	@param	Authorization	The session authorization information.

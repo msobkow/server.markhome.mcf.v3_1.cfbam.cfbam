@@ -120,6 +120,13 @@ public interface ICFBamIndexEditObj
 	List<ICFBamIndexColObj> getOptionalComponentsColumns();
 
 	/**
+	 *	Get a list ICFBamIndexTweakObj instances referenced by the Tweaks key.
+	 *
+	 *	@return	The (potentially empty) list of ICFBamIndexTweakObj instances referenced by the Tweaks key.
+	 */
+	List<ICFBamIndexTweakObj> getOptionalComponentsTweaks();
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute TableId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute TableId.

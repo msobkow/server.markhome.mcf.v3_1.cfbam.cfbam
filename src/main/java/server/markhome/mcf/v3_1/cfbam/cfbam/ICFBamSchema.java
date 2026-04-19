@@ -130,6 +130,7 @@ extends ICFSecSchema,
 		new CFSecTableInfo("Id64Gen", true, false, "Tenant"),
 		new CFSecTableInfo("Index", true, false, "Tenant"),
 		new CFSecTableInfo("IndexCol", true, false, "Tenant"),
+		new CFSecTableInfo("IndexTweak", true, false, "Tenant"),
 		new CFSecTableInfo("Int16Col", true, false, "Tenant"),
 		new CFSecTableInfo("Int16Def", true, false, "Tenant"),
 		new CFSecTableInfo("Int16Type", true, false, "Tenant"),
@@ -615,6 +616,8 @@ extends ICFSecSchema,
 				entry = new ICFSecSchema.ClassMapEntry(ICFBamSchema.SCHEMA_NAME, "TableTweak", ICFBamTableTweak.CLASS_CODE);
 				ICFBamSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFBamSchema.SCHEMA_NAME, "SchemaTweak", ICFBamSchemaTweak.CLASS_CODE);
+				ICFBamSchema.entries.add(entry);
+				entry = new ICFSecSchema.ClassMapEntry(ICFBamSchema.SCHEMA_NAME, "IndexTweak", ICFBamIndexTweak.CLASS_CODE);
 				ICFBamSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFBamSchema.SCHEMA_NAME, "Value", ICFBamValue.CLASS_CODE);
 				ICFBamSchema.entries.add(entry);
@@ -2371,6 +2374,24 @@ extends ICFSecSchema,
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamIndexColFactory getFactoryIndexCol();
+
+	/**
+	 *	Get the IndexTweak Table interface for the schema.
+	 *
+	 *	@return	The IndexTweak Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFBamIndexTweakTable getTableIndexTweak();
+
+	/**
+	 *	Get the IndexTweak Factory interface for the schema.
+	 *
+	 *	@return	The IndexTweak Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFBamIndexTweakFactory getFactoryIndexTweak();
 
 	/**
 	 *	Get the Int16Col Table interface for the schema.

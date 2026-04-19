@@ -130,6 +130,20 @@ public interface ICFBamIndexObj
 	List<ICFBamIndexColObj> getOptionalComponentsColumns( boolean forceRead );
 
 	/**
+	 *	Get the array of optional ICFBamIndexTweakObj array of instances referenced by the Tweaks key.
+	 *
+	 *	@return	The optional ICFBamIndexTweakObj[] array of instances referenced by the Tweaks key.
+	 */
+	List<ICFBamIndexTweakObj> getOptionalComponentsTweaks();
+
+	/**
+	 *	Get the array of optional ICFBamIndexTweakObj array of instances referenced by the Tweaks key.
+	 *
+	 *	@return	The optional ICFBamIndexTweakObj[] array of instances referenced by the Tweaks key.
+	 */
+	List<ICFBamIndexTweakObj> getOptionalComponentsTweaks( boolean forceRead );
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute TableId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute TableId.
