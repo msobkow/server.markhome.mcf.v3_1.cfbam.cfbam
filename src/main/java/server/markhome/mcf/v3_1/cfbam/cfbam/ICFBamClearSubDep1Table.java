@@ -68,6 +68,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
  */
 public interface ICFBamClearSubDep1Table
 {
+	public static final String TABLE_NAME = "ClearSubDep1";
 
 	/**
 	 *	Create the instance in the database, and update the specified record

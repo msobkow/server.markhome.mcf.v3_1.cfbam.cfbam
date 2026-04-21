@@ -68,6 +68,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
  */
 public interface ICFBamId32GenTable
 {
+	public static final String TABLE_NAME = "Id32Gen";
 
 	/**
 	 *	Create the instance in the database, and update the specified record

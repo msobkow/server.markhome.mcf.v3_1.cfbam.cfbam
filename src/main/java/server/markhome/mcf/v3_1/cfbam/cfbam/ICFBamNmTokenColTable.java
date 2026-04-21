@@ -68,6 +68,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
  */
 public interface ICFBamNmTokenColTable
 {
+	public static final String TABLE_NAME = "NmTokenCol";
 
 	/**
 	 *	Create the instance in the database, and update the specified record

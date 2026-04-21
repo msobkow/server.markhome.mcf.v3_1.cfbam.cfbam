@@ -68,6 +68,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
  */
 public interface ICFBamDoubleTypeTable
 {
+	public static final String TABLE_NAME = "DoubleType";
 
 	/**
 	 *	Create the instance in the database, and update the specified record

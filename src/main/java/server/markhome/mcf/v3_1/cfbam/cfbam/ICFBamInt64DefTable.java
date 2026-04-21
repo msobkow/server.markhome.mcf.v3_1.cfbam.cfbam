@@ -68,6 +68,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
  */
 public interface ICFBamInt64DefTable
 {
+	public static final String TABLE_NAME = "Int64Def";
 
 	/**
 	 *	Create the instance in the database, and update the specified record

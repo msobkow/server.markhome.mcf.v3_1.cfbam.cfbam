@@ -68,6 +68,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
  */
 public interface ICFBamTableColTable
 {
+	public static final String TABLE_NAME = "TableCol";
 
 	/**
 	 *	Create the instance in the database, and update the specified record

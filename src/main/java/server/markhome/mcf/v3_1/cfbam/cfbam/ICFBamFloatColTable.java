@@ -68,6 +68,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
  */
 public interface ICFBamFloatColTable
 {
+	public static final String TABLE_NAME = "FloatCol";
 
 	/**
 	 *	Create the instance in the database, and update the specified record

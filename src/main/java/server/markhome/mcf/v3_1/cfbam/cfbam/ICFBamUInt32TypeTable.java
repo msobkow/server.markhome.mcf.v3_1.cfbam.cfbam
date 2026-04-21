@@ -68,6 +68,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
  */
 public interface ICFBamUInt32TypeTable
 {
+	public static final String TABLE_NAME = "UInt32Type";
 
 	/**
 	 *	Create the instance in the database, and update the specified record

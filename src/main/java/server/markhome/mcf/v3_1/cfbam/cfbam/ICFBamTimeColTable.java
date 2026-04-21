@@ -68,6 +68,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
  */
 public interface ICFBamTimeColTable
 {
+	public static final String TABLE_NAME = "TimeCol";
 
 	/**
 	 *	Create the instance in the database, and update the specified record

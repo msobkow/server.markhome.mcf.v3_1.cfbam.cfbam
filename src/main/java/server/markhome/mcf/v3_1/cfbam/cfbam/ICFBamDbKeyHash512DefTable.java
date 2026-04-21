@@ -68,6 +68,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
  */
 public interface ICFBamDbKeyHash512DefTable
 {
+	public static final String TABLE_NAME = "DbKeyHash512Def";
 
 	/**
 	 *	Create the instance in the database, and update the specified record

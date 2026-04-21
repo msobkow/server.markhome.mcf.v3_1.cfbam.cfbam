@@ -68,6 +68,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
  */
 public interface ICFBamDateTypeTable
 {
+	public static final String TABLE_NAME = "DateType";
 
 	/**
 	 *	Create the instance in the database, and update the specified record
