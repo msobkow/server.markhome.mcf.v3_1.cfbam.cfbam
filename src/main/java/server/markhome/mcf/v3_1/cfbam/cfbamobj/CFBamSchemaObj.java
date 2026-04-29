@@ -64,8 +64,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 public class CFBamSchemaObj
 	implements ICFBamSchemaObj
 {
-	public static String SCHEMA_NAME = "CFBam";
-	public static String SCHEMA_DBNAME = "CFBam31";
+	public static final String SCHEMA_NAME = ICFBamSchema.SCHEMA_NAME;
+	public static final String SCHEMA_DBNAME = ICFBamSchema.DBSCHEMA_NAME;
 	protected ICFSecAuthorization authorization = null;
 	protected String secClusterName = "system";
 	protected String secTenantName = "system";
