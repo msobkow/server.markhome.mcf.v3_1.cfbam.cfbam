@@ -1,4 +1,4 @@
-// Description: Java 25 base object instance implementation for Cluster
+// Description: Java 25 base object instance implementation for SecClusRoleMemb
 
 /*
  *	server.markhome.mcf.CFBam
@@ -61,26 +61,22 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public class CFBamClusterObj
-	implements ICFBamClusterObj
+public class CFBamSecClusRoleMembObj
+	implements ICFBamSecClusRoleMembObj
 {
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
 	protected boolean isNew;
-	protected ICFSecClusterEditObj edit;
+	protected ICFSecSecClusRoleMembEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
-	protected ICFSecCluster rec;
-	protected List<ICFSecTenantObj> optionalComponentsTenant;
-	protected List<ICFSecSecClusGrpObj> optionalComponentsSecGroup;
-	protected List<ICFSecSecClusRoleObj> optionalComponentsSecRole;
-	protected List<ICFSecSysClusterObj> optionalComponentsSysCluster;
+	protected ICFSecSecClusRoleMembPKey pKey;
+	protected ICFSecSecClusRoleMemb rec;
 
-	public CFBamClusterObj() {
+	public CFBamSecClusRoleMembObj() {
 		isNew = true;
 	}
 
-	public CFBamClusterObj( ICFSecSchemaObj argSchema ) {
+	public CFBamSecClusRoleMembObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
@@ -88,12 +84,12 @@ public class CFBamClusterObj
 
 	@Override
 	public int getClassCode() {
-		return( ((ICFSecSchemaObj)schema).getClusterTableObj().getClassCode() );
+		return( ((ICFSecSchemaObj)schema).getSecClusRoleMembTableObj().getClassCode() );
 	}
 
 	@Override
 	public String getGenDefName() {
-		return( "Cluster" );
+		return( "SecClusRoleMemb" );
 	}
 
 	@Override
@@ -104,7 +100,7 @@ public class CFBamClusterObj
 	@Override
 	public String getObjName() {
 		String objName;
-		objName = getRequiredFullDomName();
+		objName = getRequiredLoginId();
 		return( objName );
 	}
 
@@ -164,45 +160,6 @@ public class CFBamClusterObj
 			nextName = objName;
 			remainingName = null;
 		}
-		if( subObj == null ) {
-			try {
-				if (nextName == null) {
-					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredTenantName");
-				}
-				String natNextName = nextName;
-				subObj = ((ICFBamSchemaObj)getSchema()).getTenantTableObj().readTenantByUNameIdx( getRequiredId(),
-				natNextName, false );
-			}
-			catch (Throwable th) {
-				subObj = null;
-			}
-		}
-		if( subObj == null ) {
-			try {
-				if (nextName == null) {
-					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
-				}
-				String natNextName = nextName;
-				subObj = ((ICFBamSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByUNameIdx( getRequiredId(),
-				natNextName, false );
-			}
-			catch (Throwable th) {
-				subObj = null;
-			}
-		}
-		if( subObj == null ) {
-			try {
-				if (nextName == null) {
-					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
-				}
-				String natNextName = nextName;
-				subObj = ((ICFBamSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByUNameIdx( getRequiredId(),
-				natNextName, false );
-			}
-			catch (Throwable th) {
-				subObj = null;
-			}
-		}
 		if( remainingName == null ) {
 			retObj = subObj;
 		}
@@ -258,32 +215,34 @@ public class CFBamClusterObj
 	}
 
 	@Override
-	public ICFSecClusterObj realise() {
-		ICFSecClusterObj retobj = ((ICFBamSchemaObj)getSchema()).getClusterTableObj().realiseCluster(
-			(ICFSecClusterObj)this );
-		return( (ICFSecClusterObj)retobj );
+	public ICFSecSecClusRoleMembObj realise() {
+		ICFSecSecClusRoleMembObj retobj = ((ICFBamSchemaObj)getSchema()).getSecClusRoleMembTableObj().realiseSecClusRoleMemb(
+			(ICFSecSecClusRoleMembObj)this );
+		return( (ICFSecSecClusRoleMembObj)retobj );
 	}
 
 	@Override
 	public void forget() {
-		((ICFBamSchemaObj)getSchema()).getClusterTableObj().reallyDeepDisposeCluster( (ICFSecClusterObj)this );
+		((ICFBamSchemaObj)getSchema()).getSecClusRoleMembTableObj().reallyDeepDisposeSecClusRoleMemb( (ICFSecSecClusRoleMembObj)this );
 	}
 
 	@Override
-	public ICFSecClusterObj read() {
-		ICFSecClusterObj retobj = ((ICFBamSchemaObj)getSchema()).getClusterTableObj().readClusterByIdIdx( getPKey(), false );
-		return( (ICFSecClusterObj)retobj );
+	public ICFSecSecClusRoleMembObj read() {
+		ICFSecSecClusRoleMembObj retobj = ((ICFBamSchemaObj)getSchema()).getSecClusRoleMembTableObj().readSecClusRoleMembByIdIdx( getPKey().getRequiredSecClusRoleId(),
+			getPKey().getRequiredLoginId(), false );
+		return( (ICFSecSecClusRoleMembObj)retobj );
 	}
 
 	@Override
-	public ICFSecClusterObj read( boolean forceRead ) {
-		ICFSecClusterObj retobj = ((ICFBamSchemaObj)getSchema()).getClusterTableObj().readClusterByIdIdx( getPKey(), forceRead );
-		return( (ICFSecClusterObj)retobj );
+	public ICFSecSecClusRoleMembObj read( boolean forceRead ) {
+		ICFSecSecClusRoleMembObj retobj = ((ICFBamSchemaObj)getSchema()).getSecClusRoleMembTableObj().readSecClusRoleMembByIdIdx( getPKey().getRequiredSecClusRoleId(),
+			getPKey().getRequiredLoginId(), forceRead );
+		return( (ICFSecSecClusRoleMembObj)retobj );
 	}
 
 	@Override
-	public ICFSecClusterTableObj getClusterTable() {
-		return( ((ICFBamSchemaObj)getSchema()).getClusterTableObj() );
+	public ICFSecSecClusRoleMembTableObj getSecClusRoleMembTable() {
+		return( ((ICFBamSchemaObj)getSchema()).getSecClusRoleMembTableObj() );
 	}
 
 	@Override
@@ -297,15 +256,16 @@ public class CFBamClusterObj
 	}
 
 	@Override
-	public ICFSecCluster getRec() {
+	public ICFSecSecClusRoleMemb getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactoryCluster().newRec();
+				rec = getSchema().getCFSecBackingStore().getFactorySecClusRoleMemb().newRec();
 			}
 			else {
 				// Read the data rec via the backing store
-				rec = getSchema().getCFSecBackingStore().getTableCluster().readDerivedByIdIdx( ((ICFBamSchemaObj)getSchema()).getAuthorization(),
-						getPKey() );
+				rec = getSchema().getCFSecBackingStore().getTableSecClusRoleMemb().readDerivedByIdIdx( ((ICFBamSchemaObj)getSchema()).getAuthorization(),
+						getPKey().getRequiredSecClusRoleId(),
+						getPKey().getRequiredLoginId() );
 				if( rec != null ) {
 					copyRecToPKey();
 				}
@@ -315,32 +275,35 @@ public class CFBamClusterObj
 	}
 
 	@Override
-	public void setRec( ICFSecCluster value ) {
-		if( ! ( ( value == null ) || ! ( value instanceof ICFSecCluster ) ) ) {
+	public void setRec( ICFSecSecClusRoleMemb value ) {
+		if( ! ( ( value == null ) || ! ( value instanceof ICFSecSecClusRoleMemb ) ) ) {
 			throw new CFLibUnsupportedClassException( getClass(),
 				"setRec",
 				"value",
 				value,
-				"CFSecClusterRec" );
+				"CFSecSecClusRoleMembRec" );
 		}
 		rec = value;
 		copyRecToPKey();
 	}
 
 	@Override
-	public ICFSecCluster getClusterRec() {
-		return( (ICFSecCluster)getRec() );
+	public ICFSecSecClusRoleMemb getSecClusRoleMembRec() {
+		return( (ICFSecSecClusRoleMemb)getRec() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFSecSecClusRoleMembPKey getPKey() {
+		if( pKey == null ) {
+			pKey = getSchema().getCFSecBackingStore().getFactorySecClusRoleMemb().newPKey();
+		}
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFSecSecClusRoleMembPKey value ) {
 		if( pKey != value ) {
-       		pKey = value;
+			pKey = value;
 			copyPKeyToRec();
 		}
 	}
@@ -356,19 +319,19 @@ public class CFBamClusterObj
 	}
 
 	@Override
-	public ICFSecClusterEditObj beginEdit() {
+	public ICFSecSecClusRoleMembEditObj beginEdit() {
 		if( edit != null ) {
 			throw new CFLibEditAlreadyOpenException( getClass(), "beginEdit" );
 		}
-		ICFSecClusterObj lockobj;
+		ICFSecSecClusRoleMembObj lockobj;
 		if( getIsNew() ) {
-			lockobj = (ICFSecClusterObj)this;
+			lockobj = (ICFSecSecClusRoleMembObj)this;
 		}
 		else {
-			lockobj = ((ICFBamSchemaObj)getSchema()).getClusterTableObj().lockCluster( getPKey() );
+			lockobj = ((ICFBamSchemaObj)getSchema()).getSecClusRoleMembTableObj().lockSecClusRoleMemb( getPKey() );
 		}
-		edit = ((ICFBamSchemaObj)getSchema()).getClusterTableObj().newEditInstance( lockobj );
-		return( (ICFSecClusterEditObj)edit );
+		edit = ((ICFBamSchemaObj)getSchema()).getSecClusRoleMembTableObj().newEditInstance( lockobj );
+		return( (ICFSecSecClusRoleMembEditObj)edit );
 	}
 
 	@Override
@@ -377,19 +340,19 @@ public class CFBamClusterObj
 	}
 
 	@Override
-	public ICFSecClusterEditObj getEdit() {
+	public ICFSecSecClusRoleMembEditObj getEdit() {
 		return( edit );
 	}
 
 	@Override
-	public ICFSecClusterEditObj getEditAsCluster() {
-		return( (ICFSecClusterEditObj)edit );
+	public ICFSecSecClusRoleMembEditObj getEditAsSecClusRoleMemb() {
+		return( (ICFSecSecClusRoleMembEditObj)edit );
 	}
 
 	@Override
 	public ICFSecSecUserObj getCreatedBy() {
 		if( createdBy == null ) {
-			ICFSecCluster rec = getRec();
+			ICFSecSecClusRoleMemb rec = getRec();
 			createdBy = ((ICFBamSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( rec.getCreatedByUserId() );
 		}
 		return( createdBy );
@@ -403,7 +366,7 @@ public class CFBamClusterObj
 	@Override
 	public ICFSecSecUserObj getUpdatedBy() {
 		if( updatedBy == null ) {
-			ICFSecCluster rec = getRec();
+			ICFSecSecClusRoleMemb rec = getRec();
 			updatedBy = ((ICFBamSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( rec.getUpdatedByUserId() );
 		}
 		return( updatedBy );
@@ -415,90 +378,20 @@ public class CFBamClusterObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
-		return( getPKey() );
+	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
+		return( getPKey().getRequiredSecClusRoleId() );
 	}
 
 	@Override
-	public List<ICFSecTenantObj> getOptionalComponentsTenant() {
-		List<ICFSecTenantObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getTenantTableObj().readTenantByClusterIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecTenantObj> getOptionalComponentsTenant( boolean forceRead ) {
-		List<ICFSecTenantObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getTenantTableObj().readTenantByClusterIdx( getPKey(),
-			forceRead );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup() {
-		List<ICFSecSecClusGrpObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByClusterIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup( boolean forceRead ) {
-		List<ICFSecSecClusGrpObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByClusterIdx( getPKey(),
-			forceRead );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecSecClusRoleObj> getOptionalComponentsSecRole() {
-		List<ICFSecSecClusRoleObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByClusterIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecSecClusRoleObj> getOptionalComponentsSecRole( boolean forceRead ) {
-		List<ICFSecSecClusRoleObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByClusterIdx( getPKey(),
-			forceRead );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecSysClusterObj> getOptionalComponentsSysCluster() {
-		List<ICFSecSysClusterObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getSysClusterTableObj().readSysClusterByClusterIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecSysClusterObj> getOptionalComponentsSysCluster( boolean forceRead ) {
-		List<ICFSecSysClusterObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getSysClusterTableObj().readSysClusterByClusterIdx( getPKey(),
-			forceRead );
-		return( retval );
-	}
-
-	@Override
-	public String getRequiredFullDomName() {
-		return( getClusterRec().getRequiredFullDomName() );
-	}
-
-	@Override
-	public String getRequiredDescription() {
-		return( getClusterRec().getRequiredDescription() );
+	public String getRequiredLoginId() {
+		return( getPKey().getRequiredLoginId() );
 	}
 
 	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
-			if (getPKey() != rec.getPKey()) {
-				rec.setPKey(getPKey());
-			}
+			rec.getPKey().setRequiredSecClusRoleId(getPKey().getRequiredSecClusRoleId());
+			rec.getPKey().setRequiredLoginId(getPKey().getRequiredLoginId());
 		}
 		if( edit != null ) {
 			edit.copyPKeyToRec();
@@ -508,9 +401,8 @@ public class CFBamClusterObj
 	@Override
 	public void copyRecToPKey() {
 		if( rec != null ) {
-			if (getPKey() != rec.getPKey()) {
-				setPKey(rec.getPKey());
-			}
+			getPKey().setRequiredSecClusRoleId(rec.getPKey().getRequiredSecClusRoleId());
+			getPKey().setRequiredLoginId(rec.getPKey().getRequiredLoginId());
 		}
 	}
 }

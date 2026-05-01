@@ -1,4 +1,4 @@
-// Description: Java 25 Instance Edit Object interface for CFBam Cluster.
+// Description: Java 25 Instance Edit Object interface for CFBam SecRoleMemb.
 
 /*
  *	server.markhome.mcf.CFBam
@@ -60,8 +60,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFBamClusterEditObj
-	extends ICFBamClusterObj, ICFSecClusterEditObj, ICFIntClusterEditObj
+public interface ICFBamSecRoleMembEditObj
+	extends ICFBamSecRoleMembObj, ICFSecSecRoleMembEditObj, ICFIntSecRoleMembEditObj
 {
 	/*
 	 *	create() may return a different instance than the
@@ -72,12 +72,12 @@ public interface ICFBamClusterEditObj
 	 *
 	 *	@return The created instance.
 	 */
-	ICFSecClusterObj create();
+	ICFSecSecRoleMembObj create();
 
 	/*
 	 *	Update the instance.
 	 */
-	CFSecClusterEditObj update();
+	CFSecSecRoleMembEditObj update();
 
 	/**
 	 *	Set the user who created this instance.
@@ -108,32 +108,46 @@ public interface ICFBamClusterEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
-	 *	Get a list ICFSecTenantObj instances referenced by the Tenant key.
+	 *	Get the ICFSecSecRoleObj instance referenced by the Role key.
 	 *
-	 *	@return	The (potentially empty) list of ICFSecTenantObj instances referenced by the Tenant key.
+	 *	@return	The ICFSecSecRoleObj instance referenced by the Role key.
 	 */
-	List<ICFSecTenantObj> getOptionalComponentsTenant();
+	ICFSecSecRoleObj getRequiredContainerRole();
 
 	/**
-	 *	Get a list ICFSecSecClusGrpObj instances referenced by the SecGroup key.
+	 *	Get the required ICFSecSecRoleObj instance referenced by the Role key.
 	 *
-	 *	@return	The (potentially empty) list of ICFSecSecClusGrpObj instances referenced by the SecGroup key.
+	 *	@return	The required ICFSecSecRoleObj instance referenced by the Role key.
 	 */
-	List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup();
+	ICFSecSecRoleObj getRequiredContainerRole( boolean forceRead );
 
 	/**
-	 *	Get a list ICFSecSecClusRoleObj instances referenced by the SecRole key.
+	 *	Set the ICFSecSecRoleObj instance referenced by the Role key.
 	 *
-	 *	@return	The (potentially empty) list of ICFSecSecClusRoleObj instances referenced by the SecRole key.
+	 *	@param	value	the ICFSecSecRoleObj instance to be referenced by the Role key.
 	 */
-	List<ICFSecSecClusRoleObj> getOptionalComponentsSecRole();
+	void setRequiredContainerRole( ICFSecSecRoleObj value );
 
 	/**
-	 *	Get a list ICFSecSysClusterObj instances referenced by the SysCluster key.
+	 *	Get the ICFSecSecUserObj instance referenced by the User key.
 	 *
-	 *	@return	The (potentially empty) list of ICFSecSysClusterObj instances referenced by the SysCluster key.
+	 *	@return	The ICFSecSecUserObj instance referenced by the User key.
 	 */
-	List<ICFSecSysClusterObj> getOptionalComponentsSysCluster();
+	ICFSecSecUserObj getRequiredParentUser();
+
+	/**
+	 *	Get the required ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The required ICFSecSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredParentUser( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@param	value	the ICFSecSecUserObj instance to be referenced by the User key.
+	 */
+	void setRequiredParentUser( ICFSecSecUserObj value );
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

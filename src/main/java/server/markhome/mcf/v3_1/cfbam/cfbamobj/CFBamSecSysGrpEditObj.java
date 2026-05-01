@@ -70,9 +70,15 @@ public class CFBamSecSysGrpEditObj
 	protected ICFSecSecUserObj updatedBy = null;
 	protected List<ICFSecSecSysGrpIncObj> optionalChildrenIncByGrp;
 	protected List<ICFSecSecSysGrpMembObj> optionalChildrenMembByGrp;
+	protected List<ICFSecSecClusGrpObj> optionalChildrenImplClusGrp;
+	protected List<ICFSecSecTentGrpObj> optionalChildrenImplTentGrp;
+	protected ICFSecSecRoleObj optionalChildrenImplRole;
+	protected List<ICFSecSecClusRoleObj> optionalChildrenImplClusRole;
+	protected List<ICFSecSecTentRoleObj> optionalChildrenImplTentRole;
 	protected List<ICFSecSecSysGrpIncObj> optionalChildrenSysGrpByName;
 	protected List<ICFSecSecClusGrpIncObj> optionalChildrenClusGrpByName;
 	protected List<ICFSecSecTentGrpIncObj> optionalChildrenTentGrpByName;
+	protected List<ICFSecSecRoleEnablesObj> optionalChildrenRoleByEnableName;
 
 	public CFBamSecSysGrpEditObj( ICFSecSecSysGrpObj argOrig ) {
 		orig = argOrig;
@@ -422,9 +428,15 @@ public class CFBamSecSysGrpEditObj
 			setPKey(value);
 			optionalChildrenIncByGrp = null;
 			optionalChildrenMembByGrp = null;
+			optionalChildrenImplClusGrp = null;
+			optionalChildrenImplTentGrp = null;
+			optionalChildrenImplRole = null;
+			optionalChildrenImplClusRole = null;
+			optionalChildrenImplTentRole = null;
 			optionalChildrenSysGrpByName = null;
 			optionalChildrenClusGrpByName = null;
 			optionalChildrenTentGrpByName = null;
+			optionalChildrenRoleByEnableName = null;
 		}
 	}
 
@@ -439,9 +451,15 @@ public class CFBamSecSysGrpEditObj
 			getSecSysGrpRec().setRequiredName( value );
 			optionalChildrenIncByGrp = null;
 			optionalChildrenMembByGrp = null;
+			optionalChildrenImplClusGrp = null;
+			optionalChildrenImplTentGrp = null;
+			optionalChildrenImplRole = null;
+			optionalChildrenImplClusRole = null;
+			optionalChildrenImplTentRole = null;
 			optionalChildrenSysGrpByName = null;
 			optionalChildrenClusGrpByName = null;
 			optionalChildrenTentGrpByName = null;
+			optionalChildrenRoleByEnableName = null;
 		}
 	}
 
@@ -490,6 +508,87 @@ public class CFBamSecSysGrpEditObj
 	}
 
 	@Override
+	public List<ICFSecSecClusGrpObj> getOptionalChildrenImplClusGrp() {
+		List<ICFSecSecClusGrpObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByNameIdx( getSecSysGrpRec().getRequiredName(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecClusGrpObj> getOptionalChildrenImplClusGrp( boolean forceRead ) {
+		List<ICFSecSecClusGrpObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecClusGrpTableObj().readSecClusGrpByNameIdx( getSecSysGrpRec().getRequiredName(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentGrpObj> getOptionalChildrenImplTentGrp() {
+		List<ICFSecSecTentGrpObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByNameIdx( getSecSysGrpRec().getRequiredName(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentGrpObj> getOptionalChildrenImplTentGrp( boolean forceRead ) {
+		List<ICFSecSecTentGrpObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecTentGrpTableObj().readSecTentGrpByNameIdx( getSecSysGrpRec().getRequiredName(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public ICFSecSecRoleObj getOptionalChildrenImplRole() {
+		return( getOptionalChildrenImplRole( false ) );
+	}
+
+	@Override
+	public ICFSecSecRoleObj getOptionalChildrenImplRole( boolean forceRead ) {
+		if( forceRead || ( optionalChildrenImplRole == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFSecSecRoleObj obj = ((ICFBamSchemaObj)getOrigAsSecSysGrp().getSchema()).getSecRoleTableObj().readSecRoleByIdIdx( getPKey() );
+				optionalChildrenImplRole = obj;
+			}
+		}
+		return( optionalChildrenImplRole );
+	}
+
+	@Override
+	public List<ICFSecSecClusRoleObj> getOptionalChildrenImplClusRole() {
+		List<ICFSecSecClusRoleObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByNameIdx( getSecSysGrpRec().getRequiredName(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecClusRoleObj> getOptionalChildrenImplClusRole( boolean forceRead ) {
+		List<ICFSecSecClusRoleObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecClusRoleTableObj().readSecClusRoleByNameIdx( getSecSysGrpRec().getRequiredName(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentRoleObj> getOptionalChildrenImplTentRole() {
+		List<ICFSecSecTentRoleObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecTentRoleTableObj().readSecTentRoleByNameIdx( getSecSysGrpRec().getRequiredName(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecTentRoleObj> getOptionalChildrenImplTentRole( boolean forceRead ) {
+		List<ICFSecSecTentRoleObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecTentRoleTableObj().readSecTentRoleByNameIdx( getSecSysGrpRec().getRequiredName(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
 	public List<ICFSecSecSysGrpIncObj> getOptionalChildrenSysGrpByName() {
 		List<ICFSecSecSysGrpIncObj> retval;
 		retval = ((ICFBamSchemaObj)getSchema()).getSecSysGrpIncTableObj().readSecSysGrpIncByNameIdx( getSecSysGrpRec().getRequiredName(),
@@ -533,6 +632,22 @@ public class CFBamSecSysGrpEditObj
 	public List<ICFSecSecTentGrpIncObj> getOptionalChildrenTentGrpByName( boolean forceRead ) {
 		List<ICFSecSecTentGrpIncObj> retval;
 		retval = ((ICFBamSchemaObj)getSchema()).getSecTentGrpIncTableObj().readSecTentGrpIncByNameIdx( getSecSysGrpRec().getRequiredName(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecRoleEnablesObj> getOptionalChildrenRoleByEnableName() {
+		List<ICFSecSecRoleEnablesObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecRoleEnablesTableObj().readSecRoleEnablesByNameIdx( getSecSysGrpRec().getRequiredName(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecRoleEnablesObj> getOptionalChildrenRoleByEnableName( boolean forceRead ) {
+		List<ICFSecSecRoleEnablesObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecRoleEnablesTableObj().readSecRoleEnablesByNameIdx( getSecSysGrpRec().getRequiredName(),
 			forceRead );
 		return( retval );
 	}

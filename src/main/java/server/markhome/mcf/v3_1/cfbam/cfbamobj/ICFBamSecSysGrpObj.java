@@ -248,6 +248,76 @@ public interface ICFBamSecSysGrpObj
 	List<ICFSecSecSysGrpMembObj> getOptionalChildrenMembByGrp( boolean forceRead );
 
 	/**
+	 *	Get the array of optional ICFSecSecClusGrpObj array of instances referenced by the ImplClusGrp key.
+	 *
+	 *	@return	The optional ICFSecSecClusGrpObj[] array of instances referenced by the ImplClusGrp key.
+	 */
+	List<ICFSecSecClusGrpObj> getOptionalChildrenImplClusGrp();
+
+	/**
+	 *	Get the array of optional ICFSecSecClusGrpObj array of instances referenced by the ImplClusGrp key.
+	 *
+	 *	@return	The optional ICFSecSecClusGrpObj[] array of instances referenced by the ImplClusGrp key.
+	 */
+	List<ICFSecSecClusGrpObj> getOptionalChildrenImplClusGrp( boolean forceRead );
+
+	/**
+	 *	Get the array of optional ICFSecSecTentGrpObj array of instances referenced by the ImplTentGrp key.
+	 *
+	 *	@return	The optional ICFSecSecTentGrpObj[] array of instances referenced by the ImplTentGrp key.
+	 */
+	List<ICFSecSecTentGrpObj> getOptionalChildrenImplTentGrp();
+
+	/**
+	 *	Get the array of optional ICFSecSecTentGrpObj array of instances referenced by the ImplTentGrp key.
+	 *
+	 *	@return	The optional ICFSecSecTentGrpObj[] array of instances referenced by the ImplTentGrp key.
+	 */
+	List<ICFSecSecTentGrpObj> getOptionalChildrenImplTentGrp( boolean forceRead );
+
+	/**
+	 *	Get the optional ICFBamSecRoleObj instance referenced by the ImplRole key.
+	 *
+	 *	@return	The optional ICFBamSecRoleObj instance referenced by the ImplRole key.
+	 */
+	ICFSecSecRoleObj getOptionalChildrenImplRole();
+
+	/**
+	 *	Get the optional ICFSecSecRoleObj instance referenced by the ImplRole key.
+	 *
+	 *	@return	The optional ICFSecSecRoleObj instance referenced by the ImplRole key.
+	 */
+	ICFSecSecRoleObj getOptionalChildrenImplRole( boolean forceRead );
+
+	/**
+	 *	Get the array of optional ICFSecSecClusRoleObj array of instances referenced by the ImplClusRole key.
+	 *
+	 *	@return	The optional ICFSecSecClusRoleObj[] array of instances referenced by the ImplClusRole key.
+	 */
+	List<ICFSecSecClusRoleObj> getOptionalChildrenImplClusRole();
+
+	/**
+	 *	Get the array of optional ICFSecSecClusRoleObj array of instances referenced by the ImplClusRole key.
+	 *
+	 *	@return	The optional ICFSecSecClusRoleObj[] array of instances referenced by the ImplClusRole key.
+	 */
+	List<ICFSecSecClusRoleObj> getOptionalChildrenImplClusRole( boolean forceRead );
+
+	/**
+	 *	Get the array of optional ICFSecSecTentRoleObj array of instances referenced by the ImplTentRole key.
+	 *
+	 *	@return	The optional ICFSecSecTentRoleObj[] array of instances referenced by the ImplTentRole key.
+	 */
+	List<ICFSecSecTentRoleObj> getOptionalChildrenImplTentRole();
+
+	/**
+	 *	Get the array of optional ICFSecSecTentRoleObj array of instances referenced by the ImplTentRole key.
+	 *
+	 *	@return	The optional ICFSecSecTentRoleObj[] array of instances referenced by the ImplTentRole key.
+	 */
+	List<ICFSecSecTentRoleObj> getOptionalChildrenImplTentRole( boolean forceRead );
+
+	/**
 	 *	Get the array of optional ICFSecSecSysGrpIncObj array of instances referenced by the SysGrpByName key.
 	 *
 	 *	@return	The optional ICFSecSecSysGrpIncObj[] array of instances referenced by the SysGrpByName key.
@@ -288,6 +358,20 @@ public interface ICFBamSecSysGrpObj
 	 *	@return	The optional ICFSecSecTentGrpIncObj[] array of instances referenced by the TentGrpByName key.
 	 */
 	List<ICFSecSecTentGrpIncObj> getOptionalChildrenTentGrpByName( boolean forceRead );
+
+	/**
+	 *	Get the array of optional ICFSecSecRoleEnablesObj array of instances referenced by the RoleByEnableName key.
+	 *
+	 *	@return	The optional ICFSecSecRoleEnablesObj[] array of instances referenced by the RoleByEnableName key.
+	 */
+	List<ICFSecSecRoleEnablesObj> getOptionalChildrenRoleByEnableName();
+
+	/**
+	 *	Get the array of optional ICFSecSecRoleEnablesObj array of instances referenced by the RoleByEnableName key.
+	 *
+	 *	@return	The optional ICFSecSecRoleEnablesObj[] array of instances referenced by the RoleByEnableName key.
+	 */
+	List<ICFSecSecRoleEnablesObj> getOptionalChildrenRoleByEnableName( boolean forceRead );
 
 	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecSysGrpId.

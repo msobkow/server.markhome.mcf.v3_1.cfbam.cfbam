@@ -1,4 +1,4 @@
-// Description: Java 25 Object interface for CFBam Cluster.
+// Description: Java 25 Object interface for CFBam SecClusRoleMemb.
 
 /*
  *	server.markhome.mcf.CFBam
@@ -60,12 +60,12 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFBamClusterObj
-	extends ICFSecClusterObj,
-		ICFIntClusterObj
+public interface ICFBamSecClusRoleMembObj
+	extends ICFSecSecClusRoleMembObj,
+		ICFIntSecClusRoleMembObj
 {
 	/**
-	 *	Initially, the class code for an object is ICFSecCluster.CLASS_CODE, but the Obj layer relies on class code translation to map those
+	 *	Initially, the class code for an object is ICFSecSecClusRoleMemb.CLASS_CODE, but the Obj layer relies on class code translation to map those
 	 *	backing store entities to a runtime set of front-facing classcodes that the clients download and use when talking to the server implementing this code base.
 	 *
 	 *	@return The runtime class code used by this object. Only after the system is fully booted are these values stable and reliable.
@@ -99,11 +99,11 @@ public interface ICFBamClusterObj
 	 */
 	LocalDateTime getUpdatedAt();
 	/**
-	 *	Realise this instance of a Cluster.
+	 *	Realise this instance of a SecClusRoleMemb.
 	 *
-	 *	@return	CFSecClusterObj instance which should be subsequently referenced.
+	 *	@return	CFSecSecClusRoleMembObj instance which should be subsequently referenced.
 	 */
-	ICFSecClusterObj realise();
+	ICFSecSecClusRoleMembObj realise();
 
 	/**
 	 *	Forget this instance from the cache.
@@ -115,51 +115,51 @@ public interface ICFBamClusterObj
 	/**
 	 *	Re-read this instance by it's primary key.
 	 *
-	 *	@return	ICFSecClusterObj the reference to the cached or read (realised) instance.
+	 *	@return	ICFSecSecClusRoleMembObj the reference to the cached or read (realised) instance.
 	 */
-	ICFSecClusterObj read();
+	ICFSecSecClusRoleMembObj read();
 
 	/**
 	 *	Re-read this instance by it's primary key.
 	 *
-	 *	@return	ICFSecClusterObj the reference to the cached or read (realised) instance.
+	 *	@return	ICFSecSecClusRoleMembObj the reference to the cached or read (realised) instance.
 	 */
-	ICFSecClusterObj read( boolean forceRead );
+	ICFSecSecClusRoleMembObj read( boolean forceRead );
 
 	/**
-	 *	Initialize and return a locked edition of this Cluster instance.
+	 *	Initialize and return a locked edition of this SecClusRoleMemb instance.
 	 *
-	 *	@return	The newly locked ICFSecClusterEditObj edition of this instance.
+	 *	@return	The newly locked ICFSecSecClusRoleMembEditObj edition of this instance.
 	 */
-	ICFSecClusterEditObj beginEdit();
+	ICFSecSecClusRoleMembEditObj beginEdit();
 
 	/**
-	 *	End this edition of this Cluster instance.
+	 *	End this edition of this SecClusRoleMemb instance.
 	 *
 	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
 	/**
-	 *	Get the current edition of this Cluster instance.
+	 *	Get the current edition of this SecClusRoleMemb instance.
 	 *
-	 *	@return	The ICFSecClusterEditObj edition of this instance.
+	 *	@return	The ICFSecSecClusRoleMembEditObj edition of this instance.
 	 */
-	ICFSecClusterEditObj getEdit();
+	ICFSecSecClusRoleMembEditObj getEdit();
 
 	/**
-	 *	Get the current edition of this Cluster instance as a ICFSecClusterEditObj.
+	 *	Get the current edition of this SecClusRoleMemb instance as a ICFSecSecClusRoleMembEditObj.
 	 *
-	 *	@return	The ICFSecClusterEditObj edition of this instance.
+	 *	@return	The ICFSecSecClusRoleMembEditObj edition of this instance.
 	 */
-	ICFSecClusterEditObj getEditAsCluster();
+	ICFSecSecClusRoleMembEditObj getEditAsSecClusRoleMemb();
 
 	/**
-	 *	Get the ICFSecClusterTableObj table cache which manages this instance.
+	 *	Get the ICFSecSecClusRoleMembTableObj table cache which manages this instance.
 	 *
-	 *	@return	ICFSecClusterTableObj table cache which manages this instance.
+	 *	@return	ICFSecSecClusRoleMembTableObj table cache which manages this instance.
 	 */
-	ICFSecClusterTableObj getClusterTable();
+	ICFSecSecClusRoleMembTableObj getSecClusRoleMembTable();
 
 	/**
 	 *	Get the ICFSecSchemaObj schema cache which manages this instance.
@@ -178,29 +178,29 @@ public interface ICFBamClusterObj
 	void setSchema(ICFSecSchemaObj schema);
 
 	/**
-	 *	Get the ICFSecCluster instance which currently backs this instance.
+	 *	Get the ICFSecSecClusRoleMemb instance which currently backs this instance.
 	 *	<p>
 	 *	This value <i>will</i> change for read-only instances, so you should
 	 *	not hold on to the value as a reference anywhere outside the current call stack.
 	 *
-	 *	@return	ICFSecCluster instance which currently backs this object.
+	 *	@return	ICFSecSecClusRoleMemb instance which currently backs this object.
 	 */
-	ICFSecCluster getRec();
+	ICFSecSecClusRoleMemb getRec();
 
 	/**
 	 *	Internal use only.
 	 */
-	void setRec( ICFSecCluster value );
+	void setRec( ICFSecSecClusRoleMemb value );
 
 	/**
-	 *	Get the ICFSecCluster instance which currently backs this instance.
+	 *	Get the ICFSecSecClusRoleMemb instance which currently backs this instance.
 	 *	<p>
 	 *	This value <i>will</i> change for read-only instances, so you should
 	 *	not hold on to the value as a reference anywhere outside the current call stack.
 	 *
-	 *	@return	ICFSecCluster instance which currently backs this object.
+	 *	@return	ICFSecSecClusRoleMemb instance which currently backs this object.
 	 */
-	ICFSecCluster getClusterRec();
+	ICFSecSecClusRoleMemb getSecClusRoleMembRec();
 
 	/**
 	 *	Is this a new instance?
@@ -220,81 +220,18 @@ public interface ICFBamClusterObj
 	void setIsNew( boolean value );
 
 	/**
-	 *	Get the array of optional ICFSecTenantObj array of instances referenced by the Tenant key.
+	 *	Get the required CFLibDbKeyHash256 attribute SecClusRoleId.
 	 *
-	 *	@return	The optional ICFSecTenantObj[] array of instances referenced by the Tenant key.
+	 *	@return	The required CFLibDbKeyHash256 attribute SecClusRoleId.
 	 */
-	List<ICFSecTenantObj> getOptionalComponentsTenant();
+	CFLibDbKeyHash256 getRequiredSecClusRoleId();
 
 	/**
-	 *	Get the array of optional ICFSecTenantObj array of instances referenced by the Tenant key.
+	 *	Get the required String attribute LoginId.
 	 *
-	 *	@return	The optional ICFSecTenantObj[] array of instances referenced by the Tenant key.
+	 *	@return	The required String attribute LoginId.
 	 */
-	List<ICFSecTenantObj> getOptionalComponentsTenant( boolean forceRead );
-
-	/**
-	 *	Get the array of optional ICFSecSecClusGrpObj array of instances referenced by the SecGroup key.
-	 *
-	 *	@return	The optional ICFSecSecClusGrpObj[] array of instances referenced by the SecGroup key.
-	 */
-	List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup();
-
-	/**
-	 *	Get the array of optional ICFSecSecClusGrpObj array of instances referenced by the SecGroup key.
-	 *
-	 *	@return	The optional ICFSecSecClusGrpObj[] array of instances referenced by the SecGroup key.
-	 */
-	List<ICFSecSecClusGrpObj> getOptionalComponentsSecGroup( boolean forceRead );
-
-	/**
-	 *	Get the array of optional ICFSecSecClusRoleObj array of instances referenced by the SecRole key.
-	 *
-	 *	@return	The optional ICFSecSecClusRoleObj[] array of instances referenced by the SecRole key.
-	 */
-	List<ICFSecSecClusRoleObj> getOptionalComponentsSecRole();
-
-	/**
-	 *	Get the array of optional ICFSecSecClusRoleObj array of instances referenced by the SecRole key.
-	 *
-	 *	@return	The optional ICFSecSecClusRoleObj[] array of instances referenced by the SecRole key.
-	 */
-	List<ICFSecSecClusRoleObj> getOptionalComponentsSecRole( boolean forceRead );
-
-	/**
-	 *	Get the array of optional ICFSecSysClusterObj array of instances referenced by the SysCluster key.
-	 *
-	 *	@return	The optional ICFSecSysClusterObj[] array of instances referenced by the SysCluster key.
-	 */
-	List<ICFSecSysClusterObj> getOptionalComponentsSysCluster();
-
-	/**
-	 *	Get the array of optional ICFSecSysClusterObj array of instances referenced by the SysCluster key.
-	 *
-	 *	@return	The optional ICFSecSysClusterObj[] array of instances referenced by the SysCluster key.
-	 */
-	List<ICFSecSysClusterObj> getOptionalComponentsSysCluster( boolean forceRead );
-
-	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
-	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
-	 */
-	CFLibDbKeyHash256 getRequiredId();
-
-	/**
-	 *	Get the required String attribute FullDomName.
-	 *
-	 *	@return	The required String attribute FullDomName.
-	 */
-	String getRequiredFullDomName();
-
-	/**
-	 *	Get the required String attribute Description.
-	 *
-	 *	@return	The required String attribute Description.
-	 */
-	String getRequiredDescription();
+	String getRequiredLoginId();
 
 	/**
 	 *	Internal use only.
