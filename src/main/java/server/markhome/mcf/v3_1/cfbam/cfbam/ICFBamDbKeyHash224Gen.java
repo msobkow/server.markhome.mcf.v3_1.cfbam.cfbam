@@ -66,8 +66,8 @@ public interface ICFBamDbKeyHash224Gen extends ICFBamDbKeyHash224Type
 	public static final int BLOCKSIZE_MAX_VALUE = 2147483647;
 	public static final short SLICE_INIT_VALUE = (short)0;
 	public static final int BLOCKSIZE_INIT_VALUE = 1;
-	public final static int CLASS_CODE = 0xa843;
-	public final static String S_CLASS_CODE = "a843";
+	public final static int CLASS_CODE = 0xa847;
+	public final static String S_CLASS_CODE = "a847";
 
 	public short getRequiredSlice();
 	public void setRequiredSlice( short value );

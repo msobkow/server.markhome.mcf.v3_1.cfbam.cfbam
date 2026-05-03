@@ -62,8 +62,8 @@ public interface ICFBamIndexTweak extends ICFBamTweak
 {
 	public static final String S_INDEXID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 INDEXID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_INDEXID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa88d;
-	public final static String S_CLASS_CODE = "a88d";
+	public final static int CLASS_CODE = 0xa80b;
+	public final static String S_CLASS_CODE = "a80b";
 
 	public ICFBamIndex getRequiredContainerIndexDef();
 	public void setRequiredContainerIndexDef(ICFBamIndex argObj);

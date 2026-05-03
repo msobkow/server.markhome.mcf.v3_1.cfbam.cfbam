@@ -60,8 +60,8 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamBoolDef extends ICFBamAtom
 {
-	public final static int CLASS_CODE = 0xa80d;
-	public final static String S_CLASS_CODE = "a80d";
+	public final static int CLASS_CODE = 0xa811;
+	public final static String S_CLASS_CODE = "a811";
 
 	public Boolean getOptionalInitValue();
 	public void setOptionalInitValue( Boolean value );

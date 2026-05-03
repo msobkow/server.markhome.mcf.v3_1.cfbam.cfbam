@@ -80,8 +80,8 @@ public interface ICFBamRelation extends ICFBamScope
 	public final static boolean ALLOWADDENDUM_INIT_VALUE = false;
 	public static final String S_NARROWEDID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 NARROWEDID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_NARROWEDID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa835;
-	public final static String S_CLASS_CODE = "a835";
+	public final static int CLASS_CODE = 0xa839;
+	public final static String S_CLASS_CODE = "a839";
 
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
 	public ICFBamTable getRequiredContainerFromTable();

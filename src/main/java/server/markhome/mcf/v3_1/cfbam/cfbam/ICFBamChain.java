@@ -75,8 +75,8 @@ public interface ICFBamChain
 	public static final CFLibDbKeyHash256 PREVRELATIONID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_PREVRELATIONID_INIT_VALUE );
 	public static final String S_NEXTRELATIONID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 NEXTRELATIONID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_NEXTRELATIONID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa80f;
-	public final static String S_CLASS_CODE = "a80f";
+	public final static int CLASS_CODE = 0xa813;
+	public final static String S_CLASS_CODE = "a813";
 
 	public int getClassCode();
 

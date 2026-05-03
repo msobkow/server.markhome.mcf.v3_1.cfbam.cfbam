@@ -71,6 +71,7 @@ public class CFBamSchemaDefEditObj
 	protected List<ICFBamValueObj> optionalComponentsTypes;
 	protected List<ICFBamSchemaRefObj> optionalComponentsSchemaRefs;
 	protected List<ICFBamTweakObj> optionalComponentsTweaks;
+	protected List<ICFBamSchemaRoleObj> optionalComponentsRoles;
 	protected ICFSecTenantObj requiredOwnerCTenant;
 
 	public CFBamSchemaDefEditObj( ICFBamSchemaDefObj argOrig ) {
@@ -186,6 +187,8 @@ public class CFBamSchemaDefEditObj
 			catch (Throwable th) {
 				subObj = null;
 			}
+		}
+		if( subObj == null ) {
 		}
 		if( remainingName == null ) {
 			retObj = subObj;
@@ -544,6 +547,22 @@ public class CFBamSchemaDefEditObj
 	public List<ICFBamTweakObj> getOptionalComponentsTweaks( boolean forceRead ) {
 		List<ICFBamTweakObj> retval;
 		retval = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByScopeIdx( getPKey(),
+			forceRead );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFBamSchemaRoleObj> getOptionalComponentsRoles() {
+		List<ICFBamSchemaRoleObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSchemaRoleTableObj().readSchemaRoleBySchemaIdx( getPKey(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFBamSchemaRoleObj> getOptionalComponentsRoles( boolean forceRead ) {
+		List<ICFBamSchemaRoleObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSchemaRoleTableObj().readSchemaRoleBySchemaIdx( getPKey(),
 			forceRead );
 		return( retval );
 	}

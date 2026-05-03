@@ -62,8 +62,8 @@ public interface ICFBamBoolCol extends ICFBamBoolDef
 {
 	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa86c;
-	public final static String S_CLASS_CODE = "a86c";
+	public final static int CLASS_CODE = 0xa870;
+	public final static String S_CLASS_CODE = "a870";
 
 	public ICFBamTable getRequiredContainerTable();
 	public void setRequiredContainerTable(ICFBamTable argObj);

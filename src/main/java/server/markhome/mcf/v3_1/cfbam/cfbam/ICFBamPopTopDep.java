@@ -63,8 +63,8 @@ public interface ICFBamPopTopDep extends ICFBamPopDep
 	public static final String S_CONTRELATIONID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 CONTRELATIONID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CONTRELATIONID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
-	public final static int CLASS_CODE = 0xa834;
-	public final static String S_CLASS_CODE = "a834";
+	public final static int CLASS_CODE = 0xa838;
+	public final static String S_CLASS_CODE = "a838";
 
 	public ICFBamRelation getRequiredContainerContRelation();
 	public void setRequiredContainerContRelation(ICFBamRelation argObj);

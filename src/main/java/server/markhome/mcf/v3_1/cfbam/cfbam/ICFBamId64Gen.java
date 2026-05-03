@@ -66,8 +66,8 @@ public interface ICFBamId64Gen extends ICFBamInt64Type
 	public static final long BLOCKSIZE_MAX_VALUE = 9223372036854775807L;
 	public static final short SLICE_INIT_VALUE = (short)0;
 	public static final long BLOCKSIZE_INIT_VALUE = 1L;
-	public final static int CLASS_CODE = 0xa874;
-	public final static String S_CLASS_CODE = "a874";
+	public final static int CLASS_CODE = 0xa878;
+	public final static String S_CLASS_CODE = "a878";
 
 	public short getRequiredSlice();
 	public void setRequiredSlice( short value );

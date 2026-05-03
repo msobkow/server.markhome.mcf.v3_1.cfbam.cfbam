@@ -63,8 +63,8 @@ public interface ICFBamPopSubDep1 extends ICFBamPopDep
 	public static final String S_POPTOPDEPID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 POPTOPDEPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_POPTOPDEPID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
-	public final static int CLASS_CODE = 0xa831;
-	public final static String S_CLASS_CODE = "a831";
+	public final static int CLASS_CODE = 0xa835;
+	public final static String S_CLASS_CODE = "a835";
 
 	public ICFBamPopTopDep getRequiredContainerContPopTopDep();
 	public void setRequiredContainerContPopTopDep(ICFBamPopTopDep argObj);

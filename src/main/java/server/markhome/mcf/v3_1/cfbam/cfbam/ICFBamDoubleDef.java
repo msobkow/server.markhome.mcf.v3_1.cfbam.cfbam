@@ -66,8 +66,8 @@ public interface ICFBamDoubleDef extends ICFBamAtom
 	public static final double INITVALUE_MAX_VALUE = 2.225E307;
 	public static final double MINVALUE_MAX_VALUE = 2.225E307;
 	public static final double MAXVALUE_MAX_VALUE = 2.225E307;
-	public final static int CLASS_CODE = 0xa81c;
-	public final static String S_CLASS_CODE = "a81c";
+	public final static int CLASS_CODE = 0xa820;
+	public final static String S_CLASS_CODE = "a820";
 
 	public Double getOptionalInitValue();
 	public void setOptionalInitValue( Double value );

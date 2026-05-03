@@ -62,8 +62,8 @@ public interface ICFBamUInt32Type extends ICFBamUInt32Def
 {
 	public static final String S_SCHEMADEFID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SCHEMADEFID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SCHEMADEFID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa864;
-	public final static String S_CLASS_CODE = "a864";
+	public final static int CLASS_CODE = 0xa868;
+	public final static String S_CLASS_CODE = "a868";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
 	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);

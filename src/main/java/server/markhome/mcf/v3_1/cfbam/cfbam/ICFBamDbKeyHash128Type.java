@@ -62,8 +62,8 @@ public interface ICFBamDbKeyHash128Type extends ICFBamDbKeyHash128Def
 {
 	public static final String S_SCHEMADEFID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SCHEMADEFID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SCHEMADEFID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa83a;
-	public final static String S_CLASS_CODE = "a83a";
+	public final static int CLASS_CODE = 0xa83e;
+	public final static String S_CLASS_CODE = "a83e";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
 	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);

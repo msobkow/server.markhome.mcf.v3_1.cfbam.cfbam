@@ -62,8 +62,8 @@ public interface ICFBamTZDateCol extends ICFBamTZDateDef
 {
 	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa87c;
-	public final static String S_CLASS_CODE = "a87c";
+	public final static int CLASS_CODE = 0xa880;
+	public final static String S_CLASS_CODE = "a880";
 
 	public ICFBamTable getRequiredContainerTable();
 	public void setRequiredContainerTable(ICFBamTable argObj);

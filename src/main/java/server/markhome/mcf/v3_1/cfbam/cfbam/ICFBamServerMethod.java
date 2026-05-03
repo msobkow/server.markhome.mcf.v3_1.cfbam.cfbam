@@ -70,8 +70,8 @@ public interface ICFBamServerMethod extends ICFBamScope
 	public static final String JMETHODBODY_INIT_VALUE = new String( "" );
 	public static final String CPPMETHODBODY_INIT_VALUE = new String( "" );
 	public static final String CSMETHODBODY_INIT_VALUE = new String( "" );
-	public final static int CLASS_CODE = 0xa805;
-	public final static String S_CLASS_CODE = "a805";
+	public final static int CLASS_CODE = 0xa804;
+	public final static String S_CLASS_CODE = "a804";
 
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
 	public ICFBamTable getRequiredContainerForTable();

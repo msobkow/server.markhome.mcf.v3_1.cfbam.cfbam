@@ -120,6 +120,13 @@ public interface ICFBamSchemaDefEditObj
 	List<ICFBamTweakObj> getOptionalComponentsTweaks();
 
 	/**
+	 *	Get a list ICFBamSchemaRoleObj instances referenced by the Roles key.
+	 *
+	 *	@return	The (potentially empty) list of ICFBamSchemaRoleObj instances referenced by the Roles key.
+	 */
+	List<ICFBamSchemaRoleObj> getOptionalComponentsRoles();
+
+	/**
 	 *	Get the ICFSecTenantObj instance referenced by the CTenant key.
 	 *
 	 *	@return	The ICFSecTenantObj instance referenced by the CTenant key.

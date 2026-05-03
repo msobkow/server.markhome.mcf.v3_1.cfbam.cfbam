@@ -63,8 +63,8 @@ public interface ICFBamClearSubDep1 extends ICFBamClearDep
 	public static final String S_CLEARTOPDEPID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 CLEARTOPDEPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLEARTOPDEPID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
-	public final static int CLASS_CODE = 0xa811;
-	public final static String S_CLASS_CODE = "a811";
+	public final static int CLASS_CODE = 0xa815;
+	public final static String S_CLASS_CODE = "a815";
 
 	public ICFBamClearTopDep getRequiredContainerClearTopDep();
 	public void setRequiredContainerClearTopDep(ICFBamClearTopDep argObj);

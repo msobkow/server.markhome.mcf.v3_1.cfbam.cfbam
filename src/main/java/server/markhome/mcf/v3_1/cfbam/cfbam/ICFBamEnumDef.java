@@ -60,8 +60,8 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamEnumDef extends ICFBamInt16Def
 {
-	public final static int CLASS_CODE = 0xa86f;
-	public final static String S_CLASS_CODE = "a86f";
+	public final static int CLASS_CODE = 0xa873;
+	public final static String S_CLASS_CODE = "a873";
 
 	@Override
 	public boolean equals( Object obj );

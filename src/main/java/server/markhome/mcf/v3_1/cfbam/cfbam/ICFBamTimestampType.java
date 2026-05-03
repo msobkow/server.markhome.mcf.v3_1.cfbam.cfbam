@@ -62,8 +62,8 @@ public interface ICFBamTimestampType extends ICFBamTimestampDef
 {
 	public static final String S_SCHEMADEFID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SCHEMADEFID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SCHEMADEFID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa85e;
-	public final static String S_CLASS_CODE = "a85e";
+	public final static int CLASS_CODE = 0xa862;
+	public final static String S_CLASS_CODE = "a862";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
 	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);

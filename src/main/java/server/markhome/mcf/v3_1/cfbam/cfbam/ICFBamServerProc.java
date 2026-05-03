@@ -60,8 +60,8 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamServerProc extends ICFBamServerMethod
 {
-	public final static int CLASS_CODE = 0xa807;
-	public final static String S_CLASS_CODE = "a807";
+	public final static int CLASS_CODE = 0xa806;
+	public final static String S_CLASS_CODE = "a806";
 
 	public String getOptionalDummy();
 	public void setOptionalDummy( String value );

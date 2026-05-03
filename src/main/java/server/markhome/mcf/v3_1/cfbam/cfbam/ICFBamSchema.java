@@ -157,8 +157,10 @@ extends ICFSecSchema,
 		new CFSecTableInfo("PopTopDep", true, false, "Tenant"),
 		new CFSecTableInfo("Relation", true, false, "Tenant"),
 		new CFSecTableInfo("RelationCol", true, false, "Tenant"),
+		new CFSecTableInfo("RoleDef", true, false, "Tenant"),
 		new CFSecTableInfo("SchemaDef", true, false, "Tenant"),
 		new CFSecTableInfo("SchemaRef", true, false, "Tenant"),
+		new CFSecTableInfo("SchemaRole", true, false, "Tenant"),
 		new CFSecTableInfo("SchemaTweak", true, false, "Tenant"),
 		new CFSecTableInfo("Scope", true, false, "Tenant"),
 		new CFSecTableInfo("ServerListFunc", true, false, "Tenant"),
@@ -877,6 +879,10 @@ extends ICFSecSchema,
 				ICFBamSchema.entries.add(entry);
 				entry = new ICFSecSchema.ClassMapEntry(ICFBamSchema.SCHEMA_NAME, "Uuid6Gen", ICFBamUuid6Gen.CLASS_CODE);
 				ICFBamSchema.entries.add(entry);
+				entry = new ICFSecSchema.ClassMapEntry(ICFBamSchema.SCHEMA_NAME, "RoleDef", ICFBamRoleDef.CLASS_CODE);
+				ICFBamSchema.entries.add(entry);
+				entry = new ICFSecSchema.ClassMapEntry(ICFBamSchema.SCHEMA_NAME, "SchemaRole", ICFBamSchemaRole.CLASS_CODE);
+				ICFBamSchema.entries.add(entry);
 				for( ICFSecSchema.ClassMapEntry cur: ICFBamSchema.entries) {
 					cur.setRuntimeClassCode(value++);
 				}
@@ -1204,6 +1210,15 @@ extends ICFSecSchema,
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public CFLibDbKeyHash256 nextValueIdGen();
+
+	/**
+	 *	Get the next RoleIdGen identifier.
+	 *
+	 *	@return	The next RoleIdGen identifier.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public CFLibDbKeyHash256 nextRoleIdGen();
 
 	/**
 	 *	Get the Atom Table interface for the schema.
@@ -2952,6 +2967,24 @@ extends ICFSecSchema,
 	public ICFBamRelationColFactory getFactoryRelationCol();
 
 	/**
+	 *	Get the RoleDef Table interface for the schema.
+	 *
+	 *	@return	The RoleDef Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFBamRoleDefTable getTableRoleDef();
+
+	/**
+	 *	Get the RoleDef Factory interface for the schema.
+	 *
+	 *	@return	The RoleDef Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFBamRoleDefFactory getFactoryRoleDef();
+
+	/**
 	 *	Get the SchemaDef Table interface for the schema.
 	 *
 	 *	@return	The SchemaDef Table interface for the schema.
@@ -2986,6 +3019,24 @@ extends ICFSecSchema,
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	public ICFBamSchemaRefFactory getFactorySchemaRef();
+
+	/**
+	 *	Get the SchemaRole Table interface for the schema.
+	 *
+	 *	@return	The SchemaRole Table interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFBamSchemaRoleTable getTableSchemaRole();
+
+	/**
+	 *	Get the SchemaRole Factory interface for the schema.
+	 *
+	 *	@return	The SchemaRole Factory interface for the schema.
+	 *
+	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	public ICFBamSchemaRoleFactory getFactorySchemaRole();
 
 	/**
 	 *	Get the SchemaTweak Table interface for the schema.

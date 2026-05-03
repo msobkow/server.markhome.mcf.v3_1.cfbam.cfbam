@@ -71,8 +71,8 @@ public interface ICFBamSchemaRef extends ICFBamScope
 	public static final CFLibDbKeyHash256 PREVID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_PREVID_INIT_VALUE );
 	public static final String S_NEXTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 NEXTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_NEXTID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa804;
-	public final static String S_CLASS_CODE = "a804";
+	public final static int CLASS_CODE = 0xa803;
+	public final static String S_CLASS_CODE = "a803";
 
 	public ICFBamSchemaDef getRequiredContainerSchema();
 	public ICFBamSchemaDef getOptionalLookupRefSchema();

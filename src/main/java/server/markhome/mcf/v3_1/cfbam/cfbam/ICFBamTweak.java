@@ -77,8 +77,8 @@ public interface ICFBamTweak
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static boolean REPLACESINHERITED_INIT_VALUE = false;
 	public static final String TWEAKGELTEXT_INIT_VALUE = new String( "" );
-	public final static int CLASS_CODE = 0xa88a;
-	public final static String S_CLASS_CODE = "a88a";
+	public final static int CLASS_CODE = 0xa808;
+	public final static String S_CLASS_CODE = "a808";
 
 	public int getClassCode();
 

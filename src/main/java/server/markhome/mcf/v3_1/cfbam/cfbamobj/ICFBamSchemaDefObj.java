@@ -158,6 +158,20 @@ public interface ICFBamSchemaDefObj
 	List<ICFBamTweakObj> getOptionalComponentsTweaks( boolean forceRead );
 
 	/**
+	 *	Get the array of optional ICFBamSchemaRoleObj array of instances referenced by the Roles key.
+	 *
+	 *	@return	The optional ICFBamSchemaRoleObj[] array of instances referenced by the Roles key.
+	 */
+	List<ICFBamSchemaRoleObj> getOptionalComponentsRoles();
+
+	/**
+	 *	Get the array of optional ICFBamSchemaRoleObj array of instances referenced by the Roles key.
+	 *
+	 *	@return	The optional ICFBamSchemaRoleObj[] array of instances referenced by the Roles key.
+	 */
+	List<ICFBamSchemaRoleObj> getOptionalComponentsRoles( boolean forceRead );
+
+	/**
 	 *	Get the required ICFBamTenantObj instance referenced by the CTenant key.
 	 *
 	 *	@return	The required ICFBamTenantObj instance referenced by the CTenant key.

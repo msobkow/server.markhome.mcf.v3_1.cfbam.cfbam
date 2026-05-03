@@ -66,8 +66,8 @@ public interface ICFBamId16Gen extends ICFBamInt16Type
 	public static final short BLOCKSIZE_MAX_VALUE = (short)32767;
 	public static final short SLICE_INIT_VALUE = (short)0;
 	public static final short BLOCKSIZE_INIT_VALUE = (short)1;
-	public final static int CLASS_CODE = 0xa872;
-	public final static String S_CLASS_CODE = "a872";
+	public final static int CLASS_CODE = 0xa876;
+	public final static String S_CLASS_CODE = "a876";
 
 	public short getRequiredSlice();
 	public void setRequiredSlice( short value );

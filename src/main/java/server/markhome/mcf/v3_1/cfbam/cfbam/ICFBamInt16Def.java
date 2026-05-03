@@ -69,8 +69,8 @@ public interface ICFBamInt16Def extends ICFBamAtom
 	public static final short INITVALUE_INIT_VALUE = (short)0;
 	public static final short MINVALUE_INIT_VALUE = (short)0;
 	public static final short MAXVALUE_INIT_VALUE = (short)0;
-	public final static int CLASS_CODE = 0xa823;
-	public final static String S_CLASS_CODE = "a823";
+	public final static int CLASS_CODE = 0xa827;
+	public final static String S_CLASS_CODE = "a827";
 
 	public Short getOptionalInitValue();
 	public void setOptionalInitValue( Short value );

@@ -86,8 +86,8 @@ public interface ICFBamTable extends ICFBamScope
 	public final static boolean ISSERVERONLY_INIT_VALUE = false;
 	public static final ICFBamSchema.LoaderBehaviourEnum LOADERBEHAVIOUR_INIT_VALUE = ICFBamSchema.ordinalToLoaderBehaviourEnum( 0 );
 	public static final ICFBamSchema.SecScopeEnum SECSCOPE_INIT_VALUE = ICFBamSchema.ordinalToSecScopeEnum( 0 );
-	public final static int CLASS_CODE = 0xa808;
-	public final static String S_CLASS_CODE = "a808";
+	public final static int CLASS_CODE = 0xa807;
+	public final static String S_CLASS_CODE = "a807";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
 	public ICFBamSchemaDef getOptionalLookupDefSchema();

@@ -62,8 +62,8 @@ public interface ICFBamServerObjFunc extends ICFBamServerMethod
 {
 	public static final String S_RETTABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 RETTABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_RETTABLEID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa806;
-	public final static String S_CLASS_CODE = "a806";
+	public final static int CLASS_CODE = 0xa805;
+	public final static String S_CLASS_CODE = "a805";
 
 	public ICFBamTable getOptionalLookupRetTable();
 	public void setOptionalLookupRetTable(ICFBamTable argObj);

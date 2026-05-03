@@ -65,8 +65,8 @@ public interface ICFBamTableCol extends ICFBamValue
 	public static final String S_DATAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 DATAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DATAID_INIT_VALUE );
 	public static final String XMLELEMENTNAME_INIT_VALUE = new String( "" );
-	public final static int CLASS_CODE = 0xa858;
-	public final static String S_CLASS_CODE = "a858";
+	public final static int CLASS_CODE = 0xa85c;
+	public final static String S_CLASS_CODE = "a85c";
 
 	public ICFBamTable getRequiredContainerTable();
 	public ICFBamValue getRequiredParentDataType();

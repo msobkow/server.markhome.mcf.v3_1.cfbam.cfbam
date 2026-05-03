@@ -67,8 +67,8 @@ public interface ICFBamDelTopDep extends ICFBamDelDep
 	public static final CFLibDbKeyHash256 PREVID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_PREVID_INIT_VALUE );
 	public static final String S_NEXTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 NEXTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_NEXTID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa81b;
-	public final static String S_CLASS_CODE = "a81b";
+	public final static int CLASS_CODE = 0xa81f;
+	public final static String S_CLASS_CODE = "a81f";
 
 	public ICFBamTable getRequiredContainerTable();
 	public ICFBamDelTopDep getOptionalLookupPrev();

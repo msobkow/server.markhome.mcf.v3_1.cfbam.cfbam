@@ -69,8 +69,8 @@ public interface ICFBamNumberDef extends ICFBamAtom
 	public static final BigDecimal INITVALUE_INIT_VALUE = CFLibBigDecimalUtil.parse( "CFBam.NumberDef.InitValue", "CFBam.NumberDef.InitValue", 31, 5, "0.00000" );
 	public static final BigDecimal MINVALUE_INIT_VALUE = CFLibBigDecimalUtil.parse( "CFBam.NumberDef.MinValue", "CFBam.NumberDef.MinValue", 31, 5, "0.00000" );
 	public static final BigDecimal MAXVALUE_INIT_VALUE = CFLibBigDecimalUtil.parse( "CFBam.NumberDef.MaxValue", "CFBam.NumberDef.MaxValue", 31, 5, "0.00000" );
-	public final static int CLASS_CODE = 0xa82d;
-	public final static String S_CLASS_CODE = "a82d";
+	public final static int CLASS_CODE = 0xa831;
+	public final static String S_CLASS_CODE = "a831";
 
 	public short getRequiredDigits();
 	public void setRequiredDigits( short value );

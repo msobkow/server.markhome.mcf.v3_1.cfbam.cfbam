@@ -66,8 +66,8 @@ public interface ICFBamUuidGen extends ICFBamUuidType
 	public static final int BLOCKSIZE_MAX_VALUE = 2147483647;
 	public static final short SLICE_INIT_VALUE = (short)0;
 	public static final int BLOCKSIZE_INIT_VALUE = 1;
-	public final static int CLASS_CODE = 0xa888;
-	public final static String S_CLASS_CODE = "a888";
+	public final static int CLASS_CODE = 0xa88c;
+	public final static String S_CLASS_CODE = "a88c";
 
 	public short getRequiredSlice();
 	public void setRequiredSlice( short value );

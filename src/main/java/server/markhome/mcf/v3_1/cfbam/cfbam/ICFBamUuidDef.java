@@ -60,8 +60,8 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamUuidDef extends ICFBamAtom
 {
-	public final static int CLASS_CODE = 0xa867;
-	public final static String S_CLASS_CODE = "a867";
+	public final static int CLASS_CODE = 0xa86b;
+	public final static String S_CLASS_CODE = "a86b";
 
 	public UUID getOptionalInitValue();
 	public void setOptionalInitValue( UUID value );

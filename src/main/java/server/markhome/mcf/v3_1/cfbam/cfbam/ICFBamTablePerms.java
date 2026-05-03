@@ -2471,6 +2471,34 @@ extends ICFSecTablePerms,
 	boolean allowDeleteRelationCol( CFSecAuthorization Authorization );
 
 	/**
+	 *	Is the session allowed to create RoleDef instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateRoleDef( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read RoleDef instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadRoleDef( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update RoleDef instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateRoleDef( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete RoleDef instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteRoleDef( CFSecAuthorization Authorization );
+
+	/**
 	 *	Is the session allowed to create SchemaDef instances?
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -2525,6 +2553,34 @@ extends ICFSecTablePerms,
 	 *	@param	Authorization	The session authorization information.
 	 */
 	boolean allowDeleteSchemaRef( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to create SchemaRole instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowCreateSchemaRole( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to read SchemaRole instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowReadSchemaRole( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to update SchemaRole instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowUpdateSchemaRole( CFSecAuthorization Authorization );
+
+	/**
+	 *	Is the session allowed to delete SchemaRole instances?
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 */
+	boolean allowDeleteSchemaRole( CFSecAuthorization Authorization );
 
 	/**
 	 *	Is the session allowed to create SchemaTweak instances?

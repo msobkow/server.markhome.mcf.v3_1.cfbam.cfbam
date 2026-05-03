@@ -79,8 +79,8 @@ public interface ICFBamRelationCol
 	public static final CFLibDbKeyHash256 PREVID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_PREVID_INIT_VALUE );
 	public static final String S_NEXTID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 NEXTID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_NEXTID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa836;
-	public final static String S_CLASS_CODE = "a836";
+	public final static int CLASS_CODE = 0xa83a;
+	public final static String S_CLASS_CODE = "a83a";
 
 	public int getClassCode();
 

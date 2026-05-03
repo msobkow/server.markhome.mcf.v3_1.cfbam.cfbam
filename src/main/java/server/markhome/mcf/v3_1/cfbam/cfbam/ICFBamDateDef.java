@@ -60,8 +60,8 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamDateDef extends ICFBamAtom
 {
-	public final static int CLASS_CODE = 0xa815;
-	public final static String S_CLASS_CODE = "a815";
+	public final static int CLASS_CODE = 0xa819;
+	public final static String S_CLASS_CODE = "a819";
 
 	public String getOptionalDummy();
 	public void setOptionalDummy( String value );

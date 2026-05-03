@@ -63,8 +63,8 @@ public interface ICFBamTokenDef extends ICFBamAtom
 	public static final int MAXLEN_MIN_VALUE = 0;
 	public static final int MAXLEN_MAX_VALUE = 2147483647;
 	public static final int MAXLEN_INIT_VALUE = 0;
-	public final static int CLASS_CODE = 0xa85f;
-	public final static String S_CLASS_CODE = "a85f";
+	public final static int CLASS_CODE = 0xa863;
+	public final static String S_CLASS_CODE = "a863";
 
 	public int getRequiredMaxLen();
 	public void setRequiredMaxLen( int value );

@@ -62,8 +62,8 @@ public interface ICFBamDbKeyHash384Col extends ICFBamDbKeyHash384Def
 {
 	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa848;
-	public final static String S_CLASS_CODE = "a848";
+	public final static int CLASS_CODE = 0xa84d;
+	public final static String S_CLASS_CODE = "a84d";
 
 	public ICFBamTable getRequiredContainerTable();
 	public void setRequiredContainerTable(ICFBamTable argObj);

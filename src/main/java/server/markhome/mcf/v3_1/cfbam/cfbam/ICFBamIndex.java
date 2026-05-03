@@ -67,8 +67,8 @@ public interface ICFBamIndex extends ICFBamScope
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static boolean ISUNIQUE_INIT_VALUE = false;
 	public final static boolean ISDBMAPPED_INIT_VALUE = true;
-	public final static int CLASS_CODE = 0xa821;
-	public final static String S_CLASS_CODE = "a821";
+	public final static int CLASS_CODE = 0xa825;
+	public final static String S_CLASS_CODE = "a825";
 
 	public ICFBamTable getRequiredContainerTable();
 	public ICFBamSchemaDef getOptionalLookupDefSchema();

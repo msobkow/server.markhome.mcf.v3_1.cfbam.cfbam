@@ -63,8 +63,8 @@ public interface ICFBamBlobDef extends ICFBamAtom
 	public static final int MAXLEN_MIN_VALUE = 1;
 	public static final int MAXLEN_MAX_VALUE = 2147483647;
 	public static final int MAXLEN_INIT_VALUE = 100000000;
-	public final static int CLASS_CODE = 0xa80b;
-	public final static String S_CLASS_CODE = "a80b";
+	public final static int CLASS_CODE = 0xa80f;
+	public final static String S_CLASS_CODE = "a80f";
 
 	public int getRequiredMaxLen();
 	public void setRequiredMaxLen( int value );

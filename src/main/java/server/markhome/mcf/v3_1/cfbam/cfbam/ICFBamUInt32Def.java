@@ -66,8 +66,8 @@ public interface ICFBamUInt32Def extends ICFBamAtom
 	public static final long INITVALUE_INIT_VALUE = 0L;
 	public static final long MINVALUE_INIT_VALUE = 0L;
 	public static final long MAXVALUE_INIT_VALUE = 0L;
-	public final static int CLASS_CODE = 0xa863;
-	public final static String S_CLASS_CODE = "a863";
+	public final static int CLASS_CODE = 0xa867;
+	public final static String S_CLASS_CODE = "a867";
 
 	public Long getOptionalInitValue();
 	public void setOptionalInitValue( Long value );

@@ -63,8 +63,8 @@ public interface ICFBamDelSubDep3 extends ICFBamDelDep
 	public static final String S_DELSUBDEP2ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 DELSUBDEP2ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DELSUBDEP2ID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
-	public final static int CLASS_CODE = 0xa81a;
-	public final static String S_CLASS_CODE = "a81a";
+	public final static int CLASS_CODE = 0xa81e;
+	public final static String S_CLASS_CODE = "a81e";
 
 	public ICFBamDelSubDep2 getRequiredContainerDelSubDep2();
 	public void setRequiredContainerDelSubDep2(ICFBamDelSubDep2 argObj);

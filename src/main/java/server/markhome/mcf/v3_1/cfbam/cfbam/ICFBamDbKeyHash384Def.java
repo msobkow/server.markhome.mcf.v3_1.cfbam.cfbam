@@ -60,8 +60,8 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamDbKeyHash384Def extends ICFBamAtom
 {
-	public final static int CLASS_CODE = 0xa849;
-	public final static String S_CLASS_CODE = "a849";
+	public final static int CLASS_CODE = 0xa84c;
+	public final static String S_CLASS_CODE = "a84c";
 
 	public String getOptionalInitValue();
 	public void setOptionalInitValue( String value );

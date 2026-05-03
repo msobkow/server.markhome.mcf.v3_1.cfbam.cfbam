@@ -62,8 +62,8 @@ public interface ICFBamFloatType extends ICFBamFloatDef
 {
 	public static final String S_SCHEMADEFID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SCHEMADEFID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SCHEMADEFID_INIT_VALUE );
-	public final static int CLASS_CODE = 0xa820;
-	public final static String S_CLASS_CODE = "a820";
+	public final static int CLASS_CODE = 0xa824;
+	public final static String S_CLASS_CODE = "a824";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
 	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
