@@ -214,11 +214,13 @@ extends ICFSecSchema,
 		new CFSecTableInfo("UuidType", true, false, "Tenant"),
 		new CFSecTableInfo("Value", true, false, "Tenant")};
 	public static final AtomicReference<CFSecTableInfo[]> consolidatedTableInfo = new AtomicReference<>(null);
-	
+	public static final CFSecRoleInfo ROLE_INFO[] = {};
+	public static final AtomicReference<CFSecRoleInfo[]> consolidatedRoleInfo = new AtomicReference<>(null);
+
 	public static CFSecTableInfo[] getTableInfo() {
 		return TABLE_INFO;
 	}
-	
+
 	public static CFSecTableInfo[] getConsolidatedTableInfo() {
 		if (consolidatedTableInfo.get() == null) {
 			ArrayList<CFSecTableInfo> lst = new ArrayList<>();
@@ -242,6 +244,33 @@ extends ICFSecSchema,
 			consolidatedTableInfo.compareAndSet(null, arr);
 		}
 		return(consolidatedTableInfo.get());
+	}
+
+	public static CFSecRoleInfo[] getRoleInfo() {
+		return ROLE_INFO;
+	}
+
+	public static CFSecRoleInfo[] getConsolidatedRoleInfo() {
+		if (consolidatedRoleInfo.get() == null) {
+			// The ROLE_INFO entries are in dependency order, so do not sort them any other way
+			ArrayList<CFSecRoleInfo> lst = new ArrayList<>();
+			for( CFSecRoleInfo info: ICFSecSchema.getRoleInfo()) {
+				lst.add(info);
+			}
+			for( CFSecRoleInfo info: ICFIntSchema.getRoleInfo()) {
+				lst.add(info);
+			}
+			for( CFSecRoleInfo info: ROLE_INFO) {
+				lst.add(info);
+			}
+			CFSecRoleInfo arr[] = new CFSecRoleInfo[lst.size()];
+			int idx = 0;
+			for(CFSecRoleInfo info: lst) {
+				arr[idx++] = info;
+			}
+			consolidatedRoleInfo.compareAndSet(null, arr);
+		}
+		return(consolidatedRoleInfo.get());
 	}
 
 	public default void setApplicationContext(final ApplicationContext applicationContext) throws BeansException {
