@@ -107,6 +107,34 @@ public interface ICFBamSecClusRoleEditObj
 	 */
 	void setUpdatedAt( LocalDateTime value );
 
+	/**
+	 *	Get the ICFSecClusterObj instance referenced by the Cluster key.
+	 *
+	 *	@return	The ICFSecClusterObj instance referenced by the Cluster key.
+	 */
+	ICFSecClusterObj getRequiredOwnerCluster();
+
+	/**
+	 *	Get the required ICFSecClusterObj instance referenced by the Cluster key.
+	 *
+	 *	@return	The required ICFSecClusterObj instance referenced by the Cluster key.
+	 */
+	ICFSecClusterObj getRequiredOwnerCluster( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecClusterObj instance referenced by the Cluster key.
+	 *
+	 *	@param	value	the ICFSecClusterObj instance to be referenced by the Cluster key.
+	 */
+	void setRequiredOwnerCluster( ICFSecClusterObj value );
+
+	/**
+	 *	Get a list ICFSecSecClusRoleMembObj instances referenced by the MembByGrp key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecClusRoleMembObj instances referenced by the MembByGrp key.
+	 */
+	List<ICFSecSecClusRoleMembObj> getOptionalChildrenMembByGrp();
+
 	public void copyRecToOrig();
 	public void copyOrigToRec();
 

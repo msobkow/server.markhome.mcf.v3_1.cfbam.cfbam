@@ -220,6 +220,34 @@ public interface ICFBamSecClusRoleMembObj
 	void setIsNew( boolean value );
 
 	/**
+	 *	Get the required ICFBamSecClusRoleObj instance referenced by the Role key.
+	 *
+	 *	@return	The required ICFBamSecClusRoleObj instance referenced by the Role key.
+	 */
+	ICFSecSecClusRoleObj getRequiredContainerRole();
+
+	/**
+	 *	Get the required ICFSecSecClusRoleObj instance referenced by the Role key.
+	 *
+	 *	@return	The required ICFSecSecClusRoleObj instance referenced by the Role key.
+	 */
+	ICFSecSecClusRoleObj getRequiredContainerRole( boolean forceRead );
+
+	/**
+	 *	Get the required ICFBamSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The required ICFBamSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredParentUser();
+
+	/**
+	 *	Get the required ICFSecSecUserObj instance referenced by the User key.
+	 *
+	 *	@return	The required ICFSecSecUserObj instance referenced by the User key.
+	 */
+	ICFSecSecUserObj getRequiredParentUser( boolean forceRead );
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecClusRoleId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecClusRoleId.

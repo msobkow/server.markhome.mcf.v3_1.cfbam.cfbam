@@ -71,15 +71,19 @@ public class CFBamSecClusRoleObj
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecClusRole rec;
+	protected ICFSecClusterObj requiredOwnerCluster;
+	protected List<ICFSecSecClusRoleMembObj> optionalChildrenMembByGrp;
 
 	public CFBamSecClusRoleObj() {
 		isNew = true;
+		requiredOwnerCluster = null;
 	}
 
 	public CFBamSecClusRoleObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
+		requiredOwnerCluster = null;
 	}
 
 	@Override
@@ -282,6 +286,7 @@ public class CFBamSecClusRoleObj
 		}
 		rec = value;
 		copyRecToPKey();
+		requiredOwnerCluster = null;
 	}
 
 	@Override
@@ -374,6 +379,38 @@ public class CFBamSecClusRoleObj
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecClusRoleId() {
 		return( getPKey() );
+	}
+
+	@Override
+	public ICFSecClusterObj getRequiredOwnerCluster() {
+		return( getRequiredOwnerCluster( false ) );
+	}
+
+	@Override
+	public ICFSecClusterObj getRequiredOwnerCluster( boolean forceRead ) {
+		if( ( requiredOwnerCluster == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				requiredOwnerCluster = ((ICFBamSchemaObj)getSchema()).getClusterTableObj().readClusterByIdIdx( getSecClusRoleRec().getRequiredClusterId(), forceRead );
+			}
+		}
+		return( requiredOwnerCluster );
+	}
+
+	@Override
+	public List<ICFSecSecClusRoleMembObj> getOptionalChildrenMembByGrp() {
+		List<ICFSecSecClusRoleMembObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecClusRoleMembTableObj().readSecClusRoleMembByClusRoleIdx( getPKey(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecSecClusRoleMembObj> getOptionalChildrenMembByGrp( boolean forceRead ) {
+		List<ICFSecSecClusRoleMembObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecClusRoleMembTableObj().readSecClusRoleMembByClusRoleIdx( getPKey(),
+			forceRead );
+		return( retval );
 	}
 
 	@Override

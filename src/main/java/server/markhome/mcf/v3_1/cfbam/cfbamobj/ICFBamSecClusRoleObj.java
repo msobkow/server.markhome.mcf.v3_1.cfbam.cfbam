@@ -220,6 +220,34 @@ public interface ICFBamSecClusRoleObj
 	void setIsNew( boolean value );
 
 	/**
+	 *	Get the required ICFBamClusterObj instance referenced by the Cluster key.
+	 *
+	 *	@return	The required ICFBamClusterObj instance referenced by the Cluster key.
+	 */
+	ICFSecClusterObj getRequiredOwnerCluster();
+
+	/**
+	 *	Get the required ICFSecClusterObj instance referenced by the Cluster key.
+	 *
+	 *	@return	The required ICFSecClusterObj instance referenced by the Cluster key.
+	 */
+	ICFSecClusterObj getRequiredOwnerCluster( boolean forceRead );
+
+	/**
+	 *	Get the array of optional ICFSecSecClusRoleMembObj array of instances referenced by the MembByGrp key.
+	 *
+	 *	@return	The optional ICFSecSecClusRoleMembObj[] array of instances referenced by the MembByGrp key.
+	 */
+	List<ICFSecSecClusRoleMembObj> getOptionalChildrenMembByGrp();
+
+	/**
+	 *	Get the array of optional ICFSecSecClusRoleMembObj array of instances referenced by the MembByGrp key.
+	 *
+	 *	@return	The optional ICFSecSecClusRoleMembObj[] array of instances referenced by the MembByGrp key.
+	 */
+	List<ICFSecSecClusRoleMembObj> getOptionalChildrenMembByGrp( boolean forceRead );
+
+	/**
 	 *	Get the required CFLibDbKeyHash256 attribute SecClusRoleId.
 	 *
 	 *	@return	The required CFLibDbKeyHash256 attribute SecClusRoleId.
