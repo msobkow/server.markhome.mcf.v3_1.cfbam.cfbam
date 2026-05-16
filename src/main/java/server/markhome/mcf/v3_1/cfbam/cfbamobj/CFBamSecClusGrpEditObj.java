@@ -69,6 +69,7 @@ public class CFBamSecClusGrpEditObj
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
 	protected ICFSecClusterObj requiredOwnerCluster;
+	protected ICFSecSecSysGrpObj requiredParentSysGrp;
 	protected List<ICFSecSecClusGrpIncObj> optionalChildrenIncByGrp;
 	protected List<ICFSecSecClusGrpMembObj> optionalChildrenMembByGrp;
 
@@ -78,6 +79,7 @@ public class CFBamSecClusGrpEditObj
 		ICFSecSecClusGrp origRec = orig.getRec();
 		rec.set( origRec );
 		requiredOwnerCluster = null;
+		requiredParentSysGrp = null;
 	}
 
 	@Override
@@ -382,6 +384,7 @@ public class CFBamSecClusGrpEditObj
 		if( rec != value ) {
 			rec = value;
 			requiredOwnerCluster = null;
+			requiredParentSysGrp = null;
 		}
 	}
 
@@ -421,6 +424,7 @@ public class CFBamSecClusGrpEditObj
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredOwnerCluster = null;
+			requiredParentSysGrp = null;
 			optionalChildrenIncByGrp = null;
 			optionalChildrenMembByGrp = null;
 		}
@@ -434,13 +438,6 @@ public class CFBamSecClusGrpEditObj
 	@Override
 	public String getRequiredName() {
 		return( getSecClusGrpRec().getRequiredName() );
-	}
-
-	@Override
-	public void setRequiredName( String value ) {
-		if( getSecClusGrpRec().getRequiredName() != value ) {
-			getSecClusGrpRec().setRequiredName( value );
-		}
 	}
 
 	@Override
@@ -470,6 +467,39 @@ public class CFBamSecClusGrpEditObj
 			getSecClusGrpRec().setRequiredOwnerCluster(value.getClusterRec());
 		}
 		requiredOwnerCluster = value;
+	}
+
+	@Override
+	public ICFSecSecSysGrpObj getRequiredParentSysGrp() {
+		return( getRequiredParentSysGrp( false ) );
+	}
+
+	@Override
+	public ICFSecSecSysGrpObj getRequiredParentSysGrp( boolean forceRead ) {
+		if( forceRead || ( requiredParentSysGrp == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFSecSecSysGrpObj obj = ((ICFBamSchemaObj)getOrigAsSecClusGrp().getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getSecClusGrpRec().getRequiredName() );
+				requiredParentSysGrp = obj;
+			}
+		}
+		return( requiredParentSysGrp );
+	}
+
+	@Override
+	public void setRequiredParentSysGrp( ICFSecSecSysGrpObj value ) {
+		if( rec == null ) {
+			getSecClusGrpRec();
+		}
+		if( value != null ) {
+			requiredParentSysGrp = value;
+			getSecClusGrpRec().setRequiredParentSysGrp(value.getSecSysGrpRec());
+		}
+		else {
+			requiredParentSysGrp = null;
+			getSecClusGrpRec().setRequiredParentSysGrp((ICFSecSecSysGrp)null);
+		}
+		requiredParentSysGrp = value;
 	}
 
 	@Override

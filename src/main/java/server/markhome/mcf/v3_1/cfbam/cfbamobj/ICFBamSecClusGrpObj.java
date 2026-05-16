@@ -234,6 +234,20 @@ public interface ICFBamSecClusGrpObj
 	ICFSecClusterObj getRequiredOwnerCluster( boolean forceRead );
 
 	/**
+	 *	Get the required ICFBamSecSysGrpObj instance referenced by the SysGrp key.
+	 *
+	 *	@return	The required ICFBamSecSysGrpObj instance referenced by the SysGrp key.
+	 */
+	ICFSecSecSysGrpObj getRequiredParentSysGrp();
+
+	/**
+	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysGrp key.
+	 *
+	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysGrp key.
+	 */
+	ICFSecSecSysGrpObj getRequiredParentSysGrp( boolean forceRead );
+
+	/**
 	 *	Get the array of optional ICFSecSecClusGrpIncObj array of instances referenced by the IncByGrp key.
 	 *
 	 *	@return	The optional ICFSecSecClusGrpIncObj[] array of instances referenced by the IncByGrp key.

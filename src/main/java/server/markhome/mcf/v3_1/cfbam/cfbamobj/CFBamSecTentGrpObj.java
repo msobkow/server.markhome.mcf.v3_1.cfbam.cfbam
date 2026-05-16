@@ -72,12 +72,14 @@ public class CFBamSecTentGrpObj
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecTentGrp rec;
 	protected ICFSecTenantObj requiredOwnerTenant;
+	protected ICFSecSecSysGrpObj requiredParentSysGrp;
 	protected List<ICFSecSecTentGrpIncObj> optionalChildrenIncByGrp;
 	protected List<ICFSecSecTentGrpMembObj> optionalChildrenMembByGrp;
 
 	public CFBamSecTentGrpObj() {
 		isNew = true;
 		requiredOwnerTenant = null;
+		requiredParentSysGrp = null;
 	}
 
 	public CFBamSecTentGrpObj( ICFSecSchemaObj argSchema ) {
@@ -85,6 +87,7 @@ public class CFBamSecTentGrpObj
 		isNew = true;
 		edit = null;
 		requiredOwnerTenant = null;
+		requiredParentSysGrp = null;
 	}
 
 	@Override
@@ -288,6 +291,7 @@ public class CFBamSecTentGrpObj
 		rec = value;
 		copyRecToPKey();
 		requiredOwnerTenant = null;
+		requiredParentSysGrp = null;
 	}
 
 	@Override
@@ -396,6 +400,22 @@ public class CFBamSecTentGrpObj
 			}
 		}
 		return( requiredOwnerTenant );
+	}
+
+	@Override
+	public ICFSecSecSysGrpObj getRequiredParentSysGrp() {
+		return( getRequiredParentSysGrp( false ) );
+	}
+
+	@Override
+	public ICFSecSecSysGrpObj getRequiredParentSysGrp( boolean forceRead ) {
+		if( ( requiredParentSysGrp == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				requiredParentSysGrp = ((ICFBamSchemaObj)getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getSecTentGrpRec().getRequiredName(), forceRead );
+			}
+		}
+		return( requiredParentSysGrp );
 	}
 
 	@Override

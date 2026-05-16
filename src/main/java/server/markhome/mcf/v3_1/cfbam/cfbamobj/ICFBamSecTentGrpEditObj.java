@@ -129,6 +129,27 @@ public interface ICFBamSecTentGrpEditObj
 	void setRequiredOwnerTenant( ICFSecTenantObj value );
 
 	/**
+	 *	Get the ICFSecSecSysGrpObj instance referenced by the SysGrp key.
+	 *
+	 *	@return	The ICFSecSecSysGrpObj instance referenced by the SysGrp key.
+	 */
+	ICFSecSecSysGrpObj getRequiredParentSysGrp();
+
+	/**
+	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysGrp key.
+	 *
+	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysGrp key.
+	 */
+	ICFSecSecSysGrpObj getRequiredParentSysGrp( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecSecSysGrpObj instance referenced by the SysGrp key.
+	 *
+	 *	@param	value	the ICFSecSecSysGrpObj instance to be referenced by the SysGrp key.
+	 */
+	void setRequiredParentSysGrp( ICFSecSecSysGrpObj value );
+
+	/**
 	 *	Get a list ICFSecSecTentGrpIncObj instances referenced by the IncByGrp key.
 	 *
 	 *	@return	The (potentially empty) list of ICFSecSecTentGrpIncObj instances referenced by the IncByGrp key.
