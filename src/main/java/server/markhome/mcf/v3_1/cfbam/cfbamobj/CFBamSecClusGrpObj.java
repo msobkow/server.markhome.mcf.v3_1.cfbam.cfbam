@@ -73,7 +73,6 @@ public class CFBamSecClusGrpObj
 	protected ICFSecSecClusGrp rec;
 	protected ICFSecClusterObj requiredOwnerCluster;
 	protected ICFSecSecSysGrpObj requiredParentSysGrp;
-	protected List<ICFSecSecClusGrpIncObj> optionalChildrenIncByGrp;
 	protected List<ICFSecSecClusGrpMembObj> optionalChildrenMembByGrp;
 
 	public CFBamSecClusGrpObj() {
@@ -416,22 +415,6 @@ public class CFBamSecClusGrpObj
 			}
 		}
 		return( requiredParentSysGrp );
-	}
-
-	@Override
-	public List<ICFSecSecClusGrpIncObj> getOptionalChildrenIncByGrp() {
-		List<ICFSecSecClusGrpIncObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getSecClusGrpIncTableObj().readSecClusGrpIncByClusGrpIdx( getPKey(),
-			false );
-		return( retval );
-	}
-
-	@Override
-	public List<ICFSecSecClusGrpIncObj> getOptionalChildrenIncByGrp( boolean forceRead ) {
-		List<ICFSecSecClusGrpIncObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getSecClusGrpIncTableObj().readSecClusGrpIncByClusGrpIdx( getPKey(),
-			forceRead );
-		return( retval );
 	}
 
 	@Override

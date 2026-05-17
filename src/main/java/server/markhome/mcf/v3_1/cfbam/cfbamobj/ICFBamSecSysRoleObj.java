@@ -1,4 +1,4 @@
-// Description: Java 25 Object interface for CFBam SecRole.
+// Description: Java 25 Object interface for CFBam SecSysRole.
 
 /*
  *	server.markhome.mcf.CFBam
@@ -60,12 +60,12 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFBamSecRoleObj
-	extends ICFSecSecRoleObj,
-		ICFIntSecRoleObj
+public interface ICFBamSecSysRoleObj
+	extends ICFSecSecSysRoleObj,
+		ICFIntSecSysRoleObj
 {
 	/**
-	 *	Initially, the class code for an object is ICFSecSecRole.CLASS_CODE, but the Obj layer relies on class code translation to map those
+	 *	Initially, the class code for an object is ICFSecSecSysRole.CLASS_CODE, but the Obj layer relies on class code translation to map those
 	 *	backing store entities to a runtime set of front-facing classcodes that the clients download and use when talking to the server implementing this code base.
 	 *
 	 *	@return The runtime class code used by this object. Only after the system is fully booted are these values stable and reliable.
@@ -99,11 +99,11 @@ public interface ICFBamSecRoleObj
 	 */
 	LocalDateTime getUpdatedAt();
 	/**
-	 *	Realise this instance of a SecRole.
+	 *	Realise this instance of a SecSysRole.
 	 *
-	 *	@return	CFSecSecRoleObj instance which should be subsequently referenced.
+	 *	@return	CFSecSecSysRoleObj instance which should be subsequently referenced.
 	 */
-	ICFSecSecRoleObj realise();
+	ICFSecSecSysRoleObj realise();
 
 	/**
 	 *	Forget this instance from the cache.
@@ -115,51 +115,51 @@ public interface ICFBamSecRoleObj
 	/**
 	 *	Re-read this instance by it's primary key.
 	 *
-	 *	@return	ICFSecSecRoleObj the reference to the cached or read (realised) instance.
+	 *	@return	ICFSecSecSysRoleObj the reference to the cached or read (realised) instance.
 	 */
-	ICFSecSecRoleObj read();
+	ICFSecSecSysRoleObj read();
 
 	/**
 	 *	Re-read this instance by it's primary key.
 	 *
-	 *	@return	ICFSecSecRoleObj the reference to the cached or read (realised) instance.
+	 *	@return	ICFSecSecSysRoleObj the reference to the cached or read (realised) instance.
 	 */
-	ICFSecSecRoleObj read( boolean forceRead );
+	ICFSecSecSysRoleObj read( boolean forceRead );
 
 	/**
-	 *	Initialize and return a locked edition of this SecRole instance.
+	 *	Initialize and return a locked edition of this SecSysRole instance.
 	 *
-	 *	@return	The newly locked ICFSecSecRoleEditObj edition of this instance.
+	 *	@return	The newly locked ICFSecSecSysRoleEditObj edition of this instance.
 	 */
-	ICFSecSecRoleEditObj beginEdit();
+	ICFSecSecSysRoleEditObj beginEdit();
 
 	/**
-	 *	End this edition of this SecRole instance.
+	 *	End this edition of this SecSysRole instance.
 	 *
 	 *	@throws	CFLibNotSupportedException if you try to end a read-only view.
 	 */
 	void endEdit();
 
 	/**
-	 *	Get the current edition of this SecRole instance.
+	 *	Get the current edition of this SecSysRole instance.
 	 *
-	 *	@return	The ICFSecSecRoleEditObj edition of this instance.
+	 *	@return	The ICFSecSecSysRoleEditObj edition of this instance.
 	 */
-	ICFSecSecRoleEditObj getEdit();
+	ICFSecSecSysRoleEditObj getEdit();
 
 	/**
-	 *	Get the current edition of this SecRole instance as a ICFSecSecRoleEditObj.
+	 *	Get the current edition of this SecSysRole instance as a ICFSecSecSysRoleEditObj.
 	 *
-	 *	@return	The ICFSecSecRoleEditObj edition of this instance.
+	 *	@return	The ICFSecSecSysRoleEditObj edition of this instance.
 	 */
-	ICFSecSecRoleEditObj getEditAsSecRole();
+	ICFSecSecSysRoleEditObj getEditAsSecSysRole();
 
 	/**
-	 *	Get the ICFSecSecRoleTableObj table cache which manages this instance.
+	 *	Get the ICFSecSecSysRoleTableObj table cache which manages this instance.
 	 *
-	 *	@return	ICFSecSecRoleTableObj table cache which manages this instance.
+	 *	@return	ICFSecSecSysRoleTableObj table cache which manages this instance.
 	 */
-	ICFSecSecRoleTableObj getSecRoleTable();
+	ICFSecSecSysRoleTableObj getSecSysRoleTable();
 
 	/**
 	 *	Get the ICFSecSchemaObj schema cache which manages this instance.
@@ -178,29 +178,29 @@ public interface ICFBamSecRoleObj
 	void setSchema(ICFSecSchemaObj schema);
 
 	/**
-	 *	Get the ICFSecSecRole instance which currently backs this instance.
+	 *	Get the ICFSecSecSysRole instance which currently backs this instance.
 	 *	<p>
 	 *	This value <i>will</i> change for read-only instances, so you should
 	 *	not hold on to the value as a reference anywhere outside the current call stack.
 	 *
-	 *	@return	ICFSecSecRole instance which currently backs this object.
+	 *	@return	ICFSecSecSysRole instance which currently backs this object.
 	 */
-	ICFSecSecRole getRec();
+	ICFSecSecSysRole getRec();
 
 	/**
 	 *	Internal use only.
 	 */
-	void setRec( ICFSecSecRole value );
+	void setRec( ICFSecSecSysRole value );
 
 	/**
-	 *	Get the ICFSecSecRole instance which currently backs this instance.
+	 *	Get the ICFSecSecSysRole instance which currently backs this instance.
 	 *	<p>
 	 *	This value <i>will</i> change for read-only instances, so you should
 	 *	not hold on to the value as a reference anywhere outside the current call stack.
 	 *
-	 *	@return	ICFSecSecRole instance which currently backs this object.
+	 *	@return	ICFSecSecSysRole instance which currently backs this object.
 	 */
-	ICFSecSecRole getSecRoleRec();
+	ICFSecSecSysRole getSecSysRoleRec();
 
 	/**
 	 *	Is this a new instance?
@@ -220,39 +220,39 @@ public interface ICFBamSecRoleObj
 	void setIsNew( boolean value );
 
 	/**
-	 *	Get the array of optional ICFSecSecRoleEnablesObj array of instances referenced by the EnabledByRole key.
+	 *	Get the array of optional ICFSecSecSysRoleEnablesObj array of instances referenced by the EnabledByRole key.
 	 *
-	 *	@return	The optional ICFSecSecRoleEnablesObj[] array of instances referenced by the EnabledByRole key.
+	 *	@return	The optional ICFSecSecSysRoleEnablesObj[] array of instances referenced by the EnabledByRole key.
 	 */
-	List<ICFSecSecRoleEnablesObj> getOptionalChildrenEnabledByRole();
+	List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenEnabledByRole();
 
 	/**
-	 *	Get the array of optional ICFSecSecRoleEnablesObj array of instances referenced by the EnabledByRole key.
+	 *	Get the array of optional ICFSecSecSysRoleEnablesObj array of instances referenced by the EnabledByRole key.
 	 *
-	 *	@return	The optional ICFSecSecRoleEnablesObj[] array of instances referenced by the EnabledByRole key.
+	 *	@return	The optional ICFSecSecSysRoleEnablesObj[] array of instances referenced by the EnabledByRole key.
 	 */
-	List<ICFSecSecRoleEnablesObj> getOptionalChildrenEnabledByRole( boolean forceRead );
+	List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenEnabledByRole( boolean forceRead );
 
 	/**
-	 *	Get the array of optional ICFSecSecRoleMembObj array of instances referenced by the MembByRole key.
+	 *	Get the array of optional ICFSecSecSysRoleMembObj array of instances referenced by the MembByRole key.
 	 *
-	 *	@return	The optional ICFSecSecRoleMembObj[] array of instances referenced by the MembByRole key.
+	 *	@return	The optional ICFSecSecSysRoleMembObj[] array of instances referenced by the MembByRole key.
 	 */
-	List<ICFSecSecRoleMembObj> getOptionalChildrenMembByRole();
+	List<ICFSecSecSysRoleMembObj> getOptionalChildrenMembByRole();
 
 	/**
-	 *	Get the array of optional ICFSecSecRoleMembObj array of instances referenced by the MembByRole key.
+	 *	Get the array of optional ICFSecSecSysRoleMembObj array of instances referenced by the MembByRole key.
 	 *
-	 *	@return	The optional ICFSecSecRoleMembObj[] array of instances referenced by the MembByRole key.
+	 *	@return	The optional ICFSecSecSysRoleMembObj[] array of instances referenced by the MembByRole key.
 	 */
-	List<ICFSecSecRoleMembObj> getOptionalChildrenMembByRole( boolean forceRead );
+	List<ICFSecSecSysRoleMembObj> getOptionalChildrenMembByRole( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecRoleId.
+	 *	Get the required CFLibDbKeyHash256 attribute SecSysRoleId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecRoleId.
+	 *	@return	The required CFLibDbKeyHash256 attribute SecSysRoleId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecRoleId();
+	CFLibDbKeyHash256 getRequiredSecSysRoleId();
 
 	/**
 	 *	Get the required String attribute Name.

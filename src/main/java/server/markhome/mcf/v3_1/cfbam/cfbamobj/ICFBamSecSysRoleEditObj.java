@@ -1,4 +1,4 @@
-// Description: Java 25 Table Object interface for CFBam.
+// Description: Java 25 Instance Edit Object interface for CFBam SecSysRole.
 
 /*
  *	server.markhome.mcf.CFBam
@@ -53,14 +53,75 @@ import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
-import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFBamSecRoleMembTableObj
-	extends ICFSecSecRoleMembTableObj,
-		ICFIntSecRoleMembTableObj
-{}
+public interface ICFBamSecSysRoleEditObj
+	extends ICFBamSecSysRoleObj, ICFSecSecSysRoleEditObj, ICFIntSecSysRoleEditObj
+{
+	/*
+	 *	create() may return a different instance than the
+	 *	one used to invoke the operation.  All future references
+	 *	should be to the returned instance, not the original
+	 *	invoker.  You should lose all references to the original
+	 *	invoker.
+	 *
+	 *	@return The created instance.
+	 */
+	ICFSecSecSysRoleObj create();
+
+	/*
+	 *	Update the instance.
+	 */
+	CFSecSecSysRoleEditObj update();
+
+	/**
+	 *	Set the user who created this instance.
+	 *
+	 *	@param	value	The ICFSecSecUserObj instance who created this instance.
+	 */
+	void setCreatedBy( ICFSecSecUserObj value );
+
+	/**
+	 *	Set the Calendar date-time this instance was created.
+	 *
+	 *	@param	value	The Calendar value for the create time of the instance.
+	 */
+	void setCreatedAt( LocalDateTime value );
+
+	/**
+	 *	Set the user who updated this instance.
+	 *
+	 *	@param	value	The ICFSecSecUserObj instance who updated this instance.
+	 */
+	void setUpdatedBy( ICFSecSecUserObj value );
+
+	/**
+	 *	Set the Calendar date-time this instance was updated.
+	 *
+	 *	@param	value	The Calendar value for the create time of the instance.
+	 */
+	void setUpdatedAt( LocalDateTime value );
+
+	/**
+	 *	Get a list ICFSecSecSysRoleEnablesObj instances referenced by the EnabledByRole key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecSysRoleEnablesObj instances referenced by the EnabledByRole key.
+	 */
+	List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenEnabledByRole();
+
+	/**
+	 *	Get a list ICFSecSecSysRoleMembObj instances referenced by the MembByRole key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecSysRoleMembObj instances referenced by the MembByRole key.
+	 */
+	List<ICFSecSecSysRoleMembObj> getOptionalChildrenMembByRole();
+
+	public void copyRecToOrig();
+	public void copyOrigToRec();
+
+}

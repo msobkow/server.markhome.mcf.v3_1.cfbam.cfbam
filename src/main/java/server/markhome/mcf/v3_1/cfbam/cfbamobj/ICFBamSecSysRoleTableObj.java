@@ -60,7 +60,7 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFBamSecTentGrpIncTableObj
-	extends ICFSecSecTentGrpIncTableObj,
-		ICFIntSecTentGrpIncTableObj
+public interface ICFBamSecSysRoleTableObj
+	extends ICFSecSecSysRoleTableObj,
+		ICFIntSecSysRoleTableObj
 {}

@@ -150,13 +150,6 @@ public interface ICFBamSecTentGrpEditObj
 	void setRequiredParentSysGrp( ICFSecSecSysGrpObj value );
 
 	/**
-	 *	Get a list ICFSecSecTentGrpIncObj instances referenced by the IncByGrp key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecSecTentGrpIncObj instances referenced by the IncByGrp key.
-	 */
-	List<ICFSecSecTentGrpIncObj> getOptionalChildrenIncByGrp();
-
-	/**
 	 *	Get a list ICFSecSecTentGrpMembObj instances referenced by the MembByGrp key.
 	 *
 	 *	@return	The (potentially empty) list of ICFSecSecTentGrpMembObj instances referenced by the MembByGrp key.

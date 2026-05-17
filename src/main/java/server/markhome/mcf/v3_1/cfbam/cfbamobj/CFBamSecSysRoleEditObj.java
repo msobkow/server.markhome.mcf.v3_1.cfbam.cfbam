@@ -1,4 +1,4 @@
-// Description: Java 25 edit object instance implementation for CFBam SecRole.
+// Description: Java 25 edit object instance implementation for CFBam SecSysRole.
 
 /*
  *	server.markhome.mcf.CFBam
@@ -61,27 +61,27 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public class CFBamSecRoleEditObj
-	implements ICFBamSecRoleEditObj
+public class CFBamSecSysRoleEditObj
+	implements ICFBamSecSysRoleEditObj
 {
-	protected ICFSecSecRoleObj orig;
-	protected ICFSecSecRole rec;
+	protected ICFSecSecSysRoleObj orig;
+	protected ICFSecSecSysRole rec;
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
-	protected List<ICFSecSecRoleEnablesObj> optionalChildrenEnabledByRole;
-	protected List<ICFSecSecRoleMembObj> optionalChildrenMembByRole;
+	protected List<ICFSecSecSysRoleEnablesObj> optionalChildrenEnabledByRole;
+	protected List<ICFSecSecSysRoleMembObj> optionalChildrenMembByRole;
 
-	public CFBamSecRoleEditObj( ICFSecSecRoleObj argOrig ) {
+	public CFBamSecSysRoleEditObj( ICFSecSecSysRoleObj argOrig ) {
 		orig = argOrig;
 		getRec();
-		ICFSecSecRole origRec = orig.getRec();
+		ICFSecSecSysRole origRec = orig.getRec();
 		rec.set( origRec );
 	}
 
 	@Override
 	public ICFSecSecUserObj getCreatedBy() {
 		if( createdBy == null ) {
-			ICFSecSecRole rec = getRec();
+			ICFSecSecSysRole rec = getRec();
 			createdBy = ((ICFBamSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( rec.getCreatedByUserId() );
 		}
 		return( createdBy );
@@ -95,7 +95,7 @@ public class CFBamSecRoleEditObj
 	@Override
 	public ICFSecSecUserObj getUpdatedBy() {
 		if( updatedBy == null ) {
-			ICFSecSecRole rec = getRec();
+			ICFSecSecSysRole rec = getRec();
 			updatedBy = ((ICFBamSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( rec.getUpdatedByUserId() );
 		}
 		return( updatedBy );
@@ -134,12 +134,12 @@ public class CFBamSecRoleEditObj
 
 	@Override
 	public int getClassCode() {
-		return( ((ICFSecSchemaObj)orig.getSchema()).getSecRoleTableObj().getClassCode() );
+		return( ((ICFSecSchemaObj)orig.getSchema()).getSecSysRoleTableObj().getClassCode() );
 	}
 
 	@Override
 	public String getGenDefName() {
-		return( "SecRole" );
+		return( "SecSysRole" );
 	}
 
 	@Override
@@ -265,20 +265,20 @@ public class CFBamSecRoleEditObj
 	}
 
 	@Override
-	public ICFSecSecRoleObj realise() {
+	public ICFSecSecSysRoleObj realise() {
 		// We realise this so that it's record will get copied to orig during realization
-		ICFSecSecRoleObj retobj = getSchema().getSecRoleTableObj().realiseSecRole( (ICFBamSecRoleObj)this );
+		ICFSecSecSysRoleObj retobj = getSchema().getSecSysRoleTableObj().realiseSecSysRole( (ICFBamSecSysRoleObj)this );
 		return( retobj );
 	}
 
 	@Override
 	public void forget() {
-		getOrigAsSecRole().forget();
+		getOrigAsSecSysRole().forget();
 	}
 
 	@Override
-	public ICFSecSecRoleObj read() {
-		ICFSecSecRoleObj retval = getOrigAsSecRole().read();
+	public ICFSecSecSysRoleObj read() {
+		ICFSecSecSysRoleObj retval = getOrigAsSecSysRole().read();
 		if( retval != orig ) {
 			throw new CFLibStaleCacheDetectedException( getClass(),	"read" );
 		}
@@ -287,8 +287,8 @@ public class CFBamSecRoleEditObj
 	}
 
 	@Override
-	public ICFSecSecRoleObj read( boolean forceRead ) {
-		ICFSecSecRoleObj retval = getOrigAsSecRole().read( forceRead );
+	public ICFSecSecSysRoleObj read( boolean forceRead ) {
+		ICFSecSecSysRoleObj retval = getOrigAsSecSysRole().read( forceRead );
 		if( retval != orig ) {
 			throw new CFLibStaleCacheDetectedException( getClass(),	"read" );
 		}
@@ -297,47 +297,47 @@ public class CFBamSecRoleEditObj
 	}
 
 	@Override
-	public ICFSecSecRoleObj create() {
+	public ICFSecSecSysRoleObj create() {
 		copyRecToOrig();
-		ICFSecSecRoleObj retobj = ((ICFBamSchemaObj)getOrigAsSecRole().getSchema()).getSecRoleTableObj().createSecRole( getOrigAsSecRole() );
-		if( retobj == getOrigAsSecRole() ) {
+		ICFSecSecSysRoleObj retobj = ((ICFBamSchemaObj)getOrigAsSecSysRole().getSchema()).getSecSysRoleTableObj().createSecSysRole( getOrigAsSecSysRole() );
+		if( retobj == getOrigAsSecSysRole() ) {
 			copyOrigToRec();
 		}
 		return( retobj );
 	}
 
 	@Override
-	public CFSecSecRoleEditObj update() {
-		getSchema().getSecRoleTableObj().updateSecRole( (ICFSecSecRoleObj)this );
+	public CFSecSecSysRoleEditObj update() {
+		getSchema().getSecSysRoleTableObj().updateSecSysRole( (ICFSecSecSysRoleObj)this );
 		return( null );
 	}
 
 	@Override
-	public CFSecSecRoleEditObj deleteInstance() {
+	public CFSecSecSysRoleEditObj deleteInstance() {
 		if( getIsNew() ) {
 			throw new CFLibCannotDeleteNewInstanceException( getClass(), "delete" );
 		}
-		getSchema().getSecRoleTableObj().deleteSecRole( getOrigAsSecRole() );
+		getSchema().getSecSysRoleTableObj().deleteSecSysRole( getOrigAsSecSysRole() );
 		return( null );
 	}
 
 	@Override
-	public ICFSecSecRoleTableObj getSecRoleTable() {
-		return( orig.getSchema().getSecRoleTableObj() );
+	public ICFSecSecSysRoleTableObj getSecSysRoleTable() {
+		return( orig.getSchema().getSecSysRoleTableObj() );
 	}
 
 	@Override
-	public ICFSecSecRoleEditObj getEdit() {
-		return( (ICFSecSecRoleEditObj)this );
+	public ICFSecSecSysRoleEditObj getEdit() {
+		return( (ICFSecSecSysRoleEditObj)this );
 	}
 
 	@Override
-	public ICFSecSecRoleEditObj getEditAsSecRole() {
-		return( (ICFSecSecRoleEditObj)this );
+	public ICFSecSecSysRoleEditObj getEditAsSecSysRole() {
+		return( (ICFSecSecSysRoleEditObj)this );
 	}
 
 	@Override
-	public ICFSecSecRoleEditObj beginEdit() {
+	public ICFSecSecSysRoleEditObj beginEdit() {
 		throw new CFLibEditAlreadyOpenException( getClass(), "beginEdit" );
 	}
 
@@ -347,13 +347,13 @@ public class CFBamSecRoleEditObj
 	}
 
 	@Override
-	public ICFSecSecRoleObj getOrig() {
+	public ICFSecSecSysRoleObj getOrig() {
 		return( orig );
 	}
 
 	@Override
-	public ICFSecSecRoleObj getOrigAsSecRole() {
-		return( (ICFSecSecRoleObj)orig );
+	public ICFSecSecSysRoleObj getOrigAsSecSysRole() {
+		return( (ICFSecSecSysRoleObj)orig );
 	}
 
 	@Override
@@ -367,24 +367,24 @@ public class CFBamSecRoleEditObj
 	}
 
 	@Override
-	public ICFSecSecRole getRec() {
+	public ICFSecSecSysRole getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSecRole().getSchema().getCFSecBackingStore().getFactorySecRole().newRec();
+			rec = getOrigAsSecSysRole().getSchema().getCFSecBackingStore().getFactorySecSysRole().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );
 	}
 
 	@Override
-	public void setRec( ICFSecSecRole value ) {
+	public void setRec( ICFSecSecSysRole value ) {
 		if( rec != value ) {
 			rec = value;
 		}
 	}
 
 	@Override
-	public ICFSecSecRole getSecRoleRec() {
-		return( (ICFSecSecRole)getRec() );
+	public ICFSecSecSysRole getSecSysRoleRec() {
+		return( (ICFSecSecSysRole)getRec() );
 	}
 
 	@Override
@@ -409,12 +409,12 @@ public class CFBamSecRoleEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecRoleId() {
+	public CFLibDbKeyHash256 getRequiredSecSysRoleId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSecRoleId(CFLibDbKeyHash256 value) {
+	public void setRequiredSecSysRoleId(CFLibDbKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalChildrenEnabledByRole = null;
@@ -424,44 +424,44 @@ public class CFBamSecRoleEditObj
 
 	@Override
 	public String getRequiredName() {
-		return( getSecRoleRec().getRequiredName() );
+		return( getSecSysRoleRec().getRequiredName() );
 	}
 
 	@Override
 	public void setRequiredName( String value ) {
-		if( getSecRoleRec().getRequiredName() != value ) {
-			getSecRoleRec().setRequiredName( value );
+		if( getSecSysRoleRec().getRequiredName() != value ) {
+			getSecSysRoleRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public List<ICFSecSecRoleEnablesObj> getOptionalChildrenEnabledByRole() {
-		List<ICFSecSecRoleEnablesObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getSecRoleEnablesTableObj().readSecRoleEnablesByRoleIdx( getPKey(),
+	public List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenEnabledByRole() {
+		List<ICFSecSecSysRoleEnablesObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().readSecSysRoleEnablesBySysRoleIdx( getPKey(),
 			false );
 		return( retval );
 	}
 
 	@Override
-	public List<ICFSecSecRoleEnablesObj> getOptionalChildrenEnabledByRole( boolean forceRead ) {
-		List<ICFSecSecRoleEnablesObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getSecRoleEnablesTableObj().readSecRoleEnablesByRoleIdx( getPKey(),
+	public List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenEnabledByRole( boolean forceRead ) {
+		List<ICFSecSecSysRoleEnablesObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecSysRoleEnablesTableObj().readSecSysRoleEnablesBySysRoleIdx( getPKey(),
 			forceRead );
 		return( retval );
 	}
 
 	@Override
-	public List<ICFSecSecRoleMembObj> getOptionalChildrenMembByRole() {
-		List<ICFSecSecRoleMembObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getSecRoleMembTableObj().readSecRoleMembByRoleIdx( getPKey(),
+	public List<ICFSecSecSysRoleMembObj> getOptionalChildrenMembByRole() {
+		List<ICFSecSecSysRoleMembObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecSysRoleMembTableObj().readSecSysRoleMembBySysRoleIdx( getPKey(),
 			false );
 		return( retval );
 	}
 
 	@Override
-	public List<ICFSecSecRoleMembObj> getOptionalChildrenMembByRole( boolean forceRead ) {
-		List<ICFSecSecRoleMembObj> retval;
-		retval = ((ICFBamSchemaObj)getSchema()).getSecRoleMembTableObj().readSecRoleMembByRoleIdx( getPKey(),
+	public List<ICFSecSecSysRoleMembObj> getOptionalChildrenMembByRole( boolean forceRead ) {
+		List<ICFSecSecSysRoleMembObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getSecSysRoleMembTableObj().readSecSysRoleMembBySysRoleIdx( getPKey(),
 			forceRead );
 		return( retval );
 	}
@@ -486,15 +486,15 @@ public class CFBamSecRoleEditObj
 
 	@Override
 	public void copyRecToOrig() {
-		ICFSecSecRole origRec = getOrigAsSecRole().getSecRoleRec();
-		ICFSecSecRole myRec = getSecRoleRec();
+		ICFSecSecSysRole origRec = getOrigAsSecSysRole().getSecSysRoleRec();
+		ICFSecSecSysRole myRec = getSecSysRoleRec();
 		origRec.set( myRec );
 	}
 
 	@Override
 	public void copyOrigToRec() {
-		ICFSecSecRole origRec = getOrigAsSecRole().getSecRoleRec();
-		ICFSecSecRole myRec = getSecRoleRec();
+		ICFSecSecSysRole origRec = getOrigAsSecSysRole().getSecSysRoleRec();
+		ICFSecSecSysRole myRec = getSecSysRoleRec();
 		myRec.set( origRec );
 	}
 }

@@ -69,6 +69,7 @@ public class CFBamSecClusRoleEditObj
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
 	protected ICFSecClusterObj requiredOwnerCluster;
+	protected ICFSecSecSysGrpObj requiredContainerSysRole;
 	protected List<ICFSecSecClusRoleMembObj> optionalChildrenMembByGrp;
 
 	public CFBamSecClusRoleEditObj( ICFSecSecClusRoleObj argOrig ) {
@@ -77,6 +78,7 @@ public class CFBamSecClusRoleEditObj
 		ICFSecSecClusRole origRec = orig.getRec();
 		rec.set( origRec );
 		requiredOwnerCluster = null;
+		requiredContainerSysRole = null;
 	}
 
 	@Override
@@ -145,7 +147,8 @@ public class CFBamSecClusRoleEditObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecSecSysGrpObj scope = getRequiredContainerSysRole();
+		return( scope );
 	}
 
 	@Override
@@ -381,6 +384,7 @@ public class CFBamSecClusRoleEditObj
 		if( rec != value ) {
 			rec = value;
 			requiredOwnerCluster = null;
+			requiredContainerSysRole = null;
 		}
 	}
 
@@ -420,6 +424,7 @@ public class CFBamSecClusRoleEditObj
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredOwnerCluster = null;
+			requiredContainerSysRole = null;
 			optionalChildrenMembByGrp = null;
 		}
 	}
@@ -432,13 +437,6 @@ public class CFBamSecClusRoleEditObj
 	@Override
 	public String getRequiredName() {
 		return( getSecClusRoleRec().getRequiredName() );
-	}
-
-	@Override
-	public void setRequiredName( String value ) {
-		if( getSecClusRoleRec().getRequiredName() != value ) {
-			getSecClusRoleRec().setRequiredName( value );
-		}
 	}
 
 	@Override
@@ -468,6 +466,38 @@ public class CFBamSecClusRoleEditObj
 			getSecClusRoleRec().setRequiredOwnerCluster(value.getClusterRec());
 		}
 		requiredOwnerCluster = value;
+	}
+
+	@Override
+	public ICFSecSecSysGrpObj getRequiredContainerSysRole() {
+		return( getRequiredContainerSysRole( false ) );
+	}
+
+	@Override
+	public ICFSecSecSysGrpObj getRequiredContainerSysRole( boolean forceRead ) {
+		if( forceRead || ( requiredContainerSysRole == null ) ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				ICFSecSecSysGrpObj obj = ((ICFBamSchemaObj)getOrigAsSecClusRole().getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getSecClusRoleRec().getRequiredName() );
+				requiredContainerSysRole = obj;
+				if( obj != null ) {
+					requiredContainerSysRole = obj;
+				}
+			}
+		}
+		return( requiredContainerSysRole );
+	}
+
+	@Override
+	public void setRequiredContainerSysRole( ICFSecSecSysGrpObj value ) {
+		if( rec == null ) {
+			getSecClusRoleRec();
+		}
+		if( value != null ) {
+			requiredContainerSysRole = value;
+			getSecClusRoleRec().setRequiredContainerSysRole(value.getSecSysGrpRec());
+		}
+		requiredContainerSysRole = value;
 	}
 
 	@Override

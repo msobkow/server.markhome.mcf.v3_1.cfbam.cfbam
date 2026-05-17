@@ -395,7 +395,6 @@ public class CFBamSecTentGrpTableObj
 
 
 					schema.getSecTentGrpMembTableObj().deepDisposeSecTentGrpMembByTentGrpIdx( existing.getRequiredSecTentGrpId() );
-					schema.getSecTentGrpIncTableObj().deepDisposeSecTentGrpIncByTentGrpIdx( existing.getRequiredSecTentGrpId() );
 
 		if( indexByTenantIdx != null ) {
 			if( indexByTenantIdx.containsKey( keyTenantIdx ) ) {

@@ -136,18 +136,18 @@ public interface ICFBamSecSysGrpEditObj
 	List<ICFSecSecTentGrpObj> getOptionalChildrenImplTentGrp();
 
 	/**
-	 *	Get the ICFSecSecRoleObj instance referenced by the ImplRole key.
+	 *	Get the ICFSecSecSysRoleObj instance referenced by the ImplSysRole key.
 	 *
-	 *	@return	The ICFSecSecRoleObj instance referenced by the ImplRole key.
+	 *	@return	The ICFSecSecSysRoleObj instance referenced by the ImplSysRole key.
 	 */
-	ICFSecSecRoleObj getOptionalChildrenImplRole();
+	ICFSecSecSysRoleObj getOptionalChildrenImplSysRole();
 
 	/**
-	 *	Get the optional ICFSecSecRoleObj instance referenced by the ImplRole key.
+	 *	Get the optional ICFSecSecSysRoleObj instance referenced by the ImplSysRole key.
 	 *
-	 *	@return	The optional ICFSecSecRoleObj instance referenced by the ImplRole key.
+	 *	@return	The optional ICFSecSecSysRoleObj instance referenced by the ImplSysRole key.
 	 */
-	ICFSecSecRoleObj getOptionalChildrenImplRole( boolean forceRead );
+	ICFSecSecSysRoleObj getOptionalChildrenImplSysRole( boolean forceRead );
 
 	/**
 	 *	Get a list ICFSecSecClusRoleObj instances referenced by the ImplClusRole key.
@@ -171,25 +171,11 @@ public interface ICFBamSecSysGrpEditObj
 	List<ICFSecSecSysGrpIncObj> getOptionalChildrenSysGrpByName();
 
 	/**
-	 *	Get a list ICFSecSecClusGrpIncObj instances referenced by the ClusGrpByName key.
+	 *	Get a list ICFSecSecSysRoleEnablesObj instances referenced by the RoleByEnableName key.
 	 *
-	 *	@return	The (potentially empty) list of ICFSecSecClusGrpIncObj instances referenced by the ClusGrpByName key.
+	 *	@return	The (potentially empty) list of ICFSecSecSysRoleEnablesObj instances referenced by the RoleByEnableName key.
 	 */
-	List<ICFSecSecClusGrpIncObj> getOptionalChildrenClusGrpByName();
-
-	/**
-	 *	Get a list ICFSecSecTentGrpIncObj instances referenced by the TentGrpByName key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecSecTentGrpIncObj instances referenced by the TentGrpByName key.
-	 */
-	List<ICFSecSecTentGrpIncObj> getOptionalChildrenTentGrpByName();
-
-	/**
-	 *	Get a list ICFSecSecRoleEnablesObj instances referenced by the RoleByEnableName key.
-	 *
-	 *	@return	The (potentially empty) list of ICFSecSecRoleEnablesObj instances referenced by the RoleByEnableName key.
-	 */
-	List<ICFSecSecRoleEnablesObj> getOptionalChildrenRoleByEnableName();
+	List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenRoleByEnableName();
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

@@ -1,4 +1,4 @@
-// Description: Java 25 Instance Edit Object interface for CFBam SecTentGrpInc.
+// Description: Java 25 Instance Edit Object interface for CFBam SecSysRoleMemb.
 
 /*
  *	server.markhome.mcf.CFBam
@@ -60,8 +60,8 @@ import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
 import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 
-public interface ICFBamSecTentGrpIncEditObj
-	extends ICFBamSecTentGrpIncObj, ICFSecSecTentGrpIncEditObj, ICFIntSecTentGrpIncEditObj
+public interface ICFBamSecSysRoleMembEditObj
+	extends ICFBamSecSysRoleMembObj, ICFSecSecSysRoleMembEditObj, ICFIntSecSysRoleMembEditObj
 {
 	/*
 	 *	create() may return a different instance than the
@@ -72,12 +72,12 @@ public interface ICFBamSecTentGrpIncEditObj
 	 *
 	 *	@return The created instance.
 	 */
-	ICFSecSecTentGrpIncObj create();
+	ICFSecSecSysRoleMembObj create();
 
 	/*
 	 *	Update the instance.
 	 */
-	CFSecSecTentGrpIncEditObj update();
+	CFSecSecSysRoleMembEditObj update();
 
 	/**
 	 *	Set the user who created this instance.
@@ -108,46 +108,46 @@ public interface ICFBamSecTentGrpIncEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
-	 *	Get the ICFSecSecTentGrpObj instance referenced by the Group key.
+	 *	Get the ICFSecSecSysRoleObj instance referenced by the SysRole key.
 	 *
-	 *	@return	The ICFSecSecTentGrpObj instance referenced by the Group key.
+	 *	@return	The ICFSecSecSysRoleObj instance referenced by the SysRole key.
 	 */
-	ICFSecSecTentGrpObj getRequiredContainerGroup();
+	ICFSecSecSysRoleObj getRequiredContainerSysRole();
 
 	/**
-	 *	Get the required ICFSecSecTentGrpObj instance referenced by the Group key.
+	 *	Get the required ICFSecSecSysRoleObj instance referenced by the SysRole key.
 	 *
-	 *	@return	The required ICFSecSecTentGrpObj instance referenced by the Group key.
+	 *	@return	The required ICFSecSecSysRoleObj instance referenced by the SysRole key.
 	 */
-	ICFSecSecTentGrpObj getRequiredContainerGroup( boolean forceRead );
+	ICFSecSecSysRoleObj getRequiredContainerSysRole( boolean forceRead );
 
 	/**
-	 *	Set the ICFSecSecTentGrpObj instance referenced by the Group key.
+	 *	Set the ICFSecSecSysRoleObj instance referenced by the SysRole key.
 	 *
-	 *	@param	value	the ICFSecSecTentGrpObj instance to be referenced by the Group key.
+	 *	@param	value	the ICFSecSecSysRoleObj instance to be referenced by the SysRole key.
 	 */
-	void setRequiredContainerGroup( ICFSecSecTentGrpObj value );
+	void setRequiredContainerSysRole( ICFSecSecSysRoleObj value );
 
 	/**
-	 *	Get the ICFSecSecSysGrpObj instance referenced by the SubGroup key.
+	 *	Get the ICFSecSecUserObj instance referenced by the User key.
 	 *
-	 *	@return	The ICFSecSecSysGrpObj instance referenced by the SubGroup key.
+	 *	@return	The ICFSecSecUserObj instance referenced by the User key.
 	 */
-	ICFSecSecSysGrpObj getRequiredParentSubGroup();
+	ICFSecSecUserObj getRequiredParentUser();
 
 	/**
-	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SubGroup key.
+	 *	Get the required ICFSecSecUserObj instance referenced by the User key.
 	 *
-	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SubGroup key.
+	 *	@return	The required ICFSecSecUserObj instance referenced by the User key.
 	 */
-	ICFSecSecSysGrpObj getRequiredParentSubGroup( boolean forceRead );
+	ICFSecSecUserObj getRequiredParentUser( boolean forceRead );
 
 	/**
-	 *	Set the ICFSecSecSysGrpObj instance referenced by the SubGroup key.
+	 *	Set the ICFSecSecUserObj instance referenced by the User key.
 	 *
-	 *	@param	value	the ICFSecSecSysGrpObj instance to be referenced by the SubGroup key.
+	 *	@param	value	the ICFSecSecUserObj instance to be referenced by the User key.
 	 */
-	void setRequiredParentSubGroup( ICFSecSecSysGrpObj value );
+	void setRequiredParentUser( ICFSecSecUserObj value );
 
 	public void copyRecToOrig();
 	public void copyOrigToRec();

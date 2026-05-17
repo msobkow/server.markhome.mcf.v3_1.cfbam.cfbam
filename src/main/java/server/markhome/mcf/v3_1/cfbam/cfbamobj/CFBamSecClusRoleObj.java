@@ -72,11 +72,13 @@ public class CFBamSecClusRoleObj
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecClusRole rec;
 	protected ICFSecClusterObj requiredOwnerCluster;
+	protected ICFSecSecSysGrpObj requiredContainerSysRole;
 	protected List<ICFSecSecClusRoleMembObj> optionalChildrenMembByGrp;
 
 	public CFBamSecClusRoleObj() {
 		isNew = true;
 		requiredOwnerCluster = null;
+		requiredContainerSysRole = null;
 	}
 
 	public CFBamSecClusRoleObj( ICFSecSchemaObj argSchema ) {
@@ -84,6 +86,7 @@ public class CFBamSecClusRoleObj
 		isNew = true;
 		edit = null;
 		requiredOwnerCluster = null;
+		requiredContainerSysRole = null;
 	}
 
 	@Override
@@ -98,7 +101,8 @@ public class CFBamSecClusRoleObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecSecSysGrpObj scope = getRequiredContainerSysRole();
+		return( scope );
 	}
 
 	@Override
@@ -287,6 +291,7 @@ public class CFBamSecClusRoleObj
 		rec = value;
 		copyRecToPKey();
 		requiredOwnerCluster = null;
+		requiredContainerSysRole = null;
 	}
 
 	@Override
@@ -395,6 +400,22 @@ public class CFBamSecClusRoleObj
 			}
 		}
 		return( requiredOwnerCluster );
+	}
+
+	@Override
+	public ICFSecSecSysGrpObj getRequiredContainerSysRole() {
+		return( getRequiredContainerSysRole( false ) );
+	}
+
+	@Override
+	public ICFSecSecSysGrpObj getRequiredContainerSysRole( boolean forceRead ) {
+		if( ( requiredContainerSysRole == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				requiredContainerSysRole = ((ICFBamSchemaObj)getSchema()).getSecSysGrpTableObj().readSecSysGrpByUNameIdx( getSecClusRoleRec().getRequiredName(), forceRead );
+			}
+		}
+		return( requiredContainerSysRole );
 	}
 
 	@Override

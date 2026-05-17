@@ -129,6 +129,27 @@ public interface ICFBamSecClusRoleEditObj
 	void setRequiredOwnerCluster( ICFSecClusterObj value );
 
 	/**
+	 *	Get the ICFSecSecSysGrpObj instance referenced by the SysRole key.
+	 *
+	 *	@return	The ICFSecSecSysGrpObj instance referenced by the SysRole key.
+	 */
+	ICFSecSecSysGrpObj getRequiredContainerSysRole();
+
+	/**
+	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysRole key.
+	 *
+	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysRole key.
+	 */
+	ICFSecSecSysGrpObj getRequiredContainerSysRole( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecSecSysGrpObj instance referenced by the SysRole key.
+	 *
+	 *	@param	value	the ICFSecSecSysGrpObj instance to be referenced by the SysRole key.
+	 */
+	void setRequiredContainerSysRole( ICFSecSecSysGrpObj value );
+
+	/**
 	 *	Get a list ICFSecSecClusRoleMembObj instances referenced by the MembByGrp key.
 	 *
 	 *	@return	The (potentially empty) list of ICFSecSecClusRoleMembObj instances referenced by the MembByGrp key.
