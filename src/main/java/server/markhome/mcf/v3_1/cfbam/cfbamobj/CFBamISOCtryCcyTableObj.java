@@ -578,8 +578,8 @@ public class CFBamISOCtryCcyTableObj
 		short ISOCcyId, boolean forceRead )
 	{
 		ICFSecISOCtryCcyPKey pkey = schema.getCFSecBackingStore().getFactoryISOCtryCcy().newPKey();
-		pkey.setRequiredContainerCtry(ISOCtryId);
-		pkey.setRequiredParentCcy(ISOCcyId);
+		pkey.setRequiredISOCtryId( ISOCtryId );
+		pkey.setRequiredISOCcyId( ISOCcyId );
 		ICFSecISOCtryCcyObj obj = readISOCtryCcy( pkey, forceRead );
 		return( obj );
 	}
@@ -776,10 +776,10 @@ public class CFBamISOCtryCcyTableObj
 	{
 		ICFSecISOCtryCcyObj obj = null;
 		ICFSecISOCtryCcyPKey pkey = schema.getCFSecBackingStore().getFactoryISOCtryCcy().newPKey();
-		pkey.setRequiredContainerCtry(ISOCtryId);
-		pkey.setRequiredParentCcy(ISOCcyId);
-		pkey.setRequiredContainerCtry(ISOCtryId);
-		pkey.setRequiredParentCcy(ISOCcyId);
+		pkey.setRequiredISOCtryId( ISOCtryId );
+		pkey.setRequiredISOCcyId( ISOCcyId );
+		pkey.setRequiredISOCtryId( ISOCtryId );
+		pkey.setRequiredISOCcyId( ISOCcyId );
 		obj = readCachedISOCtryCcy( pkey );
 		return( obj );
 	}

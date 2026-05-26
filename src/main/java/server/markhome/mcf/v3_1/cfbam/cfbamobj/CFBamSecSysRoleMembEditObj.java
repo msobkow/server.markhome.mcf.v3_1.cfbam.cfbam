@@ -491,16 +491,16 @@ public class CFBamSecSysRoleMembEditObj
 	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
-			rec.getPKey().setRequiredContainerSysRole(getPKey().getRequiredContainerSysRole());
-			rec.getPKey().setRequiredParentUser(getPKey().getRequiredParentUser());
+			rec.getPKey().setRequiredSecSysRoleId(getPKey().getRequiredSecSysRoleId());
+			rec.getPKey().setRequiredLoginId(getPKey().getRequiredLoginId());
 		}
 	}
 
 	@Override
 	public void copyRecToPKey() {
 		if( rec != null ) {
-			getPKey().setRequiredContainerSysRole(rec.getPKey().getRequiredContainerSysRole());
-			getPKey().setRequiredParentUser(rec.getPKey().getRequiredParentUser());
+			getPKey().setRequiredSecSysRoleId(rec.getPKey().getRequiredSecSysRoleId());
+			getPKey().setRequiredLoginId(rec.getPKey().getRequiredLoginId());
 		}
 	}
 

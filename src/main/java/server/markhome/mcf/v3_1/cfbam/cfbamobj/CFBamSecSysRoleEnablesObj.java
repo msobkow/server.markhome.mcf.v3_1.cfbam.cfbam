@@ -431,8 +431,8 @@ public class CFBamSecSysRoleEnablesObj
 	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
-			rec.getPKey().setRequiredContainerSysRole(getPKey().getRequiredContainerSysRole());
-			rec.getPKey().setRequiredParentEnableGroup(getPKey().getRequiredParentEnableGroup());
+			rec.getPKey().setRequiredSecSysRoleId(getPKey().getRequiredSecSysRoleId());
+			rec.getPKey().setRequiredEnableName(getPKey().getRequiredEnableName());
 		}
 		if( edit != null ) {
 			edit.copyPKeyToRec();
@@ -442,8 +442,8 @@ public class CFBamSecSysRoleEnablesObj
 	@Override
 	public void copyRecToPKey() {
 		if( rec != null ) {
-			getPKey().setRequiredContainerSysRole(rec.getPKey().getRequiredContainerSysRole());
-			getPKey().setRequiredParentEnableGroup(rec.getPKey().getRequiredParentEnableGroup());
+			getPKey().setRequiredSecSysRoleId(rec.getPKey().getRequiredSecSysRoleId());
+			getPKey().setRequiredEnableName(rec.getPKey().getRequiredEnableName());
 		}
 	}
 }

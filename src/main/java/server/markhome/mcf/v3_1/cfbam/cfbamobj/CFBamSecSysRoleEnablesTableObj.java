@@ -608,8 +608,8 @@ public class CFBamSecSysRoleEnablesTableObj
 		String EnableName, boolean forceRead )
 	{
 		ICFSecSecSysRoleEnablesPKey pkey = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newPKey();
-		pkey.setRequiredContainerSysRole(SecSysRoleId);
-		pkey.setRequiredParentEnableGroup(EnableName);
+		pkey.setRequiredSecSysRoleId( SecSysRoleId );
+		pkey.setRequiredEnableName( EnableName );
 		ICFSecSecSysRoleEnablesObj obj = readSecSysRoleEnables( pkey, forceRead );
 		return( obj );
 	}
@@ -806,10 +806,10 @@ public class CFBamSecSysRoleEnablesTableObj
 	{
 		ICFSecSecSysRoleEnablesObj obj = null;
 		ICFSecSecSysRoleEnablesPKey pkey = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newPKey();
-		pkey.setRequiredContainerSysRole(SecSysRoleId);
-		pkey.setRequiredParentEnableGroup(EnableName);
-		pkey.setRequiredContainerSysRole(SecSysRoleId);
-		pkey.setRequiredParentEnableGroup(EnableName);
+		pkey.setRequiredSecSysRoleId( SecSysRoleId );
+		pkey.setRequiredEnableName( EnableName );
+		pkey.setRequiredSecSysRoleId( SecSysRoleId );
+		pkey.setRequiredEnableName( EnableName );
 		obj = readCachedSecSysRoleEnables( pkey );
 		return( obj );
 	}

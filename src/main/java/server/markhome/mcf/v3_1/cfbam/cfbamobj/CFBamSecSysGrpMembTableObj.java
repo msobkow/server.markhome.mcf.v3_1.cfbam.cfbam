@@ -608,8 +608,8 @@ public class CFBamSecSysGrpMembTableObj
 		String LoginId, boolean forceRead )
 	{
 		ICFSecSecSysGrpMembPKey pkey = schema.getCFSecBackingStore().getFactorySecSysGrpMemb().newPKey();
-		pkey.setRequiredContainerGroup(SecSysGrpId);
-		pkey.setRequiredParentUser(LoginId);
+		pkey.setRequiredSecSysGrpId( SecSysGrpId );
+		pkey.setRequiredLoginId( LoginId );
 		ICFSecSecSysGrpMembObj obj = readSecSysGrpMemb( pkey, forceRead );
 		return( obj );
 	}
@@ -806,10 +806,10 @@ public class CFBamSecSysGrpMembTableObj
 	{
 		ICFSecSecSysGrpMembObj obj = null;
 		ICFSecSecSysGrpMembPKey pkey = schema.getCFSecBackingStore().getFactorySecSysGrpMemb().newPKey();
-		pkey.setRequiredContainerGroup(SecSysGrpId);
-		pkey.setRequiredParentUser(LoginId);
-		pkey.setRequiredContainerGroup(SecSysGrpId);
-		pkey.setRequiredParentUser(LoginId);
+		pkey.setRequiredSecSysGrpId( SecSysGrpId );
+		pkey.setRequiredLoginId( LoginId );
+		pkey.setRequiredSecSysGrpId( SecSysGrpId );
+		pkey.setRequiredLoginId( LoginId );
 		obj = readCachedSecSysGrpMemb( pkey );
 		return( obj );
 	}

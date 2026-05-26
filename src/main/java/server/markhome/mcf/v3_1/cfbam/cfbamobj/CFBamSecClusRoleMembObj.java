@@ -431,8 +431,8 @@ public class CFBamSecClusRoleMembObj
 	@Override
 	public void copyPKeyToRec() {
 		if( rec != null ) {
-			rec.getPKey().setRequiredContainerRole(getPKey().getRequiredContainerRole());
-			rec.getPKey().setRequiredParentUser(getPKey().getRequiredParentUser());
+			rec.getPKey().setRequiredSecClusRoleId(getPKey().getRequiredSecClusRoleId());
+			rec.getPKey().setRequiredLoginId(getPKey().getRequiredLoginId());
 		}
 		if( edit != null ) {
 			edit.copyPKeyToRec();
@@ -442,8 +442,8 @@ public class CFBamSecClusRoleMembObj
 	@Override
 	public void copyRecToPKey() {
 		if( rec != null ) {
-			getPKey().setRequiredContainerRole(rec.getPKey().getRequiredContainerRole());
-			getPKey().setRequiredParentUser(rec.getPKey().getRequiredParentUser());
+			getPKey().setRequiredSecClusRoleId(rec.getPKey().getRequiredSecClusRoleId());
+			getPKey().setRequiredLoginId(rec.getPKey().getRequiredLoginId());
 		}
 	}
 }
