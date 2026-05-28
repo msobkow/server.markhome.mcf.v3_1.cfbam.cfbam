@@ -324,4 +324,9 @@ public class CFBamSchemaRoleObj
 	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
 		return( getSchemaRoleRec().getRequiredSchemaDefId() );
 	}
+
+	@Override
+	public ICFBamSchema.RoleScopeEnum getRequiredRoleScope() {
+		return( getSchemaRoleRec().getRequiredRoleScope() );
+	}
 }

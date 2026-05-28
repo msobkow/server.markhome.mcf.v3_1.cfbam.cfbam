@@ -112,42 +112,42 @@ public interface ICFBamSecTentRoleEditObj
 	 *
 	 *	@return	The ICFSecTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecTenantObj getRequiredOwnerTenant();
+	ICFSecTenantObj getRequiredContainerTenant();
 
 	/**
 	 *	Get the required ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
+	ICFSecTenantObj getRequiredContainerTenant( boolean forceRead );
 
 	/**
 	 *	Set the ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@param	value	the ICFSecTenantObj instance to be referenced by the Tenant key.
 	 */
-	void setRequiredOwnerTenant( ICFSecTenantObj value );
+	void setRequiredContainerTenant( ICFSecTenantObj value );
 
 	/**
 	 *	Get the ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 *
 	 *	@return	The ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 */
-	ICFSecSecSysGrpObj getRequiredContainerSysRole();
+	ICFSecSecSysGrpObj getRequiredParentSysRole();
 
 	/**
 	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 *
 	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 */
-	ICFSecSecSysGrpObj getRequiredContainerSysRole( boolean forceRead );
+	ICFSecSecSysGrpObj getRequiredParentSysRole( boolean forceRead );
 
 	/**
 	 *	Set the ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 *
 	 *	@param	value	the ICFSecSecSysGrpObj instance to be referenced by the SysRole key.
 	 */
-	void setRequiredContainerSysRole( ICFSecSecSysGrpObj value );
+	void setRequiredParentSysRole( ICFSecSecSysGrpObj value );
 
 	/**
 	 *	Get a list ICFSecSecTentRoleMembObj instances referenced by the MembByRole key.

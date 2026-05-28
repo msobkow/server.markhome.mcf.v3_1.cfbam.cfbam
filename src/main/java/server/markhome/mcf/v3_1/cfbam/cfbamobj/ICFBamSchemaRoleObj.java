@@ -115,4 +115,11 @@ public interface ICFBamSchemaRoleObj
 	 */
 	CFLibDbKeyHash256 getRequiredSchemaDefId();
 
+	/**
+	 *	Get the required ICFBamSchema.RoleScopeEnum attribute RoleScope.
+	 *
+	 *	@return	The required ICFBamSchema.RoleScopeEnum attribute RoleScope.
+	 */
+	ICFBamSchema.RoleScopeEnum getRequiredRoleScope();
+
 }

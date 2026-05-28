@@ -424,6 +424,16 @@ public class CFBamTenantTableObj
 		}
 					schema.getSchemaDefTableObj().deepDisposeSchemaDefByCTenantIdx( existing.getRequiredId() );
 					schema.getTldTableObj().deepDisposeTldByTenantIdx( existing.getRequiredId() );
+					schema.getSecTentRoleTableObj().deepDisposeSecTentRoleByTenantIdx( existing.getRequiredId() );
+		ICFSecSecTentGrpObj objDelTentGrpMembs;
+		List<ICFSecSecTentGrpObj> arrDelTentGrpMembs = schema.getSecTentGrpTableObj().readCachedSecTentGrpByTenantIdx( existing.getRequiredId() );
+		Iterator<ICFSecSecTentGrpObj> iterDelTentGrpMembs = arrDelTentGrpMembs.iterator();
+		while( iterDelTentGrpMembs.hasNext() ) {
+			objDelTentGrpMembs = iterDelTentGrpMembs.next();
+			if( objDelTentGrpMembs != null ) {
+						schema.getSecTentGrpMembTableObj().deepDisposeSecTentGrpMembByTentGrpIdx( objDelTentGrpMembs.getRequiredSecTentGrpId() );
+			}
+		}
 					schema.getSecTentGrpTableObj().deepDisposeSecTentGrpByTenantIdx( existing.getRequiredId() );
 
 		if( indexByClusterIdx != null ) {

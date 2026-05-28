@@ -60,8 +60,11 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamSchemaRole extends ICFBamRoleDef
 {
+	public static final ICFBamSchema.RoleScopeEnum ROLESCOPE_MIN_VALUE = ICFBamSchema.RoleScopeEnum.SysRole;
+	public static final ICFBamSchema.RoleScopeEnum ROLESCOPE_MAX_VALUE = ICFBamSchema.RoleScopeEnum.TentRole;
 	public static final String S_SCHEMADEFID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SCHEMADEFID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SCHEMADEFID_INIT_VALUE );
+	public static final ICFBamSchema.RoleScopeEnum ROLESCOPE_INIT_VALUE = ICFBamSchema.ordinalToRoleScopeEnum( 0 );
 	public final static int CLASS_CODE = 0xa88f;
 	public final static String S_CLASS_CODE = "a88f";
 
@@ -69,6 +72,8 @@ public interface ICFBamSchemaRole extends ICFBamRoleDef
 	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
 	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId);
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
+	public ICFBamSchema.RoleScopeEnum getRequiredRoleScope();
+	public void setRequiredRoleScope( ICFBamSchema.RoleScopeEnum value );
 	@Override
 	public boolean equals( Object obj );
 	

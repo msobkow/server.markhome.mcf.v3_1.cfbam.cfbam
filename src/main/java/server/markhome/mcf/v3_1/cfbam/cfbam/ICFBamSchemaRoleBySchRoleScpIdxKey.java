@@ -1,5 +1,4 @@
-
-// Description: Java JPA Factory interface for SchemaRole.
+// Description: Java 25 interface for a SchemaRole by SchRoleScpIdx index key object
 
 /*
  *	server.markhome.mcf.CFBam
@@ -46,58 +45,36 @@
 
 package server.markhome.mcf.v3_1.cfbam.cfbam;
 
-import java.lang.reflect.*;
-import java.net.*;
-import java.rmi.*;
-import java.sql.*;
-import java.text.*;
+import java.io.Serializable;
+import java.math.*;
+import java.time.*;
 import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
+//import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
-/*
- *	ICFBamSchemaRoleFactory interface for SchemaRole
- */
-public interface ICFBamSchemaRoleFactory
+public interface ICFBamSchemaRoleBySchRoleScpIdxKey
 {
+	public CFLibDbKeyHash256 getRequiredSchemaDefId();
+	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value );
+	public ICFBamSchema.RoleScopeEnum getRequiredRoleScope();
+	public void setRequiredRoleScope( ICFBamSchema.RoleScopeEnum value );
+	@Override
+	public boolean equals( Object obj );
 
-	/**
-	 *	Allocate a SchemaIdx key over SchemaRole instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamSchemaRoleBySchemaIdxKey newBySchemaIdxKey();
+	@Override
+	public int hashCode();
 
-	/**
-	 *	Allocate a RoleScopeIdx key over SchemaRole instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamSchemaRoleByRoleScopeIdxKey newByRoleScopeIdxKey();
+	//@Override
+	public int compareTo( Object obj );
 
-	/**
-	 *	Allocate a SchRoleScpIdx key over SchemaRole instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamSchemaRoleBySchRoleScpIdxKey newBySchRoleScpIdxKey();
+	public String getXmlAttrFragment();
 
-	/**
-	 *	Allocate a SchemaRole interface implementation.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamSchemaRole newRec();
-
-	/**
-	 *	Allocate a SchemaRole history interface implementation.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamSchemaRoleH newHRec();
-
+	@Override
+	public String toString();
 }

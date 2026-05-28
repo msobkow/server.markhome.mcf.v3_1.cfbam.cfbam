@@ -270,6 +270,18 @@ public class CFBamSchemaRoleEditObj
 	}
 
 	@Override
+	public ICFBamSchema.RoleScopeEnum getRequiredRoleScope() {
+		return( getSchemaRoleRec().getRequiredRoleScope() );
+	}
+
+	@Override
+	public void setRequiredRoleScope( ICFBamSchema.RoleScopeEnum value ) {
+		if( getSchemaRoleRec().getRequiredRoleScope() != value ) {
+			getSchemaRoleRec().setRequiredRoleScope( value );
+		}
+	}
+
+	@Override
 	public void setRequiredContainerScopeDef( ICFBamScopeObj value ) {
 		final String S_ProcName = "CFBamSchemaRoleEditObj.setRequiredContainerScopeDef() ";
 		if( value == null ) {

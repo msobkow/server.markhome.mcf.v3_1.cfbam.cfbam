@@ -68,7 +68,7 @@ public class CFBamSecTentGrpEditObj
 	protected ICFSecSecTentGrp rec;
 	protected ICFSecSecUserObj createdBy = null;
 	protected ICFSecSecUserObj updatedBy = null;
-	protected ICFSecTenantObj requiredOwnerTenant;
+	protected ICFSecTenantObj requiredContainerTenant;
 	protected ICFSecSecSysGrpObj requiredParentSysGrp;
 	protected List<ICFSecSecTentGrpMembObj> optionalChildrenMembByGrp;
 
@@ -77,7 +77,7 @@ public class CFBamSecTentGrpEditObj
 		getRec();
 		ICFSecSecTentGrp origRec = orig.getRec();
 		rec.set( origRec );
-		requiredOwnerTenant = null;
+		requiredContainerTenant = null;
 		requiredParentSysGrp = null;
 	}
 
@@ -147,7 +147,8 @@ public class CFBamSecTentGrpEditObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecTenantObj scope = getRequiredContainerTenant();
+		return( scope );
 	}
 
 	@Override
@@ -382,7 +383,7 @@ public class CFBamSecTentGrpEditObj
 	public void setRec( ICFSecSecTentGrp value ) {
 		if( rec != value ) {
 			rec = value;
-			requiredOwnerTenant = null;
+			requiredContainerTenant = null;
 			requiredParentSysGrp = null;
 		}
 	}
@@ -422,7 +423,7 @@ public class CFBamSecTentGrpEditObj
 	public void setRequiredSecTentGrpId(CFLibDbKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
-			requiredOwnerTenant = null;
+			requiredContainerTenant = null;
 			requiredParentSysGrp = null;
 			optionalChildrenMembByGrp = null;
 		}
@@ -439,32 +440,35 @@ public class CFBamSecTentGrpEditObj
 	}
 
 	@Override
-	public ICFSecTenantObj getRequiredOwnerTenant() {
-		return( getRequiredOwnerTenant( false ) );
+	public ICFSecTenantObj getRequiredContainerTenant() {
+		return( getRequiredContainerTenant( false ) );
 	}
 
 	@Override
-	public ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead ) {
-		if( forceRead || ( requiredOwnerTenant == null ) ) {
+	public ICFSecTenantObj getRequiredContainerTenant( boolean forceRead ) {
+		if( forceRead || ( requiredContainerTenant == null ) ) {
 			boolean anyMissing = false;
 			if( ! anyMissing ) {
 				ICFSecTenantObj obj = ((ICFBamSchemaObj)getOrigAsSecTentGrp().getSchema()).getTenantTableObj().readTenantByIdIdx( getSecTentGrpRec().getRequiredTenantId() );
-				requiredOwnerTenant = obj;
+				requiredContainerTenant = obj;
+				if( obj != null ) {
+					requiredContainerTenant = obj;
+				}
 			}
 		}
-		return( requiredOwnerTenant );
+		return( requiredContainerTenant );
 	}
 
 	@Override
-	public void setRequiredOwnerTenant( ICFSecTenantObj value ) {
+	public void setRequiredContainerTenant( ICFSecTenantObj value ) {
 		if( rec == null ) {
 			getSecTentGrpRec();
 		}
 		if( value != null ) {
-			requiredOwnerTenant = value;
-			getSecTentGrpRec().setRequiredOwnerTenant(value.getTenantRec());
+			requiredContainerTenant = value;
+			getSecTentGrpRec().setRequiredContainerTenant(value.getTenantRec());
 		}
-		requiredOwnerTenant = value;
+		requiredContainerTenant = value;
 	}
 
 	@Override

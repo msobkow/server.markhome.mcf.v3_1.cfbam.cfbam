@@ -123,6 +123,47 @@ public interface ICFBamSchemaRoleTable
 	void deleteSchemaRoleBySchemaIdx( ICFSecAuthorization Authorization,
 		ICFBamSchemaRoleBySchemaIdxKey argKey );
 	/**
+	 *	Delete the SchemaRole instances identified by the key RoleScopeIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	RoleScope	The SchemaRole key attribute of the instance generating the id.
+	 */
+	void deleteSchemaRoleByRoleScopeIdx( ICFSecAuthorization Authorization,
+		ICFBamSchema.RoleScopeEnum argRoleScope );
+
+	/**
+	 *	Delete the SchemaRole instances identified by the key RoleScopeIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteSchemaRoleByRoleScopeIdx( ICFSecAuthorization Authorization,
+		ICFBamSchemaRoleByRoleScopeIdxKey argKey );
+	/**
+	 *	Delete the SchemaRole instances identified by the key SchRoleScpIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	SchemaDefId	The SchemaRole key attribute of the instance generating the id.
+	 *
+	 *	@param	RoleScope	The SchemaRole key attribute of the instance generating the id.
+	 */
+	void deleteSchemaRoleBySchRoleScpIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 argSchemaDefId,
+		ICFBamSchema.RoleScopeEnum argRoleScope );
+
+	/**
+	 *	Delete the SchemaRole instances identified by the key SchRoleScpIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteSchemaRoleBySchRoleScpIdx( ICFSecAuthorization Authorization,
+		ICFBamSchemaRoleBySchRoleScpIdxKey argKey );
+	/**
 	 *	Delete the SchemaRole instance identified by the primary key.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -338,6 +379,33 @@ public interface ICFBamSchemaRoleTable
 		CFLibDbKeyHash256 SchemaDefId );
 
 	/**
+	 *	Read an array of the derived SchemaRole record instances identified by the duplicate key RoleScopeIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	RoleScope	The SchemaRole key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	ICFBamSchemaRole[] readDerivedByRoleScopeIdx( ICFSecAuthorization Authorization,
+		ICFBamSchema.RoleScopeEnum RoleScope );
+
+	/**
+	 *	Read an array of the derived SchemaRole record instances identified by the duplicate key SchRoleScpIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	SchemaDefId	The SchemaRole key attribute of the instance generating the id.
+	 *
+	 *	@param	RoleScope	The SchemaRole key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	ICFBamSchemaRole[] readDerivedBySchRoleScpIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 SchemaDefId,
+		ICFBamSchema.RoleScopeEnum RoleScope );
+
+	/**
 	 *	Read the specific SchemaRole record instance identified by the primary key.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -471,4 +539,35 @@ public interface ICFBamSchemaRoleTable
 	 */
 	ICFBamSchemaRole[] readRecBySchemaIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 SchemaDefId );
+
+	/**
+	 *	Read an array of the specific SchemaRole record instances identified by the duplicate key RoleScopeIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	RoleScope	The SchemaRole key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamSchemaRole[] readRecByRoleScopeIdx( ICFSecAuthorization Authorization,
+		ICFBamSchema.RoleScopeEnum RoleScope );
+
+	/**
+	 *	Read an array of the specific SchemaRole record instances identified by the duplicate key SchRoleScpIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	SchemaDefId	The SchemaRole key attribute of the instance generating the id.
+	 *
+	 *	@param	RoleScope	The SchemaRole key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamSchemaRole[] readRecBySchRoleScpIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 SchemaDefId,
+		ICFBamSchema.RoleScopeEnum RoleScope );
 }

@@ -112,21 +112,21 @@ public interface ICFBamSecTentGrpEditObj
 	 *
 	 *	@return	The ICFSecTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecTenantObj getRequiredOwnerTenant();
+	ICFSecTenantObj getRequiredContainerTenant();
 
 	/**
 	 *	Get the required ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
+	ICFSecTenantObj getRequiredContainerTenant( boolean forceRead );
 
 	/**
 	 *	Set the ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@param	value	the ICFSecTenantObj instance to be referenced by the Tenant key.
 	 */
-	void setRequiredOwnerTenant( ICFSecTenantObj value );
+	void setRequiredContainerTenant( ICFSecTenantObj value );
 
 	/**
 	 *	Get the ICFSecSecSysGrpObj instance referenced by the SysGrp key.

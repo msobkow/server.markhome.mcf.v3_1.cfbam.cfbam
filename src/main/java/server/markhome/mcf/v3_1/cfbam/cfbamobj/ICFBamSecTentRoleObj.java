@@ -224,28 +224,28 @@ public interface ICFBamSecTentRoleObj
 	 *
 	 *	@return	The required ICFBamTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecTenantObj getRequiredOwnerTenant();
+	ICFSecTenantObj getRequiredContainerTenant();
 
 	/**
 	 *	Get the required ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
+	ICFSecTenantObj getRequiredContainerTenant( boolean forceRead );
 
 	/**
 	 *	Get the required ICFBamSecSysGrpObj instance referenced by the SysRole key.
 	 *
 	 *	@return	The required ICFBamSecSysGrpObj instance referenced by the SysRole key.
 	 */
-	ICFSecSecSysGrpObj getRequiredContainerSysRole();
+	ICFSecSecSysGrpObj getRequiredParentSysRole();
 
 	/**
 	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 *
 	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 */
-	ICFSecSecSysGrpObj getRequiredContainerSysRole( boolean forceRead );
+	ICFSecSecSysGrpObj getRequiredParentSysRole( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFSecSecTentRoleMembObj array of instances referenced by the MembByRole key.

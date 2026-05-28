@@ -112,42 +112,42 @@ public interface ICFBamSecClusRoleEditObj
 	 *
 	 *	@return	The ICFSecClusterObj instance referenced by the Cluster key.
 	 */
-	ICFSecClusterObj getRequiredOwnerCluster();
+	ICFSecClusterObj getRequiredContainerCluster();
 
 	/**
 	 *	Get the required ICFSecClusterObj instance referenced by the Cluster key.
 	 *
 	 *	@return	The required ICFSecClusterObj instance referenced by the Cluster key.
 	 */
-	ICFSecClusterObj getRequiredOwnerCluster( boolean forceRead );
+	ICFSecClusterObj getRequiredContainerCluster( boolean forceRead );
 
 	/**
 	 *	Set the ICFSecClusterObj instance referenced by the Cluster key.
 	 *
 	 *	@param	value	the ICFSecClusterObj instance to be referenced by the Cluster key.
 	 */
-	void setRequiredOwnerCluster( ICFSecClusterObj value );
+	void setRequiredContainerCluster( ICFSecClusterObj value );
 
 	/**
 	 *	Get the ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 *
 	 *	@return	The ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 */
-	ICFSecSecSysGrpObj getRequiredContainerSysRole();
+	ICFSecSecSysGrpObj getRequiredParentSysRole();
 
 	/**
 	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 *
 	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 */
-	ICFSecSecSysGrpObj getRequiredContainerSysRole( boolean forceRead );
+	ICFSecSecSysGrpObj getRequiredParentSysRole( boolean forceRead );
 
 	/**
 	 *	Set the ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 *
 	 *	@param	value	the ICFSecSecSysGrpObj instance to be referenced by the SysRole key.
 	 */
-	void setRequiredContainerSysRole( ICFSecSecSysGrpObj value );
+	void setRequiredParentSysRole( ICFSecSecSysGrpObj value );
 
 	/**
 	 *	Get a list ICFSecSecClusRoleMembObj instances referenced by the MembByGrp key.
