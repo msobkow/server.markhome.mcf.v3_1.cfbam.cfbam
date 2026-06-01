@@ -439,8 +439,13 @@ public class CFBamRoleDefObj
 	}
 
 	@Override
-	public String getRequiredMembershipString() {
-		return( getRoleDefRec().getRequiredMembershipString() );
+	public String getRequiredEnables() {
+		return( getRoleDefRec().getRequiredEnables() );
+	}
+
+	@Override
+	public String getRequiredIncludes() {
+		return( getRoleDefRec().getRequiredIncludes() );
 	}
 
 	@Override

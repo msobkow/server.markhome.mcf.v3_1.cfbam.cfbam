@@ -291,11 +291,18 @@ public interface ICFBamRoleDefObj
 	String getRequiredName();
 
 	/**
-	 *	Get the required String attribute MembershipString.
+	 *	Get the required String attribute Enables.
 	 *
-	 *	@return	The required String attribute MembershipString.
+	 *	@return	The required String attribute Enables.
 	 */
-	String getRequiredMembershipString();
+	String getRequiredEnables();
+
+	/**
+	 *	Get the required String attribute Includes.
+	 *
+	 *	@return	The required String attribute Includes.
+	 */
+	String getRequiredIncludes();
 
 	/**
 	 *	Internal use only.

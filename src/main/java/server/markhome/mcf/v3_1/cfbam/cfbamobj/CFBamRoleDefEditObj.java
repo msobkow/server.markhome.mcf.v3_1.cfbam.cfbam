@@ -451,14 +451,26 @@ public class CFBamRoleDefEditObj
 	}
 
 	@Override
-	public String getRequiredMembershipString() {
-		return( getRoleDefRec().getRequiredMembershipString() );
+	public String getRequiredEnables() {
+		return( getRoleDefRec().getRequiredEnables() );
 	}
 
 	@Override
-	public void setRequiredMembershipString( String value ) {
-		if( getRoleDefRec().getRequiredMembershipString() != value ) {
-			getRoleDefRec().setRequiredMembershipString( value );
+	public void setRequiredEnables( String value ) {
+		if( getRoleDefRec().getRequiredEnables() != value ) {
+			getRoleDefRec().setRequiredEnables( value );
+		}
+	}
+
+	@Override
+	public String getRequiredIncludes() {
+		return( getRoleDefRec().getRequiredIncludes() );
+	}
+
+	@Override
+	public void setRequiredIncludes( String value ) {
+		if( getRoleDefRec().getRequiredIncludes() != value ) {
+			getRoleDefRec().setRequiredIncludes( value );
 		}
 	}
 
