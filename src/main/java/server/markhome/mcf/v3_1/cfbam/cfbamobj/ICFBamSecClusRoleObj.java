@@ -224,28 +224,28 @@ public interface ICFBamSecClusRoleObj
 	 *
 	 *	@return	The required ICFBamClusterObj instance referenced by the Cluster key.
 	 */
-	ICFSecClusterObj getRequiredContainerCluster();
+	ICFSecClusterObj getRequiredOwnerCluster();
 
 	/**
 	 *	Get the required ICFSecClusterObj instance referenced by the Cluster key.
 	 *
 	 *	@return	The required ICFSecClusterObj instance referenced by the Cluster key.
 	 */
-	ICFSecClusterObj getRequiredContainerCluster( boolean forceRead );
+	ICFSecClusterObj getRequiredOwnerCluster( boolean forceRead );
 
 	/**
 	 *	Get the required ICFBamSecSysGrpObj instance referenced by the SysRole key.
 	 *
 	 *	@return	The required ICFBamSecSysGrpObj instance referenced by the SysRole key.
 	 */
-	ICFSecSecSysGrpObj getRequiredParentSysRole();
+	ICFSecSecSysGrpObj getRequiredContainerSysRole();
 
 	/**
 	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 *
 	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysRole key.
 	 */
-	ICFSecSecSysGrpObj getRequiredParentSysRole( boolean forceRead );
+	ICFSecSecSysGrpObj getRequiredContainerSysRole( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFSecSecClusRoleMembObj array of instances referenced by the MembByGrp key.

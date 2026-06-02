@@ -112,7 +112,7 @@ public interface ICFBamSecSysGrpEditObj
 	 *
 	 *	@return	The (potentially empty) list of ICFSecSecSysGrpIncObj instances referenced by the IncByGrp key.
 	 */
-	List<ICFSecSecSysGrpIncObj> getOptionalChildrenIncByGrp();
+	List<ICFSecSecSysGrpIncObj> getOptionalComponentsIncByGrp();
 
 	/**
 	 *	Get a list ICFSecSecSysGrpMembObj instances referenced by the MembByGrp key.
@@ -126,42 +126,42 @@ public interface ICFBamSecSysGrpEditObj
 	 *
 	 *	@return	The (potentially empty) list of ICFSecSecClusGrpObj instances referenced by the ImplClusGrp key.
 	 */
-	List<ICFSecSecClusGrpObj> getOptionalChildrenImplClusGrp();
+	List<ICFSecSecClusGrpObj> getOptionalComponentsImplClusGrp();
 
 	/**
 	 *	Get a list ICFSecSecTentGrpObj instances referenced by the ImplTentGrp key.
 	 *
 	 *	@return	The (potentially empty) list of ICFSecSecTentGrpObj instances referenced by the ImplTentGrp key.
 	 */
-	List<ICFSecSecTentGrpObj> getOptionalChildrenImplTentGrp();
+	List<ICFSecSecTentGrpObj> getOptionalComponentsImplTentGrp();
 
 	/**
 	 *	Get the ICFSecSecSysRoleObj instance referenced by the ImplSysRole key.
 	 *
 	 *	@return	The ICFSecSecSysRoleObj instance referenced by the ImplSysRole key.
 	 */
-	ICFSecSecSysRoleObj getOptionalChildrenImplSysRole();
+	ICFSecSecSysRoleObj getOptionalComponentsImplSysRole();
 
 	/**
 	 *	Get the optional ICFSecSecSysRoleObj instance referenced by the ImplSysRole key.
 	 *
 	 *	@return	The optional ICFSecSecSysRoleObj instance referenced by the ImplSysRole key.
 	 */
-	ICFSecSecSysRoleObj getOptionalChildrenImplSysRole( boolean forceRead );
+	ICFSecSecSysRoleObj getOptionalComponentsImplSysRole( boolean forceRead );
 
 	/**
 	 *	Get a list ICFSecSecClusRoleObj instances referenced by the ImplClusRole key.
 	 *
 	 *	@return	The (potentially empty) list of ICFSecSecClusRoleObj instances referenced by the ImplClusRole key.
 	 */
-	List<ICFSecSecClusRoleObj> getOptionalChildrenImplClusRole();
+	List<ICFSecSecClusRoleObj> getOptionalComponentsImplClusRole();
 
 	/**
 	 *	Get a list ICFSecSecTentRoleObj instances referenced by the ImplTentRole key.
 	 *
 	 *	@return	The (potentially empty) list of ICFSecSecTentRoleObj instances referenced by the ImplTentRole key.
 	 */
-	List<ICFSecSecTentRoleObj> getOptionalChildrenImplTentRole();
+	List<ICFSecSecTentRoleObj> getOptionalComponentsImplTentRole();
 
 	/**
 	 *	Get a list ICFSecSecSysGrpIncObj instances referenced by the SysGrpByName key.

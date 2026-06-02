@@ -224,14 +224,14 @@ public interface ICFBamSecSysGrpObj
 	 *
 	 *	@return	The optional ICFSecSecSysGrpIncObj[] array of instances referenced by the IncByGrp key.
 	 */
-	List<ICFSecSecSysGrpIncObj> getOptionalChildrenIncByGrp();
+	List<ICFSecSecSysGrpIncObj> getOptionalComponentsIncByGrp();
 
 	/**
 	 *	Get the array of optional ICFSecSecSysGrpIncObj array of instances referenced by the IncByGrp key.
 	 *
 	 *	@return	The optional ICFSecSecSysGrpIncObj[] array of instances referenced by the IncByGrp key.
 	 */
-	List<ICFSecSecSysGrpIncObj> getOptionalChildrenIncByGrp( boolean forceRead );
+	List<ICFSecSecSysGrpIncObj> getOptionalComponentsIncByGrp( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFSecSecSysGrpMembObj array of instances referenced by the MembByGrp key.
@@ -252,70 +252,70 @@ public interface ICFBamSecSysGrpObj
 	 *
 	 *	@return	The optional ICFSecSecClusGrpObj[] array of instances referenced by the ImplClusGrp key.
 	 */
-	List<ICFSecSecClusGrpObj> getOptionalChildrenImplClusGrp();
+	List<ICFSecSecClusGrpObj> getOptionalComponentsImplClusGrp();
 
 	/**
 	 *	Get the array of optional ICFSecSecClusGrpObj array of instances referenced by the ImplClusGrp key.
 	 *
 	 *	@return	The optional ICFSecSecClusGrpObj[] array of instances referenced by the ImplClusGrp key.
 	 */
-	List<ICFSecSecClusGrpObj> getOptionalChildrenImplClusGrp( boolean forceRead );
+	List<ICFSecSecClusGrpObj> getOptionalComponentsImplClusGrp( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFSecSecTentGrpObj array of instances referenced by the ImplTentGrp key.
 	 *
 	 *	@return	The optional ICFSecSecTentGrpObj[] array of instances referenced by the ImplTentGrp key.
 	 */
-	List<ICFSecSecTentGrpObj> getOptionalChildrenImplTentGrp();
+	List<ICFSecSecTentGrpObj> getOptionalComponentsImplTentGrp();
 
 	/**
 	 *	Get the array of optional ICFSecSecTentGrpObj array of instances referenced by the ImplTentGrp key.
 	 *
 	 *	@return	The optional ICFSecSecTentGrpObj[] array of instances referenced by the ImplTentGrp key.
 	 */
-	List<ICFSecSecTentGrpObj> getOptionalChildrenImplTentGrp( boolean forceRead );
+	List<ICFSecSecTentGrpObj> getOptionalComponentsImplTentGrp( boolean forceRead );
 
 	/**
 	 *	Get the optional ICFBamSecSysRoleObj instance referenced by the ImplSysRole key.
 	 *
 	 *	@return	The optional ICFBamSecSysRoleObj instance referenced by the ImplSysRole key.
 	 */
-	ICFSecSecSysRoleObj getOptionalChildrenImplSysRole();
+	ICFSecSecSysRoleObj getOptionalComponentsImplSysRole();
 
 	/**
 	 *	Get the optional ICFSecSecSysRoleObj instance referenced by the ImplSysRole key.
 	 *
 	 *	@return	The optional ICFSecSecSysRoleObj instance referenced by the ImplSysRole key.
 	 */
-	ICFSecSecSysRoleObj getOptionalChildrenImplSysRole( boolean forceRead );
+	ICFSecSecSysRoleObj getOptionalComponentsImplSysRole( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFSecSecClusRoleObj array of instances referenced by the ImplClusRole key.
 	 *
 	 *	@return	The optional ICFSecSecClusRoleObj[] array of instances referenced by the ImplClusRole key.
 	 */
-	List<ICFSecSecClusRoleObj> getOptionalChildrenImplClusRole();
+	List<ICFSecSecClusRoleObj> getOptionalComponentsImplClusRole();
 
 	/**
 	 *	Get the array of optional ICFSecSecClusRoleObj array of instances referenced by the ImplClusRole key.
 	 *
 	 *	@return	The optional ICFSecSecClusRoleObj[] array of instances referenced by the ImplClusRole key.
 	 */
-	List<ICFSecSecClusRoleObj> getOptionalChildrenImplClusRole( boolean forceRead );
+	List<ICFSecSecClusRoleObj> getOptionalComponentsImplClusRole( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFSecSecTentRoleObj array of instances referenced by the ImplTentRole key.
 	 *
 	 *	@return	The optional ICFSecSecTentRoleObj[] array of instances referenced by the ImplTentRole key.
 	 */
-	List<ICFSecSecTentRoleObj> getOptionalChildrenImplTentRole();
+	List<ICFSecSecTentRoleObj> getOptionalComponentsImplTentRole();
 
 	/**
 	 *	Get the array of optional ICFSecSecTentRoleObj array of instances referenced by the ImplTentRole key.
 	 *
 	 *	@return	The optional ICFSecSecTentRoleObj[] array of instances referenced by the ImplTentRole key.
 	 */
-	List<ICFSecSecTentRoleObj> getOptionalChildrenImplTentRole( boolean forceRead );
+	List<ICFSecSecTentRoleObj> getOptionalComponentsImplTentRole( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFSecSecSysGrpIncObj array of instances referenced by the SysGrpByName key.

@@ -112,42 +112,42 @@ public interface ICFBamSecTentGrpEditObj
 	 *
 	 *	@return	The ICFSecTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecTenantObj getRequiredContainerTenant();
+	ICFSecTenantObj getRequiredOwnerTenant();
 
 	/**
 	 *	Get the required ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@return	The required ICFSecTenantObj instance referenced by the Tenant key.
 	 */
-	ICFSecTenantObj getRequiredContainerTenant( boolean forceRead );
+	ICFSecTenantObj getRequiredOwnerTenant( boolean forceRead );
 
 	/**
 	 *	Set the ICFSecTenantObj instance referenced by the Tenant key.
 	 *
 	 *	@param	value	the ICFSecTenantObj instance to be referenced by the Tenant key.
 	 */
-	void setRequiredContainerTenant( ICFSecTenantObj value );
+	void setRequiredOwnerTenant( ICFSecTenantObj value );
 
 	/**
 	 *	Get the ICFSecSecSysGrpObj instance referenced by the SysGrp key.
 	 *
 	 *	@return	The ICFSecSecSysGrpObj instance referenced by the SysGrp key.
 	 */
-	ICFSecSecSysGrpObj getRequiredParentSysGrp();
+	ICFSecSecSysGrpObj getRequiredContainerSysGrp();
 
 	/**
 	 *	Get the required ICFSecSecSysGrpObj instance referenced by the SysGrp key.
 	 *
 	 *	@return	The required ICFSecSecSysGrpObj instance referenced by the SysGrp key.
 	 */
-	ICFSecSecSysGrpObj getRequiredParentSysGrp( boolean forceRead );
+	ICFSecSecSysGrpObj getRequiredContainerSysGrp( boolean forceRead );
 
 	/**
 	 *	Set the ICFSecSecSysGrpObj instance referenced by the SysGrp key.
 	 *
 	 *	@param	value	the ICFSecSecSysGrpObj instance to be referenced by the SysGrp key.
 	 */
-	void setRequiredParentSysGrp( ICFSecSecSysGrpObj value );
+	void setRequiredContainerSysGrp( ICFSecSecSysGrpObj value );
 
 	/**
 	 *	Get a list ICFSecSecTentGrpMembObj instances referenced by the MembByGrp key.

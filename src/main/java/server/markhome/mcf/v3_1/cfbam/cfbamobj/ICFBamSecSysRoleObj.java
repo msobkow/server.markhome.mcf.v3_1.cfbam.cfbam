@@ -224,14 +224,14 @@ public interface ICFBamSecSysRoleObj
 	 *
 	 *	@return	The optional ICFSecSecSysRoleEnablesObj[] array of instances referenced by the EnabledByRole key.
 	 */
-	List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenEnabledByRole();
+	List<ICFSecSecSysRoleEnablesObj> getOptionalComponentsEnabledByRole();
 
 	/**
 	 *	Get the array of optional ICFSecSecSysRoleEnablesObj array of instances referenced by the EnabledByRole key.
 	 *
 	 *	@return	The optional ICFSecSecSysRoleEnablesObj[] array of instances referenced by the EnabledByRole key.
 	 */
-	List<ICFSecSecSysRoleEnablesObj> getOptionalChildrenEnabledByRole( boolean forceRead );
+	List<ICFSecSecSysRoleEnablesObj> getOptionalComponentsEnabledByRole( boolean forceRead );
 
 	/**
 	 *	Get the array of optional ICFSecSecSysRoleMembObj array of instances referenced by the MembByRole key.
