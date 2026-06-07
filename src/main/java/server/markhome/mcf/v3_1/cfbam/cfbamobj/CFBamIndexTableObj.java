@@ -74,6 +74,10 @@ public class CFBamIndexTableObj
 		ICFBamIndexObj > indexByUNameIdx;
 	private Map< ICFBamIndexByIdxTableIdxKey,
 		Map<CFLibDbKeyHash256, ICFBamIndexObj > > indexByIdxTableIdx;
+	private Map< ICFBamIndexByIdxCodeVisIdxKey,
+		Map<CFLibDbKeyHash256, ICFBamIndexObj > > indexByIdxCodeVisIdx;
+	private Map< ICFBamIndexByIdxTblCdVisXKey,
+		Map<CFLibDbKeyHash256, ICFBamIndexObj > > indexByIdxTblCdVisX;
 	private Map< ICFBamIndexByDefSchemaIdxKey,
 		Map<CFLibDbKeyHash256, ICFBamIndexObj > > indexByDefSchemaIdx;
 	public static String TABLE_NAME = "Index";
@@ -86,6 +90,8 @@ public class CFBamIndexTableObj
 		indexByTenantIdx = null;
 		indexByUNameIdx = null;
 		indexByIdxTableIdx = null;
+		indexByIdxCodeVisIdx = null;
+		indexByIdxTblCdVisX = null;
 		indexByDefSchemaIdx = null;
 	}
 
@@ -96,6 +102,8 @@ public class CFBamIndexTableObj
 		indexByTenantIdx = null;
 		indexByUNameIdx = null;
 		indexByIdxTableIdx = null;
+		indexByIdxCodeVisIdx = null;
+		indexByIdxTblCdVisX = null;
 		indexByDefSchemaIdx = null;
 	}
 	
@@ -173,6 +181,8 @@ public class CFBamIndexTableObj
 		indexByTenantIdx = null;
 		indexByUNameIdx = null;
 		indexByIdxTableIdx = null;
+		indexByIdxCodeVisIdx = null;
+		indexByIdxTblCdVisX = null;
 		indexByDefSchemaIdx = null;
 		List<ICFBamIndexObj> toForget = new LinkedList<ICFBamIndexObj>();
 		ICFBamIndexObj cur = null;
@@ -264,6 +274,33 @@ public class CFBamIndexTableObj
 				}
 			}
 
+			if( indexByIdxCodeVisIdx != null ) {
+				ICFBamIndexByIdxCodeVisIdxKey keyIdxCodeVisIdx =
+					schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+				keyIdxCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
+				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxCodeVisIdx = indexByIdxCodeVisIdx.get( keyIdxCodeVisIdx );
+				if( mapIdxCodeVisIdx != null ) {
+					mapIdxCodeVisIdx.remove( keepObj.getPKey() );
+					if( mapIdxCodeVisIdx.size() <= 0 ) {
+						indexByIdxCodeVisIdx.remove( keyIdxCodeVisIdx );
+					}
+				}
+			}
+
+			if( indexByIdxTblCdVisX != null ) {
+				ICFBamIndexByIdxTblCdVisXKey keyIdxTblCdVisX =
+					schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+				keyIdxTblCdVisX.setRequiredTableId( keepObj.getRequiredTableId() );
+				keyIdxTblCdVisX.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
+				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxTblCdVisX = indexByIdxTblCdVisX.get( keyIdxTblCdVisX );
+				if( mapIdxTblCdVisX != null ) {
+					mapIdxTblCdVisX.remove( keepObj.getPKey() );
+					if( mapIdxTblCdVisX.size() <= 0 ) {
+						indexByIdxTblCdVisX.remove( keyIdxTblCdVisX );
+					}
+				}
+			}
+
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamIndexByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getFactoryIndex().newByDefSchemaIdxKey();
@@ -308,6 +345,27 @@ public class CFBamIndexTableObj
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxTableIdx = indexByIdxTableIdx.get( keyIdxTableIdx );
 				if( mapIdxTableIdx != null ) {
 					mapIdxTableIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByIdxCodeVisIdx != null ) {
+				ICFBamIndexByIdxCodeVisIdxKey keyIdxCodeVisIdx =
+					schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+				keyIdxCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
+				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxCodeVisIdx = indexByIdxCodeVisIdx.get( keyIdxCodeVisIdx );
+				if( mapIdxCodeVisIdx != null ) {
+					mapIdxCodeVisIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByIdxTblCdVisX != null ) {
+				ICFBamIndexByIdxTblCdVisXKey keyIdxTblCdVisX =
+					schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+				keyIdxTblCdVisX.setRequiredTableId( keepObj.getRequiredTableId() );
+				keyIdxTblCdVisX.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
+				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxTblCdVisX = indexByIdxTblCdVisX.get( keyIdxTblCdVisX );
+				if( mapIdxTblCdVisX != null ) {
+					mapIdxTblCdVisX.put( keepObj.getPKey(), keepObj );
 				}
 			}
 
@@ -360,6 +418,27 @@ public class CFBamIndexTableObj
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxTableIdx = indexByIdxTableIdx.get( keyIdxTableIdx );
 				if( mapIdxTableIdx != null ) {
 					mapIdxTableIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByIdxCodeVisIdx != null ) {
+				ICFBamIndexByIdxCodeVisIdxKey keyIdxCodeVisIdx =
+					schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+				keyIdxCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
+				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxCodeVisIdx = indexByIdxCodeVisIdx.get( keyIdxCodeVisIdx );
+				if( mapIdxCodeVisIdx != null ) {
+					mapIdxCodeVisIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByIdxTblCdVisX != null ) {
+				ICFBamIndexByIdxTblCdVisXKey keyIdxTblCdVisX =
+					schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+				keyIdxTblCdVisX.setRequiredTableId( keepObj.getRequiredTableId() );
+				keyIdxTblCdVisX.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
+				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxTblCdVisX = indexByIdxTblCdVisX.get( keyIdxTblCdVisX );
+				if( mapIdxTblCdVisX != null ) {
+					mapIdxTblCdVisX.put( keepObj.getPKey(), keepObj );
 				}
 			}
 
@@ -446,6 +525,13 @@ public class CFBamIndexTableObj
 		ICFBamIndexByIdxTableIdxKey keyIdxTableIdx = schema.getCFBamBackingStore().getFactoryIndex().newByIdxTableIdxKey();
 		keyIdxTableIdx.setRequiredTableId( existing.getRequiredTableId() );
 
+		ICFBamIndexByIdxCodeVisIdxKey keyIdxCodeVisIdx = schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+		keyIdxCodeVisIdx.setRequiredCodeVis( existing.getRequiredCodeVis() );
+
+		ICFBamIndexByIdxTblCdVisXKey keyIdxTblCdVisX = schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+		keyIdxTblCdVisX.setRequiredTableId( existing.getRequiredTableId() );
+		keyIdxTblCdVisX.setRequiredCodeVis( existing.getRequiredCodeVis() );
+
 		ICFBamIndexByDefSchemaIdxKey keyDefSchemaIdx = schema.getCFBamBackingStore().getFactoryIndex().newByDefSchemaIdxKey();
 		keyDefSchemaIdx.setOptionalDefSchemaId( existing.getOptionalDefSchemaId() );
 
@@ -479,6 +565,24 @@ public class CFBamIndexTableObj
 				indexByIdxTableIdx.get( keyIdxTableIdx ).remove( pkey );
 				if( indexByIdxTableIdx.get( keyIdxTableIdx ).size() <= 0 ) {
 					indexByIdxTableIdx.remove( keyIdxTableIdx );
+				}
+			}
+		}
+
+		if( indexByIdxCodeVisIdx != null ) {
+			if( indexByIdxCodeVisIdx.containsKey( keyIdxCodeVisIdx ) ) {
+				indexByIdxCodeVisIdx.get( keyIdxCodeVisIdx ).remove( pkey );
+				if( indexByIdxCodeVisIdx.get( keyIdxCodeVisIdx ).size() <= 0 ) {
+					indexByIdxCodeVisIdx.remove( keyIdxCodeVisIdx );
+				}
+			}
+		}
+
+		if( indexByIdxTblCdVisX != null ) {
+			if( indexByIdxTblCdVisX.containsKey( keyIdxTblCdVisX ) ) {
+				indexByIdxTblCdVisX.get( keyIdxTblCdVisX ).remove( pkey );
+				if( indexByIdxTblCdVisX.get( keyIdxTblCdVisX ).size() <= 0 ) {
+					indexByIdxTblCdVisX.remove( keyIdxTblCdVisX );
 				}
 			}
 		}
@@ -892,6 +996,197 @@ public class CFBamIndexTableObj
 	}
 
 	@Override
+	public List<ICFBamIndexObj> readIndexByIdxCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	{
+		return( readIndexByIdxCodeVisIdx( CodeVis,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamIndexObj> readIndexByIdxCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readIndexByIdxCodeVisIdx";
+		ICFBamIndexByIdxCodeVisIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+		key.setRequiredCodeVis( CodeVis );
+		Map<CFLibDbKeyHash256, ICFBamIndexObj> dict;
+		if( indexByIdxCodeVisIdx == null ) {
+			indexByIdxCodeVisIdx = new HashMap< ICFBamIndexByIdxCodeVisIdxKey,
+				Map< CFLibDbKeyHash256, ICFBamIndexObj > >();
+		}
+		if( ( ! forceRead ) && indexByIdxCodeVisIdx.containsKey( key ) ) {
+			dict = indexByIdxCodeVisIdx.get( key );
+		}
+		else {
+			dict = new HashMap<CFLibDbKeyHash256, ICFBamIndexObj>();
+			ICFBamIndexObj obj;
+			ICFBamIndex[] recList = schema.getCFBamBackingStore().getTableIndex().readDerivedByIdxCodeVisIdx( null,
+				CodeVis );
+			ICFBamIndex rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamIndexObj)schema.getScopeTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamIndexObj realised = (ICFBamIndexObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByIdxCodeVisIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamIndexObj arr[] = new ICFBamIndexObj[len];
+		Iterator<ICFBamIndexObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamIndexObj> arrayList = new ArrayList<ICFBamIndexObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamIndexObj> cmp = new Comparator<ICFBamIndexObj>() {
+			@Override
+			public int compare( ICFBamIndexObj lhs, ICFBamIndexObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
+					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamIndexObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamIndexObj> readIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis )
+	{
+		return( readIndexByIdxTblCdVisX( TableId,
+			CodeVis,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamIndexObj> readIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readIndexByIdxTblCdVisX";
+		ICFBamIndexByIdxTblCdVisXKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+		key.setRequiredTableId( TableId );
+		key.setRequiredCodeVis( CodeVis );
+		Map<CFLibDbKeyHash256, ICFBamIndexObj> dict;
+		if( indexByIdxTblCdVisX == null ) {
+			indexByIdxTblCdVisX = new HashMap< ICFBamIndexByIdxTblCdVisXKey,
+				Map< CFLibDbKeyHash256, ICFBamIndexObj > >();
+		}
+		if( ( ! forceRead ) && indexByIdxTblCdVisX.containsKey( key ) ) {
+			dict = indexByIdxTblCdVisX.get( key );
+		}
+		else {
+			dict = new HashMap<CFLibDbKeyHash256, ICFBamIndexObj>();
+			ICFBamIndexObj obj;
+			ICFBamIndex[] recList = schema.getCFBamBackingStore().getTableIndex().readDerivedByIdxTblCdVisX( null,
+				TableId,
+				CodeVis );
+			ICFBamIndex rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamIndexObj)schema.getScopeTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamIndexObj realised = (ICFBamIndexObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByIdxTblCdVisX.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamIndexObj arr[] = new ICFBamIndexObj[len];
+		Iterator<ICFBamIndexObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamIndexObj> arrayList = new ArrayList<ICFBamIndexObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamIndexObj> cmp = new Comparator<ICFBamIndexObj>() {
+			@Override
+			public int compare( ICFBamIndexObj lhs, ICFBamIndexObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
+					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamIndexObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
 	public List<ICFBamIndexObj> readIndexByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
 		return( readIndexByDefSchemaIdx( DefSchemaId,
@@ -1185,6 +1480,162 @@ public class CFBamIndexTableObj
 	}
 
 	@Override
+	public List<ICFBamIndexObj> readCachedIndexByIdxCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	{
+		final String S_ProcName = "readCachedIndexByIdxCodeVisIdx";
+		ICFBamIndexByIdxCodeVisIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+		key.setRequiredCodeVis( CodeVis );
+		ArrayList<ICFBamIndexObj> arrayList = new ArrayList<ICFBamIndexObj>();
+		if( indexByIdxCodeVisIdx != null ) {
+			Map<CFLibDbKeyHash256, ICFBamIndexObj> dict;
+			if( indexByIdxCodeVisIdx.containsKey( key ) ) {
+				dict = indexByIdxCodeVisIdx.get( key );
+				int len = dict.size();
+				ICFBamIndexObj arr[] = new ICFBamIndexObj[len];
+				Iterator<ICFBamIndexObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamIndexObj obj;
+			Iterator<ICFBamIndexObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamIndexObj> cmp = new Comparator<ICFBamIndexObj>() {
+			@Override
+			public int compare( ICFBamIndexObj lhs, ICFBamIndexObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
+					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFBamIndexObj> readCachedIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis )
+	{
+		final String S_ProcName = "readCachedIndexByIdxTblCdVisX";
+		ICFBamIndexByIdxTblCdVisXKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+		key.setRequiredTableId( TableId );
+		key.setRequiredCodeVis( CodeVis );
+		ArrayList<ICFBamIndexObj> arrayList = new ArrayList<ICFBamIndexObj>();
+		if( indexByIdxTblCdVisX != null ) {
+			Map<CFLibDbKeyHash256, ICFBamIndexObj> dict;
+			if( indexByIdxTblCdVisX.containsKey( key ) ) {
+				dict = indexByIdxTblCdVisX.get( key );
+				int len = dict.size();
+				ICFBamIndexObj arr[] = new ICFBamIndexObj[len];
+				Iterator<ICFBamIndexObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamIndexObj obj;
+			Iterator<ICFBamIndexObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamIndexObj> cmp = new Comparator<ICFBamIndexObj>() {
+			@Override
+			public int compare( ICFBamIndexObj lhs, ICFBamIndexObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
+					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
 	public List<ICFBamIndexObj> readCachedIndexByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedIndexByDefSchemaIdx";
@@ -1304,6 +1755,42 @@ public class CFBamIndexTableObj
 		final String S_ProcName = "deepDisposeIndexByIdxTableIdx";
 		ICFBamIndexObj obj;
 		List<ICFBamIndexObj> arrayList = readCachedIndexByIdxTableIdx( TableId );
+		if( arrayList != null )  {
+			Iterator<ICFBamIndexObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeIndexByIdxCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	{
+		final String S_ProcName = "deepDisposeIndexByIdxCodeVisIdx";
+		ICFBamIndexObj obj;
+		List<ICFBamIndexObj> arrayList = readCachedIndexByIdxCodeVisIdx( CodeVis );
+		if( arrayList != null )  {
+			Iterator<ICFBamIndexObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis )
+	{
+		final String S_ProcName = "deepDisposeIndexByIdxTblCdVisX";
+		ICFBamIndexObj obj;
+		List<ICFBamIndexObj> arrayList = readCachedIndexByIdxTblCdVisX( TableId,
+				CodeVis );
 		if( arrayList != null )  {
 			Iterator<ICFBamIndexObj> arrayIter = arrayList.iterator();
 			while( arrayIter.hasNext() ) {
@@ -1476,6 +1963,79 @@ public class CFBamIndexTableObj
 				TableId );
 		}
 		deepDisposeIndexByIdxTableIdx( TableId );
+	}
+
+	@Override
+	public void deleteIndexByIdxCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	{
+		ICFBamIndexByIdxCodeVisIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+		key.setRequiredCodeVis( CodeVis );
+		if( indexByIdxCodeVisIdx == null ) {
+			indexByIdxCodeVisIdx = new HashMap< ICFBamIndexByIdxCodeVisIdxKey,
+				Map< CFLibDbKeyHash256, ICFBamIndexObj > >();
+		}
+		if( indexByIdxCodeVisIdx.containsKey( key ) ) {
+			Map<CFLibDbKeyHash256, ICFBamIndexObj> dict = indexByIdxCodeVisIdx.get( key );
+			schema.getCFBamBackingStore().getTableIndex().deleteIndexByIdxCodeVisIdx( null,
+				CodeVis );
+			Iterator<ICFBamIndexObj> iter = dict.values().iterator();
+			ICFBamIndexObj obj;
+			List<ICFBamIndexObj> toForget = new LinkedList<ICFBamIndexObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByIdxCodeVisIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableIndex().deleteIndexByIdxCodeVisIdx( null,
+				CodeVis );
+		}
+		deepDisposeIndexByIdxCodeVisIdx( CodeVis );
+	}
+
+	@Override
+	public void deleteIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis )
+	{
+		ICFBamIndexByIdxTblCdVisXKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+		key.setRequiredTableId( TableId );
+		key.setRequiredCodeVis( CodeVis );
+		if( indexByIdxTblCdVisX == null ) {
+			indexByIdxTblCdVisX = new HashMap< ICFBamIndexByIdxTblCdVisXKey,
+				Map< CFLibDbKeyHash256, ICFBamIndexObj > >();
+		}
+		if( indexByIdxTblCdVisX.containsKey( key ) ) {
+			Map<CFLibDbKeyHash256, ICFBamIndexObj> dict = indexByIdxTblCdVisX.get( key );
+			schema.getCFBamBackingStore().getTableIndex().deleteIndexByIdxTblCdVisX( null,
+				TableId,
+				CodeVis );
+			Iterator<ICFBamIndexObj> iter = dict.values().iterator();
+			ICFBamIndexObj obj;
+			List<ICFBamIndexObj> toForget = new LinkedList<ICFBamIndexObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByIdxTblCdVisX.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableIndex().deleteIndexByIdxTblCdVisX( null,
+				TableId,
+				CodeVis );
+		}
+		deepDisposeIndexByIdxTblCdVisX( TableId,
+				CodeVis );
 	}
 
 	@Override

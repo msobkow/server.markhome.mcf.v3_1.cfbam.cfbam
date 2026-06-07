@@ -207,6 +207,13 @@ public interface ICFBamServerMethodObj
 	boolean getRequiredIsServerOnly();
 
 	/**
+	 *	Get the required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *
+	 *	@return	The required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 */
+	ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+
+	/**
 	 *	Get the required String attribute JMethodBody.
 	 *
 	 *	@return	The required String attribute JMethodBody.

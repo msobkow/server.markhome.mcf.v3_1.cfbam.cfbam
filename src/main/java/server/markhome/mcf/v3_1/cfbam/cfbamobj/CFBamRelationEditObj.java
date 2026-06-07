@@ -469,6 +469,18 @@ public class CFBamRelationEditObj
 	}
 
 	@Override
+	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis() {
+		return( getRelationRec().getRequiredCodeVis() );
+	}
+
+	@Override
+	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value ) {
+		if( getRelationRec().getRequiredCodeVis() != value ) {
+			getRelationRec().setRequiredCodeVis( value );
+		}
+	}
+
+	@Override
 	public ICFBamSchemaDefObj getOptionalLookupDefSchema() {
 		return( getOptionalLookupDefSchema( false ) );
 	}

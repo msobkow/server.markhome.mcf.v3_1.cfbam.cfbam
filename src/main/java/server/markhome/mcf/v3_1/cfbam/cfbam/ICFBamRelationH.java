@@ -99,6 +99,8 @@ public interface ICFBamRelationH extends ICFBamScopeH
 	public void setRequiredAllowAddendum( boolean value );
 	public CFLibDbKeyHash256 getOptionalNarrowedId();
 	public void setOptionalNarrowedId( CFLibDbKeyHash256 value );
+	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value );
 	@Override
 	public boolean equals( Object obj );
 

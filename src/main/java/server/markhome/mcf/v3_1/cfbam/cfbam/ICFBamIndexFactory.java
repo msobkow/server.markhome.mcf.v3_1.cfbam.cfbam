@@ -80,6 +80,20 @@ public interface ICFBamIndexFactory
 	public ICFBamIndexByIdxTableIdxKey newByIdxTableIdxKey();
 
 	/**
+	 *	Allocate a IdxCodeVisIdx key over Index instances.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamIndexByIdxCodeVisIdxKey newByIdxCodeVisIdxKey();
+
+	/**
+	 *	Allocate a IdxTblCdVisX key over Index instances.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamIndexByIdxTblCdVisXKey newByIdxTblCdVisXKey();
+
+	/**
 	 *	Allocate a DefSchemaIdx key over Index instances.
 	 *
 	 *	@return	The new instance.

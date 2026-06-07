@@ -770,6 +770,11 @@ public class CFBamTableObj
 		return( getTableRec().getRequiredSecScope() );
 	}
 
+	@Override
+	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis() {
+		return( getTableRec().getRequiredCodeVis() );
+	}
+
 	public List<ICFBamRelationObj> getOnlyOwnerRelations() {
 		ICFBamTableObj tableDef;
 		ICFBamRelationObj relationDef = null;

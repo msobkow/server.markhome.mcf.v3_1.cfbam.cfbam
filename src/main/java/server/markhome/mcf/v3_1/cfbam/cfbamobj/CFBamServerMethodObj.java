@@ -410,6 +410,11 @@ public class CFBamServerMethodObj
 	}
 
 	@Override
+	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis() {
+		return( getServerMethodRec().getRequiredCodeVis() );
+	}
+
+	@Override
 	public String getRequiredJMethodBody() {
 		return( getServerMethodRec().getRequiredJMethodBody() );
 	}

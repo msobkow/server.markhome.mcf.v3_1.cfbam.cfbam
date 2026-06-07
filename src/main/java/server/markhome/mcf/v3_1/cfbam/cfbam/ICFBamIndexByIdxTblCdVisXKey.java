@@ -1,5 +1,4 @@
-
-// Description: Java JPA Factory interface for Relation.
+// Description: Java 25 interface for a Index by IdxTblCdVisX index key object
 
 /*
  *	server.markhome.mcf.CFBam
@@ -46,100 +45,36 @@
 
 package server.markhome.mcf.v3_1.cfbam.cfbam;
 
-import java.lang.reflect.*;
-import java.net.*;
-import java.rmi.*;
-import java.sql.*;
-import java.text.*;
+import java.io.Serializable;
+import java.math.*;
+import java.time.*;
 import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
+//import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
-/*
- *	ICFBamRelationFactory interface for Relation
- */
-public interface ICFBamRelationFactory
+public interface ICFBamIndexByIdxTblCdVisXKey
 {
+	public CFLibDbKeyHash256 getRequiredTableId();
+	public void setRequiredTableId( CFLibDbKeyHash256 value );
+	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value );
+	@Override
+	public boolean equals( Object obj );
 
-	/**
-	 *	Allocate a UNameIdx key over Relation instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamRelationByUNameIdxKey newByUNameIdxKey();
+	@Override
+	public int hashCode();
 
-	/**
-	 *	Allocate a RelTableIdx key over Relation instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamRelationByRelTableIdxKey newByRelTableIdxKey();
+	//@Override
+	public int compareTo( Object obj );
 
-	/**
-	 *	Allocate a RelCodeVisIdx key over Relation instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamRelationByRelCodeVisIdxKey newByRelCodeVisIdxKey();
+	public String getXmlAttrFragment();
 
-	/**
-	 *	Allocate a RelTableCodeVisX key over Relation instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamRelationByRelTableCodeVisXKey newByRelTableCodeVisXKey();
-
-	/**
-	 *	Allocate a DefSchemaIdx key over Relation instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamRelationByDefSchemaIdxKey newByDefSchemaIdxKey();
-
-	/**
-	 *	Allocate a FromKeyIdx key over Relation instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamRelationByFromKeyIdxKey newByFromKeyIdxKey();
-
-	/**
-	 *	Allocate a ToTblIdx key over Relation instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamRelationByToTblIdxKey newByToTblIdxKey();
-
-	/**
-	 *	Allocate a ToKeyIdx key over Relation instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamRelationByToKeyIdxKey newByToKeyIdxKey();
-
-	/**
-	 *	Allocate a NarrowedIdx key over Relation instances.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamRelationByNarrowedIdxKey newByNarrowedIdxKey();
-
-	/**
-	 *	Allocate a Relation interface implementation.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamRelation newRec();
-
-	/**
-	 *	Allocate a Relation history interface implementation.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamRelationH newHRec();
-
+	@Override
+	public String toString();
 }

@@ -80,6 +80,20 @@ public interface ICFBamServerMethodFactory
 	public ICFBamServerMethodByMethTableIdxKey newByMethTableIdxKey();
 
 	/**
+	 *	Allocate a MethCodeVisIdx key over ServerMethod instances.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamServerMethodByMethCodeVisIdxKey newByMethCodeVisIdxKey();
+
+	/**
+	 *	Allocate a MethTableVisIdx key over ServerMethod instances.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamServerMethodByMethTableVisIdxKey newByMethTableVisIdxKey();
+
+	/**
 	 *	Allocate a DefSchemaIdx key over ServerMethod instances.
 	 *
 	 *	@return	The new instance.

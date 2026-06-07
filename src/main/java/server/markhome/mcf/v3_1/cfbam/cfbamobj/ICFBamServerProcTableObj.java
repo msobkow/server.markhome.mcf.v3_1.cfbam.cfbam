@@ -251,6 +251,54 @@ public interface ICFBamServerProcTableObj
 		boolean forceRead );
 
 	/**
+	 *	Get the map of CFBamServerMethodObj instances sorted by their primary keys for the duplicate MethCodeVisIdx key.
+	 *
+	 *	@param	CodeVis	The ServerProc key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFBamServerProcObj cached instances sorted by their primary keys for the duplicate MethCodeVisIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFBamServerProcObj> readServerProcByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Get the map of CFBamServerProcObj instances sorted by their primary keys for the duplicate MethCodeVisIdx key.
+	 *
+	 *	@param	CodeVis	The ServerProc key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFBamServerProcObj cached instances sorted by their primary keys for the duplicate MethCodeVisIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFBamServerProcObj> readServerProcByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis,
+		boolean forceRead );
+
+	/**
+	 *	Get the map of CFBamServerMethodObj instances sorted by their primary keys for the duplicate MethTableVisIdx key.
+	 *
+	 *	@param	TableId	The ServerProc key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The ServerProc key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFBamServerProcObj cached instances sorted by their primary keys for the duplicate MethTableVisIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFBamServerProcObj> readServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Get the map of CFBamServerProcObj instances sorted by their primary keys for the duplicate MethTableVisIdx key.
+	 *
+	 *	@param	TableId	The ServerProc key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The ServerProc key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFBamServerProcObj cached instances sorted by their primary keys for the duplicate MethTableVisIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFBamServerProcObj> readServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis,
+		boolean forceRead );
+
+	/**
 	 *	Get the map of CFBamServerMethodObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
 	 *
 	 *	@param	DefSchemaId	The ServerProc key attribute of the instance generating the id.
@@ -280,6 +328,11 @@ public interface ICFBamServerProcTableObj
 
 	List<ICFBamServerProcObj> readCachedServerProcByMethTableIdx( CFLibDbKeyHash256 TableId );
 
+	List<ICFBamServerProcObj> readCachedServerProcByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	List<ICFBamServerProcObj> readCachedServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
 	List<ICFBamServerProcObj> readCachedServerProcByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
 
 	void deepDisposeServerProcByIdIdx( CFLibDbKeyHash256 Id );
@@ -290,6 +343,11 @@ public interface ICFBamServerProcTableObj
 		String Name );
 
 	void deepDisposeServerProcByMethTableIdx( CFLibDbKeyHash256 TableId );
+
+	void deepDisposeServerProcByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	void deepDisposeServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
 
 	void deepDisposeServerProcByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
 
@@ -333,6 +391,23 @@ public interface ICFBamServerProcTableObj
 	 *	@param	TableId	The ServerProc key attribute of the instance generating the id.
 	 */
 	void deleteServerProcByMethTableIdx( CFLibDbKeyHash256 TableId );
+
+	/**
+	 *	Internal use only.
+	 *
+	 *	@param	CodeVis	The ServerProc key attribute of the instance generating the id.
+	 */
+	void deleteServerProcByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Internal use only.
+	 *
+	 *	@param	TableId	The ServerProc key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The ServerProc key attribute of the instance generating the id.
+	 */
+	void deleteServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Internal use only.

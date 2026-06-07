@@ -145,6 +145,47 @@ public interface ICFBamIndexTable
 	void deleteIndexByIdxTableIdx( ICFSecAuthorization Authorization,
 		ICFBamIndexByIdxTableIdxKey argKey );
 	/**
+	 *	Delete the Index instances identified by the key IdxCodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	CodeVis	The Index key attribute of the instance generating the id.
+	 */
+	void deleteIndexByIdxCodeVisIdx( ICFSecAuthorization Authorization,
+		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+
+	/**
+	 *	Delete the Index instances identified by the key IdxCodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteIndexByIdxCodeVisIdx( ICFSecAuthorization Authorization,
+		ICFBamIndexByIdxCodeVisIdxKey argKey );
+	/**
+	 *	Delete the Index instances identified by the key IdxTblCdVisX.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	TableId	The Index key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The Index key attribute of the instance generating the id.
+	 */
+	void deleteIndexByIdxTblCdVisX( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 argTableId,
+		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+
+	/**
+	 *	Delete the Index instances identified by the key IdxTblCdVisX.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteIndexByIdxTblCdVisX( ICFSecAuthorization Authorization,
+		ICFBamIndexByIdxTblCdVisXKey argKey );
+	/**
 	 *	Delete the Index instances identified by the key DefSchemaIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -282,6 +323,33 @@ public interface ICFBamIndexTable
 		CFLibDbKeyHash256 TableId );
 
 	/**
+	 *	Read an array of the derived Index record instances identified by the duplicate key IdxCodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	CodeVis	The Index key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	ICFBamIndex[] readDerivedByIdxCodeVisIdx( ICFSecAuthorization Authorization,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Read an array of the derived Index record instances identified by the duplicate key IdxTblCdVisX.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	TableId	The Index key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The Index key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	ICFBamIndex[] readDerivedByIdxTblCdVisX( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
 	 *	Read an array of the derived Index record instances identified by the duplicate key DefSchemaIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -392,6 +460,37 @@ public interface ICFBamIndexTable
 	 */
 	ICFBamIndex[] readRecByIdxTableIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 TableId );
+
+	/**
+	 *	Read an array of the specific Index record instances identified by the duplicate key IdxCodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	CodeVis	The Index key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamIndex[] readRecByIdxCodeVisIdx( ICFSecAuthorization Authorization,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Read an array of the specific Index record instances identified by the duplicate key IdxTblCdVisX.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	TableId	The Index key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The Index key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamIndex[] readRecByIdxTblCdVisX( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the specific Index record instances identified by the duplicate key DefSchemaIdx.

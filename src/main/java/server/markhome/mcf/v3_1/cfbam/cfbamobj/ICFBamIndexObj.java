@@ -227,4 +227,11 @@ public interface ICFBamIndexObj
 	 */
 	boolean getRequiredIsDbMapped();
 
+	/**
+	 *	Get the required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *
+	 *	@return	The required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 */
+	ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+
 }

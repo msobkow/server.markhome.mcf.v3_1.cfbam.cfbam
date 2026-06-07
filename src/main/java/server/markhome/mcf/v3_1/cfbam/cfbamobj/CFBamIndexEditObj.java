@@ -403,6 +403,18 @@ public class CFBamIndexEditObj
 	}
 
 	@Override
+	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis() {
+		return( getIndexRec().getRequiredCodeVis() );
+	}
+
+	@Override
+	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value ) {
+		if( getIndexRec().getRequiredCodeVis() != value ) {
+			getIndexRec().setRequiredCodeVis( value );
+		}
+	}
+
+	@Override
 	public ICFBamTableObj getRequiredContainerTable() {
 		return( getRequiredContainerTable( false ) );
 	}

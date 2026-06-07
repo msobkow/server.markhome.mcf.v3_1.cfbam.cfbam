@@ -451,6 +451,13 @@ public interface ICFBamTableObj
 	 */
 	ICFBamSchema.SecScopeEnum getRequiredSecScope();
 
+	/**
+	 *	Get the required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *
+	 *	@return	The required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 */
+	ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+
 	List<ICFBamRelationObj> getOnlyOwnerRelations();
 	List<ICFBamRelationObj> getContainerOwnerRelations();
 	ICFBamRelationObj getContainerRelation();

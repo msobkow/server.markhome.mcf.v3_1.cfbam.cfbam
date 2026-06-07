@@ -60,6 +60,8 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamIndex extends ICFBamScope
 {
+	public static final ICFBamSchema.CodeVisibilityEnum CODEVIS_MIN_VALUE = ICFBamSchema.CodeVisibilityEnum.Public;
+	public static final ICFBamSchema.CodeVisibilityEnum CODEVIS_MAX_VALUE = ICFBamSchema.CodeVisibilityEnum.Private;
 	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
 	public static final String S_DEFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
@@ -67,6 +69,7 @@ public interface ICFBamIndex extends ICFBamScope
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static boolean ISUNIQUE_INIT_VALUE = false;
 	public final static boolean ISDBMAPPED_INIT_VALUE = true;
+	public static final ICFBamSchema.CodeVisibilityEnum CODEVIS_INIT_VALUE = ICFBamSchema.ordinalToCodeVisibilityEnum( 0 );
 	public final static int CLASS_CODE = 0xa825;
 	public final static String S_CLASS_CODE = "a825";
 
@@ -96,6 +99,8 @@ public interface ICFBamIndex extends ICFBamScope
 	public void setRequiredIsUnique( boolean value );
 	public boolean getRequiredIsDbMapped();
 	public void setRequiredIsDbMapped( boolean value );
+	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value );
 	@Override
 	public boolean equals( Object obj );
 	

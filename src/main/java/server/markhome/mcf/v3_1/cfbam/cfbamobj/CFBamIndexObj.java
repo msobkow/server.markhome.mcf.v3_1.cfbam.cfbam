@@ -445,4 +445,9 @@ public class CFBamIndexObj
 	public boolean getRequiredIsDbMapped() {
 		return( getIndexRec().getRequiredIsDbMapped() );
 	}
+
+	@Override
+	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis() {
+		return( getIndexRec().getRequiredCodeVis() );
+	}
 }

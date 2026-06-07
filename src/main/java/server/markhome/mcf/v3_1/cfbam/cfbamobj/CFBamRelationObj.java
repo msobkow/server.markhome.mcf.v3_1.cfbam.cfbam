@@ -562,6 +562,11 @@ public class CFBamRelationObj
 		return( getRelationRec().getOptionalNarrowedId() );
 	}
 
+	@Override
+	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis() {
+		return( getRelationRec().getRequiredCodeVis() );
+	}
+
 	public ICFBamSubProjectObj getProject() {
 		for( ICFLibAnyObj curDef = this; curDef != null; curDef = curDef.getObjScope() ) {
 			if( curDef instanceof ICFBamSubProjectObj ) {

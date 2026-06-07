@@ -105,6 +105,8 @@ public interface ICFBamTableH extends ICFBamScopeH
 	public void setRequiredLoaderBehaviour( ICFBamSchema.LoaderBehaviourEnum value );
 	public ICFBamSchema.SecScopeEnum getRequiredSecScope();
 	public void setRequiredSecScope( ICFBamSchema.SecScopeEnum value );
+	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value );
 	@Override
 	public boolean equals( Object obj );
 

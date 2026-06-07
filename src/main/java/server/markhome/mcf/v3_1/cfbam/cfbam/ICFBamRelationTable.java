@@ -145,6 +145,47 @@ public interface ICFBamRelationTable
 	void deleteRelationByRelTableIdx( ICFSecAuthorization Authorization,
 		ICFBamRelationByRelTableIdxKey argKey );
 	/**
+	 *	Delete the Relation instances identified by the key RelCodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	CodeVis	The Relation key attribute of the instance generating the id.
+	 */
+	void deleteRelationByRelCodeVisIdx( ICFSecAuthorization Authorization,
+		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+
+	/**
+	 *	Delete the Relation instances identified by the key RelCodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteRelationByRelCodeVisIdx( ICFSecAuthorization Authorization,
+		ICFBamRelationByRelCodeVisIdxKey argKey );
+	/**
+	 *	Delete the Relation instances identified by the key RelTableCodeVisX.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	TableId	The Relation key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The Relation key attribute of the instance generating the id.
+	 */
+	void deleteRelationByRelTableCodeVisX( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 argTableId,
+		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+
+	/**
+	 *	Delete the Relation instances identified by the key RelTableCodeVisX.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteRelationByRelTableCodeVisX( ICFSecAuthorization Authorization,
+		ICFBamRelationByRelTableCodeVisXKey argKey );
+	/**
 	 *	Delete the Relation instances identified by the key DefSchemaIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -358,6 +399,33 @@ public interface ICFBamRelationTable
 		CFLibDbKeyHash256 TableId );
 
 	/**
+	 *	Read an array of the derived Relation record instances identified by the duplicate key RelCodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	CodeVis	The Relation key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	ICFBamRelation[] readDerivedByRelCodeVisIdx( ICFSecAuthorization Authorization,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Read an array of the derived Relation record instances identified by the duplicate key RelTableCodeVisX.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	TableId	The Relation key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The Relation key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	ICFBamRelation[] readDerivedByRelTableCodeVisX( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key DefSchemaIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -516,6 +584,37 @@ public interface ICFBamRelationTable
 	 */
 	ICFBamRelation[] readRecByRelTableIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 TableId );
+
+	/**
+	 *	Read an array of the specific Relation record instances identified by the duplicate key RelCodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	CodeVis	The Relation key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamRelation[] readRecByRelCodeVisIdx( ICFSecAuthorization Authorization,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Read an array of the specific Relation record instances identified by the duplicate key RelTableCodeVisX.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	TableId	The Relation key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The Relation key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamRelation[] readRecByRelTableCodeVisX( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key DefSchemaIdx.

@@ -83,6 +83,8 @@ public interface ICFBamServerMethodH extends ICFBamScopeH
 	public void setRequiredIsInstanceMethod( boolean value );
 	public boolean getRequiredIsServerOnly();
 	public void setRequiredIsServerOnly( boolean value );
+	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value );
 	public String getRequiredJMethodBody();
 	public void setRequiredJMethodBody( String value );
 	public String getRequiredCppMethodBody();

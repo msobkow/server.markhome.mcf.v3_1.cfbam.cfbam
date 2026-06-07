@@ -60,6 +60,8 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 
 public interface ICFBamServerMethod extends ICFBamScope
 {
+	public static final ICFBamSchema.CodeVisibilityEnum CODEVIS_MIN_VALUE = ICFBamSchema.CodeVisibilityEnum.Public;
+	public static final ICFBamSchema.CodeVisibilityEnum CODEVIS_MAX_VALUE = ICFBamSchema.CodeVisibilityEnum.Private;
 	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
 	public static final String S_DEFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
@@ -67,6 +69,7 @@ public interface ICFBamServerMethod extends ICFBamScope
 	public static final String NAME_INIT_VALUE = new String( "" );
 	public final static boolean ISINSTANCEMETHOD_INIT_VALUE = true;
 	public final static boolean ISSERVERONLY_INIT_VALUE = false;
+	public static final ICFBamSchema.CodeVisibilityEnum CODEVIS_INIT_VALUE = ICFBamSchema.ordinalToCodeVisibilityEnum( 0 );
 	public static final String JMETHODBODY_INIT_VALUE = new String( "" );
 	public static final String CPPMETHODBODY_INIT_VALUE = new String( "" );
 	public static final String CSMETHODBODY_INIT_VALUE = new String( "" );
@@ -97,6 +100,8 @@ public interface ICFBamServerMethod extends ICFBamScope
 	public void setRequiredIsInstanceMethod( boolean value );
 	public boolean getRequiredIsServerOnly();
 	public void setRequiredIsServerOnly( boolean value );
+	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value );
 	public String getRequiredJMethodBody();
 	public void setRequiredJMethodBody( String value );
 	public String getRequiredCppMethodBody();

@@ -501,6 +501,106 @@ extends ICFSecSchema,
 		return( retval );
 	}
 
+	public enum CodeVisibilityEnum {
+		Public,
+		Protected,
+		Private
+	};
+
+	static HashMap<String,CodeVisibilityEnum> lookupCodeVisibilityEnum = new HashMap<String,CodeVisibilityEnum>();
+
+	public static CodeVisibilityEnum parseCodeVisibilityEnum( String value ) {
+		CodeVisibilityEnum retval = parseCodeVisibilityEnum( ICFBamSchema.class.getName(), value );
+		return( retval );
+	}
+
+	public static CodeVisibilityEnum parseCodeVisibilityEnum( String fieldOrClassName, String value ) {
+		final String S_ProcName = "parseCodeVisibilityEnum";
+		if( lookupCodeVisibilityEnum.isEmpty() ) {
+			lookupCodeVisibilityEnum.put( "Public", CodeVisibilityEnum.Public );
+			lookupCodeVisibilityEnum.put( "Protected", CodeVisibilityEnum.Protected );
+			lookupCodeVisibilityEnum.put( "Private", CodeVisibilityEnum.Private );
+		}
+		CodeVisibilityEnum retval;
+		if( ( value == null ) || ( value.length() <= 0 ) ) {
+			retval = null;
+		}
+		else {
+			retval = lookupCodeVisibilityEnum.get( value );
+			if( retval == null ) {
+				throw new CFLibInvalidArgumentException( fieldOrClassName,
+					fieldOrClassName,
+					S_ProcName,
+					2,
+					"value",
+					"Invalid enum limb argument " + value,
+					"Invalid enum limb argument " + value);
+			}
+		}
+		return( retval );
+	}
+
+	static HashMap<Integer,CodeVisibilityEnum> lookupOrdinalCodeVisibilityEnum = new HashMap<Integer,CodeVisibilityEnum>();
+
+	public static CodeVisibilityEnum ordinalToCodeVisibilityEnum( String fieldOrClassName, Short value ) {
+		CodeVisibilityEnum retval;
+		if( value == null ) {
+			retval = null;
+		}
+		else {
+			retval = ordinalToCodeVisibilityEnum( fieldOrClassName, Integer.valueOf( value.shortValue() ) );
+		}
+		return( retval );
+	}
+
+	public static CodeVisibilityEnum ordinalToCodeVisibilityEnum( Short value ) {
+		CodeVisibilityEnum retval;
+		if( value == null ) {
+			retval = null;
+		}
+		else {
+			retval = ordinalToCodeVisibilityEnum( Integer.valueOf( value.shortValue() ) );
+		}
+		return( retval );
+	}
+
+	public static CodeVisibilityEnum ordinalToCodeVisibilityEnum( Integer value ) {
+		CodeVisibilityEnum retval;
+		if( value == null ) {
+			retval = null;
+		}
+		else {
+			retval = ordinalToCodeVisibilityEnum( ICFBamSchema.class.getName(), Integer.valueOf( value.shortValue() ) );
+		}
+		return( retval );
+	}
+
+	public static CodeVisibilityEnum ordinalToCodeVisibilityEnum( String fieldOrClassName, Integer value ) {
+		final String S_ProcName = "ordinalToCodeVisibilityEnum";
+		if( lookupOrdinalCodeVisibilityEnum.isEmpty() ) {
+			lookupOrdinalCodeVisibilityEnum.put( Integer.valueOf( CodeVisibilityEnum.Public.ordinal() ), CodeVisibilityEnum.Public );
+			lookupOrdinalCodeVisibilityEnum.put( Integer.valueOf( CodeVisibilityEnum.Protected.ordinal() ), CodeVisibilityEnum.Protected );
+			lookupOrdinalCodeVisibilityEnum.put( Integer.valueOf( CodeVisibilityEnum.Private.ordinal() ), CodeVisibilityEnum.Private );
+		}
+		CodeVisibilityEnum retval;
+		if( value == null ) {
+			retval = null;
+		}
+		else {
+			retval = lookupOrdinalCodeVisibilityEnum.get( value );
+			if( retval == null ) {
+				throw new CFLibInvalidArgumentException( fieldOrClassName,
+					fieldOrClassName,
+					S_ProcName,
+					2,
+					"value",
+					"Invalid enum limb argument " + value,
+					"Invalid enum limb argument " + value);
+			}
+		}
+		return( retval );
+	}
+
 	public enum SecScopeEnum {
 		None,
 		System,

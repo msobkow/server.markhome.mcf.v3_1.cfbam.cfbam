@@ -577,6 +577,18 @@ public class CFBamTableEditObj
 	}
 
 	@Override
+	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis() {
+		return( getTableRec().getRequiredCodeVis() );
+	}
+
+	@Override
+	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value ) {
+		if( getTableRec().getRequiredCodeVis() != value ) {
+			getTableRec().setRequiredCodeVis( value );
+		}
+	}
+
+	@Override
 	public ICFBamSchemaDefObj getRequiredContainerSchemaDef() {
 		return( getRequiredContainerSchemaDef( false ) );
 	}

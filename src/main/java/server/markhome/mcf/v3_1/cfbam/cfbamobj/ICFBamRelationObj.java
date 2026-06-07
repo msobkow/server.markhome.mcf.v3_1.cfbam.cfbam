@@ -332,6 +332,13 @@ public interface ICFBamRelationObj
 	 */
 	CFLibDbKeyHash256 getOptionalNarrowedId();
 
+	/**
+	 *	Get the required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *
+	 *	@return	The required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 */
+	ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+
 	ICFBamSubProjectObj getProject();
 	ICFBamTopDomainObj getCompany();
 	ICFBamSchemaDefObj getSchemaDef();

@@ -251,6 +251,54 @@ public interface ICFBamServerObjFuncTableObj
 		boolean forceRead );
 
 	/**
+	 *	Get the map of CFBamServerMethodObj instances sorted by their primary keys for the duplicate MethCodeVisIdx key.
+	 *
+	 *	@param	CodeVis	The ServerObjFunc key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFBamServerObjFuncObj cached instances sorted by their primary keys for the duplicate MethCodeVisIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFBamServerObjFuncObj> readServerObjFuncByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Get the map of CFBamServerObjFuncObj instances sorted by their primary keys for the duplicate MethCodeVisIdx key.
+	 *
+	 *	@param	CodeVis	The ServerObjFunc key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFBamServerObjFuncObj cached instances sorted by their primary keys for the duplicate MethCodeVisIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFBamServerObjFuncObj> readServerObjFuncByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis,
+		boolean forceRead );
+
+	/**
+	 *	Get the map of CFBamServerMethodObj instances sorted by their primary keys for the duplicate MethTableVisIdx key.
+	 *
+	 *	@param	TableId	The ServerObjFunc key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The ServerObjFunc key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFBamServerObjFuncObj cached instances sorted by their primary keys for the duplicate MethTableVisIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFBamServerObjFuncObj> readServerObjFuncByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Get the map of CFBamServerObjFuncObj instances sorted by their primary keys for the duplicate MethTableVisIdx key.
+	 *
+	 *	@param	TableId	The ServerObjFunc key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The ServerObjFunc key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFBamServerObjFuncObj cached instances sorted by their primary keys for the duplicate MethTableVisIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFBamServerObjFuncObj> readServerObjFuncByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis,
+		boolean forceRead );
+
+	/**
 	 *	Get the map of CFBamServerMethodObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
 	 *
 	 *	@param	DefSchemaId	The ServerObjFunc key attribute of the instance generating the id.
@@ -301,6 +349,11 @@ public interface ICFBamServerObjFuncTableObj
 
 	List<ICFBamServerObjFuncObj> readCachedServerObjFuncByMethTableIdx( CFLibDbKeyHash256 TableId );
 
+	List<ICFBamServerObjFuncObj> readCachedServerObjFuncByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	List<ICFBamServerObjFuncObj> readCachedServerObjFuncByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
 	List<ICFBamServerObjFuncObj> readCachedServerObjFuncByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
 
 	List<ICFBamServerObjFuncObj> readCachedServerObjFuncByRetTblIdx( CFLibDbKeyHash256 RetTableId );
@@ -313,6 +366,11 @@ public interface ICFBamServerObjFuncTableObj
 		String Name );
 
 	void deepDisposeServerObjFuncByMethTableIdx( CFLibDbKeyHash256 TableId );
+
+	void deepDisposeServerObjFuncByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	void deepDisposeServerObjFuncByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
 
 	void deepDisposeServerObjFuncByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
 
@@ -358,6 +416,23 @@ public interface ICFBamServerObjFuncTableObj
 	 *	@param	TableId	The ServerObjFunc key attribute of the instance generating the id.
 	 */
 	void deleteServerObjFuncByMethTableIdx( CFLibDbKeyHash256 TableId );
+
+	/**
+	 *	Internal use only.
+	 *
+	 *	@param	CodeVis	The ServerObjFunc key attribute of the instance generating the id.
+	 */
+	void deleteServerObjFuncByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Internal use only.
+	 *
+	 *	@param	TableId	The ServerObjFunc key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The ServerObjFunc key attribute of the instance generating the id.
+	 */
+	void deleteServerObjFuncByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Internal use only.

@@ -123,6 +123,47 @@ public interface ICFBamTableTable
 	void deleteTableBySchemaDefIdx( ICFSecAuthorization Authorization,
 		ICFBamTableBySchemaDefIdxKey argKey );
 	/**
+	 *	Delete the Table instances identified by the key CodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
+	 */
+	void deleteTableByCodeVisIdx( ICFSecAuthorization Authorization,
+		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+
+	/**
+	 *	Delete the Table instances identified by the key CodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteTableByCodeVisIdx( ICFSecAuthorization Authorization,
+		ICFBamTableByCodeVisIdxKey argKey );
+	/**
+	 *	Delete the Table instances identified by the key SchemaCodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	SchemaDefId	The Table key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
+	 */
+	void deleteTableBySchemaCodeVisIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 argSchemaDefId,
+		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+
+	/**
+	 *	Delete the Table instances identified by the key SchemaCodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	argKey	The key identifying the instances to be deleted.
+	 */
+	void deleteTableBySchemaCodeVisIdx( ICFSecAuthorization Authorization,
+		ICFBamTableBySchemaCodeVisIdxKey argKey );
+	/**
 	 *	Delete the Table instances identified by the key DefSchemaIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -364,6 +405,33 @@ public interface ICFBamTableTable
 		CFLibDbKeyHash256 SchemaDefId );
 
 	/**
+	 *	Read an array of the derived Table record instances identified by the duplicate key CodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	ICFBamTable[] readDerivedByCodeVisIdx( ICFSecAuthorization Authorization,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Read an array of the derived Table record instances identified by the duplicate key SchemaCodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	SchemaDefId	The Table key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
+	 */
+	ICFBamTable[] readDerivedBySchemaCodeVisIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 SchemaDefId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
 	 *	Read an array of the derived Table record instances identified by the duplicate key DefSchemaIdx.
 	 *
 	 *	@param	Authorization	The session authorization information.
@@ -536,6 +604,37 @@ public interface ICFBamTableTable
 	 */
 	ICFBamTable[] readRecBySchemaDefIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 SchemaDefId );
+
+	/**
+	 *	Read an array of the specific Table record instances identified by the duplicate key CodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamTable[] readRecByCodeVisIdx( ICFSecAuthorization Authorization,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Read an array of the specific Table record instances identified by the duplicate key SchemaCodeVisIdx.
+	 *
+	 *	@param	Authorization	The session authorization information.
+	 *
+	 *	@param	SchemaDefId	The Table key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
+	 *
+	 *	@return An array of derived record instances for the specified key, potentially with 0 elements in the set.
+	 *
+	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
+	 */
+	ICFBamTable[] readRecBySchemaCodeVisIdx( ICFSecAuthorization Authorization,
+		CFLibDbKeyHash256 SchemaDefId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the specific Table record instances identified by the duplicate key DefSchemaIdx.

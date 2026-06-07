@@ -224,6 +224,54 @@ public interface ICFBamTableTableObj
 		boolean forceRead );
 
 	/**
+	 *	Get the map of CFBamTableObj instances sorted by their primary keys for the duplicate CodeVisIdx key.
+	 *
+	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFBamTableObj cached instances sorted by their primary keys for the duplicate CodeVisIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFBamTableObj> readTableByCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Get the map of CFBamTableObj instances sorted by their primary keys for the duplicate CodeVisIdx key.
+	 *
+	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFBamTableObj cached instances sorted by their primary keys for the duplicate CodeVisIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFBamTableObj> readTableByCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis,
+		boolean forceRead );
+
+	/**
+	 *	Get the map of CFBamTableObj instances sorted by their primary keys for the duplicate SchemaCodeVisIdx key.
+	 *
+	 *	@param	SchemaDefId	The Table key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFBamTableObj cached instances sorted by their primary keys for the duplicate SchemaCodeVisIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFBamTableObj> readTableBySchemaCodeVisIdx( CFLibDbKeyHash256 SchemaDefId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Get the map of CFBamTableObj instances sorted by their primary keys for the duplicate SchemaCodeVisIdx key.
+	 *
+	 *	@param	SchemaDefId	The Table key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
+	 *
+	 *	@return	List of CFBamTableObj cached instances sorted by their primary keys for the duplicate SchemaCodeVisIdx key,
+	 *		which may be an empty set.
+	 */
+	List<ICFBamTableObj> readTableBySchemaCodeVisIdx( CFLibDbKeyHash256 SchemaDefId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis,
+		boolean forceRead );
+
+	/**
 	 *	Get the map of CFBamTableObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
 	 *
 	 *	@param	DefSchemaId	The Table key attribute of the instance generating the id.
@@ -388,6 +436,11 @@ public interface ICFBamTableTableObj
 
 	List<ICFBamTableObj> readCachedTableBySchemaDefIdx( CFLibDbKeyHash256 SchemaDefId );
 
+	List<ICFBamTableObj> readCachedTableByCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	List<ICFBamTableObj> readCachedTableBySchemaCodeVisIdx( CFLibDbKeyHash256 SchemaDefId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
+
 	List<ICFBamTableObj> readCachedTableByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
 
 	ICFBamTableObj readCachedTableByUNameIdx( CFLibDbKeyHash256 SchemaDefId,
@@ -409,6 +462,11 @@ public interface ICFBamTableTableObj
 	void deepDisposeTableByTenantIdx( CFLibDbKeyHash256 TenantId );
 
 	void deepDisposeTableBySchemaDefIdx( CFLibDbKeyHash256 SchemaDefId );
+
+	void deepDisposeTableByCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	void deepDisposeTableBySchemaCodeVisIdx( CFLibDbKeyHash256 SchemaDefId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
 
 	void deepDisposeTableByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
 
@@ -456,6 +514,23 @@ public interface ICFBamTableTableObj
 	 *	@param	SchemaDefId	The Table key attribute of the instance generating the id.
 	 */
 	void deleteTableBySchemaDefIdx( CFLibDbKeyHash256 SchemaDefId );
+
+	/**
+	 *	Internal use only.
+	 *
+	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
+	 */
+	void deleteTableByCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+
+	/**
+	 *	Internal use only.
+	 *
+	 *	@param	SchemaDefId	The Table key attribute of the instance generating the id.
+	 *
+	 *	@param	CodeVis	The Table key attribute of the instance generating the id.
+	 */
+	void deleteTableBySchemaCodeVisIdx( CFLibDbKeyHash256 SchemaDefId,
+		ICFBamSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Internal use only.
