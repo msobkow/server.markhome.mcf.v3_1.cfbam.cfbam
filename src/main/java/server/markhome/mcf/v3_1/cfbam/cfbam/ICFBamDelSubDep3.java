@@ -58,6 +58,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
+/**
+ *	ICFBamDelSubDep3 persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
+ */
 public interface ICFBamDelSubDep3 extends ICFBamDelDep
 {
 	public static final String S_DELSUBDEP2ID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";

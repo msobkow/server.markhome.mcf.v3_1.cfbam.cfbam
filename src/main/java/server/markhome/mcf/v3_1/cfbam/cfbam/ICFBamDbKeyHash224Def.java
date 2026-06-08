@@ -58,6 +58,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
+/**
+ *	ICFBamDbKeyHash224Def persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
+ */
 public interface ICFBamDbKeyHash224Def extends ICFBamAtom
 {
 	public final static int CLASS_CODE = 0xa844;

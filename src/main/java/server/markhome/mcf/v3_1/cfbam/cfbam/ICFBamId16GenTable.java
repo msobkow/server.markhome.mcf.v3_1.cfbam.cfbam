@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamId16GenTable database interface for Id16Gen
+ *	CFBamId16GenTable database interface for Id16Gen has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamId16GenTable
 {

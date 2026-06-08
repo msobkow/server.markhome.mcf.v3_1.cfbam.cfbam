@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamDbKeyHash160GenTable database interface for DbKeyHash160Gen
+ *	CFBamDbKeyHash160GenTable database interface for DbKeyHash160Gen has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamDbKeyHash160GenTable
 {

@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamTimeDefTable database interface for TimeDef
+ *	CFBamTimeDefTable database interface for TimeDef has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamTimeDefTable
 {

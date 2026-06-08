@@ -58,6 +58,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
+/**
+ *	ICFBamTimeColByTableIdxKeys has CodeVis Public, meaning that any user interface or referencing schema can access it.
+ */
 public interface ICFBamTimeColByTableIdxKey
 {
 	public CFLibDbKeyHash256 getRequiredTableId();

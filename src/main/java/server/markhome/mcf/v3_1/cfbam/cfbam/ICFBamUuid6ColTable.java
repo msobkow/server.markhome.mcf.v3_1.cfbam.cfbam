@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamUuid6ColTable database interface for Uuid6Col
+ *	CFBamUuid6ColTable database interface for Uuid6Col has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamUuid6ColTable
 {

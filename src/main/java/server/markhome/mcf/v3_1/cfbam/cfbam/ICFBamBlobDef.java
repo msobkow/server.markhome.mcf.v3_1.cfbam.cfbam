@@ -58,6 +58,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
+/**
+ *	ICFBamBlobDef persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
+ */
 public interface ICFBamBlobDef extends ICFBamAtom
 {
 	public static final int MAXLEN_MIN_VALUE = 1;

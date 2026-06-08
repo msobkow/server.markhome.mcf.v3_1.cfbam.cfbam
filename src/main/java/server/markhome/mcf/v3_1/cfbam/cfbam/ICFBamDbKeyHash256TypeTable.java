@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamDbKeyHash256TypeTable database interface for DbKeyHash256Type
+ *	CFBamDbKeyHash256TypeTable database interface for DbKeyHash256Type has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamDbKeyHash256TypeTable
 {

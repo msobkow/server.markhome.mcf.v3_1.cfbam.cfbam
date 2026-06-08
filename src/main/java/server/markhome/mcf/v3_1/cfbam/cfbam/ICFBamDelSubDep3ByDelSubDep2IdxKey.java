@@ -58,6 +58,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
+/**
+ *	ICFBamDelSubDep3ByDelSubDep2IdxKeys has CodeVis Public, meaning that any user interface or referencing schema can access it.
+ */
 public interface ICFBamDelSubDep3ByDelSubDep2IdxKey
 {
 	public CFLibDbKeyHash256 getRequiredDelSubDep2Id();

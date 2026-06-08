@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamPopSubDep1Table database interface for PopSubDep1
+ *	CFBamPopSubDep1Table database interface for PopSubDep1 has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamPopSubDep1Table
 {

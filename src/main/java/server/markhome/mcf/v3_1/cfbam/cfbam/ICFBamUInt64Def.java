@@ -58,6 +58,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
+/**
+ *	ICFBamUInt64Def persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
+ */
 public interface ICFBamUInt64Def extends ICFBamAtom
 {
 	public static final BigDecimal INITVALUE_MIN_VALUE = CFLibBigDecimalUtil.parse( "CFBam.UInt64Def.InitValue", "CFBam.UInt64Def.InitValue", 19, 0, "0" );

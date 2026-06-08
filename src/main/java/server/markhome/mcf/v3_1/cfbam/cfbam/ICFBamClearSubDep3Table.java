@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamClearSubDep3Table database interface for ClearSubDep3
+ *	CFBamClearSubDep3Table database interface for ClearSubDep3 has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamClearSubDep3Table
 {

@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamDbKeyHash224DefTable database interface for DbKeyHash224Def
+ *	CFBamDbKeyHash224DefTable database interface for DbKeyHash224Def has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamDbKeyHash224DefTable
 {

@@ -58,6 +58,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
+/**
+ *	ICFBamDbKeyHash384Col persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
+ */
 public interface ICFBamDbKeyHash384Col extends ICFBamDbKeyHash384Def
 {
 	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";

@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamTZTimestampTypeTable database interface for TZTimestampType
+ *	CFBamTZTimestampTypeTable database interface for TZTimestampType has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamTZTimestampTypeTable
 {

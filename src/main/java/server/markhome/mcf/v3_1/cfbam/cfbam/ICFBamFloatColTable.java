@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamFloatColTable database interface for FloatCol
+ *	CFBamFloatColTable database interface for FloatCol has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamFloatColTable
 {

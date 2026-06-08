@@ -59,7 +59,7 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
 /**
- *	ICFBamParamHPKey History Primary Key interface for Param
+ *	ICFBamParamHPKey History Primary Key interface for Param has CodeVis Public, meaning that any user interface or referencing schema can access it.
  *		requiredId	Required object attribute Id. */
 public interface ICFBamParamHPKey
 {

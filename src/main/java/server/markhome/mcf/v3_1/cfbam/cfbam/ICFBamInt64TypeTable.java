@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamInt64TypeTable database interface for Int64Type
+ *	CFBamInt64TypeTable database interface for Int64Type has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamInt64TypeTable
 {

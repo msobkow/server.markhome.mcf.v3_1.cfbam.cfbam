@@ -58,6 +58,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
+/**
+ *	ICFBamClearSubDep2ByClearSubDep1IdxKeys has CodeVis Public, meaning that any user interface or referencing schema can access it.
+ */
 public interface ICFBamClearSubDep2ByClearSubDep1IdxKey
 {
 	public CFLibDbKeyHash256 getRequiredClearSubDep1Id();

@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamUuidTypeTable database interface for UuidType
+ *	CFBamUuidTypeTable database interface for UuidType has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamUuidTypeTable
 {

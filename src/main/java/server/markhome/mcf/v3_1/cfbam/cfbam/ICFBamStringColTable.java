@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamStringColTable database interface for StringCol
+ *	CFBamStringColTable database interface for StringCol has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamStringColTable
 {

@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamNumberDefTable database interface for NumberDef
+ *	CFBamNumberDefTable database interface for NumberDef has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamNumberDefTable
 {

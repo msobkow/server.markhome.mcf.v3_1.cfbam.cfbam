@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamUInt16DefTable database interface for UInt16Def
+ *	CFBamUInt16DefTable database interface for UInt16Def has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamUInt16DefTable
 {

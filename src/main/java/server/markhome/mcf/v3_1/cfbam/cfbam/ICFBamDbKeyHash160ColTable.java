@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamDbKeyHash160ColTable database interface for DbKeyHash160Col
+ *	CFBamDbKeyHash160ColTable database interface for DbKeyHash160Col has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamDbKeyHash160ColTable
 {

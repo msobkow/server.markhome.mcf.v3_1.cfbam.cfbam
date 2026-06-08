@@ -59,7 +59,7 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
 /**
- *	ICFBamChainHPKey History Primary Key interface for Chain
+ *	ICFBamChainHPKey History Primary Key interface for Chain has CodeVis Public, meaning that any user interface or referencing schema can access it.
  *		requiredId	Required object attribute Id. */
 public interface ICFBamChainHPKey
 {

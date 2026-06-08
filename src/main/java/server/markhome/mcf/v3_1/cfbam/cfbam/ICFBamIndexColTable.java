@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamIndexColTable database interface for IndexCol
+ *	CFBamIndexColTable database interface for IndexCol has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamIndexColTable
 {

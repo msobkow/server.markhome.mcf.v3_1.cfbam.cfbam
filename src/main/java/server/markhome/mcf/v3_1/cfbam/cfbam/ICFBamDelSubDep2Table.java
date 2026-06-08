@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamDelSubDep2Table database interface for DelSubDep2
+ *	CFBamDelSubDep2Table database interface for DelSubDep2 has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamDelSubDep2Table
 {

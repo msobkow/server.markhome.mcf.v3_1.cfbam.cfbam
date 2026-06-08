@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamUInt16ColTable database interface for UInt16Col
+ *	CFBamUInt16ColTable database interface for UInt16Col has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamUInt16ColTable
 {

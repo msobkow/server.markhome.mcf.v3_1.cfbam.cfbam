@@ -64,7 +64,7 @@ import server.markhome.mcf.v3_1.cfint.cfintobj.*;
 import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 
 /*
- *	CFBamTimestampColTable database interface for TimestampCol
+ *	CFBamTimestampColTable database interface for TimestampCol has CodeVis Public, meaning that any user interface or referencing schema can access it.
  */
 public interface ICFBamTimestampColTable
 {

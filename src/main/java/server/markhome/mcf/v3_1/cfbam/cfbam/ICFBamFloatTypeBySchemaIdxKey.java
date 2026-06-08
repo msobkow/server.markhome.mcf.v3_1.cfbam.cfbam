@@ -58,6 +58,9 @@ import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 //import server.markhome.mcf.v3_1.cfbam.cfbam.*;
 
+/**
+ *	ICFBamFloatTypeBySchemaIdxKeys has CodeVis Public, meaning that any user interface or referencing schema can access it.
+ */
 public interface ICFBamFloatTypeBySchemaIdxKey
 {
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
