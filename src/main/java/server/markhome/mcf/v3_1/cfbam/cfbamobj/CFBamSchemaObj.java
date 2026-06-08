@@ -227,6 +227,7 @@ public class CFBamSchemaObj
 	protected ICFBamTZTimestampTypeTableObj tZTimestampTypeTableObj;
 	protected ICFBamTableTableObj tableTableObj;
 	protected ICFBamTableColTableObj tableColTableObj;
+	protected ICFBamTableInfoTableObj tableInfoTableObj;
 	protected ICFBamTableTweakTableObj tableTweakTableObj;
 	protected ICFBamTenantTableObj tenantTableObj;
 	protected ICFBamTextColTableObj textColTableObj;
@@ -413,6 +414,7 @@ public class CFBamSchemaObj
 		tZTimestampTypeTableObj = new CFBamTZTimestampTypeTableObj( this );
 		tableTableObj = new CFBamTableTableObj( this );
 		tableColTableObj = new CFBamTableColTableObj( this );
+		tableInfoTableObj = new CFBamTableInfoTableObj( this );
 		tableTweakTableObj = new CFBamTableTweakTableObj( this );
 		tenantTableObj = new CFBamTenantTableObj( this );
 		textColTableObj = new CFBamTextColTableObj( this );
@@ -1120,6 +1122,9 @@ public class CFBamSchemaObj
 		if( tableColTableObj != null ) {
 			tableColTableObj.minimizeMemory();
 		}
+		if( tableInfoTableObj != null ) {
+			tableInfoTableObj.minimizeMemory();
+		}
 		if( tableTweakTableObj != null ) {
 			tableTweakTableObj.minimizeMemory();
 		}
@@ -1822,6 +1827,10 @@ public class CFBamSchemaObj
 
 	public ICFBamTableColTableObj getTableColTableObj() {
 		return( tableColTableObj );
+	}
+
+	public ICFBamTableInfoTableObj getTableInfoTableObj() {
+		return( tableInfoTableObj );
 	}
 
 	public ICFBamTableTweakTableObj getTableTweakTableObj() {
