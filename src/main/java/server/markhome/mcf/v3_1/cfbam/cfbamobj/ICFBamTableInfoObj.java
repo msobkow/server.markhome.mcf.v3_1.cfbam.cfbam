@@ -193,6 +193,34 @@ public interface ICFBamTableInfoObj
 	void setIsNew( boolean value );
 
 	/**
+	 *	Get the optional ICFBamTableInfoObj instance referenced by the SuperRef key.
+	 *
+	 *	@return	The optional ICFBamTableInfoObj instance referenced by the SuperRef key.
+	 */
+	ICFSecTableInfoObj getOptionalParentSuperRef();
+
+	/**
+	 *	Get the optional ICFSecTableInfoObj instance referenced by the SuperRef key.
+	 *
+	 *	@return	The optional ICFSecTableInfoObj instance referenced by the SuperRef key.
+	 */
+	ICFSecTableInfoObj getOptionalParentSuperRef( boolean forceRead );
+
+	/**
+	 *	Get the array of optional ICFSecTableInfoObj array of instances referenced by the SubRefs key.
+	 *
+	 *	@return	The optional ICFSecTableInfoObj[] array of instances referenced by the SubRefs key.
+	 */
+	List<ICFSecTableInfoObj> getOptionalChildrenSubRefs();
+
+	/**
+	 *	Get the array of optional ICFSecTableInfoObj array of instances referenced by the SubRefs key.
+	 *
+	 *	@return	The optional ICFSecTableInfoObj[] array of instances referenced by the SubRefs key.
+	 */
+	List<ICFSecTableInfoObj> getOptionalChildrenSubRefs( boolean forceRead );
+
+	/**
 	 *	Get the required int attribute TableInfoId.
 	 *
 	 *	@return	The required int attribute TableInfoId.
@@ -212,6 +240,13 @@ public interface ICFBamTableInfoObj
 	 *	@return	The required String attribute TableName.
 	 */
 	String getRequiredTableName();
+
+	/**
+	 *	Get the optional String attribute SuperName.
+	 *
+	 *	@return	The optional String attribute SuperName.
+	 */
+	String getOptionalSuperName();
 
 	/**
 	 *	Get the required int attribute BackingClassCode.

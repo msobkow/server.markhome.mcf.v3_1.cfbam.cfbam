@@ -68,6 +68,8 @@ public class CFBamTableInfoTableObj
 	private Map<Integer, ICFSecTableInfoObj> allTableInfo;
 	private Map< ICFSecTableInfoByTableNameIdxKey,
 		ICFSecTableInfoObj > indexByTableNameIdx;
+	private Map< ICFSecTableInfoBySuperNameIdxKey,
+		Map<Integer, ICFSecTableInfoObj > > indexBySuperNameIdx;
 	private Map< ICFSecTableInfoBySchemaNameIdxKey,
 		Map<Integer, ICFSecTableInfoObj > > indexBySchemaNameIdx;
 	private Map< ICFSecTableInfoBySchemaBkCodeIdxKey,
@@ -82,6 +84,7 @@ public class CFBamTableInfoTableObj
 		members = new HashMap<Integer, ICFSecTableInfoObj>();
 		allTableInfo = null;
 		indexByTableNameIdx = null;
+		indexBySuperNameIdx = null;
 		indexBySchemaNameIdx = null;
 		indexBySchemaBkCodeIdx = null;
 		indexBySchemaRTCodeIdx = null;
@@ -92,6 +95,7 @@ public class CFBamTableInfoTableObj
 		members = new HashMap<Integer, ICFSecTableInfoObj>();
 		allTableInfo = null;
 		indexByTableNameIdx = null;
+		indexBySuperNameIdx = null;
 		indexBySchemaNameIdx = null;
 		indexBySchemaBkCodeIdx = null;
 		indexBySchemaRTCodeIdx = null;
@@ -155,6 +159,7 @@ public class CFBamTableInfoTableObj
 	public void minimizeMemory() {
 		allTableInfo = null;
 		indexByTableNameIdx = null;
+		indexBySuperNameIdx = null;
 		indexBySchemaNameIdx = null;
 		indexBySchemaBkCodeIdx = null;
 		indexBySchemaRTCodeIdx = null;
@@ -224,6 +229,19 @@ public class CFBamTableInfoTableObj
 				indexByTableNameIdx.remove( keyTableNameIdx );
 			}
 
+			if( indexBySuperNameIdx != null ) {
+				ICFSecTableInfoBySuperNameIdxKey keySuperNameIdx =
+					schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+				keySuperNameIdx.setOptionalSuperName( keepObj.getOptionalSuperName() );
+				Map<Integer, ICFSecTableInfoObj > mapSuperNameIdx = indexBySuperNameIdx.get( keySuperNameIdx );
+				if( mapSuperNameIdx != null ) {
+					mapSuperNameIdx.remove( keepObj.getPKey() );
+					if( mapSuperNameIdx.size() <= 0 ) {
+						indexBySuperNameIdx.remove( keySuperNameIdx );
+					}
+				}
+			}
+
 			if( indexBySchemaNameIdx != null ) {
 				ICFSecTableInfoBySchemaNameIdxKey keySchemaNameIdx =
 					schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaNameIdxKey();
@@ -260,6 +278,16 @@ public class CFBamTableInfoTableObj
 					schema.getCFSecBackingStore().getFactoryTableInfo().newByTableNameIdxKey();
 				keyTableNameIdx.setRequiredTableName( keepObj.getRequiredTableName() );
 				indexByTableNameIdx.put( keyTableNameIdx, keepObj );
+			}
+
+			if( indexBySuperNameIdx != null ) {
+				ICFSecTableInfoBySuperNameIdxKey keySuperNameIdx =
+					schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+				keySuperNameIdx.setOptionalSuperName( keepObj.getOptionalSuperName() );
+				Map<Integer, ICFSecTableInfoObj > mapSuperNameIdx = indexBySuperNameIdx.get( keySuperNameIdx );
+				if( mapSuperNameIdx != null ) {
+					mapSuperNameIdx.put( keepObj.getPKey(), keepObj );
+				}
 			}
 
 			if( indexBySchemaNameIdx != null ) {
@@ -306,6 +334,16 @@ public class CFBamTableInfoTableObj
 					schema.getCFSecBackingStore().getFactoryTableInfo().newByTableNameIdxKey();
 				keyTableNameIdx.setRequiredTableName( keepObj.getRequiredTableName() );
 				indexByTableNameIdx.put( keyTableNameIdx, keepObj );
+			}
+
+			if( indexBySuperNameIdx != null ) {
+				ICFSecTableInfoBySuperNameIdxKey keySuperNameIdx =
+					schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+				keySuperNameIdx.setOptionalSuperName( keepObj.getOptionalSuperName() );
+				Map<Integer, ICFSecTableInfoObj > mapSuperNameIdx = indexBySuperNameIdx.get( keySuperNameIdx );
+				if( mapSuperNameIdx != null ) {
+					mapSuperNameIdx.put( keepObj.getPKey(), keepObj );
+				}
 			}
 
 			if( indexBySchemaNameIdx != null ) {
@@ -400,6 +438,9 @@ public class CFBamTableInfoTableObj
 		ICFSecTableInfoByTableNameIdxKey keyTableNameIdx = schema.getCFSecBackingStore().getFactoryTableInfo().newByTableNameIdxKey();
 		keyTableNameIdx.setRequiredTableName( existing.getRequiredTableName() );
 
+		ICFSecTableInfoBySuperNameIdxKey keySuperNameIdx = schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+		keySuperNameIdx.setOptionalSuperName( existing.getOptionalSuperName() );
+
 		ICFSecTableInfoBySchemaNameIdxKey keySchemaNameIdx = schema.getCFSecBackingStore().getFactoryTableInfo().newBySchemaNameIdxKey();
 		keySchemaNameIdx.setRequiredSchemaName( existing.getRequiredSchemaName() );
 
@@ -411,9 +452,19 @@ public class CFBamTableInfoTableObj
 		keySchemaRTCodeIdx.setRequiredRuntimeClassCode( existing.getRequiredRuntimeClassCode() );
 
 
+		schema.getTableInfoTableObj().deepDisposeTableInfoBySuperNameIdx( existing.getRequiredTableName() );
 
 		if( indexByTableNameIdx != null ) {
 			indexByTableNameIdx.remove( keyTableNameIdx );
+		}
+
+		if( indexBySuperNameIdx != null ) {
+			if( indexBySuperNameIdx.containsKey( keySuperNameIdx ) ) {
+				indexBySuperNameIdx.get( keySuperNameIdx ).remove( pkey );
+				if( indexBySuperNameIdx.get( keySuperNameIdx ).size() <= 0 ) {
+					indexBySuperNameIdx.remove( keySuperNameIdx );
+				}
+			}
 		}
 
 		if( indexBySchemaNameIdx != null ) {
@@ -641,6 +692,99 @@ public class CFBamTableInfoTableObj
 	}
 
 	@Override
+	public List<ICFSecTableInfoObj> readTableInfoBySuperNameIdx( String SuperName )
+	{
+		return( readTableInfoBySuperNameIdx( SuperName,
+			false ) );
+	}
+
+	@Override
+	public List<ICFSecTableInfoObj> readTableInfoBySuperNameIdx( String SuperName,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readTableInfoBySuperNameIdx";
+		ICFSecTableInfoBySuperNameIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+		key.setOptionalSuperName( SuperName );
+		Map<Integer, ICFSecTableInfoObj> dict;
+		if( indexBySuperNameIdx == null ) {
+			indexBySuperNameIdx = new HashMap< ICFSecTableInfoBySuperNameIdxKey,
+				Map< Integer, ICFSecTableInfoObj > >();
+		}
+		if( ( ! forceRead ) && indexBySuperNameIdx.containsKey( key ) ) {
+			dict = indexBySuperNameIdx.get( key );
+		}
+		else {
+			dict = new HashMap<Integer, ICFSecTableInfoObj>();
+			ICFSecTableInfoObj obj;
+			ICFSecTableInfo[] recList = schema.getCFSecBackingStore().getTableTableInfo().readDerivedBySuperNameIdx( null,
+				SuperName );
+			ICFSecTableInfo rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = schema.getTableInfoTableObj().newInstance();
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFSecTableInfoObj realised = (ICFSecTableInfoObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexBySuperNameIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFSecTableInfoObj arr[] = new ICFSecTableInfoObj[len];
+		Iterator<ICFSecTableInfoObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFSecTableInfoObj> arrayList = new ArrayList<ICFSecTableInfoObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFSecTableInfoObj> cmp = new Comparator<ICFSecTableInfoObj>() {
+			@Override
+			public int compare( ICFSecTableInfoObj lhs, ICFSecTableInfoObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					Integer lhsPKey = lhs.getPKey();
+					Integer rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFSecTableInfoObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
 	public List<ICFSecTableInfoObj> readTableInfoBySchemaNameIdx( String SchemaName )
 	{
 		return( readTableInfoBySchemaNameIdx( SchemaName,
@@ -849,6 +993,83 @@ public class CFBamTableInfoTableObj
 	}
 
 	@Override
+	public List<ICFSecTableInfoObj> readCachedTableInfoBySuperNameIdx( String SuperName )
+	{
+		final String S_ProcName = "readCachedTableInfoBySuperNameIdx";
+		ICFSecTableInfoBySuperNameIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+		key.setOptionalSuperName( SuperName );
+		ArrayList<ICFSecTableInfoObj> arrayList = new ArrayList<ICFSecTableInfoObj>();
+		if( indexBySuperNameIdx != null ) {
+			Map<Integer, ICFSecTableInfoObj> dict;
+			if( indexBySuperNameIdx.containsKey( key ) ) {
+				dict = indexBySuperNameIdx.get( key );
+				int len = dict.size();
+				ICFSecTableInfoObj arr[] = new ICFSecTableInfoObj[len];
+				Iterator<ICFSecTableInfoObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFSecTableInfoObj obj;
+			Iterator<ICFSecTableInfoObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFSecTableInfoObj> cmp = new Comparator<ICFSecTableInfoObj>() {
+			@Override
+			public int compare( ICFSecTableInfoObj lhs, ICFSecTableInfoObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					Integer lhsPKey = lhs.getPKey();
+					Integer rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
 	public List<ICFSecTableInfoObj> readCachedTableInfoBySchemaNameIdx( String SchemaName )
 	{
 		final String S_ProcName = "readCachedTableInfoBySchemaNameIdx";
@@ -1018,6 +1239,23 @@ public class CFBamTableInfoTableObj
 	}
 
 	@Override
+	public void deepDisposeTableInfoBySuperNameIdx( String SuperName )
+	{
+		final String S_ProcName = "deepDisposeTableInfoBySuperNameIdx";
+		ICFSecTableInfoObj obj;
+		List<ICFSecTableInfoObj> arrayList = readCachedTableInfoBySuperNameIdx( SuperName );
+		if( arrayList != null )  {
+			Iterator<ICFSecTableInfoObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
 	public void deepDisposeTableInfoBySchemaNameIdx( String SchemaName )
 	{
 		final String S_ProcName = "deepDisposeTableInfoBySchemaNameIdx";
@@ -1123,6 +1361,40 @@ public class CFBamTableInfoTableObj
 				TableName );
 		}
 		deepDisposeTableInfoByTableNameIdx( TableName );
+	}
+
+	@Override
+	public void deleteTableInfoBySuperNameIdx( String SuperName )
+	{
+		ICFSecTableInfoBySuperNameIdxKey key = schema.getCFSecBackingStore().getFactoryTableInfo().newBySuperNameIdxKey();
+		key.setOptionalSuperName( SuperName );
+		if( indexBySuperNameIdx == null ) {
+			indexBySuperNameIdx = new HashMap< ICFSecTableInfoBySuperNameIdxKey,
+				Map< Integer, ICFSecTableInfoObj > >();
+		}
+		if( indexBySuperNameIdx.containsKey( key ) ) {
+			Map<Integer, ICFSecTableInfoObj> dict = indexBySuperNameIdx.get( key );
+			schema.getCFSecBackingStore().getTableTableInfo().deleteTableInfoBySuperNameIdx( null,
+				SuperName );
+			Iterator<ICFSecTableInfoObj> iter = dict.values().iterator();
+			ICFSecTableInfoObj obj;
+			List<ICFSecTableInfoObj> toForget = new LinkedList<ICFSecTableInfoObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexBySuperNameIdx.remove( key );
+		}
+		else {
+			schema.getCFSecBackingStore().getTableTableInfo().deleteTableInfoBySuperNameIdx( null,
+				SuperName );
+		}
+		deepDisposeTableInfoBySuperNameIdx( SuperName );
 	}
 
 	@Override

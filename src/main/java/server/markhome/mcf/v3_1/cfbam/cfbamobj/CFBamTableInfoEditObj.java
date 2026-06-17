@@ -66,12 +66,15 @@ public class CFBamTableInfoEditObj
 {
 	protected ICFSecTableInfoObj orig;
 	protected ICFSecTableInfo rec;
+	protected ICFSecTableInfoObj optionalParentSuperRef;
+	protected List<ICFSecTableInfoObj> optionalChildrenSubRefs;
 
 	public CFBamTableInfoEditObj( ICFSecTableInfoObj argOrig ) {
 		orig = argOrig;
 		getRec();
 		ICFSecTableInfo origRec = orig.getRec();
 		rec.set( origRec );
+		optionalParentSuperRef = null;
 	}
 
 	@Override
@@ -321,6 +324,7 @@ public class CFBamTableInfoEditObj
 	public void setRec( ICFSecTableInfo value ) {
 		if( rec != value ) {
 			rec = value;
+			optionalParentSuperRef = null;
 		}
 	}
 
@@ -383,7 +387,14 @@ public class CFBamTableInfoEditObj
 	public void setRequiredTableName( String value ) {
 		if( getTableInfoRec().getRequiredTableName() != value ) {
 			getTableInfoRec().setRequiredTableName( value );
+			optionalParentSuperRef = null;
+			optionalChildrenSubRefs = null;
 		}
+	}
+
+	@Override
+	public String getOptionalSuperName() {
+		return( getTableInfoRec().getOptionalSuperName() );
 	}
 
 	@Override
@@ -456,6 +467,58 @@ public class CFBamTableInfoEditObj
 		if( getTableInfoRec().getRequiredCodeVis() != value ) {
 			getTableInfoRec().setRequiredCodeVis( value );
 		}
+	}
+
+	@Override
+	public ICFSecTableInfoObj getOptionalParentSuperRef() {
+		return( getOptionalParentSuperRef( false ) );
+	}
+
+	@Override
+	public ICFSecTableInfoObj getOptionalParentSuperRef( boolean forceRead ) {
+		if( forceRead || ( optionalParentSuperRef == null ) ) {
+			boolean anyMissing = false;
+			if( getTableInfoRec().getOptionalSuperName() == null ) {
+				anyMissing = true;
+			}
+			if( ! anyMissing ) {
+				ICFSecTableInfoObj obj = ((ICFBamSchemaObj)getOrigAsTableInfo().getSchema()).getTableInfoTableObj().readTableInfoByTableNameIdx( getTableInfoRec().getOptionalSuperName() );
+				optionalParentSuperRef = obj;
+			}
+		}
+		return( optionalParentSuperRef );
+	}
+
+	@Override
+	public void setOptionalParentSuperRef( ICFSecTableInfoObj value ) {
+		if( rec == null ) {
+			getTableInfoRec();
+		}
+		if( value != null ) {
+			optionalParentSuperRef = value;
+			getTableInfoRec().setOptionalParentSuperRef(value.getTableInfoRec());
+		}
+		else {
+			optionalParentSuperRef = null;
+			getTableInfoRec().setOptionalParentSuperRef((ICFSecTableInfo)null);
+		}
+		optionalParentSuperRef = value;
+	}
+
+	@Override
+	public List<ICFSecTableInfoObj> getOptionalChildrenSubRefs() {
+		List<ICFSecTableInfoObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getTableInfoTableObj().readTableInfoBySuperNameIdx( getTableInfoRec().getRequiredTableName(),
+			false );
+		return( retval );
+	}
+
+	@Override
+	public List<ICFSecTableInfoObj> getOptionalChildrenSubRefs( boolean forceRead ) {
+		List<ICFSecTableInfoObj> retval;
+		retval = ((ICFBamSchemaObj)getSchema()).getTableInfoTableObj().readTableInfoBySuperNameIdx( getTableInfoRec().getRequiredTableName(),
+			forceRead );
+		return( retval );
 	}
 
 	@Override

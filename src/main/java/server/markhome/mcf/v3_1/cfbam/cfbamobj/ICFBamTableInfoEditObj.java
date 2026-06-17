@@ -79,6 +79,34 @@ public interface ICFBamTableInfoEditObj
 	 */
 	CFSecTableInfoEditObj update();
 
+	/**
+	 *	Get the ICFSecTableInfoObj instance referenced by the SuperRef key.
+	 *
+	 *	@return	The ICFSecTableInfoObj instance referenced by the SuperRef key.
+	 */
+	ICFSecTableInfoObj getOptionalParentSuperRef();
+
+	/**
+	 *	Get the optional ICFSecTableInfoObj instance referenced by the SuperRef key.
+	 *
+	 *	@return	The optional ICFSecTableInfoObj instance referenced by the SuperRef key.
+	 */
+	ICFSecTableInfoObj getOptionalParentSuperRef( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecTableInfoObj instance referenced by the SuperRef key.
+	 *
+	 *	@param	value	the ICFSecTableInfoObj instance to be referenced by the SuperRef key.
+	 */
+	void setOptionalParentSuperRef( ICFSecTableInfoObj value );
+
+	/**
+	 *	Get a list ICFSecTableInfoObj instances referenced by the SubRefs key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecTableInfoObj instances referenced by the SubRefs key.
+	 */
+	List<ICFSecTableInfoObj> getOptionalChildrenSubRefs();
+
 	public void copyRecToOrig();
 	public void copyOrigToRec();
 
