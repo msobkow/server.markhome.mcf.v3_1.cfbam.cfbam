@@ -64,1283 +64,1851 @@ public class CFBamBuffFactoryService
 
 	@Autowired
 	@Qualifier("cfbam31BuffAtomFactoryService")
-	protected ICFBamAtomFactory factoryAtom;
+	protected CFBamBuffAtomFactoryService atomFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffBlobColFactoryService")
-	protected ICFBamBlobColFactory factoryBlobCol;
+	protected CFBamBuffBlobColFactoryService blobcolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffBlobDefFactoryService")
-	protected ICFBamBlobDefFactory factoryBlobDef;
+	protected CFBamBuffBlobDefFactoryService blobdefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffBlobTypeFactoryService")
-	protected ICFBamBlobTypeFactory factoryBlobType;
+	protected CFBamBuffBlobTypeFactoryService blobtypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffBoolColFactoryService")
-	protected ICFBamBoolColFactory factoryBoolCol;
+	protected CFBamBuffBoolColFactoryService boolcolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffBoolDefFactoryService")
-	protected ICFBamBoolDefFactory factoryBoolDef;
+	protected CFBamBuffBoolDefFactoryService booldefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffBoolTypeFactoryService")
-	protected ICFBamBoolTypeFactory factoryBoolType;
+	protected CFBamBuffBoolTypeFactoryService booltypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffChainFactoryService")
-	protected ICFBamChainFactory factoryChain;
+	protected CFBamBuffChainFactoryService chainFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffClearDepFactoryService")
-	protected ICFBamClearDepFactory factoryClearDep;
+	protected CFBamBuffClearDepFactoryService cleardepFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffClearSubDep1FactoryService")
-	protected ICFBamClearSubDep1Factory factoryClearSubDep1;
+	protected CFBamBuffClearSubDep1FactoryService clearsubdep1FactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffClearSubDep2FactoryService")
-	protected ICFBamClearSubDep2Factory factoryClearSubDep2;
+	protected CFBamBuffClearSubDep2FactoryService clearsubdep2FactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffClearSubDep3FactoryService")
-	protected ICFBamClearSubDep3Factory factoryClearSubDep3;
+	protected CFBamBuffClearSubDep3FactoryService clearsubdep3FactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffClearTopDepFactoryService")
-	protected ICFBamClearTopDepFactory factoryClearTopDep;
+	protected CFBamBuffClearTopDepFactoryService cleartopdepFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDateColFactoryService")
-	protected ICFBamDateColFactory factoryDateCol;
+	protected CFBamBuffDateColFactoryService datecolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDateDefFactoryService")
-	protected ICFBamDateDefFactory factoryDateDef;
+	protected CFBamBuffDateDefFactoryService datedefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDateTypeFactoryService")
-	protected ICFBamDateTypeFactory factoryDateType;
+	protected CFBamBuffDateTypeFactoryService datetypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash128ColFactoryService")
-	protected ICFBamDbKeyHash128ColFactory factoryDbKeyHash128Col;
+	protected CFBamBuffDbKeyHash128ColFactoryService dbkeyhash128colFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash128DefFactoryService")
-	protected ICFBamDbKeyHash128DefFactory factoryDbKeyHash128Def;
+	protected CFBamBuffDbKeyHash128DefFactoryService dbkeyhash128defFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash128GenFactoryService")
-	protected ICFBamDbKeyHash128GenFactory factoryDbKeyHash128Gen;
+	protected CFBamBuffDbKeyHash128GenFactoryService dbkeyhash128genFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash128TypeFactoryService")
-	protected ICFBamDbKeyHash128TypeFactory factoryDbKeyHash128Type;
+	protected CFBamBuffDbKeyHash128TypeFactoryService dbkeyhash128typeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash160ColFactoryService")
-	protected ICFBamDbKeyHash160ColFactory factoryDbKeyHash160Col;
+	protected CFBamBuffDbKeyHash160ColFactoryService dbkeyhash160colFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash160DefFactoryService")
-	protected ICFBamDbKeyHash160DefFactory factoryDbKeyHash160Def;
+	protected CFBamBuffDbKeyHash160DefFactoryService dbkeyhash160defFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash160GenFactoryService")
-	protected ICFBamDbKeyHash160GenFactory factoryDbKeyHash160Gen;
+	protected CFBamBuffDbKeyHash160GenFactoryService dbkeyhash160genFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash160TypeFactoryService")
-	protected ICFBamDbKeyHash160TypeFactory factoryDbKeyHash160Type;
+	protected CFBamBuffDbKeyHash160TypeFactoryService dbkeyhash160typeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash224ColFactoryService")
-	protected ICFBamDbKeyHash224ColFactory factoryDbKeyHash224Col;
+	protected CFBamBuffDbKeyHash224ColFactoryService dbkeyhash224colFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash224DefFactoryService")
-	protected ICFBamDbKeyHash224DefFactory factoryDbKeyHash224Def;
+	protected CFBamBuffDbKeyHash224DefFactoryService dbkeyhash224defFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash224GenFactoryService")
-	protected ICFBamDbKeyHash224GenFactory factoryDbKeyHash224Gen;
+	protected CFBamBuffDbKeyHash224GenFactoryService dbkeyhash224genFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash224TypeFactoryService")
-	protected ICFBamDbKeyHash224TypeFactory factoryDbKeyHash224Type;
+	protected CFBamBuffDbKeyHash224TypeFactoryService dbkeyhash224typeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash256ColFactoryService")
-	protected ICFBamDbKeyHash256ColFactory factoryDbKeyHash256Col;
+	protected CFBamBuffDbKeyHash256ColFactoryService dbkeyhash256colFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash256DefFactoryService")
-	protected ICFBamDbKeyHash256DefFactory factoryDbKeyHash256Def;
+	protected CFBamBuffDbKeyHash256DefFactoryService dbkeyhash256defFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash256GenFactoryService")
-	protected ICFBamDbKeyHash256GenFactory factoryDbKeyHash256Gen;
+	protected CFBamBuffDbKeyHash256GenFactoryService dbkeyhash256genFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash256TypeFactoryService")
-	protected ICFBamDbKeyHash256TypeFactory factoryDbKeyHash256Type;
+	protected CFBamBuffDbKeyHash256TypeFactoryService dbkeyhash256typeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash384ColFactoryService")
-	protected ICFBamDbKeyHash384ColFactory factoryDbKeyHash384Col;
+	protected CFBamBuffDbKeyHash384ColFactoryService dbkeyhash384colFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash384DefFactoryService")
-	protected ICFBamDbKeyHash384DefFactory factoryDbKeyHash384Def;
+	protected CFBamBuffDbKeyHash384DefFactoryService dbkeyhash384defFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash384GenFactoryService")
-	protected ICFBamDbKeyHash384GenFactory factoryDbKeyHash384Gen;
+	protected CFBamBuffDbKeyHash384GenFactoryService dbkeyhash384genFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash384TypeFactoryService")
-	protected ICFBamDbKeyHash384TypeFactory factoryDbKeyHash384Type;
+	protected CFBamBuffDbKeyHash384TypeFactoryService dbkeyhash384typeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash512ColFactoryService")
-	protected ICFBamDbKeyHash512ColFactory factoryDbKeyHash512Col;
+	protected CFBamBuffDbKeyHash512ColFactoryService dbkeyhash512colFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash512DefFactoryService")
-	protected ICFBamDbKeyHash512DefFactory factoryDbKeyHash512Def;
+	protected CFBamBuffDbKeyHash512DefFactoryService dbkeyhash512defFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash512GenFactoryService")
-	protected ICFBamDbKeyHash512GenFactory factoryDbKeyHash512Gen;
+	protected CFBamBuffDbKeyHash512GenFactoryService dbkeyhash512genFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDbKeyHash512TypeFactoryService")
-	protected ICFBamDbKeyHash512TypeFactory factoryDbKeyHash512Type;
+	protected CFBamBuffDbKeyHash512TypeFactoryService dbkeyhash512typeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDelDepFactoryService")
-	protected ICFBamDelDepFactory factoryDelDep;
+	protected CFBamBuffDelDepFactoryService deldepFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDelSubDep1FactoryService")
-	protected ICFBamDelSubDep1Factory factoryDelSubDep1;
+	protected CFBamBuffDelSubDep1FactoryService delsubdep1FactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDelSubDep2FactoryService")
-	protected ICFBamDelSubDep2Factory factoryDelSubDep2;
+	protected CFBamBuffDelSubDep2FactoryService delsubdep2FactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDelSubDep3FactoryService")
-	protected ICFBamDelSubDep3Factory factoryDelSubDep3;
+	protected CFBamBuffDelSubDep3FactoryService delsubdep3FactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDelTopDepFactoryService")
-	protected ICFBamDelTopDepFactory factoryDelTopDep;
+	protected CFBamBuffDelTopDepFactoryService deltopdepFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDoubleColFactoryService")
-	protected ICFBamDoubleColFactory factoryDoubleCol;
+	protected CFBamBuffDoubleColFactoryService doublecolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDoubleDefFactoryService")
-	protected ICFBamDoubleDefFactory factoryDoubleDef;
+	protected CFBamBuffDoubleDefFactoryService doubledefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffDoubleTypeFactoryService")
-	protected ICFBamDoubleTypeFactory factoryDoubleType;
+	protected CFBamBuffDoubleTypeFactoryService doubletypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffEnumDefFactoryService")
-	protected ICFBamEnumDefFactory factoryEnumDef;
+	protected CFBamBuffEnumDefFactoryService enumdefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffEnumTagFactoryService")
-	protected ICFBamEnumTagFactory factoryEnumTag;
+	protected CFBamBuffEnumTagFactoryService enumtagFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffEnumTypeFactoryService")
-	protected ICFBamEnumTypeFactory factoryEnumType;
+	protected CFBamBuffEnumTypeFactoryService enumtypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffFloatColFactoryService")
-	protected ICFBamFloatColFactory factoryFloatCol;
+	protected CFBamBuffFloatColFactoryService floatcolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffFloatDefFactoryService")
-	protected ICFBamFloatDefFactory factoryFloatDef;
+	protected CFBamBuffFloatDefFactoryService floatdefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffFloatTypeFactoryService")
-	protected ICFBamFloatTypeFactory factoryFloatType;
+	protected CFBamBuffFloatTypeFactoryService floattypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffId16GenFactoryService")
-	protected ICFBamId16GenFactory factoryId16Gen;
+	protected CFBamBuffId16GenFactoryService id16genFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffId32GenFactoryService")
-	protected ICFBamId32GenFactory factoryId32Gen;
+	protected CFBamBuffId32GenFactoryService id32genFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffId64GenFactoryService")
-	protected ICFBamId64GenFactory factoryId64Gen;
+	protected CFBamBuffId64GenFactoryService id64genFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffIndexFactoryService")
-	protected ICFBamIndexFactory factoryIndex;
+	protected CFBamBuffIndexFactoryService indexFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffIndexColFactoryService")
-	protected ICFBamIndexColFactory factoryIndexCol;
+	protected CFBamBuffIndexColFactoryService indexcolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffIndexTweakFactoryService")
-	protected ICFBamIndexTweakFactory factoryIndexTweak;
+	protected CFBamBuffIndexTweakFactoryService indextweakFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffInt16ColFactoryService")
-	protected ICFBamInt16ColFactory factoryInt16Col;
+	protected CFBamBuffInt16ColFactoryService int16colFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffInt16DefFactoryService")
-	protected ICFBamInt16DefFactory factoryInt16Def;
+	protected CFBamBuffInt16DefFactoryService int16defFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffInt16TypeFactoryService")
-	protected ICFBamInt16TypeFactory factoryInt16Type;
+	protected CFBamBuffInt16TypeFactoryService int16typeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffInt32ColFactoryService")
-	protected ICFBamInt32ColFactory factoryInt32Col;
+	protected CFBamBuffInt32ColFactoryService int32colFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffInt32DefFactoryService")
-	protected ICFBamInt32DefFactory factoryInt32Def;
+	protected CFBamBuffInt32DefFactoryService int32defFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffInt32TypeFactoryService")
-	protected ICFBamInt32TypeFactory factoryInt32Type;
+	protected CFBamBuffInt32TypeFactoryService int32typeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffInt64ColFactoryService")
-	protected ICFBamInt64ColFactory factoryInt64Col;
+	protected CFBamBuffInt64ColFactoryService int64colFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffInt64DefFactoryService")
-	protected ICFBamInt64DefFactory factoryInt64Def;
+	protected CFBamBuffInt64DefFactoryService int64defFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffInt64TypeFactoryService")
-	protected ICFBamInt64TypeFactory factoryInt64Type;
+	protected CFBamBuffInt64TypeFactoryService int64typeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffNmTokenColFactoryService")
-	protected ICFBamNmTokenColFactory factoryNmTokenCol;
+	protected CFBamBuffNmTokenColFactoryService nmtokencolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffNmTokenDefFactoryService")
-	protected ICFBamNmTokenDefFactory factoryNmTokenDef;
+	protected CFBamBuffNmTokenDefFactoryService nmtokendefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffNmTokenTypeFactoryService")
-	protected ICFBamNmTokenTypeFactory factoryNmTokenType;
+	protected CFBamBuffNmTokenTypeFactoryService nmtokentypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffNmTokensColFactoryService")
-	protected ICFBamNmTokensColFactory factoryNmTokensCol;
+	protected CFBamBuffNmTokensColFactoryService nmtokenscolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffNmTokensDefFactoryService")
-	protected ICFBamNmTokensDefFactory factoryNmTokensDef;
+	protected CFBamBuffNmTokensDefFactoryService nmtokensdefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffNmTokensTypeFactoryService")
-	protected ICFBamNmTokensTypeFactory factoryNmTokensType;
+	protected CFBamBuffNmTokensTypeFactoryService nmtokenstypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffNumberColFactoryService")
-	protected ICFBamNumberColFactory factoryNumberCol;
+	protected CFBamBuffNumberColFactoryService numbercolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffNumberDefFactoryService")
-	protected ICFBamNumberDefFactory factoryNumberDef;
+	protected CFBamBuffNumberDefFactoryService numberdefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffNumberTypeFactoryService")
-	protected ICFBamNumberTypeFactory factoryNumberType;
+	protected CFBamBuffNumberTypeFactoryService numbertypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffParamFactoryService")
-	protected ICFBamParamFactory factoryParam;
+	protected CFBamBuffParamFactoryService paramFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffPopDepFactoryService")
-	protected ICFBamPopDepFactory factoryPopDep;
+	protected CFBamBuffPopDepFactoryService popdepFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffPopSubDep1FactoryService")
-	protected ICFBamPopSubDep1Factory factoryPopSubDep1;
+	protected CFBamBuffPopSubDep1FactoryService popsubdep1FactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffPopSubDep2FactoryService")
-	protected ICFBamPopSubDep2Factory factoryPopSubDep2;
+	protected CFBamBuffPopSubDep2FactoryService popsubdep2FactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffPopSubDep3FactoryService")
-	protected ICFBamPopSubDep3Factory factoryPopSubDep3;
+	protected CFBamBuffPopSubDep3FactoryService popsubdep3FactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffPopTopDepFactoryService")
-	protected ICFBamPopTopDepFactory factoryPopTopDep;
+	protected CFBamBuffPopTopDepFactoryService poptopdepFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffRelationFactoryService")
-	protected ICFBamRelationFactory factoryRelation;
+	protected CFBamBuffRelationFactoryService relationFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffRelationColFactoryService")
-	protected ICFBamRelationColFactory factoryRelationCol;
+	protected CFBamBuffRelationColFactoryService relationcolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffRoleDefFactoryService")
-	protected ICFBamRoleDefFactory factoryRoleDef;
+	protected CFBamBuffRoleDefFactoryService roledefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffSchemaDefFactoryService")
-	protected ICFBamSchemaDefFactory factorySchemaDef;
+	protected CFBamBuffSchemaDefFactoryService schemadefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffSchemaRefFactoryService")
-	protected ICFBamSchemaRefFactory factorySchemaRef;
+	protected CFBamBuffSchemaRefFactoryService schemarefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffSchemaRoleFactoryService")
-	protected ICFBamSchemaRoleFactory factorySchemaRole;
+	protected CFBamBuffSchemaRoleFactoryService schemaroleFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffSchemaTweakFactoryService")
-	protected ICFBamSchemaTweakFactory factorySchemaTweak;
+	protected CFBamBuffSchemaTweakFactoryService schematweakFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffScopeFactoryService")
-	protected ICFBamScopeFactory factoryScope;
+	protected CFBamBuffScopeFactoryService scopeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffServerListFuncFactoryService")
-	protected ICFBamServerListFuncFactory factoryServerListFunc;
+	protected CFBamBuffServerListFuncFactoryService serverlistfuncFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffServerMethodFactoryService")
-	protected ICFBamServerMethodFactory factoryServerMethod;
+	protected CFBamBuffServerMethodFactoryService servermethodFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffServerObjFuncFactoryService")
-	protected ICFBamServerObjFuncFactory factoryServerObjFunc;
+	protected CFBamBuffServerObjFuncFactoryService serverobjfuncFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffServerProcFactoryService")
-	protected ICFBamServerProcFactory factoryServerProc;
+	protected CFBamBuffServerProcFactoryService serverprocFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffStringColFactoryService")
-	protected ICFBamStringColFactory factoryStringCol;
+	protected CFBamBuffStringColFactoryService stringcolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffStringDefFactoryService")
-	protected ICFBamStringDefFactory factoryStringDef;
+	protected CFBamBuffStringDefFactoryService stringdefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffStringTypeFactoryService")
-	protected ICFBamStringTypeFactory factoryStringType;
+	protected CFBamBuffStringTypeFactoryService stringtypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTZDateColFactoryService")
-	protected ICFBamTZDateColFactory factoryTZDateCol;
+	protected CFBamBuffTZDateColFactoryService tzdatecolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTZDateDefFactoryService")
-	protected ICFBamTZDateDefFactory factoryTZDateDef;
+	protected CFBamBuffTZDateDefFactoryService tzdatedefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTZDateTypeFactoryService")
-	protected ICFBamTZDateTypeFactory factoryTZDateType;
+	protected CFBamBuffTZDateTypeFactoryService tzdatetypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTZTimeColFactoryService")
-	protected ICFBamTZTimeColFactory factoryTZTimeCol;
+	protected CFBamBuffTZTimeColFactoryService tztimecolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTZTimeDefFactoryService")
-	protected ICFBamTZTimeDefFactory factoryTZTimeDef;
+	protected CFBamBuffTZTimeDefFactoryService tztimedefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTZTimeTypeFactoryService")
-	protected ICFBamTZTimeTypeFactory factoryTZTimeType;
+	protected CFBamBuffTZTimeTypeFactoryService tztimetypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTZTimestampColFactoryService")
-	protected ICFBamTZTimestampColFactory factoryTZTimestampCol;
+	protected CFBamBuffTZTimestampColFactoryService tztimestampcolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTZTimestampDefFactoryService")
-	protected ICFBamTZTimestampDefFactory factoryTZTimestampDef;
+	protected CFBamBuffTZTimestampDefFactoryService tztimestampdefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTZTimestampTypeFactoryService")
-	protected ICFBamTZTimestampTypeFactory factoryTZTimestampType;
+	protected CFBamBuffTZTimestampTypeFactoryService tztimestamptypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTableFactoryService")
-	protected ICFBamTableFactory factoryTable;
+	protected CFBamBuffTableFactoryService tableFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTableColFactoryService")
-	protected ICFBamTableColFactory factoryTableCol;
+	protected CFBamBuffTableColFactoryService tablecolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTableTweakFactoryService")
-	protected ICFBamTableTweakFactory factoryTableTweak;
+	protected CFBamBuffTableTweakFactoryService tabletweakFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTextColFactoryService")
-	protected ICFBamTextColFactory factoryTextCol;
+	protected CFBamBuffTextColFactoryService textcolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTextDefFactoryService")
-	protected ICFBamTextDefFactory factoryTextDef;
+	protected CFBamBuffTextDefFactoryService textdefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTextTypeFactoryService")
-	protected ICFBamTextTypeFactory factoryTextType;
+	protected CFBamBuffTextTypeFactoryService texttypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTimeColFactoryService")
-	protected ICFBamTimeColFactory factoryTimeCol;
+	protected CFBamBuffTimeColFactoryService timecolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTimeDefFactoryService")
-	protected ICFBamTimeDefFactory factoryTimeDef;
+	protected CFBamBuffTimeDefFactoryService timedefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTimeTypeFactoryService")
-	protected ICFBamTimeTypeFactory factoryTimeType;
+	protected CFBamBuffTimeTypeFactoryService timetypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTimestampColFactoryService")
-	protected ICFBamTimestampColFactory factoryTimestampCol;
+	protected CFBamBuffTimestampColFactoryService timestampcolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTimestampDefFactoryService")
-	protected ICFBamTimestampDefFactory factoryTimestampDef;
+	protected CFBamBuffTimestampDefFactoryService timestampdefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTimestampTypeFactoryService")
-	protected ICFBamTimestampTypeFactory factoryTimestampType;
+	protected CFBamBuffTimestampTypeFactoryService timestamptypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTokenColFactoryService")
-	protected ICFBamTokenColFactory factoryTokenCol;
+	protected CFBamBuffTokenColFactoryService tokencolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTokenDefFactoryService")
-	protected ICFBamTokenDefFactory factoryTokenDef;
+	protected CFBamBuffTokenDefFactoryService tokendefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTokenTypeFactoryService")
-	protected ICFBamTokenTypeFactory factoryTokenType;
+	protected CFBamBuffTokenTypeFactoryService tokentypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffTweakFactoryService")
-	protected ICFBamTweakFactory factoryTweak;
+	protected CFBamBuffTweakFactoryService tweakFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUInt16ColFactoryService")
-	protected ICFBamUInt16ColFactory factoryUInt16Col;
+	protected CFBamBuffUInt16ColFactoryService uint16colFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUInt16DefFactoryService")
-	protected ICFBamUInt16DefFactory factoryUInt16Def;
+	protected CFBamBuffUInt16DefFactoryService uint16defFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUInt16TypeFactoryService")
-	protected ICFBamUInt16TypeFactory factoryUInt16Type;
+	protected CFBamBuffUInt16TypeFactoryService uint16typeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUInt32ColFactoryService")
-	protected ICFBamUInt32ColFactory factoryUInt32Col;
+	protected CFBamBuffUInt32ColFactoryService uint32colFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUInt32DefFactoryService")
-	protected ICFBamUInt32DefFactory factoryUInt32Def;
+	protected CFBamBuffUInt32DefFactoryService uint32defFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUInt32TypeFactoryService")
-	protected ICFBamUInt32TypeFactory factoryUInt32Type;
+	protected CFBamBuffUInt32TypeFactoryService uint32typeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUInt64ColFactoryService")
-	protected ICFBamUInt64ColFactory factoryUInt64Col;
+	protected CFBamBuffUInt64ColFactoryService uint64colFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUInt64DefFactoryService")
-	protected ICFBamUInt64DefFactory factoryUInt64Def;
+	protected CFBamBuffUInt64DefFactoryService uint64defFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUInt64TypeFactoryService")
-	protected ICFBamUInt64TypeFactory factoryUInt64Type;
+	protected CFBamBuffUInt64TypeFactoryService uint64typeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUuid6ColFactoryService")
-	protected ICFBamUuid6ColFactory factoryUuid6Col;
+	protected CFBamBuffUuid6ColFactoryService uuid6colFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUuid6DefFactoryService")
-	protected ICFBamUuid6DefFactory factoryUuid6Def;
+	protected CFBamBuffUuid6DefFactoryService uuid6defFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUuid6GenFactoryService")
-	protected ICFBamUuid6GenFactory factoryUuid6Gen;
+	protected CFBamBuffUuid6GenFactoryService uuid6genFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUuid6TypeFactoryService")
-	protected ICFBamUuid6TypeFactory factoryUuid6Type;
+	protected CFBamBuffUuid6TypeFactoryService uuid6typeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUuidColFactoryService")
-	protected ICFBamUuidColFactory factoryUuidCol;
+	protected CFBamBuffUuidColFactoryService uuidcolFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUuidDefFactoryService")
-	protected ICFBamUuidDefFactory factoryUuidDef;
+	protected CFBamBuffUuidDefFactoryService uuiddefFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUuidGenFactoryService")
-	protected ICFBamUuidGenFactory factoryUuidGen;
+	protected CFBamBuffUuidGenFactoryService uuidgenFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffUuidTypeFactoryService")
-	protected ICFBamUuidTypeFactory factoryUuidType;
+	protected CFBamBuffUuidTypeFactoryService uuidtypeFactoryService;
 
 	@Autowired
 	@Qualifier("cfbam31BuffValueFactoryService")
-	protected ICFBamValueFactory factoryValue;
+	protected CFBamBuffValueFactoryService valueFactoryService;
 
 
 	public CFBamBuffFactoryService() { }
 
 	@Override
 	public ICFBamAtomFactory getFactoryAtom() {
-		return( factoryAtom );
+		return(atomFactoryService);
+	}
+
+	public CFBamBuffAtomFactoryService getAtomFactoryService() {
+		return(atomFactoryService);
 	}
 
 	@Override
 	public ICFBamBlobColFactory getFactoryBlobCol() {
-		return( factoryBlobCol );
+		return(blobcolFactoryService);
+	}
+
+	public CFBamBuffBlobColFactoryService getBlobColFactoryService() {
+		return(blobcolFactoryService);
 	}
 
 	@Override
 	public ICFBamBlobDefFactory getFactoryBlobDef() {
-		return( factoryBlobDef );
+		return(blobdefFactoryService);
+	}
+
+	public CFBamBuffBlobDefFactoryService getBlobDefFactoryService() {
+		return(blobdefFactoryService);
 	}
 
 	@Override
 	public ICFBamBlobTypeFactory getFactoryBlobType() {
-		return( factoryBlobType );
+		return(blobtypeFactoryService);
+	}
+
+	public CFBamBuffBlobTypeFactoryService getBlobTypeFactoryService() {
+		return(blobtypeFactoryService);
 	}
 
 	@Override
 	public ICFBamBoolColFactory getFactoryBoolCol() {
-		return( factoryBoolCol );
+		return(boolcolFactoryService);
+	}
+
+	public CFBamBuffBoolColFactoryService getBoolColFactoryService() {
+		return(boolcolFactoryService);
 	}
 
 	@Override
 	public ICFBamBoolDefFactory getFactoryBoolDef() {
-		return( factoryBoolDef );
+		return(booldefFactoryService);
+	}
+
+	public CFBamBuffBoolDefFactoryService getBoolDefFactoryService() {
+		return(booldefFactoryService);
 	}
 
 	@Override
 	public ICFBamBoolTypeFactory getFactoryBoolType() {
-		return( factoryBoolType );
+		return(booltypeFactoryService);
+	}
+
+	public CFBamBuffBoolTypeFactoryService getBoolTypeFactoryService() {
+		return(booltypeFactoryService);
 	}
 
 	@Override
 	public ICFBamChainFactory getFactoryChain() {
-		return( factoryChain );
+		return(chainFactoryService);
+	}
+
+	public CFBamBuffChainFactoryService getChainFactoryService() {
+		return(chainFactoryService);
 	}
 
 	@Override
 	public ICFBamClearDepFactory getFactoryClearDep() {
-		return( factoryClearDep );
+		return(cleardepFactoryService);
+	}
+
+	public CFBamBuffClearDepFactoryService getClearDepFactoryService() {
+		return(cleardepFactoryService);
 	}
 
 	@Override
 	public ICFBamClearSubDep1Factory getFactoryClearSubDep1() {
-		return( factoryClearSubDep1 );
+		return(clearsubdep1FactoryService);
+	}
+
+	public CFBamBuffClearSubDep1FactoryService getClearSubDep1FactoryService() {
+		return(clearsubdep1FactoryService);
 	}
 
 	@Override
 	public ICFBamClearSubDep2Factory getFactoryClearSubDep2() {
-		return( factoryClearSubDep2 );
+		return(clearsubdep2FactoryService);
+	}
+
+	public CFBamBuffClearSubDep2FactoryService getClearSubDep2FactoryService() {
+		return(clearsubdep2FactoryService);
 	}
 
 	@Override
 	public ICFBamClearSubDep3Factory getFactoryClearSubDep3() {
-		return( factoryClearSubDep3 );
+		return(clearsubdep3FactoryService);
+	}
+
+	public CFBamBuffClearSubDep3FactoryService getClearSubDep3FactoryService() {
+		return(clearsubdep3FactoryService);
 	}
 
 	@Override
 	public ICFBamClearTopDepFactory getFactoryClearTopDep() {
-		return( factoryClearTopDep );
+		return(cleartopdepFactoryService);
+	}
+
+	public CFBamBuffClearTopDepFactoryService getClearTopDepFactoryService() {
+		return(cleartopdepFactoryService);
 	}
 
 	@Override
 	public ICFBamDateColFactory getFactoryDateCol() {
-		return( factoryDateCol );
+		return(datecolFactoryService);
+	}
+
+	public CFBamBuffDateColFactoryService getDateColFactoryService() {
+		return(datecolFactoryService);
 	}
 
 	@Override
 	public ICFBamDateDefFactory getFactoryDateDef() {
-		return( factoryDateDef );
+		return(datedefFactoryService);
+	}
+
+	public CFBamBuffDateDefFactoryService getDateDefFactoryService() {
+		return(datedefFactoryService);
 	}
 
 	@Override
 	public ICFBamDateTypeFactory getFactoryDateType() {
-		return( factoryDateType );
+		return(datetypeFactoryService);
+	}
+
+	public CFBamBuffDateTypeFactoryService getDateTypeFactoryService() {
+		return(datetypeFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash128ColFactory getFactoryDbKeyHash128Col() {
-		return( factoryDbKeyHash128Col );
+		return(dbkeyhash128colFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash128ColFactoryService getDbKeyHash128ColFactoryService() {
+		return(dbkeyhash128colFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash128DefFactory getFactoryDbKeyHash128Def() {
-		return( factoryDbKeyHash128Def );
+		return(dbkeyhash128defFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash128DefFactoryService getDbKeyHash128DefFactoryService() {
+		return(dbkeyhash128defFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash128GenFactory getFactoryDbKeyHash128Gen() {
-		return( factoryDbKeyHash128Gen );
+		return(dbkeyhash128genFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash128GenFactoryService getDbKeyHash128GenFactoryService() {
+		return(dbkeyhash128genFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash128TypeFactory getFactoryDbKeyHash128Type() {
-		return( factoryDbKeyHash128Type );
+		return(dbkeyhash128typeFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash128TypeFactoryService getDbKeyHash128TypeFactoryService() {
+		return(dbkeyhash128typeFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash160ColFactory getFactoryDbKeyHash160Col() {
-		return( factoryDbKeyHash160Col );
+		return(dbkeyhash160colFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash160ColFactoryService getDbKeyHash160ColFactoryService() {
+		return(dbkeyhash160colFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash160DefFactory getFactoryDbKeyHash160Def() {
-		return( factoryDbKeyHash160Def );
+		return(dbkeyhash160defFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash160DefFactoryService getDbKeyHash160DefFactoryService() {
+		return(dbkeyhash160defFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash160GenFactory getFactoryDbKeyHash160Gen() {
-		return( factoryDbKeyHash160Gen );
+		return(dbkeyhash160genFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash160GenFactoryService getDbKeyHash160GenFactoryService() {
+		return(dbkeyhash160genFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash160TypeFactory getFactoryDbKeyHash160Type() {
-		return( factoryDbKeyHash160Type );
+		return(dbkeyhash160typeFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash160TypeFactoryService getDbKeyHash160TypeFactoryService() {
+		return(dbkeyhash160typeFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash224ColFactory getFactoryDbKeyHash224Col() {
-		return( factoryDbKeyHash224Col );
+		return(dbkeyhash224colFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash224ColFactoryService getDbKeyHash224ColFactoryService() {
+		return(dbkeyhash224colFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash224DefFactory getFactoryDbKeyHash224Def() {
-		return( factoryDbKeyHash224Def );
+		return(dbkeyhash224defFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash224DefFactoryService getDbKeyHash224DefFactoryService() {
+		return(dbkeyhash224defFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash224GenFactory getFactoryDbKeyHash224Gen() {
-		return( factoryDbKeyHash224Gen );
+		return(dbkeyhash224genFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash224GenFactoryService getDbKeyHash224GenFactoryService() {
+		return(dbkeyhash224genFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash224TypeFactory getFactoryDbKeyHash224Type() {
-		return( factoryDbKeyHash224Type );
+		return(dbkeyhash224typeFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash224TypeFactoryService getDbKeyHash224TypeFactoryService() {
+		return(dbkeyhash224typeFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash256ColFactory getFactoryDbKeyHash256Col() {
-		return( factoryDbKeyHash256Col );
+		return(dbkeyhash256colFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash256ColFactoryService getDbKeyHash256ColFactoryService() {
+		return(dbkeyhash256colFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash256DefFactory getFactoryDbKeyHash256Def() {
-		return( factoryDbKeyHash256Def );
+		return(dbkeyhash256defFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash256DefFactoryService getDbKeyHash256DefFactoryService() {
+		return(dbkeyhash256defFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash256GenFactory getFactoryDbKeyHash256Gen() {
-		return( factoryDbKeyHash256Gen );
+		return(dbkeyhash256genFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash256GenFactoryService getDbKeyHash256GenFactoryService() {
+		return(dbkeyhash256genFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash256TypeFactory getFactoryDbKeyHash256Type() {
-		return( factoryDbKeyHash256Type );
+		return(dbkeyhash256typeFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash256TypeFactoryService getDbKeyHash256TypeFactoryService() {
+		return(dbkeyhash256typeFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash384ColFactory getFactoryDbKeyHash384Col() {
-		return( factoryDbKeyHash384Col );
+		return(dbkeyhash384colFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash384ColFactoryService getDbKeyHash384ColFactoryService() {
+		return(dbkeyhash384colFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash384DefFactory getFactoryDbKeyHash384Def() {
-		return( factoryDbKeyHash384Def );
+		return(dbkeyhash384defFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash384DefFactoryService getDbKeyHash384DefFactoryService() {
+		return(dbkeyhash384defFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash384GenFactory getFactoryDbKeyHash384Gen() {
-		return( factoryDbKeyHash384Gen );
+		return(dbkeyhash384genFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash384GenFactoryService getDbKeyHash384GenFactoryService() {
+		return(dbkeyhash384genFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash384TypeFactory getFactoryDbKeyHash384Type() {
-		return( factoryDbKeyHash384Type );
+		return(dbkeyhash384typeFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash384TypeFactoryService getDbKeyHash384TypeFactoryService() {
+		return(dbkeyhash384typeFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash512ColFactory getFactoryDbKeyHash512Col() {
-		return( factoryDbKeyHash512Col );
+		return(dbkeyhash512colFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash512ColFactoryService getDbKeyHash512ColFactoryService() {
+		return(dbkeyhash512colFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash512DefFactory getFactoryDbKeyHash512Def() {
-		return( factoryDbKeyHash512Def );
+		return(dbkeyhash512defFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash512DefFactoryService getDbKeyHash512DefFactoryService() {
+		return(dbkeyhash512defFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash512GenFactory getFactoryDbKeyHash512Gen() {
-		return( factoryDbKeyHash512Gen );
+		return(dbkeyhash512genFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash512GenFactoryService getDbKeyHash512GenFactoryService() {
+		return(dbkeyhash512genFactoryService);
 	}
 
 	@Override
 	public ICFBamDbKeyHash512TypeFactory getFactoryDbKeyHash512Type() {
-		return( factoryDbKeyHash512Type );
+		return(dbkeyhash512typeFactoryService);
+	}
+
+	public CFBamBuffDbKeyHash512TypeFactoryService getDbKeyHash512TypeFactoryService() {
+		return(dbkeyhash512typeFactoryService);
 	}
 
 	@Override
 	public ICFBamDelDepFactory getFactoryDelDep() {
-		return( factoryDelDep );
+		return(deldepFactoryService);
+	}
+
+	public CFBamBuffDelDepFactoryService getDelDepFactoryService() {
+		return(deldepFactoryService);
 	}
 
 	@Override
 	public ICFBamDelSubDep1Factory getFactoryDelSubDep1() {
-		return( factoryDelSubDep1 );
+		return(delsubdep1FactoryService);
+	}
+
+	public CFBamBuffDelSubDep1FactoryService getDelSubDep1FactoryService() {
+		return(delsubdep1FactoryService);
 	}
 
 	@Override
 	public ICFBamDelSubDep2Factory getFactoryDelSubDep2() {
-		return( factoryDelSubDep2 );
+		return(delsubdep2FactoryService);
+	}
+
+	public CFBamBuffDelSubDep2FactoryService getDelSubDep2FactoryService() {
+		return(delsubdep2FactoryService);
 	}
 
 	@Override
 	public ICFBamDelSubDep3Factory getFactoryDelSubDep3() {
-		return( factoryDelSubDep3 );
+		return(delsubdep3FactoryService);
+	}
+
+	public CFBamBuffDelSubDep3FactoryService getDelSubDep3FactoryService() {
+		return(delsubdep3FactoryService);
 	}
 
 	@Override
 	public ICFBamDelTopDepFactory getFactoryDelTopDep() {
-		return( factoryDelTopDep );
+		return(deltopdepFactoryService);
+	}
+
+	public CFBamBuffDelTopDepFactoryService getDelTopDepFactoryService() {
+		return(deltopdepFactoryService);
 	}
 
 	@Override
 	public ICFBamDoubleColFactory getFactoryDoubleCol() {
-		return( factoryDoubleCol );
+		return(doublecolFactoryService);
+	}
+
+	public CFBamBuffDoubleColFactoryService getDoubleColFactoryService() {
+		return(doublecolFactoryService);
 	}
 
 	@Override
 	public ICFBamDoubleDefFactory getFactoryDoubleDef() {
-		return( factoryDoubleDef );
+		return(doubledefFactoryService);
+	}
+
+	public CFBamBuffDoubleDefFactoryService getDoubleDefFactoryService() {
+		return(doubledefFactoryService);
 	}
 
 	@Override
 	public ICFBamDoubleTypeFactory getFactoryDoubleType() {
-		return( factoryDoubleType );
+		return(doubletypeFactoryService);
+	}
+
+	public CFBamBuffDoubleTypeFactoryService getDoubleTypeFactoryService() {
+		return(doubletypeFactoryService);
 	}
 
 	@Override
 	public ICFBamEnumDefFactory getFactoryEnumDef() {
-		return( factoryEnumDef );
+		return(enumdefFactoryService);
+	}
+
+	public CFBamBuffEnumDefFactoryService getEnumDefFactoryService() {
+		return(enumdefFactoryService);
 	}
 
 	@Override
 	public ICFBamEnumTagFactory getFactoryEnumTag() {
-		return( factoryEnumTag );
+		return(enumtagFactoryService);
+	}
+
+	public CFBamBuffEnumTagFactoryService getEnumTagFactoryService() {
+		return(enumtagFactoryService);
 	}
 
 	@Override
 	public ICFBamEnumTypeFactory getFactoryEnumType() {
-		return( factoryEnumType );
+		return(enumtypeFactoryService);
+	}
+
+	public CFBamBuffEnumTypeFactoryService getEnumTypeFactoryService() {
+		return(enumtypeFactoryService);
 	}
 
 	@Override
 	public ICFBamFloatColFactory getFactoryFloatCol() {
-		return( factoryFloatCol );
+		return(floatcolFactoryService);
+	}
+
+	public CFBamBuffFloatColFactoryService getFloatColFactoryService() {
+		return(floatcolFactoryService);
 	}
 
 	@Override
 	public ICFBamFloatDefFactory getFactoryFloatDef() {
-		return( factoryFloatDef );
+		return(floatdefFactoryService);
+	}
+
+	public CFBamBuffFloatDefFactoryService getFloatDefFactoryService() {
+		return(floatdefFactoryService);
 	}
 
 	@Override
 	public ICFBamFloatTypeFactory getFactoryFloatType() {
-		return( factoryFloatType );
+		return(floattypeFactoryService);
+	}
+
+	public CFBamBuffFloatTypeFactoryService getFloatTypeFactoryService() {
+		return(floattypeFactoryService);
 	}
 
 	@Override
 	public ICFBamId16GenFactory getFactoryId16Gen() {
-		return( factoryId16Gen );
+		return(id16genFactoryService);
+	}
+
+	public CFBamBuffId16GenFactoryService getId16GenFactoryService() {
+		return(id16genFactoryService);
 	}
 
 	@Override
 	public ICFBamId32GenFactory getFactoryId32Gen() {
-		return( factoryId32Gen );
+		return(id32genFactoryService);
+	}
+
+	public CFBamBuffId32GenFactoryService getId32GenFactoryService() {
+		return(id32genFactoryService);
 	}
 
 	@Override
 	public ICFBamId64GenFactory getFactoryId64Gen() {
-		return( factoryId64Gen );
+		return(id64genFactoryService);
+	}
+
+	public CFBamBuffId64GenFactoryService getId64GenFactoryService() {
+		return(id64genFactoryService);
 	}
 
 	@Override
 	public ICFBamIndexFactory getFactoryIndex() {
-		return( factoryIndex );
+		return(indexFactoryService);
+	}
+
+	public CFBamBuffIndexFactoryService getIndexFactoryService() {
+		return(indexFactoryService);
 	}
 
 	@Override
 	public ICFBamIndexColFactory getFactoryIndexCol() {
-		return( factoryIndexCol );
+		return(indexcolFactoryService);
+	}
+
+	public CFBamBuffIndexColFactoryService getIndexColFactoryService() {
+		return(indexcolFactoryService);
 	}
 
 	@Override
 	public ICFBamIndexTweakFactory getFactoryIndexTweak() {
-		return( factoryIndexTweak );
+		return(indextweakFactoryService);
+	}
+
+	public CFBamBuffIndexTweakFactoryService getIndexTweakFactoryService() {
+		return(indextweakFactoryService);
 	}
 
 	@Override
 	public ICFBamInt16ColFactory getFactoryInt16Col() {
-		return( factoryInt16Col );
+		return(int16colFactoryService);
+	}
+
+	public CFBamBuffInt16ColFactoryService getInt16ColFactoryService() {
+		return(int16colFactoryService);
 	}
 
 	@Override
 	public ICFBamInt16DefFactory getFactoryInt16Def() {
-		return( factoryInt16Def );
+		return(int16defFactoryService);
+	}
+
+	public CFBamBuffInt16DefFactoryService getInt16DefFactoryService() {
+		return(int16defFactoryService);
 	}
 
 	@Override
 	public ICFBamInt16TypeFactory getFactoryInt16Type() {
-		return( factoryInt16Type );
+		return(int16typeFactoryService);
+	}
+
+	public CFBamBuffInt16TypeFactoryService getInt16TypeFactoryService() {
+		return(int16typeFactoryService);
 	}
 
 	@Override
 	public ICFBamInt32ColFactory getFactoryInt32Col() {
-		return( factoryInt32Col );
+		return(int32colFactoryService);
+	}
+
+	public CFBamBuffInt32ColFactoryService getInt32ColFactoryService() {
+		return(int32colFactoryService);
 	}
 
 	@Override
 	public ICFBamInt32DefFactory getFactoryInt32Def() {
-		return( factoryInt32Def );
+		return(int32defFactoryService);
+	}
+
+	public CFBamBuffInt32DefFactoryService getInt32DefFactoryService() {
+		return(int32defFactoryService);
 	}
 
 	@Override
 	public ICFBamInt32TypeFactory getFactoryInt32Type() {
-		return( factoryInt32Type );
+		return(int32typeFactoryService);
+	}
+
+	public CFBamBuffInt32TypeFactoryService getInt32TypeFactoryService() {
+		return(int32typeFactoryService);
 	}
 
 	@Override
 	public ICFBamInt64ColFactory getFactoryInt64Col() {
-		return( factoryInt64Col );
+		return(int64colFactoryService);
+	}
+
+	public CFBamBuffInt64ColFactoryService getInt64ColFactoryService() {
+		return(int64colFactoryService);
 	}
 
 	@Override
 	public ICFBamInt64DefFactory getFactoryInt64Def() {
-		return( factoryInt64Def );
+		return(int64defFactoryService);
+	}
+
+	public CFBamBuffInt64DefFactoryService getInt64DefFactoryService() {
+		return(int64defFactoryService);
 	}
 
 	@Override
 	public ICFBamInt64TypeFactory getFactoryInt64Type() {
-		return( factoryInt64Type );
+		return(int64typeFactoryService);
+	}
+
+	public CFBamBuffInt64TypeFactoryService getInt64TypeFactoryService() {
+		return(int64typeFactoryService);
 	}
 
 	@Override
 	public ICFBamNmTokenColFactory getFactoryNmTokenCol() {
-		return( factoryNmTokenCol );
+		return(nmtokencolFactoryService);
+	}
+
+	public CFBamBuffNmTokenColFactoryService getNmTokenColFactoryService() {
+		return(nmtokencolFactoryService);
 	}
 
 	@Override
 	public ICFBamNmTokenDefFactory getFactoryNmTokenDef() {
-		return( factoryNmTokenDef );
+		return(nmtokendefFactoryService);
+	}
+
+	public CFBamBuffNmTokenDefFactoryService getNmTokenDefFactoryService() {
+		return(nmtokendefFactoryService);
 	}
 
 	@Override
 	public ICFBamNmTokenTypeFactory getFactoryNmTokenType() {
-		return( factoryNmTokenType );
+		return(nmtokentypeFactoryService);
+	}
+
+	public CFBamBuffNmTokenTypeFactoryService getNmTokenTypeFactoryService() {
+		return(nmtokentypeFactoryService);
 	}
 
 	@Override
 	public ICFBamNmTokensColFactory getFactoryNmTokensCol() {
-		return( factoryNmTokensCol );
+		return(nmtokenscolFactoryService);
+	}
+
+	public CFBamBuffNmTokensColFactoryService getNmTokensColFactoryService() {
+		return(nmtokenscolFactoryService);
 	}
 
 	@Override
 	public ICFBamNmTokensDefFactory getFactoryNmTokensDef() {
-		return( factoryNmTokensDef );
+		return(nmtokensdefFactoryService);
+	}
+
+	public CFBamBuffNmTokensDefFactoryService getNmTokensDefFactoryService() {
+		return(nmtokensdefFactoryService);
 	}
 
 	@Override
 	public ICFBamNmTokensTypeFactory getFactoryNmTokensType() {
-		return( factoryNmTokensType );
+		return(nmtokenstypeFactoryService);
+	}
+
+	public CFBamBuffNmTokensTypeFactoryService getNmTokensTypeFactoryService() {
+		return(nmtokenstypeFactoryService);
 	}
 
 	@Override
 	public ICFBamNumberColFactory getFactoryNumberCol() {
-		return( factoryNumberCol );
+		return(numbercolFactoryService);
+	}
+
+	public CFBamBuffNumberColFactoryService getNumberColFactoryService() {
+		return(numbercolFactoryService);
 	}
 
 	@Override
 	public ICFBamNumberDefFactory getFactoryNumberDef() {
-		return( factoryNumberDef );
+		return(numberdefFactoryService);
+	}
+
+	public CFBamBuffNumberDefFactoryService getNumberDefFactoryService() {
+		return(numberdefFactoryService);
 	}
 
 	@Override
 	public ICFBamNumberTypeFactory getFactoryNumberType() {
-		return( factoryNumberType );
+		return(numbertypeFactoryService);
+	}
+
+	public CFBamBuffNumberTypeFactoryService getNumberTypeFactoryService() {
+		return(numbertypeFactoryService);
 	}
 
 	@Override
 	public ICFBamParamFactory getFactoryParam() {
-		return( factoryParam );
+		return(paramFactoryService);
+	}
+
+	public CFBamBuffParamFactoryService getParamFactoryService() {
+		return(paramFactoryService);
 	}
 
 	@Override
 	public ICFBamPopDepFactory getFactoryPopDep() {
-		return( factoryPopDep );
+		return(popdepFactoryService);
+	}
+
+	public CFBamBuffPopDepFactoryService getPopDepFactoryService() {
+		return(popdepFactoryService);
 	}
 
 	@Override
 	public ICFBamPopSubDep1Factory getFactoryPopSubDep1() {
-		return( factoryPopSubDep1 );
+		return(popsubdep1FactoryService);
+	}
+
+	public CFBamBuffPopSubDep1FactoryService getPopSubDep1FactoryService() {
+		return(popsubdep1FactoryService);
 	}
 
 	@Override
 	public ICFBamPopSubDep2Factory getFactoryPopSubDep2() {
-		return( factoryPopSubDep2 );
+		return(popsubdep2FactoryService);
+	}
+
+	public CFBamBuffPopSubDep2FactoryService getPopSubDep2FactoryService() {
+		return(popsubdep2FactoryService);
 	}
 
 	@Override
 	public ICFBamPopSubDep3Factory getFactoryPopSubDep3() {
-		return( factoryPopSubDep3 );
+		return(popsubdep3FactoryService);
+	}
+
+	public CFBamBuffPopSubDep3FactoryService getPopSubDep3FactoryService() {
+		return(popsubdep3FactoryService);
 	}
 
 	@Override
 	public ICFBamPopTopDepFactory getFactoryPopTopDep() {
-		return( factoryPopTopDep );
+		return(poptopdepFactoryService);
+	}
+
+	public CFBamBuffPopTopDepFactoryService getPopTopDepFactoryService() {
+		return(poptopdepFactoryService);
 	}
 
 	@Override
 	public ICFBamRelationFactory getFactoryRelation() {
-		return( factoryRelation );
+		return(relationFactoryService);
+	}
+
+	public CFBamBuffRelationFactoryService getRelationFactoryService() {
+		return(relationFactoryService);
 	}
 
 	@Override
 	public ICFBamRelationColFactory getFactoryRelationCol() {
-		return( factoryRelationCol );
+		return(relationcolFactoryService);
+	}
+
+	public CFBamBuffRelationColFactoryService getRelationColFactoryService() {
+		return(relationcolFactoryService);
 	}
 
 	@Override
 	public ICFBamRoleDefFactory getFactoryRoleDef() {
-		return( factoryRoleDef );
+		return(roledefFactoryService);
+	}
+
+	public CFBamBuffRoleDefFactoryService getRoleDefFactoryService() {
+		return(roledefFactoryService);
 	}
 
 	@Override
 	public ICFBamSchemaDefFactory getFactorySchemaDef() {
-		return( factorySchemaDef );
+		return(schemadefFactoryService);
+	}
+
+	public CFBamBuffSchemaDefFactoryService getSchemaDefFactoryService() {
+		return(schemadefFactoryService);
 	}
 
 	@Override
 	public ICFBamSchemaRefFactory getFactorySchemaRef() {
-		return( factorySchemaRef );
+		return(schemarefFactoryService);
+	}
+
+	public CFBamBuffSchemaRefFactoryService getSchemaRefFactoryService() {
+		return(schemarefFactoryService);
 	}
 
 	@Override
 	public ICFBamSchemaRoleFactory getFactorySchemaRole() {
-		return( factorySchemaRole );
+		return(schemaroleFactoryService);
+	}
+
+	public CFBamBuffSchemaRoleFactoryService getSchemaRoleFactoryService() {
+		return(schemaroleFactoryService);
 	}
 
 	@Override
 	public ICFBamSchemaTweakFactory getFactorySchemaTweak() {
-		return( factorySchemaTweak );
+		return(schematweakFactoryService);
+	}
+
+	public CFBamBuffSchemaTweakFactoryService getSchemaTweakFactoryService() {
+		return(schematweakFactoryService);
 	}
 
 	@Override
 	public ICFBamScopeFactory getFactoryScope() {
-		return( factoryScope );
+		return(scopeFactoryService);
+	}
+
+	public CFBamBuffScopeFactoryService getScopeFactoryService() {
+		return(scopeFactoryService);
 	}
 
 	@Override
 	public ICFBamServerListFuncFactory getFactoryServerListFunc() {
-		return( factoryServerListFunc );
+		return(serverlistfuncFactoryService);
+	}
+
+	public CFBamBuffServerListFuncFactoryService getServerListFuncFactoryService() {
+		return(serverlistfuncFactoryService);
 	}
 
 	@Override
 	public ICFBamServerMethodFactory getFactoryServerMethod() {
-		return( factoryServerMethod );
+		return(servermethodFactoryService);
+	}
+
+	public CFBamBuffServerMethodFactoryService getServerMethodFactoryService() {
+		return(servermethodFactoryService);
 	}
 
 	@Override
 	public ICFBamServerObjFuncFactory getFactoryServerObjFunc() {
-		return( factoryServerObjFunc );
+		return(serverobjfuncFactoryService);
+	}
+
+	public CFBamBuffServerObjFuncFactoryService getServerObjFuncFactoryService() {
+		return(serverobjfuncFactoryService);
 	}
 
 	@Override
 	public ICFBamServerProcFactory getFactoryServerProc() {
-		return( factoryServerProc );
+		return(serverprocFactoryService);
+	}
+
+	public CFBamBuffServerProcFactoryService getServerProcFactoryService() {
+		return(serverprocFactoryService);
 	}
 
 	@Override
 	public ICFBamStringColFactory getFactoryStringCol() {
-		return( factoryStringCol );
+		return(stringcolFactoryService);
+	}
+
+	public CFBamBuffStringColFactoryService getStringColFactoryService() {
+		return(stringcolFactoryService);
 	}
 
 	@Override
 	public ICFBamStringDefFactory getFactoryStringDef() {
-		return( factoryStringDef );
+		return(stringdefFactoryService);
+	}
+
+	public CFBamBuffStringDefFactoryService getStringDefFactoryService() {
+		return(stringdefFactoryService);
 	}
 
 	@Override
 	public ICFBamStringTypeFactory getFactoryStringType() {
-		return( factoryStringType );
+		return(stringtypeFactoryService);
+	}
+
+	public CFBamBuffStringTypeFactoryService getStringTypeFactoryService() {
+		return(stringtypeFactoryService);
 	}
 
 	@Override
 	public ICFBamTZDateColFactory getFactoryTZDateCol() {
-		return( factoryTZDateCol );
+		return(tzdatecolFactoryService);
+	}
+
+	public CFBamBuffTZDateColFactoryService getTZDateColFactoryService() {
+		return(tzdatecolFactoryService);
 	}
 
 	@Override
 	public ICFBamTZDateDefFactory getFactoryTZDateDef() {
-		return( factoryTZDateDef );
+		return(tzdatedefFactoryService);
+	}
+
+	public CFBamBuffTZDateDefFactoryService getTZDateDefFactoryService() {
+		return(tzdatedefFactoryService);
 	}
 
 	@Override
 	public ICFBamTZDateTypeFactory getFactoryTZDateType() {
-		return( factoryTZDateType );
+		return(tzdatetypeFactoryService);
+	}
+
+	public CFBamBuffTZDateTypeFactoryService getTZDateTypeFactoryService() {
+		return(tzdatetypeFactoryService);
 	}
 
 	@Override
 	public ICFBamTZTimeColFactory getFactoryTZTimeCol() {
-		return( factoryTZTimeCol );
+		return(tztimecolFactoryService);
+	}
+
+	public CFBamBuffTZTimeColFactoryService getTZTimeColFactoryService() {
+		return(tztimecolFactoryService);
 	}
 
 	@Override
 	public ICFBamTZTimeDefFactory getFactoryTZTimeDef() {
-		return( factoryTZTimeDef );
+		return(tztimedefFactoryService);
+	}
+
+	public CFBamBuffTZTimeDefFactoryService getTZTimeDefFactoryService() {
+		return(tztimedefFactoryService);
 	}
 
 	@Override
 	public ICFBamTZTimeTypeFactory getFactoryTZTimeType() {
-		return( factoryTZTimeType );
+		return(tztimetypeFactoryService);
+	}
+
+	public CFBamBuffTZTimeTypeFactoryService getTZTimeTypeFactoryService() {
+		return(tztimetypeFactoryService);
 	}
 
 	@Override
 	public ICFBamTZTimestampColFactory getFactoryTZTimestampCol() {
-		return( factoryTZTimestampCol );
+		return(tztimestampcolFactoryService);
+	}
+
+	public CFBamBuffTZTimestampColFactoryService getTZTimestampColFactoryService() {
+		return(tztimestampcolFactoryService);
 	}
 
 	@Override
 	public ICFBamTZTimestampDefFactory getFactoryTZTimestampDef() {
-		return( factoryTZTimestampDef );
+		return(tztimestampdefFactoryService);
+	}
+
+	public CFBamBuffTZTimestampDefFactoryService getTZTimestampDefFactoryService() {
+		return(tztimestampdefFactoryService);
 	}
 
 	@Override
 	public ICFBamTZTimestampTypeFactory getFactoryTZTimestampType() {
-		return( factoryTZTimestampType );
+		return(tztimestamptypeFactoryService);
+	}
+
+	public CFBamBuffTZTimestampTypeFactoryService getTZTimestampTypeFactoryService() {
+		return(tztimestamptypeFactoryService);
 	}
 
 	@Override
 	public ICFBamTableFactory getFactoryTable() {
-		return( factoryTable );
+		return(tableFactoryService);
+	}
+
+	public CFBamBuffTableFactoryService getTableFactoryService() {
+		return(tableFactoryService);
 	}
 
 	@Override
 	public ICFBamTableColFactory getFactoryTableCol() {
-		return( factoryTableCol );
+		return(tablecolFactoryService);
+	}
+
+	public CFBamBuffTableColFactoryService getTableColFactoryService() {
+		return(tablecolFactoryService);
 	}
 
 	@Override
 	public ICFBamTableTweakFactory getFactoryTableTweak() {
-		return( factoryTableTweak );
+		return(tabletweakFactoryService);
+	}
+
+	public CFBamBuffTableTweakFactoryService getTableTweakFactoryService() {
+		return(tabletweakFactoryService);
 	}
 
 	@Override
 	public ICFBamTextColFactory getFactoryTextCol() {
-		return( factoryTextCol );
+		return(textcolFactoryService);
+	}
+
+	public CFBamBuffTextColFactoryService getTextColFactoryService() {
+		return(textcolFactoryService);
 	}
 
 	@Override
 	public ICFBamTextDefFactory getFactoryTextDef() {
-		return( factoryTextDef );
+		return(textdefFactoryService);
+	}
+
+	public CFBamBuffTextDefFactoryService getTextDefFactoryService() {
+		return(textdefFactoryService);
 	}
 
 	@Override
 	public ICFBamTextTypeFactory getFactoryTextType() {
-		return( factoryTextType );
+		return(texttypeFactoryService);
+	}
+
+	public CFBamBuffTextTypeFactoryService getTextTypeFactoryService() {
+		return(texttypeFactoryService);
 	}
 
 	@Override
 	public ICFBamTimeColFactory getFactoryTimeCol() {
-		return( factoryTimeCol );
+		return(timecolFactoryService);
+	}
+
+	public CFBamBuffTimeColFactoryService getTimeColFactoryService() {
+		return(timecolFactoryService);
 	}
 
 	@Override
 	public ICFBamTimeDefFactory getFactoryTimeDef() {
-		return( factoryTimeDef );
+		return(timedefFactoryService);
+	}
+
+	public CFBamBuffTimeDefFactoryService getTimeDefFactoryService() {
+		return(timedefFactoryService);
 	}
 
 	@Override
 	public ICFBamTimeTypeFactory getFactoryTimeType() {
-		return( factoryTimeType );
+		return(timetypeFactoryService);
+	}
+
+	public CFBamBuffTimeTypeFactoryService getTimeTypeFactoryService() {
+		return(timetypeFactoryService);
 	}
 
 	@Override
 	public ICFBamTimestampColFactory getFactoryTimestampCol() {
-		return( factoryTimestampCol );
+		return(timestampcolFactoryService);
+	}
+
+	public CFBamBuffTimestampColFactoryService getTimestampColFactoryService() {
+		return(timestampcolFactoryService);
 	}
 
 	@Override
 	public ICFBamTimestampDefFactory getFactoryTimestampDef() {
-		return( factoryTimestampDef );
+		return(timestampdefFactoryService);
+	}
+
+	public CFBamBuffTimestampDefFactoryService getTimestampDefFactoryService() {
+		return(timestampdefFactoryService);
 	}
 
 	@Override
 	public ICFBamTimestampTypeFactory getFactoryTimestampType() {
-		return( factoryTimestampType );
+		return(timestamptypeFactoryService);
+	}
+
+	public CFBamBuffTimestampTypeFactoryService getTimestampTypeFactoryService() {
+		return(timestamptypeFactoryService);
 	}
 
 	@Override
 	public ICFBamTokenColFactory getFactoryTokenCol() {
-		return( factoryTokenCol );
+		return(tokencolFactoryService);
+	}
+
+	public CFBamBuffTokenColFactoryService getTokenColFactoryService() {
+		return(tokencolFactoryService);
 	}
 
 	@Override
 	public ICFBamTokenDefFactory getFactoryTokenDef() {
-		return( factoryTokenDef );
+		return(tokendefFactoryService);
+	}
+
+	public CFBamBuffTokenDefFactoryService getTokenDefFactoryService() {
+		return(tokendefFactoryService);
 	}
 
 	@Override
 	public ICFBamTokenTypeFactory getFactoryTokenType() {
-		return( factoryTokenType );
+		return(tokentypeFactoryService);
+	}
+
+	public CFBamBuffTokenTypeFactoryService getTokenTypeFactoryService() {
+		return(tokentypeFactoryService);
 	}
 
 	@Override
 	public ICFBamTweakFactory getFactoryTweak() {
-		return( factoryTweak );
+		return(tweakFactoryService);
+	}
+
+	public CFBamBuffTweakFactoryService getTweakFactoryService() {
+		return(tweakFactoryService);
 	}
 
 	@Override
 	public ICFBamUInt16ColFactory getFactoryUInt16Col() {
-		return( factoryUInt16Col );
+		return(uint16colFactoryService);
+	}
+
+	public CFBamBuffUInt16ColFactoryService getUInt16ColFactoryService() {
+		return(uint16colFactoryService);
 	}
 
 	@Override
 	public ICFBamUInt16DefFactory getFactoryUInt16Def() {
-		return( factoryUInt16Def );
+		return(uint16defFactoryService);
+	}
+
+	public CFBamBuffUInt16DefFactoryService getUInt16DefFactoryService() {
+		return(uint16defFactoryService);
 	}
 
 	@Override
 	public ICFBamUInt16TypeFactory getFactoryUInt16Type() {
-		return( factoryUInt16Type );
+		return(uint16typeFactoryService);
+	}
+
+	public CFBamBuffUInt16TypeFactoryService getUInt16TypeFactoryService() {
+		return(uint16typeFactoryService);
 	}
 
 	@Override
 	public ICFBamUInt32ColFactory getFactoryUInt32Col() {
-		return( factoryUInt32Col );
+		return(uint32colFactoryService);
+	}
+
+	public CFBamBuffUInt32ColFactoryService getUInt32ColFactoryService() {
+		return(uint32colFactoryService);
 	}
 
 	@Override
 	public ICFBamUInt32DefFactory getFactoryUInt32Def() {
-		return( factoryUInt32Def );
+		return(uint32defFactoryService);
+	}
+
+	public CFBamBuffUInt32DefFactoryService getUInt32DefFactoryService() {
+		return(uint32defFactoryService);
 	}
 
 	@Override
 	public ICFBamUInt32TypeFactory getFactoryUInt32Type() {
-		return( factoryUInt32Type );
+		return(uint32typeFactoryService);
+	}
+
+	public CFBamBuffUInt32TypeFactoryService getUInt32TypeFactoryService() {
+		return(uint32typeFactoryService);
 	}
 
 	@Override
 	public ICFBamUInt64ColFactory getFactoryUInt64Col() {
-		return( factoryUInt64Col );
+		return(uint64colFactoryService);
+	}
+
+	public CFBamBuffUInt64ColFactoryService getUInt64ColFactoryService() {
+		return(uint64colFactoryService);
 	}
 
 	@Override
 	public ICFBamUInt64DefFactory getFactoryUInt64Def() {
-		return( factoryUInt64Def );
+		return(uint64defFactoryService);
+	}
+
+	public CFBamBuffUInt64DefFactoryService getUInt64DefFactoryService() {
+		return(uint64defFactoryService);
 	}
 
 	@Override
 	public ICFBamUInt64TypeFactory getFactoryUInt64Type() {
-		return( factoryUInt64Type );
+		return(uint64typeFactoryService);
+	}
+
+	public CFBamBuffUInt64TypeFactoryService getUInt64TypeFactoryService() {
+		return(uint64typeFactoryService);
 	}
 
 	@Override
 	public ICFBamUuid6ColFactory getFactoryUuid6Col() {
-		return( factoryUuid6Col );
+		return(uuid6colFactoryService);
+	}
+
+	public CFBamBuffUuid6ColFactoryService getUuid6ColFactoryService() {
+		return(uuid6colFactoryService);
 	}
 
 	@Override
 	public ICFBamUuid6DefFactory getFactoryUuid6Def() {
-		return( factoryUuid6Def );
+		return(uuid6defFactoryService);
+	}
+
+	public CFBamBuffUuid6DefFactoryService getUuid6DefFactoryService() {
+		return(uuid6defFactoryService);
 	}
 
 	@Override
 	public ICFBamUuid6GenFactory getFactoryUuid6Gen() {
-		return( factoryUuid6Gen );
+		return(uuid6genFactoryService);
+	}
+
+	public CFBamBuffUuid6GenFactoryService getUuid6GenFactoryService() {
+		return(uuid6genFactoryService);
 	}
 
 	@Override
 	public ICFBamUuid6TypeFactory getFactoryUuid6Type() {
-		return( factoryUuid6Type );
+		return(uuid6typeFactoryService);
+	}
+
+	public CFBamBuffUuid6TypeFactoryService getUuid6TypeFactoryService() {
+		return(uuid6typeFactoryService);
 	}
 
 	@Override
 	public ICFBamUuidColFactory getFactoryUuidCol() {
-		return( factoryUuidCol );
+		return(uuidcolFactoryService);
+	}
+
+	public CFBamBuffUuidColFactoryService getUuidColFactoryService() {
+		return(uuidcolFactoryService);
 	}
 
 	@Override
 	public ICFBamUuidDefFactory getFactoryUuidDef() {
-		return( factoryUuidDef );
+		return(uuiddefFactoryService);
+	}
+
+	public CFBamBuffUuidDefFactoryService getUuidDefFactoryService() {
+		return(uuiddefFactoryService);
 	}
 
 	@Override
 	public ICFBamUuidGenFactory getFactoryUuidGen() {
-		return( factoryUuidGen );
+		return(uuidgenFactoryService);
+	}
+
+	public CFBamBuffUuidGenFactoryService getUuidGenFactoryService() {
+		return(uuidgenFactoryService);
 	}
 
 	@Override
 	public ICFBamUuidTypeFactory getFactoryUuidType() {
-		return( factoryUuidType );
+		return(uuidtypeFactoryService);
+	}
+
+	public CFBamBuffUuidTypeFactoryService getUuidTypeFactoryService() {
+		return(uuidtypeFactoryService);
 	}
 
 	@Override
 	public ICFBamValueFactory getFactoryValue() {
-		return( factoryValue );
+		return(valueFactoryService);
+	}
+
+	public CFBamBuffValueFactoryService getValueFactoryService() {
+		return(valueFactoryService);
 	}
 
 }
