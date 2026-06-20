@@ -265,7 +265,7 @@ public class CFBamSecUserPasswordObj
 	public ICFSecSecUserPassword getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecUserPassword().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecUserPassword().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

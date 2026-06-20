@@ -240,7 +240,7 @@ public class CFBamStringDefEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsStringDef().getSchema().getCFBamBackingStore().getFactoryStringDef().newRec();
+			rec = getOrigAsStringDef().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryStringDef().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

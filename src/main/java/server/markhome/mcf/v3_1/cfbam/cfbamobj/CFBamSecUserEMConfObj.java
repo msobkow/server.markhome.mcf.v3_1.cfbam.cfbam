@@ -267,7 +267,7 @@ public class CFBamSecUserEMConfObj
 	public ICFSecSecUserEMConf getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecUserEMConf().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecUserEMConf().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

@@ -301,7 +301,7 @@ public class CFBamScopeTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamScopeObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -317,7 +317,7 @@ public class CFBamScopeTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamScopeObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -341,7 +341,7 @@ public class CFBamScopeTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamScopeObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -415,7 +415,7 @@ public class CFBamScopeTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFBamScopeByTenantIdxKey keyTenantIdx = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey keyTenantIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		keyTenantIdx.setRequiredTenantId( existing.getRequiredTenantId() );
 
 
@@ -615,7 +615,7 @@ public class CFBamScopeTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readScopeByTenantIdx";
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		Map<CFLibDbKeyHash256, ICFBamScopeObj> dict;
 		if( indexByTenantIdx == null ) {
@@ -708,7 +708,7 @@ public class CFBamScopeTableObj
 	public List<ICFBamScopeObj> readCachedScopeByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedScopeByTenantIdx";
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFBamScopeObj> arrayList = new ArrayList<ICFBamScopeObj>();
 		if( indexByTenantIdx != null ) {
@@ -860,7 +860,7 @@ public class CFBamScopeTableObj
 	@Override
 	public void deleteScopeByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,

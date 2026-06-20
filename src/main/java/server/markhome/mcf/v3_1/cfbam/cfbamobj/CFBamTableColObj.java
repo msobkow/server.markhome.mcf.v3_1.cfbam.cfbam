@@ -230,7 +230,7 @@ public class CFBamTableColObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryTableCol().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTableCol().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

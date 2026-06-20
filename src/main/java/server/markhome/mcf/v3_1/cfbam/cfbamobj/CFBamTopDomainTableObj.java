@@ -214,7 +214,7 @@ public class CFBamTopDomainTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFIntTopDomainByTenantIdxKey keyTenantIdx =
-					schema.getCFIntBackingStore().getFactoryTopDomain().newByTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntTopDomainObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -227,7 +227,7 @@ public class CFBamTopDomainTableObj
 
 			if( indexByTldIdx != null ) {
 				ICFIntTopDomainByTldIdxKey keyTldIdx =
-					schema.getCFIntBackingStore().getFactoryTopDomain().newByTldIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTldIdxKey();
 				keyTldIdx.setRequiredTldId( keepObj.getRequiredTldId() );
 				Map<CFLibDbKeyHash256, ICFIntTopDomainObj > mapTldIdx = indexByTldIdx.get( keyTldIdx );
 				if( mapTldIdx != null ) {
@@ -240,7 +240,7 @@ public class CFBamTopDomainTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFIntTopDomainByNameIdxKey keyNameIdx =
-					schema.getCFIntBackingStore().getFactoryTopDomain().newByNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByNameIdxKey();
 				keyNameIdx.setRequiredTldId( keepObj.getRequiredTldId() );
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByNameIdx.remove( keyNameIdx );
@@ -251,7 +251,7 @@ public class CFBamTopDomainTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFIntTopDomainByTenantIdxKey keyTenantIdx =
-					schema.getCFIntBackingStore().getFactoryTopDomain().newByTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntTopDomainObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -261,7 +261,7 @@ public class CFBamTopDomainTableObj
 
 			if( indexByTldIdx != null ) {
 				ICFIntTopDomainByTldIdxKey keyTldIdx =
-					schema.getCFIntBackingStore().getFactoryTopDomain().newByTldIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTldIdxKey();
 				keyTldIdx.setRequiredTldId( keepObj.getRequiredTldId() );
 				Map<CFLibDbKeyHash256, ICFIntTopDomainObj > mapTldIdx = indexByTldIdx.get( keyTldIdx );
 				if( mapTldIdx != null ) {
@@ -271,7 +271,7 @@ public class CFBamTopDomainTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFIntTopDomainByNameIdxKey keyNameIdx =
-					schema.getCFIntBackingStore().getFactoryTopDomain().newByNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByNameIdxKey();
 				keyNameIdx.setRequiredTldId( keepObj.getRequiredTldId() );
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByNameIdx.put( keyNameIdx, keepObj );
@@ -293,7 +293,7 @@ public class CFBamTopDomainTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFIntTopDomainByTenantIdxKey keyTenantIdx =
-					schema.getCFIntBackingStore().getFactoryTopDomain().newByTenantIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFIntTopDomainObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -303,7 +303,7 @@ public class CFBamTopDomainTableObj
 
 			if( indexByTldIdx != null ) {
 				ICFIntTopDomainByTldIdxKey keyTldIdx =
-					schema.getCFIntBackingStore().getFactoryTopDomain().newByTldIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTldIdxKey();
 				keyTldIdx.setRequiredTldId( keepObj.getRequiredTldId() );
 				Map<CFLibDbKeyHash256, ICFIntTopDomainObj > mapTldIdx = indexByTldIdx.get( keyTldIdx );
 				if( mapTldIdx != null ) {
@@ -313,7 +313,7 @@ public class CFBamTopDomainTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFIntTopDomainByNameIdxKey keyNameIdx =
-					schema.getCFIntBackingStore().getFactoryTopDomain().newByNameIdxKey();
+					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByNameIdxKey();
 				keyNameIdx.setRequiredTldId( keepObj.getRequiredTldId() );
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByNameIdx.put( keyNameIdx, keepObj );
@@ -383,13 +383,13 @@ public class CFBamTopDomainTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFIntTopDomainByTenantIdxKey keyTenantIdx = schema.getCFIntBackingStore().getFactoryTopDomain().newByTenantIdxKey();
+		ICFIntTopDomainByTenantIdxKey keyTenantIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTenantIdxKey();
 		keyTenantIdx.setRequiredTenantId( existing.getRequiredTenantId() );
 
-		ICFIntTopDomainByTldIdxKey keyTldIdx = schema.getCFIntBackingStore().getFactoryTopDomain().newByTldIdxKey();
+		ICFIntTopDomainByTldIdxKey keyTldIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTldIdxKey();
 		keyTldIdx.setRequiredTldId( existing.getRequiredTldId() );
 
-		ICFIntTopDomainByNameIdxKey keyNameIdx = schema.getCFIntBackingStore().getFactoryTopDomain().newByNameIdxKey();
+		ICFIntTopDomainByNameIdxKey keyNameIdx = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByNameIdxKey();
 		keyNameIdx.setRequiredTldId( existing.getRequiredTldId() );
 		keyNameIdx.setRequiredName( existing.getRequiredName() );
 
@@ -604,7 +604,7 @@ public class CFBamTopDomainTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTopDomainByTenantIdx";
-		ICFIntTopDomainByTenantIdxKey key = schema.getCFIntBackingStore().getFactoryTopDomain().newByTenantIdxKey();
+		ICFIntTopDomainByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		Map<CFLibDbKeyHash256, ICFIntTopDomainObj> dict;
 		if( indexByTenantIdx == null ) {
@@ -697,7 +697,7 @@ public class CFBamTopDomainTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTopDomainByTldIdx";
-		ICFIntTopDomainByTldIdxKey key = schema.getCFIntBackingStore().getFactoryTopDomain().newByTldIdxKey();
+		ICFIntTopDomainByTldIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTldIdxKey();
 		key.setRequiredTldId( TldId );
 		Map<CFLibDbKeyHash256, ICFIntTopDomainObj> dict;
 		if( indexByTldIdx == null ) {
@@ -795,7 +795,7 @@ public class CFBamTopDomainTableObj
 			indexByNameIdx = new HashMap< ICFIntTopDomainByNameIdxKey,
 				ICFIntTopDomainObj >();
 		}
-		ICFIntTopDomainByNameIdxKey key = schema.getCFIntBackingStore().getFactoryTopDomain().newByNameIdxKey();
+		ICFIntTopDomainByNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByNameIdxKey();
 		key.setRequiredTldId( TldId );
 		key.setRequiredName( Name );
 		ICFIntTopDomainObj obj = null;
@@ -828,7 +828,7 @@ public class CFBamTopDomainTableObj
 	public List<ICFIntTopDomainObj> readCachedTopDomainByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedTopDomainByTenantIdx";
-		ICFIntTopDomainByTenantIdxKey key = schema.getCFIntBackingStore().getFactoryTopDomain().newByTenantIdxKey();
+		ICFIntTopDomainByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFIntTopDomainObj> arrayList = new ArrayList<ICFIntTopDomainObj>();
 		if( indexByTenantIdx != null ) {
@@ -905,7 +905,7 @@ public class CFBamTopDomainTableObj
 	public List<ICFIntTopDomainObj> readCachedTopDomainByTldIdx( CFLibDbKeyHash256 TldId )
 	{
 		final String S_ProcName = "readCachedTopDomainByTldIdx";
-		ICFIntTopDomainByTldIdxKey key = schema.getCFIntBackingStore().getFactoryTopDomain().newByTldIdxKey();
+		ICFIntTopDomainByTldIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTldIdxKey();
 		key.setRequiredTldId( TldId );
 		ArrayList<ICFIntTopDomainObj> arrayList = new ArrayList<ICFIntTopDomainObj>();
 		if( indexByTldIdx != null ) {
@@ -983,7 +983,7 @@ public class CFBamTopDomainTableObj
 		String Name )
 	{
 		ICFIntTopDomainObj obj = null;
-		ICFIntTopDomainByNameIdxKey key = schema.getCFIntBackingStore().getFactoryTopDomain().newByNameIdxKey();
+		ICFIntTopDomainByNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByNameIdxKey();
 		key.setRequiredTldId( TldId );
 		key.setRequiredName( Name );
 		if( indexByNameIdx != null ) {
@@ -1121,7 +1121,7 @@ public class CFBamTopDomainTableObj
 	@Override
 	public void deleteTopDomainByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
-		ICFIntTopDomainByTenantIdxKey key = schema.getCFIntBackingStore().getFactoryTopDomain().newByTenantIdxKey();
+		ICFIntTopDomainByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFIntTopDomainByTenantIdxKey,
@@ -1155,7 +1155,7 @@ public class CFBamTopDomainTableObj
 	@Override
 	public void deleteTopDomainByTldIdx( CFLibDbKeyHash256 TldId )
 	{
-		ICFIntTopDomainByTldIdxKey key = schema.getCFIntBackingStore().getFactoryTopDomain().newByTldIdxKey();
+		ICFIntTopDomainByTldIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByTldIdxKey();
 		key.setRequiredTldId( TldId );
 		if( indexByTldIdx == null ) {
 			indexByTldIdx = new HashMap< ICFIntTopDomainByTldIdxKey,
@@ -1194,7 +1194,7 @@ public class CFBamTopDomainTableObj
 			indexByNameIdx = new HashMap< ICFIntTopDomainByNameIdxKey,
 				ICFIntTopDomainObj >();
 		}
-		ICFIntTopDomainByNameIdxKey key = schema.getCFIntBackingStore().getFactoryTopDomain().newByNameIdxKey();
+		ICFIntTopDomainByNameIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newByNameIdxKey();
 		key.setRequiredTldId( TldId );
 		key.setRequiredName( Name );
 		ICFIntTopDomainObj obj = null;

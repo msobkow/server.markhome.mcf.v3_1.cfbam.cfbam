@@ -391,7 +391,7 @@ public class CFBamValueEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsValue().getSchema().getCFBamBackingStore().getFactoryValue().newRec();
+			rec = getOrigAsValue().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryValue().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

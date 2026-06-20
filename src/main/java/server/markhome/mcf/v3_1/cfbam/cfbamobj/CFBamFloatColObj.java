@@ -227,7 +227,7 @@ public class CFBamFloatColObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryFloatCol().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryFloatCol().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

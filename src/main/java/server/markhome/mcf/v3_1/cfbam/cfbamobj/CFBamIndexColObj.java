@@ -290,7 +290,7 @@ public class CFBamIndexColObj
 	public ICFBamIndexCol getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryIndexCol().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryIndexCol().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

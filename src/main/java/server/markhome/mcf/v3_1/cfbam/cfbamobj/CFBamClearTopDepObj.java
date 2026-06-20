@@ -234,7 +234,7 @@ public class CFBamClearTopDepObj
 	public ICFBamScope getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryClearTopDep().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryClearTopDep().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

@@ -255,7 +255,7 @@ public class CFBamParamTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamParamByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByUNameIdxKey();
 				keyUNameIdx.setRequiredServerMethodId( keepObj.getRequiredServerMethodId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
@@ -263,7 +263,7 @@ public class CFBamParamTableObj
 
 			if( indexByServerMethodIdx != null ) {
 				ICFBamParamByServerMethodIdxKey keyServerMethodIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByServerMethodIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerMethodIdxKey();
 				keyServerMethodIdx.setRequiredServerMethodId( keepObj.getRequiredServerMethodId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapServerMethodIdx = indexByServerMethodIdx.get( keyServerMethodIdx );
 				if( mapServerMethodIdx != null ) {
@@ -276,7 +276,7 @@ public class CFBamParamTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamParamByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -289,7 +289,7 @@ public class CFBamParamTableObj
 
 			if( indexByServerTypeIdx != null ) {
 				ICFBamParamByServerTypeIdxKey keyServerTypeIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByServerTypeIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerTypeIdxKey();
 				keyServerTypeIdx.setOptionalTypeId( keepObj.getOptionalTypeId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapServerTypeIdx = indexByServerTypeIdx.get( keyServerTypeIdx );
 				if( mapServerTypeIdx != null ) {
@@ -302,7 +302,7 @@ public class CFBamParamTableObj
 
 			if( indexByPrevIdx != null ) {
 				ICFBamParamByPrevIdxKey keyPrevIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
@@ -315,7 +315,7 @@ public class CFBamParamTableObj
 
 			if( indexByNextIdx != null ) {
 				ICFBamParamByNextIdxKey keyNextIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
@@ -328,7 +328,7 @@ public class CFBamParamTableObj
 
 			if( indexByContPrevIdx != null ) {
 				ICFBamParamByContPrevIdxKey keyContPrevIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByContPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredServerMethodId( keepObj.getRequiredServerMethodId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
@@ -342,7 +342,7 @@ public class CFBamParamTableObj
 
 			if( indexByContNextIdx != null ) {
 				ICFBamParamByContNextIdxKey keyContNextIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByContNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContNextIdxKey();
 				keyContNextIdx.setRequiredServerMethodId( keepObj.getRequiredServerMethodId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
@@ -359,7 +359,7 @@ public class CFBamParamTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamParamByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByUNameIdxKey();
 				keyUNameIdx.setRequiredServerMethodId( keepObj.getRequiredServerMethodId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -367,7 +367,7 @@ public class CFBamParamTableObj
 
 			if( indexByServerMethodIdx != null ) {
 				ICFBamParamByServerMethodIdxKey keyServerMethodIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByServerMethodIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerMethodIdxKey();
 				keyServerMethodIdx.setRequiredServerMethodId( keepObj.getRequiredServerMethodId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapServerMethodIdx = indexByServerMethodIdx.get( keyServerMethodIdx );
 				if( mapServerMethodIdx != null ) {
@@ -377,7 +377,7 @@ public class CFBamParamTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamParamByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -387,7 +387,7 @@ public class CFBamParamTableObj
 
 			if( indexByServerTypeIdx != null ) {
 				ICFBamParamByServerTypeIdxKey keyServerTypeIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByServerTypeIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerTypeIdxKey();
 				keyServerTypeIdx.setOptionalTypeId( keepObj.getOptionalTypeId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapServerTypeIdx = indexByServerTypeIdx.get( keyServerTypeIdx );
 				if( mapServerTypeIdx != null ) {
@@ -397,7 +397,7 @@ public class CFBamParamTableObj
 
 			if( indexByPrevIdx != null ) {
 				ICFBamParamByPrevIdxKey keyPrevIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
@@ -407,7 +407,7 @@ public class CFBamParamTableObj
 
 			if( indexByNextIdx != null ) {
 				ICFBamParamByNextIdxKey keyNextIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
@@ -417,7 +417,7 @@ public class CFBamParamTableObj
 
 			if( indexByContPrevIdx != null ) {
 				ICFBamParamByContPrevIdxKey keyContPrevIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByContPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredServerMethodId( keepObj.getRequiredServerMethodId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
@@ -428,7 +428,7 @@ public class CFBamParamTableObj
 
 			if( indexByContNextIdx != null ) {
 				ICFBamParamByContNextIdxKey keyContNextIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByContNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContNextIdxKey();
 				keyContNextIdx.setRequiredServerMethodId( keepObj.getRequiredServerMethodId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
@@ -453,7 +453,7 @@ public class CFBamParamTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamParamByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByUNameIdxKey();
 				keyUNameIdx.setRequiredServerMethodId( keepObj.getRequiredServerMethodId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -461,7 +461,7 @@ public class CFBamParamTableObj
 
 			if( indexByServerMethodIdx != null ) {
 				ICFBamParamByServerMethodIdxKey keyServerMethodIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByServerMethodIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerMethodIdxKey();
 				keyServerMethodIdx.setRequiredServerMethodId( keepObj.getRequiredServerMethodId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapServerMethodIdx = indexByServerMethodIdx.get( keyServerMethodIdx );
 				if( mapServerMethodIdx != null ) {
@@ -471,7 +471,7 @@ public class CFBamParamTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamParamByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -481,7 +481,7 @@ public class CFBamParamTableObj
 
 			if( indexByServerTypeIdx != null ) {
 				ICFBamParamByServerTypeIdxKey keyServerTypeIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByServerTypeIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerTypeIdxKey();
 				keyServerTypeIdx.setOptionalTypeId( keepObj.getOptionalTypeId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapServerTypeIdx = indexByServerTypeIdx.get( keyServerTypeIdx );
 				if( mapServerTypeIdx != null ) {
@@ -491,7 +491,7 @@ public class CFBamParamTableObj
 
 			if( indexByPrevIdx != null ) {
 				ICFBamParamByPrevIdxKey keyPrevIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
@@ -501,7 +501,7 @@ public class CFBamParamTableObj
 
 			if( indexByNextIdx != null ) {
 				ICFBamParamByNextIdxKey keyNextIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
@@ -511,7 +511,7 @@ public class CFBamParamTableObj
 
 			if( indexByContPrevIdx != null ) {
 				ICFBamParamByContPrevIdxKey keyContPrevIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByContPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredServerMethodId( keepObj.getRequiredServerMethodId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
@@ -522,7 +522,7 @@ public class CFBamParamTableObj
 
 			if( indexByContNextIdx != null ) {
 				ICFBamParamByContNextIdxKey keyContNextIdx =
-					schema.getCFBamBackingStore().getFactoryParam().newByContNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContNextIdxKey();
 				keyContNextIdx.setRequiredServerMethodId( keepObj.getRequiredServerMethodId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamParamObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
@@ -599,30 +599,30 @@ public class CFBamParamTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFBamParamByUNameIdxKey keyUNameIdx = schema.getCFBamBackingStore().getFactoryParam().newByUNameIdxKey();
+		ICFBamParamByUNameIdxKey keyUNameIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByUNameIdxKey();
 		keyUNameIdx.setRequiredServerMethodId( existing.getRequiredServerMethodId() );
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
-		ICFBamParamByServerMethodIdxKey keyServerMethodIdx = schema.getCFBamBackingStore().getFactoryParam().newByServerMethodIdxKey();
+		ICFBamParamByServerMethodIdxKey keyServerMethodIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerMethodIdxKey();
 		keyServerMethodIdx.setRequiredServerMethodId( existing.getRequiredServerMethodId() );
 
-		ICFBamParamByDefSchemaIdxKey keyDefSchemaIdx = schema.getCFBamBackingStore().getFactoryParam().newByDefSchemaIdxKey();
+		ICFBamParamByDefSchemaIdxKey keyDefSchemaIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByDefSchemaIdxKey();
 		keyDefSchemaIdx.setOptionalDefSchemaId( existing.getOptionalDefSchemaId() );
 
-		ICFBamParamByServerTypeIdxKey keyServerTypeIdx = schema.getCFBamBackingStore().getFactoryParam().newByServerTypeIdxKey();
+		ICFBamParamByServerTypeIdxKey keyServerTypeIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerTypeIdxKey();
 		keyServerTypeIdx.setOptionalTypeId( existing.getOptionalTypeId() );
 
-		ICFBamParamByPrevIdxKey keyPrevIdx = schema.getCFBamBackingStore().getFactoryParam().newByPrevIdxKey();
+		ICFBamParamByPrevIdxKey keyPrevIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByPrevIdxKey();
 		keyPrevIdx.setOptionalPrevId( existing.getOptionalPrevId() );
 
-		ICFBamParamByNextIdxKey keyNextIdx = schema.getCFBamBackingStore().getFactoryParam().newByNextIdxKey();
+		ICFBamParamByNextIdxKey keyNextIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByNextIdxKey();
 		keyNextIdx.setOptionalNextId( existing.getOptionalNextId() );
 
-		ICFBamParamByContPrevIdxKey keyContPrevIdx = schema.getCFBamBackingStore().getFactoryParam().newByContPrevIdxKey();
+		ICFBamParamByContPrevIdxKey keyContPrevIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContPrevIdxKey();
 		keyContPrevIdx.setRequiredServerMethodId( existing.getRequiredServerMethodId() );
 		keyContPrevIdx.setOptionalPrevId( existing.getOptionalPrevId() );
 
-		ICFBamParamByContNextIdxKey keyContNextIdx = schema.getCFBamBackingStore().getFactoryParam().newByContNextIdxKey();
+		ICFBamParamByContNextIdxKey keyContNextIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContNextIdxKey();
 		keyContNextIdx.setRequiredServerMethodId( existing.getRequiredServerMethodId() );
 		keyContNextIdx.setOptionalNextId( existing.getOptionalNextId() );
 
@@ -886,7 +886,7 @@ public class CFBamParamTableObj
 			indexByUNameIdx = new HashMap< ICFBamParamByUNameIdxKey,
 				ICFBamParamObj >();
 		}
-		ICFBamParamByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByUNameIdxKey();
+		ICFBamParamByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByUNameIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
 		key.setRequiredName( Name );
 		ICFBamParamObj obj = null;
@@ -919,7 +919,7 @@ public class CFBamParamTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByServerMethodIdx";
-		ICFBamParamByServerMethodIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByServerMethodIdxKey();
+		ICFBamParamByServerMethodIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerMethodIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
 		Map<CFLibDbKeyHash256, ICFBamParamObj> dict;
 		if( indexByServerMethodIdx == null ) {
@@ -1012,7 +1012,7 @@ public class CFBamParamTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByDefSchemaIdx";
-		ICFBamParamByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByDefSchemaIdxKey();
+		ICFBamParamByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		Map<CFLibDbKeyHash256, ICFBamParamObj> dict;
 		if( indexByDefSchemaIdx == null ) {
@@ -1105,7 +1105,7 @@ public class CFBamParamTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByServerTypeIdx";
-		ICFBamParamByServerTypeIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByServerTypeIdxKey();
+		ICFBamParamByServerTypeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerTypeIdxKey();
 		key.setOptionalTypeId( TypeId );
 		Map<CFLibDbKeyHash256, ICFBamParamObj> dict;
 		if( indexByServerTypeIdx == null ) {
@@ -1198,7 +1198,7 @@ public class CFBamParamTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByPrevIdx";
-		ICFBamParamByPrevIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByPrevIdxKey();
+		ICFBamParamByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		Map<CFLibDbKeyHash256, ICFBamParamObj> dict;
 		if( indexByPrevIdx == null ) {
@@ -1291,7 +1291,7 @@ public class CFBamParamTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByNextIdx";
-		ICFBamParamByNextIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByNextIdxKey();
+		ICFBamParamByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		Map<CFLibDbKeyHash256, ICFBamParamObj> dict;
 		if( indexByNextIdx == null ) {
@@ -1387,7 +1387,7 @@ public class CFBamParamTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByContPrevIdx";
-		ICFBamParamByContPrevIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByContPrevIdxKey();
+		ICFBamParamByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContPrevIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
 		key.setOptionalPrevId( PrevId );
 		Map<CFLibDbKeyHash256, ICFBamParamObj> dict;
@@ -1485,7 +1485,7 @@ public class CFBamParamTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readParamByContNextIdx";
-		ICFBamParamByContNextIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByContNextIdxKey();
+		ICFBamParamByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContNextIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
 		key.setOptionalNextId( NextId );
 		Map<CFLibDbKeyHash256, ICFBamParamObj> dict;
@@ -1581,7 +1581,7 @@ public class CFBamParamTableObj
 		String Name )
 	{
 		ICFBamParamObj obj = null;
-		ICFBamParamByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByUNameIdxKey();
+		ICFBamParamByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByUNameIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
@@ -1618,7 +1618,7 @@ public class CFBamParamTableObj
 	public List<ICFBamParamObj> readCachedParamByServerMethodIdx( CFLibDbKeyHash256 ServerMethodId )
 	{
 		final String S_ProcName = "readCachedParamByServerMethodIdx";
-		ICFBamParamByServerMethodIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByServerMethodIdxKey();
+		ICFBamParamByServerMethodIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerMethodIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
 		ArrayList<ICFBamParamObj> arrayList = new ArrayList<ICFBamParamObj>();
 		if( indexByServerMethodIdx != null ) {
@@ -1695,7 +1695,7 @@ public class CFBamParamTableObj
 	public List<ICFBamParamObj> readCachedParamByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedParamByDefSchemaIdx";
-		ICFBamParamByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByDefSchemaIdxKey();
+		ICFBamParamByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamParamObj> arrayList = new ArrayList<ICFBamParamObj>();
 		if( indexByDefSchemaIdx != null ) {
@@ -1772,7 +1772,7 @@ public class CFBamParamTableObj
 	public List<ICFBamParamObj> readCachedParamByServerTypeIdx( CFLibDbKeyHash256 TypeId )
 	{
 		final String S_ProcName = "readCachedParamByServerTypeIdx";
-		ICFBamParamByServerTypeIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByServerTypeIdxKey();
+		ICFBamParamByServerTypeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerTypeIdxKey();
 		key.setOptionalTypeId( TypeId );
 		ArrayList<ICFBamParamObj> arrayList = new ArrayList<ICFBamParamObj>();
 		if( indexByServerTypeIdx != null ) {
@@ -1849,7 +1849,7 @@ public class CFBamParamTableObj
 	public List<ICFBamParamObj> readCachedParamByPrevIdx( CFLibDbKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedParamByPrevIdx";
-		ICFBamParamByPrevIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByPrevIdxKey();
+		ICFBamParamByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamParamObj> arrayList = new ArrayList<ICFBamParamObj>();
 		if( indexByPrevIdx != null ) {
@@ -1926,7 +1926,7 @@ public class CFBamParamTableObj
 	public List<ICFBamParamObj> readCachedParamByNextIdx( CFLibDbKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedParamByNextIdx";
-		ICFBamParamByNextIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByNextIdxKey();
+		ICFBamParamByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamParamObj> arrayList = new ArrayList<ICFBamParamObj>();
 		if( indexByNextIdx != null ) {
@@ -2004,7 +2004,7 @@ public class CFBamParamTableObj
 		CFLibDbKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedParamByContPrevIdx";
-		ICFBamParamByContPrevIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByContPrevIdxKey();
+		ICFBamParamByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContPrevIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamParamObj> arrayList = new ArrayList<ICFBamParamObj>();
@@ -2083,7 +2083,7 @@ public class CFBamParamTableObj
 		CFLibDbKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedParamByContNextIdx";
-		ICFBamParamByContNextIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByContNextIdxKey();
+		ICFBamParamByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContNextIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamParamObj> arrayList = new ArrayList<ICFBamParamObj>();
@@ -2364,7 +2364,7 @@ public class CFBamParamTableObj
 			indexByUNameIdx = new HashMap< ICFBamParamByUNameIdxKey,
 				ICFBamParamObj >();
 		}
-		ICFBamParamByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByUNameIdxKey();
+		ICFBamParamByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByUNameIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
 		key.setRequiredName( Name );
 		ICFBamParamObj obj = null;
@@ -2387,7 +2387,7 @@ public class CFBamParamTableObj
 	@Override
 	public void deleteParamByServerMethodIdx( CFLibDbKeyHash256 ServerMethodId )
 	{
-		ICFBamParamByServerMethodIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByServerMethodIdxKey();
+		ICFBamParamByServerMethodIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerMethodIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
 		if( indexByServerMethodIdx == null ) {
 			indexByServerMethodIdx = new HashMap< ICFBamParamByServerMethodIdxKey,
@@ -2421,7 +2421,7 @@ public class CFBamParamTableObj
 	@Override
 	public void deleteParamByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
-		ICFBamParamByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByDefSchemaIdxKey();
+		ICFBamParamByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamParamByDefSchemaIdxKey,
@@ -2455,7 +2455,7 @@ public class CFBamParamTableObj
 	@Override
 	public void deleteParamByServerTypeIdx( CFLibDbKeyHash256 TypeId )
 	{
-		ICFBamParamByServerTypeIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByServerTypeIdxKey();
+		ICFBamParamByServerTypeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByServerTypeIdxKey();
 		key.setOptionalTypeId( TypeId );
 		if( indexByServerTypeIdx == null ) {
 			indexByServerTypeIdx = new HashMap< ICFBamParamByServerTypeIdxKey,
@@ -2489,7 +2489,7 @@ public class CFBamParamTableObj
 	@Override
 	public void deleteParamByPrevIdx( CFLibDbKeyHash256 PrevId )
 	{
-		ICFBamParamByPrevIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByPrevIdxKey();
+		ICFBamParamByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		if( indexByPrevIdx == null ) {
 			indexByPrevIdx = new HashMap< ICFBamParamByPrevIdxKey,
@@ -2523,7 +2523,7 @@ public class CFBamParamTableObj
 	@Override
 	public void deleteParamByNextIdx( CFLibDbKeyHash256 NextId )
 	{
-		ICFBamParamByNextIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByNextIdxKey();
+		ICFBamParamByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		if( indexByNextIdx == null ) {
 			indexByNextIdx = new HashMap< ICFBamParamByNextIdxKey,
@@ -2558,7 +2558,7 @@ public class CFBamParamTableObj
 	public void deleteParamByContPrevIdx( CFLibDbKeyHash256 ServerMethodId,
 		CFLibDbKeyHash256 PrevId )
 	{
-		ICFBamParamByContPrevIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByContPrevIdxKey();
+		ICFBamParamByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContPrevIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
 		key.setOptionalPrevId( PrevId );
 		if( indexByContPrevIdx == null ) {
@@ -2597,7 +2597,7 @@ public class CFBamParamTableObj
 	public void deleteParamByContNextIdx( CFLibDbKeyHash256 ServerMethodId,
 		CFLibDbKeyHash256 NextId )
 	{
-		ICFBamParamByContNextIdxKey key = schema.getCFBamBackingStore().getFactoryParam().newByContNextIdxKey();
+		ICFBamParamByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryParam().newByContNextIdxKey();
 		key.setRequiredServerMethodId( ServerMethodId );
 		key.setOptionalNextId( NextId );
 		if( indexByContNextIdx == null ) {

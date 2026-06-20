@@ -317,7 +317,7 @@ public class CFBamSecSessionEditObj
 	@Override
 	public ICFSecSecSession getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSecSession().getSchema().getCFSecBackingStore().getFactorySecSession().newRec();
+			rec = getOrigAsSecSession().getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecSession().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

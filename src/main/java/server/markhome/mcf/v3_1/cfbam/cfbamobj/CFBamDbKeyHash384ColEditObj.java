@@ -243,7 +243,7 @@ public class CFBamDbKeyHash384ColEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsDbKeyHash384Col().getSchema().getCFBamBackingStore().getFactoryDbKeyHash384Col().newRec();
+			rec = getOrigAsDbKeyHash384Col().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryDbKeyHash384Col().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

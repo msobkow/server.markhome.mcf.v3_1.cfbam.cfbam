@@ -384,7 +384,7 @@ public class CFBamClusterEditObj
 	@Override
 	public ICFSecCluster getRec() {
 		if( rec == null ) {
-			rec = getOrigAsCluster().getSchema().getCFSecBackingStore().getFactoryCluster().newRec();
+			rec = getOrigAsCluster().getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

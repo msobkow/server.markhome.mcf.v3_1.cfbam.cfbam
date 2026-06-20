@@ -273,7 +273,7 @@ public class CFBamChainObj
 	public ICFBamChain getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryChain().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryChain().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

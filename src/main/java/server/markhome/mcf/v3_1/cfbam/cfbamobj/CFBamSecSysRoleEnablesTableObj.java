@@ -209,7 +209,7 @@ public class CFBamSecSysRoleEnablesTableObj
 
 			if( indexBySysRoleIdx != null ) {
 				ICFSecSecSysRoleEnablesBySysRoleIdxKey keySysRoleIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
 				keySysRoleIdx.setRequiredSecSysRoleId( keepObj.getRequiredSecSysRoleId() );
 				Map<ICFSecSecSysRoleEnablesPKey, ICFSecSecSysRoleEnablesObj > mapSysRoleIdx = indexBySysRoleIdx.get( keySysRoleIdx );
 				if( mapSysRoleIdx != null ) {
@@ -222,7 +222,7 @@ public class CFBamSecSysRoleEnablesTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecSysRoleEnablesByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newByNameIdxKey();
 				keyNameIdx.setRequiredEnableName( keepObj.getRequiredEnableName() );
 				Map<ICFSecSecSysRoleEnablesPKey, ICFSecSecSysRoleEnablesObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -238,7 +238,7 @@ public class CFBamSecSysRoleEnablesTableObj
 
 			if( indexBySysRoleIdx != null ) {
 				ICFSecSecSysRoleEnablesBySysRoleIdxKey keySysRoleIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
 				keySysRoleIdx.setRequiredSecSysRoleId( keepObj.getRequiredSecSysRoleId() );
 				Map<ICFSecSecSysRoleEnablesPKey, ICFSecSecSysRoleEnablesObj > mapSysRoleIdx = indexBySysRoleIdx.get( keySysRoleIdx );
 				if( mapSysRoleIdx != null ) {
@@ -248,7 +248,7 @@ public class CFBamSecSysRoleEnablesTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecSysRoleEnablesByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newByNameIdxKey();
 				keyNameIdx.setRequiredEnableName( keepObj.getRequiredEnableName() );
 				Map<ICFSecSecSysRoleEnablesPKey, ICFSecSecSysRoleEnablesObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -272,7 +272,7 @@ public class CFBamSecSysRoleEnablesTableObj
 
 			if( indexBySysRoleIdx != null ) {
 				ICFSecSecSysRoleEnablesBySysRoleIdxKey keySysRoleIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
 				keySysRoleIdx.setRequiredSecSysRoleId( keepObj.getRequiredSecSysRoleId() );
 				Map<ICFSecSecSysRoleEnablesPKey, ICFSecSecSysRoleEnablesObj > mapSysRoleIdx = indexBySysRoleIdx.get( keySysRoleIdx );
 				if( mapSysRoleIdx != null ) {
@@ -282,7 +282,7 @@ public class CFBamSecSysRoleEnablesTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecSysRoleEnablesByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newByNameIdxKey();
 				keyNameIdx.setRequiredEnableName( keepObj.getRequiredEnableName() );
 				Map<ICFSecSecSysRoleEnablesPKey, ICFSecSecSysRoleEnablesObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -378,10 +378,10 @@ public class CFBamSecSysRoleEnablesTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecSecSysRoleEnablesBySysRoleIdxKey keySysRoleIdx = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
+		ICFSecSecSysRoleEnablesBySysRoleIdxKey keySysRoleIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
 		keySysRoleIdx.setRequiredSecSysRoleId( existing.getRequiredSecSysRoleId() );
 
-		ICFSecSecSysRoleEnablesByNameIdxKey keyNameIdx = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newByNameIdxKey();
+		ICFSecSecSysRoleEnablesByNameIdxKey keyNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newByNameIdxKey();
 		keyNameIdx.setRequiredEnableName( existing.getRequiredEnableName() );
 
 
@@ -607,7 +607,7 @@ public class CFBamSecSysRoleEnablesTableObj
 	public ICFSecSecSysRoleEnablesObj readSecSysRoleEnablesByIdIdx( CFLibDbKeyHash256 SecSysRoleId,
 		String EnableName, boolean forceRead )
 	{
-		ICFSecSecSysRoleEnablesPKey pkey = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newPKey();
+		ICFSecSecSysRoleEnablesPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newPKey();
 		pkey.setRequiredSecSysRoleId( SecSysRoleId );
 		pkey.setRequiredEnableName( EnableName );
 		ICFSecSecSysRoleEnablesObj obj = readSecSysRoleEnables( pkey, forceRead );
@@ -626,7 +626,7 @@ public class CFBamSecSysRoleEnablesTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysRoleEnablesBySysRoleIdx";
-		ICFSecSecSysRoleEnablesBySysRoleIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
+		ICFSecSecSysRoleEnablesBySysRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
 		key.setRequiredSecSysRoleId( SecSysRoleId );
 		Map<ICFSecSecSysRoleEnablesPKey, ICFSecSecSysRoleEnablesObj> dict;
 		if( indexBySysRoleIdx == null ) {
@@ -719,7 +719,7 @@ public class CFBamSecSysRoleEnablesTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysRoleEnablesByNameIdx";
-		ICFSecSecSysRoleEnablesByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newByNameIdxKey();
+		ICFSecSecSysRoleEnablesByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newByNameIdxKey();
 		key.setRequiredEnableName( EnableName );
 		Map<ICFSecSecSysRoleEnablesPKey, ICFSecSecSysRoleEnablesObj> dict;
 		if( indexByNameIdx == null ) {
@@ -805,7 +805,7 @@ public class CFBamSecSysRoleEnablesTableObj
 		String EnableName )
 	{
 		ICFSecSecSysRoleEnablesObj obj = null;
-		ICFSecSecSysRoleEnablesPKey pkey = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newPKey();
+		ICFSecSecSysRoleEnablesPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newPKey();
 		pkey.setRequiredSecSysRoleId( SecSysRoleId );
 		pkey.setRequiredEnableName( EnableName );
 		pkey.setRequiredSecSysRoleId( SecSysRoleId );
@@ -818,7 +818,7 @@ public class CFBamSecSysRoleEnablesTableObj
 	public List<ICFSecSecSysRoleEnablesObj> readCachedSecSysRoleEnablesBySysRoleIdx( CFLibDbKeyHash256 SecSysRoleId )
 	{
 		final String S_ProcName = "readCachedSecSysRoleEnablesBySysRoleIdx";
-		ICFSecSecSysRoleEnablesBySysRoleIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
+		ICFSecSecSysRoleEnablesBySysRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
 		key.setRequiredSecSysRoleId( SecSysRoleId );
 		ArrayList<ICFSecSecSysRoleEnablesObj> arrayList = new ArrayList<ICFSecSecSysRoleEnablesObj>();
 		if( indexBySysRoleIdx != null ) {
@@ -895,7 +895,7 @@ public class CFBamSecSysRoleEnablesTableObj
 	public List<ICFSecSecSysRoleEnablesObj> readCachedSecSysRoleEnablesByNameIdx( String EnableName )
 	{
 		final String S_ProcName = "readCachedSecSysRoleEnablesByNameIdx";
-		ICFSecSecSysRoleEnablesByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newByNameIdxKey();
+		ICFSecSecSysRoleEnablesByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newByNameIdxKey();
 		key.setRequiredEnableName( EnableName );
 		ArrayList<ICFSecSecSysRoleEnablesObj> arrayList = new ArrayList<ICFSecSecSysRoleEnablesObj>();
 		if( indexByNameIdx != null ) {
@@ -1028,7 +1028,7 @@ public class CFBamSecSysRoleEnablesTableObj
 		String priorEnableName )
 	{
 		final String S_ProcName = "pageSecSysRoleEnablesBySysRoleIdx";
-		ICFSecSecSysRoleEnablesBySysRoleIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
+		ICFSecSecSysRoleEnablesBySysRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
 		key.setRequiredSecSysRoleId( SecSysRoleId );
 		List<ICFSecSecSysRoleEnablesObj> retList = new LinkedList<ICFSecSecSysRoleEnablesObj>();
 		ICFSecSecSysRoleEnablesObj obj;
@@ -1063,7 +1063,7 @@ public class CFBamSecSysRoleEnablesTableObj
 		String priorEnableName )
 	{
 		final String S_ProcName = "pageSecSysRoleEnablesByNameIdx";
-		ICFSecSecSysRoleEnablesByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newByNameIdxKey();
+		ICFSecSecSysRoleEnablesByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newByNameIdxKey();
 		key.setRequiredEnableName( EnableName );
 		List<ICFSecSecSysRoleEnablesObj> retList = new LinkedList<ICFSecSecSysRoleEnablesObj>();
 		ICFSecSecSysRoleEnablesObj obj;
@@ -1137,7 +1137,7 @@ public class CFBamSecSysRoleEnablesTableObj
 	@Override
 	public void deleteSecSysRoleEnablesBySysRoleIdx( CFLibDbKeyHash256 SecSysRoleId )
 	{
-		ICFSecSecSysRoleEnablesBySysRoleIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
+		ICFSecSecSysRoleEnablesBySysRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newBySysRoleIdxKey();
 		key.setRequiredSecSysRoleId( SecSysRoleId );
 		if( indexBySysRoleIdx == null ) {
 			indexBySysRoleIdx = new HashMap< ICFSecSecSysRoleEnablesBySysRoleIdxKey,
@@ -1171,7 +1171,7 @@ public class CFBamSecSysRoleEnablesTableObj
 	@Override
 	public void deleteSecSysRoleEnablesByNameIdx( String EnableName )
 	{
-		ICFSecSecSysRoleEnablesByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysRoleEnables().newByNameIdxKey();
+		ICFSecSecSysRoleEnablesByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleEnables().newByNameIdxKey();
 		key.setRequiredEnableName( EnableName );
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecSecSysRoleEnablesByNameIdxKey,

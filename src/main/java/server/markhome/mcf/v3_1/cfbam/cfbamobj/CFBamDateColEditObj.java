@@ -243,7 +243,7 @@ public class CFBamDateColEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsDateCol().getSchema().getCFBamBackingStore().getFactoryDateCol().newRec();
+			rec = getOrigAsDateCol().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryDateCol().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

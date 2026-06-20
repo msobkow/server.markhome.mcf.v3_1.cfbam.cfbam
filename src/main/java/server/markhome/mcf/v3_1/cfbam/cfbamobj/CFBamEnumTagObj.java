@@ -285,7 +285,7 @@ public class CFBamEnumTagObj
 	public ICFBamEnumTag getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryEnumTag().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

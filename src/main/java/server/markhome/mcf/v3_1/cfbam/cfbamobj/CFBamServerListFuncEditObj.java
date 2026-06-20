@@ -232,7 +232,7 @@ public class CFBamServerListFuncEditObj
 	@Override
 	public ICFBamScope getRec() {
 		if( rec == null ) {
-			rec = getOrigAsServerListFunc().getSchema().getCFBamBackingStore().getFactoryServerListFunc().newRec();
+			rec = getOrigAsServerListFunc().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryServerListFunc().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

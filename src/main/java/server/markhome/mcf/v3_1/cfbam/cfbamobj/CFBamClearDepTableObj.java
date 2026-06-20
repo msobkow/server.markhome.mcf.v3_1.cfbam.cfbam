@@ -230,7 +230,7 @@ public class CFBamClearDepTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamClearDepObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -240,7 +240,7 @@ public class CFBamClearDepTableObj
 
 			if( indexByClearDepIdx != null ) {
 				ICFBamClearDepByClearDepIdxKey keyClearDepIdx =
-					schema.getCFBamBackingStore().getFactoryClearDep().newByClearDepIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByClearDepIdxKey();
 				keyClearDepIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				Map<CFLibDbKeyHash256, ICFBamClearDepObj > mapClearDepIdx = indexByClearDepIdx.get( keyClearDepIdx );
 				if( mapClearDepIdx != null ) {
@@ -253,7 +253,7 @@ public class CFBamClearDepTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamClearDepByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryClearDep().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamClearDepObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -272,7 +272,7 @@ public class CFBamClearDepTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamClearDepObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -282,7 +282,7 @@ public class CFBamClearDepTableObj
 
 			if( indexByClearDepIdx != null ) {
 				ICFBamClearDepByClearDepIdxKey keyClearDepIdx =
-					schema.getCFBamBackingStore().getFactoryClearDep().newByClearDepIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByClearDepIdxKey();
 				keyClearDepIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				Map<CFLibDbKeyHash256, ICFBamClearDepObj > mapClearDepIdx = indexByClearDepIdx.get( keyClearDepIdx );
 				if( mapClearDepIdx != null ) {
@@ -292,7 +292,7 @@ public class CFBamClearDepTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamClearDepByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryClearDep().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamClearDepObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -316,7 +316,7 @@ public class CFBamClearDepTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamClearDepObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -326,7 +326,7 @@ public class CFBamClearDepTableObj
 
 			if( indexByClearDepIdx != null ) {
 				ICFBamClearDepByClearDepIdxKey keyClearDepIdx =
-					schema.getCFBamBackingStore().getFactoryClearDep().newByClearDepIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByClearDepIdxKey();
 				keyClearDepIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				Map<CFLibDbKeyHash256, ICFBamClearDepObj > mapClearDepIdx = indexByClearDepIdx.get( keyClearDepIdx );
 				if( mapClearDepIdx != null ) {
@@ -336,7 +336,7 @@ public class CFBamClearDepTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamClearDepByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryClearDep().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamClearDepObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -410,10 +410,10 @@ public class CFBamClearDepTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFBamClearDepByClearDepIdxKey keyClearDepIdx = schema.getCFBamBackingStore().getFactoryClearDep().newByClearDepIdxKey();
+		ICFBamClearDepByClearDepIdxKey keyClearDepIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByClearDepIdxKey();
 		keyClearDepIdx.setRequiredRelationId( existing.getRequiredRelationId() );
 
-		ICFBamClearDepByDefSchemaIdxKey keyDefSchemaIdx = schema.getCFBamBackingStore().getFactoryClearDep().newByDefSchemaIdxKey();
+		ICFBamClearDepByDefSchemaIdxKey keyDefSchemaIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByDefSchemaIdxKey();
 		keyDefSchemaIdx.setOptionalDefSchemaId( existing.getOptionalDefSchemaId() );
 
 
@@ -623,7 +623,7 @@ public class CFBamClearDepTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readClearDepByTenantIdx";
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		Map<CFLibDbKeyHash256, ICFBamClearDepObj> dict;
 		if( indexByTenantIdx == null ) {
@@ -716,7 +716,7 @@ public class CFBamClearDepTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readClearDepByClearDepIdx";
-		ICFBamClearDepByClearDepIdxKey key = schema.getCFBamBackingStore().getFactoryClearDep().newByClearDepIdxKey();
+		ICFBamClearDepByClearDepIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByClearDepIdxKey();
 		key.setRequiredRelationId( RelationId );
 		Map<CFLibDbKeyHash256, ICFBamClearDepObj> dict;
 		if( indexByClearDepIdx == null ) {
@@ -809,7 +809,7 @@ public class CFBamClearDepTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readClearDepByDefSchemaIdx";
-		ICFBamClearDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryClearDep().newByDefSchemaIdxKey();
+		ICFBamClearDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		Map<CFLibDbKeyHash256, ICFBamClearDepObj> dict;
 		if( indexByDefSchemaIdx == null ) {
@@ -902,7 +902,7 @@ public class CFBamClearDepTableObj
 	public List<ICFBamClearDepObj> readCachedClearDepByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedClearDepByTenantIdx";
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFBamClearDepObj> arrayList = new ArrayList<ICFBamClearDepObj>();
 		if( indexByTenantIdx != null ) {
@@ -979,7 +979,7 @@ public class CFBamClearDepTableObj
 	public List<ICFBamClearDepObj> readCachedClearDepByClearDepIdx( CFLibDbKeyHash256 RelationId )
 	{
 		final String S_ProcName = "readCachedClearDepByClearDepIdx";
-		ICFBamClearDepByClearDepIdxKey key = schema.getCFBamBackingStore().getFactoryClearDep().newByClearDepIdxKey();
+		ICFBamClearDepByClearDepIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByClearDepIdxKey();
 		key.setRequiredRelationId( RelationId );
 		ArrayList<ICFBamClearDepObj> arrayList = new ArrayList<ICFBamClearDepObj>();
 		if( indexByClearDepIdx != null ) {
@@ -1056,7 +1056,7 @@ public class CFBamClearDepTableObj
 	public List<ICFBamClearDepObj> readCachedClearDepByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedClearDepByDefSchemaIdx";
-		ICFBamClearDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryClearDep().newByDefSchemaIdxKey();
+		ICFBamClearDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamClearDepObj> arrayList = new ArrayList<ICFBamClearDepObj>();
 		if( indexByDefSchemaIdx != null ) {
@@ -1242,7 +1242,7 @@ public class CFBamClearDepTableObj
 	@Override
 	public void deleteClearDepByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,
@@ -1276,7 +1276,7 @@ public class CFBamClearDepTableObj
 	@Override
 	public void deleteClearDepByClearDepIdx( CFLibDbKeyHash256 RelationId )
 	{
-		ICFBamClearDepByClearDepIdxKey key = schema.getCFBamBackingStore().getFactoryClearDep().newByClearDepIdxKey();
+		ICFBamClearDepByClearDepIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByClearDepIdxKey();
 		key.setRequiredRelationId( RelationId );
 		if( indexByClearDepIdx == null ) {
 			indexByClearDepIdx = new HashMap< ICFBamClearDepByClearDepIdxKey,
@@ -1310,7 +1310,7 @@ public class CFBamClearDepTableObj
 	@Override
 	public void deleteClearDepByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
-		ICFBamClearDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryClearDep().newByDefSchemaIdxKey();
+		ICFBamClearDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryClearDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamClearDepByDefSchemaIdxKey,

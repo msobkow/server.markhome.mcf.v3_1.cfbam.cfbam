@@ -264,7 +264,7 @@ public class CFBamSchemaDefObj
 	public ICFBamScope getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactorySchemaDef().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

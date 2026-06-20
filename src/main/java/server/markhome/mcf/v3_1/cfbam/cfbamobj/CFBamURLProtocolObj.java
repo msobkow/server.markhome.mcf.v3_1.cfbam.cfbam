@@ -257,7 +257,7 @@ public class CFBamURLProtocolObj
 	public ICFIntURLProtocol getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFIntBackingStore().getFactoryURLProtocol().newRec();
+				rec = getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryURLProtocol().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

@@ -240,7 +240,7 @@ public class CFBamDbKeyHash512GenEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsDbKeyHash512Gen().getSchema().getCFBamBackingStore().getFactoryDbKeyHash512Gen().newRec();
+			rec = getOrigAsDbKeyHash512Gen().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryDbKeyHash512Gen().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

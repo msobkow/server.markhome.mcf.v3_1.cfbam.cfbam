@@ -393,7 +393,7 @@ public class CFBamRelationColEditObj
 	@Override
 	public ICFBamRelationCol getRec() {
 		if( rec == null ) {
-			rec = getOrigAsRelationCol().getSchema().getCFBamBackingStore().getFactoryRelationCol().newRec();
+			rec = getOrigAsRelationCol().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

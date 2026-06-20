@@ -240,7 +240,7 @@ public class CFBamUuidDefEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsUuidDef().getSchema().getCFBamBackingStore().getFactoryUuidDef().newRec();
+			rec = getOrigAsUuidDef().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryUuidDef().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

@@ -330,7 +330,7 @@ public class CFBamTableEditObj
 	@Override
 	public ICFBamScope getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTable().getSchema().getCFBamBackingStore().getFactoryTable().newRec();
+			rec = getOrigAsTable().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTable().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

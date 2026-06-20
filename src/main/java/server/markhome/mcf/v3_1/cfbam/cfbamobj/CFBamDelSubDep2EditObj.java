@@ -234,7 +234,7 @@ public class CFBamDelSubDep2EditObj
 	@Override
 	public ICFBamScope getRec() {
 		if( rec == null ) {
-			rec = getOrigAsDelSubDep2().getSchema().getCFBamBackingStore().getFactoryDelSubDep2().newRec();
+			rec = getOrigAsDelSubDep2().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryDelSubDep2().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

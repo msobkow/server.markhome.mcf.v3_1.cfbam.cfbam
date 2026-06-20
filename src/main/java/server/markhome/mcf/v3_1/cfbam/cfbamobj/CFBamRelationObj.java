@@ -245,7 +245,7 @@ public class CFBamRelationObj
 	public ICFBamScope getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryRelation().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

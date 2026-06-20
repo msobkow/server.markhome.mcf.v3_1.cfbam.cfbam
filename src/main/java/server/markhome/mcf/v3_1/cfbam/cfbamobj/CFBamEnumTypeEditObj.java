@@ -243,7 +243,7 @@ public class CFBamEnumTypeEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsEnumType().getSchema().getCFBamBackingStore().getFactoryEnumType().newRec();
+			rec = getOrigAsEnumType().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryEnumType().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

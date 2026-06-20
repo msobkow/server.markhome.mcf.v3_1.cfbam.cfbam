@@ -243,7 +243,7 @@ public class CFBamDoubleColEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsDoubleCol().getSchema().getCFBamBackingStore().getFactoryDoubleCol().newRec();
+			rec = getOrigAsDoubleCol().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryDoubleCol().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

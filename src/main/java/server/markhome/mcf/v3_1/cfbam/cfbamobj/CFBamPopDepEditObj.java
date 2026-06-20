@@ -235,7 +235,7 @@ public class CFBamPopDepEditObj
 	@Override
 	public ICFBamScope getRec() {
 		if( rec == null ) {
-			rec = getOrigAsPopDep().getSchema().getCFBamBackingStore().getFactoryPopDep().newRec();
+			rec = getOrigAsPopDep().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

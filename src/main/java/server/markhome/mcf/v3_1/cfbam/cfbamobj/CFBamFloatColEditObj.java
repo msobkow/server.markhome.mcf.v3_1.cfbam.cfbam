@@ -243,7 +243,7 @@ public class CFBamFloatColEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsFloatCol().getSchema().getCFBamBackingStore().getFactoryFloatCol().newRec();
+			rec = getOrigAsFloatCol().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryFloatCol().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

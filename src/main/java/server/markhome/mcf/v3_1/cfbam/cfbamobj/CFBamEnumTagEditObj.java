@@ -389,7 +389,7 @@ public class CFBamEnumTagEditObj
 	@Override
 	public ICFBamEnumTag getRec() {
 		if( rec == null ) {
-			rec = getOrigAsEnumTag().getSchema().getCFBamBackingStore().getFactoryEnumTag().newRec();
+			rec = getOrigAsEnumTag().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

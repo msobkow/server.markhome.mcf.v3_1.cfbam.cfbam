@@ -227,7 +227,7 @@ public class CFBamTimeTypeObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryTimeType().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTimeType().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

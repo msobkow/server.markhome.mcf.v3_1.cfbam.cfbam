@@ -235,7 +235,7 @@ public class CFBamIndexObj
 	public ICFBamScope getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryIndex().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

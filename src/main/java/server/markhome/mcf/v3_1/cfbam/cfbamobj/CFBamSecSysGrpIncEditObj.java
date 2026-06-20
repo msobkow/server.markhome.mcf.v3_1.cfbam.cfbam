@@ -372,7 +372,7 @@ public class CFBamSecSysGrpIncEditObj
 	@Override
 	public ICFSecSecSysGrpInc getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSecSysGrpInc().getSchema().getCFSecBackingStore().getFactorySecSysGrpInc().newRec();
+			rec = getOrigAsSecSysGrpInc().getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

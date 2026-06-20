@@ -265,7 +265,7 @@ public class CFBamSecClusRoleObj
 	public ICFSecSecClusRole getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecClusRole().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecClusRole().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

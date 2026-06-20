@@ -373,7 +373,7 @@ public class CFBamSecTentGrpEditObj
 	@Override
 	public ICFSecSecTentGrp getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSecTentGrp().getSchema().getCFSecBackingStore().getFactorySecTentGrp().newRec();
+			rec = getOrigAsSecTentGrp().getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

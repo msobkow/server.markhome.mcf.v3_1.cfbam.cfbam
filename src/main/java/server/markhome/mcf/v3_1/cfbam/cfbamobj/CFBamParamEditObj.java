@@ -391,7 +391,7 @@ public class CFBamParamEditObj
 	@Override
 	public ICFBamParam getRec() {
 		if( rec == null ) {
-			rec = getOrigAsParam().getSchema().getCFBamBackingStore().getFactoryParam().newRec();
+			rec = getOrigAsParam().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryParam().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

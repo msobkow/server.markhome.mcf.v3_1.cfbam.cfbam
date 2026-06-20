@@ -227,7 +227,7 @@ public class CFBamDoubleColObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryDoubleCol().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryDoubleCol().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

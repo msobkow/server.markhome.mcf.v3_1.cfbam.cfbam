@@ -240,7 +240,7 @@ public class CFBamAtomEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsAtom().getSchema().getCFBamBackingStore().getFactoryAtom().newRec();
+			rec = getOrigAsAtom().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryAtom().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

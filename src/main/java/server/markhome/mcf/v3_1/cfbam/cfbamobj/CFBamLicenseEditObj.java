@@ -319,7 +319,7 @@ public class CFBamLicenseEditObj
 	@Override
 	public ICFIntLicense getRec() {
 		if( rec == null ) {
-			rec = getOrigAsLicense().getSchema().getCFIntBackingStore().getFactoryLicense().newRec();
+			rec = getOrigAsLicense().getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryLicense().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

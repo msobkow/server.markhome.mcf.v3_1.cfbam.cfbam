@@ -243,7 +243,7 @@ public class CFBamTZTimestampColEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTZTimestampCol().getSchema().getCFBamBackingStore().getFactoryTZTimestampCol().newRec();
+			rec = getOrigAsTZTimestampCol().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTZTimestampCol().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

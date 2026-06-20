@@ -223,7 +223,7 @@ public class CFBamTZDateDefObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryTZDateDef().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTZDateDef().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

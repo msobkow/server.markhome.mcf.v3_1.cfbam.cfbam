@@ -243,7 +243,7 @@ public class CFBamDoubleTypeEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsDoubleType().getSchema().getCFBamBackingStore().getFactoryDoubleType().newRec();
+			rec = getOrigAsDoubleType().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryDoubleType().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

@@ -389,7 +389,7 @@ public class CFBamMinorVersionEditObj
 	@Override
 	public ICFIntMinorVersion getRec() {
 		if( rec == null ) {
-			rec = getOrigAsMinorVersion().getSchema().getCFIntBackingStore().getFactoryMinorVersion().newRec();
+			rec = getOrigAsMinorVersion().getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryMinorVersion().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

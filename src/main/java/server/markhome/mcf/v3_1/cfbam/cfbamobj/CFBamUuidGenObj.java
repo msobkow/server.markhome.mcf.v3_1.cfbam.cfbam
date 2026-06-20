@@ -223,7 +223,7 @@ public class CFBamUuidGenObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryUuidGen().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryUuidGen().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

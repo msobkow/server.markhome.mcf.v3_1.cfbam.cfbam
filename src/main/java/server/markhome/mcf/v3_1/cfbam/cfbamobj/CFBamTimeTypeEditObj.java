@@ -243,7 +243,7 @@ public class CFBamTimeTypeEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTimeType().getSchema().getCFBamBackingStore().getFactoryTimeType().newRec();
+			rec = getOrigAsTimeType().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTimeType().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

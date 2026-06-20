@@ -243,7 +243,7 @@ public class CFBamBlobColEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsBlobCol().getSchema().getCFBamBackingStore().getFactoryBlobCol().newRec();
+			rec = getOrigAsBlobCol().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryBlobCol().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

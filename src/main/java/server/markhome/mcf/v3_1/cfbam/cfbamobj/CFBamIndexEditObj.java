@@ -252,7 +252,7 @@ public class CFBamIndexEditObj
 	@Override
 	public ICFBamScope getRec() {
 		if( rec == null ) {
-			rec = getOrigAsIndex().getSchema().getCFBamBackingStore().getFactoryIndex().newRec();
+			rec = getOrigAsIndex().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

@@ -258,7 +258,7 @@ public class CFBamISOLangObj
 	public ICFSecISOLang getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactoryISOLang().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryISOLang().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

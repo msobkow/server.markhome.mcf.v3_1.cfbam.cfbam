@@ -243,7 +243,7 @@ public class CFBamDbKeyHash160TypeEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsDbKeyHash160Type().getSchema().getCFBamBackingStore().getFactoryDbKeyHash160Type().newRec();
+			rec = getOrigAsDbKeyHash160Type().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryDbKeyHash160Type().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

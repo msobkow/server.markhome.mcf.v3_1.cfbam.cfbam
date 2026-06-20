@@ -246,7 +246,7 @@ public class CFBamSchemaRefEditObj
 	@Override
 	public ICFBamScope getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSchemaRef().getSchema().getCFBamBackingStore().getFactorySchemaRef().newRec();
+			rec = getOrigAsSchemaRef().getSchema().getCFBamBackingStore().getCFBamFactory().getFactorySchemaRef().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

@@ -250,7 +250,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -260,7 +260,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamDelDepByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryDelDep().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -270,7 +270,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByDelDepIdx != null ) {
 				ICFBamDelDepByDelDepIdxKey keyDelDepIdx =
-					schema.getCFBamBackingStore().getFactoryDelDep().newByDelDepIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDelDepIdxKey();
 				keyDelDepIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapDelDepIdx = indexByDelDepIdx.get( keyDelDepIdx );
 				if( mapDelDepIdx != null ) {
@@ -280,7 +280,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByDelTopDepTblIdx != null ) {
 				ICFBamDelTopDepByDelTopDepTblIdxKey keyDelTopDepTblIdx =
-					schema.getCFBamBackingStore().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
 				keyDelTopDepTblIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapDelTopDepTblIdx = indexByDelTopDepTblIdx.get( keyDelTopDepTblIdx );
 				if( mapDelTopDepTblIdx != null ) {
@@ -293,7 +293,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamDelTopDepByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryDelTopDep().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
@@ -301,7 +301,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByPrevIdx != null ) {
 				ICFBamDelTopDepByPrevIdxKey keyPrevIdx =
-					schema.getCFBamBackingStore().getFactoryDelTopDep().newByPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
@@ -314,7 +314,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByNextIdx != null ) {
 				ICFBamDelTopDepByNextIdxKey keyNextIdx =
-					schema.getCFBamBackingStore().getFactoryDelTopDep().newByNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
@@ -333,7 +333,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -343,7 +343,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamDelDepByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryDelDep().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -353,7 +353,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByDelDepIdx != null ) {
 				ICFBamDelDepByDelDepIdxKey keyDelDepIdx =
-					schema.getCFBamBackingStore().getFactoryDelDep().newByDelDepIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDelDepIdxKey();
 				keyDelDepIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapDelDepIdx = indexByDelDepIdx.get( keyDelDepIdx );
 				if( mapDelDepIdx != null ) {
@@ -363,7 +363,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByDelTopDepTblIdx != null ) {
 				ICFBamDelTopDepByDelTopDepTblIdxKey keyDelTopDepTblIdx =
-					schema.getCFBamBackingStore().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
 				keyDelTopDepTblIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapDelTopDepTblIdx = indexByDelTopDepTblIdx.get( keyDelTopDepTblIdx );
 				if( mapDelTopDepTblIdx != null ) {
@@ -373,7 +373,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamDelTopDepByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryDelTopDep().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -381,7 +381,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByPrevIdx != null ) {
 				ICFBamDelTopDepByPrevIdxKey keyPrevIdx =
-					schema.getCFBamBackingStore().getFactoryDelTopDep().newByPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
@@ -391,7 +391,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByNextIdx != null ) {
 				ICFBamDelTopDepByNextIdxKey keyNextIdx =
-					schema.getCFBamBackingStore().getFactoryDelTopDep().newByNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
@@ -415,7 +415,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -425,7 +425,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamDelDepByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryDelDep().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -435,7 +435,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByDelDepIdx != null ) {
 				ICFBamDelDepByDelDepIdxKey keyDelDepIdx =
-					schema.getCFBamBackingStore().getFactoryDelDep().newByDelDepIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDelDepIdxKey();
 				keyDelDepIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapDelDepIdx = indexByDelDepIdx.get( keyDelDepIdx );
 				if( mapDelDepIdx != null ) {
@@ -445,7 +445,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByDelTopDepTblIdx != null ) {
 				ICFBamDelTopDepByDelTopDepTblIdxKey keyDelTopDepTblIdx =
-					schema.getCFBamBackingStore().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
 				keyDelTopDepTblIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapDelTopDepTblIdx = indexByDelTopDepTblIdx.get( keyDelTopDepTblIdx );
 				if( mapDelTopDepTblIdx != null ) {
@@ -455,7 +455,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamDelTopDepByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryDelTopDep().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -463,7 +463,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByPrevIdx != null ) {
 				ICFBamDelTopDepByPrevIdxKey keyPrevIdx =
-					schema.getCFBamBackingStore().getFactoryDelTopDep().newByPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
@@ -473,7 +473,7 @@ public class CFBamDelTopDepTableObj
 
 			if( indexByNextIdx != null ) {
 				ICFBamDelTopDepByNextIdxKey keyNextIdx =
-					schema.getCFBamBackingStore().getFactoryDelTopDep().newByNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamDelTopDepObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
@@ -551,17 +551,17 @@ public class CFBamDelTopDepTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFBamDelTopDepByDelTopDepTblIdxKey keyDelTopDepTblIdx = schema.getCFBamBackingStore().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
+		ICFBamDelTopDepByDelTopDepTblIdxKey keyDelTopDepTblIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
 		keyDelTopDepTblIdx.setRequiredTableId( existing.getRequiredTableId() );
 
-		ICFBamDelTopDepByUNameIdxKey keyUNameIdx = schema.getCFBamBackingStore().getFactoryDelTopDep().newByUNameIdxKey();
+		ICFBamDelTopDepByUNameIdxKey keyUNameIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByUNameIdxKey();
 		keyUNameIdx.setRequiredTableId( existing.getRequiredTableId() );
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
-		ICFBamDelTopDepByPrevIdxKey keyPrevIdx = schema.getCFBamBackingStore().getFactoryDelTopDep().newByPrevIdxKey();
+		ICFBamDelTopDepByPrevIdxKey keyPrevIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByPrevIdxKey();
 		keyPrevIdx.setOptionalPrevId( existing.getOptionalPrevId() );
 
-		ICFBamDelTopDepByNextIdxKey keyNextIdx = schema.getCFBamBackingStore().getFactoryDelTopDep().newByNextIdxKey();
+		ICFBamDelTopDepByNextIdxKey keyNextIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByNextIdxKey();
 		keyNextIdx.setOptionalNextId( existing.getOptionalNextId() );
 
 
@@ -785,7 +785,7 @@ public class CFBamDelTopDepTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelTopDepByTenantIdx";
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		Map<CFLibDbKeyHash256, ICFBamDelTopDepObj> dict;
 		if( indexByTenantIdx == null ) {
@@ -878,7 +878,7 @@ public class CFBamDelTopDepTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelTopDepByDefSchemaIdx";
-		ICFBamDelDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryDelDep().newByDefSchemaIdxKey();
+		ICFBamDelDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		Map<CFLibDbKeyHash256, ICFBamDelTopDepObj> dict;
 		if( indexByDefSchemaIdx == null ) {
@@ -971,7 +971,7 @@ public class CFBamDelTopDepTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelTopDepByDelDepIdx";
-		ICFBamDelDepByDelDepIdxKey key = schema.getCFBamBackingStore().getFactoryDelDep().newByDelDepIdxKey();
+		ICFBamDelDepByDelDepIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDelDepIdxKey();
 		key.setRequiredRelationId( RelationId );
 		Map<CFLibDbKeyHash256, ICFBamDelTopDepObj> dict;
 		if( indexByDelDepIdx == null ) {
@@ -1064,7 +1064,7 @@ public class CFBamDelTopDepTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelTopDepByDelTopDepTblIdx";
-		ICFBamDelTopDepByDelTopDepTblIdxKey key = schema.getCFBamBackingStore().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
+		ICFBamDelTopDepByDelTopDepTblIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
 		key.setRequiredTableId( TableId );
 		Map<CFLibDbKeyHash256, ICFBamDelTopDepObj> dict;
 		if( indexByDelTopDepTblIdx == null ) {
@@ -1162,7 +1162,7 @@ public class CFBamDelTopDepTableObj
 			indexByUNameIdx = new HashMap< ICFBamDelTopDepByUNameIdxKey,
 				ICFBamDelTopDepObj >();
 		}
-		ICFBamDelTopDepByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryDelTopDep().newByUNameIdxKey();
+		ICFBamDelTopDepByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByUNameIdxKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredName( Name );
 		ICFBamDelTopDepObj obj = null;
@@ -1195,7 +1195,7 @@ public class CFBamDelTopDepTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelTopDepByPrevIdx";
-		ICFBamDelTopDepByPrevIdxKey key = schema.getCFBamBackingStore().getFactoryDelTopDep().newByPrevIdxKey();
+		ICFBamDelTopDepByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		Map<CFLibDbKeyHash256, ICFBamDelTopDepObj> dict;
 		if( indexByPrevIdx == null ) {
@@ -1288,7 +1288,7 @@ public class CFBamDelTopDepTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readDelTopDepByNextIdx";
-		ICFBamDelTopDepByNextIdxKey key = schema.getCFBamBackingStore().getFactoryDelTopDep().newByNextIdxKey();
+		ICFBamDelTopDepByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		Map<CFLibDbKeyHash256, ICFBamDelTopDepObj> dict;
 		if( indexByNextIdx == null ) {
@@ -1381,7 +1381,7 @@ public class CFBamDelTopDepTableObj
 	public List<ICFBamDelTopDepObj> readCachedDelTopDepByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedDelTopDepByTenantIdx";
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFBamDelTopDepObj> arrayList = new ArrayList<ICFBamDelTopDepObj>();
 		if( indexByTenantIdx != null ) {
@@ -1458,7 +1458,7 @@ public class CFBamDelTopDepTableObj
 	public List<ICFBamDelTopDepObj> readCachedDelTopDepByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedDelTopDepByDefSchemaIdx";
-		ICFBamDelDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryDelDep().newByDefSchemaIdxKey();
+		ICFBamDelDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamDelTopDepObj> arrayList = new ArrayList<ICFBamDelTopDepObj>();
 		if( indexByDefSchemaIdx != null ) {
@@ -1535,7 +1535,7 @@ public class CFBamDelTopDepTableObj
 	public List<ICFBamDelTopDepObj> readCachedDelTopDepByDelDepIdx( CFLibDbKeyHash256 RelationId )
 	{
 		final String S_ProcName = "readCachedDelTopDepByDelDepIdx";
-		ICFBamDelDepByDelDepIdxKey key = schema.getCFBamBackingStore().getFactoryDelDep().newByDelDepIdxKey();
+		ICFBamDelDepByDelDepIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDelDepIdxKey();
 		key.setRequiredRelationId( RelationId );
 		ArrayList<ICFBamDelTopDepObj> arrayList = new ArrayList<ICFBamDelTopDepObj>();
 		if( indexByDelDepIdx != null ) {
@@ -1612,7 +1612,7 @@ public class CFBamDelTopDepTableObj
 	public List<ICFBamDelTopDepObj> readCachedDelTopDepByDelTopDepTblIdx( CFLibDbKeyHash256 TableId )
 	{
 		final String S_ProcName = "readCachedDelTopDepByDelTopDepTblIdx";
-		ICFBamDelTopDepByDelTopDepTblIdxKey key = schema.getCFBamBackingStore().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
+		ICFBamDelTopDepByDelTopDepTblIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
 		key.setRequiredTableId( TableId );
 		ArrayList<ICFBamDelTopDepObj> arrayList = new ArrayList<ICFBamDelTopDepObj>();
 		if( indexByDelTopDepTblIdx != null ) {
@@ -1690,7 +1690,7 @@ public class CFBamDelTopDepTableObj
 		String Name )
 	{
 		ICFBamDelTopDepObj obj = null;
-		ICFBamDelTopDepByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryDelTopDep().newByUNameIdxKey();
+		ICFBamDelTopDepByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByUNameIdxKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
@@ -1727,7 +1727,7 @@ public class CFBamDelTopDepTableObj
 	public List<ICFBamDelTopDepObj> readCachedDelTopDepByPrevIdx( CFLibDbKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedDelTopDepByPrevIdx";
-		ICFBamDelTopDepByPrevIdxKey key = schema.getCFBamBackingStore().getFactoryDelTopDep().newByPrevIdxKey();
+		ICFBamDelTopDepByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamDelTopDepObj> arrayList = new ArrayList<ICFBamDelTopDepObj>();
 		if( indexByPrevIdx != null ) {
@@ -1804,7 +1804,7 @@ public class CFBamDelTopDepTableObj
 	public List<ICFBamDelTopDepObj> readCachedDelTopDepByNextIdx( CFLibDbKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedDelTopDepByNextIdx";
-		ICFBamDelTopDepByNextIdxKey key = schema.getCFBamBackingStore().getFactoryDelTopDep().newByNextIdxKey();
+		ICFBamDelTopDepByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamDelTopDepObj> arrayList = new ArrayList<ICFBamDelTopDepObj>();
 		if( indexByNextIdx != null ) {
@@ -2060,7 +2060,7 @@ public class CFBamDelTopDepTableObj
 	@Override
 	public void deleteDelTopDepByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,
@@ -2094,7 +2094,7 @@ public class CFBamDelTopDepTableObj
 	@Override
 	public void deleteDelTopDepByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
-		ICFBamDelDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryDelDep().newByDefSchemaIdxKey();
+		ICFBamDelDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamDelDepByDefSchemaIdxKey,
@@ -2128,7 +2128,7 @@ public class CFBamDelTopDepTableObj
 	@Override
 	public void deleteDelTopDepByDelDepIdx( CFLibDbKeyHash256 RelationId )
 	{
-		ICFBamDelDepByDelDepIdxKey key = schema.getCFBamBackingStore().getFactoryDelDep().newByDelDepIdxKey();
+		ICFBamDelDepByDelDepIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newByDelDepIdxKey();
 		key.setRequiredRelationId( RelationId );
 		if( indexByDelDepIdx == null ) {
 			indexByDelDepIdx = new HashMap< ICFBamDelDepByDelDepIdxKey,
@@ -2162,7 +2162,7 @@ public class CFBamDelTopDepTableObj
 	@Override
 	public void deleteDelTopDepByDelTopDepTblIdx( CFLibDbKeyHash256 TableId )
 	{
-		ICFBamDelTopDepByDelTopDepTblIdxKey key = schema.getCFBamBackingStore().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
+		ICFBamDelTopDepByDelTopDepTblIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByDelTopDepTblIdxKey();
 		key.setRequiredTableId( TableId );
 		if( indexByDelTopDepTblIdx == null ) {
 			indexByDelTopDepTblIdx = new HashMap< ICFBamDelTopDepByDelTopDepTblIdxKey,
@@ -2201,7 +2201,7 @@ public class CFBamDelTopDepTableObj
 			indexByUNameIdx = new HashMap< ICFBamDelTopDepByUNameIdxKey,
 				ICFBamDelTopDepObj >();
 		}
-		ICFBamDelTopDepByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryDelTopDep().newByUNameIdxKey();
+		ICFBamDelTopDepByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByUNameIdxKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredName( Name );
 		ICFBamDelTopDepObj obj = null;
@@ -2224,7 +2224,7 @@ public class CFBamDelTopDepTableObj
 	@Override
 	public void deleteDelTopDepByPrevIdx( CFLibDbKeyHash256 PrevId )
 	{
-		ICFBamDelTopDepByPrevIdxKey key = schema.getCFBamBackingStore().getFactoryDelTopDep().newByPrevIdxKey();
+		ICFBamDelTopDepByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		if( indexByPrevIdx == null ) {
 			indexByPrevIdx = new HashMap< ICFBamDelTopDepByPrevIdxKey,
@@ -2258,7 +2258,7 @@ public class CFBamDelTopDepTableObj
 	@Override
 	public void deleteDelTopDepByNextIdx( CFLibDbKeyHash256 NextId )
 	{
-		ICFBamDelTopDepByNextIdxKey key = schema.getCFBamBackingStore().getFactoryDelTopDep().newByNextIdxKey();
+		ICFBamDelTopDepByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryDelTopDep().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		if( indexByNextIdx == null ) {
 			indexByNextIdx = new HashMap< ICFBamDelTopDepByNextIdxKey,

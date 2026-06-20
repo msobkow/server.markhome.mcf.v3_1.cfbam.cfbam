@@ -240,7 +240,7 @@ public class CFBamId32GenEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsId32Gen().getSchema().getCFBamBackingStore().getFactoryId32Gen().newRec();
+			rec = getOrigAsId32Gen().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryId32Gen().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

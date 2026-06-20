@@ -260,7 +260,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamRelationColByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByUNameIdxKey();
 				keyUNameIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
@@ -268,7 +268,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByRelationIdx != null ) {
 				ICFBamRelationColByRelationIdxKey keyRelationIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByRelationIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelationIdxKey();
 				keyRelationIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapRelationIdx = indexByRelationIdx.get( keyRelationIdx );
 				if( mapRelationIdx != null ) {
@@ -281,7 +281,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamRelationColByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -294,7 +294,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByFromColIdx != null ) {
 				ICFBamRelationColByFromColIdxKey keyFromColIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByFromColIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByFromColIdxKey();
 				keyFromColIdx.setRequiredFromColId( keepObj.getRequiredFromColId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapFromColIdx = indexByFromColIdx.get( keyFromColIdx );
 				if( mapFromColIdx != null ) {
@@ -307,7 +307,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByToColIdx != null ) {
 				ICFBamRelationColByToColIdxKey keyToColIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByToColIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByToColIdxKey();
 				keyToColIdx.setRequiredToColId( keepObj.getRequiredToColId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapToColIdx = indexByToColIdx.get( keyToColIdx );
 				if( mapToColIdx != null ) {
@@ -320,7 +320,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByPrevIdx != null ) {
 				ICFBamRelationColByPrevIdxKey keyPrevIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
@@ -333,7 +333,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByNextIdx != null ) {
 				ICFBamRelationColByNextIdxKey keyNextIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
@@ -346,7 +346,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByRelPrevIdx != null ) {
 				ICFBamRelationColByRelPrevIdxKey keyRelPrevIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByRelPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelPrevIdxKey();
 				keyRelPrevIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				keyRelPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapRelPrevIdx = indexByRelPrevIdx.get( keyRelPrevIdx );
@@ -360,7 +360,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByRelNextIdx != null ) {
 				ICFBamRelationColByRelNextIdxKey keyRelNextIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByRelNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelNextIdxKey();
 				keyRelNextIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				keyRelNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapRelNextIdx = indexByRelNextIdx.get( keyRelNextIdx );
@@ -377,7 +377,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamRelationColByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByUNameIdxKey();
 				keyUNameIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -385,7 +385,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByRelationIdx != null ) {
 				ICFBamRelationColByRelationIdxKey keyRelationIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByRelationIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelationIdxKey();
 				keyRelationIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapRelationIdx = indexByRelationIdx.get( keyRelationIdx );
 				if( mapRelationIdx != null ) {
@@ -395,7 +395,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamRelationColByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -405,7 +405,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByFromColIdx != null ) {
 				ICFBamRelationColByFromColIdxKey keyFromColIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByFromColIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByFromColIdxKey();
 				keyFromColIdx.setRequiredFromColId( keepObj.getRequiredFromColId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapFromColIdx = indexByFromColIdx.get( keyFromColIdx );
 				if( mapFromColIdx != null ) {
@@ -415,7 +415,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByToColIdx != null ) {
 				ICFBamRelationColByToColIdxKey keyToColIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByToColIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByToColIdxKey();
 				keyToColIdx.setRequiredToColId( keepObj.getRequiredToColId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapToColIdx = indexByToColIdx.get( keyToColIdx );
 				if( mapToColIdx != null ) {
@@ -425,7 +425,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByPrevIdx != null ) {
 				ICFBamRelationColByPrevIdxKey keyPrevIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
@@ -435,7 +435,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByNextIdx != null ) {
 				ICFBamRelationColByNextIdxKey keyNextIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
@@ -445,7 +445,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByRelPrevIdx != null ) {
 				ICFBamRelationColByRelPrevIdxKey keyRelPrevIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByRelPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelPrevIdxKey();
 				keyRelPrevIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				keyRelPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapRelPrevIdx = indexByRelPrevIdx.get( keyRelPrevIdx );
@@ -456,7 +456,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByRelNextIdx != null ) {
 				ICFBamRelationColByRelNextIdxKey keyRelNextIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByRelNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelNextIdxKey();
 				keyRelNextIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				keyRelNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapRelNextIdx = indexByRelNextIdx.get( keyRelNextIdx );
@@ -481,7 +481,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamRelationColByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByUNameIdxKey();
 				keyUNameIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -489,7 +489,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByRelationIdx != null ) {
 				ICFBamRelationColByRelationIdxKey keyRelationIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByRelationIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelationIdxKey();
 				keyRelationIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapRelationIdx = indexByRelationIdx.get( keyRelationIdx );
 				if( mapRelationIdx != null ) {
@@ -499,7 +499,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamRelationColByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -509,7 +509,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByFromColIdx != null ) {
 				ICFBamRelationColByFromColIdxKey keyFromColIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByFromColIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByFromColIdxKey();
 				keyFromColIdx.setRequiredFromColId( keepObj.getRequiredFromColId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapFromColIdx = indexByFromColIdx.get( keyFromColIdx );
 				if( mapFromColIdx != null ) {
@@ -519,7 +519,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByToColIdx != null ) {
 				ICFBamRelationColByToColIdxKey keyToColIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByToColIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByToColIdxKey();
 				keyToColIdx.setRequiredToColId( keepObj.getRequiredToColId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapToColIdx = indexByToColIdx.get( keyToColIdx );
 				if( mapToColIdx != null ) {
@@ -529,7 +529,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByPrevIdx != null ) {
 				ICFBamRelationColByPrevIdxKey keyPrevIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
@@ -539,7 +539,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByNextIdx != null ) {
 				ICFBamRelationColByNextIdxKey keyNextIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
@@ -549,7 +549,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByRelPrevIdx != null ) {
 				ICFBamRelationColByRelPrevIdxKey keyRelPrevIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByRelPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelPrevIdxKey();
 				keyRelPrevIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				keyRelPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapRelPrevIdx = indexByRelPrevIdx.get( keyRelPrevIdx );
@@ -560,7 +560,7 @@ public class CFBamRelationColTableObj
 
 			if( indexByRelNextIdx != null ) {
 				ICFBamRelationColByRelNextIdxKey keyRelNextIdx =
-					schema.getCFBamBackingStore().getFactoryRelationCol().newByRelNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelNextIdxKey();
 				keyRelNextIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				keyRelNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamRelationColObj > mapRelNextIdx = indexByRelNextIdx.get( keyRelNextIdx );
@@ -637,33 +637,33 @@ public class CFBamRelationColTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFBamRelationColByUNameIdxKey keyUNameIdx = schema.getCFBamBackingStore().getFactoryRelationCol().newByUNameIdxKey();
+		ICFBamRelationColByUNameIdxKey keyUNameIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByUNameIdxKey();
 		keyUNameIdx.setRequiredRelationId( existing.getRequiredRelationId() );
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
-		ICFBamRelationColByRelationIdxKey keyRelationIdx = schema.getCFBamBackingStore().getFactoryRelationCol().newByRelationIdxKey();
+		ICFBamRelationColByRelationIdxKey keyRelationIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelationIdxKey();
 		keyRelationIdx.setRequiredRelationId( existing.getRequiredRelationId() );
 
-		ICFBamRelationColByDefSchemaIdxKey keyDefSchemaIdx = schema.getCFBamBackingStore().getFactoryRelationCol().newByDefSchemaIdxKey();
+		ICFBamRelationColByDefSchemaIdxKey keyDefSchemaIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByDefSchemaIdxKey();
 		keyDefSchemaIdx.setOptionalDefSchemaId( existing.getOptionalDefSchemaId() );
 
-		ICFBamRelationColByFromColIdxKey keyFromColIdx = schema.getCFBamBackingStore().getFactoryRelationCol().newByFromColIdxKey();
+		ICFBamRelationColByFromColIdxKey keyFromColIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByFromColIdxKey();
 		keyFromColIdx.setRequiredFromColId( existing.getRequiredFromColId() );
 
-		ICFBamRelationColByToColIdxKey keyToColIdx = schema.getCFBamBackingStore().getFactoryRelationCol().newByToColIdxKey();
+		ICFBamRelationColByToColIdxKey keyToColIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByToColIdxKey();
 		keyToColIdx.setRequiredToColId( existing.getRequiredToColId() );
 
-		ICFBamRelationColByPrevIdxKey keyPrevIdx = schema.getCFBamBackingStore().getFactoryRelationCol().newByPrevIdxKey();
+		ICFBamRelationColByPrevIdxKey keyPrevIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByPrevIdxKey();
 		keyPrevIdx.setOptionalPrevId( existing.getOptionalPrevId() );
 
-		ICFBamRelationColByNextIdxKey keyNextIdx = schema.getCFBamBackingStore().getFactoryRelationCol().newByNextIdxKey();
+		ICFBamRelationColByNextIdxKey keyNextIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByNextIdxKey();
 		keyNextIdx.setOptionalNextId( existing.getOptionalNextId() );
 
-		ICFBamRelationColByRelPrevIdxKey keyRelPrevIdx = schema.getCFBamBackingStore().getFactoryRelationCol().newByRelPrevIdxKey();
+		ICFBamRelationColByRelPrevIdxKey keyRelPrevIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelPrevIdxKey();
 		keyRelPrevIdx.setRequiredRelationId( existing.getRequiredRelationId() );
 		keyRelPrevIdx.setOptionalPrevId( existing.getOptionalPrevId() );
 
-		ICFBamRelationColByRelNextIdxKey keyRelNextIdx = schema.getCFBamBackingStore().getFactoryRelationCol().newByRelNextIdxKey();
+		ICFBamRelationColByRelNextIdxKey keyRelNextIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelNextIdxKey();
 		keyRelNextIdx.setRequiredRelationId( existing.getRequiredRelationId() );
 		keyRelNextIdx.setOptionalNextId( existing.getOptionalNextId() );
 
@@ -936,7 +936,7 @@ public class CFBamRelationColTableObj
 			indexByUNameIdx = new HashMap< ICFBamRelationColByUNameIdxKey,
 				ICFBamRelationColObj >();
 		}
-		ICFBamRelationColByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByUNameIdxKey();
+		ICFBamRelationColByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByUNameIdxKey();
 		key.setRequiredRelationId( RelationId );
 		key.setRequiredName( Name );
 		ICFBamRelationColObj obj = null;
@@ -969,7 +969,7 @@ public class CFBamRelationColTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByRelationIdx";
-		ICFBamRelationColByRelationIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByRelationIdxKey();
+		ICFBamRelationColByRelationIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelationIdxKey();
 		key.setRequiredRelationId( RelationId );
 		Map<CFLibDbKeyHash256, ICFBamRelationColObj> dict;
 		if( indexByRelationIdx == null ) {
@@ -1062,7 +1062,7 @@ public class CFBamRelationColTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByDefSchemaIdx";
-		ICFBamRelationColByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByDefSchemaIdxKey();
+		ICFBamRelationColByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		Map<CFLibDbKeyHash256, ICFBamRelationColObj> dict;
 		if( indexByDefSchemaIdx == null ) {
@@ -1155,7 +1155,7 @@ public class CFBamRelationColTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByFromColIdx";
-		ICFBamRelationColByFromColIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByFromColIdxKey();
+		ICFBamRelationColByFromColIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByFromColIdxKey();
 		key.setRequiredFromColId( FromColId );
 		Map<CFLibDbKeyHash256, ICFBamRelationColObj> dict;
 		if( indexByFromColIdx == null ) {
@@ -1248,7 +1248,7 @@ public class CFBamRelationColTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByToColIdx";
-		ICFBamRelationColByToColIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByToColIdxKey();
+		ICFBamRelationColByToColIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByToColIdxKey();
 		key.setRequiredToColId( ToColId );
 		Map<CFLibDbKeyHash256, ICFBamRelationColObj> dict;
 		if( indexByToColIdx == null ) {
@@ -1341,7 +1341,7 @@ public class CFBamRelationColTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByPrevIdx";
-		ICFBamRelationColByPrevIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByPrevIdxKey();
+		ICFBamRelationColByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		Map<CFLibDbKeyHash256, ICFBamRelationColObj> dict;
 		if( indexByPrevIdx == null ) {
@@ -1434,7 +1434,7 @@ public class CFBamRelationColTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByNextIdx";
-		ICFBamRelationColByNextIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByNextIdxKey();
+		ICFBamRelationColByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		Map<CFLibDbKeyHash256, ICFBamRelationColObj> dict;
 		if( indexByNextIdx == null ) {
@@ -1530,7 +1530,7 @@ public class CFBamRelationColTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByRelPrevIdx";
-		ICFBamRelationColByRelPrevIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByRelPrevIdxKey();
+		ICFBamRelationColByRelPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelPrevIdxKey();
 		key.setRequiredRelationId( RelationId );
 		key.setOptionalPrevId( PrevId );
 		Map<CFLibDbKeyHash256, ICFBamRelationColObj> dict;
@@ -1628,7 +1628,7 @@ public class CFBamRelationColTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationColByRelNextIdx";
-		ICFBamRelationColByRelNextIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByRelNextIdxKey();
+		ICFBamRelationColByRelNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelNextIdxKey();
 		key.setRequiredRelationId( RelationId );
 		key.setOptionalNextId( NextId );
 		Map<CFLibDbKeyHash256, ICFBamRelationColObj> dict;
@@ -1724,7 +1724,7 @@ public class CFBamRelationColTableObj
 		String Name )
 	{
 		ICFBamRelationColObj obj = null;
-		ICFBamRelationColByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByUNameIdxKey();
+		ICFBamRelationColByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByUNameIdxKey();
 		key.setRequiredRelationId( RelationId );
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
@@ -1761,7 +1761,7 @@ public class CFBamRelationColTableObj
 	public List<ICFBamRelationColObj> readCachedRelationColByRelationIdx( CFLibDbKeyHash256 RelationId )
 	{
 		final String S_ProcName = "readCachedRelationColByRelationIdx";
-		ICFBamRelationColByRelationIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByRelationIdxKey();
+		ICFBamRelationColByRelationIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelationIdxKey();
 		key.setRequiredRelationId( RelationId );
 		ArrayList<ICFBamRelationColObj> arrayList = new ArrayList<ICFBamRelationColObj>();
 		if( indexByRelationIdx != null ) {
@@ -1838,7 +1838,7 @@ public class CFBamRelationColTableObj
 	public List<ICFBamRelationColObj> readCachedRelationColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedRelationColByDefSchemaIdx";
-		ICFBamRelationColByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByDefSchemaIdxKey();
+		ICFBamRelationColByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamRelationColObj> arrayList = new ArrayList<ICFBamRelationColObj>();
 		if( indexByDefSchemaIdx != null ) {
@@ -1915,7 +1915,7 @@ public class CFBamRelationColTableObj
 	public List<ICFBamRelationColObj> readCachedRelationColByFromColIdx( CFLibDbKeyHash256 FromColId )
 	{
 		final String S_ProcName = "readCachedRelationColByFromColIdx";
-		ICFBamRelationColByFromColIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByFromColIdxKey();
+		ICFBamRelationColByFromColIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByFromColIdxKey();
 		key.setRequiredFromColId( FromColId );
 		ArrayList<ICFBamRelationColObj> arrayList = new ArrayList<ICFBamRelationColObj>();
 		if( indexByFromColIdx != null ) {
@@ -1992,7 +1992,7 @@ public class CFBamRelationColTableObj
 	public List<ICFBamRelationColObj> readCachedRelationColByToColIdx( CFLibDbKeyHash256 ToColId )
 	{
 		final String S_ProcName = "readCachedRelationColByToColIdx";
-		ICFBamRelationColByToColIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByToColIdxKey();
+		ICFBamRelationColByToColIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByToColIdxKey();
 		key.setRequiredToColId( ToColId );
 		ArrayList<ICFBamRelationColObj> arrayList = new ArrayList<ICFBamRelationColObj>();
 		if( indexByToColIdx != null ) {
@@ -2069,7 +2069,7 @@ public class CFBamRelationColTableObj
 	public List<ICFBamRelationColObj> readCachedRelationColByPrevIdx( CFLibDbKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedRelationColByPrevIdx";
-		ICFBamRelationColByPrevIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByPrevIdxKey();
+		ICFBamRelationColByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamRelationColObj> arrayList = new ArrayList<ICFBamRelationColObj>();
 		if( indexByPrevIdx != null ) {
@@ -2146,7 +2146,7 @@ public class CFBamRelationColTableObj
 	public List<ICFBamRelationColObj> readCachedRelationColByNextIdx( CFLibDbKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedRelationColByNextIdx";
-		ICFBamRelationColByNextIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByNextIdxKey();
+		ICFBamRelationColByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamRelationColObj> arrayList = new ArrayList<ICFBamRelationColObj>();
 		if( indexByNextIdx != null ) {
@@ -2224,7 +2224,7 @@ public class CFBamRelationColTableObj
 		CFLibDbKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedRelationColByRelPrevIdx";
-		ICFBamRelationColByRelPrevIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByRelPrevIdxKey();
+		ICFBamRelationColByRelPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelPrevIdxKey();
 		key.setRequiredRelationId( RelationId );
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamRelationColObj> arrayList = new ArrayList<ICFBamRelationColObj>();
@@ -2303,7 +2303,7 @@ public class CFBamRelationColTableObj
 		CFLibDbKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedRelationColByRelNextIdx";
-		ICFBamRelationColByRelNextIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByRelNextIdxKey();
+		ICFBamRelationColByRelNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelNextIdxKey();
 		key.setRequiredRelationId( RelationId );
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamRelationColObj> arrayList = new ArrayList<ICFBamRelationColObj>();
@@ -2601,7 +2601,7 @@ public class CFBamRelationColTableObj
 			indexByUNameIdx = new HashMap< ICFBamRelationColByUNameIdxKey,
 				ICFBamRelationColObj >();
 		}
-		ICFBamRelationColByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByUNameIdxKey();
+		ICFBamRelationColByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByUNameIdxKey();
 		key.setRequiredRelationId( RelationId );
 		key.setRequiredName( Name );
 		ICFBamRelationColObj obj = null;
@@ -2624,7 +2624,7 @@ public class CFBamRelationColTableObj
 	@Override
 	public void deleteRelationColByRelationIdx( CFLibDbKeyHash256 RelationId )
 	{
-		ICFBamRelationColByRelationIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByRelationIdxKey();
+		ICFBamRelationColByRelationIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelationIdxKey();
 		key.setRequiredRelationId( RelationId );
 		if( indexByRelationIdx == null ) {
 			indexByRelationIdx = new HashMap< ICFBamRelationColByRelationIdxKey,
@@ -2658,7 +2658,7 @@ public class CFBamRelationColTableObj
 	@Override
 	public void deleteRelationColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
-		ICFBamRelationColByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByDefSchemaIdxKey();
+		ICFBamRelationColByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamRelationColByDefSchemaIdxKey,
@@ -2692,7 +2692,7 @@ public class CFBamRelationColTableObj
 	@Override
 	public void deleteRelationColByFromColIdx( CFLibDbKeyHash256 FromColId )
 	{
-		ICFBamRelationColByFromColIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByFromColIdxKey();
+		ICFBamRelationColByFromColIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByFromColIdxKey();
 		key.setRequiredFromColId( FromColId );
 		if( indexByFromColIdx == null ) {
 			indexByFromColIdx = new HashMap< ICFBamRelationColByFromColIdxKey,
@@ -2726,7 +2726,7 @@ public class CFBamRelationColTableObj
 	@Override
 	public void deleteRelationColByToColIdx( CFLibDbKeyHash256 ToColId )
 	{
-		ICFBamRelationColByToColIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByToColIdxKey();
+		ICFBamRelationColByToColIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByToColIdxKey();
 		key.setRequiredToColId( ToColId );
 		if( indexByToColIdx == null ) {
 			indexByToColIdx = new HashMap< ICFBamRelationColByToColIdxKey,
@@ -2760,7 +2760,7 @@ public class CFBamRelationColTableObj
 	@Override
 	public void deleteRelationColByPrevIdx( CFLibDbKeyHash256 PrevId )
 	{
-		ICFBamRelationColByPrevIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByPrevIdxKey();
+		ICFBamRelationColByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		if( indexByPrevIdx == null ) {
 			indexByPrevIdx = new HashMap< ICFBamRelationColByPrevIdxKey,
@@ -2794,7 +2794,7 @@ public class CFBamRelationColTableObj
 	@Override
 	public void deleteRelationColByNextIdx( CFLibDbKeyHash256 NextId )
 	{
-		ICFBamRelationColByNextIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByNextIdxKey();
+		ICFBamRelationColByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		if( indexByNextIdx == null ) {
 			indexByNextIdx = new HashMap< ICFBamRelationColByNextIdxKey,
@@ -2829,7 +2829,7 @@ public class CFBamRelationColTableObj
 	public void deleteRelationColByRelPrevIdx( CFLibDbKeyHash256 RelationId,
 		CFLibDbKeyHash256 PrevId )
 	{
-		ICFBamRelationColByRelPrevIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByRelPrevIdxKey();
+		ICFBamRelationColByRelPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelPrevIdxKey();
 		key.setRequiredRelationId( RelationId );
 		key.setOptionalPrevId( PrevId );
 		if( indexByRelPrevIdx == null ) {
@@ -2868,7 +2868,7 @@ public class CFBamRelationColTableObj
 	public void deleteRelationColByRelNextIdx( CFLibDbKeyHash256 RelationId,
 		CFLibDbKeyHash256 NextId )
 	{
-		ICFBamRelationColByRelNextIdxKey key = schema.getCFBamBackingStore().getFactoryRelationCol().newByRelNextIdxKey();
+		ICFBamRelationColByRelNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newByRelNextIdxKey();
 		key.setRequiredRelationId( RelationId );
 		key.setOptionalNextId( NextId );
 		if( indexByRelNextIdx == null ) {

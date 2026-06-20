@@ -367,7 +367,7 @@ public class CFBamMimeTypeEditObj
 	@Override
 	public ICFIntMimeType getRec() {
 		if( rec == null ) {
-			rec = getOrigAsMimeType().getSchema().getCFIntBackingStore().getFactoryMimeType().newRec();
+			rec = getOrigAsMimeType().getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryMimeType().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

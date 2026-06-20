@@ -214,7 +214,7 @@ public class CFBamServerObjFuncObj
 	public ICFBamScope getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryServerObjFunc().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryServerObjFunc().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

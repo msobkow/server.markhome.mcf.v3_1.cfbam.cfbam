@@ -267,7 +267,7 @@ public class CFBamSecUserPWResetObj
 	public ICFSecSecUserPWReset getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecUserPWReset().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWReset().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

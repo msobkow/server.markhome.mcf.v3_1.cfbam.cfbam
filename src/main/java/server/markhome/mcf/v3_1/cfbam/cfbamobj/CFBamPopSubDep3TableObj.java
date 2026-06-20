@@ -240,7 +240,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -250,7 +250,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByRelationIdx != null ) {
 				ICFBamPopDepByRelationIdxKey keyRelationIdx =
-					schema.getCFBamBackingStore().getFactoryPopDep().newByRelationIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByRelationIdxKey();
 				keyRelationIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj > mapRelationIdx = indexByRelationIdx.get( keyRelationIdx );
 				if( mapRelationIdx != null ) {
@@ -260,7 +260,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamPopDepByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryPopDep().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -270,7 +270,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByPopSubDep2Idx != null ) {
 				ICFBamPopSubDep3ByPopSubDep2IdxKey keyPopSubDep2Idx =
-					schema.getCFBamBackingStore().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
 				keyPopSubDep2Idx.setRequiredPopSubDep2Id( keepObj.getRequiredPopSubDep2Id() );
 				Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj > mapPopSubDep2Idx = indexByPopSubDep2Idx.get( keyPopSubDep2Idx );
 				if( mapPopSubDep2Idx != null ) {
@@ -283,7 +283,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamPopSubDep3ByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryPopSubDep3().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByUNameIdxKey();
 				keyUNameIdx.setRequiredPopSubDep2Id( keepObj.getRequiredPopSubDep2Id() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
@@ -297,7 +297,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -307,7 +307,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByRelationIdx != null ) {
 				ICFBamPopDepByRelationIdxKey keyRelationIdx =
-					schema.getCFBamBackingStore().getFactoryPopDep().newByRelationIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByRelationIdxKey();
 				keyRelationIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj > mapRelationIdx = indexByRelationIdx.get( keyRelationIdx );
 				if( mapRelationIdx != null ) {
@@ -317,7 +317,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamPopDepByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryPopDep().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -327,7 +327,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByPopSubDep2Idx != null ) {
 				ICFBamPopSubDep3ByPopSubDep2IdxKey keyPopSubDep2Idx =
-					schema.getCFBamBackingStore().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
 				keyPopSubDep2Idx.setRequiredPopSubDep2Id( keepObj.getRequiredPopSubDep2Id() );
 				Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj > mapPopSubDep2Idx = indexByPopSubDep2Idx.get( keyPopSubDep2Idx );
 				if( mapPopSubDep2Idx != null ) {
@@ -337,7 +337,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamPopSubDep3ByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryPopSubDep3().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByUNameIdxKey();
 				keyUNameIdx.setRequiredPopSubDep2Id( keepObj.getRequiredPopSubDep2Id() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -359,7 +359,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -369,7 +369,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByRelationIdx != null ) {
 				ICFBamPopDepByRelationIdxKey keyRelationIdx =
-					schema.getCFBamBackingStore().getFactoryPopDep().newByRelationIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByRelationIdxKey();
 				keyRelationIdx.setRequiredRelationId( keepObj.getRequiredRelationId() );
 				Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj > mapRelationIdx = indexByRelationIdx.get( keyRelationIdx );
 				if( mapRelationIdx != null ) {
@@ -379,7 +379,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamPopDepByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryPopDep().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -389,7 +389,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByPopSubDep2Idx != null ) {
 				ICFBamPopSubDep3ByPopSubDep2IdxKey keyPopSubDep2Idx =
-					schema.getCFBamBackingStore().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
 				keyPopSubDep2Idx.setRequiredPopSubDep2Id( keepObj.getRequiredPopSubDep2Id() );
 				Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj > mapPopSubDep2Idx = indexByPopSubDep2Idx.get( keyPopSubDep2Idx );
 				if( mapPopSubDep2Idx != null ) {
@@ -399,7 +399,7 @@ public class CFBamPopSubDep3TableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamPopSubDep3ByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryPopSubDep3().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByUNameIdxKey();
 				keyUNameIdx.setRequiredPopSubDep2Id( keepObj.getRequiredPopSubDep2Id() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -471,10 +471,10 @@ public class CFBamPopSubDep3TableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFBamPopSubDep3ByPopSubDep2IdxKey keyPopSubDep2Idx = schema.getCFBamBackingStore().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
+		ICFBamPopSubDep3ByPopSubDep2IdxKey keyPopSubDep2Idx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
 		keyPopSubDep2Idx.setRequiredPopSubDep2Id( existing.getRequiredPopSubDep2Id() );
 
-		ICFBamPopSubDep3ByUNameIdxKey keyUNameIdx = schema.getCFBamBackingStore().getFactoryPopSubDep3().newByUNameIdxKey();
+		ICFBamPopSubDep3ByUNameIdxKey keyUNameIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByUNameIdxKey();
 		keyUNameIdx.setRequiredPopSubDep2Id( existing.getRequiredPopSubDep2Id() );
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
@@ -680,7 +680,7 @@ public class CFBamPopSubDep3TableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readPopSubDep3ByTenantIdx";
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj> dict;
 		if( indexByTenantIdx == null ) {
@@ -773,7 +773,7 @@ public class CFBamPopSubDep3TableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readPopSubDep3ByRelationIdx";
-		ICFBamPopDepByRelationIdxKey key = schema.getCFBamBackingStore().getFactoryPopDep().newByRelationIdxKey();
+		ICFBamPopDepByRelationIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByRelationIdxKey();
 		key.setRequiredRelationId( RelationId );
 		Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj> dict;
 		if( indexByRelationIdx == null ) {
@@ -866,7 +866,7 @@ public class CFBamPopSubDep3TableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readPopSubDep3ByDefSchemaIdx";
-		ICFBamPopDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryPopDep().newByDefSchemaIdxKey();
+		ICFBamPopDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj> dict;
 		if( indexByDefSchemaIdx == null ) {
@@ -959,7 +959,7 @@ public class CFBamPopSubDep3TableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readPopSubDep3ByPopSubDep2Idx";
-		ICFBamPopSubDep3ByPopSubDep2IdxKey key = schema.getCFBamBackingStore().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
+		ICFBamPopSubDep3ByPopSubDep2IdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
 		key.setRequiredPopSubDep2Id( PopSubDep2Id );
 		Map<CFLibDbKeyHash256, ICFBamPopSubDep3Obj> dict;
 		if( indexByPopSubDep2Idx == null ) {
@@ -1057,7 +1057,7 @@ public class CFBamPopSubDep3TableObj
 			indexByUNameIdx = new HashMap< ICFBamPopSubDep3ByUNameIdxKey,
 				ICFBamPopSubDep3Obj >();
 		}
-		ICFBamPopSubDep3ByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryPopSubDep3().newByUNameIdxKey();
+		ICFBamPopSubDep3ByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByUNameIdxKey();
 		key.setRequiredPopSubDep2Id( PopSubDep2Id );
 		key.setRequiredName( Name );
 		ICFBamPopSubDep3Obj obj = null;
@@ -1090,7 +1090,7 @@ public class CFBamPopSubDep3TableObj
 	public List<ICFBamPopSubDep3Obj> readCachedPopSubDep3ByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedPopSubDep3ByTenantIdx";
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFBamPopSubDep3Obj> arrayList = new ArrayList<ICFBamPopSubDep3Obj>();
 		if( indexByTenantIdx != null ) {
@@ -1167,7 +1167,7 @@ public class CFBamPopSubDep3TableObj
 	public List<ICFBamPopSubDep3Obj> readCachedPopSubDep3ByRelationIdx( CFLibDbKeyHash256 RelationId )
 	{
 		final String S_ProcName = "readCachedPopSubDep3ByRelationIdx";
-		ICFBamPopDepByRelationIdxKey key = schema.getCFBamBackingStore().getFactoryPopDep().newByRelationIdxKey();
+		ICFBamPopDepByRelationIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByRelationIdxKey();
 		key.setRequiredRelationId( RelationId );
 		ArrayList<ICFBamPopSubDep3Obj> arrayList = new ArrayList<ICFBamPopSubDep3Obj>();
 		if( indexByRelationIdx != null ) {
@@ -1244,7 +1244,7 @@ public class CFBamPopSubDep3TableObj
 	public List<ICFBamPopSubDep3Obj> readCachedPopSubDep3ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedPopSubDep3ByDefSchemaIdx";
-		ICFBamPopDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryPopDep().newByDefSchemaIdxKey();
+		ICFBamPopDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamPopSubDep3Obj> arrayList = new ArrayList<ICFBamPopSubDep3Obj>();
 		if( indexByDefSchemaIdx != null ) {
@@ -1321,7 +1321,7 @@ public class CFBamPopSubDep3TableObj
 	public List<ICFBamPopSubDep3Obj> readCachedPopSubDep3ByPopSubDep2Idx( CFLibDbKeyHash256 PopSubDep2Id )
 	{
 		final String S_ProcName = "readCachedPopSubDep3ByPopSubDep2Idx";
-		ICFBamPopSubDep3ByPopSubDep2IdxKey key = schema.getCFBamBackingStore().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
+		ICFBamPopSubDep3ByPopSubDep2IdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
 		key.setRequiredPopSubDep2Id( PopSubDep2Id );
 		ArrayList<ICFBamPopSubDep3Obj> arrayList = new ArrayList<ICFBamPopSubDep3Obj>();
 		if( indexByPopSubDep2Idx != null ) {
@@ -1399,7 +1399,7 @@ public class CFBamPopSubDep3TableObj
 		String Name )
 	{
 		ICFBamPopSubDep3Obj obj = null;
-		ICFBamPopSubDep3ByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryPopSubDep3().newByUNameIdxKey();
+		ICFBamPopSubDep3ByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByUNameIdxKey();
 		key.setRequiredPopSubDep2Id( PopSubDep2Id );
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
@@ -1573,7 +1573,7 @@ public class CFBamPopSubDep3TableObj
 	@Override
 	public void deletePopSubDep3ByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,
@@ -1607,7 +1607,7 @@ public class CFBamPopSubDep3TableObj
 	@Override
 	public void deletePopSubDep3ByRelationIdx( CFLibDbKeyHash256 RelationId )
 	{
-		ICFBamPopDepByRelationIdxKey key = schema.getCFBamBackingStore().getFactoryPopDep().newByRelationIdxKey();
+		ICFBamPopDepByRelationIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByRelationIdxKey();
 		key.setRequiredRelationId( RelationId );
 		if( indexByRelationIdx == null ) {
 			indexByRelationIdx = new HashMap< ICFBamPopDepByRelationIdxKey,
@@ -1641,7 +1641,7 @@ public class CFBamPopSubDep3TableObj
 	@Override
 	public void deletePopSubDep3ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
-		ICFBamPopDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryPopDep().newByDefSchemaIdxKey();
+		ICFBamPopDepByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopDep().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamPopDepByDefSchemaIdxKey,
@@ -1675,7 +1675,7 @@ public class CFBamPopSubDep3TableObj
 	@Override
 	public void deletePopSubDep3ByPopSubDep2Idx( CFLibDbKeyHash256 PopSubDep2Id )
 	{
-		ICFBamPopSubDep3ByPopSubDep2IdxKey key = schema.getCFBamBackingStore().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
+		ICFBamPopSubDep3ByPopSubDep2IdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByPopSubDep2IdxKey();
 		key.setRequiredPopSubDep2Id( PopSubDep2Id );
 		if( indexByPopSubDep2Idx == null ) {
 			indexByPopSubDep2Idx = new HashMap< ICFBamPopSubDep3ByPopSubDep2IdxKey,
@@ -1714,7 +1714,7 @@ public class CFBamPopSubDep3TableObj
 			indexByUNameIdx = new HashMap< ICFBamPopSubDep3ByUNameIdxKey,
 				ICFBamPopSubDep3Obj >();
 		}
-		ICFBamPopSubDep3ByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryPopSubDep3().newByUNameIdxKey();
+		ICFBamPopSubDep3ByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep3().newByUNameIdxKey();
 		key.setRequiredPopSubDep2Id( PopSubDep2Id );
 		key.setRequiredName( Name );
 		ICFBamPopSubDep3Obj obj = null;

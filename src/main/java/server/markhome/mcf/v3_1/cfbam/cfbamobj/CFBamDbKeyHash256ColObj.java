@@ -227,7 +227,7 @@ public class CFBamDbKeyHash256ColObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryDbKeyHash256Col().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryDbKeyHash256Col().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

@@ -243,7 +243,7 @@ public class CFBamUInt16TypeEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsUInt16Type().getSchema().getCFBamBackingStore().getFactoryUInt16Type().newRec();
+			rec = getOrigAsUInt16Type().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryUInt16Type().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

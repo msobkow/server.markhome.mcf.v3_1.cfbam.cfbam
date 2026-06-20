@@ -243,7 +243,7 @@ public class CFBamInt16ColEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsInt16Col().getSchema().getCFBamBackingStore().getFactoryInt16Col().newRec();
+			rec = getOrigAsInt16Col().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryInt16Col().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

@@ -250,7 +250,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -260,7 +260,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamServerMethodByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
@@ -268,7 +268,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByMethTableIdx != null ) {
 				ICFBamServerMethodByMethTableIdxKey keyMethTableIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByMethTableIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableIdxKey();
 				keyMethTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapMethTableIdx = indexByMethTableIdx.get( keyMethTableIdx );
 				if( mapMethTableIdx != null ) {
@@ -278,7 +278,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByMethCodeVisIdx != null ) {
 				ICFBamServerMethodByMethCodeVisIdxKey keyMethCodeVisIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByMethCodeVisIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethCodeVisIdxKey();
 				keyMethCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapMethCodeVisIdx = indexByMethCodeVisIdx.get( keyMethCodeVisIdx );
 				if( mapMethCodeVisIdx != null ) {
@@ -288,7 +288,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByMethTableVisIdx != null ) {
 				ICFBamServerMethodByMethTableVisIdxKey keyMethTableVisIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByMethTableVisIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableVisIdxKey();
 				keyMethTableVisIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyMethTableVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapMethTableVisIdx = indexByMethTableVisIdx.get( keyMethTableVisIdx );
@@ -299,7 +299,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamServerMethodByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -309,7 +309,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByRetTblIdx != null ) {
 				ICFBamServerObjFuncByRetTblIdxKey keyRetTblIdx =
-					schema.getCFBamBackingStore().getFactoryServerObjFunc().newByRetTblIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerObjFunc().newByRetTblIdxKey();
 				keyRetTblIdx.setOptionalRetTableId( keepObj.getOptionalRetTableId() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapRetTblIdx = indexByRetTblIdx.get( keyRetTblIdx );
 				if( mapRetTblIdx != null ) {
@@ -328,7 +328,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -338,7 +338,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamServerMethodByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -346,7 +346,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByMethTableIdx != null ) {
 				ICFBamServerMethodByMethTableIdxKey keyMethTableIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByMethTableIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableIdxKey();
 				keyMethTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapMethTableIdx = indexByMethTableIdx.get( keyMethTableIdx );
 				if( mapMethTableIdx != null ) {
@@ -356,7 +356,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByMethCodeVisIdx != null ) {
 				ICFBamServerMethodByMethCodeVisIdxKey keyMethCodeVisIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByMethCodeVisIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethCodeVisIdxKey();
 				keyMethCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapMethCodeVisIdx = indexByMethCodeVisIdx.get( keyMethCodeVisIdx );
 				if( mapMethCodeVisIdx != null ) {
@@ -366,7 +366,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByMethTableVisIdx != null ) {
 				ICFBamServerMethodByMethTableVisIdxKey keyMethTableVisIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByMethTableVisIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableVisIdxKey();
 				keyMethTableVisIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyMethTableVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapMethTableVisIdx = indexByMethTableVisIdx.get( keyMethTableVisIdx );
@@ -377,7 +377,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamServerMethodByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -387,7 +387,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByRetTblIdx != null ) {
 				ICFBamServerObjFuncByRetTblIdxKey keyRetTblIdx =
-					schema.getCFBamBackingStore().getFactoryServerObjFunc().newByRetTblIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerObjFunc().newByRetTblIdxKey();
 				keyRetTblIdx.setOptionalRetTableId( keepObj.getOptionalRetTableId() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapRetTblIdx = indexByRetTblIdx.get( keyRetTblIdx );
 				if( mapRetTblIdx != null ) {
@@ -411,7 +411,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -421,7 +421,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamServerMethodByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -429,7 +429,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByMethTableIdx != null ) {
 				ICFBamServerMethodByMethTableIdxKey keyMethTableIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByMethTableIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableIdxKey();
 				keyMethTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapMethTableIdx = indexByMethTableIdx.get( keyMethTableIdx );
 				if( mapMethTableIdx != null ) {
@@ -439,7 +439,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByMethCodeVisIdx != null ) {
 				ICFBamServerMethodByMethCodeVisIdxKey keyMethCodeVisIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByMethCodeVisIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethCodeVisIdxKey();
 				keyMethCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapMethCodeVisIdx = indexByMethCodeVisIdx.get( keyMethCodeVisIdx );
 				if( mapMethCodeVisIdx != null ) {
@@ -449,7 +449,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByMethTableVisIdx != null ) {
 				ICFBamServerMethodByMethTableVisIdxKey keyMethTableVisIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByMethTableVisIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableVisIdxKey();
 				keyMethTableVisIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyMethTableVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapMethTableVisIdx = indexByMethTableVisIdx.get( keyMethTableVisIdx );
@@ -460,7 +460,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamServerMethodByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryServerMethod().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -470,7 +470,7 @@ public class CFBamServerObjFuncTableObj
 
 			if( indexByRetTblIdx != null ) {
 				ICFBamServerObjFuncByRetTblIdxKey keyRetTblIdx =
-					schema.getCFBamBackingStore().getFactoryServerObjFunc().newByRetTblIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerObjFunc().newByRetTblIdxKey();
 				keyRetTblIdx.setOptionalRetTableId( keepObj.getOptionalRetTableId() );
 				Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj > mapRetTblIdx = indexByRetTblIdx.get( keyRetTblIdx );
 				if( mapRetTblIdx != null ) {
@@ -544,7 +544,7 @@ public class CFBamServerObjFuncTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFBamServerObjFuncByRetTblIdxKey keyRetTblIdx = schema.getCFBamBackingStore().getFactoryServerObjFunc().newByRetTblIdxKey();
+		ICFBamServerObjFuncByRetTblIdxKey keyRetTblIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerObjFunc().newByRetTblIdxKey();
 		keyRetTblIdx.setOptionalRetTableId( existing.getOptionalRetTableId() );
 
 
@@ -746,7 +746,7 @@ public class CFBamServerObjFuncTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readServerObjFuncByTenantIdx";
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj> dict;
 		if( indexByTenantIdx == null ) {
@@ -844,7 +844,7 @@ public class CFBamServerObjFuncTableObj
 			indexByUNameIdx = new HashMap< ICFBamServerMethodByUNameIdxKey,
 				ICFBamServerObjFuncObj >();
 		}
-		ICFBamServerMethodByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByUNameIdxKey();
+		ICFBamServerMethodByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByUNameIdxKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredName( Name );
 		ICFBamServerObjFuncObj obj = null;
@@ -877,7 +877,7 @@ public class CFBamServerObjFuncTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readServerObjFuncByMethTableIdx";
-		ICFBamServerMethodByMethTableIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByMethTableIdxKey();
+		ICFBamServerMethodByMethTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableIdxKey();
 		key.setRequiredTableId( TableId );
 		Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj> dict;
 		if( indexByMethTableIdx == null ) {
@@ -970,7 +970,7 @@ public class CFBamServerObjFuncTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readServerObjFuncByMethCodeVisIdx";
-		ICFBamServerMethodByMethCodeVisIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByMethCodeVisIdxKey();
+		ICFBamServerMethodByMethCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethCodeVisIdxKey();
 		key.setRequiredCodeVis( CodeVis );
 		Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj> dict;
 		if( indexByMethCodeVisIdx == null ) {
@@ -1066,7 +1066,7 @@ public class CFBamServerObjFuncTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readServerObjFuncByMethTableVisIdx";
-		ICFBamServerMethodByMethTableVisIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByMethTableVisIdxKey();
+		ICFBamServerMethodByMethTableVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableVisIdxKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredCodeVis( CodeVis );
 		Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj> dict;
@@ -1161,7 +1161,7 @@ public class CFBamServerObjFuncTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readServerObjFuncByDefSchemaIdx";
-		ICFBamServerMethodByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByDefSchemaIdxKey();
+		ICFBamServerMethodByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj> dict;
 		if( indexByDefSchemaIdx == null ) {
@@ -1254,7 +1254,7 @@ public class CFBamServerObjFuncTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readServerObjFuncByRetTblIdx";
-		ICFBamServerObjFuncByRetTblIdxKey key = schema.getCFBamBackingStore().getFactoryServerObjFunc().newByRetTblIdxKey();
+		ICFBamServerObjFuncByRetTblIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerObjFunc().newByRetTblIdxKey();
 		key.setOptionalRetTableId( RetTableId );
 		Map<CFLibDbKeyHash256, ICFBamServerObjFuncObj> dict;
 		if( indexByRetTblIdx == null ) {
@@ -1347,7 +1347,7 @@ public class CFBamServerObjFuncTableObj
 	public List<ICFBamServerObjFuncObj> readCachedServerObjFuncByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedServerObjFuncByTenantIdx";
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFBamServerObjFuncObj> arrayList = new ArrayList<ICFBamServerObjFuncObj>();
 		if( indexByTenantIdx != null ) {
@@ -1425,7 +1425,7 @@ public class CFBamServerObjFuncTableObj
 		String Name )
 	{
 		ICFBamServerObjFuncObj obj = null;
-		ICFBamServerMethodByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByUNameIdxKey();
+		ICFBamServerMethodByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByUNameIdxKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
@@ -1462,7 +1462,7 @@ public class CFBamServerObjFuncTableObj
 	public List<ICFBamServerObjFuncObj> readCachedServerObjFuncByMethTableIdx( CFLibDbKeyHash256 TableId )
 	{
 		final String S_ProcName = "readCachedServerObjFuncByMethTableIdx";
-		ICFBamServerMethodByMethTableIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByMethTableIdxKey();
+		ICFBamServerMethodByMethTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableIdxKey();
 		key.setRequiredTableId( TableId );
 		ArrayList<ICFBamServerObjFuncObj> arrayList = new ArrayList<ICFBamServerObjFuncObj>();
 		if( indexByMethTableIdx != null ) {
@@ -1539,7 +1539,7 @@ public class CFBamServerObjFuncTableObj
 	public List<ICFBamServerObjFuncObj> readCachedServerObjFuncByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "readCachedServerObjFuncByMethCodeVisIdx";
-		ICFBamServerMethodByMethCodeVisIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByMethCodeVisIdxKey();
+		ICFBamServerMethodByMethCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethCodeVisIdxKey();
 		key.setRequiredCodeVis( CodeVis );
 		ArrayList<ICFBamServerObjFuncObj> arrayList = new ArrayList<ICFBamServerObjFuncObj>();
 		if( indexByMethCodeVisIdx != null ) {
@@ -1617,7 +1617,7 @@ public class CFBamServerObjFuncTableObj
 		ICFBamSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "readCachedServerObjFuncByMethTableVisIdx";
-		ICFBamServerMethodByMethTableVisIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByMethTableVisIdxKey();
+		ICFBamServerMethodByMethTableVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableVisIdxKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredCodeVis( CodeVis );
 		ArrayList<ICFBamServerObjFuncObj> arrayList = new ArrayList<ICFBamServerObjFuncObj>();
@@ -1695,7 +1695,7 @@ public class CFBamServerObjFuncTableObj
 	public List<ICFBamServerObjFuncObj> readCachedServerObjFuncByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedServerObjFuncByDefSchemaIdx";
-		ICFBamServerMethodByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByDefSchemaIdxKey();
+		ICFBamServerMethodByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamServerObjFuncObj> arrayList = new ArrayList<ICFBamServerObjFuncObj>();
 		if( indexByDefSchemaIdx != null ) {
@@ -1772,7 +1772,7 @@ public class CFBamServerObjFuncTableObj
 	public List<ICFBamServerObjFuncObj> readCachedServerObjFuncByRetTblIdx( CFLibDbKeyHash256 RetTableId )
 	{
 		final String S_ProcName = "readCachedServerObjFuncByRetTblIdx";
-		ICFBamServerObjFuncByRetTblIdxKey key = schema.getCFBamBackingStore().getFactoryServerObjFunc().newByRetTblIdxKey();
+		ICFBamServerObjFuncByRetTblIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerObjFunc().newByRetTblIdxKey();
 		key.setOptionalRetTableId( RetTableId );
 		ArrayList<ICFBamServerObjFuncObj> arrayList = new ArrayList<ICFBamServerObjFuncObj>();
 		if( indexByRetTblIdx != null ) {
@@ -2022,7 +2022,7 @@ public class CFBamServerObjFuncTableObj
 	@Override
 	public void deleteServerObjFuncByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,
@@ -2061,7 +2061,7 @@ public class CFBamServerObjFuncTableObj
 			indexByUNameIdx = new HashMap< ICFBamServerMethodByUNameIdxKey,
 				ICFBamServerObjFuncObj >();
 		}
-		ICFBamServerMethodByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByUNameIdxKey();
+		ICFBamServerMethodByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByUNameIdxKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredName( Name );
 		ICFBamServerObjFuncObj obj = null;
@@ -2084,7 +2084,7 @@ public class CFBamServerObjFuncTableObj
 	@Override
 	public void deleteServerObjFuncByMethTableIdx( CFLibDbKeyHash256 TableId )
 	{
-		ICFBamServerMethodByMethTableIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByMethTableIdxKey();
+		ICFBamServerMethodByMethTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableIdxKey();
 		key.setRequiredTableId( TableId );
 		if( indexByMethTableIdx == null ) {
 			indexByMethTableIdx = new HashMap< ICFBamServerMethodByMethTableIdxKey,
@@ -2118,7 +2118,7 @@ public class CFBamServerObjFuncTableObj
 	@Override
 	public void deleteServerObjFuncByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
 	{
-		ICFBamServerMethodByMethCodeVisIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByMethCodeVisIdxKey();
+		ICFBamServerMethodByMethCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethCodeVisIdxKey();
 		key.setRequiredCodeVis( CodeVis );
 		if( indexByMethCodeVisIdx == null ) {
 			indexByMethCodeVisIdx = new HashMap< ICFBamServerMethodByMethCodeVisIdxKey,
@@ -2153,7 +2153,7 @@ public class CFBamServerObjFuncTableObj
 	public void deleteServerObjFuncByMethTableVisIdx( CFLibDbKeyHash256 TableId,
 		ICFBamSchema.CodeVisibilityEnum CodeVis )
 	{
-		ICFBamServerMethodByMethTableVisIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByMethTableVisIdxKey();
+		ICFBamServerMethodByMethTableVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableVisIdxKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredCodeVis( CodeVis );
 		if( indexByMethTableVisIdx == null ) {
@@ -2191,7 +2191,7 @@ public class CFBamServerObjFuncTableObj
 	@Override
 	public void deleteServerObjFuncByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
-		ICFBamServerMethodByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryServerMethod().newByDefSchemaIdxKey();
+		ICFBamServerMethodByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamServerMethodByDefSchemaIdxKey,
@@ -2225,7 +2225,7 @@ public class CFBamServerObjFuncTableObj
 	@Override
 	public void deleteServerObjFuncByRetTblIdx( CFLibDbKeyHash256 RetTableId )
 	{
-		ICFBamServerObjFuncByRetTblIdxKey key = schema.getCFBamBackingStore().getFactoryServerObjFunc().newByRetTblIdxKey();
+		ICFBamServerObjFuncByRetTblIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerObjFunc().newByRetTblIdxKey();
 		key.setOptionalRetTableId( RetTableId );
 		if( indexByRetTblIdx == null ) {
 			indexByRetTblIdx = new HashMap< ICFBamServerObjFuncByRetTblIdxKey,

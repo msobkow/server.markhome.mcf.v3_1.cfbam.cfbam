@@ -214,7 +214,7 @@ public class CFBamSecTentGrpTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFSecSecTentGrpByTenantIdxKey keyTenantIdx =
-					schema.getCFSecBackingStore().getFactorySecTentGrp().newByTenantIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -227,7 +227,7 @@ public class CFBamSecTentGrpTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecTentGrpByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecTentGrp().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -240,7 +240,7 @@ public class CFBamSecTentGrpTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecTentGrpByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecTentGrp().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
@@ -251,7 +251,7 @@ public class CFBamSecTentGrpTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFSecSecTentGrpByTenantIdxKey keyTenantIdx =
-					schema.getCFSecBackingStore().getFactorySecTentGrp().newByTenantIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -261,7 +261,7 @@ public class CFBamSecTentGrpTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecTentGrpByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecTentGrp().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -271,7 +271,7 @@ public class CFBamSecTentGrpTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecTentGrpByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecTentGrp().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -293,7 +293,7 @@ public class CFBamSecTentGrpTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFSecSecTentGrpByTenantIdxKey keyTenantIdx =
-					schema.getCFSecBackingStore().getFactorySecTentGrp().newByTenantIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -303,7 +303,7 @@ public class CFBamSecTentGrpTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecTentGrpByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecTentGrp().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 				keyNameIdx.setRequiredName( keepObj.getRequiredName() );
 				Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -313,7 +313,7 @@ public class CFBamSecTentGrpTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFSecSecTentGrpByUNameIdxKey keyUNameIdx =
-					schema.getCFSecBackingStore().getFactorySecTentGrp().newByUNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -383,13 +383,13 @@ public class CFBamSecTentGrpTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecSecTentGrpByTenantIdxKey keyTenantIdx = schema.getCFSecBackingStore().getFactorySecTentGrp().newByTenantIdxKey();
+		ICFSecSecTentGrpByTenantIdxKey keyTenantIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 		keyTenantIdx.setRequiredTenantId( existing.getRequiredTenantId() );
 
-		ICFSecSecTentGrpByNameIdxKey keyNameIdx = schema.getCFSecBackingStore().getFactorySecTentGrp().newByNameIdxKey();
+		ICFSecSecTentGrpByNameIdxKey keyNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 		keyNameIdx.setRequiredName( existing.getRequiredName() );
 
-		ICFSecSecTentGrpByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getFactorySecTentGrp().newByUNameIdxKey();
+		ICFSecSecTentGrpByUNameIdxKey keyUNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByUNameIdxKey();
 		keyUNameIdx.setRequiredTenantId( existing.getRequiredTenantId() );
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
@@ -604,7 +604,7 @@ public class CFBamSecTentGrpTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecTentGrpByTenantIdx";
-		ICFSecSecTentGrpByTenantIdxKey key = schema.getCFSecBackingStore().getFactorySecTentGrp().newByTenantIdxKey();
+		ICFSecSecTentGrpByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj> dict;
 		if( indexByTenantIdx == null ) {
@@ -697,7 +697,7 @@ public class CFBamSecTentGrpTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecTentGrpByNameIdx";
-		ICFSecSecTentGrpByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecTentGrp().newByNameIdxKey();
+		ICFSecSecTentGrpByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 		key.setRequiredName( Name );
 		Map<CFLibDbKeyHash256, ICFSecSecTentGrpObj> dict;
 		if( indexByNameIdx == null ) {
@@ -795,7 +795,7 @@ public class CFBamSecTentGrpTableObj
 			indexByUNameIdx = new HashMap< ICFSecSecTentGrpByUNameIdxKey,
 				ICFSecSecTentGrpObj >();
 		}
-		ICFSecSecTentGrpByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecTentGrp().newByUNameIdxKey();
+		ICFSecSecTentGrpByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByUNameIdxKey();
 		key.setRequiredTenantId( TenantId );
 		key.setRequiredName( Name );
 		ICFSecSecTentGrpObj obj = null;
@@ -828,7 +828,7 @@ public class CFBamSecTentGrpTableObj
 	public List<ICFSecSecTentGrpObj> readCachedSecTentGrpByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedSecTentGrpByTenantIdx";
-		ICFSecSecTentGrpByTenantIdxKey key = schema.getCFSecBackingStore().getFactorySecTentGrp().newByTenantIdxKey();
+		ICFSecSecTentGrpByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFSecSecTentGrpObj> arrayList = new ArrayList<ICFSecSecTentGrpObj>();
 		if( indexByTenantIdx != null ) {
@@ -905,7 +905,7 @@ public class CFBamSecTentGrpTableObj
 	public List<ICFSecSecTentGrpObj> readCachedSecTentGrpByNameIdx( String Name )
 	{
 		final String S_ProcName = "readCachedSecTentGrpByNameIdx";
-		ICFSecSecTentGrpByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecTentGrp().newByNameIdxKey();
+		ICFSecSecTentGrpByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 		key.setRequiredName( Name );
 		ArrayList<ICFSecSecTentGrpObj> arrayList = new ArrayList<ICFSecSecTentGrpObj>();
 		if( indexByNameIdx != null ) {
@@ -983,7 +983,7 @@ public class CFBamSecTentGrpTableObj
 		String Name )
 	{
 		ICFSecSecTentGrpObj obj = null;
-		ICFSecSecTentGrpByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecTentGrp().newByUNameIdxKey();
+		ICFSecSecTentGrpByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByUNameIdxKey();
 		key.setRequiredTenantId( TenantId );
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
@@ -1121,7 +1121,7 @@ public class CFBamSecTentGrpTableObj
 	@Override
 	public void deleteSecTentGrpByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
-		ICFSecSecTentGrpByTenantIdxKey key = schema.getCFSecBackingStore().getFactorySecTentGrp().newByTenantIdxKey();
+		ICFSecSecTentGrpByTenantIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFSecSecTentGrpByTenantIdxKey,
@@ -1155,7 +1155,7 @@ public class CFBamSecTentGrpTableObj
 	@Override
 	public void deleteSecTentGrpByNameIdx( String Name )
 	{
-		ICFSecSecTentGrpByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecTentGrp().newByNameIdxKey();
+		ICFSecSecTentGrpByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByNameIdxKey();
 		key.setRequiredName( Name );
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecSecTentGrpByNameIdxKey,
@@ -1194,7 +1194,7 @@ public class CFBamSecTentGrpTableObj
 			indexByUNameIdx = new HashMap< ICFSecSecTentGrpByUNameIdxKey,
 				ICFSecSecTentGrpObj >();
 		}
-		ICFSecSecTentGrpByUNameIdxKey key = schema.getCFSecBackingStore().getFactorySecTentGrp().newByUNameIdxKey();
+		ICFSecSecTentGrpByUNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecTentGrp().newByUNameIdxKey();
 		key.setRequiredTenantId( TenantId );
 		key.setRequiredName( Name );
 		ICFSecSecTentGrpObj obj = null;

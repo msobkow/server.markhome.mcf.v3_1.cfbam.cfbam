@@ -227,7 +227,7 @@ public class CFBamNmTokensTypeObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryNmTokensType().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryNmTokensType().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

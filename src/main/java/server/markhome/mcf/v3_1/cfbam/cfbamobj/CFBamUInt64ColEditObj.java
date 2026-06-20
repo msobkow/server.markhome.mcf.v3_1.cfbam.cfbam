@@ -243,7 +243,7 @@ public class CFBamUInt64ColEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsUInt64Col().getSchema().getCFBamBackingStore().getFactoryUInt64Col().newRec();
+			rec = getOrigAsUInt64Col().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryUInt64Col().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

@@ -227,7 +227,7 @@ public class CFBamDbKeyHash384TypeObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryDbKeyHash384Type().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryDbKeyHash384Type().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

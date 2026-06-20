@@ -240,7 +240,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByEnumIdx != null ) {
 				ICFBamEnumTagByEnumIdxKey keyEnumIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumIdxKey();
 				keyEnumIdx.setRequiredEnumId( keepObj.getRequiredEnumId() );
 				Map<CFLibDbKeyHash256, ICFBamEnumTagObj > mapEnumIdx = indexByEnumIdx.get( keyEnumIdx );
 				if( mapEnumIdx != null ) {
@@ -253,7 +253,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamEnumTagByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamEnumTagObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -266,7 +266,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByEnumNameIdx != null ) {
 				ICFBamEnumTagByEnumNameIdxKey keyEnumNameIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumNameIdxKey();
 				keyEnumNameIdx.setRequiredEnumId( keepObj.getRequiredEnumId() );
 				keyEnumNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByEnumNameIdx.remove( keyEnumNameIdx );
@@ -274,7 +274,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByPrevIdx != null ) {
 				ICFBamEnumTagByPrevIdxKey keyPrevIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamEnumTagObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
@@ -287,7 +287,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByNextIdx != null ) {
 				ICFBamEnumTagByNextIdxKey keyNextIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamEnumTagObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
@@ -303,7 +303,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByEnumIdx != null ) {
 				ICFBamEnumTagByEnumIdxKey keyEnumIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumIdxKey();
 				keyEnumIdx.setRequiredEnumId( keepObj.getRequiredEnumId() );
 				Map<CFLibDbKeyHash256, ICFBamEnumTagObj > mapEnumIdx = indexByEnumIdx.get( keyEnumIdx );
 				if( mapEnumIdx != null ) {
@@ -313,7 +313,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamEnumTagByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamEnumTagObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -323,7 +323,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByEnumNameIdx != null ) {
 				ICFBamEnumTagByEnumNameIdxKey keyEnumNameIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumNameIdxKey();
 				keyEnumNameIdx.setRequiredEnumId( keepObj.getRequiredEnumId() );
 				keyEnumNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByEnumNameIdx.put( keyEnumNameIdx, keepObj );
@@ -331,7 +331,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByPrevIdx != null ) {
 				ICFBamEnumTagByPrevIdxKey keyPrevIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamEnumTagObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
@@ -341,7 +341,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByNextIdx != null ) {
 				ICFBamEnumTagByNextIdxKey keyNextIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamEnumTagObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
@@ -365,7 +365,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByEnumIdx != null ) {
 				ICFBamEnumTagByEnumIdxKey keyEnumIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumIdxKey();
 				keyEnumIdx.setRequiredEnumId( keepObj.getRequiredEnumId() );
 				Map<CFLibDbKeyHash256, ICFBamEnumTagObj > mapEnumIdx = indexByEnumIdx.get( keyEnumIdx );
 				if( mapEnumIdx != null ) {
@@ -375,7 +375,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamEnumTagByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamEnumTagObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -385,7 +385,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByEnumNameIdx != null ) {
 				ICFBamEnumTagByEnumNameIdxKey keyEnumNameIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumNameIdxKey();
 				keyEnumNameIdx.setRequiredEnumId( keepObj.getRequiredEnumId() );
 				keyEnumNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByEnumNameIdx.put( keyEnumNameIdx, keepObj );
@@ -393,7 +393,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByPrevIdx != null ) {
 				ICFBamEnumTagByPrevIdxKey keyPrevIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByPrevIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
 				Map<CFLibDbKeyHash256, ICFBamEnumTagObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
@@ -403,7 +403,7 @@ public class CFBamEnumTagTableObj
 
 			if( indexByNextIdx != null ) {
 				ICFBamEnumTagByNextIdxKey keyNextIdx =
-					schema.getCFBamBackingStore().getFactoryEnumTag().newByNextIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
 				Map<CFLibDbKeyHash256, ICFBamEnumTagObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
@@ -479,20 +479,20 @@ public class CFBamEnumTagTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFBamEnumTagByEnumIdxKey keyEnumIdx = schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumIdxKey();
+		ICFBamEnumTagByEnumIdxKey keyEnumIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumIdxKey();
 		keyEnumIdx.setRequiredEnumId( existing.getRequiredEnumId() );
 
-		ICFBamEnumTagByDefSchemaIdxKey keyDefSchemaIdx = schema.getCFBamBackingStore().getFactoryEnumTag().newByDefSchemaIdxKey();
+		ICFBamEnumTagByDefSchemaIdxKey keyDefSchemaIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByDefSchemaIdxKey();
 		keyDefSchemaIdx.setOptionalDefSchemaId( existing.getOptionalDefSchemaId() );
 
-		ICFBamEnumTagByEnumNameIdxKey keyEnumNameIdx = schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumNameIdxKey();
+		ICFBamEnumTagByEnumNameIdxKey keyEnumNameIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumNameIdxKey();
 		keyEnumNameIdx.setRequiredEnumId( existing.getRequiredEnumId() );
 		keyEnumNameIdx.setRequiredName( existing.getRequiredName() );
 
-		ICFBamEnumTagByPrevIdxKey keyPrevIdx = schema.getCFBamBackingStore().getFactoryEnumTag().newByPrevIdxKey();
+		ICFBamEnumTagByPrevIdxKey keyPrevIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByPrevIdxKey();
 		keyPrevIdx.setOptionalPrevId( existing.getOptionalPrevId() );
 
-		ICFBamEnumTagByNextIdxKey keyNextIdx = schema.getCFBamBackingStore().getFactoryEnumTag().newByNextIdxKey();
+		ICFBamEnumTagByNextIdxKey keyNextIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByNextIdxKey();
 		keyNextIdx.setOptionalNextId( existing.getOptionalNextId() );
 
 
@@ -723,7 +723,7 @@ public class CFBamEnumTagTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTagByEnumIdx";
-		ICFBamEnumTagByEnumIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumIdxKey();
+		ICFBamEnumTagByEnumIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumIdxKey();
 		key.setRequiredEnumId( EnumId );
 		Map<CFLibDbKeyHash256, ICFBamEnumTagObj> dict;
 		if( indexByEnumIdx == null ) {
@@ -816,7 +816,7 @@ public class CFBamEnumTagTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTagByDefSchemaIdx";
-		ICFBamEnumTagByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByDefSchemaIdxKey();
+		ICFBamEnumTagByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		Map<CFLibDbKeyHash256, ICFBamEnumTagObj> dict;
 		if( indexByDefSchemaIdx == null ) {
@@ -914,7 +914,7 @@ public class CFBamEnumTagTableObj
 			indexByEnumNameIdx = new HashMap< ICFBamEnumTagByEnumNameIdxKey,
 				ICFBamEnumTagObj >();
 		}
-		ICFBamEnumTagByEnumNameIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumNameIdxKey();
+		ICFBamEnumTagByEnumNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumNameIdxKey();
 		key.setRequiredEnumId( EnumId );
 		key.setRequiredName( Name );
 		ICFBamEnumTagObj obj = null;
@@ -947,7 +947,7 @@ public class CFBamEnumTagTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTagByPrevIdx";
-		ICFBamEnumTagByPrevIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByPrevIdxKey();
+		ICFBamEnumTagByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		Map<CFLibDbKeyHash256, ICFBamEnumTagObj> dict;
 		if( indexByPrevIdx == null ) {
@@ -1040,7 +1040,7 @@ public class CFBamEnumTagTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTagByNextIdx";
-		ICFBamEnumTagByNextIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByNextIdxKey();
+		ICFBamEnumTagByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		Map<CFLibDbKeyHash256, ICFBamEnumTagObj> dict;
 		if( indexByNextIdx == null ) {
@@ -1133,7 +1133,7 @@ public class CFBamEnumTagTableObj
 	public List<ICFBamEnumTagObj> readCachedEnumTagByEnumIdx( CFLibDbKeyHash256 EnumId )
 	{
 		final String S_ProcName = "readCachedEnumTagByEnumIdx";
-		ICFBamEnumTagByEnumIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumIdxKey();
+		ICFBamEnumTagByEnumIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumIdxKey();
 		key.setRequiredEnumId( EnumId );
 		ArrayList<ICFBamEnumTagObj> arrayList = new ArrayList<ICFBamEnumTagObj>();
 		if( indexByEnumIdx != null ) {
@@ -1210,7 +1210,7 @@ public class CFBamEnumTagTableObj
 	public List<ICFBamEnumTagObj> readCachedEnumTagByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedEnumTagByDefSchemaIdx";
-		ICFBamEnumTagByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByDefSchemaIdxKey();
+		ICFBamEnumTagByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamEnumTagObj> arrayList = new ArrayList<ICFBamEnumTagObj>();
 		if( indexByDefSchemaIdx != null ) {
@@ -1288,7 +1288,7 @@ public class CFBamEnumTagTableObj
 		String Name )
 	{
 		ICFBamEnumTagObj obj = null;
-		ICFBamEnumTagByEnumNameIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumNameIdxKey();
+		ICFBamEnumTagByEnumNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumNameIdxKey();
 		key.setRequiredEnumId( EnumId );
 		key.setRequiredName( Name );
 		if( indexByEnumNameIdx != null ) {
@@ -1325,7 +1325,7 @@ public class CFBamEnumTagTableObj
 	public List<ICFBamEnumTagObj> readCachedEnumTagByPrevIdx( CFLibDbKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedEnumTagByPrevIdx";
-		ICFBamEnumTagByPrevIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByPrevIdxKey();
+		ICFBamEnumTagByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamEnumTagObj> arrayList = new ArrayList<ICFBamEnumTagObj>();
 		if( indexByPrevIdx != null ) {
@@ -1402,7 +1402,7 @@ public class CFBamEnumTagTableObj
 	public List<ICFBamEnumTagObj> readCachedEnumTagByNextIdx( CFLibDbKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedEnumTagByNextIdx";
-		ICFBamEnumTagByNextIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByNextIdxKey();
+		ICFBamEnumTagByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamEnumTagObj> arrayList = new ArrayList<ICFBamEnumTagObj>();
 		if( indexByNextIdx != null ) {
@@ -1622,7 +1622,7 @@ public class CFBamEnumTagTableObj
 	@Override
 	public void deleteEnumTagByEnumIdx( CFLibDbKeyHash256 EnumId )
 	{
-		ICFBamEnumTagByEnumIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumIdxKey();
+		ICFBamEnumTagByEnumIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumIdxKey();
 		key.setRequiredEnumId( EnumId );
 		if( indexByEnumIdx == null ) {
 			indexByEnumIdx = new HashMap< ICFBamEnumTagByEnumIdxKey,
@@ -1656,7 +1656,7 @@ public class CFBamEnumTagTableObj
 	@Override
 	public void deleteEnumTagByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
-		ICFBamEnumTagByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByDefSchemaIdxKey();
+		ICFBamEnumTagByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamEnumTagByDefSchemaIdxKey,
@@ -1695,7 +1695,7 @@ public class CFBamEnumTagTableObj
 			indexByEnumNameIdx = new HashMap< ICFBamEnumTagByEnumNameIdxKey,
 				ICFBamEnumTagObj >();
 		}
-		ICFBamEnumTagByEnumNameIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByEnumNameIdxKey();
+		ICFBamEnumTagByEnumNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByEnumNameIdxKey();
 		key.setRequiredEnumId( EnumId );
 		key.setRequiredName( Name );
 		ICFBamEnumTagObj obj = null;
@@ -1718,7 +1718,7 @@ public class CFBamEnumTagTableObj
 	@Override
 	public void deleteEnumTagByPrevIdx( CFLibDbKeyHash256 PrevId )
 	{
-		ICFBamEnumTagByPrevIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByPrevIdxKey();
+		ICFBamEnumTagByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		if( indexByPrevIdx == null ) {
 			indexByPrevIdx = new HashMap< ICFBamEnumTagByPrevIdxKey,
@@ -1752,7 +1752,7 @@ public class CFBamEnumTagTableObj
 	@Override
 	public void deleteEnumTagByNextIdx( CFLibDbKeyHash256 NextId )
 	{
-		ICFBamEnumTagByNextIdxKey key = schema.getCFBamBackingStore().getFactoryEnumTag().newByNextIdxKey();
+		ICFBamEnumTagByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumTag().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		if( indexByNextIdx == null ) {
 			indexByNextIdx = new HashMap< ICFBamEnumTagByNextIdxKey,

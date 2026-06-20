@@ -243,7 +243,7 @@ public class CFBamTextTypeEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTextType().getSchema().getCFBamBackingStore().getFactoryTextType().newRec();
+			rec = getOrigAsTextType().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTextType().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

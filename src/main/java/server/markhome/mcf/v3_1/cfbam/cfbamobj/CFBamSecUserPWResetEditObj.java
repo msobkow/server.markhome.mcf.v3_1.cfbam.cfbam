@@ -376,7 +376,7 @@ public class CFBamSecUserPWResetEditObj
 	@Override
 	public ICFSecSecUserPWReset getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSecUserPWReset().getSchema().getCFSecBackingStore().getFactorySecUserPWReset().newRec();
+			rec = getOrigAsSecUserPWReset().getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWReset().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

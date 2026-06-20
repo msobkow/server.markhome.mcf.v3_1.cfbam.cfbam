@@ -219,7 +219,7 @@ public class CFBamServerMethodObj
 	public ICFBamScope getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryServerMethod().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

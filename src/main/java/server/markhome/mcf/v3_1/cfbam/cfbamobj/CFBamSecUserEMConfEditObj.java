@@ -376,7 +376,7 @@ public class CFBamSecUserEMConfEditObj
 	@Override
 	public ICFSecSecUserEMConf getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSecUserEMConf().getSchema().getCFSecBackingStore().getFactorySecUserEMConf().newRec();
+			rec = getOrigAsSecUserEMConf().getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecUserEMConf().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

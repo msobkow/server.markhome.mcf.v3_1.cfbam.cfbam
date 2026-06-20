@@ -240,7 +240,7 @@ public class CFBamFloatDefEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsFloatDef().getSchema().getCFBamBackingStore().getFactoryFloatDef().newRec();
+			rec = getOrigAsFloatDef().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryFloatDef().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

@@ -267,7 +267,7 @@ public class CFBamRoleDefObj
 	public ICFBamRoleDef getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryRoleDef().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

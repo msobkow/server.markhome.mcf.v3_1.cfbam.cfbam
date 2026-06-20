@@ -375,7 +375,7 @@ public class CFBamTweakEditObj
 	@Override
 	public ICFBamTweak getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTweak().getSchema().getCFBamBackingStore().getFactoryTweak().newRec();
+			rec = getOrigAsTweak().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

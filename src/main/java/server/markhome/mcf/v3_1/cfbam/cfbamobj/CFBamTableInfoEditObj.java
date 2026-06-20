@@ -314,7 +314,7 @@ public class CFBamTableInfoEditObj
 	@Override
 	public ICFSecTableInfo getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTableInfo().getSchema().getCFSecBackingStore().getFactoryTableInfo().newRec();
+			rec = getOrigAsTableInfo().getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryTableInfo().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

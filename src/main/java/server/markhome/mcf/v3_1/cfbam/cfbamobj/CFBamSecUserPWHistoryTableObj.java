@@ -214,21 +214,21 @@ public class CFBamSecUserPWHistoryTableObj
 
 			if( indexByUserIdx != null ) {
 				ICFSecSecUserPWHistoryByUserIdxKey keyUserIdx =
-					schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByUserIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByUserIdxKey();
 				keyUserIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
 				indexByUserIdx.remove( keyUserIdx );
 			}
 
 			if( indexBySetStampIdx != null ) {
 				ICFSecSecUserPWHistoryBySetStampIdxKey keySetStampIdx =
-					schema.getCFSecBackingStore().getFactorySecUserPWHistory().newBySetStampIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newBySetStampIdxKey();
 				keySetStampIdx.setRequiredPWSetStamp( keepObj.getRequiredPWSetStamp() );
 				indexBySetStampIdx.remove( keySetStampIdx );
 			}
 
 			if( indexByReplacedStampIdx != null ) {
 				ICFSecSecUserPWHistoryByReplacedStampIdxKey keyReplacedStampIdx =
-					schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
 				keyReplacedStampIdx.setRequiredPWReplacedStamp( keepObj.getRequiredPWReplacedStamp() );
 				indexByReplacedStampIdx.remove( keyReplacedStampIdx );
 			}
@@ -238,21 +238,21 @@ public class CFBamSecUserPWHistoryTableObj
 
 			if( indexByUserIdx != null ) {
 				ICFSecSecUserPWHistoryByUserIdxKey keyUserIdx =
-					schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByUserIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByUserIdxKey();
 				keyUserIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
 				indexByUserIdx.put( keyUserIdx, keepObj );
 			}
 
 			if( indexBySetStampIdx != null ) {
 				ICFSecSecUserPWHistoryBySetStampIdxKey keySetStampIdx =
-					schema.getCFSecBackingStore().getFactorySecUserPWHistory().newBySetStampIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newBySetStampIdxKey();
 				keySetStampIdx.setRequiredPWSetStamp( keepObj.getRequiredPWSetStamp() );
 				indexBySetStampIdx.put( keySetStampIdx, keepObj );
 			}
 
 			if( indexByReplacedStampIdx != null ) {
 				ICFSecSecUserPWHistoryByReplacedStampIdxKey keyReplacedStampIdx =
-					schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
 				keyReplacedStampIdx.setRequiredPWReplacedStamp( keepObj.getRequiredPWReplacedStamp() );
 				indexByReplacedStampIdx.put( keyReplacedStampIdx, keepObj );
 			}
@@ -273,21 +273,21 @@ public class CFBamSecUserPWHistoryTableObj
 
 			if( indexByUserIdx != null ) {
 				ICFSecSecUserPWHistoryByUserIdxKey keyUserIdx =
-					schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByUserIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByUserIdxKey();
 				keyUserIdx.setRequiredSecUserId( keepObj.getRequiredSecUserId() );
 				indexByUserIdx.put( keyUserIdx, keepObj );
 			}
 
 			if( indexBySetStampIdx != null ) {
 				ICFSecSecUserPWHistoryBySetStampIdxKey keySetStampIdx =
-					schema.getCFSecBackingStore().getFactorySecUserPWHistory().newBySetStampIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newBySetStampIdxKey();
 				keySetStampIdx.setRequiredPWSetStamp( keepObj.getRequiredPWSetStamp() );
 				indexBySetStampIdx.put( keySetStampIdx, keepObj );
 			}
 
 			if( indexByReplacedStampIdx != null ) {
 				ICFSecSecUserPWHistoryByReplacedStampIdxKey keyReplacedStampIdx =
-					schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
 				keyReplacedStampIdx.setRequiredPWReplacedStamp( keepObj.getRequiredPWReplacedStamp() );
 				indexByReplacedStampIdx.put( keyReplacedStampIdx, keepObj );
 			}
@@ -380,13 +380,13 @@ public class CFBamSecUserPWHistoryTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecSecUserPWHistoryByUserIdxKey keyUserIdx = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByUserIdxKey();
+		ICFSecSecUserPWHistoryByUserIdxKey keyUserIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByUserIdxKey();
 		keyUserIdx.setRequiredSecUserId( existing.getRequiredSecUserId() );
 
-		ICFSecSecUserPWHistoryBySetStampIdxKey keySetStampIdx = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newBySetStampIdxKey();
+		ICFSecSecUserPWHistoryBySetStampIdxKey keySetStampIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newBySetStampIdxKey();
 		keySetStampIdx.setRequiredPWSetStamp( existing.getRequiredPWSetStamp() );
 
-		ICFSecSecUserPWHistoryByReplacedStampIdxKey keyReplacedStampIdx = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
+		ICFSecSecUserPWHistoryByReplacedStampIdxKey keyReplacedStampIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
 		keyReplacedStampIdx.setRequiredPWReplacedStamp( existing.getRequiredPWReplacedStamp() );
 
 
@@ -606,7 +606,7 @@ public class CFBamSecUserPWHistoryTableObj
 	public ICFSecSecUserPWHistoryObj readSecUserPWHistoryByIdIdx( CFLibDbKeyHash256 SecUserId,
 		LocalDateTime PWSetStamp, boolean forceRead )
 	{
-		ICFSecSecUserPWHistoryPKey pkey = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newPKey();
+		ICFSecSecUserPWHistoryPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newPKey();
 		pkey.setRequiredSecUserId( SecUserId );
 		pkey.setRequiredPWSetStamp( PWSetStamp );
 		ICFSecSecUserPWHistoryObj obj = readSecUserPWHistory( pkey, forceRead );
@@ -627,7 +627,7 @@ public class CFBamSecUserPWHistoryTableObj
 			indexByUserIdx = new HashMap< ICFSecSecUserPWHistoryByUserIdxKey,
 				ICFSecSecUserPWHistoryObj >();
 		}
-		ICFSecSecUserPWHistoryByUserIdxKey key = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByUserIdxKey();
+		ICFSecSecUserPWHistoryByUserIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByUserIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		ICFSecSecUserPWHistoryObj obj = null;
 		if( ( ! forceRead ) && indexByUserIdx.containsKey( key ) ) {
@@ -660,7 +660,7 @@ public class CFBamSecUserPWHistoryTableObj
 			indexBySetStampIdx = new HashMap< ICFSecSecUserPWHistoryBySetStampIdxKey,
 				ICFSecSecUserPWHistoryObj >();
 		}
-		ICFSecSecUserPWHistoryBySetStampIdxKey key = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newBySetStampIdxKey();
+		ICFSecSecUserPWHistoryBySetStampIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newBySetStampIdxKey();
 		key.setRequiredPWSetStamp( PWSetStamp );
 		ICFSecSecUserPWHistoryObj obj = null;
 		if( ( ! forceRead ) && indexBySetStampIdx.containsKey( key ) ) {
@@ -693,7 +693,7 @@ public class CFBamSecUserPWHistoryTableObj
 			indexByReplacedStampIdx = new HashMap< ICFSecSecUserPWHistoryByReplacedStampIdxKey,
 				ICFSecSecUserPWHistoryObj >();
 		}
-		ICFSecSecUserPWHistoryByReplacedStampIdxKey key = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
+		ICFSecSecUserPWHistoryByReplacedStampIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
 		key.setRequiredPWReplacedStamp( PWReplacedStamp );
 		ICFSecSecUserPWHistoryObj obj = null;
 		if( ( ! forceRead ) && indexByReplacedStampIdx.containsKey( key ) ) {
@@ -717,7 +717,7 @@ public class CFBamSecUserPWHistoryTableObj
 		LocalDateTime PWSetStamp )
 	{
 		ICFSecSecUserPWHistoryObj obj = null;
-		ICFSecSecUserPWHistoryPKey pkey = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newPKey();
+		ICFSecSecUserPWHistoryPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newPKey();
 		pkey.setRequiredSecUserId( SecUserId );
 		pkey.setRequiredPWSetStamp( PWSetStamp );
 		pkey.setRequiredSecUserId( SecUserId );
@@ -730,7 +730,7 @@ public class CFBamSecUserPWHistoryTableObj
 	public ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByUserIdx( CFLibDbKeyHash256 SecUserId )
 	{
 		ICFSecSecUserPWHistoryObj obj = null;
-		ICFSecSecUserPWHistoryByUserIdxKey key = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByUserIdxKey();
+		ICFSecSecUserPWHistoryByUserIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByUserIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		if( indexByUserIdx != null ) {
 			if( indexByUserIdx.containsKey( key ) ) {
@@ -766,7 +766,7 @@ public class CFBamSecUserPWHistoryTableObj
 	public ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryBySetStampIdx( LocalDateTime PWSetStamp )
 	{
 		ICFSecSecUserPWHistoryObj obj = null;
-		ICFSecSecUserPWHistoryBySetStampIdxKey key = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newBySetStampIdxKey();
+		ICFSecSecUserPWHistoryBySetStampIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newBySetStampIdxKey();
 		key.setRequiredPWSetStamp( PWSetStamp );
 		if( indexBySetStampIdx != null ) {
 			if( indexBySetStampIdx.containsKey( key ) ) {
@@ -802,7 +802,7 @@ public class CFBamSecUserPWHistoryTableObj
 	public ICFSecSecUserPWHistoryObj readCachedSecUserPWHistoryByReplacedStampIdx( LocalDateTime PWReplacedStamp )
 	{
 		ICFSecSecUserPWHistoryObj obj = null;
-		ICFSecSecUserPWHistoryByReplacedStampIdxKey key = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
+		ICFSecSecUserPWHistoryByReplacedStampIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
 		key.setRequiredPWReplacedStamp( PWReplacedStamp );
 		if( indexByReplacedStampIdx != null ) {
 			if( indexByReplacedStampIdx.containsKey( key ) ) {
@@ -930,7 +930,7 @@ public class CFBamSecUserPWHistoryTableObj
 			indexByUserIdx = new HashMap< ICFSecSecUserPWHistoryByUserIdxKey,
 				ICFSecSecUserPWHistoryObj >();
 		}
-		ICFSecSecUserPWHistoryByUserIdxKey key = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByUserIdxKey();
+		ICFSecSecUserPWHistoryByUserIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByUserIdxKey();
 		key.setRequiredSecUserId( SecUserId );
 		ICFSecSecUserPWHistoryObj obj = null;
 		if( indexByUserIdx.containsKey( key ) ) {
@@ -953,7 +953,7 @@ public class CFBamSecUserPWHistoryTableObj
 			indexBySetStampIdx = new HashMap< ICFSecSecUserPWHistoryBySetStampIdxKey,
 				ICFSecSecUserPWHistoryObj >();
 		}
-		ICFSecSecUserPWHistoryBySetStampIdxKey key = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newBySetStampIdxKey();
+		ICFSecSecUserPWHistoryBySetStampIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newBySetStampIdxKey();
 		key.setRequiredPWSetStamp( PWSetStamp );
 		ICFSecSecUserPWHistoryObj obj = null;
 		if( indexBySetStampIdx.containsKey( key ) ) {
@@ -976,7 +976,7 @@ public class CFBamSecUserPWHistoryTableObj
 			indexByReplacedStampIdx = new HashMap< ICFSecSecUserPWHistoryByReplacedStampIdxKey,
 				ICFSecSecUserPWHistoryObj >();
 		}
-		ICFSecSecUserPWHistoryByReplacedStampIdxKey key = schema.getCFSecBackingStore().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
+		ICFSecSecUserPWHistoryByReplacedStampIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPWHistory().newByReplacedStampIdxKey();
 		key.setRequiredPWReplacedStamp( PWReplacedStamp );
 		ICFSecSecUserPWHistoryObj obj = null;
 		if( indexByReplacedStampIdx.containsKey( key ) ) {

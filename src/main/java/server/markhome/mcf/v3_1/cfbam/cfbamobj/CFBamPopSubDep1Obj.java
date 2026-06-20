@@ -216,7 +216,7 @@ public class CFBamPopSubDep1Obj
 	public ICFBamScope getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryPopSubDep1().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryPopSubDep1().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

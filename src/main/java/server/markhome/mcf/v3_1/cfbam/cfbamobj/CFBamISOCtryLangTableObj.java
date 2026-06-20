@@ -209,7 +209,7 @@ public class CFBamISOCtryLangTableObj
 
 			if( indexByCtryIdx != null ) {
 				ICFSecISOCtryLangByCtryIdxKey keyCtryIdx =
-					schema.getCFSecBackingStore().getFactoryISOCtryLang().newByCtryIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByCtryIdxKey();
 				keyCtryIdx.setRequiredISOCtryId( keepObj.getRequiredISOCtryId() );
 				Map<ICFSecISOCtryLangPKey, ICFSecISOCtryLangObj > mapCtryIdx = indexByCtryIdx.get( keyCtryIdx );
 				if( mapCtryIdx != null ) {
@@ -222,7 +222,7 @@ public class CFBamISOCtryLangTableObj
 
 			if( indexByLangIdx != null ) {
 				ICFSecISOCtryLangByLangIdxKey keyLangIdx =
-					schema.getCFSecBackingStore().getFactoryISOCtryLang().newByLangIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByLangIdxKey();
 				keyLangIdx.setRequiredISOLangId( keepObj.getRequiredISOLangId() );
 				Map<ICFSecISOCtryLangPKey, ICFSecISOCtryLangObj > mapLangIdx = indexByLangIdx.get( keyLangIdx );
 				if( mapLangIdx != null ) {
@@ -238,7 +238,7 @@ public class CFBamISOCtryLangTableObj
 
 			if( indexByCtryIdx != null ) {
 				ICFSecISOCtryLangByCtryIdxKey keyCtryIdx =
-					schema.getCFSecBackingStore().getFactoryISOCtryLang().newByCtryIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByCtryIdxKey();
 				keyCtryIdx.setRequiredISOCtryId( keepObj.getRequiredISOCtryId() );
 				Map<ICFSecISOCtryLangPKey, ICFSecISOCtryLangObj > mapCtryIdx = indexByCtryIdx.get( keyCtryIdx );
 				if( mapCtryIdx != null ) {
@@ -248,7 +248,7 @@ public class CFBamISOCtryLangTableObj
 
 			if( indexByLangIdx != null ) {
 				ICFSecISOCtryLangByLangIdxKey keyLangIdx =
-					schema.getCFSecBackingStore().getFactoryISOCtryLang().newByLangIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByLangIdxKey();
 				keyLangIdx.setRequiredISOLangId( keepObj.getRequiredISOLangId() );
 				Map<ICFSecISOCtryLangPKey, ICFSecISOCtryLangObj > mapLangIdx = indexByLangIdx.get( keyLangIdx );
 				if( mapLangIdx != null ) {
@@ -272,7 +272,7 @@ public class CFBamISOCtryLangTableObj
 
 			if( indexByCtryIdx != null ) {
 				ICFSecISOCtryLangByCtryIdxKey keyCtryIdx =
-					schema.getCFSecBackingStore().getFactoryISOCtryLang().newByCtryIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByCtryIdxKey();
 				keyCtryIdx.setRequiredISOCtryId( keepObj.getRequiredISOCtryId() );
 				Map<ICFSecISOCtryLangPKey, ICFSecISOCtryLangObj > mapCtryIdx = indexByCtryIdx.get( keyCtryIdx );
 				if( mapCtryIdx != null ) {
@@ -282,7 +282,7 @@ public class CFBamISOCtryLangTableObj
 
 			if( indexByLangIdx != null ) {
 				ICFSecISOCtryLangByLangIdxKey keyLangIdx =
-					schema.getCFSecBackingStore().getFactoryISOCtryLang().newByLangIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByLangIdxKey();
 				keyLangIdx.setRequiredISOLangId( keepObj.getRequiredISOLangId() );
 				Map<ICFSecISOCtryLangPKey, ICFSecISOCtryLangObj > mapLangIdx = indexByLangIdx.get( keyLangIdx );
 				if( mapLangIdx != null ) {
@@ -378,10 +378,10 @@ public class CFBamISOCtryLangTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecISOCtryLangByCtryIdxKey keyCtryIdx = schema.getCFSecBackingStore().getFactoryISOCtryLang().newByCtryIdxKey();
+		ICFSecISOCtryLangByCtryIdxKey keyCtryIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByCtryIdxKey();
 		keyCtryIdx.setRequiredISOCtryId( existing.getRequiredISOCtryId() );
 
-		ICFSecISOCtryLangByLangIdxKey keyLangIdx = schema.getCFSecBackingStore().getFactoryISOCtryLang().newByLangIdxKey();
+		ICFSecISOCtryLangByLangIdxKey keyLangIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByLangIdxKey();
 		keyLangIdx.setRequiredISOLangId( existing.getRequiredISOLangId() );
 
 
@@ -577,7 +577,7 @@ public class CFBamISOCtryLangTableObj
 	public ICFSecISOCtryLangObj readISOCtryLangByIdIdx( short ISOCtryId,
 		short ISOLangId, boolean forceRead )
 	{
-		ICFSecISOCtryLangPKey pkey = schema.getCFSecBackingStore().getFactoryISOCtryLang().newPKey();
+		ICFSecISOCtryLangPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newPKey();
 		pkey.setRequiredISOCtryId( ISOCtryId );
 		pkey.setRequiredISOLangId( ISOLangId );
 		ICFSecISOCtryLangObj obj = readISOCtryLang( pkey, forceRead );
@@ -596,7 +596,7 @@ public class CFBamISOCtryLangTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readISOCtryLangByCtryIdx";
-		ICFSecISOCtryLangByCtryIdxKey key = schema.getCFSecBackingStore().getFactoryISOCtryLang().newByCtryIdxKey();
+		ICFSecISOCtryLangByCtryIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByCtryIdxKey();
 		key.setRequiredISOCtryId( ISOCtryId );
 		Map<ICFSecISOCtryLangPKey, ICFSecISOCtryLangObj> dict;
 		if( indexByCtryIdx == null ) {
@@ -689,7 +689,7 @@ public class CFBamISOCtryLangTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readISOCtryLangByLangIdx";
-		ICFSecISOCtryLangByLangIdxKey key = schema.getCFSecBackingStore().getFactoryISOCtryLang().newByLangIdxKey();
+		ICFSecISOCtryLangByLangIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByLangIdxKey();
 		key.setRequiredISOLangId( ISOLangId );
 		Map<ICFSecISOCtryLangPKey, ICFSecISOCtryLangObj> dict;
 		if( indexByLangIdx == null ) {
@@ -775,7 +775,7 @@ public class CFBamISOCtryLangTableObj
 		short ISOLangId )
 	{
 		ICFSecISOCtryLangObj obj = null;
-		ICFSecISOCtryLangPKey pkey = schema.getCFSecBackingStore().getFactoryISOCtryLang().newPKey();
+		ICFSecISOCtryLangPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newPKey();
 		pkey.setRequiredISOCtryId( ISOCtryId );
 		pkey.setRequiredISOLangId( ISOLangId );
 		pkey.setRequiredISOCtryId( ISOCtryId );
@@ -788,7 +788,7 @@ public class CFBamISOCtryLangTableObj
 	public List<ICFSecISOCtryLangObj> readCachedISOCtryLangByCtryIdx( short ISOCtryId )
 	{
 		final String S_ProcName = "readCachedISOCtryLangByCtryIdx";
-		ICFSecISOCtryLangByCtryIdxKey key = schema.getCFSecBackingStore().getFactoryISOCtryLang().newByCtryIdxKey();
+		ICFSecISOCtryLangByCtryIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByCtryIdxKey();
 		key.setRequiredISOCtryId( ISOCtryId );
 		ArrayList<ICFSecISOCtryLangObj> arrayList = new ArrayList<ICFSecISOCtryLangObj>();
 		if( indexByCtryIdx != null ) {
@@ -865,7 +865,7 @@ public class CFBamISOCtryLangTableObj
 	public List<ICFSecISOCtryLangObj> readCachedISOCtryLangByLangIdx( short ISOLangId )
 	{
 		final String S_ProcName = "readCachedISOCtryLangByLangIdx";
-		ICFSecISOCtryLangByLangIdxKey key = schema.getCFSecBackingStore().getFactoryISOCtryLang().newByLangIdxKey();
+		ICFSecISOCtryLangByLangIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByLangIdxKey();
 		key.setRequiredISOLangId( ISOLangId );
 		ArrayList<ICFSecISOCtryLangObj> arrayList = new ArrayList<ICFSecISOCtryLangObj>();
 		if( indexByLangIdx != null ) {
@@ -1037,7 +1037,7 @@ public class CFBamISOCtryLangTableObj
 	@Override
 	public void deleteISOCtryLangByCtryIdx( short ISOCtryId )
 	{
-		ICFSecISOCtryLangByCtryIdxKey key = schema.getCFSecBackingStore().getFactoryISOCtryLang().newByCtryIdxKey();
+		ICFSecISOCtryLangByCtryIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByCtryIdxKey();
 		key.setRequiredISOCtryId( ISOCtryId );
 		if( indexByCtryIdx == null ) {
 			indexByCtryIdx = new HashMap< ICFSecISOCtryLangByCtryIdxKey,
@@ -1071,7 +1071,7 @@ public class CFBamISOCtryLangTableObj
 	@Override
 	public void deleteISOCtryLangByLangIdx( short ISOLangId )
 	{
-		ICFSecISOCtryLangByLangIdxKey key = schema.getCFSecBackingStore().getFactoryISOCtryLang().newByLangIdxKey();
+		ICFSecISOCtryLangByLangIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryLang().newByLangIdxKey();
 		key.setRequiredISOLangId( ISOLangId );
 		if( indexByLangIdx == null ) {
 			indexByLangIdx = new HashMap< ICFSecISOCtryLangByLangIdxKey,

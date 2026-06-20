@@ -403,7 +403,7 @@ public class CFBamTopDomainEditObj
 	@Override
 	public ICFIntTopDomain getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTopDomain().getSchema().getCFIntBackingStore().getFactoryTopDomain().newRec();
+			rec = getOrigAsTopDomain().getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

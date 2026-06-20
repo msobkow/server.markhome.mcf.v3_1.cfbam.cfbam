@@ -243,7 +243,7 @@ public class CFBamTokenColEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTokenCol().getSchema().getCFBamBackingStore().getFactoryTokenCol().newRec();
+			rec = getOrigAsTokenCol().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTokenCol().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

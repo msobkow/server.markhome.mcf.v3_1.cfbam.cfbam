@@ -233,7 +233,7 @@ public class CFBamSchemaTweakEditObj
 	@Override
 	public ICFBamTweak getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSchemaTweak().getSchema().getCFBamBackingStore().getFactorySchemaTweak().newRec();
+			rec = getOrigAsSchemaTweak().getSchema().getCFBamBackingStore().getCFBamFactory().getFactorySchemaTweak().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

@@ -258,7 +258,7 @@ public class CFBamRelationEditObj
 	@Override
 	public ICFBamScope getRec() {
 		if( rec == null ) {
-			rec = getOrigAsRelation().getSchema().getCFBamBackingStore().getFactoryRelation().newRec();
+			rec = getOrigAsRelation().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

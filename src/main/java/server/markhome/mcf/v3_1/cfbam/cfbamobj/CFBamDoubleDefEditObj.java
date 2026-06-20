@@ -240,7 +240,7 @@ public class CFBamDoubleDefEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsDoubleDef().getSchema().getCFBamBackingStore().getFactoryDoubleDef().newRec();
+			rec = getOrigAsDoubleDef().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryDoubleDef().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

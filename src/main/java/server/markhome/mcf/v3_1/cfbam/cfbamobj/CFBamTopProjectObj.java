@@ -281,7 +281,7 @@ public class CFBamTopProjectObj
 	public ICFIntTopProject getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFIntBackingStore().getFactoryTopProject().newRec();
+				rec = getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryTopProject().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

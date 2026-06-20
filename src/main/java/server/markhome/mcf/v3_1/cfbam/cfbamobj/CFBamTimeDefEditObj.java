@@ -240,7 +240,7 @@ public class CFBamTimeDefEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTimeDef().getSchema().getCFBamBackingStore().getFactoryTimeDef().newRec();
+			rec = getOrigAsTimeDef().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTimeDef().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

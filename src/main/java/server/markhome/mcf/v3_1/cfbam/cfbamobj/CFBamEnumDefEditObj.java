@@ -241,7 +241,7 @@ public class CFBamEnumDefEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsEnumDef().getSchema().getCFBamBackingStore().getFactoryEnumDef().newRec();
+			rec = getOrigAsEnumDef().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryEnumDef().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

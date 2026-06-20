@@ -223,7 +223,7 @@ public class CFBamTextDefObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryTextDef().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTextDef().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

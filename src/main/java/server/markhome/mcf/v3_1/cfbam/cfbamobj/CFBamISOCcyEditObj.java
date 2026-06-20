@@ -368,7 +368,7 @@ public class CFBamISOCcyEditObj
 	@Override
 	public ICFSecISOCcy getRec() {
 		if( rec == null ) {
-			rec = getOrigAsISOCcy().getSchema().getCFSecBackingStore().getFactoryISOCcy().newRec();
+			rec = getOrigAsISOCcy().getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryISOCcy().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

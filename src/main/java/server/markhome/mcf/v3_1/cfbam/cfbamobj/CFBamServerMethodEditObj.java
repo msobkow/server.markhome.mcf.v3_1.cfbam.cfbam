@@ -236,7 +236,7 @@ public class CFBamServerMethodEditObj
 	@Override
 	public ICFBamScope getRec() {
 		if( rec == null ) {
-			rec = getOrigAsServerMethod().getSchema().getCFBamBackingStore().getFactoryServerMethod().newRec();
+			rec = getOrigAsServerMethod().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

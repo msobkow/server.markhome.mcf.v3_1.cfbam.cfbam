@@ -223,7 +223,7 @@ public class CFBamAtomObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryAtom().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryAtom().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

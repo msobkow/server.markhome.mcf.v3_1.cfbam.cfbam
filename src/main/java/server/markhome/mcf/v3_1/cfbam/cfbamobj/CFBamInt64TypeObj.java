@@ -227,7 +227,7 @@ public class CFBamInt64TypeObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryInt64Type().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryInt64Type().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

@@ -287,7 +287,7 @@ public class CFBamValueObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryValue().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryValue().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

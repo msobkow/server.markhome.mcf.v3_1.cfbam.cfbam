@@ -274,7 +274,7 @@ public class CFBamClusterObj
 	public ICFSecCluster getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactoryCluster().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryCluster().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

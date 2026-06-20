@@ -373,7 +373,7 @@ public class CFBamISOCtryCcyEditObj
 	@Override
 	public ICFSecISOCtryCcy getRec() {
 		if( rec == null ) {
-			rec = getOrigAsISOCtryCcy().getSchema().getCFSecBackingStore().getFactoryISOCtryCcy().newRec();
+			rec = getOrigAsISOCtryCcy().getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryISOCtryCcy().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

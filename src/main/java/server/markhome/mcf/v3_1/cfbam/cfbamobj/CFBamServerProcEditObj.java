@@ -230,7 +230,7 @@ public class CFBamServerProcEditObj
 	@Override
 	public ICFBamScope getRec() {
 		if( rec == null ) {
-			rec = getOrigAsServerProc().getSchema().getCFBamBackingStore().getFactoryServerProc().newRec();
+			rec = getOrigAsServerProc().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryServerProc().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

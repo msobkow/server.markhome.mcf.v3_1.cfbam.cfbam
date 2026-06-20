@@ -223,7 +223,7 @@ public class CFBamDbKeyHash512GenObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryDbKeyHash512Gen().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryDbKeyHash512Gen().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

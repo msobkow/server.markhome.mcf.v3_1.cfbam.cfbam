@@ -265,7 +265,7 @@ public class CFBamSecClusGrpObj
 	public ICFSecSecClusGrp getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactorySecClusGrp().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecClusGrp().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

@@ -375,7 +375,7 @@ public class CFBamScopeEditObj
 	@Override
 	public ICFBamScope getRec() {
 		if( rec == null ) {
-			rec = getOrigAsScope().getSchema().getCFBamBackingStore().getFactoryScope().newRec();
+			rec = getOrigAsScope().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryScope().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

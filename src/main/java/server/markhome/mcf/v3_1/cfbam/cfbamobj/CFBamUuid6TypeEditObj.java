@@ -243,7 +243,7 @@ public class CFBamUuid6TypeEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsUuid6Type().getSchema().getCFBamBackingStore().getFactoryUuid6Type().newRec();
+			rec = getOrigAsUuid6Type().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryUuid6Type().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

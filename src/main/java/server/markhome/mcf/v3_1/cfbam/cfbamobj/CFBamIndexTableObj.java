@@ -245,7 +245,7 @@ public class CFBamIndexTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -255,7 +255,7 @@ public class CFBamIndexTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamIndexByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryIndex().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.remove( keyUNameIdx );
@@ -263,7 +263,7 @@ public class CFBamIndexTableObj
 
 			if( indexByIdxTableIdx != null ) {
 				ICFBamIndexByIdxTableIdxKey keyIdxTableIdx =
-					schema.getCFBamBackingStore().getFactoryIndex().newByIdxTableIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTableIdxKey();
 				keyIdxTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxTableIdx = indexByIdxTableIdx.get( keyIdxTableIdx );
 				if( mapIdxTableIdx != null ) {
@@ -276,7 +276,7 @@ public class CFBamIndexTableObj
 
 			if( indexByIdxCodeVisIdx != null ) {
 				ICFBamIndexByIdxCodeVisIdxKey keyIdxCodeVisIdx =
-					schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxCodeVisIdxKey();
 				keyIdxCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxCodeVisIdx = indexByIdxCodeVisIdx.get( keyIdxCodeVisIdx );
 				if( mapIdxCodeVisIdx != null ) {
@@ -289,7 +289,7 @@ public class CFBamIndexTableObj
 
 			if( indexByIdxTblCdVisX != null ) {
 				ICFBamIndexByIdxTblCdVisXKey keyIdxTblCdVisX =
-					schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTblCdVisXKey();
 				keyIdxTblCdVisX.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyIdxTblCdVisX.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxTblCdVisX = indexByIdxTblCdVisX.get( keyIdxTblCdVisX );
@@ -303,7 +303,7 @@ public class CFBamIndexTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamIndexByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryIndex().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -322,7 +322,7 @@ public class CFBamIndexTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -332,7 +332,7 @@ public class CFBamIndexTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamIndexByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryIndex().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -340,7 +340,7 @@ public class CFBamIndexTableObj
 
 			if( indexByIdxTableIdx != null ) {
 				ICFBamIndexByIdxTableIdxKey keyIdxTableIdx =
-					schema.getCFBamBackingStore().getFactoryIndex().newByIdxTableIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTableIdxKey();
 				keyIdxTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxTableIdx = indexByIdxTableIdx.get( keyIdxTableIdx );
 				if( mapIdxTableIdx != null ) {
@@ -350,7 +350,7 @@ public class CFBamIndexTableObj
 
 			if( indexByIdxCodeVisIdx != null ) {
 				ICFBamIndexByIdxCodeVisIdxKey keyIdxCodeVisIdx =
-					schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxCodeVisIdxKey();
 				keyIdxCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxCodeVisIdx = indexByIdxCodeVisIdx.get( keyIdxCodeVisIdx );
 				if( mapIdxCodeVisIdx != null ) {
@@ -360,7 +360,7 @@ public class CFBamIndexTableObj
 
 			if( indexByIdxTblCdVisX != null ) {
 				ICFBamIndexByIdxTblCdVisXKey keyIdxTblCdVisX =
-					schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTblCdVisXKey();
 				keyIdxTblCdVisX.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyIdxTblCdVisX.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxTblCdVisX = indexByIdxTblCdVisX.get( keyIdxTblCdVisX );
@@ -371,7 +371,7 @@ public class CFBamIndexTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamIndexByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryIndex().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -395,7 +395,7 @@ public class CFBamIndexTableObj
 
 			if( indexByTenantIdx != null ) {
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
-					schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
@@ -405,7 +405,7 @@ public class CFBamIndexTableObj
 
 			if( indexByUNameIdx != null ) {
 				ICFBamIndexByUNameIdxKey keyUNameIdx =
-					schema.getCFBamBackingStore().getFactoryIndex().newByUNameIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByUNameIdxKey();
 				keyUNameIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
 				indexByUNameIdx.put( keyUNameIdx, keepObj );
@@ -413,7 +413,7 @@ public class CFBamIndexTableObj
 
 			if( indexByIdxTableIdx != null ) {
 				ICFBamIndexByIdxTableIdxKey keyIdxTableIdx =
-					schema.getCFBamBackingStore().getFactoryIndex().newByIdxTableIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTableIdxKey();
 				keyIdxTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxTableIdx = indexByIdxTableIdx.get( keyIdxTableIdx );
 				if( mapIdxTableIdx != null ) {
@@ -423,7 +423,7 @@ public class CFBamIndexTableObj
 
 			if( indexByIdxCodeVisIdx != null ) {
 				ICFBamIndexByIdxCodeVisIdxKey keyIdxCodeVisIdx =
-					schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxCodeVisIdxKey();
 				keyIdxCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxCodeVisIdx = indexByIdxCodeVisIdx.get( keyIdxCodeVisIdx );
 				if( mapIdxCodeVisIdx != null ) {
@@ -433,7 +433,7 @@ public class CFBamIndexTableObj
 
 			if( indexByIdxTblCdVisX != null ) {
 				ICFBamIndexByIdxTblCdVisXKey keyIdxTblCdVisX =
-					schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTblCdVisXKey();
 				keyIdxTblCdVisX.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyIdxTblCdVisX.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapIdxTblCdVisX = indexByIdxTblCdVisX.get( keyIdxTblCdVisX );
@@ -444,7 +444,7 @@ public class CFBamIndexTableObj
 
 			if( indexByDefSchemaIdx != null ) {
 				ICFBamIndexByDefSchemaIdxKey keyDefSchemaIdx =
-					schema.getCFBamBackingStore().getFactoryIndex().newByDefSchemaIdxKey();
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
 				Map<CFLibDbKeyHash256, ICFBamIndexObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
@@ -518,21 +518,21 @@ public class CFBamIndexTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFBamIndexByUNameIdxKey keyUNameIdx = schema.getCFBamBackingStore().getFactoryIndex().newByUNameIdxKey();
+		ICFBamIndexByUNameIdxKey keyUNameIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByUNameIdxKey();
 		keyUNameIdx.setRequiredTableId( existing.getRequiredTableId() );
 		keyUNameIdx.setRequiredName( existing.getRequiredName() );
 
-		ICFBamIndexByIdxTableIdxKey keyIdxTableIdx = schema.getCFBamBackingStore().getFactoryIndex().newByIdxTableIdxKey();
+		ICFBamIndexByIdxTableIdxKey keyIdxTableIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTableIdxKey();
 		keyIdxTableIdx.setRequiredTableId( existing.getRequiredTableId() );
 
-		ICFBamIndexByIdxCodeVisIdxKey keyIdxCodeVisIdx = schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+		ICFBamIndexByIdxCodeVisIdxKey keyIdxCodeVisIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxCodeVisIdxKey();
 		keyIdxCodeVisIdx.setRequiredCodeVis( existing.getRequiredCodeVis() );
 
-		ICFBamIndexByIdxTblCdVisXKey keyIdxTblCdVisX = schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+		ICFBamIndexByIdxTblCdVisXKey keyIdxTblCdVisX = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTblCdVisXKey();
 		keyIdxTblCdVisX.setRequiredTableId( existing.getRequiredTableId() );
 		keyIdxTblCdVisX.setRequiredCodeVis( existing.getRequiredCodeVis() );
 
-		ICFBamIndexByDefSchemaIdxKey keyDefSchemaIdx = schema.getCFBamBackingStore().getFactoryIndex().newByDefSchemaIdxKey();
+		ICFBamIndexByDefSchemaIdxKey keyDefSchemaIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByDefSchemaIdxKey();
 		keyDefSchemaIdx.setOptionalDefSchemaId( existing.getOptionalDefSchemaId() );
 
 
@@ -783,7 +783,7 @@ public class CFBamIndexTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readIndexByTenantIdx";
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		Map<CFLibDbKeyHash256, ICFBamIndexObj> dict;
 		if( indexByTenantIdx == null ) {
@@ -881,7 +881,7 @@ public class CFBamIndexTableObj
 			indexByUNameIdx = new HashMap< ICFBamIndexByUNameIdxKey,
 				ICFBamIndexObj >();
 		}
-		ICFBamIndexByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByUNameIdxKey();
+		ICFBamIndexByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByUNameIdxKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredName( Name );
 		ICFBamIndexObj obj = null;
@@ -914,7 +914,7 @@ public class CFBamIndexTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readIndexByIdxTableIdx";
-		ICFBamIndexByIdxTableIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxTableIdxKey();
+		ICFBamIndexByIdxTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTableIdxKey();
 		key.setRequiredTableId( TableId );
 		Map<CFLibDbKeyHash256, ICFBamIndexObj> dict;
 		if( indexByIdxTableIdx == null ) {
@@ -1007,7 +1007,7 @@ public class CFBamIndexTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readIndexByIdxCodeVisIdx";
-		ICFBamIndexByIdxCodeVisIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+		ICFBamIndexByIdxCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxCodeVisIdxKey();
 		key.setRequiredCodeVis( CodeVis );
 		Map<CFLibDbKeyHash256, ICFBamIndexObj> dict;
 		if( indexByIdxCodeVisIdx == null ) {
@@ -1103,7 +1103,7 @@ public class CFBamIndexTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readIndexByIdxTblCdVisX";
-		ICFBamIndexByIdxTblCdVisXKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+		ICFBamIndexByIdxTblCdVisXKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTblCdVisXKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredCodeVis( CodeVis );
 		Map<CFLibDbKeyHash256, ICFBamIndexObj> dict;
@@ -1198,7 +1198,7 @@ public class CFBamIndexTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readIndexByDefSchemaIdx";
-		ICFBamIndexByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByDefSchemaIdxKey();
+		ICFBamIndexByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		Map<CFLibDbKeyHash256, ICFBamIndexObj> dict;
 		if( indexByDefSchemaIdx == null ) {
@@ -1291,7 +1291,7 @@ public class CFBamIndexTableObj
 	public List<ICFBamIndexObj> readCachedIndexByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedIndexByTenantIdx";
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFBamIndexObj> arrayList = new ArrayList<ICFBamIndexObj>();
 		if( indexByTenantIdx != null ) {
@@ -1369,7 +1369,7 @@ public class CFBamIndexTableObj
 		String Name )
 	{
 		ICFBamIndexObj obj = null;
-		ICFBamIndexByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByUNameIdxKey();
+		ICFBamIndexByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByUNameIdxKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredName( Name );
 		if( indexByUNameIdx != null ) {
@@ -1406,7 +1406,7 @@ public class CFBamIndexTableObj
 	public List<ICFBamIndexObj> readCachedIndexByIdxTableIdx( CFLibDbKeyHash256 TableId )
 	{
 		final String S_ProcName = "readCachedIndexByIdxTableIdx";
-		ICFBamIndexByIdxTableIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxTableIdxKey();
+		ICFBamIndexByIdxTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTableIdxKey();
 		key.setRequiredTableId( TableId );
 		ArrayList<ICFBamIndexObj> arrayList = new ArrayList<ICFBamIndexObj>();
 		if( indexByIdxTableIdx != null ) {
@@ -1483,7 +1483,7 @@ public class CFBamIndexTableObj
 	public List<ICFBamIndexObj> readCachedIndexByIdxCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "readCachedIndexByIdxCodeVisIdx";
-		ICFBamIndexByIdxCodeVisIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+		ICFBamIndexByIdxCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxCodeVisIdxKey();
 		key.setRequiredCodeVis( CodeVis );
 		ArrayList<ICFBamIndexObj> arrayList = new ArrayList<ICFBamIndexObj>();
 		if( indexByIdxCodeVisIdx != null ) {
@@ -1561,7 +1561,7 @@ public class CFBamIndexTableObj
 		ICFBamSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "readCachedIndexByIdxTblCdVisX";
-		ICFBamIndexByIdxTblCdVisXKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+		ICFBamIndexByIdxTblCdVisXKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTblCdVisXKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredCodeVis( CodeVis );
 		ArrayList<ICFBamIndexObj> arrayList = new ArrayList<ICFBamIndexObj>();
@@ -1639,7 +1639,7 @@ public class CFBamIndexTableObj
 	public List<ICFBamIndexObj> readCachedIndexByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedIndexByDefSchemaIdx";
-		ICFBamIndexByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByDefSchemaIdxKey();
+		ICFBamIndexByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamIndexObj> arrayList = new ArrayList<ICFBamIndexObj>();
 		if( indexByDefSchemaIdx != null ) {
@@ -1872,7 +1872,7 @@ public class CFBamIndexTableObj
 	@Override
 	public void deleteIndexByTenantIdx( CFLibDbKeyHash256 TenantId )
 	{
-		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getFactoryScope().newByTenantIdxKey();
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,
@@ -1911,7 +1911,7 @@ public class CFBamIndexTableObj
 			indexByUNameIdx = new HashMap< ICFBamIndexByUNameIdxKey,
 				ICFBamIndexObj >();
 		}
-		ICFBamIndexByUNameIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByUNameIdxKey();
+		ICFBamIndexByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByUNameIdxKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredName( Name );
 		ICFBamIndexObj obj = null;
@@ -1934,7 +1934,7 @@ public class CFBamIndexTableObj
 	@Override
 	public void deleteIndexByIdxTableIdx( CFLibDbKeyHash256 TableId )
 	{
-		ICFBamIndexByIdxTableIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxTableIdxKey();
+		ICFBamIndexByIdxTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTableIdxKey();
 		key.setRequiredTableId( TableId );
 		if( indexByIdxTableIdx == null ) {
 			indexByIdxTableIdx = new HashMap< ICFBamIndexByIdxTableIdxKey,
@@ -1968,7 +1968,7 @@ public class CFBamIndexTableObj
 	@Override
 	public void deleteIndexByIdxCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
 	{
-		ICFBamIndexByIdxCodeVisIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxCodeVisIdxKey();
+		ICFBamIndexByIdxCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxCodeVisIdxKey();
 		key.setRequiredCodeVis( CodeVis );
 		if( indexByIdxCodeVisIdx == null ) {
 			indexByIdxCodeVisIdx = new HashMap< ICFBamIndexByIdxCodeVisIdxKey,
@@ -2003,7 +2003,7 @@ public class CFBamIndexTableObj
 	public void deleteIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
 		ICFBamSchema.CodeVisibilityEnum CodeVis )
 	{
-		ICFBamIndexByIdxTblCdVisXKey key = schema.getCFBamBackingStore().getFactoryIndex().newByIdxTblCdVisXKey();
+		ICFBamIndexByIdxTblCdVisXKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTblCdVisXKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredCodeVis( CodeVis );
 		if( indexByIdxTblCdVisX == null ) {
@@ -2041,7 +2041,7 @@ public class CFBamIndexTableObj
 	@Override
 	public void deleteIndexByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
 	{
-		ICFBamIndexByDefSchemaIdxKey key = schema.getCFBamBackingStore().getFactoryIndex().newByDefSchemaIdxKey();
+		ICFBamIndexByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamIndexByDefSchemaIdxKey,

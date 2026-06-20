@@ -248,7 +248,7 @@ public class CFBamClearTopDepEditObj
 	@Override
 	public ICFBamScope getRec() {
 		if( rec == null ) {
-			rec = getOrigAsClearTopDep().getSchema().getCFBamBackingStore().getFactoryClearTopDep().newRec();
+			rec = getOrigAsClearTopDep().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryClearTopDep().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

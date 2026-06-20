@@ -209,7 +209,7 @@ public class CFBamSecSysGrpIncTableObj
 
 			if( indexBySysGrpIdx != null ) {
 				ICFSecSecSysGrpIncBySysGrpIdxKey keySysGrpIdx =
-					schema.getCFSecBackingStore().getFactorySecSysGrpInc().newBySysGrpIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newBySysGrpIdxKey();
 				keySysGrpIdx.setRequiredSecSysGrpId( keepObj.getRequiredSecSysGrpId() );
 				Map<ICFSecSecSysGrpIncPKey, ICFSecSecSysGrpIncObj > mapSysGrpIdx = indexBySysGrpIdx.get( keySysGrpIdx );
 				if( mapSysGrpIdx != null ) {
@@ -222,7 +222,7 @@ public class CFBamSecSysGrpIncTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecSysGrpIncByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecSysGrpInc().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newByNameIdxKey();
 				keyNameIdx.setRequiredInclName( keepObj.getRequiredInclName() );
 				Map<ICFSecSecSysGrpIncPKey, ICFSecSecSysGrpIncObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -238,7 +238,7 @@ public class CFBamSecSysGrpIncTableObj
 
 			if( indexBySysGrpIdx != null ) {
 				ICFSecSecSysGrpIncBySysGrpIdxKey keySysGrpIdx =
-					schema.getCFSecBackingStore().getFactorySecSysGrpInc().newBySysGrpIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newBySysGrpIdxKey();
 				keySysGrpIdx.setRequiredSecSysGrpId( keepObj.getRequiredSecSysGrpId() );
 				Map<ICFSecSecSysGrpIncPKey, ICFSecSecSysGrpIncObj > mapSysGrpIdx = indexBySysGrpIdx.get( keySysGrpIdx );
 				if( mapSysGrpIdx != null ) {
@@ -248,7 +248,7 @@ public class CFBamSecSysGrpIncTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecSysGrpIncByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecSysGrpInc().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newByNameIdxKey();
 				keyNameIdx.setRequiredInclName( keepObj.getRequiredInclName() );
 				Map<ICFSecSecSysGrpIncPKey, ICFSecSecSysGrpIncObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -272,7 +272,7 @@ public class CFBamSecSysGrpIncTableObj
 
 			if( indexBySysGrpIdx != null ) {
 				ICFSecSecSysGrpIncBySysGrpIdxKey keySysGrpIdx =
-					schema.getCFSecBackingStore().getFactorySecSysGrpInc().newBySysGrpIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newBySysGrpIdxKey();
 				keySysGrpIdx.setRequiredSecSysGrpId( keepObj.getRequiredSecSysGrpId() );
 				Map<ICFSecSecSysGrpIncPKey, ICFSecSecSysGrpIncObj > mapSysGrpIdx = indexBySysGrpIdx.get( keySysGrpIdx );
 				if( mapSysGrpIdx != null ) {
@@ -282,7 +282,7 @@ public class CFBamSecSysGrpIncTableObj
 
 			if( indexByNameIdx != null ) {
 				ICFSecSecSysGrpIncByNameIdxKey keyNameIdx =
-					schema.getCFSecBackingStore().getFactorySecSysGrpInc().newByNameIdxKey();
+					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newByNameIdxKey();
 				keyNameIdx.setRequiredInclName( keepObj.getRequiredInclName() );
 				Map<ICFSecSecSysGrpIncPKey, ICFSecSecSysGrpIncObj > mapNameIdx = indexByNameIdx.get( keyNameIdx );
 				if( mapNameIdx != null ) {
@@ -378,10 +378,10 @@ public class CFBamSecSysGrpIncTableObj
 			return;
 		}
 		members.remove( pkey );
-		ICFSecSecSysGrpIncBySysGrpIdxKey keySysGrpIdx = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newBySysGrpIdxKey();
+		ICFSecSecSysGrpIncBySysGrpIdxKey keySysGrpIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newBySysGrpIdxKey();
 		keySysGrpIdx.setRequiredSecSysGrpId( existing.getRequiredSecSysGrpId() );
 
-		ICFSecSecSysGrpIncByNameIdxKey keyNameIdx = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newByNameIdxKey();
+		ICFSecSecSysGrpIncByNameIdxKey keyNameIdx = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newByNameIdxKey();
 		keyNameIdx.setRequiredInclName( existing.getRequiredInclName() );
 
 
@@ -607,7 +607,7 @@ public class CFBamSecSysGrpIncTableObj
 	public ICFSecSecSysGrpIncObj readSecSysGrpIncByIdIdx( CFLibDbKeyHash256 SecSysGrpId,
 		String InclName, boolean forceRead )
 	{
-		ICFSecSecSysGrpIncPKey pkey = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newPKey();
+		ICFSecSecSysGrpIncPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newPKey();
 		pkey.setRequiredSecSysGrpId( SecSysGrpId );
 		pkey.setRequiredInclName( InclName );
 		ICFSecSecSysGrpIncObj obj = readSecSysGrpInc( pkey, forceRead );
@@ -626,7 +626,7 @@ public class CFBamSecSysGrpIncTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysGrpIncBySysGrpIdx";
-		ICFSecSecSysGrpIncBySysGrpIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newBySysGrpIdxKey();
+		ICFSecSecSysGrpIncBySysGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newBySysGrpIdxKey();
 		key.setRequiredSecSysGrpId( SecSysGrpId );
 		Map<ICFSecSecSysGrpIncPKey, ICFSecSecSysGrpIncObj> dict;
 		if( indexBySysGrpIdx == null ) {
@@ -719,7 +719,7 @@ public class CFBamSecSysGrpIncTableObj
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysGrpIncByNameIdx";
-		ICFSecSecSysGrpIncByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newByNameIdxKey();
+		ICFSecSecSysGrpIncByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newByNameIdxKey();
 		key.setRequiredInclName( InclName );
 		Map<ICFSecSecSysGrpIncPKey, ICFSecSecSysGrpIncObj> dict;
 		if( indexByNameIdx == null ) {
@@ -805,7 +805,7 @@ public class CFBamSecSysGrpIncTableObj
 		String InclName )
 	{
 		ICFSecSecSysGrpIncObj obj = null;
-		ICFSecSecSysGrpIncPKey pkey = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newPKey();
+		ICFSecSecSysGrpIncPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newPKey();
 		pkey.setRequiredSecSysGrpId( SecSysGrpId );
 		pkey.setRequiredInclName( InclName );
 		pkey.setRequiredSecSysGrpId( SecSysGrpId );
@@ -818,7 +818,7 @@ public class CFBamSecSysGrpIncTableObj
 	public List<ICFSecSecSysGrpIncObj> readCachedSecSysGrpIncBySysGrpIdx( CFLibDbKeyHash256 SecSysGrpId )
 	{
 		final String S_ProcName = "readCachedSecSysGrpIncBySysGrpIdx";
-		ICFSecSecSysGrpIncBySysGrpIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newBySysGrpIdxKey();
+		ICFSecSecSysGrpIncBySysGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newBySysGrpIdxKey();
 		key.setRequiredSecSysGrpId( SecSysGrpId );
 		ArrayList<ICFSecSecSysGrpIncObj> arrayList = new ArrayList<ICFSecSecSysGrpIncObj>();
 		if( indexBySysGrpIdx != null ) {
@@ -895,7 +895,7 @@ public class CFBamSecSysGrpIncTableObj
 	public List<ICFSecSecSysGrpIncObj> readCachedSecSysGrpIncByNameIdx( String InclName )
 	{
 		final String S_ProcName = "readCachedSecSysGrpIncByNameIdx";
-		ICFSecSecSysGrpIncByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newByNameIdxKey();
+		ICFSecSecSysGrpIncByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newByNameIdxKey();
 		key.setRequiredInclName( InclName );
 		ArrayList<ICFSecSecSysGrpIncObj> arrayList = new ArrayList<ICFSecSecSysGrpIncObj>();
 		if( indexByNameIdx != null ) {
@@ -1028,7 +1028,7 @@ public class CFBamSecSysGrpIncTableObj
 		String priorInclName )
 	{
 		final String S_ProcName = "pageSecSysGrpIncBySysGrpIdx";
-		ICFSecSecSysGrpIncBySysGrpIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newBySysGrpIdxKey();
+		ICFSecSecSysGrpIncBySysGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newBySysGrpIdxKey();
 		key.setRequiredSecSysGrpId( SecSysGrpId );
 		List<ICFSecSecSysGrpIncObj> retList = new LinkedList<ICFSecSecSysGrpIncObj>();
 		ICFSecSecSysGrpIncObj obj;
@@ -1063,7 +1063,7 @@ public class CFBamSecSysGrpIncTableObj
 		String priorInclName )
 	{
 		final String S_ProcName = "pageSecSysGrpIncByNameIdx";
-		ICFSecSecSysGrpIncByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newByNameIdxKey();
+		ICFSecSecSysGrpIncByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newByNameIdxKey();
 		key.setRequiredInclName( InclName );
 		List<ICFSecSecSysGrpIncObj> retList = new LinkedList<ICFSecSecSysGrpIncObj>();
 		ICFSecSecSysGrpIncObj obj;
@@ -1137,7 +1137,7 @@ public class CFBamSecSysGrpIncTableObj
 	@Override
 	public void deleteSecSysGrpIncBySysGrpIdx( CFLibDbKeyHash256 SecSysGrpId )
 	{
-		ICFSecSecSysGrpIncBySysGrpIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newBySysGrpIdxKey();
+		ICFSecSecSysGrpIncBySysGrpIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newBySysGrpIdxKey();
 		key.setRequiredSecSysGrpId( SecSysGrpId );
 		if( indexBySysGrpIdx == null ) {
 			indexBySysGrpIdx = new HashMap< ICFSecSecSysGrpIncBySysGrpIdxKey,
@@ -1171,7 +1171,7 @@ public class CFBamSecSysGrpIncTableObj
 	@Override
 	public void deleteSecSysGrpIncByNameIdx( String InclName )
 	{
-		ICFSecSecSysGrpIncByNameIdxKey key = schema.getCFSecBackingStore().getFactorySecSysGrpInc().newByNameIdxKey();
+		ICFSecSecSysGrpIncByNameIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrpInc().newByNameIdxKey();
 		key.setRequiredInclName( InclName );
 		if( indexByNameIdx == null ) {
 			indexByNameIdx = new HashMap< ICFSecSecSysGrpIncByNameIdxKey,

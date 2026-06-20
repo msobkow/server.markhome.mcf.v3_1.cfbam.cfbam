@@ -393,7 +393,7 @@ public class CFBamIndexColEditObj
 	@Override
 	public ICFBamIndexCol getRec() {
 		if( rec == null ) {
-			rec = getOrigAsIndexCol().getSchema().getCFBamBackingStore().getFactoryIndexCol().newRec();
+			rec = getOrigAsIndexCol().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryIndexCol().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

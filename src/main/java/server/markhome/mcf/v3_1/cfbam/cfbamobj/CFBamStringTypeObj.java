@@ -227,7 +227,7 @@ public class CFBamStringTypeObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryStringType().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryStringType().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

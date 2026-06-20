@@ -243,7 +243,7 @@ public class CFBamNmTokenTypeEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsNmTokenType().getSchema().getCFBamBackingStore().getFactoryNmTokenType().newRec();
+			rec = getOrigAsNmTokenType().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryNmTokenType().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

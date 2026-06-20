@@ -295,7 +295,7 @@ public class CFBamTopDomainObj
 	public ICFIntTopDomain getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFIntBackingStore().getFactoryTopDomain().newRec();
+				rec = getSchema().getCFIntBackingStore().getCFIntFactory().getFactoryTopDomain().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

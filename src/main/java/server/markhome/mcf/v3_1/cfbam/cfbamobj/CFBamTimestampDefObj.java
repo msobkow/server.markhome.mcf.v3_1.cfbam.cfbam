@@ -223,7 +223,7 @@ public class CFBamTimestampDefObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryTimestampDef().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTimestampDef().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

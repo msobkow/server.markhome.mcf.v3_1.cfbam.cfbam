@@ -379,7 +379,7 @@ public class CFBamChainEditObj
 	@Override
 	public ICFBamChain getRec() {
 		if( rec == null ) {
-			rec = getOrigAsChain().getSchema().getCFBamBackingStore().getFactoryChain().newRec();
+			rec = getOrigAsChain().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryChain().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

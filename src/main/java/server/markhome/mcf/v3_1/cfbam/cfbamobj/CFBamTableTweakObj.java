@@ -215,7 +215,7 @@ public class CFBamTableTweakObj
 	public ICFBamTweak getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryTableTweak().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTableTweak().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

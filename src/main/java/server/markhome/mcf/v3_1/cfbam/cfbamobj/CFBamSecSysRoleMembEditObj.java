@@ -372,7 +372,7 @@ public class CFBamSecSysRoleMembEditObj
 	@Override
 	public ICFSecSecSysRoleMemb getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSecSysRoleMemb().getSchema().getCFSecBackingStore().getFactorySecSysRoleMemb().newRec();
+			rec = getOrigAsSecSysRoleMemb().getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

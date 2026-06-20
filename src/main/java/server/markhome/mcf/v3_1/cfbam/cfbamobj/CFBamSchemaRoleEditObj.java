@@ -233,7 +233,7 @@ public class CFBamSchemaRoleEditObj
 	@Override
 	public ICFBamRoleDef getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSchemaRole().getSchema().getCFBamBackingStore().getFactorySchemaRole().newRec();
+			rec = getOrigAsSchemaRole().getSchema().getCFBamBackingStore().getCFBamFactory().getFactorySchemaRole().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

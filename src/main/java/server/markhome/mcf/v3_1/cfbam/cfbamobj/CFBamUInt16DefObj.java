@@ -223,7 +223,7 @@ public class CFBamUInt16DefObj
 	public ICFBamValue getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryUInt16Def().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryUInt16Def().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

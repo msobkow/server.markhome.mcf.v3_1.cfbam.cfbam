@@ -291,7 +291,7 @@ public class CFBamRelationColObj
 	public ICFBamRelationCol getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryRelationCol().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryRelationCol().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

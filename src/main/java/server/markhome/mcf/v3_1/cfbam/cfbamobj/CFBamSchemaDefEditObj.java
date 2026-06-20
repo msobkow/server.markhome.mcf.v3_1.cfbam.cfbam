@@ -281,7 +281,7 @@ public class CFBamSchemaDefEditObj
 	@Override
 	public ICFBamScope getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSchemaDef().getSchema().getCFBamBackingStore().getFactorySchemaDef().newRec();
+			rec = getOrigAsSchemaDef().getSchema().getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

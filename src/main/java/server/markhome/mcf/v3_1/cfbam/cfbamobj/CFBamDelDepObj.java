@@ -218,7 +218,7 @@ public class CFBamDelDepObj
 	public ICFBamScope getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFBamBackingStore().getFactoryDelDep().newRec();
+				rec = getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryDelDep().newRec();
 			}
 			else {
 				// Read the data rec via the backing store

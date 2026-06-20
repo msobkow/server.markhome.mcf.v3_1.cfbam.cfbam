@@ -240,7 +240,7 @@ public class CFBamTZTimestampDefEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTZTimestampDef().getSchema().getCFBamBackingStore().getFactoryTZTimestampDef().newRec();
+			rec = getOrigAsTZTimestampDef().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTZTimestampDef().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

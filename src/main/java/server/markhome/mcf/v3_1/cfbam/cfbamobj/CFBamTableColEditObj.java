@@ -245,7 +245,7 @@ public class CFBamTableColEditObj
 	@Override
 	public ICFBamValue getRec() {
 		if( rec == null ) {
-			rec = getOrigAsTableCol().getSchema().getCFBamBackingStore().getFactoryTableCol().newRec();
+			rec = getOrigAsTableCol().getSchema().getCFBamBackingStore().getCFBamFactory().getFactoryTableCol().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

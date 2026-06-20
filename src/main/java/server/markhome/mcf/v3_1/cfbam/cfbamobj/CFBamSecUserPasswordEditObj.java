@@ -320,7 +320,7 @@ public class CFBamSecUserPasswordEditObj
 	@Override
 	public ICFSecSecUserPassword getRec() {
 		if( rec == null ) {
-			rec = getOrigAsSecUserPassword().getSchema().getCFSecBackingStore().getFactorySecUserPassword().newRec();
+			rec = getOrigAsSecUserPassword().getSchema().getCFSecBackingStore().getCFSecFactory().getFactorySecUserPassword().newRec();
 			rec.set( orig.getRec() );
 		}
 		return( rec );

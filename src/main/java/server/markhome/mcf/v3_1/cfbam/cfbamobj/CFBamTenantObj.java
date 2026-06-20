@@ -303,7 +303,7 @@ public class CFBamTenantObj
 	public ICFSecTenant getRec() {
 		if( rec == null ) {
 			if( isNew ) {
-				rec = getSchema().getCFSecBackingStore().getFactoryTenant().newRec();
+				rec = getSchema().getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newRec();
 			}
 			else {
 				// Read the data rec via the backing store
