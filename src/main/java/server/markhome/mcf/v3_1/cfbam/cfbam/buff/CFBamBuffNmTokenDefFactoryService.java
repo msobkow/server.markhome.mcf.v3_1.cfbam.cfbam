@@ -89,12 +89,27 @@ public class CFBamBuffNmTokenDefFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffNmTokenDef) {
-			return( (CFBamBuffNmTokenDef)rec );
+			return ((CFBamBuffNmTokenDef)rec);
 		}
-		else {
-			CFBamBuffNmTokenDef mapped = new CFBamBuffNmTokenDef();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamNmTokenDef.CLASS_CODE: {
+					CFBamBuffNmTokenDef mapped = new CFBamBuffNmTokenDef();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamNmTokenType.CLASS_CODE: {
+					CFBamBuffNmTokenType mapped = new CFBamBuffNmTokenType();
+					mapped.set((ICFBamNmTokenType)rec);
+					return(mapped); }
+				case ICFBamNmTokenCol.CLASS_CODE: {
+					CFBamBuffNmTokenCol mapped = new CFBamBuffNmTokenCol();
+					mapped.set((ICFBamNmTokenCol)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamNmTokenDef",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamNmTokenDef");
+			}
 		}
 	}
 
@@ -106,16 +121,31 @@ public class CFBamBuffNmTokenDefFactoryService
 	}
 
 	public CFBamBuffNmTokenDefH ensureHRec(ICFBamNmTokenDefH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffNmTokenDefH) {
-			return( (CFBamBuffNmTokenDefH)hrec );
+		else if (hrec instanceof CFBamBuffNmTokenDefH) {
+			return ((CFBamBuffNmTokenDefH)hrec);
 		}
-		else {
-			CFBamBuffNmTokenDefH mapped = new CFBamBuffNmTokenDefH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamNmTokenDef.CLASS_CODE: {
+					CFBamBuffNmTokenDefH mapped = new CFBamBuffNmTokenDefH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamNmTokenType.CLASS_CODE: {
+					CFBamBuffNmTokenTypeH mapped = new CFBamBuffNmTokenTypeH();
+					mapped.set((ICFBamNmTokenTypeH)hrec);
+					return(mapped); }
+				case ICFBamNmTokenCol.CLASS_CODE: {
+					CFBamBuffNmTokenColH mapped = new CFBamBuffNmTokenColH();
+					mapped.set((ICFBamNmTokenColH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamNmTokenDef",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamNmTokenDef");
+			}
 		}
 	}
 }

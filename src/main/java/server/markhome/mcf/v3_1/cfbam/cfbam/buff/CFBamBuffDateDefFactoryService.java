@@ -89,12 +89,27 @@ public class CFBamBuffDateDefFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffDateDef) {
-			return( (CFBamBuffDateDef)rec );
+			return ((CFBamBuffDateDef)rec);
 		}
-		else {
-			CFBamBuffDateDef mapped = new CFBamBuffDateDef();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamDateDef.CLASS_CODE: {
+					CFBamBuffDateDef mapped = new CFBamBuffDateDef();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamDateType.CLASS_CODE: {
+					CFBamBuffDateType mapped = new CFBamBuffDateType();
+					mapped.set((ICFBamDateType)rec);
+					return(mapped); }
+				case ICFBamDateCol.CLASS_CODE: {
+					CFBamBuffDateCol mapped = new CFBamBuffDateCol();
+					mapped.set((ICFBamDateCol)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamDateDef",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamDateDef");
+			}
 		}
 	}
 
@@ -106,16 +121,31 @@ public class CFBamBuffDateDefFactoryService
 	}
 
 	public CFBamBuffDateDefH ensureHRec(ICFBamDateDefH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffDateDefH) {
-			return( (CFBamBuffDateDefH)hrec );
+		else if (hrec instanceof CFBamBuffDateDefH) {
+			return ((CFBamBuffDateDefH)hrec);
 		}
-		else {
-			CFBamBuffDateDefH mapped = new CFBamBuffDateDefH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamDateDef.CLASS_CODE: {
+					CFBamBuffDateDefH mapped = new CFBamBuffDateDefH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamDateType.CLASS_CODE: {
+					CFBamBuffDateTypeH mapped = new CFBamBuffDateTypeH();
+					mapped.set((ICFBamDateTypeH)hrec);
+					return(mapped); }
+				case ICFBamDateCol.CLASS_CODE: {
+					CFBamBuffDateColH mapped = new CFBamBuffDateColH();
+					mapped.set((ICFBamDateColH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamDateDef",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamDateDef");
+			}
 		}
 	}
 }

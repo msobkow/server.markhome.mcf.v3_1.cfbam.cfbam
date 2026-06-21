@@ -89,12 +89,27 @@ public class CFBamBuffTextDefFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffTextDef) {
-			return( (CFBamBuffTextDef)rec );
+			return ((CFBamBuffTextDef)rec);
 		}
-		else {
-			CFBamBuffTextDef mapped = new CFBamBuffTextDef();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamTextDef.CLASS_CODE: {
+					CFBamBuffTextDef mapped = new CFBamBuffTextDef();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamTextType.CLASS_CODE: {
+					CFBamBuffTextType mapped = new CFBamBuffTextType();
+					mapped.set((ICFBamTextType)rec);
+					return(mapped); }
+				case ICFBamTextCol.CLASS_CODE: {
+					CFBamBuffTextCol mapped = new CFBamBuffTextCol();
+					mapped.set((ICFBamTextCol)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamTextDef",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamTextDef");
+			}
 		}
 	}
 
@@ -106,16 +121,31 @@ public class CFBamBuffTextDefFactoryService
 	}
 
 	public CFBamBuffTextDefH ensureHRec(ICFBamTextDefH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffTextDefH) {
-			return( (CFBamBuffTextDefH)hrec );
+		else if (hrec instanceof CFBamBuffTextDefH) {
+			return ((CFBamBuffTextDefH)hrec);
 		}
-		else {
-			CFBamBuffTextDefH mapped = new CFBamBuffTextDefH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamTextDef.CLASS_CODE: {
+					CFBamBuffTextDefH mapped = new CFBamBuffTextDefH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamTextType.CLASS_CODE: {
+					CFBamBuffTextTypeH mapped = new CFBamBuffTextTypeH();
+					mapped.set((ICFBamTextTypeH)hrec);
+					return(mapped); }
+				case ICFBamTextCol.CLASS_CODE: {
+					CFBamBuffTextColH mapped = new CFBamBuffTextColH();
+					mapped.set((ICFBamTextColH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamTextDef",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamTextDef");
+			}
 		}
 	}
 }

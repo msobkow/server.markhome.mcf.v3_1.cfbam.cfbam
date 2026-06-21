@@ -89,12 +89,19 @@ public class CFBamBuffDbKeyHash256GenFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffDbKeyHash256Gen) {
-			return( (CFBamBuffDbKeyHash256Gen)rec );
+			return ((CFBamBuffDbKeyHash256Gen)rec);
 		}
-		else {
-			CFBamBuffDbKeyHash256Gen mapped = new CFBamBuffDbKeyHash256Gen();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamDbKeyHash256Gen.CLASS_CODE: {
+					CFBamBuffDbKeyHash256Gen mapped = new CFBamBuffDbKeyHash256Gen();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamDbKeyHash256Gen",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamDbKeyHash256Gen");
+			}
 		}
 	}
 
@@ -106,16 +113,23 @@ public class CFBamBuffDbKeyHash256GenFactoryService
 	}
 
 	public CFBamBuffDbKeyHash256GenH ensureHRec(ICFBamDbKeyHash256GenH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffDbKeyHash256GenH) {
-			return( (CFBamBuffDbKeyHash256GenH)hrec );
+		else if (hrec instanceof CFBamBuffDbKeyHash256GenH) {
+			return ((CFBamBuffDbKeyHash256GenH)hrec);
 		}
-		else {
-			CFBamBuffDbKeyHash256GenH mapped = new CFBamBuffDbKeyHash256GenH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamDbKeyHash256Gen.CLASS_CODE: {
+					CFBamBuffDbKeyHash256GenH mapped = new CFBamBuffDbKeyHash256GenH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamDbKeyHash256Gen",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamDbKeyHash256Gen");
+			}
 		}
 	}
 }

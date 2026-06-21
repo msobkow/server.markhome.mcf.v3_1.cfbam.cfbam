@@ -153,12 +153,19 @@ public class CFBamBuffSchemaRoleFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffSchemaRole) {
-			return( (CFBamBuffSchemaRole)rec );
+			return ((CFBamBuffSchemaRole)rec);
 		}
-		else {
-			CFBamBuffSchemaRole mapped = new CFBamBuffSchemaRole();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamSchemaRole.CLASS_CODE: {
+					CFBamBuffSchemaRole mapped = new CFBamBuffSchemaRole();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamSchemaRole",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamSchemaRole");
+			}
 		}
 	}
 
@@ -170,16 +177,23 @@ public class CFBamBuffSchemaRoleFactoryService
 	}
 
 	public CFBamBuffSchemaRoleH ensureHRec(ICFBamSchemaRoleH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffSchemaRoleH) {
-			return( (CFBamBuffSchemaRoleH)hrec );
+		else if (hrec instanceof CFBamBuffSchemaRoleH) {
+			return ((CFBamBuffSchemaRoleH)hrec);
 		}
-		else {
-			CFBamBuffSchemaRoleH mapped = new CFBamBuffSchemaRoleH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamSchemaRole.CLASS_CODE: {
+					CFBamBuffSchemaRoleH mapped = new CFBamBuffSchemaRoleH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamSchemaRole",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamSchemaRole");
+			}
 		}
 	}
 }

@@ -110,12 +110,23 @@ public class CFBamBuffInt64TypeFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffInt64Type) {
-			return( (CFBamBuffInt64Type)rec );
+			return ((CFBamBuffInt64Type)rec);
 		}
-		else {
-			CFBamBuffInt64Type mapped = new CFBamBuffInt64Type();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamInt64Type.CLASS_CODE: {
+					CFBamBuffInt64Type mapped = new CFBamBuffInt64Type();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamId64Gen.CLASS_CODE: {
+					CFBamBuffId64Gen mapped = new CFBamBuffId64Gen();
+					mapped.set((ICFBamId64Gen)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamInt64Type",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamInt64Type");
+			}
 		}
 	}
 
@@ -127,16 +138,27 @@ public class CFBamBuffInt64TypeFactoryService
 	}
 
 	public CFBamBuffInt64TypeH ensureHRec(ICFBamInt64TypeH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffInt64TypeH) {
-			return( (CFBamBuffInt64TypeH)hrec );
+		else if (hrec instanceof CFBamBuffInt64TypeH) {
+			return ((CFBamBuffInt64TypeH)hrec);
 		}
-		else {
-			CFBamBuffInt64TypeH mapped = new CFBamBuffInt64TypeH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamInt64Type.CLASS_CODE: {
+					CFBamBuffInt64TypeH mapped = new CFBamBuffInt64TypeH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamId64Gen.CLASS_CODE: {
+					CFBamBuffId64GenH mapped = new CFBamBuffId64GenH();
+					mapped.set((ICFBamId64GenH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamInt64Type",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamInt64Type");
+			}
 		}
 	}
 }

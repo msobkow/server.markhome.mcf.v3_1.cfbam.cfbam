@@ -89,12 +89,27 @@ public class CFBamBuffNumberDefFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffNumberDef) {
-			return( (CFBamBuffNumberDef)rec );
+			return ((CFBamBuffNumberDef)rec);
 		}
-		else {
-			CFBamBuffNumberDef mapped = new CFBamBuffNumberDef();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamNumberDef.CLASS_CODE: {
+					CFBamBuffNumberDef mapped = new CFBamBuffNumberDef();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamNumberType.CLASS_CODE: {
+					CFBamBuffNumberType mapped = new CFBamBuffNumberType();
+					mapped.set((ICFBamNumberType)rec);
+					return(mapped); }
+				case ICFBamNumberCol.CLASS_CODE: {
+					CFBamBuffNumberCol mapped = new CFBamBuffNumberCol();
+					mapped.set((ICFBamNumberCol)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamNumberDef",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamNumberDef");
+			}
 		}
 	}
 
@@ -106,16 +121,31 @@ public class CFBamBuffNumberDefFactoryService
 	}
 
 	public CFBamBuffNumberDefH ensureHRec(ICFBamNumberDefH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffNumberDefH) {
-			return( (CFBamBuffNumberDefH)hrec );
+		else if (hrec instanceof CFBamBuffNumberDefH) {
+			return ((CFBamBuffNumberDefH)hrec);
 		}
-		else {
-			CFBamBuffNumberDefH mapped = new CFBamBuffNumberDefH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamNumberDef.CLASS_CODE: {
+					CFBamBuffNumberDefH mapped = new CFBamBuffNumberDefH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamNumberType.CLASS_CODE: {
+					CFBamBuffNumberTypeH mapped = new CFBamBuffNumberTypeH();
+					mapped.set((ICFBamNumberTypeH)hrec);
+					return(mapped); }
+				case ICFBamNumberCol.CLASS_CODE: {
+					CFBamBuffNumberColH mapped = new CFBamBuffNumberColH();
+					mapped.set((ICFBamNumberColH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamNumberDef",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamNumberDef");
+			}
 		}
 	}
 }

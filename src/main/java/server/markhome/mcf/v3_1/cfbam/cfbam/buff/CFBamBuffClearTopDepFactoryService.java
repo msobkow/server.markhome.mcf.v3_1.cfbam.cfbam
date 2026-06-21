@@ -174,12 +174,19 @@ public class CFBamBuffClearTopDepFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffClearTopDep) {
-			return( (CFBamBuffClearTopDep)rec );
+			return ((CFBamBuffClearTopDep)rec);
 		}
-		else {
-			CFBamBuffClearTopDep mapped = new CFBamBuffClearTopDep();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamClearTopDep.CLASS_CODE: {
+					CFBamBuffClearTopDep mapped = new CFBamBuffClearTopDep();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamClearTopDep",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamClearTopDep");
+			}
 		}
 	}
 
@@ -191,16 +198,23 @@ public class CFBamBuffClearTopDepFactoryService
 	}
 
 	public CFBamBuffClearTopDepH ensureHRec(ICFBamClearTopDepH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffClearTopDepH) {
-			return( (CFBamBuffClearTopDepH)hrec );
+		else if (hrec instanceof CFBamBuffClearTopDepH) {
+			return ((CFBamBuffClearTopDepH)hrec);
 		}
-		else {
-			CFBamBuffClearTopDepH mapped = new CFBamBuffClearTopDepH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamClearTopDep.CLASS_CODE: {
+					CFBamBuffClearTopDepH mapped = new CFBamBuffClearTopDepH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamClearTopDep",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamClearTopDep");
+			}
 		}
 	}
 }

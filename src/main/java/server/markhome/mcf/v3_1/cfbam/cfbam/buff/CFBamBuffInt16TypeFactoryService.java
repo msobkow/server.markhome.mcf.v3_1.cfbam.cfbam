@@ -110,12 +110,23 @@ public class CFBamBuffInt16TypeFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffInt16Type) {
-			return( (CFBamBuffInt16Type)rec );
+			return ((CFBamBuffInt16Type)rec);
 		}
-		else {
-			CFBamBuffInt16Type mapped = new CFBamBuffInt16Type();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamInt16Type.CLASS_CODE: {
+					CFBamBuffInt16Type mapped = new CFBamBuffInt16Type();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamId16Gen.CLASS_CODE: {
+					CFBamBuffId16Gen mapped = new CFBamBuffId16Gen();
+					mapped.set((ICFBamId16Gen)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamInt16Type",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamInt16Type");
+			}
 		}
 	}
 
@@ -127,16 +138,27 @@ public class CFBamBuffInt16TypeFactoryService
 	}
 
 	public CFBamBuffInt16TypeH ensureHRec(ICFBamInt16TypeH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffInt16TypeH) {
-			return( (CFBamBuffInt16TypeH)hrec );
+		else if (hrec instanceof CFBamBuffInt16TypeH) {
+			return ((CFBamBuffInt16TypeH)hrec);
 		}
-		else {
-			CFBamBuffInt16TypeH mapped = new CFBamBuffInt16TypeH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamInt16Type.CLASS_CODE: {
+					CFBamBuffInt16TypeH mapped = new CFBamBuffInt16TypeH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamId16Gen.CLASS_CODE: {
+					CFBamBuffId16GenH mapped = new CFBamBuffId16GenH();
+					mapped.set((ICFBamId16GenH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamInt16Type",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamInt16Type");
+			}
 		}
 	}
 }

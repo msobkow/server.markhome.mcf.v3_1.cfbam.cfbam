@@ -89,12 +89,31 @@ public class CFBamBuffInt64DefFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffInt64Def) {
-			return( (CFBamBuffInt64Def)rec );
+			return ((CFBamBuffInt64Def)rec);
 		}
-		else {
-			CFBamBuffInt64Def mapped = new CFBamBuffInt64Def();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamInt64Def.CLASS_CODE: {
+					CFBamBuffInt64Def mapped = new CFBamBuffInt64Def();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamInt64Type.CLASS_CODE: {
+					CFBamBuffInt64Type mapped = new CFBamBuffInt64Type();
+					mapped.set((ICFBamInt64Type)rec);
+					return(mapped); }
+				case ICFBamId64Gen.CLASS_CODE: {
+					CFBamBuffId64Gen mapped = new CFBamBuffId64Gen();
+					mapped.set((ICFBamId64Gen)rec);
+					return(mapped); }
+				case ICFBamInt64Col.CLASS_CODE: {
+					CFBamBuffInt64Col mapped = new CFBamBuffInt64Col();
+					mapped.set((ICFBamInt64Col)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamInt64Def",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamInt64Def");
+			}
 		}
 	}
 
@@ -106,16 +125,35 @@ public class CFBamBuffInt64DefFactoryService
 	}
 
 	public CFBamBuffInt64DefH ensureHRec(ICFBamInt64DefH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffInt64DefH) {
-			return( (CFBamBuffInt64DefH)hrec );
+		else if (hrec instanceof CFBamBuffInt64DefH) {
+			return ((CFBamBuffInt64DefH)hrec);
 		}
-		else {
-			CFBamBuffInt64DefH mapped = new CFBamBuffInt64DefH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamInt64Def.CLASS_CODE: {
+					CFBamBuffInt64DefH mapped = new CFBamBuffInt64DefH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamInt64Type.CLASS_CODE: {
+					CFBamBuffInt64TypeH mapped = new CFBamBuffInt64TypeH();
+					mapped.set((ICFBamInt64TypeH)hrec);
+					return(mapped); }
+				case ICFBamId64Gen.CLASS_CODE: {
+					CFBamBuffId64GenH mapped = new CFBamBuffId64GenH();
+					mapped.set((ICFBamId64GenH)hrec);
+					return(mapped); }
+				case ICFBamInt64Col.CLASS_CODE: {
+					CFBamBuffInt64ColH mapped = new CFBamBuffInt64ColH();
+					mapped.set((ICFBamInt64ColH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamInt64Def",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamInt64Def");
+			}
 		}
 	}
 }

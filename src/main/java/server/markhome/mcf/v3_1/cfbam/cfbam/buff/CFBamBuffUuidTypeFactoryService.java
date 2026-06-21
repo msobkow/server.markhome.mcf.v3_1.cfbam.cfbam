@@ -110,12 +110,23 @@ public class CFBamBuffUuidTypeFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffUuidType) {
-			return( (CFBamBuffUuidType)rec );
+			return ((CFBamBuffUuidType)rec);
 		}
-		else {
-			CFBamBuffUuidType mapped = new CFBamBuffUuidType();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamUuidType.CLASS_CODE: {
+					CFBamBuffUuidType mapped = new CFBamBuffUuidType();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamUuidGen.CLASS_CODE: {
+					CFBamBuffUuidGen mapped = new CFBamBuffUuidGen();
+					mapped.set((ICFBamUuidGen)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamUuidType",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamUuidType");
+			}
 		}
 	}
 
@@ -127,16 +138,27 @@ public class CFBamBuffUuidTypeFactoryService
 	}
 
 	public CFBamBuffUuidTypeH ensureHRec(ICFBamUuidTypeH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffUuidTypeH) {
-			return( (CFBamBuffUuidTypeH)hrec );
+		else if (hrec instanceof CFBamBuffUuidTypeH) {
+			return ((CFBamBuffUuidTypeH)hrec);
 		}
-		else {
-			CFBamBuffUuidTypeH mapped = new CFBamBuffUuidTypeH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamUuidType.CLASS_CODE: {
+					CFBamBuffUuidTypeH mapped = new CFBamBuffUuidTypeH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamUuidGen.CLASS_CODE: {
+					CFBamBuffUuidGenH mapped = new CFBamBuffUuidGenH();
+					mapped.set((ICFBamUuidGenH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamUuidType",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamUuidType");
+			}
 		}
 	}
 }

@@ -131,12 +131,35 @@ public class CFBamBuffClearDepFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffClearDep) {
-			return( (CFBamBuffClearDep)rec );
+			return ((CFBamBuffClearDep)rec);
 		}
-		else {
-			CFBamBuffClearDep mapped = new CFBamBuffClearDep();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamClearDep.CLASS_CODE: {
+					CFBamBuffClearDep mapped = new CFBamBuffClearDep();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamClearSubDep1.CLASS_CODE: {
+					CFBamBuffClearSubDep1 mapped = new CFBamBuffClearSubDep1();
+					mapped.set((ICFBamClearSubDep1)rec);
+					return(mapped); }
+				case ICFBamClearSubDep2.CLASS_CODE: {
+					CFBamBuffClearSubDep2 mapped = new CFBamBuffClearSubDep2();
+					mapped.set((ICFBamClearSubDep2)rec);
+					return(mapped); }
+				case ICFBamClearSubDep3.CLASS_CODE: {
+					CFBamBuffClearSubDep3 mapped = new CFBamBuffClearSubDep3();
+					mapped.set((ICFBamClearSubDep3)rec);
+					return(mapped); }
+				case ICFBamClearTopDep.CLASS_CODE: {
+					CFBamBuffClearTopDep mapped = new CFBamBuffClearTopDep();
+					mapped.set((ICFBamClearTopDep)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamClearDep",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamClearDep");
+			}
 		}
 	}
 
@@ -148,16 +171,39 @@ public class CFBamBuffClearDepFactoryService
 	}
 
 	public CFBamBuffClearDepH ensureHRec(ICFBamClearDepH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffClearDepH) {
-			return( (CFBamBuffClearDepH)hrec );
+		else if (hrec instanceof CFBamBuffClearDepH) {
+			return ((CFBamBuffClearDepH)hrec);
 		}
-		else {
-			CFBamBuffClearDepH mapped = new CFBamBuffClearDepH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamClearDep.CLASS_CODE: {
+					CFBamBuffClearDepH mapped = new CFBamBuffClearDepH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamClearSubDep1.CLASS_CODE: {
+					CFBamBuffClearSubDep1H mapped = new CFBamBuffClearSubDep1H();
+					mapped.set((ICFBamClearSubDep1H)hrec);
+					return(mapped); }
+				case ICFBamClearSubDep2.CLASS_CODE: {
+					CFBamBuffClearSubDep2H mapped = new CFBamBuffClearSubDep2H();
+					mapped.set((ICFBamClearSubDep2H)hrec);
+					return(mapped); }
+				case ICFBamClearSubDep3.CLASS_CODE: {
+					CFBamBuffClearSubDep3H mapped = new CFBamBuffClearSubDep3H();
+					mapped.set((ICFBamClearSubDep3H)hrec);
+					return(mapped); }
+				case ICFBamClearTopDep.CLASS_CODE: {
+					CFBamBuffClearTopDepH mapped = new CFBamBuffClearTopDepH();
+					mapped.set((ICFBamClearTopDepH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamClearDep",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamClearDep");
+			}
 		}
 	}
 }

@@ -196,12 +196,31 @@ public class CFBamBuffServerMethodFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffServerMethod) {
-			return( (CFBamBuffServerMethod)rec );
+			return ((CFBamBuffServerMethod)rec);
 		}
-		else {
-			CFBamBuffServerMethod mapped = new CFBamBuffServerMethod();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamServerMethod.CLASS_CODE: {
+					CFBamBuffServerMethod mapped = new CFBamBuffServerMethod();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamServerObjFunc.CLASS_CODE: {
+					CFBamBuffServerObjFunc mapped = new CFBamBuffServerObjFunc();
+					mapped.set((ICFBamServerObjFunc)rec);
+					return(mapped); }
+				case ICFBamServerProc.CLASS_CODE: {
+					CFBamBuffServerProc mapped = new CFBamBuffServerProc();
+					mapped.set((ICFBamServerProc)rec);
+					return(mapped); }
+				case ICFBamServerListFunc.CLASS_CODE: {
+					CFBamBuffServerListFunc mapped = new CFBamBuffServerListFunc();
+					mapped.set((ICFBamServerListFunc)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamServerMethod",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamServerMethod");
+			}
 		}
 	}
 
@@ -213,16 +232,35 @@ public class CFBamBuffServerMethodFactoryService
 	}
 
 	public CFBamBuffServerMethodH ensureHRec(ICFBamServerMethodH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffServerMethodH) {
-			return( (CFBamBuffServerMethodH)hrec );
+		else if (hrec instanceof CFBamBuffServerMethodH) {
+			return ((CFBamBuffServerMethodH)hrec);
 		}
-		else {
-			CFBamBuffServerMethodH mapped = new CFBamBuffServerMethodH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamServerMethod.CLASS_CODE: {
+					CFBamBuffServerMethodH mapped = new CFBamBuffServerMethodH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamServerObjFunc.CLASS_CODE: {
+					CFBamBuffServerObjFuncH mapped = new CFBamBuffServerObjFuncH();
+					mapped.set((ICFBamServerObjFuncH)hrec);
+					return(mapped); }
+				case ICFBamServerProc.CLASS_CODE: {
+					CFBamBuffServerProcH mapped = new CFBamBuffServerProcH();
+					mapped.set((ICFBamServerProcH)hrec);
+					return(mapped); }
+				case ICFBamServerListFunc.CLASS_CODE: {
+					CFBamBuffServerListFuncH mapped = new CFBamBuffServerListFuncH();
+					mapped.set((ICFBamServerListFuncH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamServerMethod",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamServerMethod");
+			}
 		}
 	}
 }

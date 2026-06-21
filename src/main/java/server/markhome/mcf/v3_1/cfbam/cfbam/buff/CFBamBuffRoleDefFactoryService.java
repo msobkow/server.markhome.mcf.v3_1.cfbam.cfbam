@@ -201,12 +201,23 @@ public class CFBamBuffRoleDefFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffRoleDef) {
-			return( (CFBamBuffRoleDef)rec );
+			return ((CFBamBuffRoleDef)rec);
 		}
-		else {
-			CFBamBuffRoleDef mapped = new CFBamBuffRoleDef();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamRoleDef.CLASS_CODE: {
+					CFBamBuffRoleDef mapped = new CFBamBuffRoleDef();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamSchemaRole.CLASS_CODE: {
+					CFBamBuffSchemaRole mapped = new CFBamBuffSchemaRole();
+					mapped.set((ICFBamSchemaRole)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamRoleDef",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamRoleDef");
+			}
 		}
 	}
 
@@ -218,16 +229,27 @@ public class CFBamBuffRoleDefFactoryService
 	}
 
 	public CFBamBuffRoleDefH ensureHRec(ICFBamRoleDefH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffRoleDefH) {
-			return( (CFBamBuffRoleDefH)hrec );
+		else if (hrec instanceof CFBamBuffRoleDefH) {
+			return ((CFBamBuffRoleDefH)hrec);
 		}
-		else {
-			CFBamBuffRoleDefH mapped = new CFBamBuffRoleDefH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamRoleDef.CLASS_CODE: {
+					CFBamBuffRoleDefH mapped = new CFBamBuffRoleDefH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamSchemaRole.CLASS_CODE: {
+					CFBamBuffSchemaRoleH mapped = new CFBamBuffSchemaRoleH();
+					mapped.set((ICFBamSchemaRoleH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamRoleDef",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamRoleDef");
+			}
 		}
 	}
 }

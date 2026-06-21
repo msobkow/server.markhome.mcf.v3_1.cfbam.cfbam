@@ -110,12 +110,23 @@ public class CFBamBuffUuid6TypeFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffUuid6Type) {
-			return( (CFBamBuffUuid6Type)rec );
+			return ((CFBamBuffUuid6Type)rec);
 		}
-		else {
-			CFBamBuffUuid6Type mapped = new CFBamBuffUuid6Type();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamUuid6Type.CLASS_CODE: {
+					CFBamBuffUuid6Type mapped = new CFBamBuffUuid6Type();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamUuid6Gen.CLASS_CODE: {
+					CFBamBuffUuid6Gen mapped = new CFBamBuffUuid6Gen();
+					mapped.set((ICFBamUuid6Gen)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamUuid6Type",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamUuid6Type");
+			}
 		}
 	}
 
@@ -127,16 +138,27 @@ public class CFBamBuffUuid6TypeFactoryService
 	}
 
 	public CFBamBuffUuid6TypeH ensureHRec(ICFBamUuid6TypeH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffUuid6TypeH) {
-			return( (CFBamBuffUuid6TypeH)hrec );
+		else if (hrec instanceof CFBamBuffUuid6TypeH) {
+			return ((CFBamBuffUuid6TypeH)hrec);
 		}
-		else {
-			CFBamBuffUuid6TypeH mapped = new CFBamBuffUuid6TypeH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamUuid6Type.CLASS_CODE: {
+					CFBamBuffUuid6TypeH mapped = new CFBamBuffUuid6TypeH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamUuid6Gen.CLASS_CODE: {
+					CFBamBuffUuid6GenH mapped = new CFBamBuffUuid6GenH();
+					mapped.set((ICFBamUuid6GenH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamUuid6Type",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamUuid6Type");
+			}
 		}
 	}
 }

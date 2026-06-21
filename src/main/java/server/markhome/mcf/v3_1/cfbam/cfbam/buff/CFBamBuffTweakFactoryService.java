@@ -224,12 +224,31 @@ public class CFBamBuffTweakFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffTweak) {
-			return( (CFBamBuffTweak)rec );
+			return ((CFBamBuffTweak)rec);
 		}
-		else {
-			CFBamBuffTweak mapped = new CFBamBuffTweak();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamTweak.CLASS_CODE: {
+					CFBamBuffTweak mapped = new CFBamBuffTweak();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamTableTweak.CLASS_CODE: {
+					CFBamBuffTableTweak mapped = new CFBamBuffTableTweak();
+					mapped.set((ICFBamTableTweak)rec);
+					return(mapped); }
+				case ICFBamSchemaTweak.CLASS_CODE: {
+					CFBamBuffSchemaTweak mapped = new CFBamBuffSchemaTweak();
+					mapped.set((ICFBamSchemaTweak)rec);
+					return(mapped); }
+				case ICFBamIndexTweak.CLASS_CODE: {
+					CFBamBuffIndexTweak mapped = new CFBamBuffIndexTweak();
+					mapped.set((ICFBamIndexTweak)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamTweak",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamTweak");
+			}
 		}
 	}
 
@@ -241,16 +260,35 @@ public class CFBamBuffTweakFactoryService
 	}
 
 	public CFBamBuffTweakH ensureHRec(ICFBamTweakH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffTweakH) {
-			return( (CFBamBuffTweakH)hrec );
+		else if (hrec instanceof CFBamBuffTweakH) {
+			return ((CFBamBuffTweakH)hrec);
 		}
-		else {
-			CFBamBuffTweakH mapped = new CFBamBuffTweakH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamTweak.CLASS_CODE: {
+					CFBamBuffTweakH mapped = new CFBamBuffTweakH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamTableTweak.CLASS_CODE: {
+					CFBamBuffTableTweakH mapped = new CFBamBuffTableTweakH();
+					mapped.set((ICFBamTableTweakH)hrec);
+					return(mapped); }
+				case ICFBamSchemaTweak.CLASS_CODE: {
+					CFBamBuffSchemaTweakH mapped = new CFBamBuffSchemaTweakH();
+					mapped.set((ICFBamSchemaTweakH)hrec);
+					return(mapped); }
+				case ICFBamIndexTweak.CLASS_CODE: {
+					CFBamBuffIndexTweakH mapped = new CFBamBuffIndexTweakH();
+					mapped.set((ICFBamIndexTweakH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamTweak",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamTweak");
+			}
 		}
 	}
 }

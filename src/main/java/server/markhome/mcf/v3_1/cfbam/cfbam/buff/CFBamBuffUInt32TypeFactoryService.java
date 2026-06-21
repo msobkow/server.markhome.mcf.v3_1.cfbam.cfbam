@@ -110,12 +110,19 @@ public class CFBamBuffUInt32TypeFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffUInt32Type) {
-			return( (CFBamBuffUInt32Type)rec );
+			return ((CFBamBuffUInt32Type)rec);
 		}
-		else {
-			CFBamBuffUInt32Type mapped = new CFBamBuffUInt32Type();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamUInt32Type.CLASS_CODE: {
+					CFBamBuffUInt32Type mapped = new CFBamBuffUInt32Type();
+					mapped.set(rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamUInt32Type",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamUInt32Type");
+			}
 		}
 	}
 
@@ -127,16 +134,23 @@ public class CFBamBuffUInt32TypeFactoryService
 	}
 
 	public CFBamBuffUInt32TypeH ensureHRec(ICFBamUInt32TypeH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffUInt32TypeH) {
-			return( (CFBamBuffUInt32TypeH)hrec );
+		else if (hrec instanceof CFBamBuffUInt32TypeH) {
+			return ((CFBamBuffUInt32TypeH)hrec);
 		}
-		else {
-			CFBamBuffUInt32TypeH mapped = new CFBamBuffUInt32TypeH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamUInt32Type.CLASS_CODE: {
+					CFBamBuffUInt32TypeH mapped = new CFBamBuffUInt32TypeH();
+					mapped.set(hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamUInt32Type",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamUInt32Type");
+			}
 		}
 	}
 }

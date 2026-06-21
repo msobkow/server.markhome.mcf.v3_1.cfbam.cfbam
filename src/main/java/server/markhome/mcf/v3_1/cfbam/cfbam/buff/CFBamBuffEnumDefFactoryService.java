@@ -89,12 +89,23 @@ public class CFBamBuffEnumDefFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffEnumDef) {
-			return( (CFBamBuffEnumDef)rec );
+			return ((CFBamBuffEnumDef)rec);
 		}
-		else {
-			CFBamBuffEnumDef mapped = new CFBamBuffEnumDef();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamEnumDef.CLASS_CODE: {
+					CFBamBuffEnumDef mapped = new CFBamBuffEnumDef();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamEnumType.CLASS_CODE: {
+					CFBamBuffEnumType mapped = new CFBamBuffEnumType();
+					mapped.set((ICFBamEnumType)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamEnumDef",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamEnumDef");
+			}
 		}
 	}
 
@@ -106,16 +117,27 @@ public class CFBamBuffEnumDefFactoryService
 	}
 
 	public CFBamBuffEnumDefH ensureHRec(ICFBamEnumDefH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffEnumDefH) {
-			return( (CFBamBuffEnumDefH)hrec );
+		else if (hrec instanceof CFBamBuffEnumDefH) {
+			return ((CFBamBuffEnumDefH)hrec);
 		}
-		else {
-			CFBamBuffEnumDefH mapped = new CFBamBuffEnumDefH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamEnumDef.CLASS_CODE: {
+					CFBamBuffEnumDefH mapped = new CFBamBuffEnumDefH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamEnumType.CLASS_CODE: {
+					CFBamBuffEnumTypeH mapped = new CFBamBuffEnumTypeH();
+					mapped.set((ICFBamEnumTypeH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamEnumDef",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamEnumDef");
+			}
 		}
 	}
 }

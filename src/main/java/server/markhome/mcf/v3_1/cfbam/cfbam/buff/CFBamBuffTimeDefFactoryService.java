@@ -89,12 +89,27 @@ public class CFBamBuffTimeDefFactoryService
 			return( null );
 		}
 		else if (rec instanceof CFBamBuffTimeDef) {
-			return( (CFBamBuffTimeDef)rec );
+			return ((CFBamBuffTimeDef)rec);
 		}
-		else {
-			CFBamBuffTimeDef mapped = new CFBamBuffTimeDef();
-			mapped.set(rec);
-			return( mapped );
+		else {	
+			switch (rec.getClassCode()) {
+				case ICFBamTimeDef.CLASS_CODE: {
+					CFBamBuffTimeDef mapped = new CFBamBuffTimeDef();
+					mapped.set(rec);
+					return(mapped); }
+				case ICFBamTimeType.CLASS_CODE: {
+					CFBamBuffTimeType mapped = new CFBamBuffTimeType();
+					mapped.set((ICFBamTimeType)rec);
+					return(mapped); }
+				case ICFBamTimeCol.CLASS_CODE: {
+					CFBamBuffTimeCol mapped = new CFBamBuffTimeCol();
+					mapped.set((ICFBamTimeCol)rec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureRec",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamTimeDef",
+						"Unsupported class code " + rec.getClassCode() + " is not a derivative of CFBamTimeDef");
+			}
 		}
 	}
 
@@ -106,16 +121,31 @@ public class CFBamBuffTimeDefFactoryService
 	}
 
 	public CFBamBuffTimeDefH ensureHRec(ICFBamTimeDefH hrec) {
-		if (hrec == null) {
+		if( hrec == null ) {
 			return( null );
 		}
-		else if( hrec instanceof CFBamBuffTimeDefH) {
-			return( (CFBamBuffTimeDefH)hrec );
+		else if (hrec instanceof CFBamBuffTimeDefH) {
+			return ((CFBamBuffTimeDefH)hrec);
 		}
-		else {
-			CFBamBuffTimeDefH mapped = new CFBamBuffTimeDefH();
-			mapped.set(hrec);
-			return( mapped );
+		else {	
+			switch (hrec.getClassCode()) {
+				case ICFBamTimeDef.CLASS_CODE: {
+					CFBamBuffTimeDefH mapped = new CFBamBuffTimeDefH();
+					mapped.set(hrec);
+					return(mapped); }
+				case ICFBamTimeType.CLASS_CODE: {
+					CFBamBuffTimeTypeH mapped = new CFBamBuffTimeTypeH();
+					mapped.set((ICFBamTimeTypeH)hrec);
+					return(mapped); }
+				case ICFBamTimeCol.CLASS_CODE: {
+					CFBamBuffTimeColH mapped = new CFBamBuffTimeColH();
+					mapped.set((ICFBamTimeColH)hrec);
+					return(mapped); }
+				default:
+					throw new CFLibUnsupportedClassException(getClass(), "ensureHRec",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamTimeDef",
+						"Unsupported class code " + hrec.getClassCode() + " is not a derivative of CFBamTimeDef");
+			}
 		}
 	}
 }
