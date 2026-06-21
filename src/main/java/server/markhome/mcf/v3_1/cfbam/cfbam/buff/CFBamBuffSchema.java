@@ -2306,6 +2306,17 @@ public class CFBamBuffSchema
 			return(sch.getCFSecFactory());
 		}
 	}
+	
+	@Override
+	public CFSecBuffFactoryService getCFSecBuffFactory() {
+		ICFSecSchema sch = ICFSecSchema.getBackingCFSec();
+		if (sch == null) {
+			return null;
+		}
+		else {
+			return((CFSecBuffFactoryService)(sch.getCFSecBuffFactory()));
+		}
+	}
 
 	@Override
 	public ICFIntFactory getCFIntFactory() {
@@ -2317,10 +2328,26 @@ public class CFBamBuffSchema
 			return(sch.getCFIntFactory());
 		}
 	}
+	
+	@Override
+	public CFIntBuffFactoryService getCFIntBuffFactory() {
+		ICFIntSchema sch = ICFIntSchema.getBackingCFInt();
+		if (sch == null) {
+			return null;
+		}
+		else {
+			return((CFIntBuffFactoryService)(sch.getCFIntBuffFactory()));
+		}
+	}
 
 	@Override
 	public ICFBamFactory getCFBamFactory() {
 		return(CFBamBuffSchema.getBuffHooksSchema().getFactoryService());
+	}
+
+	@Override
+	public CFBamBuffFactoryService getCFBamBuffFactory() {
+		return((CFBamBuffFactoryService)(CFBamBuffSchema.getBuffHooksSchema().getFactoryService()));
 	}
 
 	public CFBamBuffSchema() {

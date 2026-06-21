@@ -64,6 +64,13 @@ import org.springframework.context.ApplicationContextAware;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
 
+import server.markhome.mcf.v3_1.cfsec.cfsec.buff.CFSecBuffSchema;
+import server.markhome.mcf.v3_1.cfsec.cfsec.buff.CFSecBuffFactoryService;
+import server.markhome.mcf.v3_1.cfint.cfint.buff.CFIntBuffSchema;
+import server.markhome.mcf.v3_1.cfint.cfint.buff.CFIntBuffFactoryService;
+import server.markhome.mcf.v3_1.cfbam.cfbam.buff.CFBamBuffSchema;
+import server.markhome.mcf.v3_1.cfbam.cfbam.buff.CFBamBuffFactoryService;
+
 public interface ICFBamSchema
 extends ICFSecSchema,
 	ICFIntSchema
@@ -1462,14 +1469,29 @@ extends ICFSecSchema,
 	public ICFSecFactory getCFSecFactory();
 
 	/**
+	 *	Get the buffer factory for CFSec data buffers.
+	 */
+	public CFSecBuffFactoryService getCFSecBuffFactory();
+
+	/**
 	 *	Get the factory for CFInt data objects.
 	 */
 	public ICFIntFactory getCFIntFactory();
 
 	/**
+	 *	Get the buffer factory for CFInt data buffers.
+	 */
+	public CFIntBuffFactoryService getCFIntBuffFactory();
+
+	/**
 	 *	Get the factory for CFBam data objects.
 	 */
 	public ICFBamFactory getCFBamFactory();
+
+	/**
+	 *	Get the buffer factory for CFBam data buffers.
+	 */
+	public CFBamBuffFactoryService getCFBamBuffFactory();
 
 	/**
 	 *	Get the Atom Table interface for the schema.

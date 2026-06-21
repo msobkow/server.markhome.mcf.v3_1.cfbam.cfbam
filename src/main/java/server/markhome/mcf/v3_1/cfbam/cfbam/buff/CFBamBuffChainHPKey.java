@@ -498,7 +498,7 @@ public class CFBamBuffChainHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFBamChainPKey, ICFBamChain, ICFBamChainHPKey, ICFBamChainH" );
+				"ICFBamChainPKey, ICFBamChain$emitHPKeyHistoryClassNames$" );
 		}
 	}
 
