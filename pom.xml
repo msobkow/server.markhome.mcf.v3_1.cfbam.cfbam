@@ -85,6 +85,36 @@
     </dependency>
     <dependency>
         <groupId>server.markhome.mcf.v3_1</groupId>
+        <artifactId>server.markhome.mcf.v3_1.cfsec.cfsecpub</artifactId>
+        <version>3.1.42</version>
+    </dependency>
+    <dependency>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <artifactId>server.markhome.mcf.v3_1.cfint.cfintpub</artifactId>
+        <version>3.1.42</version>
+    </dependency>
+    <dependency>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <artifactId>server.markhome.mcf.v3_1.cfbam.cfbampub</artifactId>
+        <version>3.1.42</version>
+    </dependency>
+    <dependency>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <artifactId>server.markhome.mcf.v3_1.cfsec.cfsecprot</artifactId>
+        <version>3.1.42</version>
+    </dependency>
+    <dependency>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <artifactId>server.markhome.mcf.v3_1.cfint.cfintprot</artifactId>
+        <version>3.1.42</version>
+    </dependency>
+    <dependency>
+        <groupId>server.markhome.mcf.v3_1</groupId>
+        <artifactId>server.markhome.mcf.v3_1.cfbam.cfbamprot</artifactId>
+        <version>3.1.42</version>
+    </dependency>
+    <dependency>
+        <groupId>server.markhome.mcf.v3_1</groupId>
         <artifactId>server.markhome.mcf.v3_1.cfsec.cfsec</artifactId>
         <version>3.1.42</version>
     </dependency>
@@ -113,7 +143,7 @@
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
 				<artifactId>wagon-ssh-external</artifactId>
-				<version>1.0-beta-6</version>
+				<version>3.5.3</version>
 			</extension>
 		</extensions>
     	<plugins>
