@@ -61,9 +61,14 @@ import java.util.concurrent.atomic.*;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecprot.*;
+import server.markhome.mcf.v3_1.cfint.cfintprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
 import server.markhome.mcf.v3_1.cfsec.cfsec.*;
 import server.markhome.mcf.v3_1.cfint.cfint.*;
-
 import server.markhome.mcf.v3_1.cfsec.cfsec.buff.CFSecBuffSchema;
 import server.markhome.mcf.v3_1.cfsec.cfsec.buff.CFSecBuffFactoryService;
 import server.markhome.mcf.v3_1.cfint.cfint.buff.CFIntBuffSchema;
@@ -78,171 +83,171 @@ extends ICFSecSchema,
 	public static final String SCHEMA_NAME = "CFBam";
 	public static final String DBSCHEMA_NAME = "CFBam31";
 	static final AtomicReference<ApplicationContext> arApplicationContext = new AtomicReference<>(null);
-	public static final CFSecTableData TABLE_DATA[] = {new CFSecTableData("CFBam", "Chain", null, true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "EnumTag", null, true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "IndexCol", null, true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Param", null, true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "RelationCol", null, true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "RoleDef", null, true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "SchemaRole", "RoleDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Scope", null, true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "SchemaDef", "Scope", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "SchemaRef", "Scope", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "ServerMethod", "Scope", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "ServerObjFunc", "ServerMethod", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "ServerProc", "ServerMethod", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "ServerListFunc", "ServerMethod", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Table", "Scope", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "ClearDep", "Scope", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "ClearSubDep1", "ClearDep", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "ClearSubDep2", "ClearDep", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "ClearSubDep3", "ClearDep", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "ClearTopDep", "ClearDep", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DelDep", "Scope", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DelSubDep1", "DelDep", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DelSubDep2", "DelDep", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DelSubDep3", "DelDep", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DelTopDep", "DelDep", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Index", "Scope", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "PopDep", "Scope", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "PopSubDep1", "PopDep", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "PopSubDep2", "PopDep", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "PopSubDep3", "PopDep", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "PopTopDep", "PopDep", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Relation", "Scope", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Tweak", null, true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TableTweak", "Tweak", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "SchemaTweak", "Tweak", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "IndexTweak", "Tweak", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Value", null, true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Atom", "Value", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "BlobDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "BlobType", "BlobDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "BlobCol", "BlobDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "BoolDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "BoolType", "BoolDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "BoolCol", "BoolDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DateDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DateType", "DateDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DateCol", "DateDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DoubleDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DoubleType", "DoubleDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DoubleCol", "DoubleDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "FloatDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "FloatType", "FloatDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "FloatCol", "FloatDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Int16Def", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Int16Type", "Int16Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Id16Gen", "Int16Type", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "EnumDef", "Int16Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "EnumType", "EnumDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Int16Col", "Int16Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Int32Def", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Int32Type", "Int32Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Id32Gen", "Int32Type", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Int32Col", "Int32Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Int64Def", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Int64Type", "Int64Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Id64Gen", "Int64Type", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Int64Col", "Int64Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "NmTokenDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "NmTokenType", "NmTokenDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "NmTokenCol", "NmTokenDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "NmTokensDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "NmTokensType", "NmTokensDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "NmTokensCol", "NmTokensDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "NumberDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "NumberType", "NumberDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "NumberCol", "NumberDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash128Def", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash128Col", "DbKeyHash128Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash128Type", "DbKeyHash128Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash128Gen", "DbKeyHash128Type", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash160Def", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash160Col", "DbKeyHash160Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash160Type", "DbKeyHash160Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash160Gen", "DbKeyHash160Type", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash224Def", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash224Col", "DbKeyHash224Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash224Type", "DbKeyHash224Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash224Gen", "DbKeyHash224Type", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash256Def", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash256Col", "DbKeyHash256Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash256Type", "DbKeyHash256Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash256Gen", "DbKeyHash256Type", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash384Def", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash384Col", "DbKeyHash384Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash384Type", "DbKeyHash384Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash384Gen", "DbKeyHash384Type", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash512Def", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash512Col", "DbKeyHash512Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash512Type", "DbKeyHash512Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "DbKeyHash512Gen", "DbKeyHash512Type", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "StringDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "StringType", "StringDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "StringCol", "StringDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TZDateDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TZDateType", "TZDateDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TZDateCol", "TZDateDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TZTimeDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TZTimeType", "TZTimeDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TZTimeCol", "TZTimeDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TZTimestampDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TZTimestampType", "TZTimestampDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TZTimestampCol", "TZTimestampDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TextDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TextType", "TextDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TextCol", "TextDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TimeDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TimeType", "TimeDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TimeCol", "TimeDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TimestampDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TimestampType", "TimestampDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TimestampCol", "TimestampDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TokenDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TokenType", "TokenDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TokenCol", "TokenDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "UInt16Def", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "UInt16Type", "UInt16Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "UInt16Col", "UInt16Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "UInt32Def", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "UInt32Type", "UInt32Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "UInt32Col", "UInt32Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "UInt64Def", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "UInt64Type", "UInt64Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "UInt64Col", "UInt64Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "UuidDef", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "UuidType", "UuidDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "UuidGen", "UuidType", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "UuidCol", "UuidDef", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Uuid6Def", "Atom", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Uuid6Type", "Uuid6Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Uuid6Gen", "Uuid6Type", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "Uuid6Col", "Uuid6Def", true, false, "Tenant", "Public"),
-		new CFSecTableData("CFBam", "TableCol", "Value", true, false, "Tenant", "Public")};
-	public static final AtomicReference<CFSecTableData[]> consolidatedTableData = new AtomicReference<>(null);
-	public static final CFSecRoleInfo ROLE_INFO[] = {};
-	public static final AtomicReference<CFSecRoleInfo[]> consolidatedRoleInfo = new AtomicReference<>(null);
+	public static final CFSecPubTableData TABLE_DATA[] = {new CFSecPubTableData("CFBam", "Chain", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "EnumTag", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "IndexCol", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Param", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "RelationCol", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "RoleDef", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "SchemaRole", "RoleDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Scope", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "SchemaDef", "Scope", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "SchemaRef", "Scope", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "ServerMethod", "Scope", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "ServerObjFunc", "ServerMethod", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "ServerProc", "ServerMethod", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "ServerListFunc", "ServerMethod", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Table", "Scope", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "ClearDep", "Scope", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "ClearSubDep1", "ClearDep", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "ClearSubDep2", "ClearDep", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "ClearSubDep3", "ClearDep", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "ClearTopDep", "ClearDep", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DelDep", "Scope", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DelSubDep1", "DelDep", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DelSubDep2", "DelDep", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DelSubDep3", "DelDep", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DelTopDep", "DelDep", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Index", "Scope", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "PopDep", "Scope", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "PopSubDep1", "PopDep", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "PopSubDep2", "PopDep", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "PopSubDep3", "PopDep", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "PopTopDep", "PopDep", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Relation", "Scope", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Tweak", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TableTweak", "Tweak", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "SchemaTweak", "Tweak", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "IndexTweak", "Tweak", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Value", null, true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Atom", "Value", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "BlobDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "BlobType", "BlobDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "BlobCol", "BlobDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "BoolDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "BoolType", "BoolDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "BoolCol", "BoolDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DateDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DateType", "DateDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DateCol", "DateDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DoubleDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DoubleType", "DoubleDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DoubleCol", "DoubleDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "FloatDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "FloatType", "FloatDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "FloatCol", "FloatDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Int16Def", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Int16Type", "Int16Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Id16Gen", "Int16Type", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "EnumDef", "Int16Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "EnumType", "EnumDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Int16Col", "Int16Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Int32Def", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Int32Type", "Int32Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Id32Gen", "Int32Type", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Int32Col", "Int32Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Int64Def", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Int64Type", "Int64Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Id64Gen", "Int64Type", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Int64Col", "Int64Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "NmTokenDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "NmTokenType", "NmTokenDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "NmTokenCol", "NmTokenDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "NmTokensDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "NmTokensType", "NmTokensDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "NmTokensCol", "NmTokensDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "NumberDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "NumberType", "NumberDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "NumberCol", "NumberDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash128Def", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash128Col", "DbKeyHash128Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash128Type", "DbKeyHash128Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash128Gen", "DbKeyHash128Type", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash160Def", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash160Col", "DbKeyHash160Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash160Type", "DbKeyHash160Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash160Gen", "DbKeyHash160Type", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash224Def", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash224Col", "DbKeyHash224Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash224Type", "DbKeyHash224Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash224Gen", "DbKeyHash224Type", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash256Def", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash256Col", "DbKeyHash256Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash256Type", "DbKeyHash256Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash256Gen", "DbKeyHash256Type", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash384Def", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash384Col", "DbKeyHash384Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash384Type", "DbKeyHash384Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash384Gen", "DbKeyHash384Type", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash512Def", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash512Col", "DbKeyHash512Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash512Type", "DbKeyHash512Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "DbKeyHash512Gen", "DbKeyHash512Type", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "StringDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "StringType", "StringDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "StringCol", "StringDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TZDateDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TZDateType", "TZDateDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TZDateCol", "TZDateDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TZTimeDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TZTimeType", "TZTimeDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TZTimeCol", "TZTimeDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TZTimestampDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TZTimestampType", "TZTimestampDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TZTimestampCol", "TZTimestampDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TextDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TextType", "TextDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TextCol", "TextDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TimeDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TimeType", "TimeDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TimeCol", "TimeDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TimestampDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TimestampType", "TimestampDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TimestampCol", "TimestampDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TokenDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TokenType", "TokenDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TokenCol", "TokenDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "UInt16Def", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "UInt16Type", "UInt16Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "UInt16Col", "UInt16Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "UInt32Def", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "UInt32Type", "UInt32Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "UInt32Col", "UInt32Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "UInt64Def", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "UInt64Type", "UInt64Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "UInt64Col", "UInt64Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "UuidDef", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "UuidType", "UuidDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "UuidGen", "UuidType", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "UuidCol", "UuidDef", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Uuid6Def", "Atom", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Uuid6Type", "Uuid6Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Uuid6Gen", "Uuid6Type", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "Uuid6Col", "Uuid6Def", true, false, "Tenant", "Public"),
+		new CFSecPubTableData("CFBam", "TableCol", "Value", true, false, "Tenant", "Public")};
+	public static final AtomicReference<CFSecPubTableData[]> consolidatedTableData = new AtomicReference<>(null);
+	public static final CFSecPubRoleInfo ROLE_INFO[] = {};
+	public static final AtomicReference<CFSecPubRoleInfo[]> consolidatedRoleInfo = new AtomicReference<>(null);
 
-	public static CFSecTableData[] getTableData() {
+	public static CFSecPubTableData[] getTableData() {
 		return TABLE_DATA;
 	}
 
-	public static CFSecTableData[] getConsolidatedTableData() {
+	public static CFSecPubTableData[] getConsolidatedTableData() {
 		if (consolidatedTableData.get() == null) {
-			ArrayList<CFSecTableData> lst = new ArrayList<>();
-			for( CFSecTableData data: ICFSecSchema.getTableData()) {
+			ArrayList<CFSecPubTableData> lst = new ArrayList<>();
+			for( CFSecPubTableData data: ICFSecSchema.getTableData()) {
 				lst.add(data);
 			}
-			for( CFSecTableData data: ICFIntSchema.getTableData()) {
+			for( CFSecPubTableData data: ICFIntSchema.getTableData()) {
 				lst.add(data);
 			}
-			for( CFSecTableData data: TABLE_DATA) {
+			for( CFSecPubTableData data: TABLE_DATA) {
 				lst.add(data);
 			}
-			CFSecTableData arr[] = new CFSecTableData[lst.size()];
+			CFSecPubTableData arr[] = new CFSecPubTableData[lst.size()];
 			int idx = 0;
-			for(CFSecTableData data: lst) {
+			for(CFSecPubTableData data: lst) {
 				arr[idx++] = data;
 			}
 			consolidatedTableData.compareAndSet(null, arr);
@@ -250,27 +255,27 @@ extends ICFSecSchema,
 		return(consolidatedTableData.get());
 	}
 
-	public static CFSecRoleInfo[] getRoleInfo() {
+	public static CFSecPubRoleInfo[] getRoleInfo() {
 		return ROLE_INFO;
 	}
 
-	public static CFSecRoleInfo[] getConsolidatedRoleInfo() {
+	public static CFSecPubRoleInfo[] getConsolidatedRoleInfo() {
 		if (consolidatedRoleInfo.get() == null) {
-			ArrayList<CFSecRoleInfo> lst = new ArrayList<>();
-			for( CFSecRoleInfo info: ICFSecSchema.getRoleInfo()) {
+			ArrayList<CFSecPubRoleInfo> lst = new ArrayList<>();
+			for( CFSecPubRoleInfo info: ICFSecSchema.getRoleInfo()) {
 				lst.add(info);
 			}
-			for( CFSecRoleInfo info: ICFIntSchema.getRoleInfo()) {
+			for( CFSecPubRoleInfo info: ICFIntSchema.getRoleInfo()) {
 				lst.add(info);
 			}
-			for( CFSecRoleInfo info: ROLE_INFO) {
+			for( CFSecPubRoleInfo info: ROLE_INFO) {
 				lst.add(info);
 			}
 			// Dependency order is the natural order of role info comparison
-			lst.sort(new CFSecRoleInfoDependencyComparator());
-			CFSecRoleInfo arr[] = new CFSecRoleInfo[lst.size()];
+			lst.sort(new CFSecPubRoleInfoDependencyComparator());
+			CFSecPubRoleInfo arr[] = new CFSecPubRoleInfo[lst.size()];
 			int idx = 0;
-			for(CFSecRoleInfo info: lst) {
+			for(CFSecPubRoleInfo info: lst) {
 				arr[idx++] = info;
 			}
 			consolidatedRoleInfo.compareAndSet(null, arr);
@@ -3149,6 +3154,6 @@ extends ICFSecSchema,
 	 */
 	//public static void setTablePerms( ICFSecTablePerms value );
 
-	public void bootstrapSchema(CFSecTableData tableData[]);
-	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecTableData tableData[]);
+	public void bootstrapSchema(CFSecPubTableData tableData[]);
+	public void bootstrapAllTablesSecurity(CFLibDbKeyHash256 clusterId, CFLibDbKeyHash256 tenantId, CFSecPubTableData tableData[]);
 }
