@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamFloatTypeFactory interface for FloatType
  */
-public interface ICFBamFloatTypeFactory
+public interface ICFBamFloatTypeFactory extends ICFBamProtFloatTypeFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamFloatTypeFactory
 	public ICFBamFloatTypeBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtFloatTypeBySchemaIdxKey asProtected(ICFBamFloatTypeBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubFloatTypeBySchemaIdxKey asPublic(ICFBamFloatTypeBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a FloatType interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamFloatTypeFactory
 	public ICFBamFloatType newRec();
 
 	/**
+	 *	Allocate a protected FloatType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtFloatType asProtected(ICFBamFloatType src);
+
+	/**
+	 *	Allocate a public FloatType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubFloatType asPublic(ICFBamFloatType src);
+
+	/**
 	 *	Allocate a FloatType history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamFloatTypeH newHRec();
+
+	/**
+	 *	Allocate a protected FloatType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtFloatTypeH asProtected(ICFBamFloatTypeH src);
+
+	/**
+	 *	Allocate a public FloatType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubFloatTypeH asPublic(ICFBamFloatTypeH src);
 
 }

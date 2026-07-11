@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamStringTypeFactory interface for StringType
  */
-public interface ICFBamStringTypeFactory
+public interface ICFBamStringTypeFactory extends ICFBamProtStringTypeFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamStringTypeFactory
 	public ICFBamStringTypeBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtStringTypeBySchemaIdxKey asProtected(ICFBamStringTypeBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubStringTypeBySchemaIdxKey asPublic(ICFBamStringTypeBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a StringType interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamStringTypeFactory
 	public ICFBamStringType newRec();
 
 	/**
+	 *	Allocate a protected StringType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtStringType asProtected(ICFBamStringType src);
+
+	/**
+	 *	Allocate a public StringType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubStringType asPublic(ICFBamStringType src);
+
+	/**
 	 *	Allocate a StringType history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamStringTypeH newHRec();
+
+	/**
+	 *	Allocate a protected StringType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtStringTypeH asProtected(ICFBamStringTypeH src);
+
+	/**
+	 *	Allocate a public StringType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubStringTypeH asPublic(ICFBamStringTypeH src);
 
 }

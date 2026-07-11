@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamSchemaTweakFactory interface for SchemaTweak
  */
-public interface ICFBamSchemaTweakFactory
+public interface ICFBamSchemaTweakFactory extends ICFBamProtSchemaTweakFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamSchemaTweakFactory
 	public ICFBamSchemaTweakBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtSchemaTweakBySchemaIdxKey asProtected(ICFBamSchemaTweakBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubSchemaTweakBySchemaIdxKey asPublic(ICFBamSchemaTweakBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a SchemaTweak interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamSchemaTweakFactory
 	public ICFBamSchemaTweak newRec();
 
 	/**
+	 *	Allocate a protected SchemaTweak interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtSchemaTweak asProtected(ICFBamSchemaTweak src);
+
+	/**
+	 *	Allocate a public SchemaTweak interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubSchemaTweak asPublic(ICFBamSchemaTweak src);
+
+	/**
 	 *	Allocate a SchemaTweak history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamSchemaTweakH newHRec();
+
+	/**
+	 *	Allocate a protected SchemaTweak history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtSchemaTweakH asProtected(ICFBamSchemaTweakH src);
+
+	/**
+	 *	Allocate a public SchemaTweak history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubSchemaTweakH asPublic(ICFBamSchemaTweakH src);
 
 }

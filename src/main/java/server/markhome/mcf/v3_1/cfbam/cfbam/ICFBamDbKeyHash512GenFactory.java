@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDbKeyHash512GenFactory interface for DbKeyHash512Gen
  */
-public interface ICFBamDbKeyHash512GenFactory
+public interface ICFBamDbKeyHash512GenFactory extends ICFBamProtDbKeyHash512GenFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamDbKeyHash512GenFactory
 	public ICFBamDbKeyHash512Gen newRec();
 
 	/**
+	 *	Allocate a protected DbKeyHash512Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash512Gen asProtected(ICFBamDbKeyHash512Gen src);
+
+	/**
+	 *	Allocate a public DbKeyHash512Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash512Gen asPublic(ICFBamDbKeyHash512Gen src);
+
+	/**
 	 *	Allocate a DbKeyHash512Gen history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDbKeyHash512GenH newHRec();
+
+	/**
+	 *	Allocate a protected DbKeyHash512Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash512GenH asProtected(ICFBamDbKeyHash512GenH src);
+
+	/**
+	 *	Allocate a public DbKeyHash512Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash512GenH asPublic(ICFBamDbKeyHash512GenH src);
 
 }

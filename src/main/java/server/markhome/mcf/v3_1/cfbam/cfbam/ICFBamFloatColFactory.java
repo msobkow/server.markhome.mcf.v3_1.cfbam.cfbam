@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamFloatColFactory interface for FloatCol
  */
-public interface ICFBamFloatColFactory
+public interface ICFBamFloatColFactory extends ICFBamProtFloatColFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamFloatColFactory
 	public ICFBamFloatColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtFloatColByTableIdxKey asProtected(ICFBamFloatColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubFloatColByTableIdxKey asPublic(ICFBamFloatColByTableIdxKey src);
+
+	/**
 	 *	Allocate a FloatCol interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamFloatColFactory
 	public ICFBamFloatCol newRec();
 
 	/**
+	 *	Allocate a protected FloatCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtFloatCol asProtected(ICFBamFloatCol src);
+
+	/**
+	 *	Allocate a public FloatCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubFloatCol asPublic(ICFBamFloatCol src);
+
+	/**
 	 *	Allocate a FloatCol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamFloatColH newHRec();
+
+	/**
+	 *	Allocate a protected FloatCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtFloatColH asProtected(ICFBamFloatColH src);
+
+	/**
+	 *	Allocate a public FloatCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubFloatColH asPublic(ICFBamFloatColH src);
 
 }

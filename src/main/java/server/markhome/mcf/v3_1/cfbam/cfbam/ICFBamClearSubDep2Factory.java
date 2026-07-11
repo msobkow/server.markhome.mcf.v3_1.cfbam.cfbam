@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamClearSubDep2Factory interface for ClearSubDep2
  */
-public interface ICFBamClearSubDep2Factory
+public interface ICFBamClearSubDep2Factory extends ICFBamProtClearSubDep2Factory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamClearSubDep2Factory
 	public ICFBamClearSubDep2ByClearSubDep1IdxKey newByClearSubDep1IdxKey();
 
 	/**
+	 *	Allocate a protected ClearSubDep1Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearSubDep2ByClearSubDep1IdxKey asProtected(ICFBamClearSubDep2ByClearSubDep1IdxKey src);
+
+	/**
+	 *	Allocate a public ClearSubDep1Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearSubDep2ByClearSubDep1IdxKey asPublic(ICFBamClearSubDep2ByClearSubDep1IdxKey src);
+
+	/**
 	 *	Allocate a UNameIdx key over ClearSubDep2 instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamClearSubDep2ByUNameIdxKey newByUNameIdxKey();
+
+	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearSubDep2ByUNameIdxKey asProtected(ICFBamClearSubDep2ByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearSubDep2ByUNameIdxKey asPublic(ICFBamClearSubDep2ByUNameIdxKey src);
 
 	/**
 	 *	Allocate a ClearSubDep2 interface implementation.
@@ -87,10 +121,38 @@ public interface ICFBamClearSubDep2Factory
 	public ICFBamClearSubDep2 newRec();
 
 	/**
+	 *	Allocate a protected ClearSubDep2 interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearSubDep2 asProtected(ICFBamClearSubDep2 src);
+
+	/**
+	 *	Allocate a public ClearSubDep2 interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearSubDep2 asPublic(ICFBamClearSubDep2 src);
+
+	/**
 	 *	Allocate a ClearSubDep2 history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamClearSubDep2H newHRec();
+
+	/**
+	 *	Allocate a protected ClearSubDep2 history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearSubDep2H asProtected(ICFBamClearSubDep2H src);
+
+	/**
+	 *	Allocate a public ClearSubDep2 history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearSubDep2H asPublic(ICFBamClearSubDep2H src);
 
 }

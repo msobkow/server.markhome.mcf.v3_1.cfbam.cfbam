@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamId64GenFactory interface for Id64Gen
  */
-public interface ICFBamId64GenFactory
+public interface ICFBamId64GenFactory extends ICFBamProtId64GenFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamId64GenFactory
 	public ICFBamId64Gen newRec();
 
 	/**
+	 *	Allocate a protected Id64Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtId64Gen asProtected(ICFBamId64Gen src);
+
+	/**
+	 *	Allocate a public Id64Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubId64Gen asPublic(ICFBamId64Gen src);
+
+	/**
 	 *	Allocate a Id64Gen history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamId64GenH newHRec();
+
+	/**
+	 *	Allocate a protected Id64Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtId64GenH asProtected(ICFBamId64GenH src);
+
+	/**
+	 *	Allocate a public Id64Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubId64GenH asPublic(ICFBamId64GenH src);
 
 }

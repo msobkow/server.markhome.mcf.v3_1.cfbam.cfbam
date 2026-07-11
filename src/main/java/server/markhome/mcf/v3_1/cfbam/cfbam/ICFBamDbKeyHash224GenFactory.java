@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDbKeyHash224GenFactory interface for DbKeyHash224Gen
  */
-public interface ICFBamDbKeyHash224GenFactory
+public interface ICFBamDbKeyHash224GenFactory extends ICFBamProtDbKeyHash224GenFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamDbKeyHash224GenFactory
 	public ICFBamDbKeyHash224Gen newRec();
 
 	/**
+	 *	Allocate a protected DbKeyHash224Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash224Gen asProtected(ICFBamDbKeyHash224Gen src);
+
+	/**
+	 *	Allocate a public DbKeyHash224Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash224Gen asPublic(ICFBamDbKeyHash224Gen src);
+
+	/**
 	 *	Allocate a DbKeyHash224Gen history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDbKeyHash224GenH newHRec();
+
+	/**
+	 *	Allocate a protected DbKeyHash224Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash224GenH asProtected(ICFBamDbKeyHash224GenH src);
+
+	/**
+	 *	Allocate a public DbKeyHash224Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash224GenH asPublic(ICFBamDbKeyHash224GenH src);
 
 }

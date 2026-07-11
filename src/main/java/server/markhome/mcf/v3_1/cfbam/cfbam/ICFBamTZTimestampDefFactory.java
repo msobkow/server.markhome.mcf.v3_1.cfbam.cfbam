@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTZTimestampDefFactory interface for TZTimestampDef
  */
-public interface ICFBamTZTimestampDefFactory
+public interface ICFBamTZTimestampDefFactory extends ICFBamProtTZTimestampDefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamTZTimestampDefFactory
 	public ICFBamTZTimestampDef newRec();
 
 	/**
+	 *	Allocate a protected TZTimestampDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTZTimestampDef asProtected(ICFBamTZTimestampDef src);
+
+	/**
+	 *	Allocate a public TZTimestampDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTZTimestampDef asPublic(ICFBamTZTimestampDef src);
+
+	/**
 	 *	Allocate a TZTimestampDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTZTimestampDefH newHRec();
+
+	/**
+	 *	Allocate a protected TZTimestampDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTZTimestampDefH asProtected(ICFBamTZTimestampDefH src);
+
+	/**
+	 *	Allocate a public TZTimestampDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTZTimestampDefH asPublic(ICFBamTZTimestampDefH src);
 
 }

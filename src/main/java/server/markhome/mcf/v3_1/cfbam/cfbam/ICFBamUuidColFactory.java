@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamUuidColFactory interface for UuidCol
  */
-public interface ICFBamUuidColFactory
+public interface ICFBamUuidColFactory extends ICFBamProtUuidColFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamUuidColFactory
 	public ICFBamUuidColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUuidColByTableIdxKey asProtected(ICFBamUuidColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUuidColByTableIdxKey asPublic(ICFBamUuidColByTableIdxKey src);
+
+	/**
 	 *	Allocate a UuidCol interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamUuidColFactory
 	public ICFBamUuidCol newRec();
 
 	/**
+	 *	Allocate a protected UuidCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUuidCol asProtected(ICFBamUuidCol src);
+
+	/**
+	 *	Allocate a public UuidCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUuidCol asPublic(ICFBamUuidCol src);
+
+	/**
 	 *	Allocate a UuidCol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamUuidColH newHRec();
+
+	/**
+	 *	Allocate a protected UuidCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUuidColH asProtected(ICFBamUuidColH src);
+
+	/**
+	 *	Allocate a public UuidCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUuidColH asPublic(ICFBamUuidColH src);
 
 }

@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDbKeyHash128GenFactory interface for DbKeyHash128Gen
  */
-public interface ICFBamDbKeyHash128GenFactory
+public interface ICFBamDbKeyHash128GenFactory extends ICFBamProtDbKeyHash128GenFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamDbKeyHash128GenFactory
 	public ICFBamDbKeyHash128Gen newRec();
 
 	/**
+	 *	Allocate a protected DbKeyHash128Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash128Gen asProtected(ICFBamDbKeyHash128Gen src);
+
+	/**
+	 *	Allocate a public DbKeyHash128Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash128Gen asPublic(ICFBamDbKeyHash128Gen src);
+
+	/**
 	 *	Allocate a DbKeyHash128Gen history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDbKeyHash128GenH newHRec();
+
+	/**
+	 *	Allocate a protected DbKeyHash128Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash128GenH asProtected(ICFBamDbKeyHash128GenH src);
+
+	/**
+	 *	Allocate a public DbKeyHash128Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash128GenH asPublic(ICFBamDbKeyHash128GenH src);
 
 }

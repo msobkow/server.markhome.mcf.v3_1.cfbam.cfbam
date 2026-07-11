@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDelSubDep2Factory interface for DelSubDep2
  */
-public interface ICFBamDelSubDep2Factory
+public interface ICFBamDelSubDep2Factory extends ICFBamProtDelSubDep2Factory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamDelSubDep2Factory
 	public ICFBamDelSubDep2ByContDelDep1IdxKey newByContDelDep1IdxKey();
 
 	/**
+	 *	Allocate a protected ContDelDep1Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDelSubDep2ByContDelDep1IdxKey asProtected(ICFBamDelSubDep2ByContDelDep1IdxKey src);
+
+	/**
+	 *	Allocate a public ContDelDep1Idx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDelSubDep2ByContDelDep1IdxKey asPublic(ICFBamDelSubDep2ByContDelDep1IdxKey src);
+
+	/**
 	 *	Allocate a UNameIdx key over DelSubDep2 instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDelSubDep2ByUNameIdxKey newByUNameIdxKey();
+
+	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDelSubDep2ByUNameIdxKey asProtected(ICFBamDelSubDep2ByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDelSubDep2ByUNameIdxKey asPublic(ICFBamDelSubDep2ByUNameIdxKey src);
 
 	/**
 	 *	Allocate a DelSubDep2 interface implementation.
@@ -87,10 +121,38 @@ public interface ICFBamDelSubDep2Factory
 	public ICFBamDelSubDep2 newRec();
 
 	/**
+	 *	Allocate a protected DelSubDep2 interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDelSubDep2 asProtected(ICFBamDelSubDep2 src);
+
+	/**
+	 *	Allocate a public DelSubDep2 interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDelSubDep2 asPublic(ICFBamDelSubDep2 src);
+
+	/**
 	 *	Allocate a DelSubDep2 history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDelSubDep2H newHRec();
+
+	/**
+	 *	Allocate a protected DelSubDep2 history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDelSubDep2H asProtected(ICFBamDelSubDep2H src);
+
+	/**
+	 *	Allocate a public DelSubDep2 history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDelSubDep2H asPublic(ICFBamDelSubDep2H src);
 
 }

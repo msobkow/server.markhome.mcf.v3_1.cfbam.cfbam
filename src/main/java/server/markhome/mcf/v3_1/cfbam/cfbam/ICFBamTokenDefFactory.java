@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTokenDefFactory interface for TokenDef
  */
-public interface ICFBamTokenDefFactory
+public interface ICFBamTokenDefFactory extends ICFBamProtTokenDefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamTokenDefFactory
 	public ICFBamTokenDef newRec();
 
 	/**
+	 *	Allocate a protected TokenDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTokenDef asProtected(ICFBamTokenDef src);
+
+	/**
+	 *	Allocate a public TokenDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTokenDef asPublic(ICFBamTokenDef src);
+
+	/**
 	 *	Allocate a TokenDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTokenDefH newHRec();
+
+	/**
+	 *	Allocate a protected TokenDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTokenDefH asProtected(ICFBamTokenDefH src);
+
+	/**
+	 *	Allocate a public TokenDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTokenDefH asPublic(ICFBamTokenDefH src);
 
 }

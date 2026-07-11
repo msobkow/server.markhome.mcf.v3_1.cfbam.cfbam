@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDoubleColFactory interface for DoubleCol
  */
-public interface ICFBamDoubleColFactory
+public interface ICFBamDoubleColFactory extends ICFBamProtDoubleColFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamDoubleColFactory
 	public ICFBamDoubleColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDoubleColByTableIdxKey asProtected(ICFBamDoubleColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDoubleColByTableIdxKey asPublic(ICFBamDoubleColByTableIdxKey src);
+
+	/**
 	 *	Allocate a DoubleCol interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamDoubleColFactory
 	public ICFBamDoubleCol newRec();
 
 	/**
+	 *	Allocate a protected DoubleCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDoubleCol asProtected(ICFBamDoubleCol src);
+
+	/**
+	 *	Allocate a public DoubleCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDoubleCol asPublic(ICFBamDoubleCol src);
+
+	/**
 	 *	Allocate a DoubleCol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDoubleColH newHRec();
+
+	/**
+	 *	Allocate a protected DoubleCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDoubleColH asProtected(ICFBamDoubleColH src);
+
+	/**
+	 *	Allocate a public DoubleCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDoubleColH asPublic(ICFBamDoubleColH src);
 
 }

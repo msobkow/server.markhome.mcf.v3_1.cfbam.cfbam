@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamServerListFuncFactory interface for ServerListFunc
  */
-public interface ICFBamServerListFuncFactory
+public interface ICFBamServerListFuncFactory extends ICFBamProtServerListFuncFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamServerListFuncFactory
 	public ICFBamServerListFuncByRetTblIdxKey newByRetTblIdxKey();
 
 	/**
+	 *	Allocate a protected RetTblIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerListFuncByRetTblIdxKey asProtected(ICFBamServerListFuncByRetTblIdxKey src);
+
+	/**
+	 *	Allocate a public RetTblIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerListFuncByRetTblIdxKey asPublic(ICFBamServerListFuncByRetTblIdxKey src);
+
+	/**
 	 *	Allocate a ServerListFunc interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamServerListFuncFactory
 	public ICFBamServerListFunc newRec();
 
 	/**
+	 *	Allocate a protected ServerListFunc interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerListFunc asProtected(ICFBamServerListFunc src);
+
+	/**
+	 *	Allocate a public ServerListFunc interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerListFunc asPublic(ICFBamServerListFunc src);
+
+	/**
 	 *	Allocate a ServerListFunc history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamServerListFuncH newHRec();
+
+	/**
+	 *	Allocate a protected ServerListFunc history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerListFuncH asProtected(ICFBamServerListFuncH src);
+
+	/**
+	 *	Allocate a public ServerListFunc history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerListFuncH asPublic(ICFBamServerListFuncH src);
 
 }

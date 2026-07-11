@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamUInt64TypeFactory interface for UInt64Type
  */
-public interface ICFBamUInt64TypeFactory
+public interface ICFBamUInt64TypeFactory extends ICFBamProtUInt64TypeFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamUInt64TypeFactory
 	public ICFBamUInt64TypeBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUInt64TypeBySchemaIdxKey asProtected(ICFBamUInt64TypeBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUInt64TypeBySchemaIdxKey asPublic(ICFBamUInt64TypeBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a UInt64Type interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamUInt64TypeFactory
 	public ICFBamUInt64Type newRec();
 
 	/**
+	 *	Allocate a protected UInt64Type interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUInt64Type asProtected(ICFBamUInt64Type src);
+
+	/**
+	 *	Allocate a public UInt64Type interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUInt64Type asPublic(ICFBamUInt64Type src);
+
+	/**
 	 *	Allocate a UInt64Type history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamUInt64TypeH newHRec();
+
+	/**
+	 *	Allocate a protected UInt64Type history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUInt64TypeH asProtected(ICFBamUInt64TypeH src);
+
+	/**
+	 *	Allocate a public UInt64Type history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUInt64TypeH asPublic(ICFBamUInt64TypeH src);
 
 }

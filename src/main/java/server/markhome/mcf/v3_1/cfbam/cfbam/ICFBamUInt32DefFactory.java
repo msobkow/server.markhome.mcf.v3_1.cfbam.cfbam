@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamUInt32DefFactory interface for UInt32Def
  */
-public interface ICFBamUInt32DefFactory
+public interface ICFBamUInt32DefFactory extends ICFBamProtUInt32DefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamUInt32DefFactory
 	public ICFBamUInt32Def newRec();
 
 	/**
+	 *	Allocate a protected UInt32Def interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUInt32Def asProtected(ICFBamUInt32Def src);
+
+	/**
+	 *	Allocate a public UInt32Def interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUInt32Def asPublic(ICFBamUInt32Def src);
+
+	/**
 	 *	Allocate a UInt32Def history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamUInt32DefH newHRec();
+
+	/**
+	 *	Allocate a protected UInt32Def history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUInt32DefH asProtected(ICFBamUInt32DefH src);
+
+	/**
+	 *	Allocate a public UInt32Def history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUInt32DefH asPublic(ICFBamUInt32DefH src);
 
 }

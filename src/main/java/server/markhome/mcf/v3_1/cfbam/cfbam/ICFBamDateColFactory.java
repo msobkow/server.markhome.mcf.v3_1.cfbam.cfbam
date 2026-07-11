@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDateColFactory interface for DateCol
  */
-public interface ICFBamDateColFactory
+public interface ICFBamDateColFactory extends ICFBamProtDateColFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamDateColFactory
 	public ICFBamDateColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDateColByTableIdxKey asProtected(ICFBamDateColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDateColByTableIdxKey asPublic(ICFBamDateColByTableIdxKey src);
+
+	/**
 	 *	Allocate a DateCol interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamDateColFactory
 	public ICFBamDateCol newRec();
 
 	/**
+	 *	Allocate a protected DateCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDateCol asProtected(ICFBamDateCol src);
+
+	/**
+	 *	Allocate a public DateCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDateCol asPublic(ICFBamDateCol src);
+
+	/**
 	 *	Allocate a DateCol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDateColH newHRec();
+
+	/**
+	 *	Allocate a protected DateCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDateColH asProtected(ICFBamDateColH src);
+
+	/**
+	 *	Allocate a public DateCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDateColH asPublic(ICFBamDateColH src);
 
 }

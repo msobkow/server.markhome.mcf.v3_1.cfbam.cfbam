@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamServerProcFactory interface for ServerProc
  */
-public interface ICFBamServerProcFactory
+public interface ICFBamServerProcFactory extends ICFBamProtServerProcFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamServerProcFactory
 	public ICFBamServerProc newRec();
 
 	/**
+	 *	Allocate a protected ServerProc interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerProc asProtected(ICFBamServerProc src);
+
+	/**
+	 *	Allocate a public ServerProc interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerProc asPublic(ICFBamServerProc src);
+
+	/**
 	 *	Allocate a ServerProc history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamServerProcH newHRec();
+
+	/**
+	 *	Allocate a protected ServerProc history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerProcH asProtected(ICFBamServerProcH src);
+
+	/**
+	 *	Allocate a public ServerProc history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerProcH asPublic(ICFBamServerProcH src);
 
 }

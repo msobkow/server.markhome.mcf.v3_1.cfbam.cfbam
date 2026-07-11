@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamStringColFactory interface for StringCol
  */
-public interface ICFBamStringColFactory
+public interface ICFBamStringColFactory extends ICFBamProtStringColFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamStringColFactory
 	public ICFBamStringColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtStringColByTableIdxKey asProtected(ICFBamStringColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubStringColByTableIdxKey asPublic(ICFBamStringColByTableIdxKey src);
+
+	/**
 	 *	Allocate a StringCol interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamStringColFactory
 	public ICFBamStringCol newRec();
 
 	/**
+	 *	Allocate a protected StringCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtStringCol asProtected(ICFBamStringCol src);
+
+	/**
+	 *	Allocate a public StringCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubStringCol asPublic(ICFBamStringCol src);
+
+	/**
 	 *	Allocate a StringCol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamStringColH newHRec();
+
+	/**
+	 *	Allocate a protected StringCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtStringColH asProtected(ICFBamStringColH src);
+
+	/**
+	 *	Allocate a public StringCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubStringColH asPublic(ICFBamStringColH src);
 
 }

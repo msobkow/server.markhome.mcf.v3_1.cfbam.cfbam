@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTimeColFactory interface for TimeCol
  */
-public interface ICFBamTimeColFactory
+public interface ICFBamTimeColFactory extends ICFBamProtTimeColFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamTimeColFactory
 	public ICFBamTimeColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTimeColByTableIdxKey asProtected(ICFBamTimeColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTimeColByTableIdxKey asPublic(ICFBamTimeColByTableIdxKey src);
+
+	/**
 	 *	Allocate a TimeCol interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamTimeColFactory
 	public ICFBamTimeCol newRec();
 
 	/**
+	 *	Allocate a protected TimeCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTimeCol asProtected(ICFBamTimeCol src);
+
+	/**
+	 *	Allocate a public TimeCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTimeCol asPublic(ICFBamTimeCol src);
+
+	/**
 	 *	Allocate a TimeCol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTimeColH newHRec();
+
+	/**
+	 *	Allocate a protected TimeCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTimeColH asProtected(ICFBamTimeColH src);
+
+	/**
+	 *	Allocate a public TimeCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTimeColH asPublic(ICFBamTimeColH src);
 
 }

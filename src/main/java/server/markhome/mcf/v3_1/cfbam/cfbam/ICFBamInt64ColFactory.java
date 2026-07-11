@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamInt64ColFactory interface for Int64Col
  */
-public interface ICFBamInt64ColFactory
+public interface ICFBamInt64ColFactory extends ICFBamProtInt64ColFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamInt64ColFactory
 	public ICFBamInt64ColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtInt64ColByTableIdxKey asProtected(ICFBamInt64ColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubInt64ColByTableIdxKey asPublic(ICFBamInt64ColByTableIdxKey src);
+
+	/**
 	 *	Allocate a Int64Col interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamInt64ColFactory
 	public ICFBamInt64Col newRec();
 
 	/**
+	 *	Allocate a protected Int64Col interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtInt64Col asProtected(ICFBamInt64Col src);
+
+	/**
+	 *	Allocate a public Int64Col interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubInt64Col asPublic(ICFBamInt64Col src);
+
+	/**
 	 *	Allocate a Int64Col history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamInt64ColH newHRec();
+
+	/**
+	 *	Allocate a protected Int64Col history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtInt64ColH asProtected(ICFBamInt64ColH src);
+
+	/**
+	 *	Allocate a public Int64Col history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubInt64ColH asPublic(ICFBamInt64ColH src);
 
 }

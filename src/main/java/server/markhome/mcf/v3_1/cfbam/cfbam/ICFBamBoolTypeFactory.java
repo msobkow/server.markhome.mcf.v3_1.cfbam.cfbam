@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamBoolTypeFactory interface for BoolType
  */
-public interface ICFBamBoolTypeFactory
+public interface ICFBamBoolTypeFactory extends ICFBamProtBoolTypeFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamBoolTypeFactory
 	public ICFBamBoolTypeBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtBoolTypeBySchemaIdxKey asProtected(ICFBamBoolTypeBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubBoolTypeBySchemaIdxKey asPublic(ICFBamBoolTypeBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a BoolType interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamBoolTypeFactory
 	public ICFBamBoolType newRec();
 
 	/**
+	 *	Allocate a protected BoolType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtBoolType asProtected(ICFBamBoolType src);
+
+	/**
+	 *	Allocate a public BoolType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubBoolType asPublic(ICFBamBoolType src);
+
+	/**
 	 *	Allocate a BoolType history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamBoolTypeH newHRec();
+
+	/**
+	 *	Allocate a protected BoolType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtBoolTypeH asProtected(ICFBamBoolTypeH src);
+
+	/**
+	 *	Allocate a public BoolType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubBoolTypeH asPublic(ICFBamBoolTypeH src);
 
 }

@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamUuidTypeFactory interface for UuidType
  */
-public interface ICFBamUuidTypeFactory
+public interface ICFBamUuidTypeFactory extends ICFBamProtUuidTypeFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamUuidTypeFactory
 	public ICFBamUuidTypeBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUuidTypeBySchemaIdxKey asProtected(ICFBamUuidTypeBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUuidTypeBySchemaIdxKey asPublic(ICFBamUuidTypeBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a UuidType interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamUuidTypeFactory
 	public ICFBamUuidType newRec();
 
 	/**
+	 *	Allocate a protected UuidType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUuidType asProtected(ICFBamUuidType src);
+
+	/**
+	 *	Allocate a public UuidType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUuidType asPublic(ICFBamUuidType src);
+
+	/**
 	 *	Allocate a UuidType history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamUuidTypeH newHRec();
+
+	/**
+	 *	Allocate a protected UuidType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUuidTypeH asProtected(ICFBamUuidTypeH src);
+
+	/**
+	 *	Allocate a public UuidType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUuidTypeH asPublic(ICFBamUuidTypeH src);
 
 }

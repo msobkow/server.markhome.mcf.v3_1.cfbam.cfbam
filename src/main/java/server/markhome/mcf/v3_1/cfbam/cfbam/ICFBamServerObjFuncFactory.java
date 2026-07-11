@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamServerObjFuncFactory interface for ServerObjFunc
  */
-public interface ICFBamServerObjFuncFactory
+public interface ICFBamServerObjFuncFactory extends ICFBamProtServerObjFuncFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamServerObjFuncFactory
 	public ICFBamServerObjFuncByRetTblIdxKey newByRetTblIdxKey();
 
 	/**
+	 *	Allocate a protected RetTblIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerObjFuncByRetTblIdxKey asProtected(ICFBamServerObjFuncByRetTblIdxKey src);
+
+	/**
+	 *	Allocate a public RetTblIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerObjFuncByRetTblIdxKey asPublic(ICFBamServerObjFuncByRetTblIdxKey src);
+
+	/**
 	 *	Allocate a ServerObjFunc interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamServerObjFuncFactory
 	public ICFBamServerObjFunc newRec();
 
 	/**
+	 *	Allocate a protected ServerObjFunc interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerObjFunc asProtected(ICFBamServerObjFunc src);
+
+	/**
+	 *	Allocate a public ServerObjFunc interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerObjFunc asPublic(ICFBamServerObjFunc src);
+
+	/**
 	 *	Allocate a ServerObjFunc history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamServerObjFuncH newHRec();
+
+	/**
+	 *	Allocate a protected ServerObjFunc history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerObjFuncH asProtected(ICFBamServerObjFuncH src);
+
+	/**
+	 *	Allocate a public ServerObjFunc history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerObjFuncH asPublic(ICFBamServerObjFuncH src);
 
 }

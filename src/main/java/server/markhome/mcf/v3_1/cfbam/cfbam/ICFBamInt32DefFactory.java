@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamInt32DefFactory interface for Int32Def
  */
-public interface ICFBamInt32DefFactory
+public interface ICFBamInt32DefFactory extends ICFBamProtInt32DefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamInt32DefFactory
 	public ICFBamInt32Def newRec();
 
 	/**
+	 *	Allocate a protected Int32Def interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtInt32Def asProtected(ICFBamInt32Def src);
+
+	/**
+	 *	Allocate a public Int32Def interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubInt32Def asPublic(ICFBamInt32Def src);
+
+	/**
 	 *	Allocate a Int32Def history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamInt32DefH newHRec();
+
+	/**
+	 *	Allocate a protected Int32Def history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtInt32DefH asProtected(ICFBamInt32DefH src);
+
+	/**
+	 *	Allocate a public Int32Def history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubInt32DefH asPublic(ICFBamInt32DefH src);
 
 }

@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamEnumTypeFactory interface for EnumType
  */
-public interface ICFBamEnumTypeFactory
+public interface ICFBamEnumTypeFactory extends ICFBamProtEnumTypeFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamEnumTypeFactory
 	public ICFBamEnumTypeBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtEnumTypeBySchemaIdxKey asProtected(ICFBamEnumTypeBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubEnumTypeBySchemaIdxKey asPublic(ICFBamEnumTypeBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a EnumType interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamEnumTypeFactory
 	public ICFBamEnumType newRec();
 
 	/**
+	 *	Allocate a protected EnumType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtEnumType asProtected(ICFBamEnumType src);
+
+	/**
+	 *	Allocate a public EnumType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubEnumType asPublic(ICFBamEnumType src);
+
+	/**
 	 *	Allocate a EnumType history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamEnumTypeH newHRec();
+
+	/**
+	 *	Allocate a protected EnumType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtEnumTypeH asProtected(ICFBamEnumTypeH src);
+
+	/**
+	 *	Allocate a public EnumType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubEnumTypeH asPublic(ICFBamEnumTypeH src);
 
 }

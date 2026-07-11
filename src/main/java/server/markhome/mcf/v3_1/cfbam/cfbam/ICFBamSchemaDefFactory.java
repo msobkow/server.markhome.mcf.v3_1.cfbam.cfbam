@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamSchemaDefFactory interface for SchemaDef
  */
-public interface ICFBamSchemaDefFactory
+public interface ICFBamSchemaDefFactory extends ICFBamProtSchemaDefFactory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamSchemaDefFactory
 	public ICFBamSchemaDefByCTenantIdxKey newByCTenantIdxKey();
 
 	/**
+	 *	Allocate a protected CTenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtSchemaDefByCTenantIdxKey asProtected(ICFBamSchemaDefByCTenantIdxKey src);
+
+	/**
+	 *	Allocate a public CTenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubSchemaDefByCTenantIdxKey asPublic(ICFBamSchemaDefByCTenantIdxKey src);
+
+	/**
 	 *	Allocate a MinorVersionIdx key over SchemaDef instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamSchemaDefByMinorVersionIdxKey newByMinorVersionIdxKey();
+
+	/**
+	 *	Allocate a protected MinorVersionIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtSchemaDefByMinorVersionIdxKey asProtected(ICFBamSchemaDefByMinorVersionIdxKey src);
+
+	/**
+	 *	Allocate a public MinorVersionIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubSchemaDefByMinorVersionIdxKey asPublic(ICFBamSchemaDefByMinorVersionIdxKey src);
 
 	/**
 	 *	Allocate a UNameIdx key over SchemaDef instances.
@@ -87,11 +121,39 @@ public interface ICFBamSchemaDefFactory
 	public ICFBamSchemaDefByUNameIdxKey newByUNameIdxKey();
 
 	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtSchemaDefByUNameIdxKey asProtected(ICFBamSchemaDefByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubSchemaDefByUNameIdxKey asPublic(ICFBamSchemaDefByUNameIdxKey src);
+
+	/**
 	 *	Allocate a AuthEMailIdx key over SchemaDef instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamSchemaDefByAuthEMailIdxKey newByAuthEMailIdxKey();
+
+	/**
+	 *	Allocate a protected AuthEMailIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtSchemaDefByAuthEMailIdxKey asProtected(ICFBamSchemaDefByAuthEMailIdxKey src);
+
+	/**
+	 *	Allocate a public AuthEMailIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubSchemaDefByAuthEMailIdxKey asPublic(ICFBamSchemaDefByAuthEMailIdxKey src);
 
 	/**
 	 *	Allocate a ProjectURLIdx key over SchemaDef instances.
@@ -101,11 +163,39 @@ public interface ICFBamSchemaDefFactory
 	public ICFBamSchemaDefByProjectURLIdxKey newByProjectURLIdxKey();
 
 	/**
+	 *	Allocate a protected ProjectURLIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtSchemaDefByProjectURLIdxKey asProtected(ICFBamSchemaDefByProjectURLIdxKey src);
+
+	/**
+	 *	Allocate a public ProjectURLIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubSchemaDefByProjectURLIdxKey asPublic(ICFBamSchemaDefByProjectURLIdxKey src);
+
+	/**
 	 *	Allocate a PubURIIdx key over SchemaDef instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamSchemaDefByPubURIIdxKey newByPubURIIdxKey();
+
+	/**
+	 *	Allocate a protected PubURIIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtSchemaDefByPubURIIdxKey asProtected(ICFBamSchemaDefByPubURIIdxKey src);
+
+	/**
+	 *	Allocate a public PubURIIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubSchemaDefByPubURIIdxKey asPublic(ICFBamSchemaDefByPubURIIdxKey src);
 
 	/**
 	 *	Allocate a SchemaDef interface implementation.
@@ -115,10 +205,38 @@ public interface ICFBamSchemaDefFactory
 	public ICFBamSchemaDef newRec();
 
 	/**
+	 *	Allocate a protected SchemaDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtSchemaDef asProtected(ICFBamSchemaDef src);
+
+	/**
+	 *	Allocate a public SchemaDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubSchemaDef asPublic(ICFBamSchemaDef src);
+
+	/**
 	 *	Allocate a SchemaDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamSchemaDefH newHRec();
+
+	/**
+	 *	Allocate a protected SchemaDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtSchemaDefH asProtected(ICFBamSchemaDefH src);
+
+	/**
+	 *	Allocate a public SchemaDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubSchemaDefH asPublic(ICFBamSchemaDefH src);
 
 }

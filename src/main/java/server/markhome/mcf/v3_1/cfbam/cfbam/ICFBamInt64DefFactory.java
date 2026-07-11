@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamInt64DefFactory interface for Int64Def
  */
-public interface ICFBamInt64DefFactory
+public interface ICFBamInt64DefFactory extends ICFBamProtInt64DefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamInt64DefFactory
 	public ICFBamInt64Def newRec();
 
 	/**
+	 *	Allocate a protected Int64Def interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtInt64Def asProtected(ICFBamInt64Def src);
+
+	/**
+	 *	Allocate a public Int64Def interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubInt64Def asPublic(ICFBamInt64Def src);
+
+	/**
 	 *	Allocate a Int64Def history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamInt64DefH newHRec();
+
+	/**
+	 *	Allocate a protected Int64Def history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtInt64DefH asProtected(ICFBamInt64DefH src);
+
+	/**
+	 *	Allocate a public Int64Def history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubInt64DefH asPublic(ICFBamInt64DefH src);
 
 }

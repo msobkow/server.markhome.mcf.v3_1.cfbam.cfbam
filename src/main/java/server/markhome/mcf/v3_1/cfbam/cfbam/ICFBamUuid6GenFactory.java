@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamUuid6GenFactory interface for Uuid6Gen
  */
-public interface ICFBamUuid6GenFactory
+public interface ICFBamUuid6GenFactory extends ICFBamProtUuid6GenFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamUuid6GenFactory
 	public ICFBamUuid6Gen newRec();
 
 	/**
+	 *	Allocate a protected Uuid6Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUuid6Gen asProtected(ICFBamUuid6Gen src);
+
+	/**
+	 *	Allocate a public Uuid6Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUuid6Gen asPublic(ICFBamUuid6Gen src);
+
+	/**
 	 *	Allocate a Uuid6Gen history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamUuid6GenH newHRec();
+
+	/**
+	 *	Allocate a protected Uuid6Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUuid6GenH asProtected(ICFBamUuid6GenH src);
+
+	/**
+	 *	Allocate a public Uuid6Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUuid6GenH asPublic(ICFBamUuid6GenH src);
 
 }

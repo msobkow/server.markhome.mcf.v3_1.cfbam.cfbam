@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDbKeyHash224DefFactory interface for DbKeyHash224Def
  */
-public interface ICFBamDbKeyHash224DefFactory
+public interface ICFBamDbKeyHash224DefFactory extends ICFBamProtDbKeyHash224DefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamDbKeyHash224DefFactory
 	public ICFBamDbKeyHash224Def newRec();
 
 	/**
+	 *	Allocate a protected DbKeyHash224Def interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash224Def asProtected(ICFBamDbKeyHash224Def src);
+
+	/**
+	 *	Allocate a public DbKeyHash224Def interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash224Def asPublic(ICFBamDbKeyHash224Def src);
+
+	/**
 	 *	Allocate a DbKeyHash224Def history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDbKeyHash224DefH newHRec();
+
+	/**
+	 *	Allocate a protected DbKeyHash224Def history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash224DefH asProtected(ICFBamDbKeyHash224DefH src);
+
+	/**
+	 *	Allocate a public DbKeyHash224Def history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash224DefH asPublic(ICFBamDbKeyHash224DefH src);
 
 }

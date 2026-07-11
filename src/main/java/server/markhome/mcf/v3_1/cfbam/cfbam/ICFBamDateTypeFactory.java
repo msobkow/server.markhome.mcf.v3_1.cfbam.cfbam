@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDateTypeFactory interface for DateType
  */
-public interface ICFBamDateTypeFactory
+public interface ICFBamDateTypeFactory extends ICFBamProtDateTypeFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamDateTypeFactory
 	public ICFBamDateTypeBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDateTypeBySchemaIdxKey asProtected(ICFBamDateTypeBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDateTypeBySchemaIdxKey asPublic(ICFBamDateTypeBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a DateType interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamDateTypeFactory
 	public ICFBamDateType newRec();
 
 	/**
+	 *	Allocate a protected DateType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDateType asProtected(ICFBamDateType src);
+
+	/**
+	 *	Allocate a public DateType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDateType asPublic(ICFBamDateType src);
+
+	/**
 	 *	Allocate a DateType history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDateTypeH newHRec();
+
+	/**
+	 *	Allocate a protected DateType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDateTypeH asProtected(ICFBamDateTypeH src);
+
+	/**
+	 *	Allocate a public DateType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDateTypeH asPublic(ICFBamDateTypeH src);
 
 }

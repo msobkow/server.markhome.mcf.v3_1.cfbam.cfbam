@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamUuidGenFactory interface for UuidGen
  */
-public interface ICFBamUuidGenFactory
+public interface ICFBamUuidGenFactory extends ICFBamProtUuidGenFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamUuidGenFactory
 	public ICFBamUuidGen newRec();
 
 	/**
+	 *	Allocate a protected UuidGen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUuidGen asProtected(ICFBamUuidGen src);
+
+	/**
+	 *	Allocate a public UuidGen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUuidGen asPublic(ICFBamUuidGen src);
+
+	/**
 	 *	Allocate a UuidGen history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamUuidGenH newHRec();
+
+	/**
+	 *	Allocate a protected UuidGen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUuidGenH asProtected(ICFBamUuidGenH src);
+
+	/**
+	 *	Allocate a public UuidGen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUuidGenH asPublic(ICFBamUuidGenH src);
 
 }

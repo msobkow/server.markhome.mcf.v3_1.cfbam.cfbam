@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDateDefFactory interface for DateDef
  */
-public interface ICFBamDateDefFactory
+public interface ICFBamDateDefFactory extends ICFBamProtDateDefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamDateDefFactory
 	public ICFBamDateDef newRec();
 
 	/**
+	 *	Allocate a protected DateDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDateDef asProtected(ICFBamDateDef src);
+
+	/**
+	 *	Allocate a public DateDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDateDef asPublic(ICFBamDateDef src);
+
+	/**
 	 *	Allocate a DateDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDateDefH newHRec();
+
+	/**
+	 *	Allocate a protected DateDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDateDefH asProtected(ICFBamDateDefH src);
+
+	/**
+	 *	Allocate a public DateDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDateDefH asPublic(ICFBamDateDefH src);
 
 }

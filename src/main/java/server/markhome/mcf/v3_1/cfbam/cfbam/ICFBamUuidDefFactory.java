@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamUuidDefFactory interface for UuidDef
  */
-public interface ICFBamUuidDefFactory
+public interface ICFBamUuidDefFactory extends ICFBamProtUuidDefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamUuidDefFactory
 	public ICFBamUuidDef newRec();
 
 	/**
+	 *	Allocate a protected UuidDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUuidDef asProtected(ICFBamUuidDef src);
+
+	/**
+	 *	Allocate a public UuidDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUuidDef asPublic(ICFBamUuidDef src);
+
+	/**
 	 *	Allocate a UuidDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamUuidDefH newHRec();
+
+	/**
+	 *	Allocate a protected UuidDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtUuidDefH asProtected(ICFBamUuidDefH src);
+
+	/**
+	 *	Allocate a public UuidDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubUuidDefH asPublic(ICFBamUuidDefH src);
 
 }

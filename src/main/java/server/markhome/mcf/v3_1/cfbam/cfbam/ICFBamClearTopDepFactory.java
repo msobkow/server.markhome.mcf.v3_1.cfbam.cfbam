@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamClearTopDepFactory interface for ClearTopDep
  */
-public interface ICFBamClearTopDepFactory
+public interface ICFBamClearTopDepFactory extends ICFBamProtClearTopDepFactory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamClearTopDepFactory
 	public ICFBamClearTopDepByClrTopDepTblIdxKey newByClrTopDepTblIdxKey();
 
 	/**
+	 *	Allocate a protected ClrTopDepTblIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearTopDepByClrTopDepTblIdxKey asProtected(ICFBamClearTopDepByClrTopDepTblIdxKey src);
+
+	/**
+	 *	Allocate a public ClrTopDepTblIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearTopDepByClrTopDepTblIdxKey asPublic(ICFBamClearTopDepByClrTopDepTblIdxKey src);
+
+	/**
 	 *	Allocate a UNameIdx key over ClearTopDep instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamClearTopDepByUNameIdxKey newByUNameIdxKey();
+
+	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearTopDepByUNameIdxKey asProtected(ICFBamClearTopDepByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearTopDepByUNameIdxKey asPublic(ICFBamClearTopDepByUNameIdxKey src);
 
 	/**
 	 *	Allocate a PrevIdx key over ClearTopDep instances.
@@ -87,11 +121,39 @@ public interface ICFBamClearTopDepFactory
 	public ICFBamClearTopDepByPrevIdxKey newByPrevIdxKey();
 
 	/**
+	 *	Allocate a protected PrevIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearTopDepByPrevIdxKey asProtected(ICFBamClearTopDepByPrevIdxKey src);
+
+	/**
+	 *	Allocate a public PrevIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearTopDepByPrevIdxKey asPublic(ICFBamClearTopDepByPrevIdxKey src);
+
+	/**
 	 *	Allocate a NextIdx key over ClearTopDep instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamClearTopDepByNextIdxKey newByNextIdxKey();
+
+	/**
+	 *	Allocate a protected NextIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearTopDepByNextIdxKey asProtected(ICFBamClearTopDepByNextIdxKey src);
+
+	/**
+	 *	Allocate a public NextIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearTopDepByNextIdxKey asPublic(ICFBamClearTopDepByNextIdxKey src);
 
 	/**
 	 *	Allocate a ClearTopDep interface implementation.
@@ -101,10 +163,38 @@ public interface ICFBamClearTopDepFactory
 	public ICFBamClearTopDep newRec();
 
 	/**
+	 *	Allocate a protected ClearTopDep interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearTopDep asProtected(ICFBamClearTopDep src);
+
+	/**
+	 *	Allocate a public ClearTopDep interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearTopDep asPublic(ICFBamClearTopDep src);
+
+	/**
 	 *	Allocate a ClearTopDep history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamClearTopDepH newHRec();
+
+	/**
+	 *	Allocate a protected ClearTopDep history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearTopDepH asProtected(ICFBamClearTopDepH src);
+
+	/**
+	 *	Allocate a public ClearTopDep history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearTopDepH asPublic(ICFBamClearTopDepH src);
 
 }

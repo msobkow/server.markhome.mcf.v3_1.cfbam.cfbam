@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamNumberDefFactory interface for NumberDef
  */
-public interface ICFBamNumberDefFactory
+public interface ICFBamNumberDefFactory extends ICFBamProtNumberDefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamNumberDefFactory
 	public ICFBamNumberDef newRec();
 
 	/**
+	 *	Allocate a protected NumberDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtNumberDef asProtected(ICFBamNumberDef src);
+
+	/**
+	 *	Allocate a public NumberDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubNumberDef asPublic(ICFBamNumberDef src);
+
+	/**
 	 *	Allocate a NumberDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamNumberDefH newHRec();
+
+	/**
+	 *	Allocate a protected NumberDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtNumberDefH asProtected(ICFBamNumberDefH src);
+
+	/**
+	 *	Allocate a public NumberDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubNumberDefH asPublic(ICFBamNumberDefH src);
 
 }

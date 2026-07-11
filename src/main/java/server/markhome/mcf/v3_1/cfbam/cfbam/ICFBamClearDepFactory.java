@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamClearDepFactory interface for ClearDep
  */
-public interface ICFBamClearDepFactory
+public interface ICFBamClearDepFactory extends ICFBamProtClearDepFactory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamClearDepFactory
 	public ICFBamClearDepByClearDepIdxKey newByClearDepIdxKey();
 
 	/**
+	 *	Allocate a protected ClearDepIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearDepByClearDepIdxKey asProtected(ICFBamClearDepByClearDepIdxKey src);
+
+	/**
+	 *	Allocate a public ClearDepIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearDepByClearDepIdxKey asPublic(ICFBamClearDepByClearDepIdxKey src);
+
+	/**
 	 *	Allocate a DefSchemaIdx key over ClearDep instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamClearDepByDefSchemaIdxKey newByDefSchemaIdxKey();
+
+	/**
+	 *	Allocate a protected DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearDepByDefSchemaIdxKey asProtected(ICFBamClearDepByDefSchemaIdxKey src);
+
+	/**
+	 *	Allocate a public DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearDepByDefSchemaIdxKey asPublic(ICFBamClearDepByDefSchemaIdxKey src);
 
 	/**
 	 *	Allocate a ClearDep interface implementation.
@@ -87,10 +121,38 @@ public interface ICFBamClearDepFactory
 	public ICFBamClearDep newRec();
 
 	/**
+	 *	Allocate a protected ClearDep interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearDep asProtected(ICFBamClearDep src);
+
+	/**
+	 *	Allocate a public ClearDep interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearDep asPublic(ICFBamClearDep src);
+
+	/**
 	 *	Allocate a ClearDep history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamClearDepH newHRec();
+
+	/**
+	 *	Allocate a protected ClearDep history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtClearDepH asProtected(ICFBamClearDepH src);
+
+	/**
+	 *	Allocate a public ClearDep history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubClearDepH asPublic(ICFBamClearDepH src);
 
 }

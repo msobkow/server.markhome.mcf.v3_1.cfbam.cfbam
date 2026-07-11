@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamNumberColFactory interface for NumberCol
  */
-public interface ICFBamNumberColFactory
+public interface ICFBamNumberColFactory extends ICFBamProtNumberColFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamNumberColFactory
 	public ICFBamNumberColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtNumberColByTableIdxKey asProtected(ICFBamNumberColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubNumberColByTableIdxKey asPublic(ICFBamNumberColByTableIdxKey src);
+
+	/**
 	 *	Allocate a NumberCol interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamNumberColFactory
 	public ICFBamNumberCol newRec();
 
 	/**
+	 *	Allocate a protected NumberCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtNumberCol asProtected(ICFBamNumberCol src);
+
+	/**
+	 *	Allocate a public NumberCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubNumberCol asPublic(ICFBamNumberCol src);
+
+	/**
 	 *	Allocate a NumberCol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamNumberColH newHRec();
+
+	/**
+	 *	Allocate a protected NumberCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtNumberColH asProtected(ICFBamNumberColH src);
+
+	/**
+	 *	Allocate a public NumberCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubNumberColH asPublic(ICFBamNumberColH src);
 
 }

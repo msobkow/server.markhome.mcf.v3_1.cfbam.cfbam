@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTextColFactory interface for TextCol
  */
-public interface ICFBamTextColFactory
+public interface ICFBamTextColFactory extends ICFBamProtTextColFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamTextColFactory
 	public ICFBamTextColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTextColByTableIdxKey asProtected(ICFBamTextColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTextColByTableIdxKey asPublic(ICFBamTextColByTableIdxKey src);
+
+	/**
 	 *	Allocate a TextCol interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamTextColFactory
 	public ICFBamTextCol newRec();
 
 	/**
+	 *	Allocate a protected TextCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTextCol asProtected(ICFBamTextCol src);
+
+	/**
+	 *	Allocate a public TextCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTextCol asPublic(ICFBamTextCol src);
+
+	/**
 	 *	Allocate a TextCol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTextColH newHRec();
+
+	/**
+	 *	Allocate a protected TextCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTextColH asProtected(ICFBamTextColH src);
+
+	/**
+	 *	Allocate a public TextCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTextColH asPublic(ICFBamTextColH src);
 
 }

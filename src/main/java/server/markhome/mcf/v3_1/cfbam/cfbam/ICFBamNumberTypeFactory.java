@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamNumberTypeFactory interface for NumberType
  */
-public interface ICFBamNumberTypeFactory
+public interface ICFBamNumberTypeFactory extends ICFBamProtNumberTypeFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamNumberTypeFactory
 	public ICFBamNumberTypeBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtNumberTypeBySchemaIdxKey asProtected(ICFBamNumberTypeBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubNumberTypeBySchemaIdxKey asPublic(ICFBamNumberTypeBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a NumberType interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamNumberTypeFactory
 	public ICFBamNumberType newRec();
 
 	/**
+	 *	Allocate a protected NumberType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtNumberType asProtected(ICFBamNumberType src);
+
+	/**
+	 *	Allocate a public NumberType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubNumberType asPublic(ICFBamNumberType src);
+
+	/**
 	 *	Allocate a NumberType history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamNumberTypeH newHRec();
+
+	/**
+	 *	Allocate a protected NumberType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtNumberTypeH asProtected(ICFBamNumberTypeH src);
+
+	/**
+	 *	Allocate a public NumberType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubNumberTypeH asPublic(ICFBamNumberTypeH src);
 
 }

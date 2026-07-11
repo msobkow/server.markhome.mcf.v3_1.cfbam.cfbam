@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDelTopDepFactory interface for DelTopDep
  */
-public interface ICFBamDelTopDepFactory
+public interface ICFBamDelTopDepFactory extends ICFBamProtDelTopDepFactory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamDelTopDepFactory
 	public ICFBamDelTopDepByDelTopDepTblIdxKey newByDelTopDepTblIdxKey();
 
 	/**
+	 *	Allocate a protected DelTopDepTblIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDelTopDepByDelTopDepTblIdxKey asProtected(ICFBamDelTopDepByDelTopDepTblIdxKey src);
+
+	/**
+	 *	Allocate a public DelTopDepTblIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDelTopDepByDelTopDepTblIdxKey asPublic(ICFBamDelTopDepByDelTopDepTblIdxKey src);
+
+	/**
 	 *	Allocate a UNameIdx key over DelTopDep instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDelTopDepByUNameIdxKey newByUNameIdxKey();
+
+	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDelTopDepByUNameIdxKey asProtected(ICFBamDelTopDepByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDelTopDepByUNameIdxKey asPublic(ICFBamDelTopDepByUNameIdxKey src);
 
 	/**
 	 *	Allocate a PrevIdx key over DelTopDep instances.
@@ -87,11 +121,39 @@ public interface ICFBamDelTopDepFactory
 	public ICFBamDelTopDepByPrevIdxKey newByPrevIdxKey();
 
 	/**
+	 *	Allocate a protected PrevIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDelTopDepByPrevIdxKey asProtected(ICFBamDelTopDepByPrevIdxKey src);
+
+	/**
+	 *	Allocate a public PrevIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDelTopDepByPrevIdxKey asPublic(ICFBamDelTopDepByPrevIdxKey src);
+
+	/**
 	 *	Allocate a NextIdx key over DelTopDep instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDelTopDepByNextIdxKey newByNextIdxKey();
+
+	/**
+	 *	Allocate a protected NextIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDelTopDepByNextIdxKey asProtected(ICFBamDelTopDepByNextIdxKey src);
+
+	/**
+	 *	Allocate a public NextIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDelTopDepByNextIdxKey asPublic(ICFBamDelTopDepByNextIdxKey src);
 
 	/**
 	 *	Allocate a DelTopDep interface implementation.
@@ -101,10 +163,38 @@ public interface ICFBamDelTopDepFactory
 	public ICFBamDelTopDep newRec();
 
 	/**
+	 *	Allocate a protected DelTopDep interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDelTopDep asProtected(ICFBamDelTopDep src);
+
+	/**
+	 *	Allocate a public DelTopDep interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDelTopDep asPublic(ICFBamDelTopDep src);
+
+	/**
 	 *	Allocate a DelTopDep history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDelTopDepH newHRec();
+
+	/**
+	 *	Allocate a protected DelTopDep history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDelTopDepH asProtected(ICFBamDelTopDepH src);
+
+	/**
+	 *	Allocate a public DelTopDep history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDelTopDepH asPublic(ICFBamDelTopDepH src);
 
 }

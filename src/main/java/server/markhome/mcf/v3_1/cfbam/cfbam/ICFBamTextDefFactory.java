@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTextDefFactory interface for TextDef
  */
-public interface ICFBamTextDefFactory
+public interface ICFBamTextDefFactory extends ICFBamProtTextDefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamTextDefFactory
 	public ICFBamTextDef newRec();
 
 	/**
+	 *	Allocate a protected TextDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTextDef asProtected(ICFBamTextDef src);
+
+	/**
+	 *	Allocate a public TextDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTextDef asPublic(ICFBamTextDef src);
+
+	/**
 	 *	Allocate a TextDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTextDefH newHRec();
+
+	/**
+	 *	Allocate a protected TextDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTextDefH asProtected(ICFBamTextDefH src);
+
+	/**
+	 *	Allocate a public TextDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTextDefH asPublic(ICFBamTextDefH src);
 
 }

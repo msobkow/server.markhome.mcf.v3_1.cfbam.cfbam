@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamServerMethodFactory interface for ServerMethod
  */
-public interface ICFBamServerMethodFactory
+public interface ICFBamServerMethodFactory extends ICFBamProtServerMethodFactory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamServerMethodFactory
 	public ICFBamServerMethodByUNameIdxKey newByUNameIdxKey();
 
 	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerMethodByUNameIdxKey asProtected(ICFBamServerMethodByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerMethodByUNameIdxKey asPublic(ICFBamServerMethodByUNameIdxKey src);
+
+	/**
 	 *	Allocate a MethTableIdx key over ServerMethod instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamServerMethodByMethTableIdxKey newByMethTableIdxKey();
+
+	/**
+	 *	Allocate a protected MethTableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerMethodByMethTableIdxKey asProtected(ICFBamServerMethodByMethTableIdxKey src);
+
+	/**
+	 *	Allocate a public MethTableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerMethodByMethTableIdxKey asPublic(ICFBamServerMethodByMethTableIdxKey src);
 
 	/**
 	 *	Allocate a MethCodeVisIdx key over ServerMethod instances.
@@ -87,11 +121,39 @@ public interface ICFBamServerMethodFactory
 	public ICFBamServerMethodByMethCodeVisIdxKey newByMethCodeVisIdxKey();
 
 	/**
+	 *	Allocate a protected MethCodeVisIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerMethodByMethCodeVisIdxKey asProtected(ICFBamServerMethodByMethCodeVisIdxKey src);
+
+	/**
+	 *	Allocate a public MethCodeVisIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerMethodByMethCodeVisIdxKey asPublic(ICFBamServerMethodByMethCodeVisIdxKey src);
+
+	/**
 	 *	Allocate a MethTableVisIdx key over ServerMethod instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamServerMethodByMethTableVisIdxKey newByMethTableVisIdxKey();
+
+	/**
+	 *	Allocate a protected MethTableVisIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerMethodByMethTableVisIdxKey asProtected(ICFBamServerMethodByMethTableVisIdxKey src);
+
+	/**
+	 *	Allocate a public MethTableVisIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerMethodByMethTableVisIdxKey asPublic(ICFBamServerMethodByMethTableVisIdxKey src);
 
 	/**
 	 *	Allocate a DefSchemaIdx key over ServerMethod instances.
@@ -101,6 +163,20 @@ public interface ICFBamServerMethodFactory
 	public ICFBamServerMethodByDefSchemaIdxKey newByDefSchemaIdxKey();
 
 	/**
+	 *	Allocate a protected DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerMethodByDefSchemaIdxKey asProtected(ICFBamServerMethodByDefSchemaIdxKey src);
+
+	/**
+	 *	Allocate a public DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerMethodByDefSchemaIdxKey asPublic(ICFBamServerMethodByDefSchemaIdxKey src);
+
+	/**
 	 *	Allocate a ServerMethod interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -108,10 +184,38 @@ public interface ICFBamServerMethodFactory
 	public ICFBamServerMethod newRec();
 
 	/**
+	 *	Allocate a protected ServerMethod interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerMethod asProtected(ICFBamServerMethod src);
+
+	/**
+	 *	Allocate a public ServerMethod interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerMethod asPublic(ICFBamServerMethod src);
+
+	/**
 	 *	Allocate a ServerMethod history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamServerMethodH newHRec();
+
+	/**
+	 *	Allocate a protected ServerMethod history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtServerMethodH asProtected(ICFBamServerMethodH src);
+
+	/**
+	 *	Allocate a public ServerMethod history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubServerMethodH asPublic(ICFBamServerMethodH src);
 
 }

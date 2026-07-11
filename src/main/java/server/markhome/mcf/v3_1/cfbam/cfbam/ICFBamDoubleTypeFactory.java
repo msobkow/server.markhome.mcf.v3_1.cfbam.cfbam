@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDoubleTypeFactory interface for DoubleType
  */
-public interface ICFBamDoubleTypeFactory
+public interface ICFBamDoubleTypeFactory extends ICFBamProtDoubleTypeFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamDoubleTypeFactory
 	public ICFBamDoubleTypeBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDoubleTypeBySchemaIdxKey asProtected(ICFBamDoubleTypeBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDoubleTypeBySchemaIdxKey asPublic(ICFBamDoubleTypeBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a DoubleType interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamDoubleTypeFactory
 	public ICFBamDoubleType newRec();
 
 	/**
+	 *	Allocate a protected DoubleType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDoubleType asProtected(ICFBamDoubleType src);
+
+	/**
+	 *	Allocate a public DoubleType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDoubleType asPublic(ICFBamDoubleType src);
+
+	/**
 	 *	Allocate a DoubleType history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDoubleTypeH newHRec();
+
+	/**
+	 *	Allocate a protected DoubleType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDoubleTypeH asProtected(ICFBamDoubleTypeH src);
+
+	/**
+	 *	Allocate a public DoubleType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDoubleTypeH asPublic(ICFBamDoubleTypeH src);
 
 }

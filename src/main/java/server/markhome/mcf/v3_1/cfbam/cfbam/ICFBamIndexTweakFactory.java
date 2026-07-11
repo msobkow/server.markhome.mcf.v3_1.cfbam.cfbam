@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamIndexTweakFactory interface for IndexTweak
  */
-public interface ICFBamIndexTweakFactory
+public interface ICFBamIndexTweakFactory extends ICFBamProtIndexTweakFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamIndexTweakFactory
 	public ICFBamIndexTweakByIndexIdxKey newByIndexIdxKey();
 
 	/**
+	 *	Allocate a protected IndexIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtIndexTweakByIndexIdxKey asProtected(ICFBamIndexTweakByIndexIdxKey src);
+
+	/**
+	 *	Allocate a public IndexIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubIndexTweakByIndexIdxKey asPublic(ICFBamIndexTweakByIndexIdxKey src);
+
+	/**
 	 *	Allocate a IndexTweak interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamIndexTweakFactory
 	public ICFBamIndexTweak newRec();
 
 	/**
+	 *	Allocate a protected IndexTweak interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtIndexTweak asProtected(ICFBamIndexTweak src);
+
+	/**
+	 *	Allocate a public IndexTweak interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubIndexTweak asPublic(ICFBamIndexTweak src);
+
+	/**
 	 *	Allocate a IndexTweak history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamIndexTweakH newHRec();
+
+	/**
+	 *	Allocate a protected IndexTweak history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtIndexTweakH asProtected(ICFBamIndexTweakH src);
+
+	/**
+	 *	Allocate a public IndexTweak history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubIndexTweakH asPublic(ICFBamIndexTweakH src);
 
 }

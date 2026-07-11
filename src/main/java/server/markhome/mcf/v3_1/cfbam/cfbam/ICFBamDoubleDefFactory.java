@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDoubleDefFactory interface for DoubleDef
  */
-public interface ICFBamDoubleDefFactory
+public interface ICFBamDoubleDefFactory extends ICFBamProtDoubleDefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamDoubleDefFactory
 	public ICFBamDoubleDef newRec();
 
 	/**
+	 *	Allocate a protected DoubleDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDoubleDef asProtected(ICFBamDoubleDef src);
+
+	/**
+	 *	Allocate a public DoubleDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDoubleDef asPublic(ICFBamDoubleDef src);
+
+	/**
 	 *	Allocate a DoubleDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDoubleDefH newHRec();
+
+	/**
+	 *	Allocate a protected DoubleDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDoubleDefH asProtected(ICFBamDoubleDefH src);
+
+	/**
+	 *	Allocate a public DoubleDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDoubleDefH asPublic(ICFBamDoubleDefH src);
 
 }

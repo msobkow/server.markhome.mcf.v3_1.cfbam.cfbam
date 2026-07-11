@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTZTimeColFactory interface for TZTimeCol
  */
-public interface ICFBamTZTimeColFactory
+public interface ICFBamTZTimeColFactory extends ICFBamProtTZTimeColFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamTZTimeColFactory
 	public ICFBamTZTimeColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTZTimeColByTableIdxKey asProtected(ICFBamTZTimeColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTZTimeColByTableIdxKey asPublic(ICFBamTZTimeColByTableIdxKey src);
+
+	/**
 	 *	Allocate a TZTimeCol interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamTZTimeColFactory
 	public ICFBamTZTimeCol newRec();
 
 	/**
+	 *	Allocate a protected TZTimeCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTZTimeCol asProtected(ICFBamTZTimeCol src);
+
+	/**
+	 *	Allocate a public TZTimeCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTZTimeCol asPublic(ICFBamTZTimeCol src);
+
+	/**
 	 *	Allocate a TZTimeCol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTZTimeColH newHRec();
+
+	/**
+	 *	Allocate a protected TZTimeCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTZTimeColH asProtected(ICFBamTZTimeColH src);
+
+	/**
+	 *	Allocate a public TZTimeCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTZTimeColH asPublic(ICFBamTZTimeColH src);
 
 }

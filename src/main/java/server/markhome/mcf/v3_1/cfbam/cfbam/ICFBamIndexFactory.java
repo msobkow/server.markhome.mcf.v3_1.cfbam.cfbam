@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamIndexFactory interface for Index
  */
-public interface ICFBamIndexFactory
+public interface ICFBamIndexFactory extends ICFBamProtIndexFactory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamIndexFactory
 	public ICFBamIndexByUNameIdxKey newByUNameIdxKey();
 
 	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtIndexByUNameIdxKey asProtected(ICFBamIndexByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubIndexByUNameIdxKey asPublic(ICFBamIndexByUNameIdxKey src);
+
+	/**
 	 *	Allocate a IdxTableIdx key over Index instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamIndexByIdxTableIdxKey newByIdxTableIdxKey();
+
+	/**
+	 *	Allocate a protected IdxTableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtIndexByIdxTableIdxKey asProtected(ICFBamIndexByIdxTableIdxKey src);
+
+	/**
+	 *	Allocate a public IdxTableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubIndexByIdxTableIdxKey asPublic(ICFBamIndexByIdxTableIdxKey src);
 
 	/**
 	 *	Allocate a IdxCodeVisIdx key over Index instances.
@@ -87,11 +121,39 @@ public interface ICFBamIndexFactory
 	public ICFBamIndexByIdxCodeVisIdxKey newByIdxCodeVisIdxKey();
 
 	/**
+	 *	Allocate a protected IdxCodeVisIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtIndexByIdxCodeVisIdxKey asProtected(ICFBamIndexByIdxCodeVisIdxKey src);
+
+	/**
+	 *	Allocate a public IdxCodeVisIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubIndexByIdxCodeVisIdxKey asPublic(ICFBamIndexByIdxCodeVisIdxKey src);
+
+	/**
 	 *	Allocate a IdxTblCdVisX key over Index instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamIndexByIdxTblCdVisXKey newByIdxTblCdVisXKey();
+
+	/**
+	 *	Allocate a protected IdxTblCdVisX key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtIndexByIdxTblCdVisXKey asProtected(ICFBamIndexByIdxTblCdVisXKey src);
+
+	/**
+	 *	Allocate a public IdxTblCdVisX key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubIndexByIdxTblCdVisXKey asPublic(ICFBamIndexByIdxTblCdVisXKey src);
 
 	/**
 	 *	Allocate a DefSchemaIdx key over Index instances.
@@ -101,6 +163,20 @@ public interface ICFBamIndexFactory
 	public ICFBamIndexByDefSchemaIdxKey newByDefSchemaIdxKey();
 
 	/**
+	 *	Allocate a protected DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtIndexByDefSchemaIdxKey asProtected(ICFBamIndexByDefSchemaIdxKey src);
+
+	/**
+	 *	Allocate a public DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubIndexByDefSchemaIdxKey asPublic(ICFBamIndexByDefSchemaIdxKey src);
+
+	/**
 	 *	Allocate a Index interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -108,10 +184,38 @@ public interface ICFBamIndexFactory
 	public ICFBamIndex newRec();
 
 	/**
+	 *	Allocate a protected Index interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtIndex asProtected(ICFBamIndex src);
+
+	/**
+	 *	Allocate a public Index interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubIndex asPublic(ICFBamIndex src);
+
+	/**
 	 *	Allocate a Index history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamIndexH newHRec();
+
+	/**
+	 *	Allocate a protected Index history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtIndexH asProtected(ICFBamIndexH src);
+
+	/**
+	 *	Allocate a public Index history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubIndexH asPublic(ICFBamIndexH src);
 
 }

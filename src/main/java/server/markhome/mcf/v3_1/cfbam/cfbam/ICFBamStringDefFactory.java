@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamStringDefFactory interface for StringDef
  */
-public interface ICFBamStringDefFactory
+public interface ICFBamStringDefFactory extends ICFBamProtStringDefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamStringDefFactory
 	public ICFBamStringDef newRec();
 
 	/**
+	 *	Allocate a protected StringDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtStringDef asProtected(ICFBamStringDef src);
+
+	/**
+	 *	Allocate a public StringDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubStringDef asPublic(ICFBamStringDef src);
+
+	/**
 	 *	Allocate a StringDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamStringDefH newHRec();
+
+	/**
+	 *	Allocate a protected StringDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtStringDefH asProtected(ICFBamStringDefH src);
+
+	/**
+	 *	Allocate a public StringDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubStringDefH asPublic(ICFBamStringDefH src);
 
 }

@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamEnumDefFactory interface for EnumDef
  */
-public interface ICFBamEnumDefFactory
+public interface ICFBamEnumDefFactory extends ICFBamProtEnumDefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamEnumDefFactory
 	public ICFBamEnumDef newRec();
 
 	/**
+	 *	Allocate a protected EnumDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtEnumDef asProtected(ICFBamEnumDef src);
+
+	/**
+	 *	Allocate a public EnumDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubEnumDef asPublic(ICFBamEnumDef src);
+
+	/**
 	 *	Allocate a EnumDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamEnumDefH newHRec();
+
+	/**
+	 *	Allocate a protected EnumDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtEnumDefH asProtected(ICFBamEnumDefH src);
+
+	/**
+	 *	Allocate a public EnumDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubEnumDefH asPublic(ICFBamEnumDefH src);
 
 }

@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTZTimeTypeFactory interface for TZTimeType
  */
-public interface ICFBamTZTimeTypeFactory
+public interface ICFBamTZTimeTypeFactory extends ICFBamProtTZTimeTypeFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamTZTimeTypeFactory
 	public ICFBamTZTimeTypeBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTZTimeTypeBySchemaIdxKey asProtected(ICFBamTZTimeTypeBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTZTimeTypeBySchemaIdxKey asPublic(ICFBamTZTimeTypeBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a TZTimeType interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamTZTimeTypeFactory
 	public ICFBamTZTimeType newRec();
 
 	/**
+	 *	Allocate a protected TZTimeType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTZTimeType asProtected(ICFBamTZTimeType src);
+
+	/**
+	 *	Allocate a public TZTimeType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTZTimeType asPublic(ICFBamTZTimeType src);
+
+	/**
 	 *	Allocate a TZTimeType history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTZTimeTypeH newHRec();
+
+	/**
+	 *	Allocate a protected TZTimeType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTZTimeTypeH asProtected(ICFBamTZTimeTypeH src);
+
+	/**
+	 *	Allocate a public TZTimeType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTZTimeTypeH asPublic(ICFBamTZTimeTypeH src);
 
 }

@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamPopDepFactory interface for PopDep
  */
-public interface ICFBamPopDepFactory
+public interface ICFBamPopDepFactory extends ICFBamProtPopDepFactory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamPopDepFactory
 	public ICFBamPopDepByRelationIdxKey newByRelationIdxKey();
 
 	/**
+	 *	Allocate a protected RelationIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtPopDepByRelationIdxKey asProtected(ICFBamPopDepByRelationIdxKey src);
+
+	/**
+	 *	Allocate a public RelationIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubPopDepByRelationIdxKey asPublic(ICFBamPopDepByRelationIdxKey src);
+
+	/**
 	 *	Allocate a DefSchemaIdx key over PopDep instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamPopDepByDefSchemaIdxKey newByDefSchemaIdxKey();
+
+	/**
+	 *	Allocate a protected DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtPopDepByDefSchemaIdxKey asProtected(ICFBamPopDepByDefSchemaIdxKey src);
+
+	/**
+	 *	Allocate a public DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubPopDepByDefSchemaIdxKey asPublic(ICFBamPopDepByDefSchemaIdxKey src);
 
 	/**
 	 *	Allocate a PopDep interface implementation.
@@ -87,10 +121,38 @@ public interface ICFBamPopDepFactory
 	public ICFBamPopDep newRec();
 
 	/**
+	 *	Allocate a protected PopDep interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtPopDep asProtected(ICFBamPopDep src);
+
+	/**
+	 *	Allocate a public PopDep interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubPopDep asPublic(ICFBamPopDep src);
+
+	/**
 	 *	Allocate a PopDep history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamPopDepH newHRec();
+
+	/**
+	 *	Allocate a protected PopDep history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtPopDepH asProtected(ICFBamPopDepH src);
+
+	/**
+	 *	Allocate a public PopDep history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubPopDepH asPublic(ICFBamPopDepH src);
 
 }

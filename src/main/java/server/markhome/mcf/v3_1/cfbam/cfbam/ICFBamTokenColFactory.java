@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTokenColFactory interface for TokenCol
  */
-public interface ICFBamTokenColFactory
+public interface ICFBamTokenColFactory extends ICFBamProtTokenColFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamTokenColFactory
 	public ICFBamTokenColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTokenColByTableIdxKey asProtected(ICFBamTokenColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTokenColByTableIdxKey asPublic(ICFBamTokenColByTableIdxKey src);
+
+	/**
 	 *	Allocate a TokenCol interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamTokenColFactory
 	public ICFBamTokenCol newRec();
 
 	/**
+	 *	Allocate a protected TokenCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTokenCol asProtected(ICFBamTokenCol src);
+
+	/**
+	 *	Allocate a public TokenCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTokenCol asPublic(ICFBamTokenCol src);
+
+	/**
 	 *	Allocate a TokenCol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTokenColH newHRec();
+
+	/**
+	 *	Allocate a protected TokenCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTokenColH asProtected(ICFBamTokenColH src);
+
+	/**
+	 *	Allocate a public TokenCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTokenColH asPublic(ICFBamTokenColH src);
 
 }

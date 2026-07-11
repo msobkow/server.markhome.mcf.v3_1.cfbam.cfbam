@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDbKeyHash512ColFactory interface for DbKeyHash512Col
  */
-public interface ICFBamDbKeyHash512ColFactory
+public interface ICFBamDbKeyHash512ColFactory extends ICFBamProtDbKeyHash512ColFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamDbKeyHash512ColFactory
 	public ICFBamDbKeyHash512ColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash512ColByTableIdxKey asProtected(ICFBamDbKeyHash512ColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash512ColByTableIdxKey asPublic(ICFBamDbKeyHash512ColByTableIdxKey src);
+
+	/**
 	 *	Allocate a DbKeyHash512Col interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamDbKeyHash512ColFactory
 	public ICFBamDbKeyHash512Col newRec();
 
 	/**
+	 *	Allocate a protected DbKeyHash512Col interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash512Col asProtected(ICFBamDbKeyHash512Col src);
+
+	/**
+	 *	Allocate a public DbKeyHash512Col interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash512Col asPublic(ICFBamDbKeyHash512Col src);
+
+	/**
 	 *	Allocate a DbKeyHash512Col history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDbKeyHash512ColH newHRec();
+
+	/**
+	 *	Allocate a protected DbKeyHash512Col history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash512ColH asProtected(ICFBamDbKeyHash512ColH src);
+
+	/**
+	 *	Allocate a public DbKeyHash512Col history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash512ColH asPublic(ICFBamDbKeyHash512ColH src);
 
 }

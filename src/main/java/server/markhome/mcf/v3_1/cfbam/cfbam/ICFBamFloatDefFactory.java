@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamFloatDefFactory interface for FloatDef
  */
-public interface ICFBamFloatDefFactory
+public interface ICFBamFloatDefFactory extends ICFBamProtFloatDefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamFloatDefFactory
 	public ICFBamFloatDef newRec();
 
 	/**
+	 *	Allocate a protected FloatDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtFloatDef asProtected(ICFBamFloatDef src);
+
+	/**
+	 *	Allocate a public FloatDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubFloatDef asPublic(ICFBamFloatDef src);
+
+	/**
 	 *	Allocate a FloatDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamFloatDefH newHRec();
+
+	/**
+	 *	Allocate a protected FloatDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtFloatDefH asProtected(ICFBamFloatDefH src);
+
+	/**
+	 *	Allocate a public FloatDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubFloatDefH asPublic(ICFBamFloatDefH src);
 
 }

@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTableFactory interface for Table
  */
-public interface ICFBamTableFactory
+public interface ICFBamTableFactory extends ICFBamProtTableFactory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamTableFactory
 	public ICFBamTableBySchemaDefIdxKey newBySchemaDefIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaDefIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableBySchemaDefIdxKey asProtected(ICFBamTableBySchemaDefIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaDefIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableBySchemaDefIdxKey asPublic(ICFBamTableBySchemaDefIdxKey src);
+
+	/**
 	 *	Allocate a CodeVisIdx key over Table instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTableByCodeVisIdxKey newByCodeVisIdxKey();
+
+	/**
+	 *	Allocate a protected CodeVisIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableByCodeVisIdxKey asProtected(ICFBamTableByCodeVisIdxKey src);
+
+	/**
+	 *	Allocate a public CodeVisIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableByCodeVisIdxKey asPublic(ICFBamTableByCodeVisIdxKey src);
 
 	/**
 	 *	Allocate a SchemaCodeVisIdx key over Table instances.
@@ -87,11 +121,39 @@ public interface ICFBamTableFactory
 	public ICFBamTableBySchemaCodeVisIdxKey newBySchemaCodeVisIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaCodeVisIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableBySchemaCodeVisIdxKey asProtected(ICFBamTableBySchemaCodeVisIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaCodeVisIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableBySchemaCodeVisIdxKey asPublic(ICFBamTableBySchemaCodeVisIdxKey src);
+
+	/**
 	 *	Allocate a DefSchemaIdx key over Table instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTableByDefSchemaIdxKey newByDefSchemaIdxKey();
+
+	/**
+	 *	Allocate a protected DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableByDefSchemaIdxKey asProtected(ICFBamTableByDefSchemaIdxKey src);
+
+	/**
+	 *	Allocate a public DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableByDefSchemaIdxKey asPublic(ICFBamTableByDefSchemaIdxKey src);
 
 	/**
 	 *	Allocate a UNameIdx key over Table instances.
@@ -101,11 +163,39 @@ public interface ICFBamTableFactory
 	public ICFBamTableByUNameIdxKey newByUNameIdxKey();
 
 	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableByUNameIdxKey asProtected(ICFBamTableByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableByUNameIdxKey asPublic(ICFBamTableByUNameIdxKey src);
+
+	/**
 	 *	Allocate a SchemaCdIdx key over Table instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTableBySchemaCdIdxKey newBySchemaCdIdxKey();
+
+	/**
+	 *	Allocate a protected SchemaCdIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableBySchemaCdIdxKey asProtected(ICFBamTableBySchemaCdIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaCdIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableBySchemaCdIdxKey asPublic(ICFBamTableBySchemaCdIdxKey src);
 
 	/**
 	 *	Allocate a PrimaryIndexIdx key over Table instances.
@@ -115,11 +205,39 @@ public interface ICFBamTableFactory
 	public ICFBamTableByPrimaryIndexIdxKey newByPrimaryIndexIdxKey();
 
 	/**
+	 *	Allocate a protected PrimaryIndexIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableByPrimaryIndexIdxKey asProtected(ICFBamTableByPrimaryIndexIdxKey src);
+
+	/**
+	 *	Allocate a public PrimaryIndexIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableByPrimaryIndexIdxKey asPublic(ICFBamTableByPrimaryIndexIdxKey src);
+
+	/**
 	 *	Allocate a LookupIndexIdx key over Table instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTableByLookupIndexIdxKey newByLookupIndexIdxKey();
+
+	/**
+	 *	Allocate a protected LookupIndexIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableByLookupIndexIdxKey asProtected(ICFBamTableByLookupIndexIdxKey src);
+
+	/**
+	 *	Allocate a public LookupIndexIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableByLookupIndexIdxKey asPublic(ICFBamTableByLookupIndexIdxKey src);
 
 	/**
 	 *	Allocate a AltIndexIdx key over Table instances.
@@ -129,11 +247,39 @@ public interface ICFBamTableFactory
 	public ICFBamTableByAltIndexIdxKey newByAltIndexIdxKey();
 
 	/**
+	 *	Allocate a protected AltIndexIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableByAltIndexIdxKey asProtected(ICFBamTableByAltIndexIdxKey src);
+
+	/**
+	 *	Allocate a public AltIndexIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableByAltIndexIdxKey asPublic(ICFBamTableByAltIndexIdxKey src);
+
+	/**
 	 *	Allocate a QualTableIdx key over Table instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTableByQualTableIdxKey newByQualTableIdxKey();
+
+	/**
+	 *	Allocate a protected QualTableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableByQualTableIdxKey asProtected(ICFBamTableByQualTableIdxKey src);
+
+	/**
+	 *	Allocate a public QualTableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableByQualTableIdxKey asPublic(ICFBamTableByQualTableIdxKey src);
 
 	/**
 	 *	Allocate a Table interface implementation.
@@ -143,10 +289,38 @@ public interface ICFBamTableFactory
 	public ICFBamTable newRec();
 
 	/**
+	 *	Allocate a protected Table interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTable asProtected(ICFBamTable src);
+
+	/**
+	 *	Allocate a public Table interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTable asPublic(ICFBamTable src);
+
+	/**
 	 *	Allocate a Table history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTableH newHRec();
+
+	/**
+	 *	Allocate a protected Table history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableH asProtected(ICFBamTableH src);
+
+	/**
+	 *	Allocate a public Table history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableH asPublic(ICFBamTableH src);
 
 }

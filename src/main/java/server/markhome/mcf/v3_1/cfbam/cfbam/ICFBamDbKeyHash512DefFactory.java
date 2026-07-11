@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDbKeyHash512DefFactory interface for DbKeyHash512Def
  */
-public interface ICFBamDbKeyHash512DefFactory
+public interface ICFBamDbKeyHash512DefFactory extends ICFBamProtDbKeyHash512DefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamDbKeyHash512DefFactory
 	public ICFBamDbKeyHash512Def newRec();
 
 	/**
+	 *	Allocate a protected DbKeyHash512Def interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash512Def asProtected(ICFBamDbKeyHash512Def src);
+
+	/**
+	 *	Allocate a public DbKeyHash512Def interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash512Def asPublic(ICFBamDbKeyHash512Def src);
+
+	/**
 	 *	Allocate a DbKeyHash512Def history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDbKeyHash512DefH newHRec();
+
+	/**
+	 *	Allocate a protected DbKeyHash512Def history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash512DefH asProtected(ICFBamDbKeyHash512DefH src);
+
+	/**
+	 *	Allocate a public DbKeyHash512Def history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash512DefH asPublic(ICFBamDbKeyHash512DefH src);
 
 }

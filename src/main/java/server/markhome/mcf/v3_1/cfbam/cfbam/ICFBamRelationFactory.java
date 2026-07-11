@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamRelationFactory interface for Relation
  */
-public interface ICFBamRelationFactory
+public interface ICFBamRelationFactory extends ICFBamProtRelationFactory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamRelationFactory
 	public ICFBamRelationByUNameIdxKey newByUNameIdxKey();
 
 	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRelationByUNameIdxKey asProtected(ICFBamRelationByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRelationByUNameIdxKey asPublic(ICFBamRelationByUNameIdxKey src);
+
+	/**
 	 *	Allocate a RelTableIdx key over Relation instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamRelationByRelTableIdxKey newByRelTableIdxKey();
+
+	/**
+	 *	Allocate a protected RelTableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRelationByRelTableIdxKey asProtected(ICFBamRelationByRelTableIdxKey src);
+
+	/**
+	 *	Allocate a public RelTableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRelationByRelTableIdxKey asPublic(ICFBamRelationByRelTableIdxKey src);
 
 	/**
 	 *	Allocate a RelCodeVisIdx key over Relation instances.
@@ -87,11 +121,39 @@ public interface ICFBamRelationFactory
 	public ICFBamRelationByRelCodeVisIdxKey newByRelCodeVisIdxKey();
 
 	/**
+	 *	Allocate a protected RelCodeVisIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRelationByRelCodeVisIdxKey asProtected(ICFBamRelationByRelCodeVisIdxKey src);
+
+	/**
+	 *	Allocate a public RelCodeVisIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRelationByRelCodeVisIdxKey asPublic(ICFBamRelationByRelCodeVisIdxKey src);
+
+	/**
 	 *	Allocate a RelTableCodeVisX key over Relation instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamRelationByRelTableCodeVisXKey newByRelTableCodeVisXKey();
+
+	/**
+	 *	Allocate a protected RelTableCodeVisX key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRelationByRelTableCodeVisXKey asProtected(ICFBamRelationByRelTableCodeVisXKey src);
+
+	/**
+	 *	Allocate a public RelTableCodeVisX key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRelationByRelTableCodeVisXKey asPublic(ICFBamRelationByRelTableCodeVisXKey src);
 
 	/**
 	 *	Allocate a DefSchemaIdx key over Relation instances.
@@ -101,11 +163,39 @@ public interface ICFBamRelationFactory
 	public ICFBamRelationByDefSchemaIdxKey newByDefSchemaIdxKey();
 
 	/**
+	 *	Allocate a protected DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRelationByDefSchemaIdxKey asProtected(ICFBamRelationByDefSchemaIdxKey src);
+
+	/**
+	 *	Allocate a public DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRelationByDefSchemaIdxKey asPublic(ICFBamRelationByDefSchemaIdxKey src);
+
+	/**
 	 *	Allocate a FromKeyIdx key over Relation instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamRelationByFromKeyIdxKey newByFromKeyIdxKey();
+
+	/**
+	 *	Allocate a protected FromKeyIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRelationByFromKeyIdxKey asProtected(ICFBamRelationByFromKeyIdxKey src);
+
+	/**
+	 *	Allocate a public FromKeyIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRelationByFromKeyIdxKey asPublic(ICFBamRelationByFromKeyIdxKey src);
 
 	/**
 	 *	Allocate a ToTblIdx key over Relation instances.
@@ -115,11 +205,39 @@ public interface ICFBamRelationFactory
 	public ICFBamRelationByToTblIdxKey newByToTblIdxKey();
 
 	/**
+	 *	Allocate a protected ToTblIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRelationByToTblIdxKey asProtected(ICFBamRelationByToTblIdxKey src);
+
+	/**
+	 *	Allocate a public ToTblIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRelationByToTblIdxKey asPublic(ICFBamRelationByToTblIdxKey src);
+
+	/**
 	 *	Allocate a ToKeyIdx key over Relation instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamRelationByToKeyIdxKey newByToKeyIdxKey();
+
+	/**
+	 *	Allocate a protected ToKeyIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRelationByToKeyIdxKey asProtected(ICFBamRelationByToKeyIdxKey src);
+
+	/**
+	 *	Allocate a public ToKeyIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRelationByToKeyIdxKey asPublic(ICFBamRelationByToKeyIdxKey src);
 
 	/**
 	 *	Allocate a NarrowedIdx key over Relation instances.
@@ -129,6 +247,20 @@ public interface ICFBamRelationFactory
 	public ICFBamRelationByNarrowedIdxKey newByNarrowedIdxKey();
 
 	/**
+	 *	Allocate a protected NarrowedIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRelationByNarrowedIdxKey asProtected(ICFBamRelationByNarrowedIdxKey src);
+
+	/**
+	 *	Allocate a public NarrowedIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRelationByNarrowedIdxKey asPublic(ICFBamRelationByNarrowedIdxKey src);
+
+	/**
 	 *	Allocate a Relation interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -136,10 +268,38 @@ public interface ICFBamRelationFactory
 	public ICFBamRelation newRec();
 
 	/**
+	 *	Allocate a protected Relation interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRelation asProtected(ICFBamRelation src);
+
+	/**
+	 *	Allocate a public Relation interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRelation asPublic(ICFBamRelation src);
+
+	/**
 	 *	Allocate a Relation history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamRelationH newHRec();
+
+	/**
+	 *	Allocate a protected Relation history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRelationH asProtected(ICFBamRelationH src);
+
+	/**
+	 *	Allocate a public Relation history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRelationH asPublic(ICFBamRelationH src);
 
 }

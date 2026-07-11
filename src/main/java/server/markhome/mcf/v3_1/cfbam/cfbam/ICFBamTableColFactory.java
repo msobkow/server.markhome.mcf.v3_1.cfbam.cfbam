@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTableColFactory interface for TableCol
  */
-public interface ICFBamTableColFactory
+public interface ICFBamTableColFactory extends ICFBamProtTableColFactory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamTableColFactory
 	public ICFBamTableColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableColByTableIdxKey asProtected(ICFBamTableColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableColByTableIdxKey asPublic(ICFBamTableColByTableIdxKey src);
+
+	/**
 	 *	Allocate a DataIdx key over TableCol instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTableColByDataIdxKey newByDataIdxKey();
+
+	/**
+	 *	Allocate a protected DataIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableColByDataIdxKey asProtected(ICFBamTableColByDataIdxKey src);
+
+	/**
+	 *	Allocate a public DataIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableColByDataIdxKey asPublic(ICFBamTableColByDataIdxKey src);
 
 	/**
 	 *	Allocate a TableCol interface implementation.
@@ -87,10 +121,38 @@ public interface ICFBamTableColFactory
 	public ICFBamTableCol newRec();
 
 	/**
+	 *	Allocate a protected TableCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableCol asProtected(ICFBamTableCol src);
+
+	/**
+	 *	Allocate a public TableCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableCol asPublic(ICFBamTableCol src);
+
+	/**
 	 *	Allocate a TableCol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTableColH newHRec();
+
+	/**
+	 *	Allocate a protected TableCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableColH asProtected(ICFBamTableColH src);
+
+	/**
+	 *	Allocate a public TableCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableColH asPublic(ICFBamTableColH src);
 
 }

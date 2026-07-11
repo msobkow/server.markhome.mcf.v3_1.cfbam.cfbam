@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamBlobColFactory interface for BlobCol
  */
-public interface ICFBamBlobColFactory
+public interface ICFBamBlobColFactory extends ICFBamProtBlobColFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamBlobColFactory
 	public ICFBamBlobColByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtBlobColByTableIdxKey asProtected(ICFBamBlobColByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubBlobColByTableIdxKey asPublic(ICFBamBlobColByTableIdxKey src);
+
+	/**
 	 *	Allocate a BlobCol interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamBlobColFactory
 	public ICFBamBlobCol newRec();
 
 	/**
+	 *	Allocate a protected BlobCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtBlobCol asProtected(ICFBamBlobCol src);
+
+	/**
+	 *	Allocate a public BlobCol interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubBlobCol asPublic(ICFBamBlobCol src);
+
+	/**
 	 *	Allocate a BlobCol history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamBlobColH newHRec();
+
+	/**
+	 *	Allocate a protected BlobCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtBlobColH asProtected(ICFBamBlobColH src);
+
+	/**
+	 *	Allocate a public BlobCol history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubBlobColH asPublic(ICFBamBlobColH src);
 
 }

@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDbKeyHash256DefFactory interface for DbKeyHash256Def
  */
-public interface ICFBamDbKeyHash256DefFactory
+public interface ICFBamDbKeyHash256DefFactory extends ICFBamProtDbKeyHash256DefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamDbKeyHash256DefFactory
 	public ICFBamDbKeyHash256Def newRec();
 
 	/**
+	 *	Allocate a protected DbKeyHash256Def interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash256Def asProtected(ICFBamDbKeyHash256Def src);
+
+	/**
+	 *	Allocate a public DbKeyHash256Def interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash256Def asPublic(ICFBamDbKeyHash256Def src);
+
+	/**
 	 *	Allocate a DbKeyHash256Def history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDbKeyHash256DefH newHRec();
+
+	/**
+	 *	Allocate a protected DbKeyHash256Def history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash256DefH asProtected(ICFBamDbKeyHash256DefH src);
+
+	/**
+	 *	Allocate a public DbKeyHash256Def history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash256DefH asPublic(ICFBamDbKeyHash256DefH src);
 
 }

@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTableTweakFactory interface for TableTweak
  */
-public interface ICFBamTableTweakFactory
+public interface ICFBamTableTweakFactory extends ICFBamProtTableTweakFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamTableTweakFactory
 	public ICFBamTableTweakByTableIdxKey newByTableIdxKey();
 
 	/**
+	 *	Allocate a protected TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableTweakByTableIdxKey asProtected(ICFBamTableTweakByTableIdxKey src);
+
+	/**
+	 *	Allocate a public TableIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableTweakByTableIdxKey asPublic(ICFBamTableTweakByTableIdxKey src);
+
+	/**
 	 *	Allocate a TableTweak interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamTableTweakFactory
 	public ICFBamTableTweak newRec();
 
 	/**
+	 *	Allocate a protected TableTweak interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableTweak asProtected(ICFBamTableTweak src);
+
+	/**
+	 *	Allocate a public TableTweak interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableTweak asPublic(ICFBamTableTweak src);
+
+	/**
 	 *	Allocate a TableTweak history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTableTweakH newHRec();
+
+	/**
+	 *	Allocate a protected TableTweak history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTableTweakH asProtected(ICFBamTableTweakH src);
+
+	/**
+	 *	Allocate a public TableTweak history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTableTweakH asPublic(ICFBamTableTweakH src);
 
 }

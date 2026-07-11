@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamScopeFactory interface for Scope
  */
-public interface ICFBamScopeFactory
+public interface ICFBamScopeFactory extends ICFBamProtScopeFactory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamScopeFactory
 	ICFBamScopeHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for Scope instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFBamProtScopeHPKey asProtected(ICFBamScopeHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for Scope instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFBamPubScopeHPKey asPublic(ICFBamScopeHPKey src);
+
+	/**
 	 *	Allocate a TenantIdx key over Scope instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamScopeByTenantIdxKey newByTenantIdxKey();
+
+	/**
+	 *	Allocate a protected TenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtScopeByTenantIdxKey asProtected(ICFBamScopeByTenantIdxKey src);
+
+	/**
+	 *	Allocate a public TenantIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubScopeByTenantIdxKey asPublic(ICFBamScopeByTenantIdxKey src);
 
 	/**
 	 *	Allocate a Scope interface implementation.
@@ -87,10 +121,38 @@ public interface ICFBamScopeFactory
 	public ICFBamScope newRec();
 
 	/**
+	 *	Allocate a protected Scope interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtScope asProtected(ICFBamScope src);
+
+	/**
+	 *	Allocate a public Scope interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubScope asPublic(ICFBamScope src);
+
+	/**
 	 *	Allocate a Scope history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamScopeH newHRec();
+
+	/**
+	 *	Allocate a protected Scope history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtScopeH asProtected(ICFBamScopeH src);
+
+	/**
+	 *	Allocate a public Scope history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubScopeH asPublic(ICFBamScopeH src);
 
 }

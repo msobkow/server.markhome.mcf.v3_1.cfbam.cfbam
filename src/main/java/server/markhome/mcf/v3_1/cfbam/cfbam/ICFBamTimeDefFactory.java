@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTimeDefFactory interface for TimeDef
  */
-public interface ICFBamTimeDefFactory
+public interface ICFBamTimeDefFactory extends ICFBamProtTimeDefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamTimeDefFactory
 	public ICFBamTimeDef newRec();
 
 	/**
+	 *	Allocate a protected TimeDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTimeDef asProtected(ICFBamTimeDef src);
+
+	/**
+	 *	Allocate a public TimeDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTimeDef asPublic(ICFBamTimeDef src);
+
+	/**
 	 *	Allocate a TimeDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTimeDefH newHRec();
+
+	/**
+	 *	Allocate a protected TimeDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTimeDefH asProtected(ICFBamTimeDefH src);
+
+	/**
+	 *	Allocate a public TimeDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTimeDefH asPublic(ICFBamTimeDefH src);
 
 }

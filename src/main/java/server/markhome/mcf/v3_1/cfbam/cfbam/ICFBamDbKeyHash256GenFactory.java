@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDbKeyHash256GenFactory interface for DbKeyHash256Gen
  */
-public interface ICFBamDbKeyHash256GenFactory
+public interface ICFBamDbKeyHash256GenFactory extends ICFBamProtDbKeyHash256GenFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamDbKeyHash256GenFactory
 	public ICFBamDbKeyHash256Gen newRec();
 
 	/**
+	 *	Allocate a protected DbKeyHash256Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash256Gen asProtected(ICFBamDbKeyHash256Gen src);
+
+	/**
+	 *	Allocate a public DbKeyHash256Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash256Gen asPublic(ICFBamDbKeyHash256Gen src);
+
+	/**
 	 *	Allocate a DbKeyHash256Gen history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDbKeyHash256GenH newHRec();
+
+	/**
+	 *	Allocate a protected DbKeyHash256Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash256GenH asProtected(ICFBamDbKeyHash256GenH src);
+
+	/**
+	 *	Allocate a public DbKeyHash256Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash256GenH asPublic(ICFBamDbKeyHash256GenH src);
 
 }

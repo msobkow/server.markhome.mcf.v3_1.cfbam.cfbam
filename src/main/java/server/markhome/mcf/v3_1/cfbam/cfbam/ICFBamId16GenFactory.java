@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamId16GenFactory interface for Id16Gen
  */
-public interface ICFBamId16GenFactory
+public interface ICFBamId16GenFactory extends ICFBamProtId16GenFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamId16GenFactory
 	public ICFBamId16Gen newRec();
 
 	/**
+	 *	Allocate a protected Id16Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtId16Gen asProtected(ICFBamId16Gen src);
+
+	/**
+	 *	Allocate a public Id16Gen interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubId16Gen asPublic(ICFBamId16Gen src);
+
+	/**
 	 *	Allocate a Id16Gen history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamId16GenH newHRec();
+
+	/**
+	 *	Allocate a protected Id16Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtId16GenH asProtected(ICFBamId16GenH src);
+
+	/**
+	 *	Allocate a public Id16Gen history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubId16GenH asPublic(ICFBamId16GenH src);
 
 }

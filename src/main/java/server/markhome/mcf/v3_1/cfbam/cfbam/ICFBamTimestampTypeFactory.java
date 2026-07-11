@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTimestampTypeFactory interface for TimestampType
  */
-public interface ICFBamTimestampTypeFactory
+public interface ICFBamTimestampTypeFactory extends ICFBamProtTimestampTypeFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamTimestampTypeFactory
 	public ICFBamTimestampTypeBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTimestampTypeBySchemaIdxKey asProtected(ICFBamTimestampTypeBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTimestampTypeBySchemaIdxKey asPublic(ICFBamTimestampTypeBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a TimestampType interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamTimestampTypeFactory
 	public ICFBamTimestampType newRec();
 
 	/**
+	 *	Allocate a protected TimestampType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTimestampType asProtected(ICFBamTimestampType src);
+
+	/**
+	 *	Allocate a public TimestampType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTimestampType asPublic(ICFBamTimestampType src);
+
+	/**
 	 *	Allocate a TimestampType history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTimestampTypeH newHRec();
+
+	/**
+	 *	Allocate a protected TimestampType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTimestampTypeH asProtected(ICFBamTimestampTypeH src);
+
+	/**
+	 *	Allocate a public TimestampType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTimestampTypeH asPublic(ICFBamTimestampTypeH src);
 
 }

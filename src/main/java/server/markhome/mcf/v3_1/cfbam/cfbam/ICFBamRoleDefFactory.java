@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamRoleDefFactory interface for RoleDef
  */
-public interface ICFBamRoleDefFactory
+public interface ICFBamRoleDefFactory extends ICFBamProtRoleDefFactory
 {
 
 	/**
@@ -73,11 +79,39 @@ public interface ICFBamRoleDefFactory
 	ICFBamRoleDefHPKey newHPKey();
 
 	/**
+	 *	Allocate a protected primary history key for RoleDef instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFBamProtRoleDefHPKey asProtected(ICFBamRoleDefHPKey src);
+
+	/**
+	 *	Allocate a public primary history key for RoleDef instances from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	ICFBamPubRoleDefHPKey asPublic(ICFBamRoleDefHPKey src);
+
+	/**
 	 *	Allocate a UNameIdx key over RoleDef instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamRoleDefByUNameIdxKey newByUNameIdxKey();
+
+	/**
+	 *	Allocate a protected UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRoleDefByUNameIdxKey asProtected(ICFBamRoleDefByUNameIdxKey src);
+
+	/**
+	 *	Allocate a public UNameIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRoleDefByUNameIdxKey asPublic(ICFBamRoleDefByUNameIdxKey src);
 
 	/**
 	 *	Allocate a ScopeIdx key over RoleDef instances.
@@ -87,11 +121,39 @@ public interface ICFBamRoleDefFactory
 	public ICFBamRoleDefByScopeIdxKey newByScopeIdxKey();
 
 	/**
+	 *	Allocate a protected ScopeIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRoleDefByScopeIdxKey asProtected(ICFBamRoleDefByScopeIdxKey src);
+
+	/**
+	 *	Allocate a public ScopeIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRoleDefByScopeIdxKey asPublic(ICFBamRoleDefByScopeIdxKey src);
+
+	/**
 	 *	Allocate a DefSchemaIdx key over RoleDef instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamRoleDefByDefSchemaIdxKey newByDefSchemaIdxKey();
+
+	/**
+	 *	Allocate a protected DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRoleDefByDefSchemaIdxKey asProtected(ICFBamRoleDefByDefSchemaIdxKey src);
+
+	/**
+	 *	Allocate a public DefSchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRoleDefByDefSchemaIdxKey asPublic(ICFBamRoleDefByDefSchemaIdxKey src);
 
 	/**
 	 *	Allocate a UDefIdx key over RoleDef instances.
@@ -101,6 +163,20 @@ public interface ICFBamRoleDefFactory
 	public ICFBamRoleDefByUDefIdxKey newByUDefIdxKey();
 
 	/**
+	 *	Allocate a protected UDefIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRoleDefByUDefIdxKey asProtected(ICFBamRoleDefByUDefIdxKey src);
+
+	/**
+	 *	Allocate a public UDefIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRoleDefByUDefIdxKey asPublic(ICFBamRoleDefByUDefIdxKey src);
+
+	/**
 	 *	Allocate a RoleDef interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -108,10 +184,38 @@ public interface ICFBamRoleDefFactory
 	public ICFBamRoleDef newRec();
 
 	/**
+	 *	Allocate a protected RoleDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRoleDef asProtected(ICFBamRoleDef src);
+
+	/**
+	 *	Allocate a public RoleDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRoleDef asPublic(ICFBamRoleDef src);
+
+	/**
 	 *	Allocate a RoleDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamRoleDefH newHRec();
+
+	/**
+	 *	Allocate a protected RoleDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtRoleDefH asProtected(ICFBamRoleDefH src);
+
+	/**
+	 *	Allocate a public RoleDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubRoleDefH asPublic(ICFBamRoleDefH src);
 
 }

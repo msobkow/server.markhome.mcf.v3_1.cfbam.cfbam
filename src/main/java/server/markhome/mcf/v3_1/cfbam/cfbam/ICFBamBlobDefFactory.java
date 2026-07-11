@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamBlobDefFactory interface for BlobDef
  */
-public interface ICFBamBlobDefFactory
+public interface ICFBamBlobDefFactory extends ICFBamProtBlobDefFactory
 {
 
 	/**
@@ -73,10 +79,38 @@ public interface ICFBamBlobDefFactory
 	public ICFBamBlobDef newRec();
 
 	/**
+	 *	Allocate a protected BlobDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtBlobDef asProtected(ICFBamBlobDef src);
+
+	/**
+	 *	Allocate a public BlobDef interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubBlobDef asPublic(ICFBamBlobDef src);
+
+	/**
 	 *	Allocate a BlobDef history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamBlobDefH newHRec();
+
+	/**
+	 *	Allocate a protected BlobDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtBlobDefH asProtected(ICFBamBlobDefH src);
+
+	/**
+	 *	Allocate a public BlobDef history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubBlobDefH asPublic(ICFBamBlobDefH src);
 
 }

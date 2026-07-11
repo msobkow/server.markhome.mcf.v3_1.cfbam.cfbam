@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamTextTypeFactory interface for TextType
  */
-public interface ICFBamTextTypeFactory
+public interface ICFBamTextTypeFactory extends ICFBamProtTextTypeFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamTextTypeFactory
 	public ICFBamTextTypeBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTextTypeBySchemaIdxKey asProtected(ICFBamTextTypeBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTextTypeBySchemaIdxKey asPublic(ICFBamTextTypeBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a TextType interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamTextTypeFactory
 	public ICFBamTextType newRec();
 
 	/**
+	 *	Allocate a protected TextType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTextType asProtected(ICFBamTextType src);
+
+	/**
+	 *	Allocate a public TextType interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTextType asPublic(ICFBamTextType src);
+
+	/**
 	 *	Allocate a TextType history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamTextTypeH newHRec();
+
+	/**
+	 *	Allocate a protected TextType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtTextTypeH asProtected(ICFBamTextTypeH src);
+
+	/**
+	 *	Allocate a public TextType history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubTextTypeH asPublic(ICFBamTextTypeH src);
 
 }

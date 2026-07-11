@@ -56,13 +56,19 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /*
  *	ICFBamDbKeyHash224TypeFactory interface for DbKeyHash224Type
  */
-public interface ICFBamDbKeyHash224TypeFactory
+public interface ICFBamDbKeyHash224TypeFactory extends ICFBamProtDbKeyHash224TypeFactory
 {
 
 	/**
@@ -73,6 +79,20 @@ public interface ICFBamDbKeyHash224TypeFactory
 	public ICFBamDbKeyHash224TypeBySchemaIdxKey newBySchemaIdxKey();
 
 	/**
+	 *	Allocate a protected SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash224TypeBySchemaIdxKey asProtected(ICFBamDbKeyHash224TypeBySchemaIdxKey src);
+
+	/**
+	 *	Allocate a public SchemaIdx key from a private instance.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash224TypeBySchemaIdxKey asPublic(ICFBamDbKeyHash224TypeBySchemaIdxKey src);
+
+	/**
 	 *	Allocate a DbKeyHash224Type interface implementation.
 	 *
 	 *	@return	The new instance.
@@ -80,10 +100,38 @@ public interface ICFBamDbKeyHash224TypeFactory
 	public ICFBamDbKeyHash224Type newRec();
 
 	/**
+	 *	Allocate a protected DbKeyHash224Type interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash224Type asProtected(ICFBamDbKeyHash224Type src);
+
+	/**
+	 *	Allocate a public DbKeyHash224Type interface from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash224Type asPublic(ICFBamDbKeyHash224Type src);
+
+	/**
 	 *	Allocate a DbKeyHash224Type history interface implementation.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamDbKeyHash224TypeH newHRec();
+
+	/**
+	 *	Allocate a protected DbKeyHash224Type history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamProtDbKeyHash224TypeH asProtected(ICFBamDbKeyHash224TypeH src);
+
+	/**
+	 *	Allocate a public DbKeyHash224Type history interface implementation from a private interface.
+	 *
+	 *	@return	The new instance.
+	 */
+	public ICFBamPubDbKeyHash224TypeH asPublic(ICFBamDbKeyHash224TypeH src);
 
 }
