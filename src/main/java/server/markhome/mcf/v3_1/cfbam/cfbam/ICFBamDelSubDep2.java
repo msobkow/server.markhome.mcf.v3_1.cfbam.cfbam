@@ -77,8 +77,15 @@ public interface ICFBamDelSubDep2 extends ICFBamDelDep
 
 	public ICFBamDelSubDep1 getRequiredContainerDelSubDep1();
 	public void setRequiredContainerDelSubDep1(ICFBamDelSubDep1 argObj);
-	public void setRequiredContainerDelSubDep1(ICFBamProtDelSubDep1 argObj);
-	public void setRequiredContainerDelSubDep1(ICFBamPubDelSubDep1 argObj);
+	public default void setRequiredContainerDelSubDep1(ICFBamProtDelSubDep1 argObj) {
+		if (argObj == null) {
+			setRequiredContainerDelSubDep1((ICFBamDelSubDep1)null);
+		}
+		else {
+			setRequiredContainerDelSubDep1(argObj.getRequiredDelSubDep1Id());
+		}
+	}
+
 	public void setRequiredContainerDelSubDep1(CFLibDbKeyHash256 argDelSubDep1Id);
 	public CFLibDbKeyHash256 getRequiredDelSubDep1Id();
 	public String getRequiredName();

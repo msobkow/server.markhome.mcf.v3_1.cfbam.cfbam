@@ -88,12 +88,26 @@ public interface ICFBamServerMethod extends ICFBamScope
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
 	public ICFBamTable getRequiredContainerForTable();
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
+	public default void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		if (argObj == null) {
+			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
+		}
+		else {
+			setOptionalLookupDefSchema(argObj.getOptionalDefSchemaId());
+		}
+	}
+
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
 	public void setRequiredContainerForTable(ICFBamTable argObj);
-	public void setRequiredContainerForTable(ICFBamProtTable argObj);
-	public void setRequiredContainerForTable(ICFBamPubTable argObj);
+	public default void setRequiredContainerForTable(ICFBamProtTable argObj) {
+		if (argObj == null) {
+			setRequiredContainerForTable((ICFBamTable)null);
+		}
+		else {
+			setRequiredContainerForTable(argObj.getRequiredTableId());
+		}
+	}
+
 	public void setRequiredContainerForTable(CFLibDbKeyHash256 argTableId);
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();

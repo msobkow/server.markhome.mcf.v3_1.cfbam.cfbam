@@ -80,12 +80,26 @@ public interface ICFBamTableCol extends ICFBamValue
 	public ICFBamTable getRequiredContainerTable();
 	public ICFBamValue getRequiredParentDataType();
 	public void setRequiredContainerTable(ICFBamTable argObj);
-	public void setRequiredContainerTable(ICFBamProtTable argObj);
-	public void setRequiredContainerTable(ICFBamPubTable argObj);
+	public default void setRequiredContainerTable(ICFBamProtTable argObj) {
+		if (argObj == null) {
+			setRequiredContainerTable((ICFBamTable)null);
+		}
+		else {
+			setRequiredContainerTable(argObj.getRequiredTableId());
+		}
+	}
+
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId);
 	public void setRequiredParentDataType(ICFBamValue argObj);
-	public void setRequiredParentDataType(ICFBamProtValue argObj);
-	public void setRequiredParentDataType(ICFBamPubValue argObj);
+	public default void setRequiredParentDataType(ICFBamProtValue argObj) {
+		if (argObj == null) {
+			setRequiredParentDataType((ICFBamValue)null);
+		}
+		else {
+			setRequiredParentDataType(argObj.getOptionalDataId());
+		}
+	}
+
 	public void setRequiredParentDataType(CFLibDbKeyHash256 argDataId);
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public String getOptionalDbName();

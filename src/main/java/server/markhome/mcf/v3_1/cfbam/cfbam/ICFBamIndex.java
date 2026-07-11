@@ -85,12 +85,26 @@ public interface ICFBamIndex extends ICFBamScope
 	public ICFBamTable getRequiredContainerTable();
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
 	public void setRequiredContainerTable(ICFBamTable argObj);
-	public void setRequiredContainerTable(ICFBamProtTable argObj);
-	public void setRequiredContainerTable(ICFBamPubTable argObj);
+	public default void setRequiredContainerTable(ICFBamProtTable argObj) {
+		if (argObj == null) {
+			setRequiredContainerTable((ICFBamTable)null);
+		}
+		else {
+			setRequiredContainerTable(argObj.getRequiredTableId());
+		}
+	}
+
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId);
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
+	public default void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		if (argObj == null) {
+			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
+		}
+		else {
+			setOptionalLookupDefSchema(argObj.getOptionalDefSchemaId());
+		}
+	}
+
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();

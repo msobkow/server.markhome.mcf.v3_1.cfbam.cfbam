@@ -115,24 +115,59 @@ public interface ICFBamParam
 	public ICFBamParam getOptionalLookupNext();
 	public ICFBamValue getRequiredLookupType();
 	public void setRequiredContainerServerMeth(ICFBamServerMethod argObj);
-	public void setRequiredContainerServerMeth(ICFBamProtServerMethod argObj);
-	public void setRequiredContainerServerMeth(ICFBamPubServerMethod argObj);
+	public default void setRequiredContainerServerMeth(ICFBamProtServerMethod argObj) {
+		if (argObj == null) {
+			setRequiredContainerServerMeth((ICFBamServerMethod)null);
+		}
+		else {
+			setRequiredContainerServerMeth(argObj.getRequiredServerMethodId());
+		}
+	}
+
 	public void setRequiredContainerServerMeth(CFLibDbKeyHash256 argServerMethodId);
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
+	public default void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		if (argObj == null) {
+			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
+		}
+		else {
+			setOptionalLookupDefSchema(argObj.getOptionalDefSchemaId());
+		}
+	}
+
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
 	public void setOptionalLookupPrev(ICFBamParam argObj);
-	public void setOptionalLookupPrev(ICFBamProtParam argObj);
-	public void setOptionalLookupPrev(ICFBamPubParam argObj);
+	public default void setOptionalLookupPrev(ICFBamProtParam argObj) {
+		if (argObj == null) {
+			setOptionalLookupPrev((ICFBamParam)null);
+		}
+		else {
+			setOptionalLookupPrev(argObj.getOptionalPrevId());
+		}
+	}
+
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
 	public void setOptionalLookupNext(ICFBamParam argObj);
-	public void setOptionalLookupNext(ICFBamProtParam argObj);
-	public void setOptionalLookupNext(ICFBamPubParam argObj);
+	public default void setOptionalLookupNext(ICFBamProtParam argObj) {
+		if (argObj == null) {
+			setOptionalLookupNext((ICFBamParam)null);
+		}
+		else {
+			setOptionalLookupNext(argObj.getOptionalNextId());
+		}
+	}
+
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
 	public void setRequiredLookupType(ICFBamValue argObj);
-	public void setRequiredLookupType(ICFBamProtValue argObj);
-	public void setRequiredLookupType(ICFBamPubValue argObj);
+	public default void setRequiredLookupType(ICFBamProtValue argObj) {
+		if (argObj == null) {
+			setRequiredLookupType((ICFBamValue)null);
+		}
+		else {
+			setRequiredLookupType(argObj.getOptionalTypeId());
+		}
+	}
+
 	public void setRequiredLookupType(CFLibDbKeyHash256 argTypeId);
 	public CFLibDbKeyHash256 getRequiredServerMethodId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();

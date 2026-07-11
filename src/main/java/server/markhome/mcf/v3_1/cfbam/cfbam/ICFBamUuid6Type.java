@@ -76,8 +76,15 @@ public interface ICFBamUuid6Type extends ICFBamUuid6Def
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
 	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
-	public void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj);
-	public void setRequiredContainerSchemaDef(ICFBamPubSchemaDef argObj);
+	public default void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj) {
+		if (argObj == null) {
+			setRequiredContainerSchemaDef((ICFBamSchemaDef)null);
+		}
+		else {
+			setRequiredContainerSchemaDef(argObj.getRequiredSchemaDefId());
+		}
+	}
+
 	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId);
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	@Override

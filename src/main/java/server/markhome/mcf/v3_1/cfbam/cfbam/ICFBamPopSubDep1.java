@@ -77,8 +77,15 @@ public interface ICFBamPopSubDep1 extends ICFBamPopDep
 
 	public ICFBamPopTopDep getRequiredContainerContPopTopDep();
 	public void setRequiredContainerContPopTopDep(ICFBamPopTopDep argObj);
-	public void setRequiredContainerContPopTopDep(ICFBamProtPopTopDep argObj);
-	public void setRequiredContainerContPopTopDep(ICFBamPubPopTopDep argObj);
+	public default void setRequiredContainerContPopTopDep(ICFBamProtPopTopDep argObj) {
+		if (argObj == null) {
+			setRequiredContainerContPopTopDep((ICFBamPopTopDep)null);
+		}
+		else {
+			setRequiredContainerContPopTopDep(argObj.getRequiredPopTopDepId());
+		}
+	}
+
 	public void setRequiredContainerContPopTopDep(CFLibDbKeyHash256 argPopTopDepId);
 	public CFLibDbKeyHash256 getRequiredPopTopDepId();
 	public String getRequiredName();

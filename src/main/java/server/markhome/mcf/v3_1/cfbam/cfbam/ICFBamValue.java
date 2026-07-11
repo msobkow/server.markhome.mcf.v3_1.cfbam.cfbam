@@ -115,20 +115,48 @@ public interface ICFBamValue
 	public ICFBamValue getOptionalLookupPrev();
 	public ICFBamValue getOptionalLookupNext();
 	public void setRequiredContainerScope(ICFBamScope argObj);
-	public void setRequiredContainerScope(ICFBamProtScope argObj);
-	public void setRequiredContainerScope(ICFBamPubScope argObj);
+	public default void setRequiredContainerScope(ICFBamProtScope argObj) {
+		if (argObj == null) {
+			setRequiredContainerScope((ICFBamScope)null);
+		}
+		else {
+			setRequiredContainerScope(argObj.getRequiredScopeId());
+		}
+	}
+
 	public void setRequiredContainerScope(CFLibDbKeyHash256 argScopeId);
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
+	public default void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		if (argObj == null) {
+			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
+		}
+		else {
+			setOptionalLookupDefSchema(argObj.getOptionalDefSchemaId());
+		}
+	}
+
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
 	public void setOptionalLookupPrev(ICFBamValue argObj);
-	public void setOptionalLookupPrev(ICFBamProtValue argObj);
-	public void setOptionalLookupPrev(ICFBamPubValue argObj);
+	public default void setOptionalLookupPrev(ICFBamProtValue argObj) {
+		if (argObj == null) {
+			setOptionalLookupPrev((ICFBamValue)null);
+		}
+		else {
+			setOptionalLookupPrev(argObj.getOptionalPrevId());
+		}
+	}
+
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
 	public void setOptionalLookupNext(ICFBamValue argObj);
-	public void setOptionalLookupNext(ICFBamProtValue argObj);
-	public void setOptionalLookupNext(ICFBamPubValue argObj);
+	public default void setOptionalLookupNext(ICFBamProtValue argObj) {
+		if (argObj == null) {
+			setOptionalLookupNext((ICFBamValue)null);
+		}
+		else {
+			setOptionalLookupNext(argObj.getOptionalNextId());
+		}
+	}
+
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
 	public CFLibDbKeyHash256 getRequiredScopeId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();

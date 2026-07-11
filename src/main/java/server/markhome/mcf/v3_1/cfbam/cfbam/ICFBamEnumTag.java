@@ -114,20 +114,48 @@ public interface ICFBamEnumTag
 	public ICFBamEnumTag getOptionalLookupPrev();
 	public ICFBamEnumTag getOptionalLookupNext();
 	public void setRequiredContainerEnumDef(ICFBamEnumDef argObj);
-	public void setRequiredContainerEnumDef(ICFBamProtEnumDef argObj);
-	public void setRequiredContainerEnumDef(ICFBamPubEnumDef argObj);
+	public default void setRequiredContainerEnumDef(ICFBamProtEnumDef argObj) {
+		if (argObj == null) {
+			setRequiredContainerEnumDef((ICFBamEnumDef)null);
+		}
+		else {
+			setRequiredContainerEnumDef(argObj.getRequiredEnumId());
+		}
+	}
+
 	public void setRequiredContainerEnumDef(CFLibDbKeyHash256 argEnumId);
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
+	public default void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		if (argObj == null) {
+			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
+		}
+		else {
+			setOptionalLookupDefSchema(argObj.getOptionalDefSchemaId());
+		}
+	}
+
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
 	public void setOptionalLookupPrev(ICFBamEnumTag argObj);
-	public void setOptionalLookupPrev(ICFBamProtEnumTag argObj);
-	public void setOptionalLookupPrev(ICFBamPubEnumTag argObj);
+	public default void setOptionalLookupPrev(ICFBamProtEnumTag argObj) {
+		if (argObj == null) {
+			setOptionalLookupPrev((ICFBamEnumTag)null);
+		}
+		else {
+			setOptionalLookupPrev(argObj.getOptionalPrevId());
+		}
+	}
+
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
 	public void setOptionalLookupNext(ICFBamEnumTag argObj);
-	public void setOptionalLookupNext(ICFBamProtEnumTag argObj);
-	public void setOptionalLookupNext(ICFBamPubEnumTag argObj);
+	public default void setOptionalLookupNext(ICFBamProtEnumTag argObj) {
+		if (argObj == null) {
+			setOptionalLookupNext((ICFBamEnumTag)null);
+		}
+		else {
+			setOptionalLookupNext(argObj.getOptionalNextId());
+		}
+	}
+
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public CFLibDbKeyHash256 getRequiredEnumId();

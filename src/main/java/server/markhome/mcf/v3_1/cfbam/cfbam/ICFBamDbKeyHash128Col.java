@@ -76,8 +76,15 @@ public interface ICFBamDbKeyHash128Col extends ICFBamDbKeyHash128Def
 
 	public ICFBamTable getRequiredContainerTable();
 	public void setRequiredContainerTable(ICFBamTable argObj);
-	public void setRequiredContainerTable(ICFBamProtTable argObj);
-	public void setRequiredContainerTable(ICFBamPubTable argObj);
+	public default void setRequiredContainerTable(ICFBamProtTable argObj) {
+		if (argObj == null) {
+			setRequiredContainerTable((ICFBamTable)null);
+		}
+		else {
+			setRequiredContainerTable(argObj.getRequiredTableId());
+		}
+	}
+
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId);
 	public CFLibDbKeyHash256 getRequiredTableId();
 	@Override
