@@ -54,9 +54,15 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-//import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /**
  *	ICFBamDelTopDep persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
@@ -77,10 +83,16 @@ public interface ICFBamDelTopDep extends ICFBamDelDep
 	public ICFBamDelTopDep getOptionalLookupPrev();
 	public ICFBamDelTopDep getOptionalLookupNext();
 	public void setRequiredContainerTable(ICFBamTable argObj);
+	public void setRequiredContainerTable(ICFBamProtTable argObj);
+	public void setRequiredContainerTable(ICFBamPubTable argObj);
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId);
 	public void setOptionalLookupPrev(ICFBamDelTopDep argObj);
+	public void setOptionalLookupPrev(ICFBamProtDelTopDep argObj);
+	public void setOptionalLookupPrev(ICFBamPubDelTopDep argObj);
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
 	public void setOptionalLookupNext(ICFBamDelTopDep argObj);
+	public void setOptionalLookupNext(ICFBamProtDelTopDep argObj);
+	public void setOptionalLookupNext(ICFBamPubDelTopDep argObj);
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
 	public String getRequiredName();
 	public void setRequiredName( String value );

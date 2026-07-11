@@ -54,9 +54,15 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-//import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /**
  *	ICFBamPopDep persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
@@ -73,8 +79,12 @@ public interface ICFBamPopDep extends ICFBamScope
 	public ICFBamRelation getRequiredLookupRelation();
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
 	public void setRequiredLookupRelation(ICFBamRelation argObj);
+	public void setRequiredLookupRelation(ICFBamProtRelation argObj);
+	public void setRequiredLookupRelation(ICFBamPubRelation argObj);
 	public void setRequiredLookupRelation(CFLibDbKeyHash256 argRelationId);
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public CFLibDbKeyHash256 getRequiredRelationId();

@@ -54,9 +54,15 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-//import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /**
  *	ICFBamDelSubDep3 persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
@@ -71,6 +77,8 @@ public interface ICFBamDelSubDep3 extends ICFBamDelDep
 
 	public ICFBamDelSubDep2 getRequiredContainerDelSubDep2();
 	public void setRequiredContainerDelSubDep2(ICFBamDelSubDep2 argObj);
+	public void setRequiredContainerDelSubDep2(ICFBamProtDelSubDep2 argObj);
+	public void setRequiredContainerDelSubDep2(ICFBamPubDelSubDep2 argObj);
 	public void setRequiredContainerDelSubDep2(CFLibDbKeyHash256 argDelSubDep2Id);
 	public CFLibDbKeyHash256 getRequiredDelSubDep2Id();
 	public String getRequiredName();

@@ -54,9 +54,15 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-//import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /**
  *	ICFBamSchemaDef persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
@@ -79,8 +85,12 @@ public interface ICFBamSchemaDef extends ICFBamScope
 	public ICFIntMinorVersion getRequiredContainerMinorVersion();
 	public ICFSecTenant getRequiredOwnerCTenant();
 	public void setRequiredContainerMinorVersion(ICFIntMinorVersion argObj);
+	public void setRequiredContainerMinorVersion(ICFIntProtMinorVersion argObj);
+	public void setRequiredContainerMinorVersion(ICFIntPubMinorVersion argObj);
 	public void setRequiredContainerMinorVersion(CFLibDbKeyHash256 argMinorVersionId);
 	public void setRequiredOwnerCTenant(ICFSecTenant argObj);
+	public void setRequiredOwnerCTenant(ICFSecProtTenant argObj);
+	public void setRequiredOwnerCTenant(ICFSecPubTenant argObj);
 	public void setRequiredOwnerCTenant(CFLibDbKeyHash256 argCTenantId);
 	public CFLibDbKeyHash256 getRequiredCTenantId();
 	public CFLibDbKeyHash256 getRequiredMinorVersionId();

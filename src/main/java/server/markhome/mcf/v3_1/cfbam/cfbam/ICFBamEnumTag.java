@@ -54,9 +54,15 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-//import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /**
  *	ICFBamEnumTag persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
@@ -108,12 +114,20 @@ public interface ICFBamEnumTag
 	public ICFBamEnumTag getOptionalLookupPrev();
 	public ICFBamEnumTag getOptionalLookupNext();
 	public void setRequiredContainerEnumDef(ICFBamEnumDef argObj);
+	public void setRequiredContainerEnumDef(ICFBamProtEnumDef argObj);
+	public void setRequiredContainerEnumDef(ICFBamPubEnumDef argObj);
 	public void setRequiredContainerEnumDef(CFLibDbKeyHash256 argEnumId);
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
 	public void setOptionalLookupPrev(ICFBamEnumTag argObj);
+	public void setOptionalLookupPrev(ICFBamProtEnumTag argObj);
+	public void setOptionalLookupPrev(ICFBamPubEnumTag argObj);
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
 	public void setOptionalLookupNext(ICFBamEnumTag argObj);
+	public void setOptionalLookupNext(ICFBamProtEnumTag argObj);
+	public void setOptionalLookupNext(ICFBamPubEnumTag argObj);
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public CFLibDbKeyHash256 getRequiredEnumId();

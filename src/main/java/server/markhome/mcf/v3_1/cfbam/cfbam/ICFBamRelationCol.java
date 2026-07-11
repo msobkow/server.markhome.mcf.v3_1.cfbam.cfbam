@@ -54,9 +54,15 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-//import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /**
  *	ICFBamRelationCol persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
@@ -111,16 +117,28 @@ public interface ICFBamRelationCol
 	public ICFBamIndexCol getRequiredLookupFromCol();
 	public ICFBamIndexCol getRequiredLookupToCol();
 	public void setRequiredContainerRelation(ICFBamRelation argObj);
+	public void setRequiredContainerRelation(ICFBamProtRelation argObj);
+	public void setRequiredContainerRelation(ICFBamPubRelation argObj);
 	public void setRequiredContainerRelation(CFLibDbKeyHash256 argRelationId);
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
 	public void setOptionalLookupPrev(ICFBamRelationCol argObj);
+	public void setOptionalLookupPrev(ICFBamProtRelationCol argObj);
+	public void setOptionalLookupPrev(ICFBamPubRelationCol argObj);
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
 	public void setOptionalLookupNext(ICFBamRelationCol argObj);
+	public void setOptionalLookupNext(ICFBamProtRelationCol argObj);
+	public void setOptionalLookupNext(ICFBamPubRelationCol argObj);
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
 	public void setRequiredLookupFromCol(ICFBamIndexCol argObj);
+	public void setRequiredLookupFromCol(ICFBamProtIndexCol argObj);
+	public void setRequiredLookupFromCol(ICFBamPubIndexCol argObj);
 	public void setRequiredLookupFromCol(CFLibDbKeyHash256 argFromColId);
 	public void setRequiredLookupToCol(ICFBamIndexCol argObj);
+	public void setRequiredLookupToCol(ICFBamProtIndexCol argObj);
+	public void setRequiredLookupToCol(ICFBamPubIndexCol argObj);
 	public void setRequiredLookupToCol(CFLibDbKeyHash256 argToColId);
 	public CFLibDbKeyHash256 getRequiredRelationId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();

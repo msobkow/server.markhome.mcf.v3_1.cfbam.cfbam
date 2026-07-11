@@ -54,9 +54,15 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-//import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /**
  *	ICFBamParam persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
@@ -109,14 +115,24 @@ public interface ICFBamParam
 	public ICFBamParam getOptionalLookupNext();
 	public ICFBamValue getRequiredLookupType();
 	public void setRequiredContainerServerMeth(ICFBamServerMethod argObj);
+	public void setRequiredContainerServerMeth(ICFBamProtServerMethod argObj);
+	public void setRequiredContainerServerMeth(ICFBamPubServerMethod argObj);
 	public void setRequiredContainerServerMeth(CFLibDbKeyHash256 argServerMethodId);
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
 	public void setOptionalLookupPrev(ICFBamParam argObj);
+	public void setOptionalLookupPrev(ICFBamProtParam argObj);
+	public void setOptionalLookupPrev(ICFBamPubParam argObj);
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
 	public void setOptionalLookupNext(ICFBamParam argObj);
+	public void setOptionalLookupNext(ICFBamProtParam argObj);
+	public void setOptionalLookupNext(ICFBamPubParam argObj);
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
 	public void setRequiredLookupType(ICFBamValue argObj);
+	public void setRequiredLookupType(ICFBamProtValue argObj);
+	public void setRequiredLookupType(ICFBamPubValue argObj);
 	public void setRequiredLookupType(CFLibDbKeyHash256 argTypeId);
 	public CFLibDbKeyHash256 getRequiredServerMethodId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();

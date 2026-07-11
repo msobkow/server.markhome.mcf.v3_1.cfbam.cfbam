@@ -54,9 +54,15 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-//import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /**
  *	ICFBamValue persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
@@ -109,12 +115,20 @@ public interface ICFBamValue
 	public ICFBamValue getOptionalLookupPrev();
 	public ICFBamValue getOptionalLookupNext();
 	public void setRequiredContainerScope(ICFBamScope argObj);
+	public void setRequiredContainerScope(ICFBamProtScope argObj);
+	public void setRequiredContainerScope(ICFBamPubScope argObj);
 	public void setRequiredContainerScope(CFLibDbKeyHash256 argScopeId);
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
 	public void setOptionalLookupPrev(ICFBamValue argObj);
+	public void setOptionalLookupPrev(ICFBamProtValue argObj);
+	public void setOptionalLookupPrev(ICFBamPubValue argObj);
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
 	public void setOptionalLookupNext(ICFBamValue argObj);
+	public void setOptionalLookupNext(ICFBamProtValue argObj);
+	public void setOptionalLookupNext(ICFBamPubValue argObj);
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
 	public CFLibDbKeyHash256 getRequiredScopeId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();

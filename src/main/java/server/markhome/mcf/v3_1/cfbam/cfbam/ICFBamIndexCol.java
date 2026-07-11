@@ -54,9 +54,15 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-//import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /**
  *	ICFBamIndexCol persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
@@ -111,14 +117,24 @@ public interface ICFBamIndexCol
 	public ICFBamIndexCol getOptionalLookupNext();
 	public ICFBamValue getRequiredLookupColumn();
 	public void setRequiredContainerIndex(ICFBamIndex argObj);
+	public void setRequiredContainerIndex(ICFBamProtIndex argObj);
+	public void setRequiredContainerIndex(ICFBamPubIndex argObj);
 	public void setRequiredContainerIndex(CFLibDbKeyHash256 argIndexId);
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
 	public void setOptionalLookupPrev(ICFBamIndexCol argObj);
+	public void setOptionalLookupPrev(ICFBamProtIndexCol argObj);
+	public void setOptionalLookupPrev(ICFBamPubIndexCol argObj);
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
 	public void setOptionalLookupNext(ICFBamIndexCol argObj);
+	public void setOptionalLookupNext(ICFBamProtIndexCol argObj);
+	public void setOptionalLookupNext(ICFBamPubIndexCol argObj);
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
 	public void setRequiredLookupColumn(ICFBamValue argObj);
+	public void setRequiredLookupColumn(ICFBamProtValue argObj);
+	public void setRequiredLookupColumn(ICFBamPubValue argObj);
 	public void setRequiredLookupColumn(CFLibDbKeyHash256 argColumnId);
 	public CFLibDbKeyHash256 getRequiredIndexId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();

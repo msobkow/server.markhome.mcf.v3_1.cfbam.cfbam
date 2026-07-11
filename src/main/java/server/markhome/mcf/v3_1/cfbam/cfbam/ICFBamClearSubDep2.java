@@ -54,9 +54,15 @@ import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
 import server.markhome.mcf.v3_1.cflib.xml.CFLibXmlUtil;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-//import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
 
 /**
  *	ICFBamClearSubDep2 persistence instances have CodeVis Public, meaning that any user interface or referencing schema can access it.
@@ -71,6 +77,8 @@ public interface ICFBamClearSubDep2 extends ICFBamClearDep
 
 	public ICFBamClearSubDep1 getRequiredContainerClearSubDep1();
 	public void setRequiredContainerClearSubDep1(ICFBamClearSubDep1 argObj);
+	public void setRequiredContainerClearSubDep1(ICFBamProtClearSubDep1 argObj);
+	public void setRequiredContainerClearSubDep1(ICFBamPubClearSubDep1 argObj);
 	public void setRequiredContainerClearSubDep1(CFLibDbKeyHash256 argClearSubDep1Id);
 	public CFLibDbKeyHash256 getRequiredClearSubDep1Id();
 	public String getRequiredName();
