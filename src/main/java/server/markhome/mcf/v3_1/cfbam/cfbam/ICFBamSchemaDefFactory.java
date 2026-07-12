@@ -142,20 +142,6 @@ public interface ICFBamSchemaDefFactory extends ICFBamProtSchemaDefFactory
 	public ICFBamSchemaDefByAuthEMailIdxKey newByAuthEMailIdxKey();
 
 	/**
-	 *	Allocate a protected AuthEMailIdx key from a private instance.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamProtSchemaDefByAuthEMailIdxKey asProtected(ICFBamSchemaDefByAuthEMailIdxKey src);
-
-	/**
-	 *	Allocate a public AuthEMailIdx key from a private instance.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamPubSchemaDefByAuthEMailIdxKey asPublic(ICFBamSchemaDefByAuthEMailIdxKey src);
-
-	/**
 	 *	Allocate a ProjectURLIdx key over SchemaDef instances.
 	 *
 	 *	@return	The new instance.
@@ -163,39 +149,11 @@ public interface ICFBamSchemaDefFactory extends ICFBamProtSchemaDefFactory
 	public ICFBamSchemaDefByProjectURLIdxKey newByProjectURLIdxKey();
 
 	/**
-	 *	Allocate a protected ProjectURLIdx key from a private instance.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamProtSchemaDefByProjectURLIdxKey asProtected(ICFBamSchemaDefByProjectURLIdxKey src);
-
-	/**
-	 *	Allocate a public ProjectURLIdx key from a private instance.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamPubSchemaDefByProjectURLIdxKey asPublic(ICFBamSchemaDefByProjectURLIdxKey src);
-
-	/**
 	 *	Allocate a PubURIIdx key over SchemaDef instances.
 	 *
 	 *	@return	The new instance.
 	 */
 	public ICFBamSchemaDefByPubURIIdxKey newByPubURIIdxKey();
-
-	/**
-	 *	Allocate a protected PubURIIdx key from a private instance.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamProtSchemaDefByPubURIIdxKey asProtected(ICFBamSchemaDefByPubURIIdxKey src);
-
-	/**
-	 *	Allocate a public PubURIIdx key from a private instance.
-	 *
-	 *	@return	The new instance.
-	 */
-	public ICFBamPubSchemaDefByPubURIIdxKey asPublic(ICFBamSchemaDefByPubURIIdxKey src);
 
 	/**
 	 *	Allocate a SchemaDef interface implementation.
