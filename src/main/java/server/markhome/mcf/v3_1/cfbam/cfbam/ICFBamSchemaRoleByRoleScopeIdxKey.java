@@ -63,8 +63,8 @@ import server.markhome.mcf.v3_1.cfint.cfint.*;
  */
 public interface ICFBamSchemaRoleByRoleScopeIdxKey
 {
-	public ICFBamSchema.RoleScopeEnum getRequiredRoleScope();
-	public void setRequiredRoleScope( ICFBamSchema.RoleScopeEnum value );
+	public ICFBamPubSchema.RoleScopeEnum getRequiredRoleScope();
+	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value );
 	@Override
 	public boolean equals( Object obj );
 

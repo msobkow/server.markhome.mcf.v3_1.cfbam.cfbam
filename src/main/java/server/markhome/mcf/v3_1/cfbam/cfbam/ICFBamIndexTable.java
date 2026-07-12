@@ -152,7 +152,7 @@ public interface ICFBamIndexTable
 	 *	@param	CodeVis	The Index key attribute of the instance generating the id.
 	 */
 	void deleteIndexByIdxCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
 	 *	Delete the Index instances identified by the key IdxCodeVisIdx.
@@ -174,7 +174,7 @@ public interface ICFBamIndexTable
 	 */
 	void deleteIndexByIdxTblCdVisX( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 argTableId,
-		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
 	 *	Delete the Index instances identified by the key IdxTblCdVisX.
@@ -332,7 +332,7 @@ public interface ICFBamIndexTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamIndex[] readDerivedByIdxCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the derived Index record instances identified by the duplicate key IdxTblCdVisX.
@@ -347,7 +347,7 @@ public interface ICFBamIndexTable
 	 */
 	ICFBamIndex[] readDerivedByIdxTblCdVisX( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the derived Index record instances identified by the duplicate key DefSchemaIdx.
@@ -473,7 +473,7 @@ public interface ICFBamIndexTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamIndex[] readRecByIdxCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the specific Index record instances identified by the duplicate key IdxTblCdVisX.
@@ -490,7 +490,7 @@ public interface ICFBamIndexTable
 	 */
 	ICFBamIndex[] readRecByIdxTblCdVisX( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the specific Index record instances identified by the duplicate key DefSchemaIdx.

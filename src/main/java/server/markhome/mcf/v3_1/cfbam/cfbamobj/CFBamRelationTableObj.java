@@ -54,11 +54,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public class CFBamRelationTableObj
 	implements ICFBamRelationTableObj
@@ -1179,14 +1183,14 @@ public class CFBamRelationTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationObj> readRelationByRelCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	public List<ICFBamRelationObj> readRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		return( readRelationByRelCodeVisIdx( CodeVis,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamRelationObj> readRelationByRelCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis,
+	public List<ICFBamRelationObj> readRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationByRelCodeVisIdx";
@@ -1273,7 +1277,7 @@ public class CFBamRelationTableObj
 
 	@Override
 	public List<ICFBamRelationObj> readRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis )
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		return( readRelationByRelTableCodeVisX( TableId,
 			CodeVis,
@@ -1282,7 +1286,7 @@ public class CFBamRelationTableObj
 
 	@Override
 	public List<ICFBamRelationObj> readRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis,
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRelationByRelTableCodeVisX";
@@ -2035,7 +2039,7 @@ public class CFBamRelationTableObj
 	}
 
 	@Override
-	public List<ICFBamRelationObj> readCachedRelationByRelCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	public List<ICFBamRelationObj> readCachedRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "readCachedRelationByRelCodeVisIdx";
 		ICFBamRelationByRelCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelCodeVisIdxKey();
@@ -2113,7 +2117,7 @@ public class CFBamRelationTableObj
 
 	@Override
 	public List<ICFBamRelationObj> readCachedRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis )
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "readCachedRelationByRelTableCodeVisX";
 		ICFBamRelationByRelTableCodeVisXKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableCodeVisXKey();
@@ -2630,7 +2634,7 @@ public class CFBamRelationTableObj
 	}
 
 	@Override
-	public void deepDisposeRelationByRelCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	public void deepDisposeRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "deepDisposeRelationByRelCodeVisIdx";
 		ICFBamRelationObj obj;
@@ -2648,7 +2652,7 @@ public class CFBamRelationTableObj
 
 	@Override
 	public void deepDisposeRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis )
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "deepDisposeRelationByRelTableCodeVisX";
 		ICFBamRelationObj obj;
@@ -2897,7 +2901,7 @@ public class CFBamRelationTableObj
 	}
 
 	@Override
-	public void deleteRelationByRelCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	public void deleteRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		ICFBamRelationByRelCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelCodeVisIdxKey();
 		key.setRequiredCodeVis( CodeVis );
@@ -2932,7 +2936,7 @@ public class CFBamRelationTableObj
 
 	@Override
 	public void deleteRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis )
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		ICFBamRelationByRelTableCodeVisXKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableCodeVisXKey();
 		key.setRequiredTableId( TableId );

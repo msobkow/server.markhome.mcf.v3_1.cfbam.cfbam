@@ -54,11 +54,14 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public interface ICFBamTableObj
 	extends ICFBamScopeObj
@@ -438,25 +441,25 @@ public interface ICFBamTableObj
 	boolean getRequiredIsServerOnly();
 
 	/**
-	 *	Get the required ICFBamSchema.LoaderBehaviourEnum attribute LoaderBehaviour.
+	 *	Get the required ICFBamPubSchema.LoaderBehaviourEnum attribute LoaderBehaviour.
 	 *
-	 *	@return	The required ICFBamSchema.LoaderBehaviourEnum attribute LoaderBehaviour.
+	 *	@return	The required ICFBamPubSchema.LoaderBehaviourEnum attribute LoaderBehaviour.
 	 */
-	ICFBamSchema.LoaderBehaviourEnum getRequiredLoaderBehaviour();
+	ICFBamPubSchema.LoaderBehaviourEnum getRequiredLoaderBehaviour();
 
 	/**
-	 *	Get the required ICFBamSchema.SecScopeEnum attribute SecScope.
+	 *	Get the required ICFBamPubSchema.SecScopeEnum attribute SecScope.
 	 *
-	 *	@return	The required ICFBamSchema.SecScopeEnum attribute SecScope.
+	 *	@return	The required ICFBamPubSchema.SecScopeEnum attribute SecScope.
 	 */
-	ICFBamSchema.SecScopeEnum getRequiredSecScope();
+	ICFBamPubSchema.SecScopeEnum getRequiredSecScope();
 
 	/**
-	 *	Get the required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *	Get the required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis.
 	 *
-	 *	@return	The required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *	@return	The required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis.
 	 */
-	ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+	ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
 
 	List<ICFBamRelationObj> getOnlyOwnerRelations();
 	List<ICFBamRelationObj> getContainerOwnerRelations();

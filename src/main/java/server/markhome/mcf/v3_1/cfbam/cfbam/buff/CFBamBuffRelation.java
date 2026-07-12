@@ -76,7 +76,7 @@ public class CFBamBuffRelation
 	protected String optionalLabel;
 	protected String optionalShortDescription;
 	protected String optionalDescription;
-	protected ICFBamSchema.RelationTypeEnum requiredRelationType;
+	protected ICFBamPubSchema.RelationTypeEnum requiredRelationType;
 	protected String optionalDbName;
 	protected String optionalSuffix;
 	protected CFLibDbKeyHash256 requiredFromIndexId;
@@ -87,7 +87,7 @@ public class CFBamBuffRelation
 	protected boolean requiredIsLateResolver;
 	protected boolean requiredAllowAddendum;
 	protected CFLibDbKeyHash256 optionalNarrowedId;
-	protected ICFBamSchema.CodeVisibilityEnum requiredCodeVis;
+	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 
 	public CFBamBuffRelation() {
 		super();

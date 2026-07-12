@@ -69,12 +69,12 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamTable extends ICFBamScope
 {
-	public static final ICFBamSchema.LoaderBehaviourEnum LOADERBEHAVIOUR_MIN_VALUE = ICFBamSchema.LoaderBehaviourEnum.Insert;
-	public static final ICFBamSchema.SecScopeEnum SECSCOPE_MIN_VALUE = ICFBamSchema.SecScopeEnum.None;
-	public static final ICFBamSchema.CodeVisibilityEnum CODEVIS_MIN_VALUE = ICFBamSchema.CodeVisibilityEnum.Public;
-	public static final ICFBamSchema.LoaderBehaviourEnum LOADERBEHAVIOUR_MAX_VALUE = ICFBamSchema.LoaderBehaviourEnum.Replace;
-	public static final ICFBamSchema.SecScopeEnum SECSCOPE_MAX_VALUE = ICFBamSchema.SecScopeEnum.TenantGroup;
-	public static final ICFBamSchema.CodeVisibilityEnum CODEVIS_MAX_VALUE = ICFBamSchema.CodeVisibilityEnum.Private;
+	public static final ICFBamPubSchema.LoaderBehaviourEnum LOADERBEHAVIOUR_MIN_VALUE = ICFBamPubSchema.LoaderBehaviourEnum.Insert;
+	public static final ICFBamPubSchema.SecScopeEnum SECSCOPE_MIN_VALUE = ICFBamPubSchema.SecScopeEnum.None;
+	public static final ICFBamPubSchema.CodeVisibilityEnum CODEVIS_MIN_VALUE = ICFBamPubSchema.CodeVisibilityEnum.Public;
+	public static final ICFBamPubSchema.LoaderBehaviourEnum LOADERBEHAVIOUR_MAX_VALUE = ICFBamPubSchema.LoaderBehaviourEnum.Replace;
+	public static final ICFBamPubSchema.SecScopeEnum SECSCOPE_MAX_VALUE = ICFBamPubSchema.SecScopeEnum.TenantGroup;
+	public static final ICFBamPubSchema.CodeVisibilityEnum CODEVIS_MAX_VALUE = ICFBamPubSchema.CodeVisibilityEnum.Private;
 	public static final String S_SCHEMADEFID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 SCHEMADEFID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SCHEMADEFID_INIT_VALUE );
 	public static final String S_DEFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
@@ -95,9 +95,9 @@ public interface ICFBamTable extends ICFBamScope
 	public final static boolean HASAUDITCOLUMNS_INIT_VALUE = false;
 	public final static boolean ISMUTABLE_INIT_VALUE = false;
 	public final static boolean ISSERVERONLY_INIT_VALUE = false;
-	public static final ICFBamSchema.LoaderBehaviourEnum LOADERBEHAVIOUR_INIT_VALUE = ICFBamSchema.ordinalToLoaderBehaviourEnum( 0 );
-	public static final ICFBamSchema.SecScopeEnum SECSCOPE_INIT_VALUE = ICFBamSchema.ordinalToSecScopeEnum( 0 );
-	public static final ICFBamSchema.CodeVisibilityEnum CODEVIS_INIT_VALUE = ICFBamSchema.ordinalToCodeVisibilityEnum( 0 );
+	public static final ICFBamPubSchema.LoaderBehaviourEnum LOADERBEHAVIOUR_INIT_VALUE = ICFBamPubSchema.ordinalToLoaderBehaviourEnum( 0 );
+	public static final ICFBamPubSchema.SecScopeEnum SECSCOPE_INIT_VALUE = ICFBamPubSchema.ordinalToSecScopeEnum( 0 );
+	public static final ICFBamPubSchema.CodeVisibilityEnum CODEVIS_INIT_VALUE = ICFBamPubSchema.ordinalToCodeVisibilityEnum( 0 );
 	public final static int CLASS_CODE = 0xa807;
 	public final static String S_CLASS_CODE = "a807";
 
@@ -205,12 +205,12 @@ public interface ICFBamTable extends ICFBamScope
 	public void setRequiredIsMutable( boolean value );
 	public boolean getRequiredIsServerOnly();
 	public void setRequiredIsServerOnly( boolean value );
-	public ICFBamSchema.LoaderBehaviourEnum getRequiredLoaderBehaviour();
-	public void setRequiredLoaderBehaviour( ICFBamSchema.LoaderBehaviourEnum value );
-	public ICFBamSchema.SecScopeEnum getRequiredSecScope();
-	public void setRequiredSecScope( ICFBamSchema.SecScopeEnum value );
-	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
-	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value );
+	public ICFBamPubSchema.LoaderBehaviourEnum getRequiredLoaderBehaviour();
+	public void setRequiredLoaderBehaviour( ICFBamPubSchema.LoaderBehaviourEnum value );
+	public ICFBamPubSchema.SecScopeEnum getRequiredSecScope();
+	public void setRequiredSecScope( ICFBamPubSchema.SecScopeEnum value );
+	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
+	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value );
 	@Override
 	public boolean equals( Object obj );
 	

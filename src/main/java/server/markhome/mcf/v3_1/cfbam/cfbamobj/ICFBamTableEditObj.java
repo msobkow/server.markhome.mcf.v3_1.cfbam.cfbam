@@ -53,12 +53,16 @@ import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
-import server.markhome.mcf.v3_1.cflib.dbutil.*;import org.apache.commons.text.StringEscapeUtils;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import org.apache.commons.text.StringEscapeUtils;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public interface ICFBamTableEditObj
 	extends ICFBamTableObj, ICFBamScopeEditObj
@@ -484,45 +488,45 @@ public interface ICFBamTableEditObj
 	void setRequiredIsServerOnly(boolean value);
 
 	/**
-	 *	Get the required ICFBamSchema.LoaderBehaviourEnum attribute LoaderBehaviour.
+	 *	Get the required ICFBamPubSchema.LoaderBehaviourEnum attribute LoaderBehaviour.
 	 *
-	 *	@return	The required ICFBamSchema.LoaderBehaviourEnum attribute LoaderBehaviour.
+	 *	@return	The required ICFBamPubSchema.LoaderBehaviourEnum attribute LoaderBehaviour.
 	 */
-	ICFBamSchema.LoaderBehaviourEnum getRequiredLoaderBehaviour();
+	ICFBamPubSchema.LoaderBehaviourEnum getRequiredLoaderBehaviour();
 
 	/**
-	 *	Set the required ICFBamSchema.LoaderBehaviourEnum attribute LoaderBehaviour.
+	 *	Set the required ICFBamPubSchema.LoaderBehaviourEnum attribute LoaderBehaviour.
 	 *
-	 *	@param value The required ICFBamSchema.LoaderBehaviourEnum attribute LoaderBehaviour value to be applied.
+	 *	@param value The required ICFBamPubSchema.LoaderBehaviourEnum attribute LoaderBehaviour value to be applied.
 	 */
-	void setRequiredLoaderBehaviour(ICFBamSchema.LoaderBehaviourEnum value);
+	void setRequiredLoaderBehaviour(ICFBamPubSchema.LoaderBehaviourEnum value);
 
 	/**
-	 *	Get the required ICFBamSchema.SecScopeEnum attribute SecScope.
+	 *	Get the required ICFBamPubSchema.SecScopeEnum attribute SecScope.
 	 *
-	 *	@return	The required ICFBamSchema.SecScopeEnum attribute SecScope.
+	 *	@return	The required ICFBamPubSchema.SecScopeEnum attribute SecScope.
 	 */
-	ICFBamSchema.SecScopeEnum getRequiredSecScope();
+	ICFBamPubSchema.SecScopeEnum getRequiredSecScope();
 
 	/**
-	 *	Set the required ICFBamSchema.SecScopeEnum attribute SecScope.
+	 *	Set the required ICFBamPubSchema.SecScopeEnum attribute SecScope.
 	 *
-	 *	@param value The required ICFBamSchema.SecScopeEnum attribute SecScope value to be applied.
+	 *	@param value The required ICFBamPubSchema.SecScopeEnum attribute SecScope value to be applied.
 	 */
-	void setRequiredSecScope(ICFBamSchema.SecScopeEnum value);
+	void setRequiredSecScope(ICFBamPubSchema.SecScopeEnum value);
 
 	/**
-	 *	Get the required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *	Get the required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis.
 	 *
-	 *	@return	The required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *	@return	The required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis.
 	 */
-	ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+	ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
 
 	/**
-	 *	Set the required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *	Set the required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis.
 	 *
-	 *	@param value The required ICFBamSchema.CodeVisibilityEnum attribute CodeVis value to be applied.
+	 *	@param value The required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis value to be applied.
 	 */
-	void setRequiredCodeVis(ICFBamSchema.CodeVisibilityEnum value);
+	void setRequiredCodeVis(ICFBamPubSchema.CodeVisibilityEnum value);
 
 }

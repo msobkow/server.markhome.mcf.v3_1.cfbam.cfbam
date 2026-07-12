@@ -54,11 +54,14 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public interface ICFBamRelationObj
 	extends ICFBamScopeObj
@@ -256,11 +259,11 @@ public interface ICFBamRelationObj
 	String getOptionalDescription();
 
 	/**
-	 *	Get the required ICFBamSchema.RelationTypeEnum attribute RelationType.
+	 *	Get the required ICFBamPubSchema.RelationTypeEnum attribute RelationType.
 	 *
-	 *	@return	The required ICFBamSchema.RelationTypeEnum attribute RelationType.
+	 *	@return	The required ICFBamPubSchema.RelationTypeEnum attribute RelationType.
 	 */
-	ICFBamSchema.RelationTypeEnum getRequiredRelationType();
+	ICFBamPubSchema.RelationTypeEnum getRequiredRelationType();
 
 	/**
 	 *	Get the optional String attribute DbName.
@@ -333,11 +336,11 @@ public interface ICFBamRelationObj
 	CFLibDbKeyHash256 getOptionalNarrowedId();
 
 	/**
-	 *	Get the required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *	Get the required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis.
 	 *
-	 *	@return	The required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *	@return	The required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis.
 	 */
-	ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+	ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
 
 	ICFBamSubProjectObj getProject();
 	ICFBamTopDomainObj getCompany();

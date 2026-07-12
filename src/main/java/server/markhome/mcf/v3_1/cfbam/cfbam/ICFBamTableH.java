@@ -101,12 +101,12 @@ public interface ICFBamTableH extends ICFBamScopeH
 	public void setRequiredIsMutable( boolean value );
 	public boolean getRequiredIsServerOnly();
 	public void setRequiredIsServerOnly( boolean value );
-	public ICFBamSchema.LoaderBehaviourEnum getRequiredLoaderBehaviour();
-	public void setRequiredLoaderBehaviour( ICFBamSchema.LoaderBehaviourEnum value );
-	public ICFBamSchema.SecScopeEnum getRequiredSecScope();
-	public void setRequiredSecScope( ICFBamSchema.SecScopeEnum value );
-	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
-	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value );
+	public ICFBamPubSchema.LoaderBehaviourEnum getRequiredLoaderBehaviour();
+	public void setRequiredLoaderBehaviour( ICFBamPubSchema.LoaderBehaviourEnum value );
+	public ICFBamPubSchema.SecScopeEnum getRequiredSecScope();
+	public void setRequiredSecScope( ICFBamPubSchema.SecScopeEnum value );
+	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
+	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value );
 	@Override
 	public boolean equals( Object obj );
 

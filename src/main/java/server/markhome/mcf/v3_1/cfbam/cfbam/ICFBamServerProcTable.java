@@ -152,7 +152,7 @@ public interface ICFBamServerProcTable
 	 *	@param	CodeVis	The ServerProc key attribute of the instance generating the id.
 	 */
 	void deleteServerProcByMethCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
 	 *	Delete the ServerProc instances identified by the key MethCodeVisIdx.
@@ -174,7 +174,7 @@ public interface ICFBamServerProcTable
 	 */
 	void deleteServerProcByMethTableVisIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 argTableId,
-		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
 	 *	Delete the ServerProc instances identified by the key MethTableVisIdx.
@@ -332,7 +332,7 @@ public interface ICFBamServerProcTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamServerProc[] readDerivedByMethCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the derived ServerProc record instances identified by the duplicate key MethTableVisIdx.
@@ -347,7 +347,7 @@ public interface ICFBamServerProcTable
 	 */
 	ICFBamServerProc[] readDerivedByMethTableVisIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the derived ServerProc record instances identified by the duplicate key DefSchemaIdx.
@@ -473,7 +473,7 @@ public interface ICFBamServerProcTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamServerProc[] readRecByMethCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the specific ServerProc record instances identified by the duplicate key MethTableVisIdx.
@@ -490,7 +490,7 @@ public interface ICFBamServerProcTable
 	 */
 	ICFBamServerProc[] readRecByMethTableVisIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the specific ServerProc record instances identified by the duplicate key DefSchemaIdx.

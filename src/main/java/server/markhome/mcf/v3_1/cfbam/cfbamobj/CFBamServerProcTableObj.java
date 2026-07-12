@@ -54,11 +54,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public class CFBamServerProcTableObj
 	implements ICFBamServerProcTableObj
@@ -909,14 +913,14 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readServerProcByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	public List<ICFBamServerProcObj> readServerProcByMethCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		return( readServerProcByMethCodeVisIdx( CodeVis,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readServerProcByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis,
+	public List<ICFBamServerProcObj> readServerProcByMethCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readServerProcByMethCodeVisIdx";
@@ -1003,7 +1007,7 @@ public class CFBamServerProcTableObj
 
 	@Override
 	public List<ICFBamServerProcObj> readServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis )
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		return( readServerProcByMethTableVisIdx( TableId,
 			CodeVis,
@@ -1012,7 +1016,7 @@ public class CFBamServerProcTableObj
 
 	@Override
 	public List<ICFBamServerProcObj> readServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis,
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readServerProcByMethTableVisIdx";
@@ -1393,7 +1397,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readCachedServerProcByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	public List<ICFBamServerProcObj> readCachedServerProcByMethCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "readCachedServerProcByMethCodeVisIdx";
 		ICFBamServerMethodByMethCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethCodeVisIdxKey();
@@ -1471,7 +1475,7 @@ public class CFBamServerProcTableObj
 
 	@Override
 	public List<ICFBamServerProcObj> readCachedServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis )
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "readCachedServerProcByMethTableVisIdx";
 		ICFBamServerMethodByMethTableVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableVisIdxKey();
@@ -1680,7 +1684,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deepDisposeServerProcByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	public void deepDisposeServerProcByMethCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "deepDisposeServerProcByMethCodeVisIdx";
 		ICFBamServerProcObj obj;
@@ -1698,7 +1702,7 @@ public class CFBamServerProcTableObj
 
 	@Override
 	public void deepDisposeServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis )
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "deepDisposeServerProcByMethTableVisIdx";
 		ICFBamServerProcObj obj;
@@ -1879,7 +1883,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deleteServerProcByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	public void deleteServerProcByMethCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		ICFBamServerMethodByMethCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethCodeVisIdxKey();
 		key.setRequiredCodeVis( CodeVis );
@@ -1914,7 +1918,7 @@ public class CFBamServerProcTableObj
 
 	@Override
 	public void deleteServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis )
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		ICFBamServerMethodByMethTableVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableVisIdxKey();
 		key.setRequiredTableId( TableId );

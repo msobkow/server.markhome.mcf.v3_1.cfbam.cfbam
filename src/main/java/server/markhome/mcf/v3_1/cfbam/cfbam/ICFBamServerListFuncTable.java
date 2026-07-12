@@ -171,7 +171,7 @@ public interface ICFBamServerListFuncTable
 	 *	@param	CodeVis	The ServerListFunc key attribute of the instance generating the id.
 	 */
 	void deleteServerListFuncByMethCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
 	 *	Delete the ServerListFunc instances identified by the key MethCodeVisIdx.
@@ -193,7 +193,7 @@ public interface ICFBamServerListFuncTable
 	 */
 	void deleteServerListFuncByMethTableVisIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 argTableId,
-		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
 	 *	Delete the ServerListFunc instances identified by the key MethTableVisIdx.
@@ -351,7 +351,7 @@ public interface ICFBamServerListFuncTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamServerListFunc[] readDerivedByMethCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the derived ServerListFunc record instances identified by the duplicate key MethTableVisIdx.
@@ -366,7 +366,7 @@ public interface ICFBamServerListFuncTable
 	 */
 	ICFBamServerListFunc[] readDerivedByMethTableVisIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the derived ServerListFunc record instances identified by the duplicate key DefSchemaIdx.
@@ -504,7 +504,7 @@ public interface ICFBamServerListFuncTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamServerListFunc[] readRecByMethCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the specific ServerListFunc record instances identified by the duplicate key MethTableVisIdx.
@@ -521,7 +521,7 @@ public interface ICFBamServerListFuncTable
 	 */
 	ICFBamServerListFunc[] readRecByMethTableVisIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the specific ServerListFunc record instances identified by the duplicate key DefSchemaIdx.

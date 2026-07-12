@@ -54,11 +54,14 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public interface ICFBamServerMethodTableObj
 {
@@ -258,7 +261,7 @@ public interface ICFBamServerMethodTableObj
 	 *	@return	List of CFBamServerMethodObj cached instances sorted by their primary keys for the duplicate MethCodeVisIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamServerMethodObj> readServerMethodByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+	List<ICFBamServerMethodObj> readServerMethodByMethCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Get the map of CFBamServerMethodObj instances sorted by their primary keys for the duplicate MethCodeVisIdx key.
@@ -268,7 +271,7 @@ public interface ICFBamServerMethodTableObj
 	 *	@return	List of CFBamServerMethodObj cached instances sorted by their primary keys for the duplicate MethCodeVisIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamServerMethodObj> readServerMethodByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis,
+	List<ICFBamServerMethodObj> readServerMethodByMethCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead );
 
 	/**
@@ -282,7 +285,7 @@ public interface ICFBamServerMethodTableObj
 	 *		which may be an empty set.
 	 */
 	List<ICFBamServerMethodObj> readServerMethodByMethTableVisIdx( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Get the map of CFBamServerMethodObj instances sorted by their primary keys for the duplicate MethTableVisIdx key.
@@ -295,7 +298,7 @@ public interface ICFBamServerMethodTableObj
 	 *		which may be an empty set.
 	 */
 	List<ICFBamServerMethodObj> readServerMethodByMethTableVisIdx( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis,
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead );
 
 	/**
@@ -328,10 +331,10 @@ public interface ICFBamServerMethodTableObj
 
 	List<ICFBamServerMethodObj> readCachedServerMethodByMethTableIdx( CFLibDbKeyHash256 TableId );
 
-	List<ICFBamServerMethodObj> readCachedServerMethodByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+	List<ICFBamServerMethodObj> readCachedServerMethodByMethCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	List<ICFBamServerMethodObj> readCachedServerMethodByMethTableVisIdx( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	List<ICFBamServerMethodObj> readCachedServerMethodByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
 
@@ -344,10 +347,10 @@ public interface ICFBamServerMethodTableObj
 
 	void deepDisposeServerMethodByMethTableIdx( CFLibDbKeyHash256 TableId );
 
-	void deepDisposeServerMethodByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+	void deepDisposeServerMethodByMethCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	void deepDisposeServerMethodByMethTableVisIdx( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	void deepDisposeServerMethodByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
 
@@ -397,7 +400,7 @@ public interface ICFBamServerMethodTableObj
 	 *
 	 *	@param	CodeVis	The ServerMethod key attribute of the instance generating the id.
 	 */
-	void deleteServerMethodByMethCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+	void deleteServerMethodByMethCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Internal use only.
@@ -407,7 +410,7 @@ public interface ICFBamServerMethodTableObj
 	 *	@param	CodeVis	The ServerMethod key attribute of the instance generating the id.
 	 */
 	void deleteServerMethodByMethTableVisIdx( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Internal use only.

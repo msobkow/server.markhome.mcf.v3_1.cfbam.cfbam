@@ -87,9 +87,9 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 	protected boolean requiredHasAuditColumns;
 	protected boolean requiredIsMutable;
 	protected boolean requiredIsServerOnly;
-	protected ICFBamSchema.LoaderBehaviourEnum requiredLoaderBehaviour;
-	protected ICFBamSchema.SecScopeEnum requiredSecScope;
-	protected ICFBamSchema.CodeVisibilityEnum requiredCodeVis;
+	protected ICFBamPubSchema.LoaderBehaviourEnum requiredLoaderBehaviour;
+	protected ICFBamPubSchema.SecScopeEnum requiredSecScope;
+	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 
     public CFBamBuffTableH() {
             super();

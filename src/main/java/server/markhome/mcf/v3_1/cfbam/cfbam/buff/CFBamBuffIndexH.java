@@ -79,7 +79,7 @@ public class CFBamBuffIndexH extends CFBamBuffScopeH
 	protected String optionalSuffix;
 	protected boolean requiredIsUnique;
 	protected boolean requiredIsDbMapped;
-	protected ICFBamSchema.CodeVisibilityEnum requiredCodeVis;
+	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 
     public CFBamBuffIndexH() {
             super();

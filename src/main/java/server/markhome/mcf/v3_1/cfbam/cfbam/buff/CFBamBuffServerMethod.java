@@ -79,7 +79,7 @@ public class CFBamBuffServerMethod
 	protected String optionalSuffix;
 	protected boolean requiredIsInstanceMethod;
 	protected boolean requiredIsServerOnly;
-	protected ICFBamSchema.CodeVisibilityEnum requiredCodeVis;
+	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 	protected String requiredJMethodBody;
 	protected String requiredCppMethodBody;
 	protected String requiredCsMethodBody;

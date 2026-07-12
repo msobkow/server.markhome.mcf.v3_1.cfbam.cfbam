@@ -77,8 +77,8 @@ public interface ICFBamRelationH extends ICFBamScopeH
 	public void setOptionalShortDescription( String value );
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
-	public ICFBamSchema.RelationTypeEnum getRequiredRelationType();
-	public void setRequiredRelationType( ICFBamSchema.RelationTypeEnum value );
+	public ICFBamPubSchema.RelationTypeEnum getRequiredRelationType();
+	public void setRequiredRelationType( ICFBamPubSchema.RelationTypeEnum value );
 	public String getOptionalDbName();
 	public void setOptionalDbName( String value );
 	public String getOptionalSuffix();
@@ -99,8 +99,8 @@ public interface ICFBamRelationH extends ICFBamScopeH
 	public void setRequiredAllowAddendum( boolean value );
 	public CFLibDbKeyHash256 getOptionalNarrowedId();
 	public void setOptionalNarrowedId( CFLibDbKeyHash256 value );
-	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
-	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value );
+	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
+	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value );
 	@Override
 	public boolean equals( Object obj );
 

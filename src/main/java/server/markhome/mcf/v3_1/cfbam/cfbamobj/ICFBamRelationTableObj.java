@@ -54,11 +54,14 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public interface ICFBamRelationTableObj
 {
@@ -258,7 +261,7 @@ public interface ICFBamRelationTableObj
 	 *	@return	List of CFBamRelationObj cached instances sorted by their primary keys for the duplicate RelCodeVisIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamRelationObj> readRelationByRelCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+	List<ICFBamRelationObj> readRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Get the map of CFBamRelationObj instances sorted by their primary keys for the duplicate RelCodeVisIdx key.
@@ -268,7 +271,7 @@ public interface ICFBamRelationTableObj
 	 *	@return	List of CFBamRelationObj cached instances sorted by their primary keys for the duplicate RelCodeVisIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamRelationObj> readRelationByRelCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis,
+	List<ICFBamRelationObj> readRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead );
 
 	/**
@@ -282,7 +285,7 @@ public interface ICFBamRelationTableObj
 	 *		which may be an empty set.
 	 */
 	List<ICFBamRelationObj> readRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Get the map of CFBamRelationObj instances sorted by their primary keys for the duplicate RelTableCodeVisX key.
@@ -295,7 +298,7 @@ public interface ICFBamRelationTableObj
 	 *		which may be an empty set.
 	 */
 	List<ICFBamRelationObj> readRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis,
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead );
 
 	/**
@@ -412,10 +415,10 @@ public interface ICFBamRelationTableObj
 
 	List<ICFBamRelationObj> readCachedRelationByRelTableIdx( CFLibDbKeyHash256 TableId );
 
-	List<ICFBamRelationObj> readCachedRelationByRelCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+	List<ICFBamRelationObj> readCachedRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	List<ICFBamRelationObj> readCachedRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	List<ICFBamRelationObj> readCachedRelationByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
 
@@ -436,10 +439,10 @@ public interface ICFBamRelationTableObj
 
 	void deepDisposeRelationByRelTableIdx( CFLibDbKeyHash256 TableId );
 
-	void deepDisposeRelationByRelCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+	void deepDisposeRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	void deepDisposeRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	void deepDisposeRelationByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
 
@@ -497,7 +500,7 @@ public interface ICFBamRelationTableObj
 	 *
 	 *	@param	CodeVis	The Relation key attribute of the instance generating the id.
 	 */
-	void deleteRelationByRelCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis );
+	void deleteRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Internal use only.
@@ -507,7 +510,7 @@ public interface ICFBamRelationTableObj
 	 *	@param	CodeVis	The Relation key attribute of the instance generating the id.
 	 */
 	void deleteRelationByRelTableCodeVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Internal use only.

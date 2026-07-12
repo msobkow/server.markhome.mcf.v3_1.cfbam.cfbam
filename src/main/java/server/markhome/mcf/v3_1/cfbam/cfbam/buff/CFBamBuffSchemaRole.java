@@ -70,7 +70,7 @@ public class CFBamBuffSchemaRole
 	implements ICFBamSchemaRole
 {
 	protected CFLibDbKeyHash256 requiredSchemaDefId;
-	protected ICFBamSchema.RoleScopeEnum requiredRoleScope;
+	protected ICFBamPubSchema.RoleScopeEnum requiredRoleScope;
 
 	public CFBamBuffSchemaRole() {
 		super();

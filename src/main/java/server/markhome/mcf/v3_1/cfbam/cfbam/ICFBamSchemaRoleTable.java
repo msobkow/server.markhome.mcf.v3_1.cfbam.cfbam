@@ -130,7 +130,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@param	RoleScope	The SchemaRole key attribute of the instance generating the id.
 	 */
 	void deleteSchemaRoleByRoleScopeIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.RoleScopeEnum argRoleScope );
+		ICFBamPubSchema.RoleScopeEnum argRoleScope );
 
 	/**
 	 *	Delete the SchemaRole instances identified by the key RoleScopeIdx.
@@ -152,7 +152,7 @@ public interface ICFBamSchemaRoleTable
 	 */
 	void deleteSchemaRoleBySchRoleScpIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 argSchemaDefId,
-		ICFBamSchema.RoleScopeEnum argRoleScope );
+		ICFBamPubSchema.RoleScopeEnum argRoleScope );
 
 	/**
 	 *	Delete the SchemaRole instances identified by the key SchRoleScpIdx.
@@ -388,7 +388,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamSchemaRole[] readDerivedByRoleScopeIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.RoleScopeEnum RoleScope );
+		ICFBamPubSchema.RoleScopeEnum RoleScope );
 
 	/**
 	 *	Read an array of the derived SchemaRole record instances identified by the duplicate key SchRoleScpIdx.
@@ -403,7 +403,7 @@ public interface ICFBamSchemaRoleTable
 	 */
 	ICFBamSchemaRole[] readDerivedBySchRoleScpIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 SchemaDefId,
-		ICFBamSchema.RoleScopeEnum RoleScope );
+		ICFBamPubSchema.RoleScopeEnum RoleScope );
 
 	/**
 	 *	Read the specific SchemaRole record instance identified by the primary key.
@@ -552,7 +552,7 @@ public interface ICFBamSchemaRoleTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamSchemaRole[] readRecByRoleScopeIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.RoleScopeEnum RoleScope );
+		ICFBamPubSchema.RoleScopeEnum RoleScope );
 
 	/**
 	 *	Read an array of the specific SchemaRole record instances identified by the duplicate key SchRoleScpIdx.
@@ -569,5 +569,5 @@ public interface ICFBamSchemaRoleTable
 	 */
 	ICFBamSchemaRole[] readRecBySchRoleScpIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 SchemaDefId,
-		ICFBamSchema.RoleScopeEnum RoleScope );
+		ICFBamPubSchema.RoleScopeEnum RoleScope );
 }

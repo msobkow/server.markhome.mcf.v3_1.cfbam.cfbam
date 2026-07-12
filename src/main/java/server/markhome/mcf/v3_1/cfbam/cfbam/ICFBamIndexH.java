@@ -85,8 +85,8 @@ public interface ICFBamIndexH extends ICFBamScopeH
 	public void setRequiredIsUnique( boolean value );
 	public boolean getRequiredIsDbMapped();
 	public void setRequiredIsDbMapped( boolean value );
-	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
-	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value );
+	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
+	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value );
 	@Override
 	public boolean equals( Object obj );
 

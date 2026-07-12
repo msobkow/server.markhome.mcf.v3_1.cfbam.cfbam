@@ -69,16 +69,16 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamRelation extends ICFBamScope
 {
-	public static final ICFBamSchema.RelationTypeEnum RELATIONTYPE_MIN_VALUE = ICFBamSchema.RelationTypeEnum.Unknown;
-	public static final ICFBamSchema.CodeVisibilityEnum CODEVIS_MIN_VALUE = ICFBamSchema.CodeVisibilityEnum.Public;
-	public static final ICFBamSchema.RelationTypeEnum RELATIONTYPE_MAX_VALUE = ICFBamSchema.RelationTypeEnum.Children;
-	public static final ICFBamSchema.CodeVisibilityEnum CODEVIS_MAX_VALUE = ICFBamSchema.CodeVisibilityEnum.Private;
+	public static final ICFBamPubSchema.RelationTypeEnum RELATIONTYPE_MIN_VALUE = ICFBamPubSchema.RelationTypeEnum.Unknown;
+	public static final ICFBamPubSchema.CodeVisibilityEnum CODEVIS_MIN_VALUE = ICFBamPubSchema.CodeVisibilityEnum.Public;
+	public static final ICFBamPubSchema.RelationTypeEnum RELATIONTYPE_MAX_VALUE = ICFBamPubSchema.RelationTypeEnum.Children;
+	public static final ICFBamPubSchema.CodeVisibilityEnum CODEVIS_MAX_VALUE = ICFBamPubSchema.CodeVisibilityEnum.Private;
 	public static final String S_TABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 TABLEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_TABLEID_INIT_VALUE );
 	public static final String S_DEFSCHEMAID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 DEFSCHEMAID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_DEFSCHEMAID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
-	public static final ICFBamSchema.RelationTypeEnum RELATIONTYPE_INIT_VALUE = ICFBamSchema.ordinalToRelationTypeEnum( 0 );
+	public static final ICFBamPubSchema.RelationTypeEnum RELATIONTYPE_INIT_VALUE = ICFBamPubSchema.ordinalToRelationTypeEnum( 0 );
 	public static final String S_FROMINDEXID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 FROMINDEXID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_FROMINDEXID_INIT_VALUE );
 	public static final String S_TOTABLEID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
@@ -91,7 +91,7 @@ public interface ICFBamRelation extends ICFBamScope
 	public final static boolean ALLOWADDENDUM_INIT_VALUE = false;
 	public static final String S_NARROWEDID_INIT_VALUE = "0000000000000000000000000000000000000000000000000000000000000000";
 	public static final CFLibDbKeyHash256 NARROWEDID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_NARROWEDID_INIT_VALUE );
-	public static final ICFBamSchema.CodeVisibilityEnum CODEVIS_INIT_VALUE = ICFBamSchema.ordinalToCodeVisibilityEnum( 0 );
+	public static final ICFBamPubSchema.CodeVisibilityEnum CODEVIS_INIT_VALUE = ICFBamPubSchema.ordinalToCodeVisibilityEnum( 0 );
 	public final static int CLASS_CODE = 0xa839;
 	public final static String S_CLASS_CODE = "a839";
 
@@ -179,8 +179,8 @@ public interface ICFBamRelation extends ICFBamScope
 	public void setOptionalShortDescription( String value );
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
-	public ICFBamSchema.RelationTypeEnum getRequiredRelationType();
-	public void setRequiredRelationType( ICFBamSchema.RelationTypeEnum value );
+	public ICFBamPubSchema.RelationTypeEnum getRequiredRelationType();
+	public void setRequiredRelationType( ICFBamPubSchema.RelationTypeEnum value );
 	public String getOptionalDbName();
 	public void setOptionalDbName( String value );
 	public String getOptionalSuffix();
@@ -197,8 +197,8 @@ public interface ICFBamRelation extends ICFBamScope
 	public boolean getRequiredAllowAddendum();
 	public void setRequiredAllowAddendum( boolean value );
 	public CFLibDbKeyHash256 getOptionalNarrowedId();
-	public ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
-	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value );
+	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
+	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value );
 	@Override
 	public boolean equals( Object obj );
 	

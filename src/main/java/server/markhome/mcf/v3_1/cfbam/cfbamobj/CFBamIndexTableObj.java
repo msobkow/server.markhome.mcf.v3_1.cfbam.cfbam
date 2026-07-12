@@ -54,11 +54,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public class CFBamIndexTableObj
 	implements ICFBamIndexTableObj
@@ -996,14 +1000,14 @@ public class CFBamIndexTableObj
 	}
 
 	@Override
-	public List<ICFBamIndexObj> readIndexByIdxCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	public List<ICFBamIndexObj> readIndexByIdxCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		return( readIndexByIdxCodeVisIdx( CodeVis,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamIndexObj> readIndexByIdxCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis,
+	public List<ICFBamIndexObj> readIndexByIdxCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readIndexByIdxCodeVisIdx";
@@ -1090,7 +1094,7 @@ public class CFBamIndexTableObj
 
 	@Override
 	public List<ICFBamIndexObj> readIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis )
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		return( readIndexByIdxTblCdVisX( TableId,
 			CodeVis,
@@ -1099,7 +1103,7 @@ public class CFBamIndexTableObj
 
 	@Override
 	public List<ICFBamIndexObj> readIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis,
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readIndexByIdxTblCdVisX";
@@ -1480,7 +1484,7 @@ public class CFBamIndexTableObj
 	}
 
 	@Override
-	public List<ICFBamIndexObj> readCachedIndexByIdxCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	public List<ICFBamIndexObj> readCachedIndexByIdxCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "readCachedIndexByIdxCodeVisIdx";
 		ICFBamIndexByIdxCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxCodeVisIdxKey();
@@ -1558,7 +1562,7 @@ public class CFBamIndexTableObj
 
 	@Override
 	public List<ICFBamIndexObj> readCachedIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis )
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "readCachedIndexByIdxTblCdVisX";
 		ICFBamIndexByIdxTblCdVisXKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTblCdVisXKey();
@@ -1767,7 +1771,7 @@ public class CFBamIndexTableObj
 	}
 
 	@Override
-	public void deepDisposeIndexByIdxCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	public void deepDisposeIndexByIdxCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "deepDisposeIndexByIdxCodeVisIdx";
 		ICFBamIndexObj obj;
@@ -1785,7 +1789,7 @@ public class CFBamIndexTableObj
 
 	@Override
 	public void deepDisposeIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis )
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "deepDisposeIndexByIdxTblCdVisX";
 		ICFBamIndexObj obj;
@@ -1966,7 +1970,7 @@ public class CFBamIndexTableObj
 	}
 
 	@Override
-	public void deleteIndexByIdxCodeVisIdx( ICFBamSchema.CodeVisibilityEnum CodeVis )
+	public void deleteIndexByIdxCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		ICFBamIndexByIdxCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxCodeVisIdxKey();
 		key.setRequiredCodeVis( CodeVis );
@@ -2001,7 +2005,7 @@ public class CFBamIndexTableObj
 
 	@Override
 	public void deleteIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis )
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		ICFBamIndexByIdxTblCdVisXKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryIndex().newByIdxTblCdVisXKey();
 		key.setRequiredTableId( TableId );

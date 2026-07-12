@@ -152,7 +152,7 @@ public interface ICFBamServerMethodTable
 	 *	@param	CodeVis	The ServerMethod key attribute of the instance generating the id.
 	 */
 	void deleteServerMethodByMethCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
 	 *	Delete the ServerMethod instances identified by the key MethCodeVisIdx.
@@ -174,7 +174,7 @@ public interface ICFBamServerMethodTable
 	 */
 	void deleteServerMethodByMethTableVisIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 argTableId,
-		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
 	 *	Delete the ServerMethod instances identified by the key MethTableVisIdx.
@@ -332,7 +332,7 @@ public interface ICFBamServerMethodTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamServerMethod[] readDerivedByMethCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the derived ServerMethod record instances identified by the duplicate key MethTableVisIdx.
@@ -347,7 +347,7 @@ public interface ICFBamServerMethodTable
 	 */
 	ICFBamServerMethod[] readDerivedByMethTableVisIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the derived ServerMethod record instances identified by the duplicate key DefSchemaIdx.
@@ -473,7 +473,7 @@ public interface ICFBamServerMethodTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamServerMethod[] readRecByMethCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the specific ServerMethod record instances identified by the duplicate key MethTableVisIdx.
@@ -490,7 +490,7 @@ public interface ICFBamServerMethodTable
 	 */
 	ICFBamServerMethod[] readRecByMethTableVisIdx( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the specific ServerMethod record instances identified by the duplicate key DefSchemaIdx.

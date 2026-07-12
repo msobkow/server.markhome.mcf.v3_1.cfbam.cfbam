@@ -65,8 +65,8 @@ public interface ICFBamSchemaRoleH extends ICFBamRoleDefH
 {
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value );
-	public ICFBamSchema.RoleScopeEnum getRequiredRoleScope();
-	public void setRequiredRoleScope( ICFBamSchema.RoleScopeEnum value );
+	public ICFBamPubSchema.RoleScopeEnum getRequiredRoleScope();
+	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value );
 	@Override
 	public boolean equals( Object obj );
 

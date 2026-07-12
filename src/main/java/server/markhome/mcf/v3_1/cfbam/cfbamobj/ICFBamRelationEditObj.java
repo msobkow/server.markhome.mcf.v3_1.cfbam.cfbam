@@ -53,12 +53,16 @@ import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
-import server.markhome.mcf.v3_1.cflib.dbutil.*;import org.apache.commons.text.StringEscapeUtils;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import org.apache.commons.text.StringEscapeUtils;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public interface ICFBamRelationEditObj
 	extends ICFBamRelationObj, ICFBamScopeEditObj
@@ -295,18 +299,18 @@ public interface ICFBamRelationEditObj
 	void setOptionalDescription(String value);
 
 	/**
-	 *	Get the required ICFBamSchema.RelationTypeEnum attribute RelationType.
+	 *	Get the required ICFBamPubSchema.RelationTypeEnum attribute RelationType.
 	 *
-	 *	@return	The required ICFBamSchema.RelationTypeEnum attribute RelationType.
+	 *	@return	The required ICFBamPubSchema.RelationTypeEnum attribute RelationType.
 	 */
-	ICFBamSchema.RelationTypeEnum getRequiredRelationType();
+	ICFBamPubSchema.RelationTypeEnum getRequiredRelationType();
 
 	/**
-	 *	Set the required ICFBamSchema.RelationTypeEnum attribute RelationType.
+	 *	Set the required ICFBamPubSchema.RelationTypeEnum attribute RelationType.
 	 *
-	 *	@param value The required ICFBamSchema.RelationTypeEnum attribute RelationType value to be applied.
+	 *	@param value The required ICFBamPubSchema.RelationTypeEnum attribute RelationType value to be applied.
 	 */
-	void setRequiredRelationType(ICFBamSchema.RelationTypeEnum value);
+	void setRequiredRelationType(ICFBamPubSchema.RelationTypeEnum value);
 
 	/**
 	 *	Get the optional String attribute DbName.
@@ -421,17 +425,17 @@ public interface ICFBamRelationEditObj
 	CFLibDbKeyHash256 getOptionalNarrowedId();
 
 	/**
-	 *	Get the required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *	Get the required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis.
 	 *
-	 *	@return	The required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *	@return	The required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis.
 	 */
-	ICFBamSchema.CodeVisibilityEnum getRequiredCodeVis();
+	ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
 
 	/**
-	 *	Set the required ICFBamSchema.CodeVisibilityEnum attribute CodeVis.
+	 *	Set the required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis.
 	 *
-	 *	@param value The required ICFBamSchema.CodeVisibilityEnum attribute CodeVis value to be applied.
+	 *	@param value The required ICFBamPubSchema.CodeVisibilityEnum attribute CodeVis value to be applied.
 	 */
-	void setRequiredCodeVis(ICFBamSchema.CodeVisibilityEnum value);
+	void setRequiredCodeVis(ICFBamPubSchema.CodeVisibilityEnum value);
 
 }

@@ -54,11 +54,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public class CFBamSchemaRoleTableObj
 	implements ICFBamSchemaRoleTableObj
@@ -1122,14 +1126,14 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readSchemaRoleByRoleScopeIdx( ICFBamSchema.RoleScopeEnum RoleScope )
+	public List<ICFBamSchemaRoleObj> readSchemaRoleByRoleScopeIdx( ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		return( readSchemaRoleByRoleScopeIdx( RoleScope,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readSchemaRoleByRoleScopeIdx( ICFBamSchema.RoleScopeEnum RoleScope,
+	public List<ICFBamSchemaRoleObj> readSchemaRoleByRoleScopeIdx( ICFBamPubSchema.RoleScopeEnum RoleScope,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSchemaRoleByRoleScopeIdx";
@@ -1216,7 +1220,7 @@ public class CFBamSchemaRoleTableObj
 
 	@Override
 	public List<ICFBamSchemaRoleObj> readSchemaRoleBySchRoleScpIdx( CFLibDbKeyHash256 SchemaDefId,
-		ICFBamSchema.RoleScopeEnum RoleScope )
+		ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		return( readSchemaRoleBySchRoleScpIdx( SchemaDefId,
 			RoleScope,
@@ -1225,7 +1229,7 @@ public class CFBamSchemaRoleTableObj
 
 	@Override
 	public List<ICFBamSchemaRoleObj> readSchemaRoleBySchRoleScpIdx( CFLibDbKeyHash256 SchemaDefId,
-		ICFBamSchema.RoleScopeEnum RoleScope,
+		ICFBamPubSchema.RoleScopeEnum RoleScope,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSchemaRoleBySchRoleScpIdx";
@@ -1630,7 +1634,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaRoleObj> readCachedSchemaRoleByRoleScopeIdx( ICFBamSchema.RoleScopeEnum RoleScope )
+	public List<ICFBamSchemaRoleObj> readCachedSchemaRoleByRoleScopeIdx( ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		final String S_ProcName = "readCachedSchemaRoleByRoleScopeIdx";
 		ICFBamSchemaRoleByRoleScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaRole().newByRoleScopeIdxKey();
@@ -1708,7 +1712,7 @@ public class CFBamSchemaRoleTableObj
 
 	@Override
 	public List<ICFBamSchemaRoleObj> readCachedSchemaRoleBySchRoleScpIdx( CFLibDbKeyHash256 SchemaDefId,
-		ICFBamSchema.RoleScopeEnum RoleScope )
+		ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		final String S_ProcName = "readCachedSchemaRoleBySchRoleScpIdx";
 		ICFBamSchemaRoleBySchRoleScpIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaRole().newBySchRoleScpIdxKey();
@@ -1870,7 +1874,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaRoleByRoleScopeIdx( ICFBamSchema.RoleScopeEnum RoleScope )
+	public void deepDisposeSchemaRoleByRoleScopeIdx( ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		final String S_ProcName = "deepDisposeSchemaRoleByRoleScopeIdx";
 		ICFBamSchemaRoleObj obj;
@@ -1888,7 +1892,7 @@ public class CFBamSchemaRoleTableObj
 
 	@Override
 	public void deepDisposeSchemaRoleBySchRoleScpIdx( CFLibDbKeyHash256 SchemaDefId,
-		ICFBamSchema.RoleScopeEnum RoleScope )
+		ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		final String S_ProcName = "deepDisposeSchemaRoleBySchRoleScpIdx";
 		ICFBamSchemaRoleObj obj;
@@ -2119,7 +2123,7 @@ public class CFBamSchemaRoleTableObj
 	}
 
 	@Override
-	public void deleteSchemaRoleByRoleScopeIdx( ICFBamSchema.RoleScopeEnum RoleScope )
+	public void deleteSchemaRoleByRoleScopeIdx( ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		ICFBamSchemaRoleByRoleScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaRole().newByRoleScopeIdxKey();
 		key.setRequiredRoleScope( RoleScope );
@@ -2154,7 +2158,7 @@ public class CFBamSchemaRoleTableObj
 
 	@Override
 	public void deleteSchemaRoleBySchRoleScpIdx( CFLibDbKeyHash256 SchemaDefId,
-		ICFBamSchema.RoleScopeEnum RoleScope )
+		ICFBamPubSchema.RoleScopeEnum RoleScope )
 	{
 		ICFBamSchemaRoleBySchRoleScpIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaRole().newBySchRoleScpIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );

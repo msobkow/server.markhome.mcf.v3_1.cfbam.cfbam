@@ -68,7 +68,7 @@ import server.markhome.mcf.v3_1.cfint.cfint.buff.*;
 public class CFBamBuffSchemaRoleByRoleScopeIdxKey
 	implements ICFBamSchemaRoleByRoleScopeIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFBamSchema.RoleScopeEnum requiredRoleScope;
+	protected ICFBamPubSchema.RoleScopeEnum requiredRoleScope;
 	public CFBamBuffSchemaRoleByRoleScopeIdxKey() {
 		requiredRoleScope = ICFBamSchemaRole.ROLESCOPE_INIT_VALUE;
 	}

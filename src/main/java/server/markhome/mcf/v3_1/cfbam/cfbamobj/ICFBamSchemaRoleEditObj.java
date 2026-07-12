@@ -53,12 +53,16 @@ import java.util.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
-import server.markhome.mcf.v3_1.cflib.dbutil.*;import org.apache.commons.text.StringEscapeUtils;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintobj.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import org.apache.commons.text.StringEscapeUtils;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
 import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public interface ICFBamSchemaRoleEditObj
 	extends ICFBamSchemaRoleObj, ICFBamRoleDefEditObj
@@ -99,17 +103,17 @@ public interface ICFBamSchemaRoleEditObj
 	CFLibDbKeyHash256 getRequiredSchemaDefId();
 
 	/**
-	 *	Get the required ICFBamSchema.RoleScopeEnum attribute RoleScope.
+	 *	Get the required ICFBamPubSchema.RoleScopeEnum attribute RoleScope.
 	 *
-	 *	@return	The required ICFBamSchema.RoleScopeEnum attribute RoleScope.
+	 *	@return	The required ICFBamPubSchema.RoleScopeEnum attribute RoleScope.
 	 */
-	ICFBamSchema.RoleScopeEnum getRequiredRoleScope();
+	ICFBamPubSchema.RoleScopeEnum getRequiredRoleScope();
 
 	/**
-	 *	Set the required ICFBamSchema.RoleScopeEnum attribute RoleScope.
+	 *	Set the required ICFBamPubSchema.RoleScopeEnum attribute RoleScope.
 	 *
-	 *	@param value The required ICFBamSchema.RoleScopeEnum attribute RoleScope value to be applied.
+	 *	@param value The required ICFBamPubSchema.RoleScopeEnum attribute RoleScope value to be applied.
 	 */
-	void setRequiredRoleScope(ICFBamSchema.RoleScopeEnum value);
+	void setRequiredRoleScope(ICFBamPubSchema.RoleScopeEnum value);
 
 }

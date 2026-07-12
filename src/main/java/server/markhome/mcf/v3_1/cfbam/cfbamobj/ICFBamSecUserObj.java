@@ -54,11 +54,12 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintobj.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public interface ICFBamSecUserObj
 	extends ICFSecSecUserObj,
@@ -318,11 +319,11 @@ public interface ICFBamSecUserObj
 	String getRequiredLoginId();
 
 	/**
-	 *	Get the required ICFSecSchema.SecAccountStatusEnum attribute AccountStatus.
+	 *	Get the required ICFSecPubSchema.SecAccountStatusEnum attribute AccountStatus.
 	 *
-	 *	@return	The required ICFSecSchema.SecAccountStatusEnum attribute AccountStatus.
+	 *	@return	The required ICFSecPubSchema.SecAccountStatusEnum attribute AccountStatus.
 	 */
-	ICFSecSchema.SecAccountStatusEnum getRequiredAccountStatus();
+	ICFSecPubSchema.SecAccountStatusEnum getRequiredAccountStatus();
 
 	/**
 	 *	Get the optional String attribute DfltSysGrpName.

@@ -54,11 +54,13 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.text.StringEscapeUtils;
 import server.markhome.mcf.v3_1.cflib.*;
 import server.markhome.mcf.v3_1.cflib.dbutil.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
-import server.markhome.mcf.v3_1.cfint.cfint.*;
-import server.markhome.mcf.v3_1.cfsec.cfsecobj.*;
-import server.markhome.mcf.v3_1.cfint.cfintobj.*;
-import server.markhome.mcf.v3_1.cfsec.cfsec.*;
+
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;$switch HasDefSchema no importJavaProtPackageSchemaNameObj$
 
 public class CFBamSecSysGrpTableObj
 	implements ICFBamSecSysGrpTableObj
@@ -573,14 +575,14 @@ public class CFBamSecSysGrpTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpObj> readSecSysGrpBySecLevelIdx( ICFSecSchema.SecLevelEnum SecLevel )
+	public List<ICFSecSecSysGrpObj> readSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel )
 	{
 		return( readSecSysGrpBySecLevelIdx( SecLevel,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpObj> readSecSysGrpBySecLevelIdx( ICFSecSchema.SecLevelEnum SecLevel,
+	public List<ICFSecSecSysGrpObj> readSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysGrpBySecLevelIdx";
@@ -710,7 +712,7 @@ public class CFBamSecSysGrpTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysGrpObj> readCachedSecSysGrpBySecLevelIdx( ICFSecSchema.SecLevelEnum SecLevel )
+	public List<ICFSecSecSysGrpObj> readCachedSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel )
 	{
 		final String S_ProcName = "readCachedSecSysGrpBySecLevelIdx";
 		ICFSecSecSysGrpBySecLevelIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newBySecLevelIdxKey();
@@ -805,7 +807,7 @@ public class CFBamSecSysGrpTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysGrpBySecLevelIdx( ICFSecSchema.SecLevelEnum SecLevel )
+	public void deepDisposeSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel )
 	{
 		final String S_ProcName = "deepDisposeSecSysGrpBySecLevelIdx";
 		ICFSecSecSysGrpObj obj;
@@ -893,7 +895,7 @@ public class CFBamSecSysGrpTableObj
 	}
 
 	@Override
-	public void deleteSecSysGrpBySecLevelIdx( ICFSecSchema.SecLevelEnum SecLevel )
+	public void deleteSecSysGrpBySecLevelIdx( ICFSecPubSchema.SecLevelEnum SecLevel )
 	{
 		ICFSecSecSysGrpBySecLevelIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysGrp().newBySecLevelIdxKey();
 		key.setRequiredSecLevel( SecLevel );

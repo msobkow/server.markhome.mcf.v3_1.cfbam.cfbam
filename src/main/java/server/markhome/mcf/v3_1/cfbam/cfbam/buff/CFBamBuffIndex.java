@@ -80,7 +80,7 @@ public class CFBamBuffIndex
 	protected String optionalSuffix;
 	protected boolean requiredIsUnique;
 	protected boolean requiredIsDbMapped;
-	protected ICFBamSchema.CodeVisibilityEnum requiredCodeVis;
+	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 
 	public CFBamBuffIndex() {
 		super();

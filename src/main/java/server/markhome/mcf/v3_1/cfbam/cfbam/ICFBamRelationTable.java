@@ -152,7 +152,7 @@ public interface ICFBamRelationTable
 	 *	@param	CodeVis	The Relation key attribute of the instance generating the id.
 	 */
 	void deleteRelationByRelCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
 	 *	Delete the Relation instances identified by the key RelCodeVisIdx.
@@ -174,7 +174,7 @@ public interface ICFBamRelationTable
 	 */
 	void deleteRelationByRelTableCodeVisX( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 argTableId,
-		ICFBamSchema.CodeVisibilityEnum argCodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
 	 *	Delete the Relation instances identified by the key RelTableCodeVisX.
@@ -408,7 +408,7 @@ public interface ICFBamRelationTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamRelation[] readDerivedByRelCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key RelTableCodeVisX.
@@ -423,7 +423,7 @@ public interface ICFBamRelationTable
 	 */
 	ICFBamRelation[] readDerivedByRelTableCodeVisX( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the derived Relation record instances identified by the duplicate key DefSchemaIdx.
@@ -597,7 +597,7 @@ public interface ICFBamRelationTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRelation[] readRecByRelCodeVisIdx( ICFSecAuthorization Authorization,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key RelTableCodeVisX.
@@ -614,7 +614,7 @@ public interface ICFBamRelationTable
 	 */
 	ICFBamRelation[] readRecByRelTableCodeVisX( ICFSecAuthorization Authorization,
 		CFLibDbKeyHash256 TableId,
-		ICFBamSchema.CodeVisibilityEnum CodeVis );
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
 	 *	Read an array of the specific Relation record instances identified by the duplicate key DefSchemaIdx.
