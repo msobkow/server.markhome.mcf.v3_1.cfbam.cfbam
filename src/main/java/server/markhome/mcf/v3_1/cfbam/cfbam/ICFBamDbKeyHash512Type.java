@@ -81,7 +81,7 @@ public interface ICFBamDbKeyHash512Type extends ICFBamDbKeyHash512Def
 			setRequiredContainerSchemaDef((ICFBamSchemaDef)null);
 		}
 		else {
-			setRequiredContainerSchemaDef(argObj.getRequiredSchemaDefId());
+			setRequiredContainerSchemaDef(argObj.getRequiredId());
 		}
 	}
 

@@ -81,7 +81,7 @@ public interface ICFBamInt64Type extends ICFBamInt64Def
 			setRequiredContainerSchemaDef((ICFBamSchemaDef)null);
 		}
 		else {
-			setRequiredContainerSchemaDef(argObj.getRequiredSchemaDefId());
+			setRequiredContainerSchemaDef(argObj.getRequiredId());
 		}
 	}
 

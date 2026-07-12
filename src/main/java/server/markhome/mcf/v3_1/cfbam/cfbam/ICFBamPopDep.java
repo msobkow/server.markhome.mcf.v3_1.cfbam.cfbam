@@ -84,7 +84,7 @@ public interface ICFBamPopDep extends ICFBamScope
 			setRequiredLookupRelation((ICFBamRelation)null);
 		}
 		else {
-			setRequiredLookupRelation(argObj.getRequiredRelationId());
+			setRequiredLookupRelation(argObj.getRequiredId());
 		}
 	}
 
@@ -95,7 +95,7 @@ public interface ICFBamPopDep extends ICFBamScope
 			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
 		}
 		else {
-			setOptionalLookupDefSchema(argObj.getOptionalDefSchemaId());
+			setOptionalLookupDefSchema(argObj.getRequiredId());
 		}
 	}
 

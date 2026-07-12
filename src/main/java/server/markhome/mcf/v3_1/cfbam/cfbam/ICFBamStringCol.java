@@ -81,7 +81,7 @@ public interface ICFBamStringCol extends ICFBamStringDef
 			setRequiredContainerTable((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerTable(argObj.getRequiredTableId());
+			setRequiredContainerTable(argObj.getRequiredId());
 		}
 	}
 

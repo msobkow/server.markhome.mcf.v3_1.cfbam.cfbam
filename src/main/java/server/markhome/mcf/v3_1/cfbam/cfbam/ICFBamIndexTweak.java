@@ -81,7 +81,7 @@ public interface ICFBamIndexTweak extends ICFBamTweak
 			setRequiredContainerIndexDef((ICFBamIndex)null);
 		}
 		else {
-			setRequiredContainerIndexDef(argObj.getRequiredIndexId());
+			setRequiredContainerIndexDef(argObj.getRequiredId());
 		}
 	}
 

@@ -81,7 +81,7 @@ public interface ICFBamSchemaTweak extends ICFBamTweak
 			setRequiredContainerSchemaDef((ICFBamSchemaDef)null);
 		}
 		else {
-			setRequiredContainerSchemaDef(argObj.getRequiredSchemaDefId());
+			setRequiredContainerSchemaDef(argObj.getRequiredId());
 		}
 	}
 

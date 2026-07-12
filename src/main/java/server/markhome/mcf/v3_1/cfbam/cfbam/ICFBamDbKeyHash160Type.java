@@ -81,7 +81,7 @@ public interface ICFBamDbKeyHash160Type extends ICFBamDbKeyHash160Def
 			setRequiredContainerSchemaDef((ICFBamSchemaDef)null);
 		}
 		else {
-			setRequiredContainerSchemaDef(argObj.getRequiredSchemaDefId());
+			setRequiredContainerSchemaDef(argObj.getRequiredId());
 		}
 	}
 

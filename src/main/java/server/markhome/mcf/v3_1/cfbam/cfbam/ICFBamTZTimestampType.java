@@ -81,7 +81,7 @@ public interface ICFBamTZTimestampType extends ICFBamTZTimestampDef
 			setRequiredContainerSchemaDef((ICFBamSchemaDef)null);
 		}
 		else {
-			setRequiredContainerSchemaDef(argObj.getRequiredSchemaDefId());
+			setRequiredContainerSchemaDef(argObj.getRequiredId());
 		}
 	}
 

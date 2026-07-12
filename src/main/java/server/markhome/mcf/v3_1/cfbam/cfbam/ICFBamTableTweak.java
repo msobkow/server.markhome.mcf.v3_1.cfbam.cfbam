@@ -81,7 +81,7 @@ public interface ICFBamTableTweak extends ICFBamTweak
 			setRequiredContainerTableDef((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerTableDef(argObj.getRequiredTableId());
+			setRequiredContainerTableDef(argObj.getRequiredId());
 		}
 	}
 

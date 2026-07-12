@@ -119,7 +119,7 @@ public interface ICFBamEnumTag
 			setRequiredContainerEnumDef((ICFBamEnumDef)null);
 		}
 		else {
-			setRequiredContainerEnumDef(argObj.getRequiredEnumId());
+			setRequiredContainerEnumDef(argObj.getRequiredId());
 		}
 	}
 
@@ -130,7 +130,7 @@ public interface ICFBamEnumTag
 			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
 		}
 		else {
-			setOptionalLookupDefSchema(argObj.getOptionalDefSchemaId());
+			setOptionalLookupDefSchema(argObj.getRequiredId());
 		}
 	}
 
@@ -141,7 +141,7 @@ public interface ICFBamEnumTag
 			setOptionalLookupPrev((ICFBamEnumTag)null);
 		}
 		else {
-			setOptionalLookupPrev(argObj.getOptionalPrevId());
+			setOptionalLookupPrev(argObj.getRequiredId());
 		}
 	}
 
@@ -152,7 +152,7 @@ public interface ICFBamEnumTag
 			setOptionalLookupNext((ICFBamEnumTag)null);
 		}
 		else {
-			setOptionalLookupNext(argObj.getOptionalNextId());
+			setOptionalLookupNext(argObj.getRequiredId());
 		}
 	}
 

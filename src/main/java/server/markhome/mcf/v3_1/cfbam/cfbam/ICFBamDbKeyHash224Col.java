@@ -81,7 +81,7 @@ public interface ICFBamDbKeyHash224Col extends ICFBamDbKeyHash224Def
 			setRequiredContainerTable((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerTable(argObj.getRequiredTableId());
+			setRequiredContainerTable(argObj.getRequiredId());
 		}
 	}
 

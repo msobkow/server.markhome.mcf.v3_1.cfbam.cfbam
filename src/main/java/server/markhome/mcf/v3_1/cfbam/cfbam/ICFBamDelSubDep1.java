@@ -82,7 +82,7 @@ public interface ICFBamDelSubDep1 extends ICFBamDelDep
 			setRequiredContainerDelTopDep((ICFBamDelTopDep)null);
 		}
 		else {
-			setRequiredContainerDelTopDep(argObj.getRequiredDelTopDepId());
+			setRequiredContainerDelTopDep(argObj.getRequiredId());
 		}
 	}
 

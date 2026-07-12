@@ -81,7 +81,7 @@ public interface ICFBamNmTokenCol extends ICFBamNmTokenDef
 			setRequiredContainerTable((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerTable(argObj.getRequiredTableId());
+			setRequiredContainerTable(argObj.getRequiredId());
 		}
 	}
 

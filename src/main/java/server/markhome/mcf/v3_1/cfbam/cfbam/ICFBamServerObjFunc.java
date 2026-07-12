@@ -81,7 +81,7 @@ public interface ICFBamServerObjFunc extends ICFBamServerMethod
 			setOptionalLookupRetTable((ICFBamTable)null);
 		}
 		else {
-			setOptionalLookupRetTable(argObj.getOptionalRetTableId());
+			setOptionalLookupRetTable(argObj.getRequiredId());
 		}
 	}
 

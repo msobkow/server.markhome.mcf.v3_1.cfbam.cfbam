@@ -81,7 +81,7 @@ public interface ICFBamBlobCol extends ICFBamBlobDef
 			setRequiredContainerTable((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerTable(argObj.getRequiredTableId());
+			setRequiredContainerTable(argObj.getRequiredId());
 		}
 	}
 

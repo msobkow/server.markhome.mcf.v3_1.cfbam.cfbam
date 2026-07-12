@@ -81,7 +81,7 @@ public interface ICFBamBoolCol extends ICFBamBoolDef
 			setRequiredContainerTable((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerTable(argObj.getRequiredTableId());
+			setRequiredContainerTable(argObj.getRequiredId());
 		}
 	}
 

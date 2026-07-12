@@ -90,7 +90,7 @@ public interface ICFBamIndex extends ICFBamScope
 			setRequiredContainerTable((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerTable(argObj.getRequiredTableId());
+			setRequiredContainerTable(argObj.getRequiredId());
 		}
 	}
 
@@ -101,7 +101,7 @@ public interface ICFBamIndex extends ICFBamScope
 			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
 		}
 		else {
-			setOptionalLookupDefSchema(argObj.getOptionalDefSchemaId());
+			setOptionalLookupDefSchema(argObj.getRequiredId());
 		}
 	}
 

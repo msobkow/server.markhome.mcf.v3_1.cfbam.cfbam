@@ -88,7 +88,7 @@ public interface ICFBamClearTopDep extends ICFBamClearDep
 			setRequiredContainerTable((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerTable(argObj.getRequiredTableId());
+			setRequiredContainerTable(argObj.getRequiredId());
 		}
 	}
 
@@ -99,7 +99,7 @@ public interface ICFBamClearTopDep extends ICFBamClearDep
 			setOptionalLookupPrev((ICFBamClearTopDep)null);
 		}
 		else {
-			setOptionalLookupPrev(argObj.getOptionalPrevId());
+			setOptionalLookupPrev(argObj.getRequiredId());
 		}
 	}
 
@@ -110,7 +110,7 @@ public interface ICFBamClearTopDep extends ICFBamClearDep
 			setOptionalLookupNext((ICFBamClearTopDep)null);
 		}
 		else {
-			setOptionalLookupNext(argObj.getOptionalNextId());
+			setOptionalLookupNext(argObj.getRequiredId());
 		}
 	}
 

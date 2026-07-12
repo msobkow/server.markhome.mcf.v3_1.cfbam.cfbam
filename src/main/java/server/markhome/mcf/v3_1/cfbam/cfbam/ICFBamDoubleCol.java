@@ -81,7 +81,7 @@ public interface ICFBamDoubleCol extends ICFBamDoubleDef
 			setRequiredContainerTable((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerTable(argObj.getRequiredTableId());
+			setRequiredContainerTable(argObj.getRequiredId());
 		}
 	}
 

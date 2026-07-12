@@ -82,7 +82,7 @@ public interface ICFBamDelSubDep3 extends ICFBamDelDep
 			setRequiredContainerDelSubDep2((ICFBamDelSubDep2)null);
 		}
 		else {
-			setRequiredContainerDelSubDep2(argObj.getRequiredDelSubDep2Id());
+			setRequiredContainerDelSubDep2(argObj.getRequiredId());
 		}
 	}
 

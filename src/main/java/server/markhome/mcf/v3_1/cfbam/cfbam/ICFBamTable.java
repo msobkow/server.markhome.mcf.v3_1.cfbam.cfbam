@@ -113,7 +113,7 @@ public interface ICFBamTable extends ICFBamScope
 			setRequiredContainerSchemaDef((ICFBamSchemaDef)null);
 		}
 		else {
-			setRequiredContainerSchemaDef(argObj.getRequiredSchemaDefId());
+			setRequiredContainerSchemaDef(argObj.getRequiredId());
 		}
 	}
 
@@ -124,7 +124,7 @@ public interface ICFBamTable extends ICFBamScope
 			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
 		}
 		else {
-			setOptionalLookupDefSchema(argObj.getOptionalDefSchemaId());
+			setOptionalLookupDefSchema(argObj.getRequiredId());
 		}
 	}
 
@@ -135,7 +135,7 @@ public interface ICFBamTable extends ICFBamScope
 			setOptionalLookupLookupIndex((ICFBamIndex)null);
 		}
 		else {
-			setOptionalLookupLookupIndex(argObj.getOptionalLookupIndexId());
+			setOptionalLookupLookupIndex(argObj.getRequiredId());
 		}
 	}
 
@@ -146,7 +146,7 @@ public interface ICFBamTable extends ICFBamScope
 			setOptionalLookupAltIndex((ICFBamIndex)null);
 		}
 		else {
-			setOptionalLookupAltIndex(argObj.getOptionalAltIndexId());
+			setOptionalLookupAltIndex(argObj.getRequiredId());
 		}
 	}
 
@@ -157,7 +157,7 @@ public interface ICFBamTable extends ICFBamScope
 			setOptionalLookupQualTable((ICFBamTable)null);
 		}
 		else {
-			setOptionalLookupQualTable(argObj.getOptionalQualifyingTableId());
+			setOptionalLookupQualTable(argObj.getRequiredId());
 		}
 	}
 
@@ -168,7 +168,7 @@ public interface ICFBamTable extends ICFBamScope
 			setOptionalLookupPrimaryIndex((ICFBamIndex)null);
 		}
 		else {
-			setOptionalLookupPrimaryIndex(argObj.getOptionalPrimaryIndexId());
+			setOptionalLookupPrimaryIndex(argObj.getRequiredId());
 		}
 	}
 

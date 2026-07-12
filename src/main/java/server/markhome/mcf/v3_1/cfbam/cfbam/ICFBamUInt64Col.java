@@ -81,7 +81,7 @@ public interface ICFBamUInt64Col extends ICFBamUInt64Def
 			setRequiredContainerTable((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerTable(argObj.getRequiredTableId());
+			setRequiredContainerTable(argObj.getRequiredId());
 		}
 	}
 

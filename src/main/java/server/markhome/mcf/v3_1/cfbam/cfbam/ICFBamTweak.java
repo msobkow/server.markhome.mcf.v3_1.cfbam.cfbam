@@ -116,7 +116,7 @@ public interface ICFBamTweak
 			setRequiredContainerScopeDef((ICFBamScope)null);
 		}
 		else {
-			setRequiredContainerScopeDef(argObj.getRequiredScopeId());
+			setRequiredContainerScopeDef(argObj.getRequiredId());
 		}
 	}
 
@@ -127,7 +127,7 @@ public interface ICFBamTweak
 			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
 		}
 		else {
-			setOptionalLookupDefSchema(argObj.getOptionalDefSchemaId());
+			setOptionalLookupDefSchema(argObj.getRequiredId());
 		}
 	}
 

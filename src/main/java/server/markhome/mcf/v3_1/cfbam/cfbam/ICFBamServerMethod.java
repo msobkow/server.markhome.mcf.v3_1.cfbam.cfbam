@@ -93,7 +93,7 @@ public interface ICFBamServerMethod extends ICFBamScope
 			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
 		}
 		else {
-			setOptionalLookupDefSchema(argObj.getOptionalDefSchemaId());
+			setOptionalLookupDefSchema(argObj.getRequiredId());
 		}
 	}
 
@@ -104,7 +104,7 @@ public interface ICFBamServerMethod extends ICFBamScope
 			setRequiredContainerForTable((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerForTable(argObj.getRequiredTableId());
+			setRequiredContainerForTable(argObj.getRequiredId());
 		}
 	}
 

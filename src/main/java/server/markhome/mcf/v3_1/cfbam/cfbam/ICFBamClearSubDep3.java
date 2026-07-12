@@ -82,7 +82,7 @@ public interface ICFBamClearSubDep3 extends ICFBamClearDep
 			setRequiredContainerClearSubDep2((ICFBamClearSubDep2)null);
 		}
 		else {
-			setRequiredContainerClearSubDep2(argObj.getRequiredClearSubDep2Id());
+			setRequiredContainerClearSubDep2(argObj.getRequiredId());
 		}
 	}
 

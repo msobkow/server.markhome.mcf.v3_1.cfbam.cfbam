@@ -81,7 +81,7 @@ public interface ICFBamUuid6Col extends ICFBamUuid6Def
 			setRequiredContainerTable((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerTable(argObj.getRequiredTableId());
+			setRequiredContainerTable(argObj.getRequiredId());
 		}
 	}
 

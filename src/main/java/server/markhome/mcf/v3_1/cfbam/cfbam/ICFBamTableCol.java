@@ -85,7 +85,7 @@ public interface ICFBamTableCol extends ICFBamValue
 			setRequiredContainerTable((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerTable(argObj.getRequiredTableId());
+			setRequiredContainerTable(argObj.getRequiredId());
 		}
 	}
 
@@ -96,7 +96,7 @@ public interface ICFBamTableCol extends ICFBamValue
 			setRequiredParentDataType((ICFBamValue)null);
 		}
 		else {
-			setRequiredParentDataType(argObj.getOptionalDataId());
+			setRequiredParentDataType(argObj.getRequiredId());
 		}
 	}
 

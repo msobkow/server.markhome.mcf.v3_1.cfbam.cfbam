@@ -82,7 +82,7 @@ public interface ICFBamPopSubDep2 extends ICFBamPopDep
 			setRequiredContainerPopSubDep1((ICFBamPopSubDep1)null);
 		}
 		else {
-			setRequiredContainerPopSubDep1(argObj.getRequiredPopSubDep1Id());
+			setRequiredContainerPopSubDep1(argObj.getRequiredId());
 		}
 	}
 

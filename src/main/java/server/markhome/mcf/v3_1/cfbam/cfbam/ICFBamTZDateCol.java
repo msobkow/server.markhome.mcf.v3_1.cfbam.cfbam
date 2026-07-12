@@ -81,7 +81,7 @@ public interface ICFBamTZDateCol extends ICFBamTZDateDef
 			setRequiredContainerTable((ICFBamTable)null);
 		}
 		else {
-			setRequiredContainerTable(argObj.getRequiredTableId());
+			setRequiredContainerTable(argObj.getRequiredId());
 		}
 	}
 

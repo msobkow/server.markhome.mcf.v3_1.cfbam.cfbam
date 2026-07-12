@@ -122,7 +122,7 @@ public interface ICFBamRelationCol
 			setRequiredContainerRelation((ICFBamRelation)null);
 		}
 		else {
-			setRequiredContainerRelation(argObj.getRequiredRelationId());
+			setRequiredContainerRelation(argObj.getRequiredId());
 		}
 	}
 
@@ -133,7 +133,7 @@ public interface ICFBamRelationCol
 			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
 		}
 		else {
-			setOptionalLookupDefSchema(argObj.getOptionalDefSchemaId());
+			setOptionalLookupDefSchema(argObj.getRequiredId());
 		}
 	}
 
@@ -144,7 +144,7 @@ public interface ICFBamRelationCol
 			setOptionalLookupPrev((ICFBamRelationCol)null);
 		}
 		else {
-			setOptionalLookupPrev(argObj.getOptionalPrevId());
+			setOptionalLookupPrev(argObj.getRequiredId());
 		}
 	}
 
@@ -155,7 +155,7 @@ public interface ICFBamRelationCol
 			setOptionalLookupNext((ICFBamRelationCol)null);
 		}
 		else {
-			setOptionalLookupNext(argObj.getOptionalNextId());
+			setOptionalLookupNext(argObj.getRequiredId());
 		}
 	}
 
@@ -166,7 +166,7 @@ public interface ICFBamRelationCol
 			setRequiredLookupFromCol((ICFBamIndexCol)null);
 		}
 		else {
-			setRequiredLookupFromCol(argObj.getRequiredFromColId());
+			setRequiredLookupFromCol(argObj.getRequiredId());
 		}
 	}
 
@@ -177,7 +177,7 @@ public interface ICFBamRelationCol
 			setRequiredLookupToCol((ICFBamIndexCol)null);
 		}
 		else {
-			setRequiredLookupToCol(argObj.getRequiredToColId());
+			setRequiredLookupToCol(argObj.getRequiredId());
 		}
 	}
 

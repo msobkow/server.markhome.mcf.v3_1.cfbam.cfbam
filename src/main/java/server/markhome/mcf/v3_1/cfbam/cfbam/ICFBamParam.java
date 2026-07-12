@@ -120,7 +120,7 @@ public interface ICFBamParam
 			setRequiredContainerServerMeth((ICFBamServerMethod)null);
 		}
 		else {
-			setRequiredContainerServerMeth(argObj.getRequiredServerMethodId());
+			setRequiredContainerServerMeth(argObj.getRequiredId());
 		}
 	}
 
@@ -131,7 +131,7 @@ public interface ICFBamParam
 			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
 		}
 		else {
-			setOptionalLookupDefSchema(argObj.getOptionalDefSchemaId());
+			setOptionalLookupDefSchema(argObj.getRequiredId());
 		}
 	}
 
@@ -142,7 +142,7 @@ public interface ICFBamParam
 			setOptionalLookupPrev((ICFBamParam)null);
 		}
 		else {
-			setOptionalLookupPrev(argObj.getOptionalPrevId());
+			setOptionalLookupPrev(argObj.getRequiredId());
 		}
 	}
 
@@ -153,7 +153,7 @@ public interface ICFBamParam
 			setOptionalLookupNext((ICFBamParam)null);
 		}
 		else {
-			setOptionalLookupNext(argObj.getOptionalNextId());
+			setOptionalLookupNext(argObj.getRequiredId());
 		}
 	}
 
@@ -164,7 +164,7 @@ public interface ICFBamParam
 			setRequiredLookupType((ICFBamValue)null);
 		}
 		else {
-			setRequiredLookupType(argObj.getOptionalTypeId());
+			setRequiredLookupType(argObj.getRequiredId());
 		}
 	}
 
