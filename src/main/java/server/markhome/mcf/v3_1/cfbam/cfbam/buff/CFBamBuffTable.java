@@ -530,7 +530,7 @@ public class CFBamBuffTable
 	}
 
 	@Override
-	public void setRequiredLoaderBehaviour( ICFBamSchema.LoaderBehaviourEnum value ) {
+	public void setRequiredLoaderBehaviour( ICFBamPubSchema.LoaderBehaviourEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredLoaderBehaviour",
@@ -546,7 +546,7 @@ public class CFBamBuffTable
 	}
 
 	@Override
-	public void setRequiredSecScope( ICFBamSchema.SecScopeEnum value ) {
+	public void setRequiredSecScope( ICFBamPubSchema.SecScopeEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSecScope",
@@ -562,7 +562,7 @@ public class CFBamBuffTable
 	}
 
 	@Override
-	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value ) {
+	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredCodeVis",

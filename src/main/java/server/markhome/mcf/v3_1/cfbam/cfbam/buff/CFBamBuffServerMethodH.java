@@ -277,7 +277,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 	}
 
 	@Override
-	public void setRequiredCodeVis( ICFBamSchema.CodeVisibilityEnum value ) {
+	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredCodeVis",

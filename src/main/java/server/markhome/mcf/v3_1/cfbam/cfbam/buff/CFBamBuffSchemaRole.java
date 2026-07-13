@@ -127,7 +127,7 @@ public class CFBamBuffSchemaRole
 	}
 
 	@Override
-	public void setRequiredRoleScope( ICFBamSchema.RoleScopeEnum value ) {
+	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredRoleScope",
