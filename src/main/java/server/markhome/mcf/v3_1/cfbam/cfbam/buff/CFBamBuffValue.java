@@ -260,26 +260,6 @@ public class CFBamBuffValue
 	}
 
 	@Override
-	public void setRequiredContainerScope(ICFBamProtScope argObj) {
-		if(argObj == null) {
-			requiredScopeId = null;
-		}
-		else {
-			requiredScopeId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerScope(ICFBamPubScope argObj) {
-		if(argObj == null) {
-			requiredScopeId = null;
-		}
-		else {
-			requiredScopeId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setRequiredContainerScope(CFLibDbKeyHash256 argScopeId) {
 		requiredScopeId = argScopeId;
 	}
@@ -299,26 +279,6 @@ public class CFBamBuffValue
 	}
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		if(argObj == null) {
-			optionalDefSchemaId = null;
-		}
-		else {
-			optionalDefSchemaId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		if(argObj == null) {
-			optionalDefSchemaId = null;
-		}
-		else {
-			optionalDefSchemaId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
 		if(argObj == null) {
 			optionalDefSchemaId = null;
 		}
@@ -356,26 +316,6 @@ public class CFBamBuffValue
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFBamProtValue argObj) {
-		if(argObj == null) {
-			optionalPrevId = null;
-		}
-		else {
-			optionalPrevId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupPrev(ICFBamPubValue argObj) {
-		if(argObj == null) {
-			optionalPrevId = null;
-		}
-		else {
-			optionalPrevId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
 		optionalPrevId = argPrevId;
 	}
@@ -395,26 +335,6 @@ public class CFBamBuffValue
 	}
 	@Override
 	public void setOptionalLookupNext(ICFBamValue argObj) {
-		if(argObj == null) {
-			optionalNextId = null;
-		}
-		else {
-			optionalNextId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupNext(ICFBamProtValue argObj) {
-		if(argObj == null) {
-			optionalNextId = null;
-		}
-		else {
-			optionalNextId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupNext(ICFBamPubValue argObj) {
 		if(argObj == null) {
 			optionalNextId = null;
 		}

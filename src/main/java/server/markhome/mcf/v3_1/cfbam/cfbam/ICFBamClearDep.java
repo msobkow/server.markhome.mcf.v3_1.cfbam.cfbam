@@ -81,7 +81,16 @@ public interface ICFBamClearDep extends ICFBamScope
 	public void setRequiredLookupRelation(ICFBamRelation argObj);
 	public default void setRequiredLookupRelation(ICFBamProtRelation argObj) {
 		if (argObj == null) {
-			setRequiredLookupRelation((ICFBamRelation)null);
+			setRequiredLookupRelation((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredLookupRelation(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredLookupRelation(ICFBamPubRelation argObj) {
+		if (argObj == null) {
+			setRequiredLookupRelation((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredLookupRelation(argObj.getRequiredId());
@@ -92,7 +101,16 @@ public interface ICFBamClearDep extends ICFBamScope
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
 	public default void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
 		if (argObj == null) {
-			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
+			setOptionalLookupDefSchema((CFLibDbKeyHash256)null);
+		}
+		else {
+			setOptionalLookupDefSchema(argObj.getRequiredId());
+		}
+	}
+
+	public default void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		if (argObj == null) {
+			setOptionalLookupDefSchema((CFLibDbKeyHash256)null);
 		}
 		else {
 			setOptionalLookupDefSchema(argObj.getRequiredId());

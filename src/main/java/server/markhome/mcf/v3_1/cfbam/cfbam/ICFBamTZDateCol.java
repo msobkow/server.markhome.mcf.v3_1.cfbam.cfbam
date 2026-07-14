@@ -78,7 +78,16 @@ public interface ICFBamTZDateCol extends ICFBamTZDateDef
 	public void setRequiredContainerTable(ICFBamTable argObj);
 	public default void setRequiredContainerTable(ICFBamProtTable argObj) {
 		if (argObj == null) {
-			setRequiredContainerTable((ICFBamTable)null);
+			setRequiredContainerTable((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerTable(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerTable(ICFBamPubTable argObj) {
+		if (argObj == null) {
+			setRequiredContainerTable((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerTable(argObj.getRequiredId());

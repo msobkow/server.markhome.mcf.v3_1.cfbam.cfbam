@@ -116,26 +116,6 @@ public class CFBamBuffClearTopDep
 	}
 
 	@Override
-	public void setRequiredContainerTable(ICFBamProtTable argObj) {
-		if(argObj == null) {
-			requiredTableId = null;
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerTable(ICFBamPubTable argObj) {
-		if(argObj == null) {
-			requiredTableId = null;
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
 		requiredTableId = argTableId;
 	}
@@ -164,26 +144,6 @@ public class CFBamBuffClearTopDep
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFBamProtClearTopDep argObj) {
-		if(argObj == null) {
-			optionalPrevId = null;
-		}
-		else {
-			optionalPrevId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupPrev(ICFBamPubClearTopDep argObj) {
-		if(argObj == null) {
-			optionalPrevId = null;
-		}
-		else {
-			optionalPrevId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
 		optionalPrevId = argPrevId;
 	}
@@ -203,26 +163,6 @@ public class CFBamBuffClearTopDep
 	}
 	@Override
 	public void setOptionalLookupNext(ICFBamClearTopDep argObj) {
-		if(argObj == null) {
-			optionalNextId = null;
-		}
-		else {
-			optionalNextId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupNext(ICFBamProtClearTopDep argObj) {
-		if(argObj == null) {
-			optionalNextId = null;
-		}
-		else {
-			optionalNextId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupNext(ICFBamPubClearTopDep argObj) {
 		if(argObj == null) {
 			optionalNextId = null;
 		}

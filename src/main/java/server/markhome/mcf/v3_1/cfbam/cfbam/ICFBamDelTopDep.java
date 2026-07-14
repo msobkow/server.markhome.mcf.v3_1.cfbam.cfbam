@@ -85,7 +85,16 @@ public interface ICFBamDelTopDep extends ICFBamDelDep
 	public void setRequiredContainerTable(ICFBamTable argObj);
 	public default void setRequiredContainerTable(ICFBamProtTable argObj) {
 		if (argObj == null) {
-			setRequiredContainerTable((ICFBamTable)null);
+			setRequiredContainerTable((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerTable(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerTable(ICFBamPubTable argObj) {
+		if (argObj == null) {
+			setRequiredContainerTable((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerTable(argObj.getRequiredId());
@@ -96,7 +105,16 @@ public interface ICFBamDelTopDep extends ICFBamDelDep
 	public void setOptionalLookupPrev(ICFBamDelTopDep argObj);
 	public default void setOptionalLookupPrev(ICFBamProtDelTopDep argObj) {
 		if (argObj == null) {
-			setOptionalLookupPrev((ICFBamDelTopDep)null);
+			setOptionalLookupPrev((CFLibDbKeyHash256)null);
+		}
+		else {
+			setOptionalLookupPrev(argObj.getRequiredId());
+		}
+	}
+
+	public default void setOptionalLookupPrev(ICFBamPubDelTopDep argObj) {
+		if (argObj == null) {
+			setOptionalLookupPrev((CFLibDbKeyHash256)null);
 		}
 		else {
 			setOptionalLookupPrev(argObj.getRequiredId());
@@ -107,7 +125,16 @@ public interface ICFBamDelTopDep extends ICFBamDelDep
 	public void setOptionalLookupNext(ICFBamDelTopDep argObj);
 	public default void setOptionalLookupNext(ICFBamProtDelTopDep argObj) {
 		if (argObj == null) {
-			setOptionalLookupNext((ICFBamDelTopDep)null);
+			setOptionalLookupNext((CFLibDbKeyHash256)null);
+		}
+		else {
+			setOptionalLookupNext(argObj.getRequiredId());
+		}
+	}
+
+	public default void setOptionalLookupNext(ICFBamPubDelTopDep argObj) {
+		if (argObj == null) {
+			setOptionalLookupNext((CFLibDbKeyHash256)null);
 		}
 		else {
 			setOptionalLookupNext(argObj.getRequiredId());

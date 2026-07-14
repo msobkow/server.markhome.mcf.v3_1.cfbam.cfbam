@@ -200,26 +200,6 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
-	public void setRequiredContainerEnumDef(ICFBamProtEnumDef argObj) {
-		if(argObj == null) {
-			requiredEnumId = null;
-		}
-		else {
-			requiredEnumId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerEnumDef(ICFBamPubEnumDef argObj) {
-		if(argObj == null) {
-			requiredEnumId = null;
-		}
-		else {
-			requiredEnumId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setRequiredContainerEnumDef(CFLibDbKeyHash256 argEnumId) {
 		requiredEnumId = argEnumId;
 	}
@@ -239,26 +219,6 @@ public class CFBamBuffEnumTag
 	}
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		if(argObj == null) {
-			optionalDefSchemaId = null;
-		}
-		else {
-			optionalDefSchemaId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		if(argObj == null) {
-			optionalDefSchemaId = null;
-		}
-		else {
-			optionalDefSchemaId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
 		if(argObj == null) {
 			optionalDefSchemaId = null;
 		}
@@ -296,26 +256,6 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFBamProtEnumTag argObj) {
-		if(argObj == null) {
-			optionalPrevId = null;
-		}
-		else {
-			optionalPrevId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupPrev(ICFBamPubEnumTag argObj) {
-		if(argObj == null) {
-			optionalPrevId = null;
-		}
-		else {
-			optionalPrevId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
 		optionalPrevId = argPrevId;
 	}
@@ -335,26 +275,6 @@ public class CFBamBuffEnumTag
 	}
 	@Override
 	public void setOptionalLookupNext(ICFBamEnumTag argObj) {
-		if(argObj == null) {
-			optionalNextId = null;
-		}
-		else {
-			optionalNextId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupNext(ICFBamProtEnumTag argObj) {
-		if(argObj == null) {
-			optionalNextId = null;
-		}
-		else {
-			optionalNextId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupNext(ICFBamPubEnumTag argObj) {
 		if(argObj == null) {
 			optionalNextId = null;
 		}

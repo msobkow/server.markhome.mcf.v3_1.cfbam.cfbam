@@ -112,26 +112,6 @@ public class CFBamBuffDelSubDep3
 	}
 
 	@Override
-	public void setRequiredContainerDelSubDep2(ICFBamProtDelSubDep2 argObj) {
-		if(argObj == null) {
-			requiredDelSubDep2Id = null;
-		}
-		else {
-			requiredDelSubDep2Id = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerDelSubDep2(ICFBamPubDelSubDep2 argObj) {
-		if(argObj == null) {
-			requiredDelSubDep2Id = null;
-		}
-		else {
-			requiredDelSubDep2Id = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setRequiredContainerDelSubDep2(CFLibDbKeyHash256 argDelSubDep2Id) {
 		requiredDelSubDep2Id = argDelSubDep2Id;
 	}

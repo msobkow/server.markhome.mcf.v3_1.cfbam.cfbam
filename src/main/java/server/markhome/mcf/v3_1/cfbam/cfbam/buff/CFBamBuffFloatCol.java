@@ -110,26 +110,6 @@ public class CFBamBuffFloatCol
 	}
 
 	@Override
-	public void setRequiredContainerTable(ICFBamProtTable argObj) {
-		if(argObj == null) {
-			requiredTableId = null;
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerTable(ICFBamPubTable argObj) {
-		if(argObj == null) {
-			requiredTableId = null;
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
 		requiredTableId = argTableId;
 	}

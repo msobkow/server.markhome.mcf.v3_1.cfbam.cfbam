@@ -82,7 +82,16 @@ public interface ICFBamTableCol extends ICFBamValue
 	public void setRequiredContainerTable(ICFBamTable argObj);
 	public default void setRequiredContainerTable(ICFBamProtTable argObj) {
 		if (argObj == null) {
-			setRequiredContainerTable((ICFBamTable)null);
+			setRequiredContainerTable((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerTable(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerTable(ICFBamPubTable argObj) {
+		if (argObj == null) {
+			setRequiredContainerTable((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerTable(argObj.getRequiredId());
@@ -93,7 +102,16 @@ public interface ICFBamTableCol extends ICFBamValue
 	public void setRequiredParentDataType(ICFBamValue argObj);
 	public default void setRequiredParentDataType(ICFBamProtValue argObj) {
 		if (argObj == null) {
-			setRequiredParentDataType((ICFBamValue)null);
+			setRequiredParentDataType((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredParentDataType(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredParentDataType(ICFBamPubValue argObj) {
+		if (argObj == null) {
+			setRequiredParentDataType((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredParentDataType(argObj.getRequiredId());

@@ -134,26 +134,6 @@ public class CFBamBuffSchemaDef
 	}
 
 	@Override
-	public void setRequiredContainerMinorVersion(ICFIntPubMinorVersion argObj) {
-		if(argObj == null) {
-			requiredMinorVersionId = null;
-		}
-		else {
-			requiredMinorVersionId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerMinorVersion(ICFIntPubMinorVersion argObj) {
-		if(argObj == null) {
-			requiredMinorVersionId = null;
-		}
-		else {
-			requiredMinorVersionId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setRequiredContainerMinorVersion(CFLibDbKeyHash256 argMinorVersionId) {
 		requiredMinorVersionId = argMinorVersionId;
 	}
@@ -175,26 +155,6 @@ public class CFBamBuffSchemaDef
 	public void setRequiredOwnerCTenant(ICFSecTenant argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setOwnerCTenant", 1, "argObj");
-		}
-		else {
-			requiredCTenantId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredOwnerCTenant(ICFSecPubTenant argObj) {
-		if(argObj == null) {
-			requiredCTenantId = null;
-		}
-		else {
-			requiredCTenantId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredOwnerCTenant(ICFSecPubTenant argObj) {
-		if(argObj == null) {
-			requiredCTenantId = null;
 		}
 		else {
 			requiredCTenantId = argObj.getRequiredId();

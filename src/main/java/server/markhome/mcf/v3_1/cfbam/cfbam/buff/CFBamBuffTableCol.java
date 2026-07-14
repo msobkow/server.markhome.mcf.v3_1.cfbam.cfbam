@@ -116,26 +116,6 @@ public class CFBamBuffTableCol
 	}
 
 	@Override
-	public void setRequiredContainerTable(ICFBamProtTable argObj) {
-		if(argObj == null) {
-			requiredTableId = null;
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerTable(ICFBamPubTable argObj) {
-		if(argObj == null) {
-			requiredTableId = null;
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
 		requiredTableId = argTableId;
 	}
@@ -157,26 +137,6 @@ public class CFBamBuffTableCol
 	public void setRequiredParentDataType(ICFBamValue argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setParentDataType", 1, "argObj");
-		}
-		else {
-			optionalDataId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredParentDataType(ICFBamProtValue argObj) {
-		if(argObj == null) {
-			optionalDataId = null;
-		}
-		else {
-			optionalDataId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredParentDataType(ICFBamPubValue argObj) {
-		if(argObj == null) {
-			optionalDataId = null;
 		}
 		else {
 			optionalDataId = argObj.getRequiredId();

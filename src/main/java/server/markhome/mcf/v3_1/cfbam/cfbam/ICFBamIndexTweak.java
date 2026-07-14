@@ -78,7 +78,16 @@ public interface ICFBamIndexTweak extends ICFBamTweak
 	public void setRequiredContainerIndexDef(ICFBamIndex argObj);
 	public default void setRequiredContainerIndexDef(ICFBamProtIndex argObj) {
 		if (argObj == null) {
-			setRequiredContainerIndexDef((ICFBamIndex)null);
+			setRequiredContainerIndexDef((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerIndexDef(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerIndexDef(ICFBamPubIndex argObj) {
+		if (argObj == null) {
+			setRequiredContainerIndexDef((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerIndexDef(argObj.getRequiredId());

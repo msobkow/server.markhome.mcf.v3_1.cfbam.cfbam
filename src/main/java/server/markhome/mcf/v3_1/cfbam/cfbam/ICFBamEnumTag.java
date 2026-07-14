@@ -116,7 +116,16 @@ public interface ICFBamEnumTag
 	public void setRequiredContainerEnumDef(ICFBamEnumDef argObj);
 	public default void setRequiredContainerEnumDef(ICFBamProtEnumDef argObj) {
 		if (argObj == null) {
-			setRequiredContainerEnumDef((ICFBamEnumDef)null);
+			setRequiredContainerEnumDef((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerEnumDef(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerEnumDef(ICFBamPubEnumDef argObj) {
+		if (argObj == null) {
+			setRequiredContainerEnumDef((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerEnumDef(argObj.getRequiredId());
@@ -127,7 +136,16 @@ public interface ICFBamEnumTag
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
 	public default void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
 		if (argObj == null) {
-			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
+			setOptionalLookupDefSchema((CFLibDbKeyHash256)null);
+		}
+		else {
+			setOptionalLookupDefSchema(argObj.getRequiredId());
+		}
+	}
+
+	public default void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		if (argObj == null) {
+			setOptionalLookupDefSchema((CFLibDbKeyHash256)null);
 		}
 		else {
 			setOptionalLookupDefSchema(argObj.getRequiredId());
@@ -138,7 +156,16 @@ public interface ICFBamEnumTag
 	public void setOptionalLookupPrev(ICFBamEnumTag argObj);
 	public default void setOptionalLookupPrev(ICFBamProtEnumTag argObj) {
 		if (argObj == null) {
-			setOptionalLookupPrev((ICFBamEnumTag)null);
+			setOptionalLookupPrev((CFLibDbKeyHash256)null);
+		}
+		else {
+			setOptionalLookupPrev(argObj.getRequiredId());
+		}
+	}
+
+	public default void setOptionalLookupPrev(ICFBamPubEnumTag argObj) {
+		if (argObj == null) {
+			setOptionalLookupPrev((CFLibDbKeyHash256)null);
 		}
 		else {
 			setOptionalLookupPrev(argObj.getRequiredId());
@@ -149,7 +176,16 @@ public interface ICFBamEnumTag
 	public void setOptionalLookupNext(ICFBamEnumTag argObj);
 	public default void setOptionalLookupNext(ICFBamProtEnumTag argObj) {
 		if (argObj == null) {
-			setOptionalLookupNext((ICFBamEnumTag)null);
+			setOptionalLookupNext((CFLibDbKeyHash256)null);
+		}
+		else {
+			setOptionalLookupNext(argObj.getRequiredId());
+		}
+	}
+
+	public default void setOptionalLookupNext(ICFBamPubEnumTag argObj) {
+		if (argObj == null) {
+			setOptionalLookupNext((CFLibDbKeyHash256)null);
 		}
 		else {
 			setOptionalLookupNext(argObj.getRequiredId());

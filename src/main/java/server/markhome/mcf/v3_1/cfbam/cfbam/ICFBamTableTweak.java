@@ -78,7 +78,16 @@ public interface ICFBamTableTweak extends ICFBamTweak
 	public void setRequiredContainerTableDef(ICFBamTable argObj);
 	public default void setRequiredContainerTableDef(ICFBamProtTable argObj) {
 		if (argObj == null) {
-			setRequiredContainerTableDef((ICFBamTable)null);
+			setRequiredContainerTableDef((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerTableDef(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerTableDef(ICFBamPubTable argObj) {
+		if (argObj == null) {
+			setRequiredContainerTableDef((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerTableDef(argObj.getRequiredId());

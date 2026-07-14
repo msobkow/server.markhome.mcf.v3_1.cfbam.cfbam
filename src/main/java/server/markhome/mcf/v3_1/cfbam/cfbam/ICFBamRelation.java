@@ -104,7 +104,16 @@ public interface ICFBamRelation extends ICFBamScope
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
 	public default void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
 		if (argObj == null) {
-			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
+			setOptionalLookupDefSchema((CFLibDbKeyHash256)null);
+		}
+		else {
+			setOptionalLookupDefSchema(argObj.getRequiredId());
+		}
+	}
+
+	public default void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		if (argObj == null) {
+			setOptionalLookupDefSchema((CFLibDbKeyHash256)null);
 		}
 		else {
 			setOptionalLookupDefSchema(argObj.getRequiredId());
@@ -115,7 +124,16 @@ public interface ICFBamRelation extends ICFBamScope
 	public void setRequiredContainerFromTable(ICFBamTable argObj);
 	public default void setRequiredContainerFromTable(ICFBamProtTable argObj) {
 		if (argObj == null) {
-			setRequiredContainerFromTable((ICFBamTable)null);
+			setRequiredContainerFromTable((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerFromTable(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerFromTable(ICFBamPubTable argObj) {
+		if (argObj == null) {
+			setRequiredContainerFromTable((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerFromTable(argObj.getRequiredId());
@@ -126,7 +144,16 @@ public interface ICFBamRelation extends ICFBamScope
 	public void setRequiredLookupFromIndex(ICFBamIndex argObj);
 	public default void setRequiredLookupFromIndex(ICFBamProtIndex argObj) {
 		if (argObj == null) {
-			setRequiredLookupFromIndex((ICFBamIndex)null);
+			setRequiredLookupFromIndex((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredLookupFromIndex(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredLookupFromIndex(ICFBamPubIndex argObj) {
+		if (argObj == null) {
+			setRequiredLookupFromIndex((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredLookupFromIndex(argObj.getRequiredId());
@@ -137,7 +164,16 @@ public interface ICFBamRelation extends ICFBamScope
 	public void setRequiredLookupToTable(ICFBamTable argObj);
 	public default void setRequiredLookupToTable(ICFBamProtTable argObj) {
 		if (argObj == null) {
-			setRequiredLookupToTable((ICFBamTable)null);
+			setRequiredLookupToTable((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredLookupToTable(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredLookupToTable(ICFBamPubTable argObj) {
+		if (argObj == null) {
+			setRequiredLookupToTable((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredLookupToTable(argObj.getRequiredId());
@@ -148,7 +184,16 @@ public interface ICFBamRelation extends ICFBamScope
 	public void setRequiredLookupToIndex(ICFBamIndex argObj);
 	public default void setRequiredLookupToIndex(ICFBamProtIndex argObj) {
 		if (argObj == null) {
-			setRequiredLookupToIndex((ICFBamIndex)null);
+			setRequiredLookupToIndex((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredLookupToIndex(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredLookupToIndex(ICFBamPubIndex argObj) {
+		if (argObj == null) {
+			setRequiredLookupToIndex((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredLookupToIndex(argObj.getRequiredId());
@@ -159,7 +204,16 @@ public interface ICFBamRelation extends ICFBamScope
 	public void setOptionalLookupNarrowed(ICFBamRelation argObj);
 	public default void setOptionalLookupNarrowed(ICFBamProtRelation argObj) {
 		if (argObj == null) {
-			setOptionalLookupNarrowed((ICFBamRelation)null);
+			setOptionalLookupNarrowed((CFLibDbKeyHash256)null);
+		}
+		else {
+			setOptionalLookupNarrowed(argObj.getRequiredId());
+		}
+	}
+
+	public default void setOptionalLookupNarrowed(ICFBamPubRelation argObj) {
+		if (argObj == null) {
+			setOptionalLookupNarrowed((CFLibDbKeyHash256)null);
 		}
 		else {
 			setOptionalLookupNarrowed(argObj.getRequiredId());

@@ -81,7 +81,16 @@ public interface ICFBamSchemaRole extends ICFBamRoleDef
 	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
 	public default void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj) {
 		if (argObj == null) {
-			setRequiredContainerSchemaDef((ICFBamSchemaDef)null);
+			setRequiredContainerSchemaDef((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerSchemaDef(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerSchemaDef(ICFBamPubSchemaDef argObj) {
+		if (argObj == null) {
+			setRequiredContainerSchemaDef((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerSchemaDef(argObj.getRequiredId());

@@ -79,7 +79,16 @@ public interface ICFBamClearSubDep1 extends ICFBamClearDep
 	public void setRequiredContainerClearTopDep(ICFBamClearTopDep argObj);
 	public default void setRequiredContainerClearTopDep(ICFBamProtClearTopDep argObj) {
 		if (argObj == null) {
-			setRequiredContainerClearTopDep((ICFBamClearTopDep)null);
+			setRequiredContainerClearTopDep((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerClearTopDep(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerClearTopDep(ICFBamPubClearTopDep argObj) {
+		if (argObj == null) {
+			setRequiredContainerClearTopDep((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerClearTopDep(argObj.getRequiredId());

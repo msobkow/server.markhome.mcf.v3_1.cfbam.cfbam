@@ -113,7 +113,16 @@ public interface ICFBamChain
 	public void setRequiredContainerTable(ICFBamTable argObj);
 	public default void setRequiredContainerTable(ICFBamProtTable argObj) {
 		if (argObj == null) {
-			setRequiredContainerTable((ICFBamTable)null);
+			setRequiredContainerTable((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredContainerTable(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredContainerTable(ICFBamPubTable argObj) {
+		if (argObj == null) {
+			setRequiredContainerTable((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredContainerTable(argObj.getRequiredId());
@@ -124,7 +133,16 @@ public interface ICFBamChain
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
 	public default void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
 		if (argObj == null) {
-			setOptionalLookupDefSchema((ICFBamSchemaDef)null);
+			setOptionalLookupDefSchema((CFLibDbKeyHash256)null);
+		}
+		else {
+			setOptionalLookupDefSchema(argObj.getRequiredId());
+		}
+	}
+
+	public default void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		if (argObj == null) {
+			setOptionalLookupDefSchema((CFLibDbKeyHash256)null);
 		}
 		else {
 			setOptionalLookupDefSchema(argObj.getRequiredId());
@@ -135,7 +153,16 @@ public interface ICFBamChain
 	public void setRequiredLookupPrevRel(ICFBamRelation argObj);
 	public default void setRequiredLookupPrevRel(ICFBamProtRelation argObj) {
 		if (argObj == null) {
-			setRequiredLookupPrevRel((ICFBamRelation)null);
+			setRequiredLookupPrevRel((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredLookupPrevRel(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredLookupPrevRel(ICFBamPubRelation argObj) {
+		if (argObj == null) {
+			setRequiredLookupPrevRel((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredLookupPrevRel(argObj.getRequiredId());
@@ -146,7 +173,16 @@ public interface ICFBamChain
 	public void setRequiredLookupNextRel(ICFBamRelation argObj);
 	public default void setRequiredLookupNextRel(ICFBamProtRelation argObj) {
 		if (argObj == null) {
-			setRequiredLookupNextRel((ICFBamRelation)null);
+			setRequiredLookupNextRel((CFLibDbKeyHash256)null);
+		}
+		else {
+			setRequiredLookupNextRel(argObj.getRequiredId());
+		}
+	}
+
+	public default void setRequiredLookupNextRel(ICFBamPubRelation argObj) {
+		if (argObj == null) {
+			setRequiredLookupNextRel((CFLibDbKeyHash256)null);
 		}
 		else {
 			setRequiredLookupNextRel(argObj.getRequiredId());

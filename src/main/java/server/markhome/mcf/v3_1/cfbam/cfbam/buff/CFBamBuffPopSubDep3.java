@@ -112,26 +112,6 @@ public class CFBamBuffPopSubDep3
 	}
 
 	@Override
-	public void setRequiredContainerPopSubDep2(ICFBamProtPopSubDep2 argObj) {
-		if(argObj == null) {
-			requiredPopSubDep2Id = null;
-		}
-		else {
-			requiredPopSubDep2Id = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerPopSubDep2(ICFBamPubPopSubDep2 argObj) {
-		if(argObj == null) {
-			requiredPopSubDep2Id = null;
-		}
-		else {
-			requiredPopSubDep2Id = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setRequiredContainerPopSubDep2(CFLibDbKeyHash256 argPopSubDep2Id) {
 		requiredPopSubDep2Id = argPopSubDep2Id;
 	}

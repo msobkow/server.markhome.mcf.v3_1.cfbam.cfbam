@@ -122,26 +122,6 @@ public class CFBamBuffSchemaRef
 	}
 
 	@Override
-	public void setRequiredContainerSchema(ICFBamProtSchemaDef argObj) {
-		if(argObj == null) {
-			requiredSchemaId = null;
-		}
-		else {
-			requiredSchemaId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerSchema(ICFBamPubSchemaDef argObj) {
-		if(argObj == null) {
-			requiredSchemaId = null;
-		}
-		else {
-			requiredSchemaId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setRequiredContainerSchema(CFLibDbKeyHash256 argSchemaId) {
 		requiredSchemaId = argSchemaId;
 	}
@@ -161,26 +141,6 @@ public class CFBamBuffSchemaRef
 	}
 	@Override
 	public void setOptionalLookupRefSchema(ICFBamSchemaDef argObj) {
-		if(argObj == null) {
-			optionalRefSchemaId = null;
-		}
-		else {
-			optionalRefSchemaId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupRefSchema(ICFBamProtSchemaDef argObj) {
-		if(argObj == null) {
-			optionalRefSchemaId = null;
-		}
-		else {
-			optionalRefSchemaId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupRefSchema(ICFBamPubSchemaDef argObj) {
 		if(argObj == null) {
 			optionalRefSchemaId = null;
 		}
@@ -218,26 +178,6 @@ public class CFBamBuffSchemaRef
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFBamProtSchemaRef argObj) {
-		if(argObj == null) {
-			optionalPrevId = null;
-		}
-		else {
-			optionalPrevId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupPrev(ICFBamPubSchemaRef argObj) {
-		if(argObj == null) {
-			optionalPrevId = null;
-		}
-		else {
-			optionalPrevId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
 		optionalPrevId = argPrevId;
 	}
@@ -257,26 +197,6 @@ public class CFBamBuffSchemaRef
 	}
 	@Override
 	public void setOptionalLookupNext(ICFBamSchemaRef argObj) {
-		if(argObj == null) {
-			optionalNextId = null;
-		}
-		else {
-			optionalNextId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupNext(ICFBamProtSchemaRef argObj) {
-		if(argObj == null) {
-			optionalNextId = null;
-		}
-		else {
-			optionalNextId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupNext(ICFBamPubSchemaRef argObj) {
 		if(argObj == null) {
 			optionalNextId = null;
 		}

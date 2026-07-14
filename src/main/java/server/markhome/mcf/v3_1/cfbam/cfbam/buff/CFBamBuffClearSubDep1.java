@@ -112,26 +112,6 @@ public class CFBamBuffClearSubDep1
 	}
 
 	@Override
-	public void setRequiredContainerClearTopDep(ICFBamProtClearTopDep argObj) {
-		if(argObj == null) {
-			requiredClearTopDepId = null;
-		}
-		else {
-			requiredClearTopDepId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerClearTopDep(ICFBamPubClearTopDep argObj) {
-		if(argObj == null) {
-			requiredClearTopDepId = null;
-		}
-		else {
-			requiredClearTopDepId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
 	public void setRequiredContainerClearTopDep(CFLibDbKeyHash256 argClearTopDepId) {
 		requiredClearTopDepId = argClearTopDepId;
 	}
