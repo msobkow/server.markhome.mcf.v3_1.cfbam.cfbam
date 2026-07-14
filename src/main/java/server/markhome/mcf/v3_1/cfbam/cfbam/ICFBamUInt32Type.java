@@ -100,4 +100,14 @@ public interface ICFBamUInt32Type extends ICFBamUInt32Def
 	public void setUInt32Type( ICFBamUInt32Type src );
 	public void set( ICFBamValueH src );
 	public void setUInt32Type( ICFBamUInt32TypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setUInt32Type( ICFBamProtUInt32Type src );
+	public void set( ICFBamProtValueH src );
+	public void setUInt32Type( ICFBamProtUInt32TypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setUInt32Type( ICFBamPubUInt32Type src );
+	public void set( ICFBamPubValueH src );
+	public void setUInt32Type( ICFBamPubUInt32TypeH src );
 }

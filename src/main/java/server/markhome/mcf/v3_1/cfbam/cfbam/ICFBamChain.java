@@ -184,6 +184,16 @@ public interface ICFBamChain
 	public void set( ICFBamChainH src );
 	public void setChain( ICFBamChainH src );
 
+	public void set( ICFBamProtChain src );
+	public void setChain( ICFBamProtChain src );
+	public void set( ICFBamProtChainH src );
+	public void setChain( ICFBamProtChainH src );
+
+	public void set( ICFBamPubChain src );
+	public void setChain( ICFBamPubChain src );
+	public void set( ICFBamPubChainH src );
+	public void setChain( ICFBamPubChainH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

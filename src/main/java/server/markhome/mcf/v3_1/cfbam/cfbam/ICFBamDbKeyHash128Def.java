@@ -87,4 +87,14 @@ public interface ICFBamDbKeyHash128Def extends ICFBamAtom
 	public void setDbKeyHash128Def( ICFBamDbKeyHash128Def src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash128Def( ICFBamDbKeyHash128DefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash128Def( ICFBamProtDbKeyHash128Def src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash128Def( ICFBamProtDbKeyHash128DefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash128Def( ICFBamPubDbKeyHash128Def src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash128Def( ICFBamPubDbKeyHash128DefH src );
 }

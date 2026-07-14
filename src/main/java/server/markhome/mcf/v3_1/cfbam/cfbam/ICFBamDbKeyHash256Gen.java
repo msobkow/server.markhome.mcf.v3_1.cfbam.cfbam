@@ -95,4 +95,14 @@ public interface ICFBamDbKeyHash256Gen extends ICFBamDbKeyHash256Type
 	public void setDbKeyHash256Gen( ICFBamDbKeyHash256Gen src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash256Gen( ICFBamDbKeyHash256GenH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash256Gen( ICFBamProtDbKeyHash256Gen src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash256Gen( ICFBamProtDbKeyHash256GenH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash256Gen( ICFBamPubDbKeyHash256Gen src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash256Gen( ICFBamPubDbKeyHash256GenH src );
 }

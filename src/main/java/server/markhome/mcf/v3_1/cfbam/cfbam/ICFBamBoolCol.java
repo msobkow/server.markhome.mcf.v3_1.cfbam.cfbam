@@ -100,4 +100,14 @@ public interface ICFBamBoolCol extends ICFBamBoolDef
 	public void setBoolCol( ICFBamBoolCol src );
 	public void set( ICFBamValueH src );
 	public void setBoolCol( ICFBamBoolColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setBoolCol( ICFBamProtBoolCol src );
+	public void set( ICFBamProtValueH src );
+	public void setBoolCol( ICFBamProtBoolColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setBoolCol( ICFBamPubBoolCol src );
+	public void set( ICFBamPubValueH src );
+	public void setBoolCol( ICFBamPubBoolColH src );
 }

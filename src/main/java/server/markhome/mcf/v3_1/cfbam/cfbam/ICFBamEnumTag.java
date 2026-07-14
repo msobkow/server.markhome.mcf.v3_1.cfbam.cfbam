@@ -179,6 +179,16 @@ public interface ICFBamEnumTag
 	public void set( ICFBamEnumTagH src );
 	public void setEnumTag( ICFBamEnumTagH src );
 
+	public void set( ICFBamProtEnumTag src );
+	public void setEnumTag( ICFBamProtEnumTag src );
+	public void set( ICFBamProtEnumTagH src );
+	public void setEnumTag( ICFBamProtEnumTagH src );
+
+	public void set( ICFBamPubEnumTag src );
+	public void setEnumTag( ICFBamPubEnumTag src );
+	public void set( ICFBamPubEnumTagH src );
+	public void setEnumTag( ICFBamPubEnumTagH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

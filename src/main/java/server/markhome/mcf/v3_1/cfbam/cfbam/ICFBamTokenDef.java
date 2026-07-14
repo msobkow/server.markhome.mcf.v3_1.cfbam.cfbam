@@ -92,4 +92,14 @@ public interface ICFBamTokenDef extends ICFBamAtom
 	public void setTokenDef( ICFBamTokenDef src );
 	public void set( ICFBamValueH src );
 	public void setTokenDef( ICFBamTokenDefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTokenDef( ICFBamProtTokenDef src );
+	public void set( ICFBamProtValueH src );
+	public void setTokenDef( ICFBamProtTokenDefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTokenDef( ICFBamPubTokenDef src );
+	public void set( ICFBamPubValueH src );
+	public void setTokenDef( ICFBamPubTokenDefH src );
 }

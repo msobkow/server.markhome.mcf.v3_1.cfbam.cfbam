@@ -100,4 +100,14 @@ public interface ICFBamDbKeyHash512Col extends ICFBamDbKeyHash512Def
 	public void setDbKeyHash512Col( ICFBamDbKeyHash512Col src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash512Col( ICFBamDbKeyHash512ColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash512Col( ICFBamProtDbKeyHash512Col src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash512Col( ICFBamProtDbKeyHash512ColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash512Col( ICFBamPubDbKeyHash512Col src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash512Col( ICFBamPubDbKeyHash512ColH src );
 }

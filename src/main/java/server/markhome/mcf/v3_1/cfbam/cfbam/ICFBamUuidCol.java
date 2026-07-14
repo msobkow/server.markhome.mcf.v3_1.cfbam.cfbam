@@ -100,4 +100,14 @@ public interface ICFBamUuidCol extends ICFBamUuidDef
 	public void setUuidCol( ICFBamUuidCol src );
 	public void set( ICFBamValueH src );
 	public void setUuidCol( ICFBamUuidColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setUuidCol( ICFBamProtUuidCol src );
+	public void set( ICFBamProtValueH src );
+	public void setUuidCol( ICFBamProtUuidColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setUuidCol( ICFBamPubUuidCol src );
+	public void set( ICFBamPubValueH src );
+	public void setUuidCol( ICFBamPubUuidColH src );
 }

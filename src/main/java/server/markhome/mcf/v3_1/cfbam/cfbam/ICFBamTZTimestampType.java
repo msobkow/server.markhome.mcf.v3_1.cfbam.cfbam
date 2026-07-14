@@ -100,4 +100,14 @@ public interface ICFBamTZTimestampType extends ICFBamTZTimestampDef
 	public void setTZTimestampType( ICFBamTZTimestampType src );
 	public void set( ICFBamValueH src );
 	public void setTZTimestampType( ICFBamTZTimestampTypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTZTimestampType( ICFBamProtTZTimestampType src );
+	public void set( ICFBamProtValueH src );
+	public void setTZTimestampType( ICFBamProtTZTimestampTypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTZTimestampType( ICFBamPubTZTimestampType src );
+	public void set( ICFBamPubValueH src );
+	public void setTZTimestampType( ICFBamPubTZTimestampTypeH src );
 }

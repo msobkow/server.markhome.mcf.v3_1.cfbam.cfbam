@@ -100,4 +100,14 @@ public interface ICFBamDoubleCol extends ICFBamDoubleDef
 	public void setDoubleCol( ICFBamDoubleCol src );
 	public void set( ICFBamValueH src );
 	public void setDoubleCol( ICFBamDoubleColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDoubleCol( ICFBamProtDoubleCol src );
+	public void set( ICFBamProtValueH src );
+	public void setDoubleCol( ICFBamProtDoubleColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDoubleCol( ICFBamPubDoubleCol src );
+	public void set( ICFBamPubValueH src );
+	public void setDoubleCol( ICFBamPubDoubleColH src );
 }

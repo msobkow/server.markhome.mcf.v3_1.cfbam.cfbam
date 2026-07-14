@@ -100,4 +100,14 @@ public interface ICFBamTimeType extends ICFBamTimeDef
 	public void setTimeType( ICFBamTimeType src );
 	public void set( ICFBamValueH src );
 	public void setTimeType( ICFBamTimeTypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTimeType( ICFBamProtTimeType src );
+	public void set( ICFBamProtValueH src );
+	public void setTimeType( ICFBamProtTimeTypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTimeType( ICFBamPubTimeType src );
+	public void set( ICFBamPubValueH src );
+	public void setTimeType( ICFBamPubTimeTypeH src );
 }

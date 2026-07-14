@@ -100,4 +100,14 @@ public interface ICFBamNumberType extends ICFBamNumberDef
 	public void setNumberType( ICFBamNumberType src );
 	public void set( ICFBamValueH src );
 	public void setNumberType( ICFBamNumberTypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setNumberType( ICFBamProtNumberType src );
+	public void set( ICFBamProtValueH src );
+	public void setNumberType( ICFBamProtNumberTypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setNumberType( ICFBamPubNumberType src );
+	public void set( ICFBamPubValueH src );
+	public void setNumberType( ICFBamPubNumberTypeH src );
 }

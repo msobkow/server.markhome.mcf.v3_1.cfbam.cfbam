@@ -100,4 +100,14 @@ public interface ICFBamFloatCol extends ICFBamFloatDef
 	public void setFloatCol( ICFBamFloatCol src );
 	public void set( ICFBamValueH src );
 	public void setFloatCol( ICFBamFloatColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setFloatCol( ICFBamProtFloatCol src );
+	public void set( ICFBamProtValueH src );
+	public void setFloatCol( ICFBamProtFloatColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setFloatCol( ICFBamPubFloatCol src );
+	public void set( ICFBamPubValueH src );
+	public void setFloatCol( ICFBamPubFloatColH src );
 }

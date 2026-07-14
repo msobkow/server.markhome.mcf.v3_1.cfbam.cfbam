@@ -100,4 +100,14 @@ public interface ICFBamUInt64Col extends ICFBamUInt64Def
 	public void setUInt64Col( ICFBamUInt64Col src );
 	public void set( ICFBamValueH src );
 	public void setUInt64Col( ICFBamUInt64ColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setUInt64Col( ICFBamProtUInt64Col src );
+	public void set( ICFBamProtValueH src );
+	public void setUInt64Col( ICFBamProtUInt64ColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setUInt64Col( ICFBamPubUInt64Col src );
+	public void set( ICFBamPubValueH src );
+	public void setUInt64Col( ICFBamPubUInt64ColH src );
 }

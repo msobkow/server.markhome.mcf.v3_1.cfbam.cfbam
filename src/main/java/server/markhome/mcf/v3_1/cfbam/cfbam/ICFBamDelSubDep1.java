@@ -103,4 +103,14 @@ public interface ICFBamDelSubDep1 extends ICFBamDelDep
 	public void setDelSubDep1( ICFBamDelSubDep1 src );
 	public void set( ICFBamScopeH src );
 	public void setDelSubDep1( ICFBamDelSubDep1H src );
+
+	public void set( ICFBamProtScope src );
+	public void setDelSubDep1( ICFBamProtDelSubDep1 src );
+	public void set( ICFBamProtScopeH src );
+	public void setDelSubDep1( ICFBamProtDelSubDep1H src );
+
+	public void set( ICFBamPubScope src );
+	public void setDelSubDep1( ICFBamPubDelSubDep1 src );
+	public void set( ICFBamPubScopeH src );
+	public void setDelSubDep1( ICFBamPubDelSubDep1H src );
 }

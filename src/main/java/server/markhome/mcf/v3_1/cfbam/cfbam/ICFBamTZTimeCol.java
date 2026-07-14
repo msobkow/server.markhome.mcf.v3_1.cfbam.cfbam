@@ -100,4 +100,14 @@ public interface ICFBamTZTimeCol extends ICFBamTZTimeDef
 	public void setTZTimeCol( ICFBamTZTimeCol src );
 	public void set( ICFBamValueH src );
 	public void setTZTimeCol( ICFBamTZTimeColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTZTimeCol( ICFBamProtTZTimeCol src );
+	public void set( ICFBamProtValueH src );
+	public void setTZTimeCol( ICFBamProtTZTimeColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTZTimeCol( ICFBamPubTZTimeCol src );
+	public void set( ICFBamPubValueH src );
+	public void setTZTimeCol( ICFBamPubTZTimeColH src );
 }

@@ -95,4 +95,14 @@ public interface ICFBamTextDef extends ICFBamAtom
 	public void setTextDef( ICFBamTextDef src );
 	public void set( ICFBamValueH src );
 	public void setTextDef( ICFBamTextDefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTextDef( ICFBamProtTextDef src );
+	public void set( ICFBamProtValueH src );
+	public void setTextDef( ICFBamProtTextDefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTextDef( ICFBamPubTextDef src );
+	public void set( ICFBamPubValueH src );
+	public void setTextDef( ICFBamPubTextDefH src );
 }

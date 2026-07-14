@@ -100,4 +100,14 @@ public interface ICFBamInt64Type extends ICFBamInt64Def
 	public void setInt64Type( ICFBamInt64Type src );
 	public void set( ICFBamValueH src );
 	public void setInt64Type( ICFBamInt64TypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setInt64Type( ICFBamProtInt64Type src );
+	public void set( ICFBamProtValueH src );
+	public void setInt64Type( ICFBamProtInt64TypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setInt64Type( ICFBamPubInt64Type src );
+	public void set( ICFBamPubValueH src );
+	public void setInt64Type( ICFBamPubInt64TypeH src );
 }

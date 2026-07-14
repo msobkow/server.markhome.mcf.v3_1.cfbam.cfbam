@@ -202,6 +202,16 @@ public interface ICFBamIndexCol
 	public void set( ICFBamIndexColH src );
 	public void setIndexCol( ICFBamIndexColH src );
 
+	public void set( ICFBamProtIndexCol src );
+	public void setIndexCol( ICFBamProtIndexCol src );
+	public void set( ICFBamProtIndexColH src );
+	public void setIndexCol( ICFBamProtIndexColH src );
+
+	public void set( ICFBamPubIndexCol src );
+	public void setIndexCol( ICFBamPubIndexCol src );
+	public void set( ICFBamPubIndexColH src );
+	public void setIndexCol( ICFBamPubIndexColH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

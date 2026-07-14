@@ -100,4 +100,14 @@ public interface ICFBamDbKeyHash256Col extends ICFBamDbKeyHash256Def
 	public void setDbKeyHash256Col( ICFBamDbKeyHash256Col src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash256Col( ICFBamDbKeyHash256ColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash256Col( ICFBamProtDbKeyHash256Col src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash256Col( ICFBamProtDbKeyHash256ColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash256Col( ICFBamPubDbKeyHash256Col src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash256Col( ICFBamPubDbKeyHash256ColH src );
 }

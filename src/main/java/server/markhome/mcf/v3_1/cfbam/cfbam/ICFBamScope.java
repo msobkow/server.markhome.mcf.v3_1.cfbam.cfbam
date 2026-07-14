@@ -117,6 +117,16 @@ public interface ICFBamScope
 	public void set( ICFBamScopeH src );
 	public void setScope( ICFBamScopeH src );
 
+	public void set( ICFBamProtScope src );
+	public void setScope( ICFBamProtScope src );
+	public void set( ICFBamProtScopeH src );
+	public void setScope( ICFBamProtScopeH src );
+
+	public void set( ICFBamPubScope src );
+	public void setScope( ICFBamPubScope src );
+	public void set( ICFBamPubScopeH src );
+	public void setScope( ICFBamPubScopeH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

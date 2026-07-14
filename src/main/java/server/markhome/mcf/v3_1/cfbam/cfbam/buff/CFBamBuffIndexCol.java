@@ -256,6 +256,26 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
+	public void setRequiredContainerIndex(ICFBamProtIndex argObj) {
+		if(argObj == null) {
+			requiredIndexId = null;
+		}
+		else {
+			requiredIndexId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerIndex(ICFBamPubIndex argObj) {
+		if(argObj == null) {
+			requiredIndexId = null;
+		}
+		else {
+			requiredIndexId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
 	public void setRequiredContainerIndex(CFLibDbKeyHash256 argIndexId) {
 		requiredIndexId = argIndexId;
 	}
@@ -275,6 +295,26 @@ public class CFBamBuffIndexCol
 	}
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
 		if(argObj == null) {
 			optionalDefSchemaId = null;
 		}
@@ -312,6 +352,26 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
+	public void setOptionalLookupPrev(ICFBamProtIndexCol argObj) {
+		if(argObj == null) {
+			optionalPrevId = null;
+		}
+		else {
+			optionalPrevId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setOptionalLookupPrev(ICFBamPubIndexCol argObj) {
+		if(argObj == null) {
+			optionalPrevId = null;
+		}
+		else {
+			optionalPrevId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
 		optionalPrevId = argPrevId;
 	}
@@ -331,6 +391,26 @@ public class CFBamBuffIndexCol
 	}
 	@Override
 	public void setOptionalLookupNext(ICFBamIndexCol argObj) {
+		if(argObj == null) {
+			optionalNextId = null;
+		}
+		else {
+			optionalNextId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setOptionalLookupNext(ICFBamProtIndexCol argObj) {
+		if(argObj == null) {
+			optionalNextId = null;
+		}
+		else {
+			optionalNextId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setOptionalLookupNext(ICFBamPubIndexCol argObj) {
 		if(argObj == null) {
 			optionalNextId = null;
 		}
@@ -361,6 +441,26 @@ public class CFBamBuffIndexCol
 	public void setRequiredLookupColumn(ICFBamValue argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setLookupColumn", 1, "argObj");
+		}
+		else {
+			requiredColumnId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredLookupColumn(ICFBamProtValue argObj) {
+		if(argObj == null) {
+			requiredColumnId = null;
+		}
+		else {
+			requiredColumnId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredLookupColumn(ICFBamPubValue argObj) {
+		if(argObj == null) {
+			requiredColumnId = null;
 		}
 		else {
 			requiredColumnId = argObj.getRequiredId();

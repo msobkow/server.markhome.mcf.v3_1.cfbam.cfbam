@@ -100,4 +100,14 @@ public interface ICFBamDbKeyHash224Type extends ICFBamDbKeyHash224Def
 	public void setDbKeyHash224Type( ICFBamDbKeyHash224Type src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash224Type( ICFBamDbKeyHash224TypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash224Type( ICFBamProtDbKeyHash224Type src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash224Type( ICFBamProtDbKeyHash224TypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash224Type( ICFBamPubDbKeyHash224Type src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash224Type( ICFBamPubDbKeyHash224TypeH src );
 }

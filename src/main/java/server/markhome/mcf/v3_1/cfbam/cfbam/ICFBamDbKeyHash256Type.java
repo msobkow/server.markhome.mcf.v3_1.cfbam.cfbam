@@ -100,4 +100,14 @@ public interface ICFBamDbKeyHash256Type extends ICFBamDbKeyHash256Def
 	public void setDbKeyHash256Type( ICFBamDbKeyHash256Type src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash256Type( ICFBamDbKeyHash256TypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash256Type( ICFBamProtDbKeyHash256Type src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash256Type( ICFBamProtDbKeyHash256TypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash256Type( ICFBamPubDbKeyHash256Type src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash256Type( ICFBamPubDbKeyHash256TypeH src );
 }

@@ -100,4 +100,14 @@ public interface ICFBamIndexTweak extends ICFBamTweak
 	public void setIndexTweak( ICFBamIndexTweak src );
 	public void set( ICFBamTweakH src );
 	public void setIndexTweak( ICFBamIndexTweakH src );
+
+	public void set( ICFBamProtTweak src );
+	public void setIndexTweak( ICFBamProtIndexTweak src );
+	public void set( ICFBamProtTweakH src );
+	public void setIndexTweak( ICFBamProtIndexTweakH src );
+
+	public void set( ICFBamPubTweak src );
+	public void setIndexTweak( ICFBamPubIndexTweak src );
+	public void set( ICFBamPubTweakH src );
+	public void setIndexTweak( ICFBamPubIndexTweakH src );
 }

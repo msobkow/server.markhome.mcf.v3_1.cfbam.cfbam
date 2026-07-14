@@ -103,4 +103,14 @@ public interface ICFBamPopTopDep extends ICFBamPopDep
 	public void setPopTopDep( ICFBamPopTopDep src );
 	public void set( ICFBamScopeH src );
 	public void setPopTopDep( ICFBamPopTopDepH src );
+
+	public void set( ICFBamProtScope src );
+	public void setPopTopDep( ICFBamProtPopTopDep src );
+	public void set( ICFBamProtScopeH src );
+	public void setPopTopDep( ICFBamProtPopTopDepH src );
+
+	public void set( ICFBamPubScope src );
+	public void setPopTopDep( ICFBamPubPopTopDep src );
+	public void set( ICFBamPubScopeH src );
+	public void setPopTopDep( ICFBamPubPopTopDepH src );
 }

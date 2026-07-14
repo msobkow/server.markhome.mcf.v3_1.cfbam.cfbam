@@ -100,4 +100,14 @@ public interface ICFBamServerListFunc extends ICFBamServerMethod
 	public void setServerListFunc( ICFBamServerListFunc src );
 	public void set( ICFBamScopeH src );
 	public void setServerListFunc( ICFBamServerListFuncH src );
+
+	public void set( ICFBamProtScope src );
+	public void setServerListFunc( ICFBamProtServerListFunc src );
+	public void set( ICFBamProtScopeH src );
+	public void setServerListFunc( ICFBamProtServerListFuncH src );
+
+	public void set( ICFBamPubScope src );
+	public void setServerListFunc( ICFBamPubServerListFunc src );
+	public void set( ICFBamPubScopeH src );
+	public void setServerListFunc( ICFBamPubServerListFuncH src );
 }

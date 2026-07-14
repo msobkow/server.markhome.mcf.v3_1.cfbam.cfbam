@@ -100,4 +100,14 @@ public interface ICFBamUInt32Col extends ICFBamUInt32Def
 	public void setUInt32Col( ICFBamUInt32Col src );
 	public void set( ICFBamValueH src );
 	public void setUInt32Col( ICFBamUInt32ColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setUInt32Col( ICFBamProtUInt32Col src );
+	public void set( ICFBamProtValueH src );
+	public void setUInt32Col( ICFBamProtUInt32ColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setUInt32Col( ICFBamPubUInt32Col src );
+	public void set( ICFBamPubValueH src );
+	public void setUInt32Col( ICFBamPubUInt32ColH src );
 }

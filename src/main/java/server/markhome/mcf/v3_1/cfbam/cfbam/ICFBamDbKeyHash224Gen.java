@@ -95,4 +95,14 @@ public interface ICFBamDbKeyHash224Gen extends ICFBamDbKeyHash224Type
 	public void setDbKeyHash224Gen( ICFBamDbKeyHash224Gen src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash224Gen( ICFBamDbKeyHash224GenH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash224Gen( ICFBamProtDbKeyHash224Gen src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash224Gen( ICFBamProtDbKeyHash224GenH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash224Gen( ICFBamPubDbKeyHash224Gen src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash224Gen( ICFBamPubDbKeyHash224GenH src );
 }

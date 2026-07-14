@@ -100,4 +100,14 @@ public interface ICFBamTimeCol extends ICFBamTimeDef
 	public void setTimeCol( ICFBamTimeCol src );
 	public void set( ICFBamValueH src );
 	public void setTimeCol( ICFBamTimeColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTimeCol( ICFBamProtTimeCol src );
+	public void set( ICFBamProtValueH src );
+	public void setTimeCol( ICFBamProtTimeColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTimeCol( ICFBamPubTimeCol src );
+	public void set( ICFBamPubValueH src );
+	public void setTimeCol( ICFBamPubTimeColH src );
 }

@@ -224,4 +224,14 @@ public interface ICFBamTable extends ICFBamScope
 	public void setTable( ICFBamTable src );
 	public void set( ICFBamScopeH src );
 	public void setTable( ICFBamTableH src );
+
+	public void set( ICFBamProtScope src );
+	public void setTable( ICFBamProtTable src );
+	public void set( ICFBamProtScopeH src );
+	public void setTable( ICFBamProtTableH src );
+
+	public void set( ICFBamPubScope src );
+	public void setTable( ICFBamPubTable src );
+	public void set( ICFBamPubScopeH src );
+	public void setTable( ICFBamPubTableH src );
 }

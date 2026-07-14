@@ -133,4 +133,14 @@ public interface ICFBamDelTopDep extends ICFBamDelDep
 	public void setDelTopDep( ICFBamDelTopDep src );
 	public void set( ICFBamScopeH src );
 	public void setDelTopDep( ICFBamDelTopDepH src );
+
+	public void set( ICFBamProtScope src );
+	public void setDelTopDep( ICFBamProtDelTopDep src );
+	public void set( ICFBamProtScopeH src );
+	public void setDelTopDep( ICFBamProtDelTopDepH src );
+
+	public void set( ICFBamPubScope src );
+	public void setDelTopDep( ICFBamPubDelTopDep src );
+	public void set( ICFBamPubScopeH src );
+	public void setDelTopDep( ICFBamPubDelTopDepH src );
 }

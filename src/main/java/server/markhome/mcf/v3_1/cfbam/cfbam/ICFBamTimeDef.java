@@ -87,4 +87,14 @@ public interface ICFBamTimeDef extends ICFBamAtom
 	public void setTimeDef( ICFBamTimeDef src );
 	public void set( ICFBamValueH src );
 	public void setTimeDef( ICFBamTimeDefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTimeDef( ICFBamProtTimeDef src );
+	public void set( ICFBamProtValueH src );
+	public void setTimeDef( ICFBamProtTimeDefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTimeDef( ICFBamPubTimeDef src );
+	public void set( ICFBamPubValueH src );
+	public void setTimeDef( ICFBamPubTimeDefH src );
 }

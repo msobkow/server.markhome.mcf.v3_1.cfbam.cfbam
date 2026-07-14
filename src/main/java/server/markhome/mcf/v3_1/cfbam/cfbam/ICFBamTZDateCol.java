@@ -100,4 +100,14 @@ public interface ICFBamTZDateCol extends ICFBamTZDateDef
 	public void setTZDateCol( ICFBamTZDateCol src );
 	public void set( ICFBamValueH src );
 	public void setTZDateCol( ICFBamTZDateColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTZDateCol( ICFBamProtTZDateCol src );
+	public void set( ICFBamProtValueH src );
+	public void setTZDateCol( ICFBamProtTZDateColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTZDateCol( ICFBamPubTZDateCol src );
+	public void set( ICFBamPubValueH src );
+	public void setTZDateCol( ICFBamPubTZDateColH src );
 }

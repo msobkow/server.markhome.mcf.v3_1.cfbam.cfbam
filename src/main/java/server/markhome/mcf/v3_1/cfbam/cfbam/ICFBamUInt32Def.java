@@ -97,4 +97,14 @@ public interface ICFBamUInt32Def extends ICFBamAtom
 	public void setUInt32Def( ICFBamUInt32Def src );
 	public void set( ICFBamValueH src );
 	public void setUInt32Def( ICFBamUInt32DefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setUInt32Def( ICFBamProtUInt32Def src );
+	public void set( ICFBamProtValueH src );
+	public void setUInt32Def( ICFBamProtUInt32DefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setUInt32Def( ICFBamPubUInt32Def src );
+	public void set( ICFBamPubValueH src );
+	public void setUInt32Def( ICFBamPubUInt32DefH src );
 }

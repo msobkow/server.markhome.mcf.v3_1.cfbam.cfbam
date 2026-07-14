@@ -212,4 +212,14 @@ public interface ICFBamRelation extends ICFBamScope
 	public void setRelation( ICFBamRelation src );
 	public void set( ICFBamScopeH src );
 	public void setRelation( ICFBamRelationH src );
+
+	public void set( ICFBamProtScope src );
+	public void setRelation( ICFBamProtRelation src );
+	public void set( ICFBamProtScopeH src );
+	public void setRelation( ICFBamProtRelationH src );
+
+	public void set( ICFBamPubScope src );
+	public void setRelation( ICFBamPubRelation src );
+	public void set( ICFBamPubScopeH src );
+	public void setRelation( ICFBamPubRelationH src );
 }

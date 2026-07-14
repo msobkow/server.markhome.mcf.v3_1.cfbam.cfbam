@@ -95,4 +95,14 @@ public interface ICFBamDbKeyHash128Gen extends ICFBamDbKeyHash128Type
 	public void setDbKeyHash128Gen( ICFBamDbKeyHash128Gen src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash128Gen( ICFBamDbKeyHash128GenH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash128Gen( ICFBamProtDbKeyHash128Gen src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash128Gen( ICFBamProtDbKeyHash128GenH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash128Gen( ICFBamPubDbKeyHash128Gen src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash128Gen( ICFBamPubDbKeyHash128GenH src );
 }

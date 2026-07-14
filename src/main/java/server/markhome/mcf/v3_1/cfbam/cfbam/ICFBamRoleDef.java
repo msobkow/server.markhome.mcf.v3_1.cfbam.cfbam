@@ -150,6 +150,16 @@ public interface ICFBamRoleDef
 	public void set( ICFBamRoleDefH src );
 	public void setRoleDef( ICFBamRoleDefH src );
 
+	public void set( ICFBamProtRoleDef src );
+	public void setRoleDef( ICFBamProtRoleDef src );
+	public void set( ICFBamProtRoleDefH src );
+	public void setRoleDef( ICFBamProtRoleDefH src );
+
+	public void set( ICFBamPubRoleDef src );
+	public void setRoleDef( ICFBamPubRoleDef src );
+	public void set( ICFBamPubRoleDefH src );
+	public void setRoleDef( ICFBamPubRoleDefH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

@@ -104,4 +104,14 @@ public interface ICFBamNumberDef extends ICFBamAtom
 	public void setNumberDef( ICFBamNumberDef src );
 	public void set( ICFBamValueH src );
 	public void setNumberDef( ICFBamNumberDefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setNumberDef( ICFBamProtNumberDef src );
+	public void set( ICFBamProtValueH src );
+	public void setNumberDef( ICFBamProtNumberDefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setNumberDef( ICFBamPubNumberDef src );
+	public void set( ICFBamPubValueH src );
+	public void setNumberDef( ICFBamPubNumberDefH src );
 }

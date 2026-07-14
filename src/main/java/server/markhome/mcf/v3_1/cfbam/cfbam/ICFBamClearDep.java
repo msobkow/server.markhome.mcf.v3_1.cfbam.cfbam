@@ -115,4 +115,14 @@ public interface ICFBamClearDep extends ICFBamScope
 	public void setClearDep( ICFBamClearDep src );
 	public void set( ICFBamScopeH src );
 	public void setClearDep( ICFBamClearDepH src );
+
+	public void set( ICFBamProtScope src );
+	public void setClearDep( ICFBamProtClearDep src );
+	public void set( ICFBamProtScopeH src );
+	public void setClearDep( ICFBamProtClearDepH src );
+
+	public void set( ICFBamPubScope src );
+	public void setClearDep( ICFBamPubClearDep src );
+	public void set( ICFBamPubScopeH src );
+	public void setClearDep( ICFBamPubClearDepH src );
 }

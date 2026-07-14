@@ -194,6 +194,16 @@ public interface ICFBamValue
 	public void set( ICFBamValueH src );
 	public void setValue( ICFBamValueH src );
 
+	public void set( ICFBamProtValue src );
+	public void setValue( ICFBamProtValue src );
+	public void set( ICFBamProtValueH src );
+	public void setValue( ICFBamProtValueH src );
+
+	public void set( ICFBamPubValue src );
+	public void setValue( ICFBamPubValue src );
+	public void set( ICFBamPubValueH src );
+	public void setValue( ICFBamPubValueH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

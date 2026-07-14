@@ -100,4 +100,14 @@ public interface ICFBamDateCol extends ICFBamDateDef
 	public void setDateCol( ICFBamDateCol src );
 	public void set( ICFBamValueH src );
 	public void setDateCol( ICFBamDateColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDateCol( ICFBamProtDateCol src );
+	public void set( ICFBamProtValueH src );
+	public void setDateCol( ICFBamProtDateColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDateCol( ICFBamPubDateCol src );
+	public void set( ICFBamPubValueH src );
+	public void setDateCol( ICFBamPubDateColH src );
 }

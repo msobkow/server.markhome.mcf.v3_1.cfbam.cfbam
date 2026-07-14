@@ -100,4 +100,14 @@ public interface ICFBamDateType extends ICFBamDateDef
 	public void setDateType( ICFBamDateType src );
 	public void set( ICFBamValueH src );
 	public void setDateType( ICFBamDateTypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDateType( ICFBamProtDateType src );
+	public void set( ICFBamProtValueH src );
+	public void setDateType( ICFBamProtDateTypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDateType( ICFBamPubDateType src );
+	public void set( ICFBamPubValueH src );
+	public void setDateType( ICFBamPubDateTypeH src );
 }

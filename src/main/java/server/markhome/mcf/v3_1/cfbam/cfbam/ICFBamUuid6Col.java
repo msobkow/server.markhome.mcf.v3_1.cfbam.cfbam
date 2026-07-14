@@ -100,4 +100,14 @@ public interface ICFBamUuid6Col extends ICFBamUuid6Def
 	public void setUuid6Col( ICFBamUuid6Col src );
 	public void set( ICFBamValueH src );
 	public void setUuid6Col( ICFBamUuid6ColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setUuid6Col( ICFBamProtUuid6Col src );
+	public void set( ICFBamProtValueH src );
+	public void setUuid6Col( ICFBamProtUuid6ColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setUuid6Col( ICFBamPubUuid6Col src );
+	public void set( ICFBamPubValueH src );
+	public void setUuid6Col( ICFBamPubUuid6ColH src );
 }

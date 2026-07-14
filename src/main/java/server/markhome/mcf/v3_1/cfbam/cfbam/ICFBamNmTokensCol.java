@@ -100,4 +100,14 @@ public interface ICFBamNmTokensCol extends ICFBamNmTokensDef
 	public void setNmTokensCol( ICFBamNmTokensCol src );
 	public void set( ICFBamValueH src );
 	public void setNmTokensCol( ICFBamNmTokensColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setNmTokensCol( ICFBamProtNmTokensCol src );
+	public void set( ICFBamProtValueH src );
+	public void setNmTokensCol( ICFBamProtNmTokensColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setNmTokensCol( ICFBamPubNmTokensCol src );
+	public void set( ICFBamPubValueH src );
+	public void setNmTokensCol( ICFBamPubNmTokensColH src );
 }

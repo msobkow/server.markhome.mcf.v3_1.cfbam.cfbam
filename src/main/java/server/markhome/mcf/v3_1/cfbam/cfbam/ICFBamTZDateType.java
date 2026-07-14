@@ -100,4 +100,14 @@ public interface ICFBamTZDateType extends ICFBamTZDateDef
 	public void setTZDateType( ICFBamTZDateType src );
 	public void set( ICFBamValueH src );
 	public void setTZDateType( ICFBamTZDateTypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTZDateType( ICFBamProtTZDateType src );
+	public void set( ICFBamProtValueH src );
+	public void setTZDateType( ICFBamProtTZDateTypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTZDateType( ICFBamPubTZDateType src );
+	public void set( ICFBamPubValueH src );
+	public void setTZDateType( ICFBamPubTZDateTypeH src );
 }

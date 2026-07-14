@@ -100,4 +100,14 @@ public interface ICFBamBoolType extends ICFBamBoolDef
 	public void setBoolType( ICFBamBoolType src );
 	public void set( ICFBamValueH src );
 	public void setBoolType( ICFBamBoolTypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setBoolType( ICFBamProtBoolType src );
+	public void set( ICFBamProtValueH src );
+	public void setBoolType( ICFBamProtBoolTypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setBoolType( ICFBamPubBoolType src );
+	public void set( ICFBamPubValueH src );
+	public void setBoolType( ICFBamPubBoolTypeH src );
 }

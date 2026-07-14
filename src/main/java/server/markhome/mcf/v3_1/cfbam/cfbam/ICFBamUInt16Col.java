@@ -100,4 +100,14 @@ public interface ICFBamUInt16Col extends ICFBamUInt16Def
 	public void setUInt16Col( ICFBamUInt16Col src );
 	public void set( ICFBamValueH src );
 	public void setUInt16Col( ICFBamUInt16ColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setUInt16Col( ICFBamProtUInt16Col src );
+	public void set( ICFBamProtValueH src );
+	public void setUInt16Col( ICFBamProtUInt16ColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setUInt16Col( ICFBamPubUInt16Col src );
+	public void set( ICFBamPubValueH src );
+	public void setUInt16Col( ICFBamPubUInt16ColH src );
 }

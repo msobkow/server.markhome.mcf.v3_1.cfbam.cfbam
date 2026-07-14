@@ -100,4 +100,14 @@ public interface ICFBamNmTokenType extends ICFBamNmTokenDef
 	public void setNmTokenType( ICFBamNmTokenType src );
 	public void set( ICFBamValueH src );
 	public void setNmTokenType( ICFBamNmTokenTypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setNmTokenType( ICFBamProtNmTokenType src );
+	public void set( ICFBamProtValueH src );
+	public void setNmTokenType( ICFBamProtNmTokenTypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setNmTokenType( ICFBamPubNmTokenType src );
+	public void set( ICFBamPubValueH src );
+	public void setNmTokenType( ICFBamPubNmTokenTypeH src );
 }

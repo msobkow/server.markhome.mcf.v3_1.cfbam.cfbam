@@ -148,4 +148,14 @@ public interface ICFBamServerMethod extends ICFBamScope
 	public void setServerMethod( ICFBamServerMethod src );
 	public void set( ICFBamScopeH src );
 	public void setServerMethod( ICFBamServerMethodH src );
+
+	public void set( ICFBamProtScope src );
+	public void setServerMethod( ICFBamProtServerMethod src );
+	public void set( ICFBamProtScopeH src );
+	public void setServerMethod( ICFBamProtServerMethodH src );
+
+	public void set( ICFBamPubScope src );
+	public void setServerMethod( ICFBamPubServerMethod src );
+	public void set( ICFBamPubScopeH src );
+	public void setServerMethod( ICFBamPubServerMethodH src );
 }

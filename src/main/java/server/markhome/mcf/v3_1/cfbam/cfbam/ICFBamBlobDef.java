@@ -92,4 +92,14 @@ public interface ICFBamBlobDef extends ICFBamAtom
 	public void setBlobDef( ICFBamBlobDef src );
 	public void set( ICFBamValueH src );
 	public void setBlobDef( ICFBamBlobDefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setBlobDef( ICFBamProtBlobDef src );
+	public void set( ICFBamProtValueH src );
+	public void setBlobDef( ICFBamProtBlobDefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setBlobDef( ICFBamPubBlobDef src );
+	public void set( ICFBamPubValueH src );
+	public void setBlobDef( ICFBamPubBlobDefH src );
 }

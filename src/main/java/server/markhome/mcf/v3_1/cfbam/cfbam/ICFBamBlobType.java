@@ -100,4 +100,14 @@ public interface ICFBamBlobType extends ICFBamBlobDef
 	public void setBlobType( ICFBamBlobType src );
 	public void set( ICFBamValueH src );
 	public void setBlobType( ICFBamBlobTypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setBlobType( ICFBamProtBlobType src );
+	public void set( ICFBamProtValueH src );
+	public void setBlobType( ICFBamProtBlobTypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setBlobType( ICFBamPubBlobType src );
+	public void set( ICFBamPubValueH src );
+	public void setBlobType( ICFBamPubBlobTypeH src );
 }

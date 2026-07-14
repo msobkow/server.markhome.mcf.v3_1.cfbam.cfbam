@@ -95,4 +95,14 @@ public interface ICFBamDbKeyHash160Gen extends ICFBamDbKeyHash160Type
 	public void setDbKeyHash160Gen( ICFBamDbKeyHash160Gen src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash160Gen( ICFBamDbKeyHash160GenH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash160Gen( ICFBamProtDbKeyHash160Gen src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash160Gen( ICFBamProtDbKeyHash160GenH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash160Gen( ICFBamPubDbKeyHash160Gen src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash160Gen( ICFBamPubDbKeyHash160GenH src );
 }

@@ -95,4 +95,14 @@ public interface ICFBamDbKeyHash512Gen extends ICFBamDbKeyHash512Type
 	public void setDbKeyHash512Gen( ICFBamDbKeyHash512Gen src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash512Gen( ICFBamDbKeyHash512GenH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash512Gen( ICFBamProtDbKeyHash512Gen src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash512Gen( ICFBamProtDbKeyHash512GenH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash512Gen( ICFBamPubDbKeyHash512Gen src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash512Gen( ICFBamPubDbKeyHash512GenH src );
 }

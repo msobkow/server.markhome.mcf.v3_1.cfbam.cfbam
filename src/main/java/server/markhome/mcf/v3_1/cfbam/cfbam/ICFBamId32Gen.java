@@ -95,4 +95,14 @@ public interface ICFBamId32Gen extends ICFBamInt32Type
 	public void setId32Gen( ICFBamId32Gen src );
 	public void set( ICFBamValueH src );
 	public void setId32Gen( ICFBamId32GenH src );
+
+	public void set( ICFBamProtValue src );
+	public void setId32Gen( ICFBamProtId32Gen src );
+	public void set( ICFBamProtValueH src );
+	public void setId32Gen( ICFBamProtId32GenH src );
+
+	public void set( ICFBamPubValue src );
+	public void setId32Gen( ICFBamPubId32Gen src );
+	public void set( ICFBamPubValueH src );
+	public void setId32Gen( ICFBamPubId32GenH src );
 }

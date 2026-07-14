@@ -100,4 +100,14 @@ public interface ICFBamEnumType extends ICFBamEnumDef
 	public void setEnumType( ICFBamEnumType src );
 	public void set( ICFBamValueH src );
 	public void setEnumType( ICFBamEnumTypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setEnumType( ICFBamProtEnumType src );
+	public void set( ICFBamProtValueH src );
+	public void setEnumType( ICFBamProtEnumTypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setEnumType( ICFBamPubEnumType src );
+	public void set( ICFBamPubValueH src );
+	public void setEnumType( ICFBamPubEnumTypeH src );
 }

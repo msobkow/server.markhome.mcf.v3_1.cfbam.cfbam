@@ -103,4 +103,14 @@ public interface ICFBamClearSubDep1 extends ICFBamClearDep
 	public void setClearSubDep1( ICFBamClearSubDep1 src );
 	public void set( ICFBamScopeH src );
 	public void setClearSubDep1( ICFBamClearSubDep1H src );
+
+	public void set( ICFBamProtScope src );
+	public void setClearSubDep1( ICFBamProtClearSubDep1 src );
+	public void set( ICFBamProtScopeH src );
+	public void setClearSubDep1( ICFBamProtClearSubDep1H src );
+
+	public void set( ICFBamPubScope src );
+	public void setClearSubDep1( ICFBamPubClearSubDep1 src );
+	public void set( ICFBamPubScopeH src );
+	public void setClearSubDep1( ICFBamPubClearSubDep1H src );
 }

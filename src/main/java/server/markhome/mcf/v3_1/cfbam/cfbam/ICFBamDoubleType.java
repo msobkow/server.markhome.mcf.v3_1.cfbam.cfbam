@@ -100,4 +100,14 @@ public interface ICFBamDoubleType extends ICFBamDoubleDef
 	public void setDoubleType( ICFBamDoubleType src );
 	public void set( ICFBamValueH src );
 	public void setDoubleType( ICFBamDoubleTypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDoubleType( ICFBamProtDoubleType src );
+	public void set( ICFBamProtValueH src );
+	public void setDoubleType( ICFBamProtDoubleTypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDoubleType( ICFBamPubDoubleType src );
+	public void set( ICFBamPubValueH src );
+	public void setDoubleType( ICFBamPubDoubleTypeH src );
 }

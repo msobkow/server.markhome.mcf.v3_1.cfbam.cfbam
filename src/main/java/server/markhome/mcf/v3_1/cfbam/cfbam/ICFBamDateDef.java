@@ -87,4 +87,14 @@ public interface ICFBamDateDef extends ICFBamAtom
 	public void setDateDef( ICFBamDateDef src );
 	public void set( ICFBamValueH src );
 	public void setDateDef( ICFBamDateDefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDateDef( ICFBamProtDateDef src );
+	public void set( ICFBamProtValueH src );
+	public void setDateDef( ICFBamProtDateDefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDateDef( ICFBamPubDateDef src );
+	public void set( ICFBamPubValueH src );
+	public void setDateDef( ICFBamPubDateDefH src );
 }

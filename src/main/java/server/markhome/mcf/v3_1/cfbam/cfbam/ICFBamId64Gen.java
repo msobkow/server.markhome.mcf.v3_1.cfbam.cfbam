@@ -95,4 +95,14 @@ public interface ICFBamId64Gen extends ICFBamInt64Type
 	public void setId64Gen( ICFBamId64Gen src );
 	public void set( ICFBamValueH src );
 	public void setId64Gen( ICFBamId64GenH src );
+
+	public void set( ICFBamProtValue src );
+	public void setId64Gen( ICFBamProtId64Gen src );
+	public void set( ICFBamProtValueH src );
+	public void setId64Gen( ICFBamProtId64GenH src );
+
+	public void set( ICFBamPubValue src );
+	public void setId64Gen( ICFBamPubId64Gen src );
+	public void set( ICFBamPubValueH src );
+	public void setId64Gen( ICFBamPubId64GenH src );
 }

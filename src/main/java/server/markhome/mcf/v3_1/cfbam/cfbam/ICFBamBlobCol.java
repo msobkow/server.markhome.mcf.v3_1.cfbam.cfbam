@@ -100,4 +100,14 @@ public interface ICFBamBlobCol extends ICFBamBlobDef
 	public void setBlobCol( ICFBamBlobCol src );
 	public void set( ICFBamValueH src );
 	public void setBlobCol( ICFBamBlobColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setBlobCol( ICFBamProtBlobCol src );
+	public void set( ICFBamProtValueH src );
+	public void setBlobCol( ICFBamProtBlobColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setBlobCol( ICFBamPubBlobCol src );
+	public void set( ICFBamPubValueH src );
+	public void setBlobCol( ICFBamPubBlobColH src );
 }

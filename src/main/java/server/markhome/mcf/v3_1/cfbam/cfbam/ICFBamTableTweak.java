@@ -100,4 +100,14 @@ public interface ICFBamTableTweak extends ICFBamTweak
 	public void setTableTweak( ICFBamTableTweak src );
 	public void set( ICFBamTweakH src );
 	public void setTableTweak( ICFBamTableTweakH src );
+
+	public void set( ICFBamProtTweak src );
+	public void setTableTweak( ICFBamProtTableTweak src );
+	public void set( ICFBamProtTweakH src );
+	public void setTableTweak( ICFBamProtTableTweakH src );
+
+	public void set( ICFBamPubTweak src );
+	public void setTableTweak( ICFBamPubTableTweak src );
+	public void set( ICFBamPubTweakH src );
+	public void setTableTweak( ICFBamPubTableTweakH src );
 }

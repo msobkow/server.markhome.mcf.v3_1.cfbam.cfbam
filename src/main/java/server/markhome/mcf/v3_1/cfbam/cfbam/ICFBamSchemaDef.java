@@ -125,4 +125,14 @@ public interface ICFBamSchemaDef extends ICFBamScope
 	public void setSchemaDef( ICFBamSchemaDef src );
 	public void set( ICFBamScopeH src );
 	public void setSchemaDef( ICFBamSchemaDefH src );
+
+	public void set( ICFBamProtScope src );
+	public void setSchemaDef( ICFBamProtSchemaDef src );
+	public void set( ICFBamProtScopeH src );
+	public void setSchemaDef( ICFBamProtSchemaDefH src );
+
+	public void set( ICFBamPubScope src );
+	public void setSchemaDef( ICFBamPubSchemaDef src );
+	public void set( ICFBamPubScopeH src );
+	public void setSchemaDef( ICFBamPubSchemaDefH src );
 }

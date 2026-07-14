@@ -95,4 +95,14 @@ public interface ICFBamDbKeyHash384Gen extends ICFBamDbKeyHash384Type
 	public void setDbKeyHash384Gen( ICFBamDbKeyHash384Gen src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash384Gen( ICFBamDbKeyHash384GenH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash384Gen( ICFBamProtDbKeyHash384Gen src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash384Gen( ICFBamProtDbKeyHash384GenH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash384Gen( ICFBamPubDbKeyHash384Gen src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash384Gen( ICFBamPubDbKeyHash384GenH src );
 }

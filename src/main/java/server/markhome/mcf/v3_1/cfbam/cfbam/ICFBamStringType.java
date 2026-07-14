@@ -100,4 +100,14 @@ public interface ICFBamStringType extends ICFBamStringDef
 	public void setStringType( ICFBamStringType src );
 	public void set( ICFBamValueH src );
 	public void setStringType( ICFBamStringTypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setStringType( ICFBamProtStringType src );
+	public void set( ICFBamProtValueH src );
+	public void setStringType( ICFBamProtStringTypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setStringType( ICFBamPubStringType src );
+	public void set( ICFBamPubValueH src );
+	public void setStringType( ICFBamPubStringTypeH src );
 }

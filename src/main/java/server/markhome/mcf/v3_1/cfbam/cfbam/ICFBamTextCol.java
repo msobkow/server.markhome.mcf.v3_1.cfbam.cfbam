@@ -100,4 +100,14 @@ public interface ICFBamTextCol extends ICFBamTextDef
 	public void setTextCol( ICFBamTextCol src );
 	public void set( ICFBamValueH src );
 	public void setTextCol( ICFBamTextColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTextCol( ICFBamProtTextCol src );
+	public void set( ICFBamProtValueH src );
+	public void setTextCol( ICFBamProtTextColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTextCol( ICFBamPubTextCol src );
+	public void set( ICFBamPubValueH src );
+	public void setTextCol( ICFBamPubTextColH src );
 }

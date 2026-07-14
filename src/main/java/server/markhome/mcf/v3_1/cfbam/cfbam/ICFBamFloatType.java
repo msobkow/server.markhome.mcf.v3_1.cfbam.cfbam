@@ -100,4 +100,14 @@ public interface ICFBamFloatType extends ICFBamFloatDef
 	public void setFloatType( ICFBamFloatType src );
 	public void set( ICFBamValueH src );
 	public void setFloatType( ICFBamFloatTypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setFloatType( ICFBamProtFloatType src );
+	public void set( ICFBamProtValueH src );
+	public void setFloatType( ICFBamProtFloatTypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setFloatType( ICFBamPubFloatType src );
+	public void set( ICFBamPubValueH src );
+	public void setFloatType( ICFBamPubFloatTypeH src );
 }

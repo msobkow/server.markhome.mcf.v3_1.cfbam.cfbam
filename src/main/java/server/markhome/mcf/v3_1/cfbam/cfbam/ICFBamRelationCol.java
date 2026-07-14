@@ -212,6 +212,16 @@ public interface ICFBamRelationCol
 	public void set( ICFBamRelationColH src );
 	public void setRelationCol( ICFBamRelationColH src );
 
+	public void set( ICFBamProtRelationCol src );
+	public void setRelationCol( ICFBamProtRelationCol src );
+	public void set( ICFBamProtRelationColH src );
+	public void setRelationCol( ICFBamProtRelationColH src );
+
+	public void set( ICFBamPubRelationCol src );
+	public void setRelationCol( ICFBamPubRelationCol src );
+	public void set( ICFBamPubRelationColH src );
+	public void setRelationCol( ICFBamPubRelationColH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

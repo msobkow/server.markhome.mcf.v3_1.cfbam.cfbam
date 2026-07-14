@@ -103,4 +103,14 @@ public interface ICFBamPopSubDep3 extends ICFBamPopDep
 	public void setPopSubDep3( ICFBamPopSubDep3 src );
 	public void set( ICFBamScopeH src );
 	public void setPopSubDep3( ICFBamPopSubDep3H src );
+
+	public void set( ICFBamProtScope src );
+	public void setPopSubDep3( ICFBamProtPopSubDep3 src );
+	public void set( ICFBamProtScopeH src );
+	public void setPopSubDep3( ICFBamProtPopSubDep3H src );
+
+	public void set( ICFBamPubScope src );
+	public void setPopSubDep3( ICFBamPubPopSubDep3 src );
+	public void set( ICFBamPubScopeH src );
+	public void setPopSubDep3( ICFBamPubPopSubDep3H src );
 }

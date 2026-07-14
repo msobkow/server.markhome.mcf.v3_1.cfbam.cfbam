@@ -85,4 +85,14 @@ public interface ICFBamEnumDef extends ICFBamInt16Def
 	public void setEnumDef( ICFBamEnumDef src );
 	public void set( ICFBamValueH src );
 	public void setEnumDef( ICFBamEnumDefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setEnumDef( ICFBamProtEnumDef src );
+	public void set( ICFBamProtValueH src );
+	public void setEnumDef( ICFBamProtEnumDefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setEnumDef( ICFBamPubEnumDef src );
+	public void set( ICFBamPubValueH src );
+	public void setEnumDef( ICFBamPubEnumDefH src );
 }

@@ -100,4 +100,14 @@ public interface ICFBamStringCol extends ICFBamStringDef
 	public void setStringCol( ICFBamStringCol src );
 	public void set( ICFBamValueH src );
 	public void setStringCol( ICFBamStringColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setStringCol( ICFBamProtStringCol src );
+	public void set( ICFBamProtValueH src );
+	public void setStringCol( ICFBamProtStringColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setStringCol( ICFBamPubStringCol src );
+	public void set( ICFBamPubValueH src );
+	public void setStringCol( ICFBamPubStringColH src );
 }

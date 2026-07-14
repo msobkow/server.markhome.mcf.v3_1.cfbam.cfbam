@@ -100,4 +100,14 @@ public interface ICFBamDbKeyHash160Col extends ICFBamDbKeyHash160Def
 	public void setDbKeyHash160Col( ICFBamDbKeyHash160Col src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash160Col( ICFBamDbKeyHash160ColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash160Col( ICFBamProtDbKeyHash160Col src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash160Col( ICFBamProtDbKeyHash160ColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash160Col( ICFBamPubDbKeyHash160Col src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash160Col( ICFBamPubDbKeyHash160ColH src );
 }

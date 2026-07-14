@@ -120,4 +120,14 @@ public interface ICFBamTableCol extends ICFBamValue
 	public void setTableCol( ICFBamTableCol src );
 	public void set( ICFBamValueH src );
 	public void setTableCol( ICFBamTableColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTableCol( ICFBamProtTableCol src );
+	public void set( ICFBamProtValueH src );
+	public void setTableCol( ICFBamProtTableColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTableCol( ICFBamPubTableCol src );
+	public void set( ICFBamPubValueH src );
+	public void setTableCol( ICFBamPubTableColH src );
 }

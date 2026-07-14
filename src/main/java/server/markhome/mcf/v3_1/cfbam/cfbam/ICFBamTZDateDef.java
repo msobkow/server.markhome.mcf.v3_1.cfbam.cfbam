@@ -87,4 +87,14 @@ public interface ICFBamTZDateDef extends ICFBamAtom
 	public void setTZDateDef( ICFBamTZDateDef src );
 	public void set( ICFBamValueH src );
 	public void setTZDateDef( ICFBamTZDateDefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTZDateDef( ICFBamProtTZDateDef src );
+	public void set( ICFBamProtValueH src );
+	public void setTZDateDef( ICFBamProtTZDateDefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTZDateDef( ICFBamPubTZDateDef src );
+	public void set( ICFBamPubValueH src );
+	public void setTZDateDef( ICFBamPubTZDateDefH src );
 }

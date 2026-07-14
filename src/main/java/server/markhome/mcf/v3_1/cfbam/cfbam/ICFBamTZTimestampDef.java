@@ -87,4 +87,14 @@ public interface ICFBamTZTimestampDef extends ICFBamAtom
 	public void setTZTimestampDef( ICFBamTZTimestampDef src );
 	public void set( ICFBamValueH src );
 	public void setTZTimestampDef( ICFBamTZTimestampDefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTZTimestampDef( ICFBamProtTZTimestampDef src );
+	public void set( ICFBamProtValueH src );
+	public void setTZTimestampDef( ICFBamProtTZTimestampDefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTZTimestampDef( ICFBamPubTZTimestampDef src );
+	public void set( ICFBamPubValueH src );
+	public void setTZTimestampDef( ICFBamPubTZTimestampDefH src );
 }

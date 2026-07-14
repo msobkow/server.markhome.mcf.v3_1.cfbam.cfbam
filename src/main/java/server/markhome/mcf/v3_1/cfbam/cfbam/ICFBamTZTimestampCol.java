@@ -100,4 +100,14 @@ public interface ICFBamTZTimestampCol extends ICFBamTZTimestampDef
 	public void setTZTimestampCol( ICFBamTZTimestampCol src );
 	public void set( ICFBamValueH src );
 	public void setTZTimestampCol( ICFBamTZTimestampColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTZTimestampCol( ICFBamProtTZTimestampCol src );
+	public void set( ICFBamProtValueH src );
+	public void setTZTimestampCol( ICFBamProtTZTimestampColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTZTimestampCol( ICFBamPubTZTimestampCol src );
+	public void set( ICFBamPubValueH src );
+	public void setTZTimestampCol( ICFBamPubTZTimestampColH src );
 }

@@ -87,4 +87,14 @@ public interface ICFBamServerProc extends ICFBamServerMethod
 	public void setServerProc( ICFBamServerProc src );
 	public void set( ICFBamScopeH src );
 	public void setServerProc( ICFBamServerProcH src );
+
+	public void set( ICFBamProtScope src );
+	public void setServerProc( ICFBamProtServerProc src );
+	public void set( ICFBamProtScopeH src );
+	public void setServerProc( ICFBamProtServerProcH src );
+
+	public void set( ICFBamPubScope src );
+	public void setServerProc( ICFBamPubServerProc src );
+	public void set( ICFBamPubScopeH src );
+	public void setServerProc( ICFBamPubServerProcH src );
 }

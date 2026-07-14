@@ -93,4 +93,14 @@ public interface ICFBamBoolDef extends ICFBamAtom
 	public void setBoolDef( ICFBamBoolDef src );
 	public void set( ICFBamValueH src );
 	public void setBoolDef( ICFBamBoolDefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setBoolDef( ICFBamProtBoolDef src );
+	public void set( ICFBamProtValueH src );
+	public void setBoolDef( ICFBamProtBoolDefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setBoolDef( ICFBamPubBoolDef src );
+	public void set( ICFBamPubValueH src );
+	public void setBoolDef( ICFBamPubBoolDefH src );
 }

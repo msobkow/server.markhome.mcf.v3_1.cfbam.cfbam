@@ -158,6 +158,16 @@ public interface ICFBamTweak
 	public void set( ICFBamTweakH src );
 	public void setTweak( ICFBamTweakH src );
 
+	public void set( ICFBamProtTweak src );
+	public void setTweak( ICFBamProtTweak src );
+	public void set( ICFBamProtTweakH src );
+	public void setTweak( ICFBamProtTweakH src );
+
+	public void set( ICFBamPubTweak src );
+	public void setTweak( ICFBamPubTweak src );
+	public void set( ICFBamPubTweakH src );
+	public void setTweak( ICFBamPubTweakH src );
+
 	public String getXmlAttrFragment();
 
 	@Override

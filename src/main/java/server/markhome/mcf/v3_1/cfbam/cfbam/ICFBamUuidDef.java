@@ -87,4 +87,14 @@ public interface ICFBamUuidDef extends ICFBamAtom
 	public void setUuidDef( ICFBamUuidDef src );
 	public void set( ICFBamValueH src );
 	public void setUuidDef( ICFBamUuidDefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setUuidDef( ICFBamProtUuidDef src );
+	public void set( ICFBamProtValueH src );
+	public void setUuidDef( ICFBamProtUuidDefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setUuidDef( ICFBamPubUuidDef src );
+	public void set( ICFBamPubValueH src );
+	public void setUuidDef( ICFBamPubUuidDefH src );
 }

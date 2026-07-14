@@ -100,4 +100,14 @@ public interface ICFBamServerObjFunc extends ICFBamServerMethod
 	public void setServerObjFunc( ICFBamServerObjFunc src );
 	public void set( ICFBamScopeH src );
 	public void setServerObjFunc( ICFBamServerObjFuncH src );
+
+	public void set( ICFBamProtScope src );
+	public void setServerObjFunc( ICFBamProtServerObjFunc src );
+	public void set( ICFBamProtScopeH src );
+	public void setServerObjFunc( ICFBamProtServerObjFuncH src );
+
+	public void set( ICFBamPubScope src );
+	public void setServerObjFunc( ICFBamPubServerObjFunc src );
+	public void set( ICFBamPubScopeH src );
+	public void setServerObjFunc( ICFBamPubServerObjFuncH src );
 }

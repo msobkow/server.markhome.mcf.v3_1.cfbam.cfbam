@@ -141,4 +141,14 @@ public interface ICFBamIndex extends ICFBamScope
 	public void setIndex( ICFBamIndex src );
 	public void set( ICFBamScopeH src );
 	public void setIndex( ICFBamIndexH src );
+
+	public void set( ICFBamProtScope src );
+	public void setIndex( ICFBamProtIndex src );
+	public void set( ICFBamProtScopeH src );
+	public void setIndex( ICFBamProtIndexH src );
+
+	public void set( ICFBamPubScope src );
+	public void setIndex( ICFBamPubIndex src );
+	public void set( ICFBamPubScopeH src );
+	public void setIndex( ICFBamPubIndexH src );
 }

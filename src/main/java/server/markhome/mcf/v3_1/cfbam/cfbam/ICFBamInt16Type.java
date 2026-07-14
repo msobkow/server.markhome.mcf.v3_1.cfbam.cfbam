@@ -100,4 +100,14 @@ public interface ICFBamInt16Type extends ICFBamInt16Def
 	public void setInt16Type( ICFBamInt16Type src );
 	public void set( ICFBamValueH src );
 	public void setInt16Type( ICFBamInt16TypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setInt16Type( ICFBamProtInt16Type src );
+	public void set( ICFBamProtValueH src );
+	public void setInt16Type( ICFBamProtInt16TypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setInt16Type( ICFBamPubInt16Type src );
+	public void set( ICFBamPubValueH src );
+	public void setInt16Type( ICFBamPubInt16TypeH src );
 }

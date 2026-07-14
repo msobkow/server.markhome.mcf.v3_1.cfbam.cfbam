@@ -100,4 +100,14 @@ public interface ICFBamInt64Def extends ICFBamAtom
 	public void setInt64Def( ICFBamInt64Def src );
 	public void set( ICFBamValueH src );
 	public void setInt64Def( ICFBamInt64DefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setInt64Def( ICFBamProtInt64Def src );
+	public void set( ICFBamProtValueH src );
+	public void setInt64Def( ICFBamProtInt64DefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setInt64Def( ICFBamPubInt64Def src );
+	public void set( ICFBamPubValueH src );
+	public void setInt64Def( ICFBamPubInt64DefH src );
 }

@@ -154,4 +154,14 @@ public interface ICFBamSchemaRef extends ICFBamScope
 	public void setSchemaRef( ICFBamSchemaRef src );
 	public void set( ICFBamScopeH src );
 	public void setSchemaRef( ICFBamSchemaRefH src );
+
+	public void set( ICFBamProtScope src );
+	public void setSchemaRef( ICFBamProtSchemaRef src );
+	public void set( ICFBamProtScopeH src );
+	public void setSchemaRef( ICFBamProtSchemaRefH src );
+
+	public void set( ICFBamPubScope src );
+	public void setSchemaRef( ICFBamPubSchemaRef src );
+	public void set( ICFBamPubScopeH src );
+	public void setSchemaRef( ICFBamPubSchemaRefH src );
 }

@@ -133,4 +133,14 @@ public interface ICFBamClearTopDep extends ICFBamClearDep
 	public void setClearTopDep( ICFBamClearTopDep src );
 	public void set( ICFBamScopeH src );
 	public void setClearTopDep( ICFBamClearTopDepH src );
+
+	public void set( ICFBamProtScope src );
+	public void setClearTopDep( ICFBamProtClearTopDep src );
+	public void set( ICFBamProtScopeH src );
+	public void setClearTopDep( ICFBamProtClearTopDepH src );
+
+	public void set( ICFBamPubScope src );
+	public void setClearTopDep( ICFBamPubClearTopDep src );
+	public void set( ICFBamPubScopeH src );
+	public void setClearTopDep( ICFBamPubClearTopDepH src );
 }

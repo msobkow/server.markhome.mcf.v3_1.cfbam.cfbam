@@ -100,4 +100,14 @@ public interface ICFBamUInt64Type extends ICFBamUInt64Def
 	public void setUInt64Type( ICFBamUInt64Type src );
 	public void set( ICFBamValueH src );
 	public void setUInt64Type( ICFBamUInt64TypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setUInt64Type( ICFBamProtUInt64Type src );
+	public void set( ICFBamProtValueH src );
+	public void setUInt64Type( ICFBamProtUInt64TypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setUInt64Type( ICFBamPubUInt64Type src );
+	public void set( ICFBamPubValueH src );
+	public void setUInt64Type( ICFBamPubUInt64TypeH src );
 }

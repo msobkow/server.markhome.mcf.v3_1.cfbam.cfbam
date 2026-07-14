@@ -100,4 +100,14 @@ public interface ICFBamInt32Type extends ICFBamInt32Def
 	public void setInt32Type( ICFBamInt32Type src );
 	public void set( ICFBamValueH src );
 	public void setInt32Type( ICFBamInt32TypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setInt32Type( ICFBamProtInt32Type src );
+	public void set( ICFBamProtValueH src );
+	public void setInt32Type( ICFBamProtInt32TypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setInt32Type( ICFBamPubInt32Type src );
+	public void set( ICFBamPubValueH src );
+	public void setInt32Type( ICFBamPubInt32TypeH src );
 }

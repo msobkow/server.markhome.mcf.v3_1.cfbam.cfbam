@@ -97,4 +97,14 @@ public interface ICFBamUInt16Def extends ICFBamAtom
 	public void setUInt16Def( ICFBamUInt16Def src );
 	public void set( ICFBamValueH src );
 	public void setUInt16Def( ICFBamUInt16DefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setUInt16Def( ICFBamProtUInt16Def src );
+	public void set( ICFBamProtValueH src );
+	public void setUInt16Def( ICFBamProtUInt16DefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setUInt16Def( ICFBamPubUInt16Def src );
+	public void set( ICFBamPubValueH src );
+	public void setUInt16Def( ICFBamPubUInt16DefH src );
 }

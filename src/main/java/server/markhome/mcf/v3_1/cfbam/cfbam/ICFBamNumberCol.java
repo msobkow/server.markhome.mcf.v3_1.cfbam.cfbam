@@ -100,4 +100,14 @@ public interface ICFBamNumberCol extends ICFBamNumberDef
 	public void setNumberCol( ICFBamNumberCol src );
 	public void set( ICFBamValueH src );
 	public void setNumberCol( ICFBamNumberColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setNumberCol( ICFBamProtNumberCol src );
+	public void set( ICFBamProtValueH src );
+	public void setNumberCol( ICFBamProtNumberColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setNumberCol( ICFBamPubNumberCol src );
+	public void set( ICFBamPubValueH src );
+	public void setNumberCol( ICFBamPubNumberColH src );
 }

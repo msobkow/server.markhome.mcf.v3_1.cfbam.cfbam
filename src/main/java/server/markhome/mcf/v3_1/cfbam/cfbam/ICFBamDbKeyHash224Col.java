@@ -100,4 +100,14 @@ public interface ICFBamDbKeyHash224Col extends ICFBamDbKeyHash224Def
 	public void setDbKeyHash224Col( ICFBamDbKeyHash224Col src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash224Col( ICFBamDbKeyHash224ColH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash224Col( ICFBamProtDbKeyHash224Col src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash224Col( ICFBamProtDbKeyHash224ColH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash224Col( ICFBamPubDbKeyHash224Col src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash224Col( ICFBamPubDbKeyHash224ColH src );
 }

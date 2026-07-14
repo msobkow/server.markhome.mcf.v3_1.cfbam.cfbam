@@ -87,4 +87,14 @@ public interface ICFBamAtom extends ICFBamValue
 	public void setAtom( ICFBamAtom src );
 	public void set( ICFBamValueH src );
 	public void setAtom( ICFBamAtomH src );
+
+	public void set( ICFBamProtValue src );
+	public void setAtom( ICFBamProtAtom src );
+	public void set( ICFBamProtValueH src );
+	public void setAtom( ICFBamProtAtomH src );
+
+	public void set( ICFBamPubValue src );
+	public void setAtom( ICFBamPubAtom src );
+	public void set( ICFBamPubValueH src );
+	public void setAtom( ICFBamPubAtomH src );
 }

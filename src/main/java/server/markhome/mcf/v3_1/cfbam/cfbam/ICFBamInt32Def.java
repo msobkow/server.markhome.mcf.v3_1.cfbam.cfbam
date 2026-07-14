@@ -100,4 +100,14 @@ public interface ICFBamInt32Def extends ICFBamAtom
 	public void setInt32Def( ICFBamInt32Def src );
 	public void set( ICFBamValueH src );
 	public void setInt32Def( ICFBamInt32DefH src );
+
+	public void set( ICFBamProtValue src );
+	public void setInt32Def( ICFBamProtInt32Def src );
+	public void set( ICFBamProtValueH src );
+	public void setInt32Def( ICFBamProtInt32DefH src );
+
+	public void set( ICFBamPubValue src );
+	public void setInt32Def( ICFBamPubInt32Def src );
+	public void set( ICFBamPubValueH src );
+	public void setInt32Def( ICFBamPubInt32DefH src );
 }

@@ -100,4 +100,14 @@ public interface ICFBamSchemaTweak extends ICFBamTweak
 	public void setSchemaTweak( ICFBamSchemaTweak src );
 	public void set( ICFBamTweakH src );
 	public void setSchemaTweak( ICFBamSchemaTweakH src );
+
+	public void set( ICFBamProtTweak src );
+	public void setSchemaTweak( ICFBamProtSchemaTweak src );
+	public void set( ICFBamProtTweakH src );
+	public void setSchemaTweak( ICFBamProtSchemaTweakH src );
+
+	public void set( ICFBamPubTweak src );
+	public void setSchemaTweak( ICFBamPubSchemaTweak src );
+	public void set( ICFBamPubTweakH src );
+	public void setSchemaTweak( ICFBamPubSchemaTweakH src );
 }

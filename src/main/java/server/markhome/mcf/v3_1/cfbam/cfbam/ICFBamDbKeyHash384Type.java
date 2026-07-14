@@ -100,4 +100,14 @@ public interface ICFBamDbKeyHash384Type extends ICFBamDbKeyHash384Def
 	public void setDbKeyHash384Type( ICFBamDbKeyHash384Type src );
 	public void set( ICFBamValueH src );
 	public void setDbKeyHash384Type( ICFBamDbKeyHash384TypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setDbKeyHash384Type( ICFBamProtDbKeyHash384Type src );
+	public void set( ICFBamProtValueH src );
+	public void setDbKeyHash384Type( ICFBamProtDbKeyHash384TypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setDbKeyHash384Type( ICFBamPubDbKeyHash384Type src );
+	public void set( ICFBamPubValueH src );
+	public void setDbKeyHash384Type( ICFBamPubDbKeyHash384TypeH src );
 }

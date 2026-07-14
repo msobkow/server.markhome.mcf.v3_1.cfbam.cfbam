@@ -100,4 +100,14 @@ public interface ICFBamTextType extends ICFBamTextDef
 	public void setTextType( ICFBamTextType src );
 	public void set( ICFBamValueH src );
 	public void setTextType( ICFBamTextTypeH src );
+
+	public void set( ICFBamProtValue src );
+	public void setTextType( ICFBamProtTextType src );
+	public void set( ICFBamProtValueH src );
+	public void setTextType( ICFBamProtTextTypeH src );
+
+	public void set( ICFBamPubValue src );
+	public void setTextType( ICFBamPubTextType src );
+	public void set( ICFBamPubValueH src );
+	public void setTextType( ICFBamPubTextTypeH src );
 }
