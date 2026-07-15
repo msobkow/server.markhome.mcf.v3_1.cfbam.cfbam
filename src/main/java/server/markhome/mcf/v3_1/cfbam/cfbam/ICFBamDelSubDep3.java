@@ -76,26 +76,10 @@ public interface ICFBamDelSubDep3 extends ICFBamDelDep
 	public final static String S_CLASS_CODE = "a81e";
 
 	public ICFBamDelSubDep2 getRequiredContainerDelSubDep2();
-	public void setRequiredContainerDelSubDep2(ICFBamDelSubDep2 argObj);
-	public default void setRequiredContainerDelSubDep2(ICFBamProtDelSubDep2 argObj) {
-		if (argObj == null) {
-			setRequiredContainerDelSubDep2((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerDelSubDep2(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerDelSubDep2(ICFBamPubDelSubDep2 argObj) {
-		if (argObj == null) {
-			setRequiredContainerDelSubDep2((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerDelSubDep2(argObj.getRequiredId());
-		}
-	}
-
 	public void setRequiredContainerDelSubDep2(CFLibDbKeyHash256 argDelSubDep2Id);
+	public void setRequiredContainerDelSubDep2(ICFBamDelSubDep2 argObj);
+	public void setRequiredContainerDelSubDep2(ICFBamProtDelSubDep2 argObj);
+	public void setRequiredContainerDelSubDep2(ICFBamPubDelSubDep2 argObj);
 	public CFLibDbKeyHash256 getRequiredDelSubDep2Id();
 	public String getRequiredName();
 	public void setRequiredName( String value );

@@ -82,66 +82,18 @@ public interface ICFBamDelTopDep extends ICFBamDelDep
 	public ICFBamTable getRequiredContainerTable();
 	public ICFBamDelTopDep getOptionalLookupPrev();
 	public ICFBamDelTopDep getOptionalLookupNext();
-	public void setRequiredContainerTable(ICFBamTable argObj);
-	public default void setRequiredContainerTable(ICFBamProtTable argObj) {
-		if (argObj == null) {
-			setRequiredContainerTable((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerTable(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerTable(ICFBamPubTable argObj) {
-		if (argObj == null) {
-			setRequiredContainerTable((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerTable(argObj.getRequiredId());
-		}
-	}
-
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId);
-	public void setOptionalLookupPrev(ICFBamDelTopDep argObj);
-	public default void setOptionalLookupPrev(ICFBamProtDelTopDep argObj) {
-		if (argObj == null) {
-			setOptionalLookupPrev((CFLibDbKeyHash256)null);
-		}
-		else {
-			setOptionalLookupPrev(argObj.getRequiredId());
-		}
-	}
-
-	public default void setOptionalLookupPrev(ICFBamPubDelTopDep argObj) {
-		if (argObj == null) {
-			setOptionalLookupPrev((CFLibDbKeyHash256)null);
-		}
-		else {
-			setOptionalLookupPrev(argObj.getRequiredId());
-		}
-	}
-
+	public void setRequiredContainerTable(ICFBamTable argObj);
+	public void setRequiredContainerTable(ICFBamProtTable argObj);
+	public void setRequiredContainerTable(ICFBamPubTable argObj);
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
-	public void setOptionalLookupNext(ICFBamDelTopDep argObj);
-	public default void setOptionalLookupNext(ICFBamProtDelTopDep argObj) {
-		if (argObj == null) {
-			setOptionalLookupNext((CFLibDbKeyHash256)null);
-		}
-		else {
-			setOptionalLookupNext(argObj.getRequiredId());
-		}
-	}
-
-	public default void setOptionalLookupNext(ICFBamPubDelTopDep argObj) {
-		if (argObj == null) {
-			setOptionalLookupNext((CFLibDbKeyHash256)null);
-		}
-		else {
-			setOptionalLookupNext(argObj.getRequiredId());
-		}
-	}
-
+	public void setOptionalLookupPrev(ICFBamDelTopDep argObj);
+	public void setOptionalLookupPrev(ICFBamProtDelTopDep argObj);
+	public void setOptionalLookupPrev(ICFBamPubDelTopDep argObj);
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
+	public void setOptionalLookupNext(ICFBamDelTopDep argObj);
+	public void setOptionalLookupNext(ICFBamProtDelTopDep argObj);
+	public void setOptionalLookupNext(ICFBamPubDelTopDep argObj);
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public CFLibDbKeyHash256 getRequiredTableId();

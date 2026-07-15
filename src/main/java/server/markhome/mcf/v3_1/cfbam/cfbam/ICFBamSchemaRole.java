@@ -78,26 +78,10 @@ public interface ICFBamSchemaRole extends ICFBamRoleDef
 	public final static String S_CLASS_CODE = "a88f";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
-	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
-	public default void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj) {
-		if (argObj == null) {
-			setRequiredContainerSchemaDef((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerSchemaDef(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerSchemaDef(ICFBamPubSchemaDef argObj) {
-		if (argObj == null) {
-			setRequiredContainerSchemaDef((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerSchemaDef(argObj.getRequiredId());
-		}
-	}
-
 	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId);
+	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
+	public void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj);
+	public void setRequiredContainerSchemaDef(ICFBamPubSchemaDef argObj);
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public ICFBamPubSchema.RoleScopeEnum getRequiredRoleScope();
 	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value );

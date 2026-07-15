@@ -75,26 +75,10 @@ public interface ICFBamIndexTweak extends ICFBamTweak
 	public final static String S_CLASS_CODE = "a80b";
 
 	public ICFBamIndex getRequiredContainerIndexDef();
-	public void setRequiredContainerIndexDef(ICFBamIndex argObj);
-	public default void setRequiredContainerIndexDef(ICFBamProtIndex argObj) {
-		if (argObj == null) {
-			setRequiredContainerIndexDef((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerIndexDef(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerIndexDef(ICFBamPubIndex argObj) {
-		if (argObj == null) {
-			setRequiredContainerIndexDef((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerIndexDef(argObj.getRequiredId());
-		}
-	}
-
 	public void setRequiredContainerIndexDef(CFLibDbKeyHash256 argIndexId);
+	public void setRequiredContainerIndexDef(ICFBamIndex argObj);
+	public void setRequiredContainerIndexDef(ICFBamProtIndex argObj);
+	public void setRequiredContainerIndexDef(ICFBamPubIndex argObj);
 	public CFLibDbKeyHash256 getRequiredIndexId();
 	@Override
 	public boolean equals( Object obj );

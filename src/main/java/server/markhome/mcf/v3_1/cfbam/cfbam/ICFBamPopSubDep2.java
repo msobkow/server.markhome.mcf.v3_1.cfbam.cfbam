@@ -76,26 +76,10 @@ public interface ICFBamPopSubDep2 extends ICFBamPopDep
 	public final static String S_CLASS_CODE = "a836";
 
 	public ICFBamPopSubDep1 getRequiredContainerPopSubDep1();
-	public void setRequiredContainerPopSubDep1(ICFBamPopSubDep1 argObj);
-	public default void setRequiredContainerPopSubDep1(ICFBamProtPopSubDep1 argObj) {
-		if (argObj == null) {
-			setRequiredContainerPopSubDep1((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerPopSubDep1(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerPopSubDep1(ICFBamPubPopSubDep1 argObj) {
-		if (argObj == null) {
-			setRequiredContainerPopSubDep1((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerPopSubDep1(argObj.getRequiredId());
-		}
-	}
-
 	public void setRequiredContainerPopSubDep1(CFLibDbKeyHash256 argPopSubDep1Id);
+	public void setRequiredContainerPopSubDep1(ICFBamPopSubDep1 argObj);
+	public void setRequiredContainerPopSubDep1(ICFBamProtPopSubDep1 argObj);
+	public void setRequiredContainerPopSubDep1(ICFBamPubPopSubDep1 argObj);
 	public CFLibDbKeyHash256 getRequiredPopSubDep1Id();
 	public String getRequiredName();
 	public void setRequiredName( String value );

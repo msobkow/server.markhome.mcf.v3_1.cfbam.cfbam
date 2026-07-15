@@ -110,46 +110,14 @@ public interface ICFBamTweak
 
 	public ICFBamScope getRequiredContainerScopeDef();
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-	public void setRequiredContainerScopeDef(ICFBamScope argObj);
-	public default void setRequiredContainerScopeDef(ICFBamProtScope argObj) {
-		if (argObj == null) {
-			setRequiredContainerScopeDef((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerScopeDef(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerScopeDef(ICFBamPubScope argObj) {
-		if (argObj == null) {
-			setRequiredContainerScopeDef((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerScopeDef(argObj.getRequiredId());
-		}
-	}
-
 	public void setRequiredContainerScopeDef(CFLibDbKeyHash256 argScopeId);
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
-	public default void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		if (argObj == null) {
-			setOptionalLookupDefSchema((CFLibDbKeyHash256)null);
-		}
-		else {
-			setOptionalLookupDefSchema(argObj.getRequiredId());
-		}
-	}
-
-	public default void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
-		if (argObj == null) {
-			setOptionalLookupDefSchema((CFLibDbKeyHash256)null);
-		}
-		else {
-			setOptionalLookupDefSchema(argObj.getRequiredId());
-		}
-	}
-
+	public void setRequiredContainerScopeDef(ICFBamScope argObj);
+	public void setRequiredContainerScopeDef(ICFBamProtScope argObj);
+	public void setRequiredContainerScopeDef(ICFBamPubScope argObj);
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredScopeId();

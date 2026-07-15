@@ -76,26 +76,10 @@ public interface ICFBamPopTopDep extends ICFBamPopDep
 	public final static String S_CLASS_CODE = "a838";
 
 	public ICFBamRelation getRequiredContainerContRelation();
-	public void setRequiredContainerContRelation(ICFBamRelation argObj);
-	public default void setRequiredContainerContRelation(ICFBamProtRelation argObj) {
-		if (argObj == null) {
-			setRequiredContainerContRelation((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerContRelation(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerContRelation(ICFBamPubRelation argObj) {
-		if (argObj == null) {
-			setRequiredContainerContRelation((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerContRelation(argObj.getRequiredId());
-		}
-	}
-
 	public void setRequiredContainerContRelation(CFLibDbKeyHash256 argContRelationId);
+	public void setRequiredContainerContRelation(ICFBamRelation argObj);
+	public void setRequiredContainerContRelation(ICFBamProtRelation argObj);
+	public void setRequiredContainerContRelation(ICFBamPubRelation argObj);
 	public CFLibDbKeyHash256 getRequiredContRelationId();
 	public String getRequiredName();
 	public void setRequiredName( String value );

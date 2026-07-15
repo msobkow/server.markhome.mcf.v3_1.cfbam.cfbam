@@ -75,26 +75,10 @@ public interface ICFBamTableTweak extends ICFBamTweak
 	public final static String S_CLASS_CODE = "a809";
 
 	public ICFBamTable getRequiredContainerTableDef();
-	public void setRequiredContainerTableDef(ICFBamTable argObj);
-	public default void setRequiredContainerTableDef(ICFBamProtTable argObj) {
-		if (argObj == null) {
-			setRequiredContainerTableDef((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerTableDef(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerTableDef(ICFBamPubTable argObj) {
-		if (argObj == null) {
-			setRequiredContainerTableDef((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerTableDef(argObj.getRequiredId());
-		}
-	}
-
 	public void setRequiredContainerTableDef(CFLibDbKeyHash256 argTableId);
+	public void setRequiredContainerTableDef(ICFBamTable argObj);
+	public void setRequiredContainerTableDef(ICFBamProtTable argObj);
+	public void setRequiredContainerTableDef(ICFBamPubTable argObj);
 	public CFLibDbKeyHash256 getRequiredTableId();
 	@Override
 	public boolean equals( Object obj );

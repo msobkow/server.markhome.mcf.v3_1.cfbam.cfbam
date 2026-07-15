@@ -75,26 +75,10 @@ public interface ICFBamServerObjFunc extends ICFBamServerMethod
 	public final static String S_CLASS_CODE = "a805";
 
 	public ICFBamTable getOptionalLookupRetTable();
-	public void setOptionalLookupRetTable(ICFBamTable argObj);
-	public default void setOptionalLookupRetTable(ICFBamProtTable argObj) {
-		if (argObj == null) {
-			setOptionalLookupRetTable((CFLibDbKeyHash256)null);
-		}
-		else {
-			setOptionalLookupRetTable(argObj.getRequiredId());
-		}
-	}
-
-	public default void setOptionalLookupRetTable(ICFBamPubTable argObj) {
-		if (argObj == null) {
-			setOptionalLookupRetTable((CFLibDbKeyHash256)null);
-		}
-		else {
-			setOptionalLookupRetTable(argObj.getRequiredId());
-		}
-	}
-
 	public void setOptionalLookupRetTable(CFLibDbKeyHash256 argRetTableId);
+	public void setOptionalLookupRetTable(ICFBamTable argObj);
+	public void setOptionalLookupRetTable(ICFBamProtTable argObj);
+	public void setOptionalLookupRetTable(ICFBamPubTable argObj);
 	public CFLibDbKeyHash256 getOptionalRetTableId();
 	@Override
 	public boolean equals( Object obj );

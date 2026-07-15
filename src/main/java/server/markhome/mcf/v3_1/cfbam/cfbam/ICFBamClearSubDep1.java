@@ -76,26 +76,10 @@ public interface ICFBamClearSubDep1 extends ICFBamClearDep
 	public final static String S_CLASS_CODE = "a815";
 
 	public ICFBamClearTopDep getRequiredContainerClearTopDep();
-	public void setRequiredContainerClearTopDep(ICFBamClearTopDep argObj);
-	public default void setRequiredContainerClearTopDep(ICFBamProtClearTopDep argObj) {
-		if (argObj == null) {
-			setRequiredContainerClearTopDep((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerClearTopDep(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerClearTopDep(ICFBamPubClearTopDep argObj) {
-		if (argObj == null) {
-			setRequiredContainerClearTopDep((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerClearTopDep(argObj.getRequiredId());
-		}
-	}
-
 	public void setRequiredContainerClearTopDep(CFLibDbKeyHash256 argClearTopDepId);
+	public void setRequiredContainerClearTopDep(ICFBamClearTopDep argObj);
+	public void setRequiredContainerClearTopDep(ICFBamProtClearTopDep argObj);
+	public void setRequiredContainerClearTopDep(ICFBamPubClearTopDep argObj);
 	public CFLibDbKeyHash256 getRequiredClearTopDepId();
 	public String getRequiredName();
 	public void setRequiredName( String value );

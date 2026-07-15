@@ -75,26 +75,10 @@ public interface ICFBamSchemaTweak extends ICFBamTweak
 	public final static String S_CLASS_CODE = "a80a";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
-	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
-	public default void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj) {
-		if (argObj == null) {
-			setRequiredContainerSchemaDef((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerSchemaDef(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerSchemaDef(ICFBamPubSchemaDef argObj) {
-		if (argObj == null) {
-			setRequiredContainerSchemaDef((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerSchemaDef(argObj.getRequiredId());
-		}
-	}
-
 	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId);
+	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
+	public void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj);
+	public void setRequiredContainerSchemaDef(ICFBamPubSchemaDef argObj);
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	@Override
 	public boolean equals( Object obj );

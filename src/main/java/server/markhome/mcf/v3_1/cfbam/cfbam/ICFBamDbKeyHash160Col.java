@@ -75,26 +75,10 @@ public interface ICFBamDbKeyHash160Col extends ICFBamDbKeyHash160Def
 	public final static String S_CLASS_CODE = "a841";
 
 	public ICFBamTable getRequiredContainerTable();
-	public void setRequiredContainerTable(ICFBamTable argObj);
-	public default void setRequiredContainerTable(ICFBamProtTable argObj) {
-		if (argObj == null) {
-			setRequiredContainerTable((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerTable(argObj.getRequiredId());
-		}
-	}
-
-	public default void setRequiredContainerTable(ICFBamPubTable argObj) {
-		if (argObj == null) {
-			setRequiredContainerTable((CFLibDbKeyHash256)null);
-		}
-		else {
-			setRequiredContainerTable(argObj.getRequiredId());
-		}
-	}
-
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId);
+	public void setRequiredContainerTable(ICFBamTable argObj);
+	public void setRequiredContainerTable(ICFBamProtTable argObj);
+	public void setRequiredContainerTable(ICFBamPubTable argObj);
 	public CFLibDbKeyHash256 getRequiredTableId();
 	@Override
 	public boolean equals( Object obj );
