@@ -112,6 +112,16 @@ public class CFBamBuffClearDep
 	}
 
 	@Override
+	public void setRequiredLookupRelation(ICFBamProtRelation argObj) {
+		setRequiredLookupRelation(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredLookupRelation(ICFBamPubRelation argObj) {
+		setRequiredLookupRelation(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredLookupRelation(CFLibDbKeyHash256 argRelationId) {
 		requiredRelationId = argRelationId;
 	}
@@ -137,6 +147,16 @@ public class CFBamBuffClearDep
 		else {
 			optionalDefSchemaId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
 	}
 
 	@Override

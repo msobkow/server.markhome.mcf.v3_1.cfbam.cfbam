@@ -146,6 +146,16 @@ public class CFBamBuffRelation
 	}
 
 	@Override
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
 		optionalDefSchemaId = argDefSchemaId;
 	}
@@ -171,6 +181,16 @@ public class CFBamBuffRelation
 		else {
 			requiredTableId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setRequiredContainerFromTable(ICFBamProtTable argObj) {
+		setRequiredContainerFromTable(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerFromTable(ICFBamPubTable argObj) {
+		setRequiredContainerFromTable(argObj.getRequiredId());
 	}
 
 	@Override
@@ -202,6 +222,16 @@ public class CFBamBuffRelation
 	}
 
 	@Override
+	public void setRequiredLookupFromIndex(ICFBamProtIndex argObj) {
+		setRequiredLookupFromIndex(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredLookupFromIndex(ICFBamPubIndex argObj) {
+		setRequiredLookupFromIndex(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredLookupFromIndex(CFLibDbKeyHash256 argFromIndexId) {
 		requiredFromIndexId = argFromIndexId;
 	}
@@ -227,6 +257,16 @@ public class CFBamBuffRelation
 		else {
 			requiredToTableId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setRequiredLookupToTable(ICFBamProtTable argObj) {
+		setRequiredLookupToTable(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredLookupToTable(ICFBamPubTable argObj) {
+		setRequiredLookupToTable(argObj.getRequiredId());
 	}
 
 	@Override
@@ -258,6 +298,16 @@ public class CFBamBuffRelation
 	}
 
 	@Override
+	public void setRequiredLookupToIndex(ICFBamProtIndex argObj) {
+		setRequiredLookupToIndex(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredLookupToIndex(ICFBamPubIndex argObj) {
+		setRequiredLookupToIndex(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredLookupToIndex(CFLibDbKeyHash256 argToIndexId) {
 		requiredToIndexId = argToIndexId;
 	}
@@ -283,6 +333,16 @@ public class CFBamBuffRelation
 		else {
 			optionalNarrowedId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setOptionalLookupNarrowed(ICFBamProtRelation argObj) {
+		setOptionalLookupNarrowed(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupNarrowed(ICFBamPubRelation argObj) {
+		setOptionalLookupNarrowed(argObj.getRequiredId());
 	}
 
 	@Override

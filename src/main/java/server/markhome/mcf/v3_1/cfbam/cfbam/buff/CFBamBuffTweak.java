@@ -202,6 +202,16 @@ public class CFBamBuffTweak
 	}
 
 	@Override
+	public void setRequiredContainerScopeDef(ICFBamProtScope argObj) {
+		setRequiredContainerScopeDef(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerScopeDef(ICFBamPubScope argObj) {
+		setRequiredContainerScopeDef(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredContainerScopeDef(CFLibDbKeyHash256 argScopeId) {
 		requiredScopeId = argScopeId;
 	}
@@ -227,6 +237,16 @@ public class CFBamBuffTweak
 		else {
 			optionalDefSchemaId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
 	}
 
 	@Override

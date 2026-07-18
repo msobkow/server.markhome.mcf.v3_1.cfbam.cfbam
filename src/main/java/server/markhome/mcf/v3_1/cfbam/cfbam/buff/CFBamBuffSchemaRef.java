@@ -122,6 +122,16 @@ public class CFBamBuffSchemaRef
 	}
 
 	@Override
+	public void setRequiredContainerSchema(ICFBamProtSchemaDef argObj) {
+		setRequiredContainerSchema(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerSchema(ICFBamPubSchemaDef argObj) {
+		setRequiredContainerSchema(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredContainerSchema(CFLibDbKeyHash256 argSchemaId) {
 		requiredSchemaId = argSchemaId;
 	}
@@ -147,6 +157,16 @@ public class CFBamBuffSchemaRef
 		else {
 			optionalRefSchemaId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setOptionalLookupRefSchema(ICFBamProtSchemaDef argObj) {
+		setOptionalLookupRefSchema(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupRefSchema(ICFBamPubSchemaDef argObj) {
+		setOptionalLookupRefSchema(argObj.getRequiredId());
 	}
 
 	@Override
@@ -178,6 +198,16 @@ public class CFBamBuffSchemaRef
 	}
 
 	@Override
+	public void setOptionalLookupPrev(ICFBamProtSchemaRef argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupPrev(ICFBamPubSchemaRef argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
 		optionalPrevId = argPrevId;
 	}
@@ -203,6 +233,16 @@ public class CFBamBuffSchemaRef
 		else {
 			optionalNextId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setOptionalLookupNext(ICFBamProtSchemaRef argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupNext(ICFBamPubSchemaRef argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
 	}
 
 	@Override

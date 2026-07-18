@@ -256,6 +256,16 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
+	public void setRequiredContainerIndex(ICFBamProtIndex argObj) {
+		setRequiredContainerIndex(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerIndex(ICFBamPubIndex argObj) {
+		setRequiredContainerIndex(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredContainerIndex(CFLibDbKeyHash256 argIndexId) {
 		requiredIndexId = argIndexId;
 	}
@@ -281,6 +291,16 @@ public class CFBamBuffIndexCol
 		else {
 			optionalDefSchemaId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
 	}
 
 	@Override
@@ -312,6 +332,16 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
+	public void setOptionalLookupPrev(ICFBamProtIndexCol argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupPrev(ICFBamPubIndexCol argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
 		optionalPrevId = argPrevId;
 	}
@@ -340,6 +370,16 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
+	public void setOptionalLookupNext(ICFBamProtIndexCol argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupNext(ICFBamPubIndexCol argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId) {
 		optionalNextId = argNextId;
 	}
@@ -365,6 +405,16 @@ public class CFBamBuffIndexCol
 		else {
 			requiredColumnId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setRequiredLookupColumn(ICFBamProtValue argObj) {
+		setRequiredLookupColumn(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredLookupColumn(ICFBamPubValue argObj) {
+		setRequiredLookupColumn(argObj.getRequiredId());
 	}
 
 	@Override

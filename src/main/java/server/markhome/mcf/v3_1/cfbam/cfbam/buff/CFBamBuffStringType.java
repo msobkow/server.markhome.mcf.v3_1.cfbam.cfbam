@@ -110,6 +110,16 @@ public class CFBamBuffStringType
 	}
 
 	@Override
+	public void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj) {
+		setRequiredContainerSchemaDef(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerSchemaDef(ICFBamPubSchemaDef argObj) {
+		setRequiredContainerSchemaDef(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
 		requiredSchemaDefId = argSchemaDefId;
 	}
