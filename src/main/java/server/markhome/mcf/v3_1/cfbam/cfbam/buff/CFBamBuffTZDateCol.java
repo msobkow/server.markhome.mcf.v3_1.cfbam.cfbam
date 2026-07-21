@@ -100,11 +100,6 @@ public class CFBamBuffTZDateCol
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
-	}
-
-	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
@@ -116,22 +111,17 @@ public class CFBamBuffTZDateCol
 
 	@Override
 	public void setRequiredContainerTable(ICFBamProtTable argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
+		setRequiredContainerTable(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setRequiredContainerTable(ICFBamPubTable argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
+		setRequiredContainerTable(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
+		requiredTableId = argTableId;
 	}
 
 	@Override

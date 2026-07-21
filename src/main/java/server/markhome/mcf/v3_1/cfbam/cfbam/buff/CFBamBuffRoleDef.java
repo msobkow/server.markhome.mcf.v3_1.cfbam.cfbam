@@ -188,11 +188,6 @@ public class CFBamBuffRoleDef
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerScopeDef(CFLibDbKeyHash256 argScopeId) {
-		requiredScopeId = argScopeId;
-	}
-
-	@Override
 	public void setRequiredContainerScopeDef(ICFBamScope argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerScopeDef", 1, "argObj");
@@ -204,22 +199,17 @@ public class CFBamBuffRoleDef
 
 	@Override
 	public void setRequiredContainerScopeDef(ICFBamProtScope argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerScopeDef", 1, "argObj");
-		}
-		else {
-			requiredScopeId = argObj.getRequiredId();
-		}
+		setRequiredContainerScopeDef(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setRequiredContainerScopeDef(ICFBamPubScope argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerScopeDef", 1, "argObj");
-		}
-		else {
-			requiredScopeId = argObj.getRequiredId();
-		}
+		setRequiredContainerScopeDef(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerScopeDef(CFLibDbKeyHash256 argScopeId) {
+		requiredScopeId = argScopeId;
 	}
 
 	@Override
@@ -236,11 +226,6 @@ public class CFBamBuffRoleDef
 		return(targetRec);
 	}
 	@Override
-	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
-	}
-
-	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
 			optionalDefSchemaId = null;
@@ -252,22 +237,17 @@ public class CFBamBuffRoleDef
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		if(argObj == null) {
-			optionalDefSchemaId = null;
-		}
-		else {
-			optionalDefSchemaId = argObj.getRequiredId();
-		}
+		setOptionalLookupDefSchema(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
-		if(argObj == null) {
-			optionalDefSchemaId = null;
-		}
-		else {
-			optionalDefSchemaId = argObj.getRequiredId();
-		}
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		optionalDefSchemaId = argDefSchemaId;
 	}
 
 	@Override

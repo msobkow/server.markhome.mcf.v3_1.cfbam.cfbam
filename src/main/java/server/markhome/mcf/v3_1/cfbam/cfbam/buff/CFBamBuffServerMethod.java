@@ -126,11 +126,6 @@ public class CFBamBuffServerMethod
 		return(targetRec);
 	}
 	@Override
-	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
-	}
-
-	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
 			optionalDefSchemaId = null;
@@ -142,22 +137,17 @@ public class CFBamBuffServerMethod
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		if(argObj == null) {
-			optionalDefSchemaId = null;
-		}
-		else {
-			optionalDefSchemaId = argObj.getRequiredId();
-		}
+		setOptionalLookupDefSchema(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
-		if(argObj == null) {
-			optionalDefSchemaId = null;
-		}
-		else {
-			optionalDefSchemaId = argObj.getRequiredId();
-		}
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		optionalDefSchemaId = argDefSchemaId;
 	}
 
 	@Override
@@ -174,11 +164,6 @@ public class CFBamBuffServerMethod
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerForTable(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
-	}
-
-	@Override
 	public void setRequiredContainerForTable(ICFBamTable argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerForTable", 1, "argObj");
@@ -190,22 +175,17 @@ public class CFBamBuffServerMethod
 
 	@Override
 	public void setRequiredContainerForTable(ICFBamProtTable argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerForTable", 1, "argObj");
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
+		setRequiredContainerForTable(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setRequiredContainerForTable(ICFBamPubTable argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerForTable", 1, "argObj");
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
+		setRequiredContainerForTable(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerForTable(CFLibDbKeyHash256 argTableId) {
+		requiredTableId = argTableId;
 	}
 
 	@Override

@@ -102,11 +102,6 @@ public class CFBamBuffPopTopDep
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerContRelation(CFLibDbKeyHash256 argContRelationId) {
-		requiredContRelationId = argContRelationId;
-	}
-
-	@Override
 	public void setRequiredContainerContRelation(ICFBamRelation argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerContRelation", 1, "argObj");
@@ -118,22 +113,17 @@ public class CFBamBuffPopTopDep
 
 	@Override
 	public void setRequiredContainerContRelation(ICFBamProtRelation argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerContRelation", 1, "argObj");
-		}
-		else {
-			requiredContRelationId = argObj.getRequiredId();
-		}
+		setRequiredContainerContRelation(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setRequiredContainerContRelation(ICFBamPubRelation argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerContRelation", 1, "argObj");
-		}
-		else {
-			requiredContRelationId = argObj.getRequiredId();
-		}
+		setRequiredContainerContRelation(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerContRelation(CFLibDbKeyHash256 argContRelationId) {
+		requiredContRelationId = argContRelationId;
 	}
 
 	@Override

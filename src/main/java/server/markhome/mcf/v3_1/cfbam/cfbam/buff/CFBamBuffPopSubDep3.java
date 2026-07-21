@@ -102,11 +102,6 @@ public class CFBamBuffPopSubDep3
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerPopSubDep2(CFLibDbKeyHash256 argPopSubDep2Id) {
-		requiredPopSubDep2Id = argPopSubDep2Id;
-	}
-
-	@Override
 	public void setRequiredContainerPopSubDep2(ICFBamPopSubDep2 argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerPopSubDep2", 1, "argObj");
@@ -118,22 +113,17 @@ public class CFBamBuffPopSubDep3
 
 	@Override
 	public void setRequiredContainerPopSubDep2(ICFBamProtPopSubDep2 argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerPopSubDep2", 1, "argObj");
-		}
-		else {
-			requiredPopSubDep2Id = argObj.getRequiredId();
-		}
+		setRequiredContainerPopSubDep2(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setRequiredContainerPopSubDep2(ICFBamPubPopSubDep2 argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerPopSubDep2", 1, "argObj");
-		}
-		else {
-			requiredPopSubDep2Id = argObj.getRequiredId();
-		}
+		setRequiredContainerPopSubDep2(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerPopSubDep2(CFLibDbKeyHash256 argPopSubDep2Id) {
+		requiredPopSubDep2Id = argPopSubDep2Id;
 	}
 
 	@Override

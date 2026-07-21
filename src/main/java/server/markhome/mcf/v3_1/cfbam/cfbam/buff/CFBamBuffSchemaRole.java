@@ -102,11 +102,6 @@ public class CFBamBuffSchemaRole
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
-		requiredSchemaDefId = argSchemaDefId;
-	}
-
-	@Override
 	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerSchemaDef", 1, "argObj");
@@ -118,22 +113,17 @@ public class CFBamBuffSchemaRole
 
 	@Override
 	public void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerSchemaDef", 1, "argObj");
-		}
-		else {
-			requiredSchemaDefId = argObj.getRequiredId();
-		}
+		setRequiredContainerSchemaDef(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setRequiredContainerSchemaDef(ICFBamPubSchemaDef argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerSchemaDef", 1, "argObj");
-		}
-		else {
-			requiredSchemaDefId = argObj.getRequiredId();
-		}
+		setRequiredContainerSchemaDef(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
+		requiredSchemaDefId = argSchemaDefId;
 	}
 
 	@Override

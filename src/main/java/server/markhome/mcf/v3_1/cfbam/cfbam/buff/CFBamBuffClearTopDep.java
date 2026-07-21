@@ -106,11 +106,6 @@ public class CFBamBuffClearTopDep
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
-	}
-
-	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
@@ -122,22 +117,17 @@ public class CFBamBuffClearTopDep
 
 	@Override
 	public void setRequiredContainerTable(ICFBamProtTable argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
+		setRequiredContainerTable(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setRequiredContainerTable(ICFBamPubTable argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
+		setRequiredContainerTable(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
+		requiredTableId = argTableId;
 	}
 
 	@Override
@@ -154,11 +144,6 @@ public class CFBamBuffClearTopDep
 		return(targetRec);
 	}
 	@Override
-	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
-		optionalPrevId = argPrevId;
-	}
-
-	@Override
 	public void setOptionalLookupPrev(ICFBamClearTopDep argObj) {
 		if(argObj == null) {
 			optionalPrevId = null;
@@ -170,22 +155,17 @@ public class CFBamBuffClearTopDep
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamProtClearTopDep argObj) {
-		if(argObj == null) {
-			optionalPrevId = null;
-		}
-		else {
-			optionalPrevId = argObj.getRequiredId();
-		}
+		setOptionalLookupPrev(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamPubClearTopDep argObj) {
-		if(argObj == null) {
-			optionalPrevId = null;
-		}
-		else {
-			optionalPrevId = argObj.getRequiredId();
-		}
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
+		optionalPrevId = argPrevId;
 	}
 
 	@Override
@@ -202,11 +182,6 @@ public class CFBamBuffClearTopDep
 		return(targetRec);
 	}
 	@Override
-	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId) {
-		optionalNextId = argNextId;
-	}
-
-	@Override
 	public void setOptionalLookupNext(ICFBamClearTopDep argObj) {
 		if(argObj == null) {
 			optionalNextId = null;
@@ -218,22 +193,17 @@ public class CFBamBuffClearTopDep
 
 	@Override
 	public void setOptionalLookupNext(ICFBamProtClearTopDep argObj) {
-		if(argObj == null) {
-			optionalNextId = null;
-		}
-		else {
-			optionalNextId = argObj.getRequiredId();
-		}
+		setOptionalLookupNext(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setOptionalLookupNext(ICFBamPubClearTopDep argObj) {
-		if(argObj == null) {
-			optionalNextId = null;
-		}
-		else {
-			optionalNextId = argObj.getRequiredId();
-		}
+		setOptionalLookupNext(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId) {
+		optionalNextId = argNextId;
 	}
 
 	@Override

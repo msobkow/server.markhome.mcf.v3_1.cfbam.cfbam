@@ -102,11 +102,6 @@ public class CFBamBuffDelSubDep3
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerDelSubDep2(CFLibDbKeyHash256 argDelSubDep2Id) {
-		requiredDelSubDep2Id = argDelSubDep2Id;
-	}
-
-	@Override
 	public void setRequiredContainerDelSubDep2(ICFBamDelSubDep2 argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerDelSubDep2", 1, "argObj");
@@ -118,22 +113,17 @@ public class CFBamBuffDelSubDep3
 
 	@Override
 	public void setRequiredContainerDelSubDep2(ICFBamProtDelSubDep2 argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerDelSubDep2", 1, "argObj");
-		}
-		else {
-			requiredDelSubDep2Id = argObj.getRequiredId();
-		}
+		setRequiredContainerDelSubDep2(argObj.getRequiredId());
 	}
 
 	@Override
 	public void setRequiredContainerDelSubDep2(ICFBamPubDelSubDep2 argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerDelSubDep2", 1, "argObj");
-		}
-		else {
-			requiredDelSubDep2Id = argObj.getRequiredId();
-		}
+		setRequiredContainerDelSubDep2(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerDelSubDep2(CFLibDbKeyHash256 argDelSubDep2Id) {
+		requiredDelSubDep2Id = argDelSubDep2Id;
 	}
 
 	@Override
