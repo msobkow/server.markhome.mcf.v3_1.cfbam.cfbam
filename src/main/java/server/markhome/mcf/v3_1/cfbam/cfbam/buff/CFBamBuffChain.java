@@ -198,6 +198,11 @@ public class CFBamBuffChain
 		return(targetRec);
 	}
 	@Override
+	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
+		requiredTableId = argTableId;
+	}
+
+	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
@@ -209,17 +214,22 @@ public class CFBamBuffChain
 
 	@Override
 	public void setRequiredContainerTable(ICFBamProtTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
 	public void setRequiredContainerTable(ICFBamPubTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -236,6 +246,11 @@ public class CFBamBuffChain
 		return(targetRec);
 	}
 	@Override
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		optionalDefSchemaId = argDefSchemaId;
+	}
+
+	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
 			optionalDefSchemaId = null;
@@ -247,17 +262,22 @@ public class CFBamBuffChain
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -274,6 +294,11 @@ public class CFBamBuffChain
 		return(targetRec);
 	}
 	@Override
+	public void setRequiredLookupPrevRel(CFLibDbKeyHash256 argPrevRelationId) {
+		requiredPrevRelationId = argPrevRelationId;
+	}
+
+	@Override
 	public void setRequiredLookupPrevRel(ICFBamRelation argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setLookupPrevRel", 1, "argObj");
@@ -285,17 +310,22 @@ public class CFBamBuffChain
 
 	@Override
 	public void setRequiredLookupPrevRel(ICFBamProtRelation argObj) {
-		setRequiredLookupPrevRel(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupPrevRel", 1, "argObj");
+		}
+		else {
+			requiredPrevRelationId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
 	public void setRequiredLookupPrevRel(ICFBamPubRelation argObj) {
-		setRequiredLookupPrevRel(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredLookupPrevRel(CFLibDbKeyHash256 argPrevRelationId) {
-		requiredPrevRelationId = argPrevRelationId;
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupPrevRel", 1, "argObj");
+		}
+		else {
+			requiredPrevRelationId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -312,6 +342,11 @@ public class CFBamBuffChain
 		return(targetRec);
 	}
 	@Override
+	public void setRequiredLookupNextRel(CFLibDbKeyHash256 argNextRelationId) {
+		requiredNextRelationId = argNextRelationId;
+	}
+
+	@Override
 	public void setRequiredLookupNextRel(ICFBamRelation argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setLookupNextRel", 1, "argObj");
@@ -323,17 +358,22 @@ public class CFBamBuffChain
 
 	@Override
 	public void setRequiredLookupNextRel(ICFBamProtRelation argObj) {
-		setRequiredLookupNextRel(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupNextRel", 1, "argObj");
+		}
+		else {
+			requiredNextRelationId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
 	public void setRequiredLookupNextRel(ICFBamPubRelation argObj) {
-		setRequiredLookupNextRel(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredLookupNextRel(CFLibDbKeyHash256 argNextRelationId) {
-		requiredNextRelationId = argNextRelationId;
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupNextRel", 1, "argObj");
+		}
+		else {
+			requiredNextRelationId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

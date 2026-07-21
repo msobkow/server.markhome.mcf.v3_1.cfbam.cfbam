@@ -106,6 +106,11 @@ public class CFBamBuffTableCol
 		return(targetRec);
 	}
 	@Override
+	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
+		requiredTableId = argTableId;
+	}
+
+	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
@@ -117,17 +122,22 @@ public class CFBamBuffTableCol
 
 	@Override
 	public void setRequiredContainerTable(ICFBamProtTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
 	public void setRequiredContainerTable(ICFBamPubTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -144,6 +154,11 @@ public class CFBamBuffTableCol
 		return(targetRec);
 	}
 	@Override
+	public void setRequiredParentDataType(CFLibDbKeyHash256 argDataId) {
+		optionalDataId = argDataId;
+	}
+
+	@Override
 	public void setRequiredParentDataType(ICFBamValue argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setParentDataType", 1, "argObj");
@@ -155,17 +170,22 @@ public class CFBamBuffTableCol
 
 	@Override
 	public void setRequiredParentDataType(ICFBamProtValue argObj) {
-		setRequiredParentDataType(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentDataType", 1, "argObj");
+		}
+		else {
+			optionalDataId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
 	public void setRequiredParentDataType(ICFBamPubValue argObj) {
-		setRequiredParentDataType(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredParentDataType(CFLibDbKeyHash256 argDataId) {
-		optionalDataId = argDataId;
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentDataType", 1, "argObj");
+		}
+		else {
+			optionalDataId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

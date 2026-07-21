@@ -102,6 +102,11 @@ public class CFBamBuffDelSubDep1
 		return(targetRec);
 	}
 	@Override
+	public void setRequiredContainerDelTopDep(CFLibDbKeyHash256 argDelTopDepId) {
+		requiredDelTopDepId = argDelTopDepId;
+	}
+
+	@Override
 	public void setRequiredContainerDelTopDep(ICFBamDelTopDep argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerDelTopDep", 1, "argObj");
@@ -113,17 +118,22 @@ public class CFBamBuffDelSubDep1
 
 	@Override
 	public void setRequiredContainerDelTopDep(ICFBamProtDelTopDep argObj) {
-		setRequiredContainerDelTopDep(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerDelTopDep", 1, "argObj");
+		}
+		else {
+			requiredDelTopDepId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
 	public void setRequiredContainerDelTopDep(ICFBamPubDelTopDep argObj) {
-		setRequiredContainerDelTopDep(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerDelTopDep(CFLibDbKeyHash256 argDelTopDepId) {
-		requiredDelTopDepId = argDelTopDepId;
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerDelTopDep", 1, "argObj");
+		}
+		else {
+			requiredDelTopDepId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
