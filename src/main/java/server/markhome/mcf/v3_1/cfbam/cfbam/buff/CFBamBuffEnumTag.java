@@ -107,6 +107,22 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return( requiredId );
+	}
+
+	@Override
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		requiredId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -184,6 +200,16 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
+	public void setRequiredContainerEnumDef(ICFBamProtEnumDef argObj) {
+		setRequiredContainerEnumDef(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerEnumDef(ICFBamPubEnumDef argObj) {
+		setRequiredContainerEnumDef(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredContainerEnumDef(CFLibDbKeyHash256 argEnumId) {
 		requiredEnumId = argEnumId;
 	}
@@ -209,6 +235,16 @@ public class CFBamBuffEnumTag
 		else {
 			optionalDefSchemaId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
 	}
 
 	@Override
@@ -240,6 +276,16 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
+	public void setOptionalLookupPrev(ICFBamProtEnumTag argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupPrev(ICFBamPubEnumTag argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
 		optionalPrevId = argPrevId;
 	}
@@ -265,6 +311,16 @@ public class CFBamBuffEnumTag
 		else {
 			optionalNextId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setOptionalLookupNext(ICFBamProtEnumTag argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupNext(ICFBamPubEnumTag argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
 	}
 
 	@Override

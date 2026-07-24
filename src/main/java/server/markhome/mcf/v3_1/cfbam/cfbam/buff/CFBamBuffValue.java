@@ -167,6 +167,22 @@ public class CFBamBuffValue
 		}
 	}
 	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return( requiredId );
+	}
+
+	@Override
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		requiredId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -244,6 +260,16 @@ public class CFBamBuffValue
 	}
 
 	@Override
+	public void setRequiredContainerScope(ICFBamProtScope argObj) {
+		setRequiredContainerScope(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerScope(ICFBamPubScope argObj) {
+		setRequiredContainerScope(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredContainerScope(CFLibDbKeyHash256 argScopeId) {
 		requiredScopeId = argScopeId;
 	}
@@ -269,6 +295,16 @@ public class CFBamBuffValue
 		else {
 			optionalDefSchemaId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
 	}
 
 	@Override
@@ -300,6 +336,16 @@ public class CFBamBuffValue
 	}
 
 	@Override
+	public void setOptionalLookupPrev(ICFBamProtValue argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupPrev(ICFBamPubValue argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
 		optionalPrevId = argPrevId;
 	}
@@ -325,6 +371,16 @@ public class CFBamBuffValue
 		else {
 			optionalNextId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setOptionalLookupNext(ICFBamProtValue argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupNext(ICFBamPubValue argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
 	}
 
 	@Override

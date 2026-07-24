@@ -116,6 +116,16 @@ public class CFBamBuffTableCol
 	}
 
 	@Override
+	public void setRequiredContainerTable(ICFBamProtTable argObj) {
+		setRequiredContainerTable(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerTable(ICFBamPubTable argObj) {
+		setRequiredContainerTable(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
 		requiredTableId = argTableId;
 	}
@@ -141,6 +151,16 @@ public class CFBamBuffTableCol
 		else {
 			optionalDataId = argObj.getRequiredId();
 		}
+	}
+
+	@Override
+	public void setRequiredParentDataType(ICFBamProtValue argObj) {
+		setRequiredParentDataType(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredParentDataType(ICFBamPubValue argObj) {
+		setRequiredParentDataType(argObj.getRequiredId());
 	}
 
 	@Override

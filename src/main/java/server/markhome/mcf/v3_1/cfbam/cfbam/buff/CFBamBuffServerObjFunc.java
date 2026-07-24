@@ -110,6 +110,16 @@ public class CFBamBuffServerObjFunc
 	}
 
 	@Override
+	public void setOptionalLookupRetTable(ICFBamProtTable argObj) {
+		setOptionalLookupRetTable(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setOptionalLookupRetTable(ICFBamPubTable argObj) {
+		setOptionalLookupRetTable(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setOptionalLookupRetTable(CFLibDbKeyHash256 argRetTableId) {
 		optionalRetTableId = argRetTableId;
 	}

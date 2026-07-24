@@ -112,6 +112,16 @@ public class CFBamBuffClearSubDep3
 	}
 
 	@Override
+	public void setRequiredContainerClearSubDep2(ICFBamProtClearSubDep2 argObj) {
+		setRequiredContainerClearSubDep2(argObj.getRequiredId());
+	}
+
+	@Override
+	public void setRequiredContainerClearSubDep2(ICFBamPubClearSubDep2 argObj) {
+		setRequiredContainerClearSubDep2(argObj.getRequiredId());
+	}
+
+	@Override
 	public void setRequiredContainerClearSubDep2(CFLibDbKeyHash256 argClearSubDep2Id) {
 		requiredClearSubDep2Id = argClearSubDep2Id;
 	}

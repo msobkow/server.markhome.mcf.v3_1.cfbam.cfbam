@@ -97,6 +97,22 @@ public class CFBamBuffScope
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return( requiredId );
+	}
+
+	@Override
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		requiredId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -151,7 +167,7 @@ public class CFBamBuffScope
 	}
 
 	@Override
-	public ICFSecPubTenant getRequiredOwnerTenant() {
+	public ICFSecTenant getRequiredOwnerTenant() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec()");
@@ -164,7 +180,7 @@ public class CFBamBuffScope
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+	public void setRequiredOwnerTenant(ICFSecTenant argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
 		}

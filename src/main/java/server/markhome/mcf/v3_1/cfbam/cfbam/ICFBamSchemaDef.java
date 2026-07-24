@@ -82,8 +82,8 @@ public interface ICFBamSchemaDef extends ICFBamScope
 	public final static int CLASS_CODE = 0xa802;
 	public final static String S_CLASS_CODE = "a802";
 
-	public ICFIntPubMinorVersion getRequiredContainerMinorVersion();
-	public ICFSecPubTenant getRequiredOwnerCTenant();
+	public ICFIntMinorVersion getRequiredContainerMinorVersion();
+	public ICFSecTenant getRequiredOwnerCTenant();
 	public void setRequiredContainerMinorVersion(CFLibDbKeyHash256 argMinorVersionId);
 	public void setRequiredContainerMinorVersion(ICFIntPubMinorVersion argObj);
 	public void setRequiredOwnerCTenant(CFLibDbKeyHash256 argCTenantId);
