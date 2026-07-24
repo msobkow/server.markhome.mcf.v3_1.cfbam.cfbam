@@ -111,7 +111,7 @@ public class CFBamBuffSchemaDef
 	}
 
 	@Override
-	public ICFIntMinorVersion getRequiredContainerMinorVersion() {
+	public ICFIntPubMinorVersion getRequiredContainerMinorVersion() {
 		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
 		if (targetBackingSchema == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerMinorVersion", 0, "ICFIntSchema.getBackingCFInt()");
@@ -124,7 +124,7 @@ public class CFBamBuffSchemaDef
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredContainerMinorVersion(ICFIntMinorVersion argObj) {
+	public void setRequiredContainerMinorVersion(ICFIntPubMinorVersion argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerMinorVersion", 1, "argObj");
 		}
@@ -139,7 +139,7 @@ public class CFBamBuffSchemaDef
 	}
 
 	@Override
-	public ICFSecTenant getRequiredOwnerCTenant() {
+	public ICFSecPubTenant getRequiredOwnerCTenant() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCTenant", 0, "ICFSecSchema.getBackingCFSec()");
@@ -152,7 +152,7 @@ public class CFBamBuffSchemaDef
 		return(targetRec);
 	}
 	@Override
-	public void setRequiredOwnerCTenant(ICFSecTenant argObj) {
+	public void setRequiredOwnerCTenant(ICFSecPubTenant argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setOwnerCTenant", 1, "argObj");
 		}

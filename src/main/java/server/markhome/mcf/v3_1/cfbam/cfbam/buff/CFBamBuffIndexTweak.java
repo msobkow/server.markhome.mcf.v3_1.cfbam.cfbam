@@ -110,16 +110,6 @@ public class CFBamBuffIndexTweak
 	}
 
 	@Override
-	public void setRequiredContainerIndexDef(ICFBamProtIndex argObj) {
-		setRequiredContainerIndexDef(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerIndexDef(ICFBamPubIndex argObj) {
-		setRequiredContainerIndexDef(argObj.getRequiredId());
-	}
-
-	@Override
 	public void setRequiredContainerIndexDef(CFLibDbKeyHash256 argIndexId) {
 		requiredIndexId = argIndexId;
 	}

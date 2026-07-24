@@ -103,9 +103,7 @@ public interface ICFBamIndexCol
 
 	public CFLibDbKeyHash256 getPKey();
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
-	public List<ICFBamRelationCol> getOptionalChildrenRefRelFromCol();
-	public List<ICFBamRelationCol> getOptionalChildrenRefRelToCol();
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -113,6 +111,8 @@ public interface ICFBamIndexCol
 
 	public ICFBamIndex getRequiredContainerIndex();
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+	public List<ICFBamRelationCol> getOptionalChildrenRefRelFromCol();
+	public List<ICFBamRelationCol> getOptionalChildrenRefRelToCol();
 	public ICFBamIndexCol getOptionalLookupPrev();
 	public ICFBamIndexCol getOptionalLookupNext();
 	public ICFBamValue getRequiredLookupColumn();

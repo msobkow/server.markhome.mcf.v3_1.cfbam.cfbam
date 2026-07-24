@@ -115,22 +115,6 @@ public class CFBamBuffChain
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
-	}
-
-	@Override
-	public void setRequiredId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredId",
-				1,
-				"value" );
-		}
-		requiredId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -208,16 +192,6 @@ public class CFBamBuffChain
 	}
 
 	@Override
-	public void setRequiredContainerTable(ICFBamProtTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerTable(ICFBamPubTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
-	}
-
-	@Override
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
 		requiredTableId = argTableId;
 	}
@@ -243,16 +217,6 @@ public class CFBamBuffChain
 		else {
 			optionalDefSchemaId = argObj.getRequiredId();
 		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
 	}
 
 	@Override
@@ -284,16 +248,6 @@ public class CFBamBuffChain
 	}
 
 	@Override
-	public void setRequiredLookupPrevRel(ICFBamProtRelation argObj) {
-		setRequiredLookupPrevRel(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredLookupPrevRel(ICFBamPubRelation argObj) {
-		setRequiredLookupPrevRel(argObj.getRequiredId());
-	}
-
-	@Override
 	public void setRequiredLookupPrevRel(CFLibDbKeyHash256 argPrevRelationId) {
 		requiredPrevRelationId = argPrevRelationId;
 	}
@@ -319,16 +273,6 @@ public class CFBamBuffChain
 		else {
 			requiredNextRelationId = argObj.getRequiredId();
 		}
-	}
-
-	@Override
-	public void setRequiredLookupNextRel(ICFBamProtRelation argObj) {
-		setRequiredLookupNextRel(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredLookupNextRel(ICFBamPubRelation argObj) {
-		setRequiredLookupNextRel(argObj.getRequiredId());
 	}
 
 	@Override

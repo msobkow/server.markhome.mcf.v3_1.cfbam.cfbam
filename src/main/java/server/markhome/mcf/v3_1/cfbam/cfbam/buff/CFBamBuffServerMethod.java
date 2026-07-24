@@ -136,16 +136,6 @@ public class CFBamBuffServerMethod
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
 		optionalDefSchemaId = argDefSchemaId;
 	}
@@ -171,16 +161,6 @@ public class CFBamBuffServerMethod
 		else {
 			requiredTableId = argObj.getRequiredId();
 		}
-	}
-
-	@Override
-	public void setRequiredContainerForTable(ICFBamProtTable argObj) {
-		setRequiredContainerForTable(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerForTable(ICFBamPubTable argObj) {
-		setRequiredContainerForTable(argObj.getRequiredId());
 	}
 
 	@Override

@@ -110,16 +110,6 @@ public class CFBamBuffUuid6Col
 	}
 
 	@Override
-	public void setRequiredContainerTable(ICFBamProtTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerTable(ICFBamPubTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
-	}
-
-	@Override
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
 		requiredTableId = argTableId;
 	}
