@@ -105,6 +105,7 @@ public class CFBamBuffTableCol
 		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
 		if(argObj == null) {
@@ -143,6 +144,7 @@ public class CFBamBuffTableCol
 		ICFBamValue targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDataId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredParentDataType(ICFBamValue argObj) {
 		if(argObj == null) {

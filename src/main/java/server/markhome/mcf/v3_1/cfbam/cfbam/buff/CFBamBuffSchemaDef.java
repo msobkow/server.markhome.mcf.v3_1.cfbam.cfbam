@@ -123,6 +123,7 @@ public class CFBamBuffSchemaDef
 		ICFIntMinorVersion targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredMinorVersionId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerMinorVersion(ICFIntMinorVersion argObj) {
 		if(argObj == null) {
@@ -151,6 +152,7 @@ public class CFBamBuffSchemaDef
 		ICFSecTenant targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredCTenantId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredOwnerCTenant(ICFSecTenant argObj) {
 		if(argObj == null) {

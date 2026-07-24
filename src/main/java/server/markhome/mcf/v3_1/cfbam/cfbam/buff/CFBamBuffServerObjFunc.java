@@ -99,6 +99,7 @@ public class CFBamBuffServerObjFunc
 		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalRetTableId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupRetTable(ICFBamTable argObj) {
 		if(argObj == null) {

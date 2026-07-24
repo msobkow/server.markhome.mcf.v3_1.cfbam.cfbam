@@ -101,6 +101,7 @@ public class CFBamBuffDelDep
 		ICFBamRelation targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredRelationId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredLookupRelation(ICFBamRelation argObj) {
 		if(argObj == null) {
@@ -139,6 +140,7 @@ public class CFBamBuffDelDep
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {

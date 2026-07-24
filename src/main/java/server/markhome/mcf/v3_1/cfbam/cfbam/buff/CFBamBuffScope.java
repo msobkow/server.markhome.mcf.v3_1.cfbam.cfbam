@@ -151,6 +151,7 @@ public class CFBamBuffScope
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -179,6 +180,7 @@ public class CFBamBuffScope
 		ICFSecTenant targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredOwnerTenant(ICFSecTenant argObj) {
 		if(argObj == null) {

@@ -143,6 +143,7 @@ public class CFBamBuffValue
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFBamIndexCol> getOptionalChildrenRefIndexCol() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
@@ -166,6 +167,7 @@ public class CFBamBuffValue
 			return( results );
 		}
 	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
 		return( requiredId );
@@ -221,6 +223,7 @@ public class CFBamBuffValue
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -249,6 +252,7 @@ public class CFBamBuffValue
 		ICFBamScope targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredScopeId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerScope(ICFBamScope argObj) {
 		if(argObj == null) {
@@ -287,6 +291,7 @@ public class CFBamBuffValue
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
@@ -325,6 +330,7 @@ public class CFBamBuffValue
 		ICFBamValue targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalPrevId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupPrev(ICFBamValue argObj) {
 		if(argObj == null) {
@@ -363,6 +369,7 @@ public class CFBamBuffValue
 		ICFBamValue targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalNextId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupNext(ICFBamValue argObj) {
 		if(argObj == null) {

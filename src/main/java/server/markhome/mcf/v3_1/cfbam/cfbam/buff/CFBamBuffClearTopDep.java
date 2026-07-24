@@ -105,6 +105,7 @@ public class CFBamBuffClearTopDep
 		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
 		if(argObj == null) {
@@ -143,6 +144,7 @@ public class CFBamBuffClearTopDep
 		ICFBamClearTopDep targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalPrevId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupPrev(ICFBamClearTopDep argObj) {
 		if(argObj == null) {
@@ -181,6 +183,7 @@ public class CFBamBuffClearTopDep
 		ICFBamClearTopDep targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalNextId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupNext(ICFBamClearTopDep argObj) {
 		if(argObj == null) {

@@ -101,6 +101,7 @@ public class CFBamBuffClearSubDep2
 		ICFBamClearSubDep1 targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClearSubDep1Id());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerClearSubDep1(ICFBamClearSubDep1 argObj) {
 		if(argObj == null) {

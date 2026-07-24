@@ -161,6 +161,7 @@ public class CFBamBuffEnumTag
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -189,6 +190,7 @@ public class CFBamBuffEnumTag
 		ICFBamEnumDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredEnumId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerEnumDef(ICFBamEnumDef argObj) {
 		if(argObj == null) {
@@ -227,6 +229,7 @@ public class CFBamBuffEnumTag
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
@@ -265,6 +268,7 @@ public class CFBamBuffEnumTag
 		ICFBamEnumTag targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalPrevId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupPrev(ICFBamEnumTag argObj) {
 		if(argObj == null) {
@@ -303,6 +307,7 @@ public class CFBamBuffEnumTag
 		ICFBamEnumTag targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalNextId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupNext(ICFBamEnumTag argObj) {
 		if(argObj == null) {

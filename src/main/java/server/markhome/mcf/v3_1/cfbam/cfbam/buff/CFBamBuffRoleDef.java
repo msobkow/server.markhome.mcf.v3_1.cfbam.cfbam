@@ -159,6 +159,7 @@ public class CFBamBuffRoleDef
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -187,6 +188,7 @@ public class CFBamBuffRoleDef
 		ICFBamScope targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredScopeId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerScopeDef(ICFBamScope argObj) {
 		if(argObj == null) {
@@ -225,6 +227,7 @@ public class CFBamBuffRoleDef
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {

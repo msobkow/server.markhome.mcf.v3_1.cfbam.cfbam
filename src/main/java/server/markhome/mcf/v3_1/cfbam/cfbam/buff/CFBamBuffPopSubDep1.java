@@ -101,6 +101,7 @@ public class CFBamBuffPopSubDep1
 		ICFBamPopTopDep targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredPopTopDepId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerContPopTopDep(ICFBamPopTopDep argObj) {
 		if(argObj == null) {

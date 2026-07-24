@@ -99,6 +99,7 @@ public class CFBamBuffTableTweak
 		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerTableDef(ICFBamTable argObj) {
 		if(argObj == null) {

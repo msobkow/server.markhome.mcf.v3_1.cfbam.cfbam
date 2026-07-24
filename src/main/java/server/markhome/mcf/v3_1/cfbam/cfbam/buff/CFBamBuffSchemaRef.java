@@ -111,6 +111,7 @@ public class CFBamBuffSchemaRef
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSchemaId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
@@ -149,6 +150,7 @@ public class CFBamBuffSchemaRef
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalRefSchemaId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupRefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
@@ -187,6 +189,7 @@ public class CFBamBuffSchemaRef
 		ICFBamSchemaRef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalPrevId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupPrev(ICFBamSchemaRef argObj) {
 		if(argObj == null) {
@@ -225,6 +228,7 @@ public class CFBamBuffSchemaRef
 		ICFBamSchemaRef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalNextId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupNext(ICFBamSchemaRef argObj) {
 		if(argObj == null) {

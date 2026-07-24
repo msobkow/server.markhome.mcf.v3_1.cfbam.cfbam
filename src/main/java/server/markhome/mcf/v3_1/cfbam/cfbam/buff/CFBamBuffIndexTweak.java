@@ -99,6 +99,7 @@ public class CFBamBuffIndexTweak
 		ICFBamIndex targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredIndexId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerIndexDef(ICFBamIndex argObj) {
 		if(argObj == null) {

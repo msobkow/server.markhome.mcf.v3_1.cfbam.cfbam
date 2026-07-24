@@ -139,6 +139,7 @@ public class CFBamBuffIndexCol
 			return( results );
 		}
 	}
+
 	@Override
 	public List<ICFBamRelationCol> getOptionalChildrenRefRelToCol() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
@@ -162,6 +163,7 @@ public class CFBamBuffIndexCol
 			return( results );
 		}
 	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
 		return( requiredId );
@@ -217,6 +219,7 @@ public class CFBamBuffIndexCol
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -245,6 +248,7 @@ public class CFBamBuffIndexCol
 		ICFBamIndex targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredIndexId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerIndex(ICFBamIndex argObj) {
 		if(argObj == null) {
@@ -283,6 +287,7 @@ public class CFBamBuffIndexCol
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
@@ -321,6 +326,7 @@ public class CFBamBuffIndexCol
 		ICFBamIndexCol targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalPrevId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupPrev(ICFBamIndexCol argObj) {
 		if(argObj == null) {
@@ -359,6 +365,7 @@ public class CFBamBuffIndexCol
 		ICFBamIndexCol targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalNextId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupNext(ICFBamIndexCol argObj) {
 		if(argObj == null) {
@@ -397,6 +404,7 @@ public class CFBamBuffIndexCol
 		ICFBamValue targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredColumnId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredLookupColumn(ICFBamValue argObj) {
 		if(argObj == null) {

@@ -101,6 +101,7 @@ public class CFBamBuffPopTopDep
 		ICFBamRelation targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredContRelationId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerContRelation(ICFBamRelation argObj) {
 		if(argObj == null) {

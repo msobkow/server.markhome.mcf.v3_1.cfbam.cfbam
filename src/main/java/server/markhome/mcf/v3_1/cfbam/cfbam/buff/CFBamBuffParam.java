@@ -167,6 +167,7 @@ public class CFBamBuffParam
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -195,6 +196,7 @@ public class CFBamBuffParam
 		ICFBamServerMethod targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredServerMethodId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerServerMeth(ICFBamServerMethod argObj) {
 		if(argObj == null) {
@@ -233,6 +235,7 @@ public class CFBamBuffParam
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
@@ -271,6 +274,7 @@ public class CFBamBuffParam
 		ICFBamParam targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalPrevId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupPrev(ICFBamParam argObj) {
 		if(argObj == null) {
@@ -309,6 +313,7 @@ public class CFBamBuffParam
 		ICFBamParam targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalNextId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupNext(ICFBamParam argObj) {
 		if(argObj == null) {
@@ -347,6 +352,7 @@ public class CFBamBuffParam
 		ICFBamValue targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalTypeId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredLookupType(ICFBamValue argObj) {
 		if(argObj == null) {

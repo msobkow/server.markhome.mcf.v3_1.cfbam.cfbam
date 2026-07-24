@@ -171,6 +171,7 @@ public class CFBamBuffRelationCol
 	public void setUpdatedAt( LocalDateTime value ) {
 		updatedAt = value;
 	}
+
 	@Override
 	public int getRequiredRevision() {
 		return( requiredRevision );
@@ -199,6 +200,7 @@ public class CFBamBuffRelationCol
 		ICFBamRelation targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredRelationId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredContainerRelation(ICFBamRelation argObj) {
 		if(argObj == null) {
@@ -237,6 +239,7 @@ public class CFBamBuffRelationCol
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
@@ -275,6 +278,7 @@ public class CFBamBuffRelationCol
 		ICFBamRelationCol targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalPrevId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupPrev(ICFBamRelationCol argObj) {
 		if(argObj == null) {
@@ -313,6 +317,7 @@ public class CFBamBuffRelationCol
 		ICFBamRelationCol targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalNextId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setOptionalLookupNext(ICFBamRelationCol argObj) {
 		if(argObj == null) {
@@ -351,6 +356,7 @@ public class CFBamBuffRelationCol
 		ICFBamIndexCol targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredFromColId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredLookupFromCol(ICFBamIndexCol argObj) {
 		if(argObj == null) {
@@ -389,6 +395,7 @@ public class CFBamBuffRelationCol
 		ICFBamIndexCol targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredToColId());
 		return(targetRec);
 	}
+
 	@Override
 	public void setRequiredLookupToCol(ICFBamIndexCol argObj) {
 		if(argObj == null) {
