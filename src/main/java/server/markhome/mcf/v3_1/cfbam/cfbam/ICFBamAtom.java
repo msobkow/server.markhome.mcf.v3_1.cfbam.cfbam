@@ -91,7 +91,6 @@ public interface ICFBamAtom
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setAtom( ICFBamProtAtom src );
 
 	public void set( ICFBamProtValueH src );

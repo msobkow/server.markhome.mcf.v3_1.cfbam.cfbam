@@ -101,7 +101,6 @@ public interface ICFBamUInt64Def
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setUInt64Def( ICFBamProtUInt64Def src );
 
 	public void set( ICFBamProtValueH src );

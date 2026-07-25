@@ -97,9 +97,7 @@ public interface ICFBamServerMethod
 	public void setRequiredContainerForTable(ICFBamProtTable argObj);
 	public void setRequiredContainerForTable(ICFBamPubTable argObj);
 	public CFLibDbKeyHash256 getRequiredTableId();
-	public void setRequiredTableId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();
@@ -140,7 +138,6 @@ public interface ICFBamServerMethod
 
 	public void set( ICFBamProtScope src );
 
-	@Override
 	public void setServerMethod( ICFBamProtServerMethod src );
 
 	public void set( ICFBamProtScopeH src );

@@ -96,7 +96,6 @@ public interface ICFBamNmTokenDef
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setNmTokenDef( ICFBamProtNmTokenDef src );
 
 	public void set( ICFBamProtValueH src );

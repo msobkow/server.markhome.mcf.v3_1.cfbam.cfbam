@@ -101,7 +101,6 @@ public interface ICFBamDoubleDef
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setDoubleDef( ICFBamProtDoubleDef src );
 
 	public void set( ICFBamProtValueH src );

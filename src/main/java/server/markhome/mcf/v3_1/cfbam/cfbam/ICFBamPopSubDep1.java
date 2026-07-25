@@ -82,7 +82,6 @@ public interface ICFBamPopSubDep1
 	public void setRequiredContainerContPopTopDep(ICFBamProtPopTopDep argObj);
 	public void setRequiredContainerContPopTopDep(ICFBamPubPopTopDep argObj);
 	public CFLibDbKeyHash256 getRequiredPopTopDepId();
-	public void setRequiredPopTopDepId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );
@@ -101,7 +100,6 @@ public interface ICFBamPopSubDep1
 
 	public void set( ICFBamProtScope src );
 
-	@Override
 	public void setPopSubDep1( ICFBamProtPopSubDep1 src );
 
 	public void set( ICFBamProtScopeH src );

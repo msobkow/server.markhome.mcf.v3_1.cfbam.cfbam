@@ -81,7 +81,6 @@ public interface ICFBamTableTweak
 	public void setRequiredContainerTableDef(ICFBamProtTable argObj);
 	public void setRequiredContainerTableDef(ICFBamPubTable argObj);
 	public CFLibDbKeyHash256 getRequiredTableId();
-	public void setRequiredTableId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();
@@ -98,7 +97,6 @@ public interface ICFBamTableTweak
 
 	public void set( ICFBamProtTweak src );
 
-	@Override
 	public void setTableTweak( ICFBamProtTableTweak src );
 
 	public void set( ICFBamProtTweakH src );

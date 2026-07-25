@@ -82,7 +82,6 @@ public interface ICFBamDelSubDep1
 	public void setRequiredContainerDelTopDep(ICFBamProtDelTopDep argObj);
 	public void setRequiredContainerDelTopDep(ICFBamPubDelTopDep argObj);
 	public CFLibDbKeyHash256 getRequiredDelTopDepId();
-	public void setRequiredDelTopDepId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );
@@ -101,7 +100,6 @@ public interface ICFBamDelSubDep1
 
 	public void set( ICFBamProtScope src );
 
-	@Override
 	public void setDelSubDep1( ICFBamProtDelSubDep1 src );
 
 	public void set( ICFBamProtScopeH src );

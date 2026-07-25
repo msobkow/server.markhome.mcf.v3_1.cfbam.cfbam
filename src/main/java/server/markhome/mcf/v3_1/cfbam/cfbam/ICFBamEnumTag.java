@@ -138,17 +138,13 @@ public interface ICFBamEnumTag
 	public void setOptionalLookupNext(ICFBamProtEnumTag argObj);
 	public void setOptionalLookupNext(ICFBamPubEnumTag argObj);
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredEnumId();
-	public void setRequiredEnumId( CFLibDbKeyHash256 value );
 	public Short getOptionalEnumCode();
 	public void setOptionalEnumCode( Short value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public CFLibDbKeyHash256 getOptionalPrevId();
-	public void setOptionalPrevId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalNextId();
-	public void setOptionalNextId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();
@@ -165,7 +161,6 @@ public interface ICFBamEnumTag
 
 	public void set( ICFBamProtEnumTag src );
 
-	@Override
 	public void setEnumTag( ICFBamProtEnumTag src );
 
 	public void set( ICFBamProtEnumTagH src );

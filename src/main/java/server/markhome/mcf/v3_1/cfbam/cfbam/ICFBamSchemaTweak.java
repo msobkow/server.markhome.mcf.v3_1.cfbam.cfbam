@@ -81,7 +81,6 @@ public interface ICFBamSchemaTweak
 	public void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj);
 	public void setRequiredContainerSchemaDef(ICFBamPubSchemaDef argObj);
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
-	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();
@@ -98,7 +97,6 @@ public interface ICFBamSchemaTweak
 
 	public void set( ICFBamProtTweak src );
 
-	@Override
 	public void setSchemaTweak( ICFBamProtSchemaTweak src );
 
 	public void set( ICFBamProtTweakH src );

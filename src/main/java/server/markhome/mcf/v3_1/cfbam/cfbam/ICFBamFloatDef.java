@@ -101,7 +101,6 @@ public interface ICFBamFloatDef
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setFloatDef( ICFBamProtFloatDef src );
 
 	public void set( ICFBamProtValueH src );

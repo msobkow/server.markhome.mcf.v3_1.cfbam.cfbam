@@ -91,7 +91,6 @@ public interface ICFBamTimeDef
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setTimeDef( ICFBamProtTimeDef src );
 
 	public void set( ICFBamProtValueH src );

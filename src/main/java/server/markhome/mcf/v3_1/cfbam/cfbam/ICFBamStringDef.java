@@ -99,7 +99,6 @@ public interface ICFBamStringDef
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setStringDef( ICFBamProtStringDef src );
 
 	public void set( ICFBamProtValueH src );

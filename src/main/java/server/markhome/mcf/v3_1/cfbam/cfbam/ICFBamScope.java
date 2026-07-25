@@ -111,7 +111,6 @@ public interface ICFBamScope
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
-	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();
@@ -128,7 +127,6 @@ public interface ICFBamScope
 
 	public void set( ICFBamProtScope src );
 
-	@Override
 	public void setScope( ICFBamProtScope src );
 
 	public void set( ICFBamProtScopeH src );

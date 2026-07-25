@@ -104,7 +104,6 @@ public interface ICFBamInt16Def
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setInt16Def( ICFBamProtInt16Def src );
 
 	public void set( ICFBamProtValueH src );

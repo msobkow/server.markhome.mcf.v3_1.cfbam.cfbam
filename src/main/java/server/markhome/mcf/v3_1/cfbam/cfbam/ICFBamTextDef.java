@@ -99,7 +99,6 @@ public interface ICFBamTextDef
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setTextDef( ICFBamProtTextDef src );
 
 	public void set( ICFBamProtValueH src );

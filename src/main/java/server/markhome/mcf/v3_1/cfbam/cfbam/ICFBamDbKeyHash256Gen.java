@@ -99,7 +99,6 @@ public interface ICFBamDbKeyHash256Gen
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setDbKeyHash256Gen( ICFBamProtDbKeyHash256Gen src );
 
 	public void set( ICFBamProtValueH src );

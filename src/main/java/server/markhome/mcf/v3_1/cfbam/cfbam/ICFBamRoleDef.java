@@ -123,9 +123,7 @@ public interface ICFBamRoleDef
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
 	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 	public CFLibDbKeyHash256 getRequiredScopeId();
-	public void setRequiredScopeId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getRequiredEnables();
@@ -148,7 +146,6 @@ public interface ICFBamRoleDef
 
 	public void set( ICFBamProtRoleDef src );
 
-	@Override
 	public void setRoleDef( ICFBamProtRoleDef src );
 
 	public void set( ICFBamProtRoleDefH src );

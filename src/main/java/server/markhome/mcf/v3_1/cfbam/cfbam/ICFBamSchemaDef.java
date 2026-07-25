@@ -90,9 +90,7 @@ public interface ICFBamSchemaDef
 	public void setRequiredOwnerCTenant(CFLibDbKeyHash256 argCTenantId);
 	public void setRequiredOwnerCTenant(ICFSecPubTenant argObj);
 	public CFLibDbKeyHash256 getRequiredCTenantId();
-	public void setRequiredCTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredMinorVersionId();
-	public void setRequiredMinorVersionId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDbName();
@@ -131,7 +129,6 @@ public interface ICFBamSchemaDef
 
 	public void set( ICFBamProtScope src );
 
-	@Override
 	public void setSchemaDef( ICFBamProtSchemaDef src );
 
 	public void set( ICFBamProtScopeH src );

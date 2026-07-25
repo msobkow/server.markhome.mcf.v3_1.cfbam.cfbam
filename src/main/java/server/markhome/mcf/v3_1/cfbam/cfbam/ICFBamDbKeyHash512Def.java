@@ -91,7 +91,6 @@ public interface ICFBamDbKeyHash512Def
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setDbKeyHash512Def( ICFBamProtDbKeyHash512Def src );
 
 	public void set( ICFBamProtValueH src );

@@ -91,7 +91,6 @@ public interface ICFBamDbKeyHash224Def
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setDbKeyHash224Def( ICFBamProtDbKeyHash224Def src );
 
 	public void set( ICFBamProtValueH src );

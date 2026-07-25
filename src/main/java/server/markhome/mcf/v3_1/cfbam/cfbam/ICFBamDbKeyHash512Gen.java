@@ -99,7 +99,6 @@ public interface ICFBamDbKeyHash512Gen
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setDbKeyHash512Gen( ICFBamProtDbKeyHash512Gen src );
 
 	public void set( ICFBamProtValueH src );

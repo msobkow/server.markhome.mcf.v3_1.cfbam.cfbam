@@ -99,7 +99,6 @@ public interface ICFBamUuid6Gen
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setUuid6Gen( ICFBamProtUuid6Gen src );
 
 	public void set( ICFBamProtValueH src );

@@ -99,7 +99,6 @@ public interface ICFBamId64Gen
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setId64Gen( ICFBamProtId64Gen src );
 
 	public void set( ICFBamProtValueH src );

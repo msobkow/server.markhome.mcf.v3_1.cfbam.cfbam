@@ -108,7 +108,6 @@ public interface ICFBamNumberDef
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setNumberDef( ICFBamProtNumberDef src );
 
 	public void set( ICFBamProtValueH src );

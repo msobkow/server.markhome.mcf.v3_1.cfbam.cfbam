@@ -96,7 +96,6 @@ public interface ICFBamBlobDef
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setBlobDef( ICFBamProtBlobDef src );
 
 	public void set( ICFBamProtValueH src );

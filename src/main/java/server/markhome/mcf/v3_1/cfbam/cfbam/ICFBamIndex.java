@@ -94,9 +94,7 @@ public interface ICFBamIndex
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
 	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 	public CFLibDbKeyHash256 getRequiredTableId();
-	public void setRequiredTableId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();
@@ -133,7 +131,6 @@ public interface ICFBamIndex
 
 	public void set( ICFBamProtScope src );
 
-	@Override
 	public void setIndex( ICFBamProtIndex src );
 
 	public void set( ICFBamProtScopeH src );

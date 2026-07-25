@@ -91,7 +91,6 @@ public interface ICFBamTZDateDef
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setTZDateDef( ICFBamProtTZDateDef src );
 
 	public void set( ICFBamProtValueH src );

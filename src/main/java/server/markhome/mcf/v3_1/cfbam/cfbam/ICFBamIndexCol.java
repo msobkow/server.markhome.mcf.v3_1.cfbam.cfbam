@@ -147,9 +147,7 @@ public interface ICFBamIndexCol
 	public void setRequiredLookupColumn(ICFBamProtValue argObj);
 	public void setRequiredLookupColumn(ICFBamPubValue argObj);
 	public CFLibDbKeyHash256 getRequiredIndexId();
-	public void setRequiredIndexId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();
@@ -161,13 +159,10 @@ public interface ICFBamIndexCol
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
 	public CFLibDbKeyHash256 getRequiredColumnId();
-	public void setRequiredColumnId( CFLibDbKeyHash256 value );
 	public boolean getRequiredIsAscending();
 	public void setRequiredIsAscending( boolean value );
 	public CFLibDbKeyHash256 getOptionalPrevId();
-	public void setOptionalPrevId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalNextId();
-	public void setOptionalNextId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();
@@ -184,7 +179,6 @@ public interface ICFBamIndexCol
 
 	public void set( ICFBamProtIndexCol src );
 
-	@Override
 	public void setIndexCol( ICFBamProtIndexCol src );
 
 	public void set( ICFBamProtIndexColH src );

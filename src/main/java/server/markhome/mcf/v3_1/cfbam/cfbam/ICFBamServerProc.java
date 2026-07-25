@@ -91,7 +91,6 @@ public interface ICFBamServerProc
 
 	public void set( ICFBamProtScope src );
 
-	@Override
 	public void setServerProc( ICFBamProtServerProc src );
 
 	public void set( ICFBamProtScopeH src );

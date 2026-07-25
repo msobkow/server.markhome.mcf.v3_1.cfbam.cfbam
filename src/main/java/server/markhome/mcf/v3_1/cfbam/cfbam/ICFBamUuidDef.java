@@ -91,7 +91,6 @@ public interface ICFBamUuidDef
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setUuidDef( ICFBamProtUuidDef src );
 
 	public void set( ICFBamProtValueH src );

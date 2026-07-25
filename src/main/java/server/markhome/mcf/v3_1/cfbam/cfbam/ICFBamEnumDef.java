@@ -89,7 +89,6 @@ public interface ICFBamEnumDef
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setEnumDef( ICFBamProtEnumDef src );
 
 	public void set( ICFBamProtValueH src );

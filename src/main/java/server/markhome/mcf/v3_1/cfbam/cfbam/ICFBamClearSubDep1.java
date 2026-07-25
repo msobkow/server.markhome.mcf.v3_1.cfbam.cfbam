@@ -82,7 +82,6 @@ public interface ICFBamClearSubDep1
 	public void setRequiredContainerClearTopDep(ICFBamProtClearTopDep argObj);
 	public void setRequiredContainerClearTopDep(ICFBamPubClearTopDep argObj);
 	public CFLibDbKeyHash256 getRequiredClearTopDepId();
-	public void setRequiredClearTopDepId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );
@@ -101,7 +100,6 @@ public interface ICFBamClearSubDep1
 
 	public void set( ICFBamProtScope src );
 
-	@Override
 	public void setClearSubDep1( ICFBamProtClearSubDep1 src );
 
 	public void set( ICFBamProtScopeH src );

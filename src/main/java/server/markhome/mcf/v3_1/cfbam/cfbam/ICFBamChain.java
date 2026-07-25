@@ -135,7 +135,6 @@ public interface ICFBamChain
 	public void setRequiredLookupNextRel(ICFBamProtRelation argObj);
 	public void setRequiredLookupNextRel(ICFBamPubRelation argObj);
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();
@@ -147,13 +146,10 @@ public interface ICFBamChain
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
 	public CFLibDbKeyHash256 getRequiredTableId();
-	public void setRequiredTableId( CFLibDbKeyHash256 value );
 	public String getOptionalSuffix();
 	public void setOptionalSuffix( String value );
 	public CFLibDbKeyHash256 getRequiredPrevRelationId();
-	public void setRequiredPrevRelationId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredNextRelationId();
-	public void setRequiredNextRelationId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();
@@ -170,7 +166,6 @@ public interface ICFBamChain
 
 	public void set( ICFBamProtChain src );
 
-	@Override
 	public void setChain( ICFBamProtChain src );
 
 	public void set( ICFBamProtChainH src );

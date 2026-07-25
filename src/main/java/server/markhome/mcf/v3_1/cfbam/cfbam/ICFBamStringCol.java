@@ -81,7 +81,6 @@ public interface ICFBamStringCol
 	public void setRequiredContainerTable(ICFBamProtTable argObj);
 	public void setRequiredContainerTable(ICFBamPubTable argObj);
 	public CFLibDbKeyHash256 getRequiredTableId();
-	public void setRequiredTableId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();
@@ -98,7 +97,6 @@ public interface ICFBamStringCol
 
 	public void set( ICFBamProtValue src );
 
-	@Override
 	public void setStringCol( ICFBamProtStringCol src );
 
 	public void set( ICFBamProtValueH src );

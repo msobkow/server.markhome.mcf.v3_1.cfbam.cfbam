@@ -88,9 +88,7 @@ public interface ICFBamDelDep
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
 	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredRelationId();
-	public void setRequiredRelationId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();
@@ -107,7 +105,6 @@ public interface ICFBamDelDep
 
 	public void set( ICFBamProtScope src );
 
-	@Override
 	public void setDelDep( ICFBamProtDelDep src );
 
 	public void set( ICFBamProtScopeH src );
