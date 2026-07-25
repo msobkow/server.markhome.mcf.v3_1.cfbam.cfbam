@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a IndexCol record implementation
+// Description: Java 25 interface for a IndexCol record declementation
 
 /*
  *	server.markhome.mcf.CFBam
@@ -93,19 +93,29 @@ public interface ICFBamIndexCol
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
+
 	public List<ICFBamRelationCol> getOptionalChildrenRefRelFromCol();
+
 	public List<ICFBamRelationCol> getOptionalChildrenRefRelToCol();
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -137,7 +147,9 @@ public interface ICFBamIndexCol
 	public void setRequiredLookupColumn(ICFBamProtValue argObj);
 	public void setRequiredLookupColumn(ICFBamPubValue argObj);
 	public CFLibDbKeyHash256 getRequiredIndexId();
+	public void setRequiredIndexId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();
@@ -149,36 +161,45 @@ public interface ICFBamIndexCol
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
 	public CFLibDbKeyHash256 getRequiredColumnId();
+	public void setRequiredColumnId( CFLibDbKeyHash256 value );
 	public boolean getRequiredIsAscending();
 	public void setRequiredIsAscending( boolean value );
 	public CFLibDbKeyHash256 getOptionalPrevId();
+	public void setOptionalPrevId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalNextId();
-	@Override
+	public void setOptionalNextId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFBamIndexCol src );
+
 	public void setIndexCol( ICFBamIndexCol src );
+
 	public void set( ICFBamIndexColH src );
+
 	public void setIndexCol( ICFBamIndexColH src );
 
 	public void set( ICFBamProtIndexCol src );
+
+	@Override
 	public void setIndexCol( ICFBamProtIndexCol src );
+
 	public void set( ICFBamProtIndexColH src );
+
 	public void setIndexCol( ICFBamProtIndexColH src );
 
 	public void set( ICFBamPubIndexCol src );
+
 	public void setIndexCol( ICFBamPubIndexCol src );
+
 	public void set( ICFBamPubIndexColH src );
+
 	public void setIndexCol( ICFBamPubIndexColH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a Chain record implementation
+// Description: Java 25 interface for a Chain record declementation
 
 /*
  *	server.markhome.mcf.CFBam
@@ -90,17 +90,25 @@ public interface ICFBamChain
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -127,6 +135,7 @@ public interface ICFBamChain
 	public void setRequiredLookupNextRel(ICFBamProtRelation argObj);
 	public void setRequiredLookupNextRel(ICFBamPubRelation argObj);
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();
@@ -138,36 +147,45 @@ public interface ICFBamChain
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
 	public CFLibDbKeyHash256 getRequiredTableId();
+	public void setRequiredTableId( CFLibDbKeyHash256 value );
 	public String getOptionalSuffix();
 	public void setOptionalSuffix( String value );
 	public CFLibDbKeyHash256 getRequiredPrevRelationId();
+	public void setRequiredPrevRelationId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredNextRelationId();
-	@Override
+	public void setRequiredNextRelationId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFBamChain src );
+
 	public void setChain( ICFBamChain src );
+
 	public void set( ICFBamChainH src );
+
 	public void setChain( ICFBamChainH src );
 
 	public void set( ICFBamProtChain src );
+
+	@Override
 	public void setChain( ICFBamProtChain src );
+
 	public void set( ICFBamProtChainH src );
+
 	public void setChain( ICFBamProtChainH src );
 
 	public void set( ICFBamPubChain src );
+
 	public void setChain( ICFBamPubChain src );
+
 	public void set( ICFBamPubChainH src );
+
 	public void setChain( ICFBamPubChainH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

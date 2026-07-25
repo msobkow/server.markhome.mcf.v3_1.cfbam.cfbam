@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a Param record implementation
+// Description: Java 25 interface for a Param record declementation
 
 /*
  *	server.markhome.mcf.CFBam
@@ -93,17 +93,25 @@ public interface ICFBamParam
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -135,7 +143,9 @@ public interface ICFBamParam
 	public void setRequiredLookupType(ICFBamProtValue argObj);
 	public void setRequiredLookupType(ICFBamPubValue argObj);
 	public CFLibDbKeyHash256 getRequiredServerMethodId();
+	public void setRequiredServerMethodId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortDescription();
@@ -145,34 +155,43 @@ public interface ICFBamParam
 	public boolean getRequiredIsNullable();
 	public void setRequiredIsNullable( boolean value );
 	public CFLibDbKeyHash256 getOptionalTypeId();
+	public void setOptionalTypeId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalPrevId();
+	public void setOptionalPrevId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalNextId();
-	@Override
+	public void setOptionalNextId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFBamParam src );
+
 	public void setParam( ICFBamParam src );
+
 	public void set( ICFBamParamH src );
+
 	public void setParam( ICFBamParamH src );
 
 	public void set( ICFBamProtParam src );
+
+	@Override
 	public void setParam( ICFBamProtParam src );
+
 	public void set( ICFBamProtParamH src );
+
 	public void setParam( ICFBamProtParamH src );
 
 	public void set( ICFBamPubParam src );
+
 	public void setParam( ICFBamPubParam src );
+
 	public void set( ICFBamPubParamH src );
+
 	public void setParam( ICFBamPubParamH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

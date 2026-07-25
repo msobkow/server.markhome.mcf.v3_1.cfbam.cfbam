@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a Scope record implementation
+// Description: Java 25 interface for a Scope record declementation
 
 /*
  *	server.markhome.mcf.CFBam
@@ -83,17 +83,25 @@ public interface ICFBamScope
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -103,32 +111,39 @@ public interface ICFBamScope
 	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 	public CFLibDbKeyHash256 getRequiredTenantId();
-	@Override
+	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFBamScope src );
+
 	public void setScope( ICFBamScope src );
+
 	public void set( ICFBamScopeH src );
+
 	public void setScope( ICFBamScopeH src );
 
 	public void set( ICFBamProtScope src );
+
+	@Override
 	public void setScope( ICFBamProtScope src );
+
 	public void set( ICFBamProtScopeH src );
+
 	public void setScope( ICFBamProtScopeH src );
 
 	public void set( ICFBamPubScope src );
+
 	public void setScope( ICFBamPubScope src );
+
 	public void set( ICFBamPubScopeH src );
+
 	public void setScope( ICFBamPubScopeH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

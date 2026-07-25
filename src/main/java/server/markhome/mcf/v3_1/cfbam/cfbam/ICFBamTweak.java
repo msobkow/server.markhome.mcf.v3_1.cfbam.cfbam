@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a Tweak record implementation
+// Description: Java 25 interface for a Tweak record declementation
 
 /*
  *	server.markhome.mcf.CFBam
@@ -92,17 +92,25 @@ public interface ICFBamTweak
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -121,41 +129,49 @@ public interface ICFBamTweak
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredScopeId();
+	public void setRequiredScopeId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalDefSchemaTenantId();
 	public void setOptionalDefSchemaTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean getRequiredReplacesInherited();
 	public void setRequiredReplacesInherited( boolean value );
 	public String getRequiredTweakGelText();
 	public void setRequiredTweakGelText( String value );
-	@Override
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFBamTweak src );
+
 	public void setTweak( ICFBamTweak src );
+
 	public void set( ICFBamTweakH src );
+
 	public void setTweak( ICFBamTweakH src );
 
 	public void set( ICFBamProtTweak src );
+
+	@Override
 	public void setTweak( ICFBamProtTweak src );
+
 	public void set( ICFBamProtTweakH src );
+
 	public void setTweak( ICFBamProtTweakH src );
 
 	public void set( ICFBamPubTweak src );
+
 	public void setTweak( ICFBamPubTweak src );
+
 	public void set( ICFBamPubTweakH src );
+
 	public void setTweak( ICFBamPubTweakH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }

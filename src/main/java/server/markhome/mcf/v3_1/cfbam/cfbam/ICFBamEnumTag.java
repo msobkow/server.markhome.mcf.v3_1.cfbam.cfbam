@@ -1,4 +1,4 @@
-// Description: Java 25 interface for a EnumTag record implementation
+// Description: Java 25 interface for a EnumTag record declementation
 
 /*
  *	server.markhome.mcf.CFBam
@@ -93,17 +93,25 @@ public interface ICFBamEnumTag
 	public int getClassCode();
 
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-	
+
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
@@ -130,39 +138,49 @@ public interface ICFBamEnumTag
 	public void setOptionalLookupNext(ICFBamProtEnumTag argObj);
 	public void setOptionalLookupNext(ICFBamPubEnumTag argObj);
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredEnumId();
+	public void setRequiredEnumId( CFLibDbKeyHash256 value );
 	public Short getOptionalEnumCode();
 	public void setOptionalEnumCode( Short value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public CFLibDbKeyHash256 getOptionalPrevId();
+	public void setOptionalPrevId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalNextId();
-	@Override
+	public void setOptionalNextId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
-	
-	@Override
+
 	public int hashCode();
 
-	//@Override not necessary because interfaces aren't able to implement Comparable, but they can double-team on the requirement
 	public int compareTo( Object obj );
 
 	public void set( ICFBamEnumTag src );
+
 	public void setEnumTag( ICFBamEnumTag src );
+
 	public void set( ICFBamEnumTagH src );
+
 	public void setEnumTag( ICFBamEnumTagH src );
 
 	public void set( ICFBamProtEnumTag src );
+
+	@Override
 	public void setEnumTag( ICFBamProtEnumTag src );
+
 	public void set( ICFBamProtEnumTagH src );
+
 	public void setEnumTag( ICFBamProtEnumTagH src );
 
 	public void set( ICFBamPubEnumTag src );
+
 	public void setEnumTag( ICFBamPubEnumTag src );
+
 	public void set( ICFBamPubEnumTagH src );
+
 	public void setEnumTag( ICFBamPubEnumTagH src );
 
 	public String getXmlAttrFragment();
 
-	@Override
 	public String toString();
 }
