@@ -77,6 +77,7 @@ public interface ICFBamClearSubDep2
 	public final static String S_CLASS_CODE = "a816";
 
 	public ICFBamClearSubDep1 getRequiredContainerClearSubDep1();
+	public List<ICFBamClearSubDep3> getOptionalComponentsClearDep();
 	public void setRequiredContainerClearSubDep1(CFLibDbKeyHash256 argClearSubDep1Id);
 	public void setRequiredContainerClearSubDep1(ICFBamClearSubDep1 argObj);
 	public void setRequiredContainerClearSubDep1(ICFBamProtClearSubDep1 argObj);

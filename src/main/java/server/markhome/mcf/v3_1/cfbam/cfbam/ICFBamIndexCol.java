@@ -123,6 +123,8 @@ public interface ICFBamIndexCol
 
 	public ICFBamIndex getRequiredContainerIndex();
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+	public List<ICFBamRelationCol> getOptionalChildrenRefRelFromCol();
+	public List<ICFBamRelationCol> getOptionalChildrenRefRelToCol();
 	public ICFBamIndexCol getOptionalLookupPrev();
 	public ICFBamIndexCol getOptionalLookupNext();
 	public ICFBamValue getRequiredLookupColumn();

@@ -84,6 +84,11 @@ public interface ICFBamSchemaDef
 	public final static String S_CLASS_CODE = "a802";
 
 	public ICFIntMinorVersion getRequiredContainerMinorVersion();
+	public List<ICFBamTable> getOptionalComponentsTables();
+	public List<ICFBamValue> getOptionalComponentsTypes();
+	public List<ICFBamSchemaRef> getOptionalComponentsSchemaRefs();
+	public List<ICFBamTweak> getOptionalComponentsTweaks();
+	public List<ICFBamSchemaRole> getOptionalComponentsRoles();
 	public ICFSecTenant getRequiredOwnerCTenant();
 	public void setRequiredContainerMinorVersion(CFLibDbKeyHash256 argMinorVersionId);
 	public void setRequiredContainerMinorVersion(ICFIntPubMinorVersion argObj);

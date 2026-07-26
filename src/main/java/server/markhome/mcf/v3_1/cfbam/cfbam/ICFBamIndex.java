@@ -85,6 +85,8 @@ public interface ICFBamIndex
 
 	public ICFBamTable getRequiredContainerTable();
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+	public List<ICFBamIndexCol> getOptionalComponentsColumns();
+	public List<ICFBamIndexTweak> getOptionalComponentsTweaks();
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId);
 	public void setRequiredContainerTable(ICFBamTable argObj);
 	public void setRequiredContainerTable(ICFBamProtTable argObj);

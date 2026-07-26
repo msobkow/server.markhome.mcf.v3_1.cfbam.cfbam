@@ -104,10 +104,19 @@ public interface ICFBamTable
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+	public List<ICFBamRelation> getOptionalComponentsRelation();
 	public ICFBamIndex getOptionalLookupLookupIndex();
 	public ICFBamIndex getOptionalLookupAltIndex();
 	public ICFBamTable getOptionalLookupQualTable();
+	public List<ICFBamIndex> getOptionalComponentsIndex();
 	public ICFBamIndex getOptionalLookupPrimaryIndex();
+	public List<ICFBamValue> getOptionalComponentsColumns();
+	public List<ICFBamRelation> getOptionalChildrenReverseRelations();
+	public List<ICFBamChain> getOptionalComponentsChains();
+	public List<ICFBamDelTopDep> getOptionalComponentsDelDep();
+	public List<ICFBamClearTopDep> getOptionalComponentsClearDep();
+	public List<ICFBamServerMethod> getOptionalComponentsServerMethods();
+	public List<ICFBamTweak> getOptionalComponentsTweaks();
 	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId);
 	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
 	public void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj);

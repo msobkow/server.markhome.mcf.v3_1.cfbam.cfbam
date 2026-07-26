@@ -122,6 +122,8 @@ public interface ICFBamValue
 
 	public ICFBamScope getRequiredContainerScope();
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+	public List<ICFBamTableCol> getOptionalChildrenRefTableCol();
+	public List<ICFBamIndexCol> getOptionalChildrenRefIndexCol();
 	public ICFBamValue getOptionalLookupPrev();
 	public ICFBamValue getOptionalLookupNext();
 	public void setRequiredContainerScope(CFLibDbKeyHash256 argScopeId);

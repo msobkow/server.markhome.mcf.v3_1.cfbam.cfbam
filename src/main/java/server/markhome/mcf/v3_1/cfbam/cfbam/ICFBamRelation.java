@@ -98,6 +98,8 @@ public interface ICFBamRelation
 
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
 	public ICFBamTable getRequiredContainerFromTable();
+	public List<ICFBamRelationCol> getOptionalComponentsColumns();
+	public List<ICFBamPopTopDep> getOptionalComponentsPopDep();
 	public ICFBamIndex getRequiredLookupFromIndex();
 	public ICFBamTable getRequiredLookupToTable();
 	public ICFBamIndex getRequiredLookupToIndex();
