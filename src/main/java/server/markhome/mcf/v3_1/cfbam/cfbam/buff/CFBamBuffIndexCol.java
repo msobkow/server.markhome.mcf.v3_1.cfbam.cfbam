@@ -250,31 +250,6 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
-	public void setRequiredContainerIndex(ICFBamIndex argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerIndex", 1, "argObj");
-		}
-		else {
-			requiredIndexId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerIndex(ICFBamProtIndex argObj) {
-		setRequiredContainerIndex(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerIndex(ICFBamPubIndex argObj) {
-		setRequiredContainerIndex(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerIndex(CFLibDbKeyHash256 argIndexId) {
-		requiredIndexId = argIndexId;
-	}
-
-	@Override
 	public ICFBamSchemaDef getOptionalLookupDefSchema() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -286,31 +261,6 @@ public class CFBamBuffIndexCol
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		if(argObj == null) {
-			optionalDefSchemaId = null;
-		}
-		else {
-			optionalDefSchemaId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
 	}
 
 	@Override
@@ -328,31 +278,6 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFBamIndexCol argObj) {
-		if(argObj == null) {
-			optionalPrevId = null;
-		}
-		else {
-			optionalPrevId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupPrev(ICFBamProtIndexCol argObj) {
-		setOptionalLookupPrev(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupPrev(ICFBamPubIndexCol argObj) {
-		setOptionalLookupPrev(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
-		optionalPrevId = argPrevId;
-	}
-
-	@Override
 	public ICFBamIndexCol getOptionalLookupNext() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -367,31 +292,6 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
-	public void setOptionalLookupNext(ICFBamIndexCol argObj) {
-		if(argObj == null) {
-			optionalNextId = null;
-		}
-		else {
-			optionalNextId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupNext(ICFBamProtIndexCol argObj) {
-		setOptionalLookupNext(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupNext(ICFBamPubIndexCol argObj) {
-		setOptionalLookupNext(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId) {
-		optionalNextId = argNextId;
-	}
-
-	@Override
 	public ICFBamValue getRequiredLookupColumn() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -403,31 +303,6 @@ public class CFBamBuffIndexCol
 		}
 		ICFBamValue targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredColumnId());
 		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredLookupColumn(ICFBamValue argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setLookupColumn", 1, "argObj");
-		}
-		else {
-			requiredColumnId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredLookupColumn(ICFBamProtValue argObj) {
-		setRequiredLookupColumn(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredLookupColumn(ICFBamPubValue argObj) {
-		setRequiredLookupColumn(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredLookupColumn(CFLibDbKeyHash256 argColumnId) {
-		requiredColumnId = argColumnId;
 	}
 
 	@Override

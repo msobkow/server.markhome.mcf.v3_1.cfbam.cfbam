@@ -81,21 +81,8 @@ public interface ICFBamClearTopDep
 	public final static String S_CLASS_CODE = "a818";
 
 	public ICFBamTable getRequiredContainerTable();
-	public List<ICFBamClearSubDep1> getOptionalComponentsClearDep();
 	public ICFBamClearTopDep getOptionalLookupPrev();
 	public ICFBamClearTopDep getOptionalLookupNext();
-	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId);
-	public void setRequiredContainerTable(ICFBamTable argObj);
-	public void setRequiredContainerTable(ICFBamProtTable argObj);
-	public void setRequiredContainerTable(ICFBamPubTable argObj);
-	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
-	public void setOptionalLookupPrev(ICFBamClearTopDep argObj);
-	public void setOptionalLookupPrev(ICFBamProtClearTopDep argObj);
-	public void setOptionalLookupPrev(ICFBamPubClearTopDep argObj);
-	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
-	public void setOptionalLookupNext(ICFBamClearTopDep argObj);
-	public void setOptionalLookupNext(ICFBamProtClearTopDep argObj);
-	public void setOptionalLookupNext(ICFBamPubClearTopDep argObj);
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public String getRequiredName();
 	public void setRequiredName( String value );

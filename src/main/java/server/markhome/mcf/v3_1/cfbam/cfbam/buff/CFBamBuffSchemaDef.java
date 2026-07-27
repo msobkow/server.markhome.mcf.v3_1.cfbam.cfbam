@@ -125,21 +125,6 @@ public class CFBamBuffSchemaDef
 	}
 
 	@Override
-	public void setRequiredContainerMinorVersion(ICFIntMinorVersion argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerMinorVersion", 1, "argObj");
-		}
-		else {
-			requiredMinorVersionId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerMinorVersion(CFLibDbKeyHash256 argMinorVersionId) {
-		requiredMinorVersionId = argMinorVersionId;
-	}
-
-	@Override
 	public ICFSecTenant getRequiredOwnerCTenant() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -151,21 +136,6 @@ public class CFBamBuffSchemaDef
 		}
 		ICFSecTenant targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredCTenantId());
 		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredOwnerCTenant(ICFSecTenant argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOwnerCTenant", 1, "argObj");
-		}
-		else {
-			requiredCTenantId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredOwnerCTenant(CFLibDbKeyHash256 argCTenantId) {
-		requiredCTenantId = argCTenantId;
 	}
 
 	@Override

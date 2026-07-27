@@ -101,31 +101,6 @@ public class CFBamBuffUInt32Col
 	}
 
 	@Override
-	public void setRequiredContainerTable(ICFBamTable argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerTable(ICFBamProtTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerTable(ICFBamPubTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredTableId() {
 		return( requiredTableId );
 	}

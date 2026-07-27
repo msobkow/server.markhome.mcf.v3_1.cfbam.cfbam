@@ -194,31 +194,6 @@ public class CFBamBuffTweak
 	}
 
 	@Override
-	public void setRequiredContainerScopeDef(ICFBamScope argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerScopeDef", 1, "argObj");
-		}
-		else {
-			requiredScopeId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerScopeDef(ICFBamProtScope argObj) {
-		setRequiredContainerScopeDef(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerScopeDef(ICFBamPubScope argObj) {
-		setRequiredContainerScopeDef(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerScopeDef(CFLibDbKeyHash256 argScopeId) {
-		requiredScopeId = argScopeId;
-	}
-
-	@Override
 	public ICFBamSchemaDef getOptionalLookupDefSchema() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -230,31 +205,6 @@ public class CFBamBuffTweak
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		if(argObj == null) {
-			optionalDefSchemaId = null;
-		}
-		else {
-			optionalDefSchemaId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
 	}
 
 	@Override

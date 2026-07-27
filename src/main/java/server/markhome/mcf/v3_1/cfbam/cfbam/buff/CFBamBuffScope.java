@@ -182,21 +182,6 @@ public class CFBamBuffScope
 	}
 
 	@Override
-	public void setRequiredOwnerTenant(ICFSecTenant argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
-		}
-		else {
-			requiredTenantId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
-		requiredTenantId = argTenantId;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
 		return( requiredTenantId );
 	}

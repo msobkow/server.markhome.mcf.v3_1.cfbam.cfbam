@@ -192,31 +192,6 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
-	public void setRequiredContainerEnumDef(ICFBamEnumDef argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerEnumDef", 1, "argObj");
-		}
-		else {
-			requiredEnumId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerEnumDef(ICFBamProtEnumDef argObj) {
-		setRequiredContainerEnumDef(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerEnumDef(ICFBamPubEnumDef argObj) {
-		setRequiredContainerEnumDef(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerEnumDef(CFLibDbKeyHash256 argEnumId) {
-		requiredEnumId = argEnumId;
-	}
-
-	@Override
 	public ICFBamSchemaDef getOptionalLookupDefSchema() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -228,31 +203,6 @@ public class CFBamBuffEnumTag
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		if(argObj == null) {
-			optionalDefSchemaId = null;
-		}
-		else {
-			optionalDefSchemaId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
 	}
 
 	@Override
@@ -270,31 +220,6 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFBamEnumTag argObj) {
-		if(argObj == null) {
-			optionalPrevId = null;
-		}
-		else {
-			optionalPrevId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupPrev(ICFBamProtEnumTag argObj) {
-		setOptionalLookupPrev(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupPrev(ICFBamPubEnumTag argObj) {
-		setOptionalLookupPrev(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
-		optionalPrevId = argPrevId;
-	}
-
-	@Override
 	public ICFBamEnumTag getOptionalLookupNext() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -306,31 +231,6 @@ public class CFBamBuffEnumTag
 		}
 		ICFBamEnumTag targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalNextId());
 		return(targetRec);
-	}
-
-	@Override
-	public void setOptionalLookupNext(ICFBamEnumTag argObj) {
-		if(argObj == null) {
-			optionalNextId = null;
-		}
-		else {
-			optionalNextId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupNext(ICFBamProtEnumTag argObj) {
-		setOptionalLookupNext(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupNext(ICFBamPubEnumTag argObj) {
-		setOptionalLookupNext(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId) {
-		optionalNextId = argNextId;
 	}
 
 	@Override

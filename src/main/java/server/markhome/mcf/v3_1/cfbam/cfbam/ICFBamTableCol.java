@@ -80,14 +80,6 @@ public interface ICFBamTableCol
 
 	public ICFBamTable getRequiredContainerTable();
 	public ICFBamValue getRequiredParentDataType();
-	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId);
-	public void setRequiredContainerTable(ICFBamTable argObj);
-	public void setRequiredContainerTable(ICFBamProtTable argObj);
-	public void setRequiredContainerTable(ICFBamPubTable argObj);
-	public void setRequiredParentDataType(CFLibDbKeyHash256 argDataId);
-	public void setRequiredParentDataType(ICFBamValue argObj);
-	public void setRequiredParentDataType(ICFBamProtValue argObj);
-	public void setRequiredParentDataType(ICFBamPubValue argObj);
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public String getOptionalDbName();
 	public void setOptionalDbName( String value );

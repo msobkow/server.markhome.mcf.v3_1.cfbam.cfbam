@@ -103,31 +103,6 @@ public class CFBamBuffPopSubDep1
 	}
 
 	@Override
-	public void setRequiredContainerContPopTopDep(ICFBamPopTopDep argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerContPopTopDep", 1, "argObj");
-		}
-		else {
-			requiredPopTopDepId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerContPopTopDep(ICFBamProtPopTopDep argObj) {
-		setRequiredContainerContPopTopDep(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerContPopTopDep(ICFBamPubPopTopDep argObj) {
-		setRequiredContainerContPopTopDep(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerContPopTopDep(CFLibDbKeyHash256 argPopTopDepId) {
-		requiredPopTopDepId = argPopTopDepId;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredPopTopDepId() {
 		return( requiredPopTopDepId );
 	}

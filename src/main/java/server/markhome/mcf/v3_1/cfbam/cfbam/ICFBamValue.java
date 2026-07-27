@@ -122,26 +122,8 @@ public interface ICFBamValue
 
 	public ICFBamScope getRequiredContainerScope();
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-	public List<ICFBamTableCol> getOptionalChildrenRefTableCol();
-	public List<ICFBamIndexCol> getOptionalChildrenRefIndexCol();
 	public ICFBamValue getOptionalLookupPrev();
 	public ICFBamValue getOptionalLookupNext();
-	public void setRequiredContainerScope(CFLibDbKeyHash256 argScopeId);
-	public void setRequiredContainerScope(ICFBamScope argObj);
-	public void setRequiredContainerScope(ICFBamProtScope argObj);
-	public void setRequiredContainerScope(ICFBamPubScope argObj);
-	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
-	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
-	public void setOptionalLookupPrev(ICFBamValue argObj);
-	public void setOptionalLookupPrev(ICFBamProtValue argObj);
-	public void setOptionalLookupPrev(ICFBamPubValue argObj);
-	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
-	public void setOptionalLookupNext(ICFBamValue argObj);
-	public void setOptionalLookupNext(ICFBamProtValue argObj);
-	public void setOptionalLookupNext(ICFBamPubValue argObj);
 	public CFLibDbKeyHash256 getRequiredScopeId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();

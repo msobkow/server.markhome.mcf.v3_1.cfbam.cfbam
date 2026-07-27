@@ -103,31 +103,6 @@ public class CFBamBuffDelDep
 	}
 
 	@Override
-	public void setRequiredLookupRelation(ICFBamRelation argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setLookupRelation", 1, "argObj");
-		}
-		else {
-			requiredRelationId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredLookupRelation(ICFBamProtRelation argObj) {
-		setRequiredLookupRelation(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredLookupRelation(ICFBamPubRelation argObj) {
-		setRequiredLookupRelation(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredLookupRelation(CFLibDbKeyHash256 argRelationId) {
-		requiredRelationId = argRelationId;
-	}
-
-	@Override
 	public ICFBamSchemaDef getOptionalLookupDefSchema() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -139,31 +114,6 @@ public class CFBamBuffDelDep
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		if(argObj == null) {
-			optionalDefSchemaId = null;
-		}
-		else {
-			optionalDefSchemaId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
 	}
 
 	@Override

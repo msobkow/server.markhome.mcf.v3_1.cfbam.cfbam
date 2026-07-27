@@ -76,10 +76,6 @@ public interface ICFBamServerObjFunc
 	public final static String S_CLASS_CODE = "a805";
 
 	public ICFBamTable getOptionalLookupRetTable();
-	public void setOptionalLookupRetTable(CFLibDbKeyHash256 argRetTableId);
-	public void setOptionalLookupRetTable(ICFBamTable argObj);
-	public void setOptionalLookupRetTable(ICFBamProtTable argObj);
-	public void setOptionalLookupRetTable(ICFBamPubTable argObj);
 	public CFLibDbKeyHash256 getOptionalRetTableId();
 	public boolean equals( Object obj );
 

@@ -127,31 +127,6 @@ public class CFBamBuffServerMethod
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		if(argObj == null) {
-			optionalDefSchemaId = null;
-		}
-		else {
-			optionalDefSchemaId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
-	}
-
-	@Override
 	public ICFBamTable getRequiredContainerForTable() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -163,31 +138,6 @@ public class CFBamBuffServerMethod
 		}
 		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableId());
 		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredContainerForTable(ICFBamTable argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerForTable", 1, "argObj");
-		}
-		else {
-			requiredTableId = argObj.getRequiredId();
-		}
-	}
-
-	@Override
-	public void setRequiredContainerForTable(ICFBamProtTable argObj) {
-		setRequiredContainerForTable(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerForTable(ICFBamPubTable argObj) {
-		setRequiredContainerForTable(argObj.getRequiredId());
-	}
-
-	@Override
-	public void setRequiredContainerForTable(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
 	}
 
 	@Override

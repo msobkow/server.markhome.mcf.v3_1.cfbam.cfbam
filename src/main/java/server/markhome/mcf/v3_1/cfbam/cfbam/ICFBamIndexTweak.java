@@ -76,10 +76,6 @@ public interface ICFBamIndexTweak
 	public final static String S_CLASS_CODE = "a80b";
 
 	public ICFBamIndex getRequiredContainerIndexDef();
-	public void setRequiredContainerIndexDef(CFLibDbKeyHash256 argIndexId);
-	public void setRequiredContainerIndexDef(ICFBamIndex argObj);
-	public void setRequiredContainerIndexDef(ICFBamProtIndex argObj);
-	public void setRequiredContainerIndexDef(ICFBamPubIndex argObj);
 	public CFLibDbKeyHash256 getRequiredIndexId();
 	public boolean equals( Object obj );
 
