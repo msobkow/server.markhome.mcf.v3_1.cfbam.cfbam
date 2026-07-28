@@ -153,6 +153,7 @@ public class CFBamBuffNumberDef
 
 	@Override
 	public void setOptionalInitValue( BigDecimal value ) {
+		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".InitValue", 31, 5, value );
 		optionalInitValue = value;
 	}
 
@@ -163,6 +164,7 @@ public class CFBamBuffNumberDef
 
 	@Override
 	public void setOptionalMinValue( BigDecimal value ) {
+		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".MinValue", 31, 5, value );
 		optionalMinValue = value;
 	}
 
@@ -173,6 +175,7 @@ public class CFBamBuffNumberDef
 
 	@Override
 	public void setOptionalMaxValue( BigDecimal value ) {
+		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".MaxValue", 31, 5, value );
 		optionalMaxValue = value;
 	}
 

@@ -104,6 +104,7 @@ public class CFBamBuffUInt64DefH extends CFBamBuffAtomH
 				value.toString(),
 				ICFBamUInt64Def.INITVALUE_MIN_VALUE.toString() );
 		}
+		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".InitValue", 19, 0, value );
 		optionalInitValue = value;
 	}
 
@@ -122,6 +123,7 @@ public class CFBamBuffUInt64DefH extends CFBamBuffAtomH
 				value.toString(),
 				ICFBamUInt64Def.MINVALUE_MIN_VALUE.toString() );
 		}
+		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".MinValue", 19, 0, value );
 		optionalMinValue = value;
 	}
 
@@ -140,6 +142,7 @@ public class CFBamBuffUInt64DefH extends CFBamBuffAtomH
 				value.toString(),
 				ICFBamUInt64Def.MAXVALUE_MIN_VALUE.toString() );
 		}
+		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".MaxValue", 19, 0, value );
 		optionalMaxValue = value;
 	}
 
