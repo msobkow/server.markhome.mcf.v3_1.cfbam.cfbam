@@ -117,24 +117,8 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 	}
 
 	@Override
-	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredTableId",
-				1,
-				"value" );
-		}
-		requiredTableId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
 		return( optionalDefSchemaId );
-	}
-
-	@Override
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		optionalDefSchemaId = value;
 	}
 
 	@Override

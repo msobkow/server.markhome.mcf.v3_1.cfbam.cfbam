@@ -115,30 +115,8 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 	}
 
 	@Override
-	public void setRequiredCTenantId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredCTenantId",
-				1,
-				"value" );
-		}
-		requiredCTenantId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredMinorVersionId() {
 		return( requiredMinorVersionId );
-	}
-
-	@Override
-	public void setRequiredMinorVersionId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredMinorVersionId",
-				1,
-				"value" );
-		}
-		requiredMinorVersionId = value;
 	}
 
 	@Override

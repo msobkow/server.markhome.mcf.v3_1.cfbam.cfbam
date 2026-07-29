@@ -93,17 +93,6 @@ public class CFBamBuffDelSubDep2H extends CFBamBuffDelDepH
 	}
 
 	@Override
-	public void setRequiredDelSubDep1Id( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredDelSubDep1Id",
-				1,
-				"value" );
-		}
-		requiredDelSubDep1Id = value;
-	}
-
-	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}

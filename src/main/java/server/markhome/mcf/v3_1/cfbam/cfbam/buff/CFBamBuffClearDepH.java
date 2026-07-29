@@ -93,24 +93,8 @@ public class CFBamBuffClearDepH extends CFBamBuffScopeH
 	}
 
 	@Override
-	public void setRequiredRelationId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredRelationId",
-				1,
-				"value" );
-		}
-		requiredRelationId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
 		return( optionalDefSchemaId );
-	}
-
-	@Override
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		optionalDefSchemaId = value;
 	}
 
     @Override

@@ -93,17 +93,6 @@ public class CFBamBuffPopSubDep2H extends CFBamBuffPopDepH
 	}
 
 	@Override
-	public void setRequiredPopSubDep1Id( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredPopSubDep1Id",
-				1,
-				"value" );
-		}
-		requiredPopSubDep1Id = value;
-	}
-
-	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}

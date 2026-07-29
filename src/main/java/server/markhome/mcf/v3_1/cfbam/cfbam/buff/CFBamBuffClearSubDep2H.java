@@ -93,17 +93,6 @@ public class CFBamBuffClearSubDep2H extends CFBamBuffClearDepH
 	}
 
 	@Override
-	public void setRequiredClearSubDep1Id( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredClearSubDep1Id",
-				1,
-				"value" );
-		}
-		requiredClearSubDep1Id = value;
-	}
-
-	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}

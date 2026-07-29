@@ -246,24 +246,8 @@ public class CFBamBuffRelationColH
 	}
 
 	@Override
-	public void setRequiredRelationId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredRelationId",
-				1,
-				"value" );
-		}
-		requiredRelationId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
 		return( optionalDefSchemaId );
-	}
-
-	@Override
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		optionalDefSchemaId = value;
 	}
 
 	@Override
@@ -368,30 +352,8 @@ public class CFBamBuffRelationColH
 	}
 
 	@Override
-	public void setRequiredFromColId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredFromColId",
-				1,
-				"value" );
-		}
-		requiredFromColId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredToColId() {
 		return( requiredToColId );
-	}
-
-	@Override
-	public void setRequiredToColId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredToColId",
-				1,
-				"value" );
-		}
-		requiredToColId = value;
 	}
 
 	@Override
@@ -400,18 +362,8 @@ public class CFBamBuffRelationColH
 	}
 
 	@Override
-	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
-		optionalPrevId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getOptionalNextId() {
 		return( optionalNextId );
-	}
-
-	@Override
-	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
-		optionalNextId = value;
 	}
 
     @Override

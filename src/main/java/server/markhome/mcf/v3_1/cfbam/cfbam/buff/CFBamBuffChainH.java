@@ -244,11 +244,6 @@ public class CFBamBuffChainH
 	}
 
 	@Override
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		optionalDefSchemaId = value;
-	}
-
-	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}
@@ -350,17 +345,6 @@ public class CFBamBuffChainH
 	}
 
 	@Override
-	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredTableId",
-				1,
-				"value" );
-		}
-		requiredTableId = value;
-	}
-
-	@Override
 	public String getOptionalSuffix() {
 		return( optionalSuffix );
 	}
@@ -384,30 +368,8 @@ public class CFBamBuffChainH
 	}
 
 	@Override
-	public void setRequiredPrevRelationId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredPrevRelationId",
-				1,
-				"value" );
-		}
-		requiredPrevRelationId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getRequiredNextRelationId() {
 		return( requiredNextRelationId );
-	}
-
-	@Override
-	public void setRequiredNextRelationId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredNextRelationId",
-				1,
-				"value" );
-		}
-		requiredNextRelationId = value;
 	}
 
     @Override

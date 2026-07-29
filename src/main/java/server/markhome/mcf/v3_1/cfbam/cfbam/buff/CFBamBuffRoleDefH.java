@@ -234,24 +234,8 @@ public class CFBamBuffRoleDefH
 	}
 
 	@Override
-	public void setRequiredScopeId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredScopeId",
-				1,
-				"value" );
-		}
-		requiredScopeId = value;
-	}
-
-	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
 		return( optionalDefSchemaId );
-	}
-
-	@Override
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		optionalDefSchemaId = value;
 	}
 
 	@Override
