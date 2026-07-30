@@ -76,22 +76,39 @@ public interface ICFBamDbKeyHash512Type
 	public final static String S_CLASS_CODE = "a852";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setDbKeyHash512Type( ICFBamDbKeyHash512Type src );
+
 	public void set( ICFBamValueH src );
+
 	public void setDbKeyHash512Type( ICFBamDbKeyHash512TypeH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setDbKeyHash512Type( ICFBamProtDbKeyHash512Type src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setDbKeyHash512Type( ICFBamProtDbKeyHash512TypeH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setDbKeyHash512Type( ICFBamPubDbKeyHash512Type src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setDbKeyHash512Type( ICFBamPubDbKeyHash512TypeH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

@@ -82,20 +82,36 @@ public interface ICFBamBoolDef
 	public String getOptionalNullString();
 	public void setOptionalNullString( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setBoolDef( ICFBamBoolDef src );
+
 	public void set( ICFBamValueH src );
+
 	public void setBoolDef( ICFBamBoolDefH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setBoolDef( ICFBamProtBoolDef src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setBoolDef( ICFBamProtBoolDefH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setBoolDef( ICFBamPubBoolDef src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setBoolDef( ICFBamPubBoolDefH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

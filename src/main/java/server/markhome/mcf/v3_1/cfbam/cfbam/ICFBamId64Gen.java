@@ -84,20 +84,36 @@ public interface ICFBamId64Gen
 	public long getRequiredBlockSize();
 	public void setRequiredBlockSize( long value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setId64Gen( ICFBamId64Gen src );
+
 	public void set( ICFBamValueH src );
+
 	public void setId64Gen( ICFBamId64GenH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setId64Gen( ICFBamProtId64Gen src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setId64Gen( ICFBamProtId64GenH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setId64Gen( ICFBamPubId64Gen src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setId64Gen( ICFBamPubId64GenH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

@@ -86,20 +86,36 @@ public interface ICFBamDoubleDef
 	public Double getOptionalMaxValue();
 	public void setOptionalMaxValue( Double value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setDoubleDef( ICFBamDoubleDef src );
+
 	public void set( ICFBamValueH src );
+
 	public void setDoubleDef( ICFBamDoubleDefH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setDoubleDef( ICFBamProtDoubleDef src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setDoubleDef( ICFBamProtDoubleDefH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setDoubleDef( ICFBamPubDoubleDef src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setDoubleDef( ICFBamPubDoubleDefH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

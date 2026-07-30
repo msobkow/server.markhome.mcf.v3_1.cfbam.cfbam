@@ -87,8 +87,11 @@ public interface ICFBamServerMethod
 	public final static String S_CLASS_CODE = "a804";
 
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public ICFBamTable getRequiredContainerForTable();
+
 	public List<ICFBamParam> getOptionalComponentsParams();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();
@@ -116,20 +119,36 @@ public interface ICFBamServerMethod
 	public String getRequiredCsMethodBody();
 	public void setRequiredCsMethodBody( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamScope src );
+
 	public void setServerMethod( ICFBamServerMethod src );
+
 	public void set( ICFBamScopeH src );
+
 	public void setServerMethod( ICFBamServerMethodH src );
+
 	public void set( ICFBamProtScope src );
+
 	public void setServerMethod( ICFBamProtServerMethod src );
+
 	public void set( ICFBamProtScopeH src );
+
 	public void setServerMethod( ICFBamProtServerMethodH src );
+
 	public void set( ICFBamPubScope src );
+
 	public void setServerMethod( ICFBamPubServerMethod src );
+
 	public void set( ICFBamPubScopeH src );
+
 	public void setServerMethod( ICFBamPubServerMethodH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

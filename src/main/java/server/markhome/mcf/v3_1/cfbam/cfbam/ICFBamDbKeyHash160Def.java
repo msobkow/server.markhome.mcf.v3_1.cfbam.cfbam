@@ -76,20 +76,36 @@ public interface ICFBamDbKeyHash160Def
 	public String getOptionalInitValue();
 	public void setOptionalInitValue( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setDbKeyHash160Def( ICFBamDbKeyHash160Def src );
+
 	public void set( ICFBamValueH src );
+
 	public void setDbKeyHash160Def( ICFBamDbKeyHash160DefH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setDbKeyHash160Def( ICFBamProtDbKeyHash160Def src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setDbKeyHash160Def( ICFBamProtDbKeyHash160DefH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setDbKeyHash160Def( ICFBamPubDbKeyHash160Def src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setDbKeyHash160Def( ICFBamPubDbKeyHash160DefH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

@@ -76,22 +76,39 @@ public interface ICFBamStringType
 	public final static String S_CLASS_CODE = "a855";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setStringType( ICFBamStringType src );
+
 	public void set( ICFBamValueH src );
+
 	public void setStringType( ICFBamStringTypeH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setStringType( ICFBamProtStringType src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setStringType( ICFBamProtStringTypeH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setStringType( ICFBamPubStringType src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setStringType( ICFBamPubStringTypeH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

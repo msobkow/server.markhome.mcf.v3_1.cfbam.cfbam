@@ -76,22 +76,39 @@ public interface ICFBamIndexTweak
 	public final static String S_CLASS_CODE = "a80b";
 
 	public ICFBamIndex getRequiredContainerIndexDef();
+
 	public CFLibDbKeyHash256 getRequiredIndexId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamTweak src );
+
 	public void setIndexTweak( ICFBamIndexTweak src );
+
 	public void set( ICFBamTweakH src );
+
 	public void setIndexTweak( ICFBamIndexTweakH src );
+
 	public void set( ICFBamProtTweak src );
+
 	public void setIndexTweak( ICFBamProtIndexTweak src );
+
 	public void set( ICFBamProtTweakH src );
+
 	public void setIndexTweak( ICFBamProtIndexTweakH src );
+
 	public void set( ICFBamPubTweak src );
+
 	public void setIndexTweak( ICFBamPubIndexTweak src );
+
 	public void set( ICFBamPubTweakH src );
+
 	public void setIndexTweak( ICFBamPubIndexTweakH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

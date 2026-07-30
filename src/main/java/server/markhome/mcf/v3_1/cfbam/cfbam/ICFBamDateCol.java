@@ -76,22 +76,39 @@ public interface ICFBamDateCol
 	public final static String S_CLASS_CODE = "a871";
 
 	public ICFBamTable getRequiredContainerTable();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setDateCol( ICFBamDateCol src );
+
 	public void set( ICFBamValueH src );
+
 	public void setDateCol( ICFBamDateColH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setDateCol( ICFBamProtDateCol src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setDateCol( ICFBamProtDateColH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setDateCol( ICFBamPubDateCol src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setDateCol( ICFBamPubDateColH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

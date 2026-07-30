@@ -93,20 +93,36 @@ public interface ICFBamNumberDef
 	public BigDecimal getOptionalMaxValue();
 	public void setOptionalMaxValue( BigDecimal value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setNumberDef( ICFBamNumberDef src );
+
 	public void set( ICFBamValueH src );
+
 	public void setNumberDef( ICFBamNumberDefH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setNumberDef( ICFBamProtNumberDef src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setNumberDef( ICFBamProtNumberDefH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setNumberDef( ICFBamPubNumberDef src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setNumberDef( ICFBamPubNumberDefH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

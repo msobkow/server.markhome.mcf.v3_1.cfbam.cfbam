@@ -77,25 +77,43 @@ public interface ICFBamClearSubDep2
 	public final static String S_CLASS_CODE = "a816";
 
 	public ICFBamClearSubDep1 getRequiredContainerClearSubDep1();
+
 	public List<ICFBamClearSubDep3> getOptionalComponentsClearDep();
+
 	public CFLibDbKeyHash256 getRequiredClearSubDep1Id();
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamScope src );
+
 	public void setClearSubDep2( ICFBamClearSubDep2 src );
+
 	public void set( ICFBamScopeH src );
+
 	public void setClearSubDep2( ICFBamClearSubDep2H src );
+
 	public void set( ICFBamProtScope src );
+
 	public void setClearSubDep2( ICFBamProtClearSubDep2 src );
+
 	public void set( ICFBamProtScopeH src );
+
 	public void setClearSubDep2( ICFBamProtClearSubDep2H src );
+
 	public void set( ICFBamPubScope src );
+
 	public void setClearSubDep2( ICFBamPubClearSubDep2 src );
+
 	public void set( ICFBamPubScopeH src );
+
 	public void setClearSubDep2( ICFBamPubClearSubDep2H src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

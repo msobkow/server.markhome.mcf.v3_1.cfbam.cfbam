@@ -91,24 +91,42 @@ public interface ICFBamParam
 	public final static String S_CLASS_CODE = "a833";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
+
+	public CFLibDbKeyHash256 getRequiredId();
+	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFBamServerMethod getRequiredContainerServerMeth();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public ICFBamParam getOptionalLookupPrev();
+
 	public ICFBamParam getOptionalLookupNext();
+
 	public ICFBamValue getRequiredLookupType();
+
 	public CFLibDbKeyHash256 getRequiredServerMethodId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();
@@ -123,20 +141,36 @@ public interface ICFBamParam
 	public CFLibDbKeyHash256 getOptionalPrevId();
 	public CFLibDbKeyHash256 getOptionalNextId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamParam src );
+
 	public void setParam( ICFBamParam src );
+
 	public void set( ICFBamParamH src );
+
 	public void setParam( ICFBamParamH src );
+
 	public void set( ICFBamProtParam src );
+
 	public void setParam( ICFBamProtParam src );
+
 	public void set( ICFBamProtParamH src );
+
 	public void setParam( ICFBamProtParamH src );
+
 	public void set( ICFBamPubParam src );
+
 	public void setParam( ICFBamPubParam src );
+
 	public void set( ICFBamPubParamH src );
+
 	public void setParam( ICFBamPubParamH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

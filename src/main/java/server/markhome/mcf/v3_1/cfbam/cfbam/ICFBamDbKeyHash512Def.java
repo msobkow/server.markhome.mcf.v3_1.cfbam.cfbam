@@ -76,20 +76,36 @@ public interface ICFBamDbKeyHash512Def
 	public String getOptionalInitValue();
 	public void setOptionalInitValue( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setDbKeyHash512Def( ICFBamDbKeyHash512Def src );
+
 	public void set( ICFBamValueH src );
+
 	public void setDbKeyHash512Def( ICFBamDbKeyHash512DefH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setDbKeyHash512Def( ICFBamProtDbKeyHash512Def src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setDbKeyHash512Def( ICFBamProtDbKeyHash512DefH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setDbKeyHash512Def( ICFBamPubDbKeyHash512Def src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setDbKeyHash512Def( ICFBamPubDbKeyHash512DefH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

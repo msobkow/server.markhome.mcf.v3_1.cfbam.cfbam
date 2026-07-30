@@ -85,9 +85,13 @@ public interface ICFBamSchemaRef
 	public final static String S_CLASS_CODE = "a803";
 
 	public ICFBamSchemaDef getRequiredContainerSchema();
+
 	public ICFBamSchemaDef getOptionalLookupRefSchema();
+
 	public ICFBamSchemaRef getOptionalLookupPrev();
+
 	public ICFBamSchemaRef getOptionalLookupNext();
+
 	public CFLibDbKeyHash256 getRequiredSchemaId();
 	public String getRequiredName();
 	public void setRequiredName( String value );
@@ -99,20 +103,36 @@ public interface ICFBamSchemaRef
 	public CFLibDbKeyHash256 getOptionalPrevId();
 	public CFLibDbKeyHash256 getOptionalNextId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamScope src );
+
 	public void setSchemaRef( ICFBamSchemaRef src );
+
 	public void set( ICFBamScopeH src );
+
 	public void setSchemaRef( ICFBamSchemaRefH src );
+
 	public void set( ICFBamProtScope src );
+
 	public void setSchemaRef( ICFBamProtSchemaRef src );
+
 	public void set( ICFBamProtScopeH src );
+
 	public void setSchemaRef( ICFBamProtSchemaRefH src );
+
 	public void set( ICFBamPubScope src );
+
 	public void setSchemaRef( ICFBamPubSchemaRef src );
+
 	public void set( ICFBamPubScopeH src );
+
 	public void setSchemaRef( ICFBamPubSchemaRefH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

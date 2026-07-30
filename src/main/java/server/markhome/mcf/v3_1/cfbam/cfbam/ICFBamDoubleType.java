@@ -76,22 +76,39 @@ public interface ICFBamDoubleType
 	public final static String S_CLASS_CODE = "a821";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setDoubleType( ICFBamDoubleType src );
+
 	public void set( ICFBamValueH src );
+
 	public void setDoubleType( ICFBamDoubleTypeH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setDoubleType( ICFBamProtDoubleType src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setDoubleType( ICFBamProtDoubleTypeH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setDoubleType( ICFBamPubDoubleType src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setDoubleType( ICFBamPubDoubleTypeH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

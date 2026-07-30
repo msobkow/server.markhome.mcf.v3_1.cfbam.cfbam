@@ -76,20 +76,36 @@ public interface ICFBamTimestampDef
 	public String getOptionalDummy();
 	public void setOptionalDummy( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setTimestampDef( ICFBamTimestampDef src );
+
 	public void set( ICFBamValueH src );
+
 	public void setTimestampDef( ICFBamTimestampDefH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setTimestampDef( ICFBamProtTimestampDef src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setTimestampDef( ICFBamProtTimestampDefH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setTimestampDef( ICFBamPubTimestampDef src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setTimestampDef( ICFBamPubTimestampDefH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

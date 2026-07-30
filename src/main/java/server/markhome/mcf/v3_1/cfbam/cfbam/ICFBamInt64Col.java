@@ -76,22 +76,39 @@ public interface ICFBamInt64Col
 	public final static String S_CLASS_CODE = "a87b";
 
 	public ICFBamTable getRequiredContainerTable();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setInt64Col( ICFBamInt64Col src );
+
 	public void set( ICFBamValueH src );
+
 	public void setInt64Col( ICFBamInt64ColH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setInt64Col( ICFBamProtInt64Col src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setInt64Col( ICFBamProtInt64ColH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setInt64Col( ICFBamPubInt64Col src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setInt64Col( ICFBamPubInt64ColH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

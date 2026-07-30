@@ -74,21 +74,38 @@ public interface ICFBamEnumDef
 	public final static String S_CLASS_CODE = "a873";
 
 	public List<ICFBamEnumTag> getRequiredComponentsTag();
+
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setEnumDef( ICFBamEnumDef src );
+
 	public void set( ICFBamValueH src );
+
 	public void setEnumDef( ICFBamEnumDefH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setEnumDef( ICFBamProtEnumDef src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setEnumDef( ICFBamProtEnumDefH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setEnumDef( ICFBamPubEnumDef src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setEnumDef( ICFBamPubEnumDefH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

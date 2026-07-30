@@ -81,20 +81,36 @@ public interface ICFBamNmTokensDef
 	public String getOptionalInitValue();
 	public void setOptionalInitValue( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setNmTokensDef( ICFBamNmTokensDef src );
+
 	public void set( ICFBamValueH src );
+
 	public void setNmTokensDef( ICFBamNmTokensDefH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setNmTokensDef( ICFBamProtNmTokensDef src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setNmTokensDef( ICFBamProtNmTokensDefH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setNmTokensDef( ICFBamPubNmTokensDef src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setNmTokensDef( ICFBamPubNmTokensDefH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

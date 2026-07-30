@@ -76,20 +76,36 @@ public interface ICFBamServerProc
 	public String getOptionalDummy();
 	public void setOptionalDummy( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamScope src );
+
 	public void setServerProc( ICFBamServerProc src );
+
 	public void set( ICFBamScopeH src );
+
 	public void setServerProc( ICFBamServerProcH src );
+
 	public void set( ICFBamProtScope src );
+
 	public void setServerProc( ICFBamProtServerProc src );
+
 	public void set( ICFBamProtScopeH src );
+
 	public void setServerProc( ICFBamProtServerProcH src );
+
 	public void set( ICFBamPubScope src );
+
 	public void setServerProc( ICFBamPubServerProc src );
+
 	public void set( ICFBamPubScopeH src );
+
 	public void setServerProc( ICFBamPubServerProcH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

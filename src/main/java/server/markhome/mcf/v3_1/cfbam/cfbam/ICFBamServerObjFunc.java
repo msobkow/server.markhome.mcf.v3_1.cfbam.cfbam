@@ -76,22 +76,39 @@ public interface ICFBamServerObjFunc
 	public final static String S_CLASS_CODE = "a805";
 
 	public ICFBamTable getOptionalLookupRetTable();
+
 	public CFLibDbKeyHash256 getOptionalRetTableId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamScope src );
+
 	public void setServerObjFunc( ICFBamServerObjFunc src );
+
 	public void set( ICFBamScopeH src );
+
 	public void setServerObjFunc( ICFBamServerObjFuncH src );
+
 	public void set( ICFBamProtScope src );
+
 	public void setServerObjFunc( ICFBamProtServerObjFunc src );
+
 	public void set( ICFBamProtScopeH src );
+
 	public void setServerObjFunc( ICFBamProtServerObjFuncH src );
+
 	public void set( ICFBamPubScope src );
+
 	public void setServerObjFunc( ICFBamPubServerObjFunc src );
+
 	public void set( ICFBamPubScopeH src );
+
 	public void setServerObjFunc( ICFBamPubServerObjFuncH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

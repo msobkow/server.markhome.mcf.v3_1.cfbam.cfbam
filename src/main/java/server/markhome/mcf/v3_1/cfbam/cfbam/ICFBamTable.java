@@ -103,20 +103,35 @@ public interface ICFBamTable
 	public final static String S_CLASS_CODE = "a807";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public ICFBamIndex getOptionalLookupLookupIndex();
+
 	public ICFBamIndex getOptionalLookupAltIndex();
+
 	public ICFBamTable getOptionalLookupQualTable();
+
 	public ICFBamIndex getOptionalLookupPrimaryIndex();
+
 	public List<ICFBamRelation> getOptionalComponentsRelation();
+
 	public List<ICFBamIndex> getOptionalComponentsIndex();
+
 	public List<ICFBamValue> getOptionalComponentsColumns();
+
 	public List<ICFBamRelation> getOptionalChildrenReverseRelations();
+
 	public List<ICFBamChain> getOptionalComponentsChains();
+
 	public List<ICFBamDelTopDep> getOptionalComponentsDelDep();
+
 	public List<ICFBamClearTopDep> getOptionalComponentsClearDep();
+
 	public List<ICFBamServerMethod> getOptionalComponentsServerMethods();
+
 	public List<ICFBamTweak> getOptionalComponentsTweaks();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();
@@ -156,20 +171,36 @@ public interface ICFBamTable
 	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamScope src );
+
 	public void setTable( ICFBamTable src );
+
 	public void set( ICFBamScopeH src );
+
 	public void setTable( ICFBamTableH src );
+
 	public void set( ICFBamProtScope src );
+
 	public void setTable( ICFBamProtTable src );
+
 	public void set( ICFBamProtScopeH src );
+
 	public void setTable( ICFBamProtTableH src );
+
 	public void set( ICFBamPubScope src );
+
 	public void setTable( ICFBamPubTable src );
+
 	public void set( ICFBamPubScopeH src );
+
 	public void setTable( ICFBamPubTableH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

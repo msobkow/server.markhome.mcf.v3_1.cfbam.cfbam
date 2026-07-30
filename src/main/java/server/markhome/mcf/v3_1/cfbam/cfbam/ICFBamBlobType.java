@@ -76,22 +76,39 @@ public interface ICFBamBlobType
 	public final static String S_CLASS_CODE = "a810";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setBlobType( ICFBamBlobType src );
+
 	public void set( ICFBamValueH src );
+
 	public void setBlobType( ICFBamBlobTypeH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setBlobType( ICFBamProtBlobType src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setBlobType( ICFBamProtBlobTypeH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setBlobType( ICFBamPubBlobType src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setBlobType( ICFBamPubBlobTypeH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

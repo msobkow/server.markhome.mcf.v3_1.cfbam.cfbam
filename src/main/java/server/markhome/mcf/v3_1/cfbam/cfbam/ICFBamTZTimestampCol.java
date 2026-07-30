@@ -76,22 +76,39 @@ public interface ICFBamTZTimestampCol
 	public final static String S_CLASS_CODE = "a882";
 
 	public ICFBamTable getRequiredContainerTable();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setTZTimestampCol( ICFBamTZTimestampCol src );
+
 	public void set( ICFBamValueH src );
+
 	public void setTZTimestampCol( ICFBamTZTimestampColH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setTZTimestampCol( ICFBamProtTZTimestampCol src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setTZTimestampCol( ICFBamProtTZTimestampColH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setTZTimestampCol( ICFBamPubTZTimestampCol src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setTZTimestampCol( ICFBamPubTZTimestampColH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

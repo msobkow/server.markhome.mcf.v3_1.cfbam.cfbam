@@ -76,22 +76,39 @@ public interface ICFBamUInt64Type
 	public final static String S_CLASS_CODE = "a86a";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setUInt64Type( ICFBamUInt64Type src );
+
 	public void set( ICFBamValueH src );
+
 	public void setUInt64Type( ICFBamUInt64TypeH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setUInt64Type( ICFBamProtUInt64Type src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setUInt64Type( ICFBamProtUInt64TypeH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setUInt64Type( ICFBamPubUInt64Type src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setUInt64Type( ICFBamPubUInt64TypeH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

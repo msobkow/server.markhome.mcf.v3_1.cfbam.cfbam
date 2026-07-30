@@ -76,22 +76,39 @@ public interface ICFBamTextCol
 	public final static String S_CLASS_CODE = "a883";
 
 	public ICFBamTable getRequiredContainerTable();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setTextCol( ICFBamTextCol src );
+
 	public void set( ICFBamValueH src );
+
 	public void setTextCol( ICFBamTextColH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setTextCol( ICFBamProtTextCol src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setTextCol( ICFBamProtTextColH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setTextCol( ICFBamPubTextCol src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setTextCol( ICFBamPubTextColH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

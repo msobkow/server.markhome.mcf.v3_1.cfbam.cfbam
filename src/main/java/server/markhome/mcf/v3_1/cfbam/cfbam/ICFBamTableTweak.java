@@ -76,22 +76,39 @@ public interface ICFBamTableTweak
 	public final static String S_CLASS_CODE = "a809";
 
 	public ICFBamTable getRequiredContainerTableDef();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamTweak src );
+
 	public void setTableTweak( ICFBamTableTweak src );
+
 	public void set( ICFBamTweakH src );
+
 	public void setTableTweak( ICFBamTableTweakH src );
+
 	public void set( ICFBamProtTweak src );
+
 	public void setTableTweak( ICFBamProtTableTweak src );
+
 	public void set( ICFBamProtTweakH src );
+
 	public void setTableTweak( ICFBamProtTableTweakH src );
+
 	public void set( ICFBamPubTweak src );
+
 	public void setTableTweak( ICFBamPubTableTweak src );
+
 	public void set( ICFBamPubTweakH src );
+
 	public void setTableTweak( ICFBamPubTableTweakH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

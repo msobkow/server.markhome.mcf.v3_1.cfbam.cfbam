@@ -77,25 +77,43 @@ public interface ICFBamPopSubDep2
 	public final static String S_CLASS_CODE = "a836";
 
 	public ICFBamPopSubDep1 getRequiredContainerPopSubDep1();
+
 	public List<ICFBamPopSubDep3> getOptionalComponentsPopDep();
+
 	public CFLibDbKeyHash256 getRequiredPopSubDep1Id();
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamScope src );
+
 	public void setPopSubDep2( ICFBamPopSubDep2 src );
+
 	public void set( ICFBamScopeH src );
+
 	public void setPopSubDep2( ICFBamPopSubDep2H src );
+
 	public void set( ICFBamProtScope src );
+
 	public void setPopSubDep2( ICFBamProtPopSubDep2 src );
+
 	public void set( ICFBamProtScopeH src );
+
 	public void setPopSubDep2( ICFBamProtPopSubDep2H src );
+
 	public void set( ICFBamPubScope src );
+
 	public void setPopSubDep2( ICFBamPubPopSubDep2 src );
+
 	public void set( ICFBamPubScopeH src );
+
 	public void setPopSubDep2( ICFBamPubPopSubDep2H src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

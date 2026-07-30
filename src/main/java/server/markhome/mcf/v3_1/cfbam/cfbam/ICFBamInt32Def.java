@@ -89,20 +89,36 @@ public interface ICFBamInt32Def
 	public Integer getOptionalMaxValue();
 	public void setOptionalMaxValue( Integer value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setInt32Def( ICFBamInt32Def src );
+
 	public void set( ICFBamValueH src );
+
 	public void setInt32Def( ICFBamInt32DefH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setInt32Def( ICFBamProtInt32Def src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setInt32Def( ICFBamProtInt32DefH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setInt32Def( ICFBamPubInt32Def src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setInt32Def( ICFBamPubInt32DefH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

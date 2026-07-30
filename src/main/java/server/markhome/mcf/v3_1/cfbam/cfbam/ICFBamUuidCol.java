@@ -76,22 +76,39 @@ public interface ICFBamUuidCol
 	public final static String S_CLASS_CODE = "a88a";
 
 	public ICFBamTable getRequiredContainerTable();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setUuidCol( ICFBamUuidCol src );
+
 	public void set( ICFBamValueH src );
+
 	public void setUuidCol( ICFBamUuidColH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setUuidCol( ICFBamProtUuidCol src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setUuidCol( ICFBamProtUuidColH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setUuidCol( ICFBamPubUuidCol src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setUuidCol( ICFBamPubUuidColH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

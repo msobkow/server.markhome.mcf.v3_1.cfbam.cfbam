@@ -81,20 +81,36 @@ public interface ICFBamBlobDef
 	public byte[] getOptionalInitValue();
 	public void setOptionalInitValue( byte[] value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setBlobDef( ICFBamBlobDef src );
+
 	public void set( ICFBamValueH src );
+
 	public void setBlobDef( ICFBamBlobDefH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setBlobDef( ICFBamProtBlobDef src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setBlobDef( ICFBamProtBlobDefH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setBlobDef( ICFBamPubBlobDef src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setBlobDef( ICFBamPubBlobDefH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

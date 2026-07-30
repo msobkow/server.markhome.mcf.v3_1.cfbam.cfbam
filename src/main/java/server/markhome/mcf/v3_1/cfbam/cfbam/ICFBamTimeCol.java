@@ -76,22 +76,39 @@ public interface ICFBamTimeCol
 	public final static String S_CLASS_CODE = "a884";
 
 	public ICFBamTable getRequiredContainerTable();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setTimeCol( ICFBamTimeCol src );
+
 	public void set( ICFBamValueH src );
+
 	public void setTimeCol( ICFBamTimeColH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setTimeCol( ICFBamProtTimeCol src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setTimeCol( ICFBamProtTimeColH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setTimeCol( ICFBamPubTimeCol src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setTimeCol( ICFBamPubTimeColH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

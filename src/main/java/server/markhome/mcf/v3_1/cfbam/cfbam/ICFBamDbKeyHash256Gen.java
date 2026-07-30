@@ -84,20 +84,36 @@ public interface ICFBamDbKeyHash256Gen
 	public int getRequiredBlockSize();
 	public void setRequiredBlockSize( int value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setDbKeyHash256Gen( ICFBamDbKeyHash256Gen src );
+
 	public void set( ICFBamValueH src );
+
 	public void setDbKeyHash256Gen( ICFBamDbKeyHash256GenH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setDbKeyHash256Gen( ICFBamProtDbKeyHash256Gen src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setDbKeyHash256Gen( ICFBamProtDbKeyHash256GenH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setDbKeyHash256Gen( ICFBamPubDbKeyHash256Gen src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setDbKeyHash256Gen( ICFBamPubDbKeyHash256GenH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

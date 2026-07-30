@@ -76,22 +76,39 @@ public interface ICFBamDbKeyHash128Col
 	public final static String S_CLASS_CODE = "a83d";
 
 	public ICFBamTable getRequiredContainerTable();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setDbKeyHash128Col( ICFBamDbKeyHash128Col src );
+
 	public void set( ICFBamValueH src );
+
 	public void setDbKeyHash128Col( ICFBamDbKeyHash128ColH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setDbKeyHash128Col( ICFBamProtDbKeyHash128Col src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setDbKeyHash128Col( ICFBamProtDbKeyHash128ColH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setDbKeyHash128Col( ICFBamPubDbKeyHash128Col src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setDbKeyHash128Col( ICFBamPubDbKeyHash128ColH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

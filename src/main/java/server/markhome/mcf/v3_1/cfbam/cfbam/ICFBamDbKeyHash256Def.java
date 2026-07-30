@@ -76,20 +76,36 @@ public interface ICFBamDbKeyHash256Def
 	public String getOptionalInitValue();
 	public void setOptionalInitValue( String value );
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setDbKeyHash256Def( ICFBamDbKeyHash256Def src );
+
 	public void set( ICFBamValueH src );
+
 	public void setDbKeyHash256Def( ICFBamDbKeyHash256DefH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setDbKeyHash256Def( ICFBamProtDbKeyHash256Def src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setDbKeyHash256Def( ICFBamProtDbKeyHash256DefH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setDbKeyHash256Def( ICFBamPubDbKeyHash256Def src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setDbKeyHash256Def( ICFBamPubDbKeyHash256DefH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

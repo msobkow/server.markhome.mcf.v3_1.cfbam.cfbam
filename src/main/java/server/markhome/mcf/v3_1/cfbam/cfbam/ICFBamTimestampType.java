@@ -76,22 +76,39 @@ public interface ICFBamTimestampType
 	public final static String S_CLASS_CODE = "a862";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamValue src );
+
 	public void setTimestampType( ICFBamTimestampType src );
+
 	public void set( ICFBamValueH src );
+
 	public void setTimestampType( ICFBamTimestampTypeH src );
+
 	public void set( ICFBamProtValue src );
+
 	public void setTimestampType( ICFBamProtTimestampType src );
+
 	public void set( ICFBamProtValueH src );
+
 	public void setTimestampType( ICFBamProtTimestampTypeH src );
+
 	public void set( ICFBamPubValue src );
+
 	public void setTimestampType( ICFBamPubTimestampType src );
+
 	public void set( ICFBamPubValueH src );
+
 	public void setTimestampType( ICFBamPubTimestampTypeH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }

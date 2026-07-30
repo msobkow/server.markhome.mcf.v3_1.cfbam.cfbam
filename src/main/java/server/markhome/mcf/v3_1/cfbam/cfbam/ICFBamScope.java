@@ -81,36 +81,66 @@ public interface ICFBamScope
 	public final static String S_CLASS_CODE = "a801";
 
 	public int getClassCode();
+
 	public CFLibDbKeyHash256 getCreatedByUserId();
+
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getCreatedAt();
+
 	public void setCreatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getUpdatedByUserId();
+
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
+
 	public LocalDateTime getUpdatedAt();
+
 	public void setUpdatedAt( LocalDateTime value );
+
 	public CFLibDbKeyHash256 getPKey();
+
 	public void setPKey(CFLibDbKeyHash256 requiredId);
+
+	public CFLibDbKeyHash256 getRequiredId();
+	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFSecTenant getRequiredOwnerTenant();
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public boolean equals( Object obj );
+
 	public int hashCode();
+
 	public int compareTo( Object obj );
+
 	public void set( ICFBamScope src );
+
 	public void setScope( ICFBamScope src );
+
 	public void set( ICFBamScopeH src );
+
 	public void setScope( ICFBamScopeH src );
+
 	public void set( ICFBamProtScope src );
+
 	public void setScope( ICFBamProtScope src );
+
 	public void set( ICFBamProtScopeH src );
+
 	public void setScope( ICFBamProtScopeH src );
+
 	public void set( ICFBamPubScope src );
+
 	public void setScope( ICFBamPubScope src );
+
 	public void set( ICFBamPubScopeH src );
+
 	public void setScope( ICFBamPubScopeH src );
+
 	public String getXmlAttrFragment();
+
 	public String toString();
 }
