@@ -76,6 +76,7 @@ public interface ICFBamDbKeyHash224Type
 	public final static String S_CLASS_CODE = "a846";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
 

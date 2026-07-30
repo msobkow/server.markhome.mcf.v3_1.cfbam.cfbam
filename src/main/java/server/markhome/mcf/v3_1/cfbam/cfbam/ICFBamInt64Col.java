@@ -76,6 +76,7 @@ public interface ICFBamInt64Col
 	public final static String S_CLASS_CODE = "a87b";
 
 	public ICFBamTable getRequiredContainerTable();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
 

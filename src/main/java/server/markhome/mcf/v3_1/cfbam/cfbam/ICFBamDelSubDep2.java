@@ -77,7 +77,9 @@ public interface ICFBamDelSubDep2
 	public final static String S_CLASS_CODE = "a81d";
 
 	public ICFBamDelSubDep1 getRequiredContainerDelSubDep1();
+
 	public List<ICFBamDelSubDep3> getOptionalComponentsDelDep();
+
 	public CFLibDbKeyHash256 getRequiredDelSubDep1Id();
 	public String getRequiredName();
 	public void setRequiredName( String value );

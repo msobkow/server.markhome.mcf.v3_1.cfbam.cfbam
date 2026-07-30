@@ -78,7 +78,9 @@ public interface ICFBamPopDep
 	public final static String S_CLASS_CODE = "a834";
 
 	public ICFBamRelation getRequiredLookupRelation();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public CFLibDbKeyHash256 getRequiredRelationId();
 	public boolean equals( Object obj );

@@ -76,6 +76,7 @@ public interface ICFBamTZDateType
 	public final static String S_CLASS_CODE = "a857";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
 

@@ -78,7 +78,9 @@ public interface ICFBamDelDep
 	public final static String S_CLASS_CODE = "a81b";
 
 	public ICFBamRelation getRequiredLookupRelation();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public CFLibDbKeyHash256 getRequiredRelationId();
 	public boolean equals( Object obj );

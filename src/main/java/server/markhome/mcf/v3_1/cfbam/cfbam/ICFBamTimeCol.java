@@ -76,6 +76,7 @@ public interface ICFBamTimeCol
 	public final static String S_CLASS_CODE = "a884";
 
 	public ICFBamTable getRequiredContainerTable();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
 

@@ -118,10 +118,15 @@ public interface ICFBamParam
 	public void setRequiredRevision( int value );
 
 	public ICFBamServerMethod getRequiredContainerServerMeth();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public ICFBamParam getOptionalLookupPrev();
+
 	public ICFBamParam getOptionalLookupNext();
+
 	public ICFBamValue getRequiredLookupType();
+
 	public CFLibDbKeyHash256 getRequiredServerMethodId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();

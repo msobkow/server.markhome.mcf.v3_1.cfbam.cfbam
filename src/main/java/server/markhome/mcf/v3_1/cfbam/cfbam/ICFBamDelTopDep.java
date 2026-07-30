@@ -81,9 +81,13 @@ public interface ICFBamDelTopDep
 	public final static String S_CLASS_CODE = "a81f";
 
 	public ICFBamTable getRequiredContainerTable();
-	public List<ICFBamDelSubDep1> getOptionalComponentsDelDep();
+
 	public ICFBamDelTopDep getOptionalLookupPrev();
+
 	public ICFBamDelTopDep getOptionalLookupNext();
+
+	public List<ICFBamDelSubDep1> getOptionalComponentsDelDep();
+
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public CFLibDbKeyHash256 getRequiredTableId();

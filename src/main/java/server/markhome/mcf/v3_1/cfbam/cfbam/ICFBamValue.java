@@ -121,9 +121,17 @@ public interface ICFBamValue
 	public void setRequiredRevision( int value );
 
 	public ICFBamScope getRequiredContainerScope();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public ICFBamValue getOptionalLookupPrev();
+
 	public ICFBamValue getOptionalLookupNext();
+
+	public List<ICFBamTableCol> getOptionalChildrenRefTableCol();
+
+	public List<ICFBamIndexCol> getOptionalChildrenRefIndexCol();
+
 	public CFLibDbKeyHash256 getRequiredScopeId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();

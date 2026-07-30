@@ -76,6 +76,7 @@ public interface ICFBamDbKeyHash128Type
 	public final static String S_CLASS_CODE = "a83e";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
 

@@ -76,6 +76,7 @@ public interface ICFBamDateType
 	public final static String S_CLASS_CODE = "a81a";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
 

@@ -76,6 +76,7 @@ public interface ICFBamDoubleType
 	public final static String S_CLASS_CODE = "a821";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
 

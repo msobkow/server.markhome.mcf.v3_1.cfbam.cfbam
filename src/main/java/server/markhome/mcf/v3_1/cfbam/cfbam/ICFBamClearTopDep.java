@@ -81,9 +81,13 @@ public interface ICFBamClearTopDep
 	public final static String S_CLASS_CODE = "a818";
 
 	public ICFBamTable getRequiredContainerTable();
-	public List<ICFBamClearSubDep1> getOptionalComponentsClearDep();
+
 	public ICFBamClearTopDep getOptionalLookupPrev();
+
 	public ICFBamClearTopDep getOptionalLookupNext();
+
+	public List<ICFBamClearSubDep1> getOptionalComponentsClearDep();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public String getRequiredName();
 	public void setRequiredName( String value );

@@ -76,6 +76,7 @@ public interface ICFBamFloatType
 	public final static String S_CLASS_CODE = "a824";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
 

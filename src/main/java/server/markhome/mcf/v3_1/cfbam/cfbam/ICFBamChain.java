@@ -115,9 +115,13 @@ public interface ICFBamChain
 	public void setRequiredRevision( int value );
 
 	public ICFBamTable getRequiredContainerTable();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public ICFBamRelation getRequiredLookupPrevRel();
+
 	public ICFBamRelation getRequiredLookupNextRel();
+
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();
 	public void setRequiredName( String value );

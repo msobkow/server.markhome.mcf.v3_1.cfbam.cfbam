@@ -76,6 +76,7 @@ public interface ICFBamTableTweak
 	public final static String S_CLASS_CODE = "a809";
 
 	public ICFBamTable getRequiredContainerTableDef();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
 

@@ -77,7 +77,9 @@ public interface ICFBamPopSubDep2
 	public final static String S_CLASS_CODE = "a836";
 
 	public ICFBamPopSubDep1 getRequiredContainerPopSubDep1();
+
 	public List<ICFBamPopSubDep3> getOptionalComponentsPopDep();
+
 	public CFLibDbKeyHash256 getRequiredPopSubDep1Id();
 	public String getRequiredName();
 	public void setRequiredName( String value );

@@ -79,7 +79,9 @@ public interface ICFBamTableCol
 	public final static String S_CLASS_CODE = "a85c";
 
 	public ICFBamTable getRequiredContainerTable();
+
 	public ICFBamValue getRequiredParentDataType();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public String getOptionalDbName();
 	public void setOptionalDbName( String value );

@@ -103,20 +103,35 @@ public interface ICFBamTable
 	public final static String S_CLASS_CODE = "a807";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-	public List<ICFBamRelation> getOptionalComponentsRelation();
+
 	public ICFBamIndex getOptionalLookupLookupIndex();
+
 	public ICFBamIndex getOptionalLookupAltIndex();
+
 	public ICFBamTable getOptionalLookupQualTable();
-	public List<ICFBamIndex> getOptionalComponentsIndex();
+
 	public ICFBamIndex getOptionalLookupPrimaryIndex();
+
+	public List<ICFBamRelation> getOptionalComponentsRelation();
+
+	public List<ICFBamIndex> getOptionalComponentsIndex();
+
 	public List<ICFBamValue> getOptionalComponentsColumns();
+
 	public List<ICFBamRelation> getOptionalChildrenReverseRelations();
+
 	public List<ICFBamChain> getOptionalComponentsChains();
+
 	public List<ICFBamDelTopDep> getOptionalComponentsDelDep();
+
 	public List<ICFBamClearTopDep> getOptionalComponentsClearDep();
+
 	public List<ICFBamServerMethod> getOptionalComponentsServerMethods();
+
 	public List<ICFBamTweak> getOptionalComponentsTweaks();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();

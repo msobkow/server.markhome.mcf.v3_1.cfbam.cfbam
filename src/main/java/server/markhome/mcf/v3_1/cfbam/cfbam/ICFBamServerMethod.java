@@ -87,8 +87,11 @@ public interface ICFBamServerMethod
 	public final static String S_CLASS_CODE = "a804";
 
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public ICFBamTable getRequiredContainerForTable();
+
 	public List<ICFBamParam> getOptionalComponentsParams();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();

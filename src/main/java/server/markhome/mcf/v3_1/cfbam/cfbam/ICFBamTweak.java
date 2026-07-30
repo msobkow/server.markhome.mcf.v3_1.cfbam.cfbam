@@ -117,7 +117,9 @@ public interface ICFBamTweak
 	public void setRequiredRevision( int value );
 
 	public ICFBamScope getRequiredContainerScopeDef();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredScopeId();

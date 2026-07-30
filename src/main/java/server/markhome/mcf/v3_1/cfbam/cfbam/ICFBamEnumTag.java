@@ -118,9 +118,13 @@ public interface ICFBamEnumTag
 	public void setRequiredRevision( int value );
 
 	public ICFBamEnumDef getRequiredContainerEnumDef();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public ICFBamEnumTag getOptionalLookupPrev();
+
 	public ICFBamEnumTag getOptionalLookupNext();
+
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public CFLibDbKeyHash256 getRequiredEnumId();
 	public Short getOptionalEnumCode();

@@ -119,11 +119,17 @@ public interface ICFBamRelationCol
 	public void setRequiredRevision( int value );
 
 	public ICFBamRelation getRequiredContainerRelation();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public ICFBamRelationCol getOptionalLookupPrev();
+
 	public ICFBamRelationCol getOptionalLookupNext();
+
 	public ICFBamIndexCol getRequiredLookupFromCol();
+
 	public ICFBamIndexCol getRequiredLookupToCol();
+
 	public CFLibDbKeyHash256 getRequiredRelationId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();

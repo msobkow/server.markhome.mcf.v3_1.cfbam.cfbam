@@ -79,6 +79,7 @@ public interface ICFBamSchemaRole
 	public final static String S_CLASS_CODE = "a88f";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public ICFBamPubSchema.RoleScopeEnum getRequiredRoleScope();
 	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value );

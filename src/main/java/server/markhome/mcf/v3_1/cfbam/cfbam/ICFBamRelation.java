@@ -97,13 +97,21 @@ public interface ICFBamRelation
 	public final static String S_CLASS_CODE = "a839";
 
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public ICFBamTable getRequiredContainerFromTable();
-	public List<ICFBamRelationCol> getOptionalComponentsColumns();
-	public List<ICFBamPopTopDep> getOptionalComponentsPopDep();
+
 	public ICFBamIndex getRequiredLookupFromIndex();
+
 	public ICFBamTable getRequiredLookupToTable();
+
 	public ICFBamIndex getRequiredLookupToIndex();
+
 	public ICFBamRelation getOptionalLookupNarrowed();
+
+	public List<ICFBamRelationCol> getOptionalComponentsColumns();
+
+	public List<ICFBamPopTopDep> getOptionalComponentsPopDep();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();

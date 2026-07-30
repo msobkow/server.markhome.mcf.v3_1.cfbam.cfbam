@@ -107,7 +107,8 @@ public interface ICFBamScope
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecPubTenant getRequiredOwnerTenant();
+	public ICFSecTenant getRequiredOwnerTenant();
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public boolean equals( Object obj );
 

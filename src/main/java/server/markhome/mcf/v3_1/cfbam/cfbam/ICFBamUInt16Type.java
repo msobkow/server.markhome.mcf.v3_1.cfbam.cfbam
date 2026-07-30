@@ -76,6 +76,7 @@ public interface ICFBamUInt16Type
 	public final static String S_CLASS_CODE = "a866";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
 

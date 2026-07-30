@@ -76,6 +76,7 @@ public interface ICFBamTextType
 	public final static String S_CLASS_CODE = "a85e";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
 

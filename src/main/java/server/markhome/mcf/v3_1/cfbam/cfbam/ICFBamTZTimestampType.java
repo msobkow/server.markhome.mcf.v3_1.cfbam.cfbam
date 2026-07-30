@@ -76,6 +76,7 @@ public interface ICFBamTZTimestampType
 	public final static String S_CLASS_CODE = "a85b";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
 

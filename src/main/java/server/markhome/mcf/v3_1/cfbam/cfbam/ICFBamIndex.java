@@ -84,9 +84,13 @@ public interface ICFBamIndex
 	public final static String S_CLASS_CODE = "a825";
 
 	public ICFBamTable getRequiredContainerTable();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public List<ICFBamIndexCol> getOptionalComponentsColumns();
+
 	public List<ICFBamIndexTweak> getOptionalComponentsTweaks();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();

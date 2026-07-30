@@ -76,6 +76,7 @@ public interface ICFBamNmTokensCol
 	public final static String S_CLASS_CODE = "a87d";
 
 	public ICFBamTable getRequiredContainerTable();
+
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
 

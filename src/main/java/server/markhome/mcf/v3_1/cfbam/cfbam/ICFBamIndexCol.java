@@ -122,10 +122,19 @@ public interface ICFBamIndexCol
 	public void setRequiredRevision( int value );
 
 	public ICFBamIndex getRequiredContainerIndex();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public ICFBamIndexCol getOptionalLookupPrev();
+
 	public ICFBamIndexCol getOptionalLookupNext();
+
 	public ICFBamValue getRequiredLookupColumn();
+
+	public List<ICFBamRelationCol> getOptionalChildrenRefRelFromCol();
+
+	public List<ICFBamRelationCol> getOptionalChildrenRefRelToCol();
+
 	public CFLibDbKeyHash256 getRequiredIndexId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();

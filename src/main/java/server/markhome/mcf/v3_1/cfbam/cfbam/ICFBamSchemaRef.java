@@ -85,9 +85,13 @@ public interface ICFBamSchemaRef
 	public final static String S_CLASS_CODE = "a803";
 
 	public ICFBamSchemaDef getRequiredContainerSchema();
+
 	public ICFBamSchemaDef getOptionalLookupRefSchema();
+
 	public ICFBamSchemaRef getOptionalLookupPrev();
+
 	public ICFBamSchemaRef getOptionalLookupNext();
+
 	public CFLibDbKeyHash256 getRequiredSchemaId();
 	public String getRequiredName();
 	public void setRequiredName( String value );

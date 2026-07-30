@@ -113,7 +113,9 @@ public interface ICFBamRoleDef
 	public void setRequiredRevision( int value );
 
 	public ICFBamScope getRequiredContainerScopeDef();
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
 	public CFLibDbKeyHash256 getRequiredScopeId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();
