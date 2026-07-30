@@ -91,40 +91,23 @@ public interface ICFBamEnumTag
 	public final static String S_CLASS_CODE = "a822";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getCreatedByUserId();
-
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getCreatedAt();
-
 	public void setCreatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getUpdatedByUserId();
-
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getUpdatedAt();
-
 	public void setUpdatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
-	public CFLibDbKeyHash256 getRequiredId();
-	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFBamEnumDef getRequiredContainerEnumDef();
-
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-
 	public ICFBamEnumTag getOptionalLookupPrev();
-
 	public ICFBamEnumTag getOptionalLookupNext();
-
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public CFLibDbKeyHash256 getRequiredEnumId();
 	public Short getOptionalEnumCode();
@@ -134,36 +117,20 @@ public interface ICFBamEnumTag
 	public CFLibDbKeyHash256 getOptionalPrevId();
 	public CFLibDbKeyHash256 getOptionalNextId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamEnumTag src );
-
 	public void setEnumTag( ICFBamEnumTag src );
-
 	public void set( ICFBamEnumTagH src );
-
 	public void setEnumTag( ICFBamEnumTagH src );
-
 	public void set( ICFBamProtEnumTag src );
-
 	public void setEnumTag( ICFBamProtEnumTag src );
-
 	public void set( ICFBamProtEnumTagH src );
-
 	public void setEnumTag( ICFBamProtEnumTagH src );
-
 	public void set( ICFBamPubEnumTag src );
-
 	public void setEnumTag( ICFBamPubEnumTag src );
-
 	public void set( ICFBamPubEnumTagH src );
-
 	public void setEnumTag( ICFBamPubEnumTagH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

@@ -76,39 +76,22 @@ public interface ICFBamNmTokensType
 	public final static String S_CLASS_CODE = "a830";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
-
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setNmTokensType( ICFBamNmTokensType src );
-
 	public void set( ICFBamValueH src );
-
 	public void setNmTokensType( ICFBamNmTokensTypeH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setNmTokensType( ICFBamProtNmTokensType src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setNmTokensType( ICFBamProtNmTokensTypeH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setNmTokensType( ICFBamPubNmTokensType src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setNmTokensType( ICFBamPubNmTokensTypeH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

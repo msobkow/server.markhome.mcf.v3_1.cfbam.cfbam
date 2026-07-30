@@ -92,44 +92,25 @@ public interface ICFBamRelationCol
 	public final static String S_CLASS_CODE = "a83a";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getCreatedByUserId();
-
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getCreatedAt();
-
 	public void setCreatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getUpdatedByUserId();
-
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getUpdatedAt();
-
 	public void setUpdatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
-	public CFLibDbKeyHash256 getRequiredId();
-	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFBamRelation getRequiredContainerRelation();
-
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-
 	public ICFBamRelationCol getOptionalLookupPrev();
-
 	public ICFBamRelationCol getOptionalLookupNext();
-
 	public ICFBamIndexCol getRequiredLookupFromCol();
-
 	public ICFBamIndexCol getRequiredLookupToCol();
-
 	public CFLibDbKeyHash256 getRequiredRelationId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();
@@ -147,36 +128,20 @@ public interface ICFBamRelationCol
 	public CFLibDbKeyHash256 getOptionalPrevId();
 	public CFLibDbKeyHash256 getOptionalNextId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamRelationCol src );
-
 	public void setRelationCol( ICFBamRelationCol src );
-
 	public void set( ICFBamRelationColH src );
-
 	public void setRelationCol( ICFBamRelationColH src );
-
 	public void set( ICFBamProtRelationCol src );
-
 	public void setRelationCol( ICFBamProtRelationCol src );
-
 	public void set( ICFBamProtRelationColH src );
-
 	public void setRelationCol( ICFBamProtRelationColH src );
-
 	public void set( ICFBamPubRelationCol src );
-
 	public void setRelationCol( ICFBamPubRelationCol src );
-
 	public void set( ICFBamPubRelationColH src );
-
 	public void setRelationCol( ICFBamPubRelationColH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

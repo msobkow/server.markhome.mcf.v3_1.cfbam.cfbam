@@ -84,36 +84,20 @@ public interface ICFBamStringDef
 	public String getOptionalInitValue();
 	public void setOptionalInitValue( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setStringDef( ICFBamStringDef src );
-
 	public void set( ICFBamValueH src );
-
 	public void setStringDef( ICFBamStringDefH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setStringDef( ICFBamProtStringDef src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setStringDef( ICFBamProtStringDefH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setStringDef( ICFBamPubStringDef src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setStringDef( ICFBamPubStringDefH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

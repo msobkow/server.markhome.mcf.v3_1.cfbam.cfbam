@@ -76,36 +76,20 @@ public interface ICFBamUuid6Def
 	public String getOptionalInitValue();
 	public void setOptionalInitValue( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setUuid6Def( ICFBamUuid6Def src );
-
 	public void set( ICFBamValueH src );
-
 	public void setUuid6Def( ICFBamUuid6DefH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setUuid6Def( ICFBamProtUuid6Def src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setUuid6Def( ICFBamProtUuid6DefH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setUuid6Def( ICFBamPubUuid6Def src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setUuid6Def( ICFBamPubUuid6DefH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

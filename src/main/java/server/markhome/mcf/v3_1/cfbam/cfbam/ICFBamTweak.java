@@ -90,36 +90,21 @@ public interface ICFBamTweak
 	public final static String S_CLASS_CODE = "a808";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getCreatedByUserId();
-
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getCreatedAt();
-
 	public void setCreatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getUpdatedByUserId();
-
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getUpdatedAt();
-
 	public void setUpdatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
-	public CFLibDbKeyHash256 getRequiredId();
-	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFBamScope getRequiredContainerScopeDef();
-
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public void setRequiredTenantId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredScopeId();
@@ -133,36 +118,20 @@ public interface ICFBamTweak
 	public String getRequiredTweakGelText();
 	public void setRequiredTweakGelText( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamTweak src );
-
 	public void setTweak( ICFBamTweak src );
-
 	public void set( ICFBamTweakH src );
-
 	public void setTweak( ICFBamTweakH src );
-
 	public void set( ICFBamProtTweak src );
-
 	public void setTweak( ICFBamProtTweak src );
-
 	public void set( ICFBamProtTweakH src );
-
 	public void setTweak( ICFBamProtTweakH src );
-
 	public void set( ICFBamPubTweak src );
-
 	public void setTweak( ICFBamPubTweak src );
-
 	public void set( ICFBamPubTweakH src );
-
 	public void setTweak( ICFBamPubTweakH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

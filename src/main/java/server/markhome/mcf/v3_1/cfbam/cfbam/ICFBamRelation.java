@@ -97,21 +97,13 @@ public interface ICFBamRelation
 	public final static String S_CLASS_CODE = "a839";
 
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-
 	public ICFBamTable getRequiredContainerFromTable();
-
 	public ICFBamIndex getRequiredLookupFromIndex();
-
 	public ICFBamTable getRequiredLookupToTable();
-
 	public ICFBamIndex getRequiredLookupToIndex();
-
 	public ICFBamRelation getOptionalLookupNarrowed();
-
 	public List<ICFBamRelationCol> getOptionalComponentsColumns();
-
 	public List<ICFBamPopTopDep> getOptionalComponentsPopDep();
-
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();
@@ -145,36 +137,20 @@ public interface ICFBamRelation
 	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamScope src );
-
 	public void setRelation( ICFBamRelation src );
-
 	public void set( ICFBamScopeH src );
-
 	public void setRelation( ICFBamRelationH src );
-
 	public void set( ICFBamProtScope src );
-
 	public void setRelation( ICFBamProtRelation src );
-
 	public void set( ICFBamProtScopeH src );
-
 	public void setRelation( ICFBamProtRelationH src );
-
 	public void set( ICFBamPubScope src );
-
 	public void setRelation( ICFBamPubRelation src );
-
 	public void set( ICFBamPubScopeH src );
-
 	public void setRelation( ICFBamPubRelationH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

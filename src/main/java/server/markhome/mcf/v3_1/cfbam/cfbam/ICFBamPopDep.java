@@ -78,42 +78,24 @@ public interface ICFBamPopDep
 	public final static String S_CLASS_CODE = "a834";
 
 	public ICFBamRelation getRequiredLookupRelation();
-
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public CFLibDbKeyHash256 getRequiredRelationId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamScope src );
-
 	public void setPopDep( ICFBamPopDep src );
-
 	public void set( ICFBamScopeH src );
-
 	public void setPopDep( ICFBamPopDepH src );
-
 	public void set( ICFBamProtScope src );
-
 	public void setPopDep( ICFBamProtPopDep src );
-
 	public void set( ICFBamProtScopeH src );
-
 	public void setPopDep( ICFBamProtPopDepH src );
-
 	public void set( ICFBamPubScope src );
-
 	public void setPopDep( ICFBamPubPopDep src );
-
 	public void set( ICFBamPubScopeH src );
-
 	public void setPopDep( ICFBamPubPopDepH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

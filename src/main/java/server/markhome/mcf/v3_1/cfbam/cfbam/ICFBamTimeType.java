@@ -76,39 +76,22 @@ public interface ICFBamTimeType
 	public final static String S_CLASS_CODE = "a860";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
-
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setTimeType( ICFBamTimeType src );
-
 	public void set( ICFBamValueH src );
-
 	public void setTimeType( ICFBamTimeTypeH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setTimeType( ICFBamProtTimeType src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setTimeType( ICFBamProtTimeTypeH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setTimeType( ICFBamPubTimeType src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setTimeType( ICFBamPubTimeTypeH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

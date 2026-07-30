@@ -76,39 +76,22 @@ public interface ICFBamDbKeyHash128Type
 	public final static String S_CLASS_CODE = "a83e";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
-
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setDbKeyHash128Type( ICFBamDbKeyHash128Type src );
-
 	public void set( ICFBamValueH src );
-
 	public void setDbKeyHash128Type( ICFBamDbKeyHash128TypeH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setDbKeyHash128Type( ICFBamProtDbKeyHash128Type src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setDbKeyHash128Type( ICFBamProtDbKeyHash128TypeH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setDbKeyHash128Type( ICFBamPubDbKeyHash128Type src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setDbKeyHash128Type( ICFBamPubDbKeyHash128TypeH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

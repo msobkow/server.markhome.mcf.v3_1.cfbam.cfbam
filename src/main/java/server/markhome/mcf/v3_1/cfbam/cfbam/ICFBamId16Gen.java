@@ -84,36 +84,20 @@ public interface ICFBamId16Gen
 	public short getRequiredBlockSize();
 	public void setRequiredBlockSize( short value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setId16Gen( ICFBamId16Gen src );
-
 	public void set( ICFBamValueH src );
-
 	public void setId16Gen( ICFBamId16GenH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setId16Gen( ICFBamProtId16Gen src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setId16Gen( ICFBamProtId16GenH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setId16Gen( ICFBamPubId16Gen src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setId16Gen( ICFBamPubId16GenH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

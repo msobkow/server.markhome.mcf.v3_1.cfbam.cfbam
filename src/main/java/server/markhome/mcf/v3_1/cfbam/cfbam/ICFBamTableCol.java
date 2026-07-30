@@ -79,9 +79,7 @@ public interface ICFBamTableCol
 	public final static String S_CLASS_CODE = "a85c";
 
 	public ICFBamTable getRequiredContainerTable();
-
 	public ICFBamValue getRequiredParentDataType();
-
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public String getOptionalDbName();
 	public void setOptionalDbName( String value );
@@ -89,36 +87,20 @@ public interface ICFBamTableCol
 	public String getOptionalXmlElementName();
 	public void setOptionalXmlElementName( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setTableCol( ICFBamTableCol src );
-
 	public void set( ICFBamValueH src );
-
 	public void setTableCol( ICFBamTableColH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setTableCol( ICFBamProtTableCol src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setTableCol( ICFBamProtTableColH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setTableCol( ICFBamPubTableCol src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setTableCol( ICFBamPubTableColH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

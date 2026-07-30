@@ -76,36 +76,20 @@ public interface ICFBamAtom
 	public String getOptionalDbName();
 	public void setOptionalDbName( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setAtom( ICFBamAtom src );
-
 	public void set( ICFBamValueH src );
-
 	public void setAtom( ICFBamAtomH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setAtom( ICFBamProtAtom src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setAtom( ICFBamProtAtomH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setAtom( ICFBamPubAtom src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setAtom( ICFBamPubAtomH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

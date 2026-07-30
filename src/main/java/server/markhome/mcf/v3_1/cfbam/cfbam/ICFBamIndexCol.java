@@ -91,50 +91,26 @@ public interface ICFBamIndexCol
 	public final static String S_CLASS_CODE = "a826";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getCreatedByUserId();
-
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getCreatedAt();
-
 	public void setCreatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getUpdatedByUserId();
-
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getUpdatedAt();
-
 	public void setUpdatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
-	public List<ICFBamRelationCol> getOptionalChildrenRefRelFromCol();
-
-	public List<ICFBamRelationCol> getOptionalChildrenRefRelToCol();
-
-	public CFLibDbKeyHash256 getRequiredId();
-	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFBamIndex getRequiredContainerIndex();
-
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-
 	public ICFBamIndexCol getOptionalLookupPrev();
-
 	public ICFBamIndexCol getOptionalLookupNext();
-
 	public ICFBamValue getRequiredLookupColumn();
-
 	public List<ICFBamRelationCol> getOptionalChildrenRefRelFromCol();
-
 	public List<ICFBamRelationCol> getOptionalChildrenRefRelToCol();
-
 	public CFLibDbKeyHash256 getRequiredIndexId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();
@@ -153,36 +129,20 @@ public interface ICFBamIndexCol
 	public CFLibDbKeyHash256 getOptionalPrevId();
 	public CFLibDbKeyHash256 getOptionalNextId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamIndexCol src );
-
 	public void setIndexCol( ICFBamIndexCol src );
-
 	public void set( ICFBamIndexColH src );
-
 	public void setIndexCol( ICFBamIndexColH src );
-
 	public void set( ICFBamProtIndexCol src );
-
 	public void setIndexCol( ICFBamProtIndexCol src );
-
 	public void set( ICFBamProtIndexColH src );
-
 	public void setIndexCol( ICFBamProtIndexColH src );
-
 	public void set( ICFBamPubIndexCol src );
-
 	public void setIndexCol( ICFBamPubIndexCol src );
-
 	public void set( ICFBamPubIndexColH src );
-
 	public void setIndexCol( ICFBamPubIndexColH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

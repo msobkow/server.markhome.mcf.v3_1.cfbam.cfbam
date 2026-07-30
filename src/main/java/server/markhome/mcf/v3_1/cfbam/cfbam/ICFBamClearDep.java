@@ -78,42 +78,24 @@ public interface ICFBamClearDep
 	public final static String S_CLASS_CODE = "a814";
 
 	public ICFBamRelation getRequiredLookupRelation();
-
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-
 	public CFLibDbKeyHash256 getRequiredRelationId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamScope src );
-
 	public void setClearDep( ICFBamClearDep src );
-
 	public void set( ICFBamScopeH src );
-
 	public void setClearDep( ICFBamClearDepH src );
-
 	public void set( ICFBamProtScope src );
-
 	public void setClearDep( ICFBamProtClearDep src );
-
 	public void set( ICFBamProtScopeH src );
-
 	public void setClearDep( ICFBamProtClearDepH src );
-
 	public void set( ICFBamPubScope src );
-
 	public void setClearDep( ICFBamPubClearDep src );
-
 	public void set( ICFBamPubScopeH src );
-
 	public void setClearDep( ICFBamPubClearDepH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

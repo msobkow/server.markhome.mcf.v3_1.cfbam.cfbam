@@ -76,39 +76,22 @@ public interface ICFBamTimestampCol
 	public final static String S_CLASS_CODE = "a885";
 
 	public ICFBamTable getRequiredContainerTable();
-
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setTimestampCol( ICFBamTimestampCol src );
-
 	public void set( ICFBamValueH src );
-
 	public void setTimestampCol( ICFBamTimestampColH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setTimestampCol( ICFBamProtTimestampCol src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setTimestampCol( ICFBamProtTimestampColH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setTimestampCol( ICFBamPubTimestampCol src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setTimestampCol( ICFBamPubTimestampColH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

@@ -76,39 +76,22 @@ public interface ICFBamTZDateType
 	public final static String S_CLASS_CODE = "a857";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
-
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setTZDateType( ICFBamTZDateType src );
-
 	public void set( ICFBamValueH src );
-
 	public void setTZDateType( ICFBamTZDateTypeH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setTZDateType( ICFBamProtTZDateType src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setTZDateType( ICFBamProtTZDateTypeH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setTZDateType( ICFBamPubTZDateType src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setTZDateType( ICFBamPubTZDateTypeH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

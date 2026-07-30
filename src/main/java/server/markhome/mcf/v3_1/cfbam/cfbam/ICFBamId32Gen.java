@@ -84,36 +84,20 @@ public interface ICFBamId32Gen
 	public int getRequiredBlockSize();
 	public void setRequiredBlockSize( int value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setId32Gen( ICFBamId32Gen src );
-
 	public void set( ICFBamValueH src );
-
 	public void setId32Gen( ICFBamId32GenH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setId32Gen( ICFBamProtId32Gen src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setId32Gen( ICFBamProtId32GenH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setId32Gen( ICFBamPubId32Gen src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setId32Gen( ICFBamPubId32GenH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

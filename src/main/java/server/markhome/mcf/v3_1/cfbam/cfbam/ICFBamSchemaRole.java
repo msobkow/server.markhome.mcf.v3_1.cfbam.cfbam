@@ -79,41 +79,24 @@ public interface ICFBamSchemaRole
 	public final static String S_CLASS_CODE = "a88f";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
-
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public ICFBamPubSchema.RoleScopeEnum getRequiredRoleScope();
 	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamRoleDef src );
-
 	public void setSchemaRole( ICFBamSchemaRole src );
-
 	public void set( ICFBamRoleDefH src );
-
 	public void setSchemaRole( ICFBamSchemaRoleH src );
-
 	public void set( ICFBamProtRoleDef src );
-
 	public void setSchemaRole( ICFBamProtSchemaRole src );
-
 	public void set( ICFBamProtRoleDefH src );
-
 	public void setSchemaRole( ICFBamProtSchemaRoleH src );
-
 	public void set( ICFBamPubRoleDef src );
-
 	public void setSchemaRole( ICFBamPubSchemaRole src );
-
 	public void set( ICFBamPubRoleDefH src );
-
 	public void setSchemaRole( ICFBamPubSchemaRoleH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

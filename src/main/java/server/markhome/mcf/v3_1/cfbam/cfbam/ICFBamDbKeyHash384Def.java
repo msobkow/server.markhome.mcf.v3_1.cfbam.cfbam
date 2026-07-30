@@ -76,36 +76,20 @@ public interface ICFBamDbKeyHash384Def
 	public String getOptionalInitValue();
 	public void setOptionalInitValue( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setDbKeyHash384Def( ICFBamDbKeyHash384Def src );
-
 	public void set( ICFBamValueH src );
-
 	public void setDbKeyHash384Def( ICFBamDbKeyHash384DefH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setDbKeyHash384Def( ICFBamProtDbKeyHash384Def src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setDbKeyHash384Def( ICFBamProtDbKeyHash384DefH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setDbKeyHash384Def( ICFBamPubDbKeyHash384Def src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setDbKeyHash384Def( ICFBamPubDbKeyHash384DefH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

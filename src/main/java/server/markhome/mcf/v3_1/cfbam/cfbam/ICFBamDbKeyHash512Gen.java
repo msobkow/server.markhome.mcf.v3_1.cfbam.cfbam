@@ -84,36 +84,20 @@ public interface ICFBamDbKeyHash512Gen
 	public int getRequiredBlockSize();
 	public void setRequiredBlockSize( int value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setDbKeyHash512Gen( ICFBamDbKeyHash512Gen src );
-
 	public void set( ICFBamValueH src );
-
 	public void setDbKeyHash512Gen( ICFBamDbKeyHash512GenH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setDbKeyHash512Gen( ICFBamProtDbKeyHash512Gen src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setDbKeyHash512Gen( ICFBamProtDbKeyHash512GenH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setDbKeyHash512Gen( ICFBamPubDbKeyHash512Gen src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setDbKeyHash512Gen( ICFBamPubDbKeyHash512GenH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

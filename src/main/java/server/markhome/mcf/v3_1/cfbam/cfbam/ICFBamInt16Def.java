@@ -89,36 +89,20 @@ public interface ICFBamInt16Def
 	public Short getOptionalMaxValue();
 	public void setOptionalMaxValue( Short value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setInt16Def( ICFBamInt16Def src );
-
 	public void set( ICFBamValueH src );
-
 	public void setInt16Def( ICFBamInt16DefH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setInt16Def( ICFBamProtInt16Def src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setInt16Def( ICFBamProtInt16DefH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setInt16Def( ICFBamPubInt16Def src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setInt16Def( ICFBamPubInt16DefH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

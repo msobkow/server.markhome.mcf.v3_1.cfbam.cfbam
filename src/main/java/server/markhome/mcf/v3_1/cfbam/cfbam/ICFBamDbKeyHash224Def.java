@@ -76,36 +76,20 @@ public interface ICFBamDbKeyHash224Def
 	public String getOptionalInitValue();
 	public void setOptionalInitValue( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setDbKeyHash224Def( ICFBamDbKeyHash224Def src );
-
 	public void set( ICFBamValueH src );
-
 	public void setDbKeyHash224Def( ICFBamDbKeyHash224DefH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setDbKeyHash224Def( ICFBamProtDbKeyHash224Def src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setDbKeyHash224Def( ICFBamProtDbKeyHash224DefH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setDbKeyHash224Def( ICFBamPubDbKeyHash224Def src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setDbKeyHash224Def( ICFBamPubDbKeyHash224DefH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

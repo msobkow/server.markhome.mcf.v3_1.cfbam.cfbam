@@ -77,43 +77,25 @@ public interface ICFBamPopTopDep
 	public final static String S_CLASS_CODE = "a838";
 
 	public ICFBamRelation getRequiredContainerContRelation();
-
 	public List<ICFBamPopSubDep1> getOptionalComponentsPopDep();
-
 	public CFLibDbKeyHash256 getRequiredContRelationId();
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamScope src );
-
 	public void setPopTopDep( ICFBamPopTopDep src );
-
 	public void set( ICFBamScopeH src );
-
 	public void setPopTopDep( ICFBamPopTopDepH src );
-
 	public void set( ICFBamProtScope src );
-
 	public void setPopTopDep( ICFBamProtPopTopDep src );
-
 	public void set( ICFBamProtScopeH src );
-
 	public void setPopTopDep( ICFBamProtPopTopDepH src );
-
 	public void set( ICFBamPubScope src );
-
 	public void setPopTopDep( ICFBamPubPopTopDep src );
-
 	public void set( ICFBamPubScopeH src );
-
 	public void setPopTopDep( ICFBamPubPopTopDepH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

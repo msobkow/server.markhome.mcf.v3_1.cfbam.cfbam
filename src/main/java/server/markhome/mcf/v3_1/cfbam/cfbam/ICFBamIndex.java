@@ -84,13 +84,9 @@ public interface ICFBamIndex
 	public final static String S_CLASS_CODE = "a825";
 
 	public ICFBamTable getRequiredContainerTable();
-
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-
 	public List<ICFBamIndexCol> getOptionalComponentsColumns();
-
 	public List<ICFBamIndexTweak> getOptionalComponentsTweaks();
-
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();
@@ -114,36 +110,20 @@ public interface ICFBamIndex
 	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamScope src );
-
 	public void setIndex( ICFBamIndex src );
-
 	public void set( ICFBamScopeH src );
-
 	public void setIndex( ICFBamIndexH src );
-
 	public void set( ICFBamProtScope src );
-
 	public void setIndex( ICFBamProtIndex src );
-
 	public void set( ICFBamProtScopeH src );
-
 	public void setIndex( ICFBamProtIndexH src );
-
 	public void set( ICFBamPubScope src );
-
 	public void setIndex( ICFBamPubIndex src );
-
 	public void set( ICFBamPubScopeH src );
-
 	public void setIndex( ICFBamPubIndexH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

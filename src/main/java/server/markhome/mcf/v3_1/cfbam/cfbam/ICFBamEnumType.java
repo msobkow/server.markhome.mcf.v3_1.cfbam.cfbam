@@ -76,39 +76,22 @@ public interface ICFBamEnumType
 	public final static String S_CLASS_CODE = "a874";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
-
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setEnumType( ICFBamEnumType src );
-
 	public void set( ICFBamValueH src );
-
 	public void setEnumType( ICFBamEnumTypeH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setEnumType( ICFBamProtEnumType src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setEnumType( ICFBamProtEnumTypeH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setEnumType( ICFBamPubEnumType src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setEnumType( ICFBamPubEnumTypeH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

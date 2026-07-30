@@ -76,36 +76,20 @@ public interface ICFBamTZTimestampDef
 	public String getOptionalDummy();
 	public void setOptionalDummy( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setTZTimestampDef( ICFBamTZTimestampDef src );
-
 	public void set( ICFBamValueH src );
-
 	public void setTZTimestampDef( ICFBamTZTimestampDefH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setTZTimestampDef( ICFBamProtTZTimestampDef src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setTZTimestampDef( ICFBamProtTZTimestampDefH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setTZTimestampDef( ICFBamPubTZTimestampDef src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setTZTimestampDef( ICFBamPubTZTimestampDefH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

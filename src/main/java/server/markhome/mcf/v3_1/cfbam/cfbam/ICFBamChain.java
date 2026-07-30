@@ -88,40 +88,23 @@ public interface ICFBamChain
 	public final static String S_CLASS_CODE = "a813";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getCreatedByUserId();
-
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getCreatedAt();
-
 	public void setCreatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getUpdatedByUserId();
-
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getUpdatedAt();
-
 	public void setUpdatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
-	public CFLibDbKeyHash256 getRequiredId();
-	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFBamTable getRequiredContainerTable();
-
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-
 	public ICFBamRelation getRequiredLookupPrevRel();
-
 	public ICFBamRelation getRequiredLookupNextRel();
-
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();
 	public void setRequiredName( String value );
@@ -139,36 +122,20 @@ public interface ICFBamChain
 	public CFLibDbKeyHash256 getRequiredPrevRelationId();
 	public CFLibDbKeyHash256 getRequiredNextRelationId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamChain src );
-
 	public void setChain( ICFBamChain src );
-
 	public void set( ICFBamChainH src );
-
 	public void setChain( ICFBamChainH src );
-
 	public void set( ICFBamProtChain src );
-
 	public void setChain( ICFBamProtChain src );
-
 	public void set( ICFBamProtChainH src );
-
 	public void setChain( ICFBamProtChainH src );
-
 	public void set( ICFBamPubChain src );
-
 	public void setChain( ICFBamPubChain src );
-
 	public void set( ICFBamPubChainH src );
-
 	public void setChain( ICFBamPubChainH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

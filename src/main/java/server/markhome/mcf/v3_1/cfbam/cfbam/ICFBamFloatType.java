@@ -76,39 +76,22 @@ public interface ICFBamFloatType
 	public final static String S_CLASS_CODE = "a824";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
-
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setFloatType( ICFBamFloatType src );
-
 	public void set( ICFBamValueH src );
-
 	public void setFloatType( ICFBamFloatTypeH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setFloatType( ICFBamProtFloatType src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setFloatType( ICFBamProtFloatTypeH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setFloatType( ICFBamPubFloatType src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setFloatType( ICFBamPubFloatTypeH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

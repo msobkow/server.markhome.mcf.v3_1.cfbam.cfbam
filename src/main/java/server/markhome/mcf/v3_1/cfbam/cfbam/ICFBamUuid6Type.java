@@ -76,39 +76,22 @@ public interface ICFBamUuid6Type
 	public final static String S_CLASS_CODE = "a86e";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
-
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setUuid6Type( ICFBamUuid6Type src );
-
 	public void set( ICFBamValueH src );
-
 	public void setUuid6Type( ICFBamUuid6TypeH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setUuid6Type( ICFBamProtUuid6Type src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setUuid6Type( ICFBamProtUuid6TypeH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setUuid6Type( ICFBamPubUuid6Type src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setUuid6Type( ICFBamPubUuid6TypeH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

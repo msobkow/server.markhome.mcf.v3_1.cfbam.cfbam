@@ -76,39 +76,22 @@ public interface ICFBamBlobCol
 	public final static String S_CLASS_CODE = "a86f";
 
 	public ICFBamTable getRequiredContainerTable();
-
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setBlobCol( ICFBamBlobCol src );
-
 	public void set( ICFBamValueH src );
-
 	public void setBlobCol( ICFBamBlobColH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setBlobCol( ICFBamProtBlobCol src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setBlobCol( ICFBamProtBlobColH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setBlobCol( ICFBamPubBlobCol src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setBlobCol( ICFBamPubBlobColH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

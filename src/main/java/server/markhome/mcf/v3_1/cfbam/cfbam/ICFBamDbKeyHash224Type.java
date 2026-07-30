@@ -76,39 +76,22 @@ public interface ICFBamDbKeyHash224Type
 	public final static String S_CLASS_CODE = "a846";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
-
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setDbKeyHash224Type( ICFBamDbKeyHash224Type src );
-
 	public void set( ICFBamValueH src );
-
 	public void setDbKeyHash224Type( ICFBamDbKeyHash224TypeH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setDbKeyHash224Type( ICFBamProtDbKeyHash224Type src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setDbKeyHash224Type( ICFBamProtDbKeyHash224TypeH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setDbKeyHash224Type( ICFBamPubDbKeyHash224Type src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setDbKeyHash224Type( ICFBamPubDbKeyHash224TypeH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

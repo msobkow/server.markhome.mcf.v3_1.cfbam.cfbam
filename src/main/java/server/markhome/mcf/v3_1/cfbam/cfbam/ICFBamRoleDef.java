@@ -86,36 +86,21 @@ public interface ICFBamRoleDef
 	public final static String S_CLASS_CODE = "a88e";
 
 	public int getClassCode();
-
 	public CFLibDbKeyHash256 getCreatedByUserId();
-
 	public void setCreatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getCreatedAt();
-
 	public void setCreatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getUpdatedByUserId();
-
 	public void setUpdatedByUserId( CFLibDbKeyHash256 value );
-
 	public LocalDateTime getUpdatedAt();
-
 	public void setUpdatedAt( LocalDateTime value );
-
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
-	public CFLibDbKeyHash256 getRequiredId();
-	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
 	public ICFBamScope getRequiredContainerScopeDef();
-
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
-
 	public CFLibDbKeyHash256 getRequiredScopeId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public String getRequiredName();
@@ -125,36 +110,20 @@ public interface ICFBamRoleDef
 	public String getRequiredIncludes();
 	public void setRequiredIncludes( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamRoleDef src );
-
 	public void setRoleDef( ICFBamRoleDef src );
-
 	public void set( ICFBamRoleDefH src );
-
 	public void setRoleDef( ICFBamRoleDefH src );
-
 	public void set( ICFBamProtRoleDef src );
-
 	public void setRoleDef( ICFBamProtRoleDef src );
-
 	public void set( ICFBamProtRoleDefH src );
-
 	public void setRoleDef( ICFBamProtRoleDefH src );
-
 	public void set( ICFBamPubRoleDef src );
-
 	public void setRoleDef( ICFBamPubRoleDef src );
-
 	public void set( ICFBamPubRoleDefH src );
-
 	public void setRoleDef( ICFBamPubRoleDefH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

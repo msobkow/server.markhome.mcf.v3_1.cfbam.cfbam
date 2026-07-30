@@ -76,39 +76,22 @@ public interface ICFBamInt16Type
 	public final static String S_CLASS_CODE = "a828";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
-
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setInt16Type( ICFBamInt16Type src );
-
 	public void set( ICFBamValueH src );
-
 	public void setInt16Type( ICFBamInt16TypeH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setInt16Type( ICFBamProtInt16Type src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setInt16Type( ICFBamProtInt16TypeH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setInt16Type( ICFBamPubInt16Type src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setInt16Type( ICFBamPubInt16TypeH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

@@ -77,43 +77,25 @@ public interface ICFBamDelSubDep1
 	public final static String S_CLASS_CODE = "a81c";
 
 	public ICFBamDelTopDep getRequiredContainerDelTopDep();
-
 	public List<ICFBamDelSubDep2> getOptionalComponentsDelDep();
-
 	public CFLibDbKeyHash256 getRequiredDelTopDepId();
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamScope src );
-
 	public void setDelSubDep1( ICFBamDelSubDep1 src );
-
 	public void set( ICFBamScopeH src );
-
 	public void setDelSubDep1( ICFBamDelSubDep1H src );
-
 	public void set( ICFBamProtScope src );
-
 	public void setDelSubDep1( ICFBamProtDelSubDep1 src );
-
 	public void set( ICFBamProtScopeH src );
-
 	public void setDelSubDep1( ICFBamProtDelSubDep1H src );
-
 	public void set( ICFBamPubScope src );
-
 	public void setDelSubDep1( ICFBamPubDelSubDep1 src );
-
 	public void set( ICFBamPubScopeH src );
-
 	public void setDelSubDep1( ICFBamPubDelSubDep1H src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

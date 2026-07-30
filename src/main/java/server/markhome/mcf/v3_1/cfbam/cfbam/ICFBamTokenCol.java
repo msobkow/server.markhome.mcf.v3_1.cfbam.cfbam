@@ -76,39 +76,22 @@ public interface ICFBamTokenCol
 	public final static String S_CLASS_CODE = "a886";
 
 	public ICFBamTable getRequiredContainerTable();
-
 	public CFLibDbKeyHash256 getRequiredTableId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setTokenCol( ICFBamTokenCol src );
-
 	public void set( ICFBamValueH src );
-
 	public void setTokenCol( ICFBamTokenColH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setTokenCol( ICFBamProtTokenCol src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setTokenCol( ICFBamProtTokenColH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setTokenCol( ICFBamPubTokenCol src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setTokenCol( ICFBamPubTokenColH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

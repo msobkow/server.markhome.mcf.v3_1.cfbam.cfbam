@@ -84,36 +84,20 @@ public interface ICFBamUuid6Gen
 	public int getRequiredBlockSize();
 	public void setRequiredBlockSize( int value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setUuid6Gen( ICFBamUuid6Gen src );
-
 	public void set( ICFBamValueH src );
-
 	public void setUuid6Gen( ICFBamUuid6GenH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setUuid6Gen( ICFBamProtUuid6Gen src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setUuid6Gen( ICFBamProtUuid6GenH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setUuid6Gen( ICFBamPubUuid6Gen src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setUuid6Gen( ICFBamPubUuid6GenH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

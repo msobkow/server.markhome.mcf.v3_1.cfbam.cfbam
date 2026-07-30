@@ -76,39 +76,22 @@ public interface ICFBamTextType
 	public final static String S_CLASS_CODE = "a85e";
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
-
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setTextType( ICFBamTextType src );
-
 	public void set( ICFBamValueH src );
-
 	public void setTextType( ICFBamTextTypeH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setTextType( ICFBamProtTextType src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setTextType( ICFBamProtTextTypeH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setTextType( ICFBamPubTextType src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setTextType( ICFBamPubTextTypeH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

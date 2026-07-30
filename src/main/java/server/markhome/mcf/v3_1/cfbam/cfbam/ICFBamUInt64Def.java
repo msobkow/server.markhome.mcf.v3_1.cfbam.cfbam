@@ -86,36 +86,20 @@ public interface ICFBamUInt64Def
 	public BigDecimal getOptionalMaxValue();
 	public void setOptionalMaxValue( BigDecimal value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setUInt64Def( ICFBamUInt64Def src );
-
 	public void set( ICFBamValueH src );
-
 	public void setUInt64Def( ICFBamUInt64DefH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setUInt64Def( ICFBamProtUInt64Def src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setUInt64Def( ICFBamProtUInt64DefH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setUInt64Def( ICFBamPubUInt64Def src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setUInt64Def( ICFBamPubUInt64DefH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }

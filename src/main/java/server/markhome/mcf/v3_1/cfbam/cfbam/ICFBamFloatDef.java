@@ -86,36 +86,20 @@ public interface ICFBamFloatDef
 	public Float getOptionalMaxValue();
 	public void setOptionalMaxValue( Float value );
 	public boolean equals( Object obj );
-
 	public int hashCode();
-
 	public int compareTo( Object obj );
-
 	public void set( ICFBamValue src );
-
 	public void setFloatDef( ICFBamFloatDef src );
-
 	public void set( ICFBamValueH src );
-
 	public void setFloatDef( ICFBamFloatDefH src );
-
 	public void set( ICFBamProtValue src );
-
 	public void setFloatDef( ICFBamProtFloatDef src );
-
 	public void set( ICFBamProtValueH src );
-
 	public void setFloatDef( ICFBamProtFloatDefH src );
-
 	public void set( ICFBamPubValue src );
-
 	public void setFloatDef( ICFBamPubFloatDef src );
-
 	public void set( ICFBamPubValueH src );
-
 	public void setFloatDef( ICFBamPubFloatDefH src );
-
 	public String getXmlAttrFragment();
-
 	public String toString();
 }
