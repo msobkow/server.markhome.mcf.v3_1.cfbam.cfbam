@@ -76,6 +76,7 @@ public class CFBamBuffTZDateDef
 {
 	protected String optionalDummy;
 
+	@Override
 	public CFBamBuffTZDateDef() {
 		super();
 		optionalDummy = null;

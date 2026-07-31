@@ -85,6 +85,7 @@ public class CFBamBuffRoleDef
 	protected String requiredEnables;
 	protected String requiredIncludes;
 
+	@Override
 	public CFBamBuffRoleDef() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFBamRoleDef.ID_INIT_VALUE.toString() );
 		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamRoleDef.SCOPEID_INIT_VALUE.toString() );
@@ -190,6 +191,34 @@ public class CFBamBuffRoleDef
 	}
 
 	@Override
+	public void setRequiredContainerScopeDef(CFLibDbKeyHash256 argScopeId) {
+		requiredScopeId = argScopeId;
+	}
+
+	@Override
+	public void setRequiredContainerScopeDef(ICFBamScope argObj);
+
+	@Override
+	public void setRequiredContainerScopeDef(ICFBamProtScope argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerScopeDef", 1, "argObj");
+		}
+		else {
+			requiredScopeId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerScopeDef(ICFBamPubScope argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerScopeDef", 1, "argObj");
+		}
+		else {
+			requiredScopeId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
 	public ICFBamSchemaDef getOptionalLookupDefSchema() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -201,6 +230,34 @@ public class CFBamBuffRoleDef
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		optionalDefSchemaId = argDefSchemaId;
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

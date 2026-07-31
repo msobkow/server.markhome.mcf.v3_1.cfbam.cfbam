@@ -79,6 +79,7 @@ public class CFBamBuffBoolDef
 	protected String optionalTrueString;
 	protected String optionalNullString;
 
+	@Override
 	public CFBamBuffBoolDef() {
 		super();
 		optionalInitValue = null;

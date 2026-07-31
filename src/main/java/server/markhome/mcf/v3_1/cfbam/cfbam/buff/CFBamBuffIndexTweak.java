@@ -76,6 +76,7 @@ public class CFBamBuffIndexTweak
 {
 	protected CFLibDbKeyHash256 requiredIndexId;
 
+	@Override
 	public CFBamBuffIndexTweak() {
 		super();
 		requiredIndexId = CFLibDbKeyHash256.fromHex( ICFBamIndexTweak.INDEXID_INIT_VALUE.toString() );
@@ -98,6 +99,34 @@ public class CFBamBuffIndexTweak
 		}
 		ICFBamIndex targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredIndexId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerIndexDef(CFLibDbKeyHash256 argIndexId) {
+		requiredIndexId = argIndexId;
+	}
+
+	@Override
+	public void setRequiredContainerIndexDef(ICFBamIndex argObj);
+
+	@Override
+	public void setRequiredContainerIndexDef(ICFBamProtIndex argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerIndexDef", 1, "argObj");
+		}
+		else {
+			requiredIndexId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerIndexDef(ICFBamPubIndex argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerIndexDef", 1, "argObj");
+		}
+		else {
+			requiredIndexId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

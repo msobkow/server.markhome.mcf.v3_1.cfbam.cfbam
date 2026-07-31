@@ -76,6 +76,7 @@ public class CFBamBuffDbKeyHash512Def
 {
 	protected String optionalInitValue;
 
+	@Override
 	public CFBamBuffDbKeyHash512Def() {
 		super();
 		optionalInitValue = null;

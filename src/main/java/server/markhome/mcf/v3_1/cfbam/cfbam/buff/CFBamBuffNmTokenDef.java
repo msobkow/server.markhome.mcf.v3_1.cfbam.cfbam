@@ -77,6 +77,7 @@ public class CFBamBuffNmTokenDef
 	protected int requiredMaxLen;
 	protected String optionalInitValue;
 
+	@Override
 	public CFBamBuffNmTokenDef() {
 		super();
 		requiredMaxLen = ICFBamNmTokenDef.MAXLEN_INIT_VALUE;

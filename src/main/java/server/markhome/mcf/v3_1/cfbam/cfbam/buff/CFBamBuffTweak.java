@@ -87,6 +87,7 @@ public class CFBamBuffTweak
 	protected boolean requiredReplacesInherited;
 	protected String requiredTweakGelText;
 
+	@Override
 	public CFBamBuffTweak() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFBamTweak.ID_INIT_VALUE.toString() );
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFBamTweak.TENANTID_INIT_VALUE.toString() );
@@ -194,6 +195,34 @@ public class CFBamBuffTweak
 	}
 
 	@Override
+	public void setRequiredContainerScopeDef(CFLibDbKeyHash256 argScopeId) {
+		requiredScopeId = argScopeId;
+	}
+
+	@Override
+	public void setRequiredContainerScopeDef(ICFBamScope argObj);
+
+	@Override
+	public void setRequiredContainerScopeDef(ICFBamProtScope argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerScopeDef", 1, "argObj");
+		}
+		else {
+			requiredScopeId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerScopeDef(ICFBamPubScope argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerScopeDef", 1, "argObj");
+		}
+		else {
+			requiredScopeId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
 	public ICFBamSchemaDef getOptionalLookupDefSchema() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -205,6 +234,34 @@ public class CFBamBuffTweak
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		optionalDefSchemaId = argDefSchemaId;
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

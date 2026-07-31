@@ -90,6 +90,7 @@ public class CFBamBuffChain
 	protected CFLibDbKeyHash256 requiredPrevRelationId;
 	protected CFLibDbKeyHash256 requiredNextRelationId;
 
+	@Override
 	public CFBamBuffChain() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFBamChain.ID_INIT_VALUE.toString() );
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
@@ -200,6 +201,34 @@ public class CFBamBuffChain
 	}
 
 	@Override
+	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
+		requiredTableId = argTableId;
+	}
+
+	@Override
+	public void setRequiredContainerTable(ICFBamTable argObj);
+
+	@Override
+	public void setRequiredContainerTable(ICFBamProtTable argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerTable(ICFBamPubTable argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
 	public ICFBamSchemaDef getOptionalLookupDefSchema() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -211,6 +240,34 @@ public class CFBamBuffChain
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		optionalDefSchemaId = argDefSchemaId;
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -228,6 +285,34 @@ public class CFBamBuffChain
 	}
 
 	@Override
+	public void setRequiredLookupPrevRel(CFLibDbKeyHash256 argPrevRelationId) {
+		requiredPrevRelationId = argPrevRelationId;
+	}
+
+	@Override
+	public void setRequiredLookupPrevRel(ICFBamRelation argObj);
+
+	@Override
+	public void setRequiredLookupPrevRel(ICFBamProtRelation argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupPrevRel", 1, "argObj");
+		}
+		else {
+			requiredPrevRelationId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredLookupPrevRel(ICFBamPubRelation argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupPrevRel", 1, "argObj");
+		}
+		else {
+			requiredPrevRelationId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
 	public ICFBamRelation getRequiredLookupNextRel() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -239,6 +324,34 @@ public class CFBamBuffChain
 		}
 		ICFBamRelation targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredNextRelationId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredLookupNextRel(CFLibDbKeyHash256 argNextRelationId) {
+		requiredNextRelationId = argNextRelationId;
+	}
+
+	@Override
+	public void setRequiredLookupNextRel(ICFBamRelation argObj);
+
+	@Override
+	public void setRequiredLookupNextRel(ICFBamProtRelation argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupNextRel", 1, "argObj");
+		}
+		else {
+			requiredNextRelationId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredLookupNextRel(ICFBamPubRelation argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupNextRel", 1, "argObj");
+		}
+		else {
+			requiredNextRelationId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

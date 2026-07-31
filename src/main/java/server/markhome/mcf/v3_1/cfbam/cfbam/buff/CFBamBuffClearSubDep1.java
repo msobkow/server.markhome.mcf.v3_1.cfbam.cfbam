@@ -77,6 +77,7 @@ public class CFBamBuffClearSubDep1
 	protected CFLibDbKeyHash256 requiredClearTopDepId;
 	protected String requiredName;
 
+	@Override
 	public CFBamBuffClearSubDep1() {
 		super();
 		requiredClearTopDepId = CFLibDbKeyHash256.fromHex( ICFBamClearSubDep1.CLEARTOPDEPID_INIT_VALUE.toString() );
@@ -100,6 +101,34 @@ public class CFBamBuffClearSubDep1
 		}
 		ICFBamClearTopDep targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClearTopDepId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerClearTopDep(CFLibDbKeyHash256 argClearTopDepId) {
+		requiredClearTopDepId = argClearTopDepId;
+	}
+
+	@Override
+	public void setRequiredContainerClearTopDep(ICFBamClearTopDep argObj);
+
+	@Override
+	public void setRequiredContainerClearTopDep(ICFBamProtClearTopDep argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerClearTopDep", 1, "argObj");
+		}
+		else {
+			requiredClearTopDepId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerClearTopDep(ICFBamPubClearTopDep argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerClearTopDep", 1, "argObj");
+		}
+		else {
+			requiredClearTopDepId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

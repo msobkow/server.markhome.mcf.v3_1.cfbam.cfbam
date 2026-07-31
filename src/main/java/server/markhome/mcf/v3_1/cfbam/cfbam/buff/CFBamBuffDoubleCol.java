@@ -76,6 +76,7 @@ public class CFBamBuffDoubleCol
 {
 	protected CFLibDbKeyHash256 requiredTableId;
 
+	@Override
 	public CFBamBuffDoubleCol() {
 		super();
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamDoubleCol.TABLEID_INIT_VALUE.toString() );
@@ -98,6 +99,34 @@ public class CFBamBuffDoubleCol
 		}
 		ICFBamTable targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
+		requiredTableId = argTableId;
+	}
+
+	@Override
+	public void setRequiredContainerTable(ICFBamTable argObj);
+
+	@Override
+	public void setRequiredContainerTable(ICFBamProtTable argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerTable(ICFBamPubTable argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

@@ -89,6 +89,7 @@ public class CFBamBuffServerMethod
 	protected String requiredCppMethodBody;
 	protected String requiredCsMethodBody;
 
+	@Override
 	public CFBamBuffServerMethod() {
 		super();
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamServerMethod.TABLEID_INIT_VALUE.toString() );
@@ -127,6 +128,34 @@ public class CFBamBuffServerMethod
 	}
 
 	@Override
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		optionalDefSchemaId = argDefSchemaId;
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
 	public ICFBamTable getRequiredContainerForTable() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -138,6 +167,34 @@ public class CFBamBuffServerMethod
 		}
 		ICFBamTable targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerForTable(CFLibDbKeyHash256 argTableId) {
+		requiredTableId = argTableId;
+	}
+
+	@Override
+	public void setRequiredContainerForTable(ICFBamTable argObj);
+
+	@Override
+	public void setRequiredContainerForTable(ICFBamProtTable argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerForTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerForTable(ICFBamPubTable argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerForTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

@@ -80,6 +80,7 @@ public class CFBamBuffNumberDef
 	protected BigDecimal optionalMinValue;
 	protected BigDecimal optionalMaxValue;
 
+	@Override
 	public CFBamBuffNumberDef() {
 		super();
 		requiredDigits = ICFBamNumberDef.DIGITS_INIT_VALUE;

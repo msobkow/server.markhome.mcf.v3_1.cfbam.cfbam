@@ -77,6 +77,7 @@ public class CFBamBuffPopTopDep
 	protected CFLibDbKeyHash256 requiredContRelationId;
 	protected String requiredName;
 
+	@Override
 	public CFBamBuffPopTopDep() {
 		super();
 		requiredContRelationId = CFLibDbKeyHash256.fromHex( ICFBamPopTopDep.CONTRELATIONID_INIT_VALUE.toString() );
@@ -100,6 +101,34 @@ public class CFBamBuffPopTopDep
 		}
 		ICFBamRelation targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredContRelationId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerContRelation(CFLibDbKeyHash256 argContRelationId) {
+		requiredContRelationId = argContRelationId;
+	}
+
+	@Override
+	public void setRequiredContainerContRelation(ICFBamRelation argObj);
+
+	@Override
+	public void setRequiredContainerContRelation(ICFBamProtRelation argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerContRelation", 1, "argObj");
+		}
+		else {
+			requiredContRelationId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerContRelation(ICFBamPubRelation argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerContRelation", 1, "argObj");
+		}
+		else {
+			requiredContRelationId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

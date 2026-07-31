@@ -81,6 +81,7 @@ public class CFBamBuffScope
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredTenantId;
 
+	@Override
 	public CFBamBuffScope() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFBamScope.ID_INIT_VALUE.toString() );
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFBamScope.TENANTID_INIT_VALUE.toString() );
@@ -180,6 +181,14 @@ public class CFBamBuffScope
 		ICFSecTenant targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
 		return(targetRec);
 	}
+
+	@Override
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
+		requiredTenantId = argTenantId;
+	}
+
+	@Override
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {

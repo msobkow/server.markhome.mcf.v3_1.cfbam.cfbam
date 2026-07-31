@@ -76,6 +76,7 @@ public class CFBamBuffTableTweak
 {
 	protected CFLibDbKeyHash256 requiredTableId;
 
+	@Override
 	public CFBamBuffTableTweak() {
 		super();
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamTableTweak.TABLEID_INIT_VALUE.toString() );
@@ -98,6 +99,34 @@ public class CFBamBuffTableTweak
 		}
 		ICFBamTable targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerTableDef(CFLibDbKeyHash256 argTableId) {
+		requiredTableId = argTableId;
+	}
+
+	@Override
+	public void setRequiredContainerTableDef(ICFBamTable argObj);
+
+	@Override
+	public void setRequiredContainerTableDef(ICFBamProtTable argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTableDef", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerTableDef(ICFBamPubTable argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTableDef", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

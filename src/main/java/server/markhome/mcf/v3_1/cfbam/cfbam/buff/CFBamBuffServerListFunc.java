@@ -76,6 +76,7 @@ public class CFBamBuffServerListFunc
 {
 	protected CFLibDbKeyHash256 optionalRetTableId;
 
+	@Override
 	public CFBamBuffServerListFunc() {
 		super();
 		optionalRetTableId = CFLibDbKeyHash256.nullGet();
@@ -98,6 +99,34 @@ public class CFBamBuffServerListFunc
 		}
 		ICFBamTable targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalRetTableId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setOptionalLookupRetTable(CFLibDbKeyHash256 argRetTableId) {
+		optionalRetTableId = argRetTableId;
+	}
+
+	@Override
+	public void setOptionalLookupRetTable(ICFBamTable argObj);
+
+	@Override
+	public void setOptionalLookupRetTable(ICFBamProtTable argObj) {
+		if(argObj == null) {
+			optionalRetTableId = null;
+		}
+		else {
+			optionalRetTableId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setOptionalLookupRetTable(ICFBamPubTable argObj) {
+		if(argObj == null) {
+			optionalRetTableId = null;
+		}
+		else {
+			optionalRetTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

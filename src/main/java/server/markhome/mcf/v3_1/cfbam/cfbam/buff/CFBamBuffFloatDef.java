@@ -78,6 +78,7 @@ public class CFBamBuffFloatDef
 	protected Float optionalMinValue;
 	protected Float optionalMaxValue;
 
+	@Override
 	public CFBamBuffFloatDef() {
 		super();
 		optionalInitValue = null;

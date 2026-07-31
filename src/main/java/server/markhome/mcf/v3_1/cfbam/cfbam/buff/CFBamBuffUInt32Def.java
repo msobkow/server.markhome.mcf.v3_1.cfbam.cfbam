@@ -78,6 +78,7 @@ public class CFBamBuffUInt32Def
 	protected Long optionalMinValue;
 	protected Long optionalMaxValue;
 
+	@Override
 	public CFBamBuffUInt32Def() {
 		super();
 		optionalInitValue = null;

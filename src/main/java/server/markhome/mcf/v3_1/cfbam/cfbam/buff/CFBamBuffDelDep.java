@@ -77,6 +77,7 @@ public class CFBamBuffDelDep
 	protected CFLibDbKeyHash256 optionalDefSchemaId;
 	protected CFLibDbKeyHash256 requiredRelationId;
 
+	@Override
 	public CFBamBuffDelDep() {
 		super();
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
@@ -103,6 +104,34 @@ public class CFBamBuffDelDep
 	}
 
 	@Override
+	public void setRequiredLookupRelation(CFLibDbKeyHash256 argRelationId) {
+		requiredRelationId = argRelationId;
+	}
+
+	@Override
+	public void setRequiredLookupRelation(ICFBamRelation argObj);
+
+	@Override
+	public void setRequiredLookupRelation(ICFBamProtRelation argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupRelation", 1, "argObj");
+		}
+		else {
+			requiredRelationId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredLookupRelation(ICFBamPubRelation argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupRelation", 1, "argObj");
+		}
+		else {
+			requiredRelationId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
 	public ICFBamSchemaDef getOptionalLookupDefSchema() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -114,6 +143,34 @@ public class CFBamBuffDelDep
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		optionalDefSchemaId = argDefSchemaId;
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

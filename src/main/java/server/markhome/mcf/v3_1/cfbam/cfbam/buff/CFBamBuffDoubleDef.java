@@ -78,6 +78,7 @@ public class CFBamBuffDoubleDef
 	protected Double optionalMinValue;
 	protected Double optionalMaxValue;
 
+	@Override
 	public CFBamBuffDoubleDef() {
 		super();
 		optionalInitValue = null;

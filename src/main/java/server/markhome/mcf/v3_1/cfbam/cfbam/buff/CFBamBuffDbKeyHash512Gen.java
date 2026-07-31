@@ -77,6 +77,7 @@ public class CFBamBuffDbKeyHash512Gen
 	protected short requiredSlice;
 	protected int requiredBlockSize;
 
+	@Override
 	public CFBamBuffDbKeyHash512Gen() {
 		super();
 		requiredSlice = ICFBamDbKeyHash512Gen.SLICE_INIT_VALUE;

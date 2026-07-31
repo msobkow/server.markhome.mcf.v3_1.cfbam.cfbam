@@ -77,6 +77,7 @@ public class CFBamBuffPopSubDep3
 	protected CFLibDbKeyHash256 requiredPopSubDep2Id;
 	protected String requiredName;
 
+	@Override
 	public CFBamBuffPopSubDep3() {
 		super();
 		requiredPopSubDep2Id = CFLibDbKeyHash256.fromHex( ICFBamPopSubDep3.POPSUBDEP2ID_INIT_VALUE.toString() );
@@ -100,6 +101,34 @@ public class CFBamBuffPopSubDep3
 		}
 		ICFBamPopSubDep2 targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredPopSubDep2Id());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerPopSubDep2(CFLibDbKeyHash256 argPopSubDep2Id) {
+		requiredPopSubDep2Id = argPopSubDep2Id;
+	}
+
+	@Override
+	public void setRequiredContainerPopSubDep2(ICFBamPopSubDep2 argObj);
+
+	@Override
+	public void setRequiredContainerPopSubDep2(ICFBamProtPopSubDep2 argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerPopSubDep2", 1, "argObj");
+		}
+		else {
+			requiredPopSubDep2Id = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerPopSubDep2(ICFBamPubPopSubDep2 argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerPopSubDep2", 1, "argObj");
+		}
+		else {
+			requiredPopSubDep2Id = argObj.getRequiredId();
+		}
 	}
 
 	@Override

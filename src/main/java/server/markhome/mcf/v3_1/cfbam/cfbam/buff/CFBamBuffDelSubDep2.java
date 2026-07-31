@@ -77,6 +77,7 @@ public class CFBamBuffDelSubDep2
 	protected CFLibDbKeyHash256 requiredDelSubDep1Id;
 	protected String requiredName;
 
+	@Override
 	public CFBamBuffDelSubDep2() {
 		super();
 		requiredDelSubDep1Id = CFLibDbKeyHash256.fromHex( ICFBamDelSubDep2.DELSUBDEP1ID_INIT_VALUE.toString() );
@@ -100,6 +101,34 @@ public class CFBamBuffDelSubDep2
 		}
 		ICFBamDelSubDep1 targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredDelSubDep1Id());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerDelSubDep1(CFLibDbKeyHash256 argDelSubDep1Id) {
+		requiredDelSubDep1Id = argDelSubDep1Id;
+	}
+
+	@Override
+	public void setRequiredContainerDelSubDep1(ICFBamDelSubDep1 argObj);
+
+	@Override
+	public void setRequiredContainerDelSubDep1(ICFBamProtDelSubDep1 argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerDelSubDep1", 1, "argObj");
+		}
+		else {
+			requiredDelSubDep1Id = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerDelSubDep1(ICFBamPubDelSubDep1 argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerDelSubDep1", 1, "argObj");
+		}
+		else {
+			requiredDelSubDep1Id = argObj.getRequiredId();
+		}
 	}
 
 	@Override

@@ -88,6 +88,7 @@ public class CFBamBuffSchemaDef
 	protected String requiredProjectURL;
 	protected String requiredPublishURI;
 
+	@Override
 	public CFBamBuffSchemaDef() {
 		super();
 		requiredCTenantId = CFLibDbKeyHash256.fromHex( ICFBamSchemaDef.CTENANTID_INIT_VALUE.toString() );
@@ -125,6 +126,14 @@ public class CFBamBuffSchemaDef
 	}
 
 	@Override
+	public void setRequiredContainerMinorVersion(CFLibDbKeyHash256 argMinorVersionId) {
+		requiredMinorVersionId = argMinorVersionId;
+	}
+
+	@Override
+	public void setRequiredContainerMinorVersion(ICFIntPubMinorVersion argObj);
+
+	@Override
 	public ICFSecTenant getRequiredOwnerCTenant() {
 		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
 		if (targetBackingSchema == null) {
@@ -137,6 +146,14 @@ public class CFBamBuffSchemaDef
 		ICFSecTenant targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredCTenantId());
 		return(targetRec);
 	}
+
+	@Override
+	public void setRequiredOwnerCTenant(CFLibDbKeyHash256 argCTenantId) {
+		requiredCTenantId = argCTenantId;
+	}
+
+	@Override
+	public void setRequiredOwnerCTenant(ICFSecPubTenant argObj);
 
 	@Override
 	public List<ICFBamTable> getOptionalComponentsTables() {

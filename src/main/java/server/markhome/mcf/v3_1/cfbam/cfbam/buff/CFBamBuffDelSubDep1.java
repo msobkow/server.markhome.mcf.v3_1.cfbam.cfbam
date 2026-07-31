@@ -77,6 +77,7 @@ public class CFBamBuffDelSubDep1
 	protected CFLibDbKeyHash256 requiredDelTopDepId;
 	protected String requiredName;
 
+	@Override
 	public CFBamBuffDelSubDep1() {
 		super();
 		requiredDelTopDepId = CFLibDbKeyHash256.fromHex( ICFBamDelSubDep1.DELTOPDEPID_INIT_VALUE.toString() );
@@ -100,6 +101,34 @@ public class CFBamBuffDelSubDep1
 		}
 		ICFBamDelTopDep targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredDelTopDepId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerDelTopDep(CFLibDbKeyHash256 argDelTopDepId) {
+		requiredDelTopDepId = argDelTopDepId;
+	}
+
+	@Override
+	public void setRequiredContainerDelTopDep(ICFBamDelTopDep argObj);
+
+	@Override
+	public void setRequiredContainerDelTopDep(ICFBamProtDelTopDep argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerDelTopDep", 1, "argObj");
+		}
+		else {
+			requiredDelTopDepId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerDelTopDep(ICFBamPubDelTopDep argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerDelTopDep", 1, "argObj");
+		}
+		else {
+			requiredDelTopDepId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

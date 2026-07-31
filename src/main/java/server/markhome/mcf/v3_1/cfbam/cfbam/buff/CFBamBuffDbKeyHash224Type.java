@@ -76,6 +76,7 @@ public class CFBamBuffDbKeyHash224Type
 {
 	protected CFLibDbKeyHash256 requiredSchemaDefId;
 
+	@Override
 	public CFBamBuffDbKeyHash224Type() {
 		super();
 		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamDbKeyHash224Type.SCHEMADEFID_INIT_VALUE.toString() );
@@ -98,6 +99,34 @@ public class CFBamBuffDbKeyHash224Type
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSchemaDefId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
+		requiredSchemaDefId = argSchemaDefId;
+	}
+
+	@Override
+	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
+
+	@Override
+	public void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSchemaDef", 1, "argObj");
+		}
+		else {
+			requiredSchemaDefId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerSchemaDef(ICFBamPubSchemaDef argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSchemaDef", 1, "argObj");
+		}
+		else {
+			requiredSchemaDefId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

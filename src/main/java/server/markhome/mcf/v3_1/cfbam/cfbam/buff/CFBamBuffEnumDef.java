@@ -75,6 +75,7 @@ public class CFBamBuffEnumDef
 	implements ICFBamEnumDef
 {
 
+	@Override
 	public CFBamBuffEnumDef() {
 		super();
 	}

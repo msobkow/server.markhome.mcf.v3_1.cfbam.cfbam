@@ -79,6 +79,7 @@ public class CFBamBuffTableCol
 	protected CFLibDbKeyHash256 optionalDataId;
 	protected String optionalXmlElementName;
 
+	@Override
 	public CFBamBuffTableCol() {
 		super();
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamTableCol.TABLEID_INIT_VALUE.toString() );
@@ -107,6 +108,34 @@ public class CFBamBuffTableCol
 	}
 
 	@Override
+	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
+		requiredTableId = argTableId;
+	}
+
+	@Override
+	public void setRequiredContainerTable(ICFBamTable argObj);
+
+	@Override
+	public void setRequiredContainerTable(ICFBamProtTable argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredContainerTable(ICFBamPubTable argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
 	public ICFBamValue getRequiredParentDataType() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -118,6 +147,34 @@ public class CFBamBuffTableCol
 		}
 		ICFBamValue targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDataId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredParentDataType(CFLibDbKeyHash256 argDataId) {
+		optionalDataId = argDataId;
+	}
+
+	@Override
+	public void setRequiredParentDataType(ICFBamValue argObj);
+
+	@Override
+	public void setRequiredParentDataType(ICFBamProtValue argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentDataType", 1, "argObj");
+		}
+		else {
+			optionalDataId = argObj.getRequiredId();
+		}
+	}
+
+	@Override
+	public void setRequiredParentDataType(ICFBamPubValue argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentDataType", 1, "argObj");
+		}
+		else {
+			optionalDataId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

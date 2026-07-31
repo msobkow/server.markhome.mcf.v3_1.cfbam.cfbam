@@ -78,6 +78,7 @@ public class CFBamBuffStringDef
 	protected boolean requiredIsPolymorph;
 	protected String optionalInitValue;
 
+	@Override
 	public CFBamBuffStringDef() {
 		super();
 		requiredMaxLen = ICFBamStringDef.MAXLEN_INIT_VALUE;
