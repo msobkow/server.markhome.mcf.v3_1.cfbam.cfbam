@@ -109,9 +109,7 @@ public interface ICFBamIndexCol
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
 	public List<ICFBamRelationCol> getOptionalChildrenRefRelFromCol();
 
 	public List<ICFBamRelationCol> getOptionalChildrenRefRelToCol();
@@ -130,10 +128,6 @@ public interface ICFBamIndexCol
 	public ICFBamIndexCol getOptionalLookupNext();
 
 	public ICFBamValue getRequiredLookupColumn();
-
-	public List<ICFBamRelationCol> getOptionalChildrenRefRelFromCol();
-
-	public List<ICFBamRelationCol> getOptionalChildrenRefRelToCol();
 
 	public CFLibDbKeyHash256 getRequiredIndexId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();

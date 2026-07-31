@@ -104,9 +104,7 @@ public interface ICFBamRoleDef
 	public void setUpdatedAt( LocalDateTime value );
 
 	public CFLibDbKeyHash256 getPKey();
-
 	public void setPKey(CFLibDbKeyHash256 requiredId);
-
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
