@@ -78,6 +78,14 @@ public interface ICFBamClearSubDep2
 
 	public ICFBamClearSubDep1 getRequiredContainerClearSubDep1();
 
+	public void setRequiredContainerClearSubDep1(CFLibDbKeyHash256 argClearSubDep1Id);
+
+	public void setRequiredContainerClearSubDep1(ICFBamClearSubDep1 argObj);
+
+	public void setRequiredContainerClearSubDep1(ICFBamProtClearSubDep1 argObj);
+
+	public void setRequiredContainerClearSubDep1(ICFBamPubClearSubDep1 argObj);
+
 	public List<ICFBamClearSubDep3> getOptionalComponentsClearDep();
 
 	public CFLibDbKeyHash256 getRequiredClearSubDep1Id();

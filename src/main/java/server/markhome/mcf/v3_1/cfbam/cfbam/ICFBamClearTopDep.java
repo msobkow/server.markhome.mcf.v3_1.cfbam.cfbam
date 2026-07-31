@@ -82,9 +82,33 @@ public interface ICFBamClearTopDep
 
 	public ICFBamTable getRequiredContainerTable();
 
+	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId);
+
+	public void setRequiredContainerTable(ICFBamTable argObj);
+
+	public void setRequiredContainerTable(ICFBamProtTable argObj);
+
+	public void setRequiredContainerTable(ICFBamPubTable argObj);
+
 	public ICFBamClearTopDep getOptionalLookupPrev();
 
+	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
+
+	public void setOptionalLookupPrev(ICFBamClearTopDep argObj);
+
+	public void setOptionalLookupPrev(ICFBamProtClearTopDep argObj);
+
+	public void setOptionalLookupPrev(ICFBamPubClearTopDep argObj);
+
 	public ICFBamClearTopDep getOptionalLookupNext();
+
+	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
+
+	public void setOptionalLookupNext(ICFBamClearTopDep argObj);
+
+	public void setOptionalLookupNext(ICFBamProtClearTopDep argObj);
+
+	public void setOptionalLookupNext(ICFBamPubClearTopDep argObj);
 
 	public List<ICFBamClearSubDep1> getOptionalComponentsClearDep();
 

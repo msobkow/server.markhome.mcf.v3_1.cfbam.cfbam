@@ -117,11 +117,43 @@ public interface ICFBamEnumTag
 
 	public ICFBamEnumDef getRequiredContainerEnumDef();
 
+	public void setRequiredContainerEnumDef(CFLibDbKeyHash256 argEnumId);
+
+	public void setRequiredContainerEnumDef(ICFBamEnumDef argObj);
+
+	public void setRequiredContainerEnumDef(ICFBamProtEnumDef argObj);
+
+	public void setRequiredContainerEnumDef(ICFBamPubEnumDef argObj);
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
+
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
+
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 
 	public ICFBamEnumTag getOptionalLookupPrev();
 
+	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
+
+	public void setOptionalLookupPrev(ICFBamEnumTag argObj);
+
+	public void setOptionalLookupPrev(ICFBamProtEnumTag argObj);
+
+	public void setOptionalLookupPrev(ICFBamPubEnumTag argObj);
+
 	public ICFBamEnumTag getOptionalLookupNext();
+
+	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
+
+	public void setOptionalLookupNext(ICFBamEnumTag argObj);
+
+	public void setOptionalLookupNext(ICFBamProtEnumTag argObj);
+
+	public void setOptionalLookupNext(ICFBamPubEnumTag argObj);
 
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
 	public CFLibDbKeyHash256 getRequiredEnumId();

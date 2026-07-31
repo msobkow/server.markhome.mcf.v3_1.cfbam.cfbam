@@ -121,13 +121,53 @@ public interface ICFBamIndexCol
 
 	public ICFBamIndex getRequiredContainerIndex();
 
+	public void setRequiredContainerIndex(CFLibDbKeyHash256 argIndexId);
+
+	public void setRequiredContainerIndex(ICFBamIndex argObj);
+
+	public void setRequiredContainerIndex(ICFBamProtIndex argObj);
+
+	public void setRequiredContainerIndex(ICFBamPubIndex argObj);
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
+
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
+
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 
 	public ICFBamIndexCol getOptionalLookupPrev();
 
+	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
+
+	public void setOptionalLookupPrev(ICFBamIndexCol argObj);
+
+	public void setOptionalLookupPrev(ICFBamProtIndexCol argObj);
+
+	public void setOptionalLookupPrev(ICFBamPubIndexCol argObj);
+
 	public ICFBamIndexCol getOptionalLookupNext();
 
+	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
+
+	public void setOptionalLookupNext(ICFBamIndexCol argObj);
+
+	public void setOptionalLookupNext(ICFBamProtIndexCol argObj);
+
+	public void setOptionalLookupNext(ICFBamPubIndexCol argObj);
+
 	public ICFBamValue getRequiredLookupColumn();
+
+	public void setRequiredLookupColumn(CFLibDbKeyHash256 argColumnId);
+
+	public void setRequiredLookupColumn(ICFBamValue argObj);
+
+	public void setRequiredLookupColumn(ICFBamProtValue argObj);
+
+	public void setRequiredLookupColumn(ICFBamPubValue argObj);
 
 	public CFLibDbKeyHash256 getRequiredIndexId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();

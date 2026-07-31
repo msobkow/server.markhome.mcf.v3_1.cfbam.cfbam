@@ -77,6 +77,14 @@ public interface ICFBamInt64Type
 
 	public ICFBamSchemaDef getRequiredContainerSchemaDef();
 
+	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId);
+
+	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
+
+	public void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj);
+
+	public void setRequiredContainerSchemaDef(ICFBamPubSchemaDef argObj);
+
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
 	public boolean equals( Object obj );
 

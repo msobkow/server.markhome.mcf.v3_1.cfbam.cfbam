@@ -118,15 +118,63 @@ public interface ICFBamRelationCol
 
 	public ICFBamRelation getRequiredContainerRelation();
 
+	public void setRequiredContainerRelation(CFLibDbKeyHash256 argRelationId);
+
+	public void setRequiredContainerRelation(ICFBamRelation argObj);
+
+	public void setRequiredContainerRelation(ICFBamProtRelation argObj);
+
+	public void setRequiredContainerRelation(ICFBamPubRelation argObj);
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
+
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
+
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 
 	public ICFBamRelationCol getOptionalLookupPrev();
 
+	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
+
+	public void setOptionalLookupPrev(ICFBamRelationCol argObj);
+
+	public void setOptionalLookupPrev(ICFBamProtRelationCol argObj);
+
+	public void setOptionalLookupPrev(ICFBamPubRelationCol argObj);
+
 	public ICFBamRelationCol getOptionalLookupNext();
+
+	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
+
+	public void setOptionalLookupNext(ICFBamRelationCol argObj);
+
+	public void setOptionalLookupNext(ICFBamProtRelationCol argObj);
+
+	public void setOptionalLookupNext(ICFBamPubRelationCol argObj);
 
 	public ICFBamIndexCol getRequiredLookupFromCol();
 
+	public void setRequiredLookupFromCol(CFLibDbKeyHash256 argFromColId);
+
+	public void setRequiredLookupFromCol(ICFBamIndexCol argObj);
+
+	public void setRequiredLookupFromCol(ICFBamProtIndexCol argObj);
+
+	public void setRequiredLookupFromCol(ICFBamPubIndexCol argObj);
+
 	public ICFBamIndexCol getRequiredLookupToCol();
+
+	public void setRequiredLookupToCol(CFLibDbKeyHash256 argToColId);
+
+	public void setRequiredLookupToCol(ICFBamIndexCol argObj);
+
+	public void setRequiredLookupToCol(ICFBamProtIndexCol argObj);
+
+	public void setRequiredLookupToCol(ICFBamPubIndexCol argObj);
 
 	public CFLibDbKeyHash256 getRequiredRelationId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();

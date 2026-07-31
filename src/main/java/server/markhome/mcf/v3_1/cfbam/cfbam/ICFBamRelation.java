@@ -98,15 +98,63 @@ public interface ICFBamRelation
 
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
 
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
+
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
+
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
+
 	public ICFBamTable getRequiredContainerFromTable();
+
+	public void setRequiredContainerFromTable(CFLibDbKeyHash256 argTableId);
+
+	public void setRequiredContainerFromTable(ICFBamTable argObj);
+
+	public void setRequiredContainerFromTable(ICFBamProtTable argObj);
+
+	public void setRequiredContainerFromTable(ICFBamPubTable argObj);
 
 	public ICFBamIndex getRequiredLookupFromIndex();
 
+	public void setRequiredLookupFromIndex(CFLibDbKeyHash256 argFromIndexId);
+
+	public void setRequiredLookupFromIndex(ICFBamIndex argObj);
+
+	public void setRequiredLookupFromIndex(ICFBamProtIndex argObj);
+
+	public void setRequiredLookupFromIndex(ICFBamPubIndex argObj);
+
 	public ICFBamTable getRequiredLookupToTable();
+
+	public void setRequiredLookupToTable(CFLibDbKeyHash256 argToTableId);
+
+	public void setRequiredLookupToTable(ICFBamTable argObj);
+
+	public void setRequiredLookupToTable(ICFBamProtTable argObj);
+
+	public void setRequiredLookupToTable(ICFBamPubTable argObj);
 
 	public ICFBamIndex getRequiredLookupToIndex();
 
+	public void setRequiredLookupToIndex(CFLibDbKeyHash256 argToIndexId);
+
+	public void setRequiredLookupToIndex(ICFBamIndex argObj);
+
+	public void setRequiredLookupToIndex(ICFBamProtIndex argObj);
+
+	public void setRequiredLookupToIndex(ICFBamPubIndex argObj);
+
 	public ICFBamRelation getOptionalLookupNarrowed();
+
+	public void setOptionalLookupNarrowed(CFLibDbKeyHash256 argNarrowedId);
+
+	public void setOptionalLookupNarrowed(ICFBamRelation argObj);
+
+	public void setOptionalLookupNarrowed(ICFBamProtRelation argObj);
+
+	public void setOptionalLookupNarrowed(ICFBamPubRelation argObj);
 
 	public List<ICFBamRelationCol> getOptionalComponentsColumns();
 

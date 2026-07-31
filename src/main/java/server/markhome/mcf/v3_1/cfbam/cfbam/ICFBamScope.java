@@ -107,6 +107,10 @@ public interface ICFBamScope
 
 	public ICFSecTenant getRequiredOwnerTenant();
 
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId);
+
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+
 	public CFLibDbKeyHash256 getRequiredTenantId();
 	public boolean equals( Object obj );
 

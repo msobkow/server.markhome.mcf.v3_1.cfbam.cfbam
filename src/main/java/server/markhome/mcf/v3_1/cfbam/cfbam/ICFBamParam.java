@@ -117,13 +117,53 @@ public interface ICFBamParam
 
 	public ICFBamServerMethod getRequiredContainerServerMeth();
 
+	public void setRequiredContainerServerMeth(CFLibDbKeyHash256 argServerMethodId);
+
+	public void setRequiredContainerServerMeth(ICFBamServerMethod argObj);
+
+	public void setRequiredContainerServerMeth(ICFBamProtServerMethod argObj);
+
+	public void setRequiredContainerServerMeth(ICFBamPubServerMethod argObj);
+
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
+
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
+
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj);
+
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj);
 
 	public ICFBamParam getOptionalLookupPrev();
 
+	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
+
+	public void setOptionalLookupPrev(ICFBamParam argObj);
+
+	public void setOptionalLookupPrev(ICFBamProtParam argObj);
+
+	public void setOptionalLookupPrev(ICFBamPubParam argObj);
+
 	public ICFBamParam getOptionalLookupNext();
 
+	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
+
+	public void setOptionalLookupNext(ICFBamParam argObj);
+
+	public void setOptionalLookupNext(ICFBamProtParam argObj);
+
+	public void setOptionalLookupNext(ICFBamPubParam argObj);
+
 	public ICFBamValue getRequiredLookupType();
+
+	public void setRequiredLookupType(CFLibDbKeyHash256 argTypeId);
+
+	public void setRequiredLookupType(ICFBamValue argObj);
+
+	public void setRequiredLookupType(ICFBamProtValue argObj);
+
+	public void setRequiredLookupType(ICFBamPubValue argObj);
 
 	public CFLibDbKeyHash256 getRequiredServerMethodId();
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
