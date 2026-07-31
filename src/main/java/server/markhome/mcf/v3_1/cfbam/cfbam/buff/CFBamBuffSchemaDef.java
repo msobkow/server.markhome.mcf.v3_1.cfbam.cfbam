@@ -88,7 +88,6 @@ public class CFBamBuffSchemaDef
 	protected String requiredProjectURL;
 	protected String requiredPublishURI;
 
-	@Override
 	public CFBamBuffSchemaDef() {
 		super();
 		requiredCTenantId = CFLibDbKeyHash256.fromHex( ICFBamSchemaDef.CTENANTID_INIT_VALUE.toString() );

@@ -76,7 +76,6 @@ public class CFBamBuffFloatCol
 {
 	protected CFLibDbKeyHash256 requiredTableId;
 
-	@Override
 	public CFBamBuffFloatCol() {
 		super();
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamFloatCol.TABLEID_INIT_VALUE.toString() );

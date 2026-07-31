@@ -77,7 +77,6 @@ public class CFBamBuffId64Gen
 	protected short requiredSlice;
 	protected long requiredBlockSize;
 
-	@Override
 	public CFBamBuffId64Gen() {
 		super();
 		requiredSlice = ICFBamId64Gen.SLICE_INIT_VALUE;

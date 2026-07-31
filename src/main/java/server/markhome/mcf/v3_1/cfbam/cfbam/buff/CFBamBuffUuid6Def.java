@@ -76,7 +76,6 @@ public class CFBamBuffUuid6Def
 {
 	protected String optionalInitValue;
 
-	@Override
 	public CFBamBuffUuid6Def() {
 		super();
 		optionalInitValue = null;

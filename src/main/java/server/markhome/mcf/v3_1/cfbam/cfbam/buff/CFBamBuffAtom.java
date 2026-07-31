@@ -76,7 +76,6 @@ public class CFBamBuffAtom
 {
 	protected String optionalDbName;
 
-	@Override
 	public CFBamBuffAtom() {
 		super();
 		optionalDbName = null;

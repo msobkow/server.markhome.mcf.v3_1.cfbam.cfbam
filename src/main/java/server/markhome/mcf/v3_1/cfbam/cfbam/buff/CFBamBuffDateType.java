@@ -76,7 +76,6 @@ public class CFBamBuffDateType
 {
 	protected CFLibDbKeyHash256 requiredSchemaDefId;
 
-	@Override
 	public CFBamBuffDateType() {
 		super();
 		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamDateType.SCHEMADEFID_INIT_VALUE.toString() );

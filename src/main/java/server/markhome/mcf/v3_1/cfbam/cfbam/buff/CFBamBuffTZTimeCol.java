@@ -76,7 +76,6 @@ public class CFBamBuffTZTimeCol
 {
 	protected CFLibDbKeyHash256 requiredTableId;
 
-	@Override
 	public CFBamBuffTZTimeCol() {
 		super();
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamTZTimeCol.TABLEID_INIT_VALUE.toString() );

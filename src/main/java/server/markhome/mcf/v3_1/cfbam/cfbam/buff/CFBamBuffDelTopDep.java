@@ -79,7 +79,6 @@ public class CFBamBuffDelTopDep
 	protected CFLibDbKeyHash256 optionalPrevId;
 	protected CFLibDbKeyHash256 optionalNextId;
 
-	@Override
 	public CFBamBuffDelTopDep() {
 		super();
 		requiredName = ICFBamDelTopDep.NAME_INIT_VALUE;

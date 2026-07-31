@@ -77,7 +77,6 @@ public class CFBamBuffBlobDef
 	protected int requiredMaxLen;
 	protected byte[] optionalInitValue;
 
-	@Override
 	public CFBamBuffBlobDef() {
 		super();
 		requiredMaxLen = ICFBamBlobDef.MAXLEN_INIT_VALUE;

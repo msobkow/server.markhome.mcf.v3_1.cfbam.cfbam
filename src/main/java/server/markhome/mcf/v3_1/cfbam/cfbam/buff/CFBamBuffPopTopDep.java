@@ -77,7 +77,6 @@ public class CFBamBuffPopTopDep
 	protected CFLibDbKeyHash256 requiredContRelationId;
 	protected String requiredName;
 
-	@Override
 	public CFBamBuffPopTopDep() {
 		super();
 		requiredContRelationId = CFLibDbKeyHash256.fromHex( ICFBamPopTopDep.CONTRELATIONID_INIT_VALUE.toString() );

@@ -91,7 +91,6 @@ public class CFBamBuffIndexCol
 	protected CFLibDbKeyHash256 optionalPrevId;
 	protected CFLibDbKeyHash256 optionalNextId;
 
-	@Override
 	public CFBamBuffIndexCol() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFBamIndexCol.ID_INIT_VALUE.toString() );
 		requiredIndexId = CFLibDbKeyHash256.fromHex( ICFBamIndexCol.INDEXID_INIT_VALUE.toString() );
@@ -109,12 +108,14 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredId();
+		return (requiredId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredId) {
-		this.requiredId = requiredId;
+		if(requiredId != null) {
+			this.requiredId = requiredId;
+		}
 	}
 
 	@Override

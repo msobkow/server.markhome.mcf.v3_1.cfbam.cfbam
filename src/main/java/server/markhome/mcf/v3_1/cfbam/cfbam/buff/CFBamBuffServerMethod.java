@@ -89,7 +89,6 @@ public class CFBamBuffServerMethod
 	protected String requiredCppMethodBody;
 	protected String requiredCsMethodBody;
 
-	@Override
 	public CFBamBuffServerMethod() {
 		super();
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamServerMethod.TABLEID_INIT_VALUE.toString() );

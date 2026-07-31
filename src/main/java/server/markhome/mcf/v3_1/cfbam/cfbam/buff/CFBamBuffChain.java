@@ -90,7 +90,6 @@ public class CFBamBuffChain
 	protected CFLibDbKeyHash256 requiredPrevRelationId;
 	protected CFLibDbKeyHash256 requiredNextRelationId;
 
-	@Override
 	public CFBamBuffChain() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFBamChain.ID_INIT_VALUE.toString() );
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
@@ -107,12 +106,14 @@ public class CFBamBuffChain
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredId();
+		return (requiredId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredId) {
-		this.requiredId = requiredId;
+		if(requiredId != null) {
+			this.requiredId = requiredId;
+		}
 	}
 
 	@Override

@@ -82,7 +82,6 @@ public class CFBamBuffSchemaRef
 	protected CFLibDbKeyHash256 optionalPrevId;
 	protected CFLibDbKeyHash256 optionalNextId;
 
-	@Override
 	public CFBamBuffSchemaRef() {
 		super();
 		requiredSchemaId = CFLibDbKeyHash256.fromHex( ICFBamSchemaRef.SCHEMAID_INIT_VALUE.toString() );

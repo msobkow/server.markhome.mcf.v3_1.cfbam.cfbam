@@ -76,7 +76,6 @@ public class CFBamBuffTableTweak
 {
 	protected CFLibDbKeyHash256 requiredTableId;
 
-	@Override
 	public CFBamBuffTableTweak() {
 		super();
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamTableTweak.TABLEID_INIT_VALUE.toString() );

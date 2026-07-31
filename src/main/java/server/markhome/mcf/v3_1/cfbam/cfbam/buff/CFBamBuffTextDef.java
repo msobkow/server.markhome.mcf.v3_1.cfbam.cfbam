@@ -78,7 +78,6 @@ public class CFBamBuffTextDef
 	protected String optionalInitValue;
 	protected String optionalXmlElementName;
 
-	@Override
 	public CFBamBuffTextDef() {
 		super();
 		requiredMaxLen = ICFBamTextDef.MAXLEN_INIT_VALUE;

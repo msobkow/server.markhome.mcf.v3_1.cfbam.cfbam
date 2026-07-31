@@ -87,7 +87,6 @@ public class CFBamBuffIndex
 	protected boolean requiredIsDbMapped;
 	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 
-	@Override
 	public CFBamBuffIndex() {
 		super();
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamIndex.TABLEID_INIT_VALUE.toString() );

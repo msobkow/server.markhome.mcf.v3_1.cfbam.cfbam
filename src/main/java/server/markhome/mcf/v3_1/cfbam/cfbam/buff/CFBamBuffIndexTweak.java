@@ -76,7 +76,6 @@ public class CFBamBuffIndexTweak
 {
 	protected CFLibDbKeyHash256 requiredIndexId;
 
-	@Override
 	public CFBamBuffIndexTweak() {
 		super();
 		requiredIndexId = CFLibDbKeyHash256.fromHex( ICFBamIndexTweak.INDEXID_INIT_VALUE.toString() );

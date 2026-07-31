@@ -76,7 +76,6 @@ public class CFBamBuffServerProc
 {
 	protected String optionalDummy;
 
-	@Override
 	public CFBamBuffServerProc() {
 		super();
 		optionalDummy = null;

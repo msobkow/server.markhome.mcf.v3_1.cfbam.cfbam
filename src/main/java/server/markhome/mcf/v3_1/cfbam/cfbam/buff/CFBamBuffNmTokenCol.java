@@ -76,7 +76,6 @@ public class CFBamBuffNmTokenCol
 {
 	protected CFLibDbKeyHash256 requiredTableId;
 
-	@Override
 	public CFBamBuffNmTokenCol() {
 		super();
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamNmTokenCol.TABLEID_INIT_VALUE.toString() );

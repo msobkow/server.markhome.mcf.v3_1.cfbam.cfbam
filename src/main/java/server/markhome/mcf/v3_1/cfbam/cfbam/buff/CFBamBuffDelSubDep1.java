@@ -77,7 +77,6 @@ public class CFBamBuffDelSubDep1
 	protected CFLibDbKeyHash256 requiredDelTopDepId;
 	protected String requiredName;
 
-	@Override
 	public CFBamBuffDelSubDep1() {
 		super();
 		requiredDelTopDepId = CFLibDbKeyHash256.fromHex( ICFBamDelSubDep1.DELTOPDEPID_INIT_VALUE.toString() );

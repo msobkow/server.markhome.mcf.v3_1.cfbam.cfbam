@@ -77,7 +77,6 @@ public class CFBamBuffSchemaRole
 	protected CFLibDbKeyHash256 requiredSchemaDefId;
 	protected ICFBamPubSchema.RoleScopeEnum requiredRoleScope;
 
-	@Override
 	public CFBamBuffSchemaRole() {
 		super();
 		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamSchemaRole.SCHEMADEFID_INIT_VALUE.toString() );

@@ -77,7 +77,6 @@ public class CFBamBuffPopDep
 	protected CFLibDbKeyHash256 optionalDefSchemaId;
 	protected CFLibDbKeyHash256 requiredRelationId;
 
-	@Override
 	public CFBamBuffPopDep() {
 		super();
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();

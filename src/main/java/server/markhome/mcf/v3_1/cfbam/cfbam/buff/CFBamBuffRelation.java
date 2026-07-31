@@ -94,7 +94,6 @@ public class CFBamBuffRelation
 	protected CFLibDbKeyHash256 optionalNarrowedId;
 	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 
-	@Override
 	public CFBamBuffRelation() {
 		super();
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamRelation.TABLEID_INIT_VALUE.toString() );

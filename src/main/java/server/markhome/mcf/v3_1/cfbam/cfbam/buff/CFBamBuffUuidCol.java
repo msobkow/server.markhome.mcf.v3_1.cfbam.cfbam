@@ -76,7 +76,6 @@ public class CFBamBuffUuidCol
 {
 	protected CFLibDbKeyHash256 requiredTableId;
 
-	@Override
 	public CFBamBuffUuidCol() {
 		super();
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamUuidCol.TABLEID_INIT_VALUE.toString() );

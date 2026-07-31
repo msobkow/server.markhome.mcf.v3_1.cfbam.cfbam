@@ -77,7 +77,6 @@ public class CFBamBuffClearSubDep1
 	protected CFLibDbKeyHash256 requiredClearTopDepId;
 	protected String requiredName;
 
-	@Override
 	public CFBamBuffClearSubDep1() {
 		super();
 		requiredClearTopDepId = CFLibDbKeyHash256.fromHex( ICFBamClearSubDep1.CLEARTOPDEPID_INIT_VALUE.toString() );

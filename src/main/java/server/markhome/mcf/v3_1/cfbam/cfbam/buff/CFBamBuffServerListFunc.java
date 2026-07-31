@@ -76,7 +76,6 @@ public class CFBamBuffServerListFunc
 {
 	protected CFLibDbKeyHash256 optionalRetTableId;
 
-	@Override
 	public CFBamBuffServerListFunc() {
 		super();
 		optionalRetTableId = CFLibDbKeyHash256.nullGet();

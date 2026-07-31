@@ -76,7 +76,6 @@ public class CFBamBuffTZTimestampType
 {
 	protected CFLibDbKeyHash256 requiredSchemaDefId;
 
-	@Override
 	public CFBamBuffTZTimestampType() {
 		super();
 		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamTZTimestampType.SCHEMADEFID_INIT_VALUE.toString() );

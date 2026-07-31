@@ -77,7 +77,6 @@ public class CFBamBuffClearDep
 	protected CFLibDbKeyHash256 requiredRelationId;
 	protected CFLibDbKeyHash256 optionalDefSchemaId;
 
-	@Override
 	public CFBamBuffClearDep() {
 		super();
 		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamClearDep.RELATIONID_INIT_VALUE.toString() );

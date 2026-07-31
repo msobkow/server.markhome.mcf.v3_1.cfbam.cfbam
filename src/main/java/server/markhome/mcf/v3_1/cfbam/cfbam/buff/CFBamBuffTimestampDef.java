@@ -76,7 +76,6 @@ public class CFBamBuffTimestampDef
 {
 	protected String optionalDummy;
 
-	@Override
 	public CFBamBuffTimestampDef() {
 		super();
 		optionalDummy = null;

@@ -85,7 +85,6 @@ public class CFBamBuffRoleDef
 	protected String requiredEnables;
 	protected String requiredIncludes;
 
-	@Override
 	public CFBamBuffRoleDef() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFBamRoleDef.ID_INIT_VALUE.toString() );
 		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamRoleDef.SCOPEID_INIT_VALUE.toString() );
@@ -97,12 +96,14 @@ public class CFBamBuffRoleDef
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredId();
+		return (requiredId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredId) {
-		this.requiredId = requiredId;
+		if(requiredId != null) {
+			this.requiredId = requiredId;
+		}
 	}
 
 	@Override

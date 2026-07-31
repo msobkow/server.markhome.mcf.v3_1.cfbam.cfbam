@@ -87,7 +87,6 @@ public class CFBamBuffTweak
 	protected boolean requiredReplacesInherited;
 	protected String requiredTweakGelText;
 
-	@Override
 	public CFBamBuffTweak() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFBamTweak.ID_INIT_VALUE.toString() );
 		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFBamTweak.TENANTID_INIT_VALUE.toString() );
@@ -101,12 +100,14 @@ public class CFBamBuffTweak
 
 	@Override
 	public CFLibDbKeyHash256 getPKey() {
-		return getRequiredId();
+		return (requiredId);
 	}
 
 	@Override
 	public void setPKey(CFLibDbKeyHash256 requiredId) {
-		this.requiredId = requiredId;
+		if(requiredId != null) {
+			this.requiredId = requiredId;
+		}
 	}
 
 	@Override

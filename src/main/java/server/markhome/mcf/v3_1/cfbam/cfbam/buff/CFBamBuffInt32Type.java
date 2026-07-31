@@ -76,7 +76,6 @@ public class CFBamBuffInt32Type
 {
 	protected CFLibDbKeyHash256 requiredSchemaDefId;
 
-	@Override
 	public CFBamBuffInt32Type() {
 		super();
 		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamInt32Type.SCHEMADEFID_INIT_VALUE.toString() );

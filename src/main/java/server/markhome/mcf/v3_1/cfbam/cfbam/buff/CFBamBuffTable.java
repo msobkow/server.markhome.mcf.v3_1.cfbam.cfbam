@@ -97,7 +97,6 @@ public class CFBamBuffTable
 	protected ICFBamPubSchema.SecScopeEnum requiredSecScope;
 	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 
-	@Override
 	public CFBamBuffTable() {
 		super();
 		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamTable.SCHEMADEFID_INIT_VALUE.toString() );
