@@ -103,7 +103,6 @@ public class CFBamBuffScope
 		return( getPKey() );
 	}
 
-	@Override
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -194,13 +193,23 @@ public class CFBamBuffScope
 			throw new CFLibNullArgumentException(getClass(), "setOwnerTenant", 1, "argObj");
 		}
 		else {
-			requiredTenantId = argObj.getRequiredId();
+			setRequiredTenantId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
 		return( requiredTenantId );
+	}
+
+	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTenantId",
+				1,
+				"value" );
+		}
+		requiredTenantId = value;
 	}
 
 	@Override

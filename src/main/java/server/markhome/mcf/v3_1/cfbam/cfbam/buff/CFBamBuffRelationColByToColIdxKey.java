@@ -83,7 +83,6 @@ public class CFBamBuffRelationColByToColIdxKey
 		return( requiredToColId );
 	}
 
-	@Override
 	public void setRequiredToColId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

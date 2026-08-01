@@ -83,7 +83,6 @@ public class CFBamBuffRelationByFromKeyIdxKey
 		return( requiredFromIndexId );
 	}
 
-	@Override
 	public void setRequiredFromIndexId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

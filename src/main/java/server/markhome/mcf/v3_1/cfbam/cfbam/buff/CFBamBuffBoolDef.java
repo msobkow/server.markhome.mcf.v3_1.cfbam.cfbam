@@ -97,7 +97,6 @@ public class CFBamBuffBoolDef
 		return( optionalInitValue );
 	}
 
-	@Override
 	public void setOptionalInitValue( Boolean value ) {
 		optionalInitValue = value;
 	}
@@ -107,7 +106,6 @@ public class CFBamBuffBoolDef
 		return( optionalFalseString );
 	}
 
-	@Override
 	public void setOptionalFalseString( String value ) {
 		if( value != null && value.length() > 32 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -125,7 +123,6 @@ public class CFBamBuffBoolDef
 		return( optionalTrueString );
 	}
 
-	@Override
 	public void setOptionalTrueString( String value ) {
 		if( value != null && value.length() > 32 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -143,7 +140,6 @@ public class CFBamBuffBoolDef
 		return( optionalNullString );
 	}
 
-	@Override
 	public void setOptionalNullString( String value ) {
 		if( value != null && value.length() > 32 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

@@ -83,7 +83,6 @@ public class CFBamBuffSchemaRoleByRoleScopeIdxKey
 		return( requiredRoleScope );
 	}
 
-	@Override
 	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

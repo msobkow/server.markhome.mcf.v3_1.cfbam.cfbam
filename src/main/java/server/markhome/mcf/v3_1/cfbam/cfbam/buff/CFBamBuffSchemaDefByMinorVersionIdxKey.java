@@ -83,7 +83,6 @@ public class CFBamBuffSchemaDefByMinorVersionIdxKey
 		return( requiredMinorVersionId );
 	}
 
-	@Override
 	public void setRequiredMinorVersionId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

@@ -96,12 +96,21 @@ public class CFBamBuffTableColH extends CFBamBuffValueH
 		return( requiredTableId );
 	}
 
+	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTableId",
+				1,
+				"value" );
+		}
+		requiredTableId = value;
+	}
+
 	@Override
 	public String getOptionalDbName() {
 		return( optionalDbName );
 	}
 
-	@Override
 	public void setOptionalDbName( String value ) {
 		if( value != null && value.length() > 32 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -119,12 +128,15 @@ public class CFBamBuffTableColH extends CFBamBuffValueH
 		return( optionalDataId );
 	}
 
+	public void setOptionalDataId( CFLibDbKeyHash256 value ) {
+		optionalDataId = value;
+	}
+
 	@Override
 	public String getOptionalXmlElementName() {
 		return( optionalXmlElementName );
 	}
 
-	@Override
 	public void setOptionalXmlElementName( String value ) {
 		if( value != null && value.length() > 192 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

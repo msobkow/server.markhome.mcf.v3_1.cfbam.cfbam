@@ -83,7 +83,6 @@ public class CFBamBuffIndexColByColIdxKey
 		return( requiredColumnId );
 	}
 
-	@Override
 	public void setRequiredColumnId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

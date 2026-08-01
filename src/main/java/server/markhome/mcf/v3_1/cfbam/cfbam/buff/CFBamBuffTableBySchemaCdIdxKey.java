@@ -85,7 +85,6 @@ public class CFBamBuffTableBySchemaCdIdxKey
 		return( requiredSchemaDefId );
 	}
 
-	@Override
 	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -101,7 +100,6 @@ public class CFBamBuffTableBySchemaCdIdxKey
 		return( requiredTableClassCode );
 	}
 
-	@Override
 	public void setRequiredTableClassCode( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

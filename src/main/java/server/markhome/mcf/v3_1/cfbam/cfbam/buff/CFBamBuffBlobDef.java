@@ -119,7 +119,6 @@ public class CFBamBuffBlobDef
 		return( optionalInitValue );
 	}
 
-	@Override
 	public void setOptionalInitValue( byte[] value ) {
 		if( value != null && value.length > 16384 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

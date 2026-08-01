@@ -90,7 +90,6 @@ public class CFBamBuffDbKeyHash384DefH extends CFBamBuffAtomH
 		return( optionalInitValue );
 	}
 
-	@Override
 	public void setOptionalInitValue( String value ) {
 		if( value != null && value.length() > 96 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

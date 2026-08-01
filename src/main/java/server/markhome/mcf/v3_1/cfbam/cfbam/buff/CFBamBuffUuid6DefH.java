@@ -90,7 +90,6 @@ public class CFBamBuffUuid6DefH extends CFBamBuffAtomH
 		return( optionalInitValue );
 	}
 
-	@Override
 	public void setOptionalInitValue( String value ) {
 		if( value != null && value.length() > 62 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

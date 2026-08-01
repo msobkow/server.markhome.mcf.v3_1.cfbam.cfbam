@@ -123,7 +123,7 @@ public class CFBamBuffSchemaRef
 			throw new CFLibNullArgumentException(getClass(), "setContainerSchema", 1, "argObj");
 		}
 		else {
-			requiredSchemaId = argObj.getRequiredId();
+			setRequiredSchemaId(argObj.getRequiredId());
 		}
 	}
 
@@ -133,7 +133,7 @@ public class CFBamBuffSchemaRef
 			throw new CFLibNullArgumentException(getClass(), "setContainerSchema", 1, "argObj");
 		}
 		else {
-			requiredSchemaId = argObj.getRequiredId();
+			setRequiredSchemaId(argObj.getRequiredId());
 		}
 	}
 
@@ -143,7 +143,7 @@ public class CFBamBuffSchemaRef
 			throw new CFLibNullArgumentException(getClass(), "setContainerSchema", 1, "argObj");
 		}
 		else {
-			requiredSchemaId = argObj.getRequiredId();
+			setRequiredSchemaId(argObj.getRequiredId());
 		}
 	}
 
@@ -169,30 +169,30 @@ public class CFBamBuffSchemaRef
 	@Override
 	public void setOptionalLookupRefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
-			optionalRefSchemaId = null;
+			setOptionalRefSchemaId(null);
 		}
 		else {
-			optionalRefSchemaId = argObj.getRequiredId();
+			setOptionalRefSchemaId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public void setOptionalLookupRefSchema(ICFBamProtSchemaDef argObj) {
 		if(argObj == null) {
-			optionalRefSchemaId = null;
+			setOptionalRefSchemaId(null);
 		}
 		else {
-			optionalRefSchemaId = argObj.getRequiredId();
+			setOptionalRefSchemaId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public void setOptionalLookupRefSchema(ICFBamPubSchemaDef argObj) {
 		if(argObj == null) {
-			optionalRefSchemaId = null;
+			setOptionalRefSchemaId(null);
 		}
 		else {
-			optionalRefSchemaId = argObj.getRequiredId();
+			setOptionalRefSchemaId(argObj.getRequiredId());
 		}
 	}
 
@@ -218,30 +218,30 @@ public class CFBamBuffSchemaRef
 	@Override
 	public void setOptionalLookupPrev(ICFBamSchemaRef argObj) {
 		if(argObj == null) {
-			optionalPrevId = null;
+			setOptionalPrevId(null);
 		}
 		else {
-			optionalPrevId = argObj.getRequiredId();
+			setOptionalPrevId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamProtSchemaRef argObj) {
 		if(argObj == null) {
-			optionalPrevId = null;
+			setOptionalPrevId(null);
 		}
 		else {
-			optionalPrevId = argObj.getRequiredId();
+			setOptionalPrevId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamPubSchemaRef argObj) {
 		if(argObj == null) {
-			optionalPrevId = null;
+			setOptionalPrevId(null);
 		}
 		else {
-			optionalPrevId = argObj.getRequiredId();
+			setOptionalPrevId(argObj.getRequiredId());
 		}
 	}
 
@@ -267,30 +267,30 @@ public class CFBamBuffSchemaRef
 	@Override
 	public void setOptionalLookupNext(ICFBamSchemaRef argObj) {
 		if(argObj == null) {
-			optionalNextId = null;
+			setOptionalNextId(null);
 		}
 		else {
-			optionalNextId = argObj.getRequiredId();
+			setOptionalNextId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public void setOptionalLookupNext(ICFBamProtSchemaRef argObj) {
 		if(argObj == null) {
-			optionalNextId = null;
+			setOptionalNextId(null);
 		}
 		else {
-			optionalNextId = argObj.getRequiredId();
+			setOptionalNextId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public void setOptionalLookupNext(ICFBamPubSchemaRef argObj) {
 		if(argObj == null) {
-			optionalNextId = null;
+			setOptionalNextId(null);
 		}
 		else {
-			optionalNextId = argObj.getRequiredId();
+			setOptionalNextId(argObj.getRequiredId());
 		}
 	}
 
@@ -299,12 +299,21 @@ public class CFBamBuffSchemaRef
 		return( requiredSchemaId );
 	}
 
+	public void setRequiredSchemaId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSchemaId",
+				1,
+				"value" );
+		}
+		requiredSchemaId = value;
+	}
+
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -328,7 +337,6 @@ public class CFBamBuffSchemaRef
 		return( requiredRefModelName );
 	}
 
-	@Override
 	public void setRequiredRefModelName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -352,7 +360,6 @@ public class CFBamBuffSchemaRef
 		return( requiredIncludeRoot );
 	}
 
-	@Override
 	public void setRequiredIncludeRoot( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -376,14 +383,26 @@ public class CFBamBuffSchemaRef
 		return( optionalRefSchemaId );
 	}
 
+	public void setOptionalRefSchemaId( CFLibDbKeyHash256 value ) {
+		optionalRefSchemaId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getOptionalPrevId() {
 		return( optionalPrevId );
 	}
 
+	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		optionalPrevId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getOptionalNextId() {
 		return( optionalNextId );
+	}
+
+	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		optionalNextId = value;
 	}
 
 	@Override

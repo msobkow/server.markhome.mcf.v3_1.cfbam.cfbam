@@ -94,7 +94,6 @@ public class CFBamBuffDoubleDefH extends CFBamBuffAtomH
 		return( optionalInitValue );
 	}
 
-	@Override
 	public void setOptionalInitValue( Double value ) {
 		if( value < ICFBamDoubleDef.INITVALUE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
@@ -120,7 +119,6 @@ public class CFBamBuffDoubleDefH extends CFBamBuffAtomH
 		return( optionalMinValue );
 	}
 
-	@Override
 	public void setOptionalMinValue( Double value ) {
 		if( value < ICFBamDoubleDef.MINVALUE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
@@ -146,7 +144,6 @@ public class CFBamBuffDoubleDefH extends CFBamBuffAtomH
 		return( optionalMaxValue );
 	}
 
-	@Override
 	public void setOptionalMaxValue( Double value ) {
 		if( value < ICFBamDoubleDef.MAXVALUE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),

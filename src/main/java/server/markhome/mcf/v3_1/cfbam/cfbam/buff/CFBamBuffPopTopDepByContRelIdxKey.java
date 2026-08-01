@@ -83,7 +83,6 @@ public class CFBamBuffPopTopDepByContRelIdxKey
 		return( requiredContRelationId );
 	}
 
-	@Override
 	public void setRequiredContRelationId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

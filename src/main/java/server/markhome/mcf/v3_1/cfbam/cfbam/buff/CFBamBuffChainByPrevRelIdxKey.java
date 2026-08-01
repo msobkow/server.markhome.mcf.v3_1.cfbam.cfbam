@@ -83,7 +83,6 @@ public class CFBamBuffChainByPrevRelIdxKey
 		return( requiredPrevRelationId );
 	}
 
-	@Override
 	public void setRequiredPrevRelationId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

@@ -120,7 +120,6 @@ public class CFBamBuffStringDefH extends CFBamBuffAtomH
 		return( requiredIsPolymorph );
 	}
 
-	@Override
 	public void setRequiredIsPolymorph( boolean value ) {
 		requiredIsPolymorph = value;
 	}
@@ -130,7 +129,6 @@ public class CFBamBuffStringDefH extends CFBamBuffAtomH
 		return( optionalInitValue );
 	}
 
-	@Override
 	public void setOptionalInitValue( String value ) {
 		if( value != null && value.length() > 500 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

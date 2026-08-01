@@ -113,7 +113,7 @@ public class CFBamBuffDelSubDep1
 			throw new CFLibNullArgumentException(getClass(), "setContainerDelTopDep", 1, "argObj");
 		}
 		else {
-			requiredDelTopDepId = argObj.getRequiredId();
+			setRequiredDelTopDepId(argObj.getRequiredId());
 		}
 	}
 
@@ -123,7 +123,7 @@ public class CFBamBuffDelSubDep1
 			throw new CFLibNullArgumentException(getClass(), "setContainerDelTopDep", 1, "argObj");
 		}
 		else {
-			requiredDelTopDepId = argObj.getRequiredId();
+			setRequiredDelTopDepId(argObj.getRequiredId());
 		}
 	}
 
@@ -133,7 +133,7 @@ public class CFBamBuffDelSubDep1
 			throw new CFLibNullArgumentException(getClass(), "setContainerDelTopDep", 1, "argObj");
 		}
 		else {
-			requiredDelTopDepId = argObj.getRequiredId();
+			setRequiredDelTopDepId(argObj.getRequiredId());
 		}
 	}
 
@@ -166,12 +166,21 @@ public class CFBamBuffDelSubDep1
 		return( requiredDelTopDepId );
 	}
 
+	public void setRequiredDelTopDepId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredDelTopDepId",
+				1,
+				"value" );
+		}
+		requiredDelTopDepId = value;
+	}
+
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

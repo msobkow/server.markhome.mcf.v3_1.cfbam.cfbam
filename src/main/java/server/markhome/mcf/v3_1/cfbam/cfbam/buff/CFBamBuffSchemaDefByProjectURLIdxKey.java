@@ -85,7 +85,6 @@ public class CFBamBuffSchemaDefByProjectURLIdxKey
 		return( requiredCTenantId );
 	}
 
-	@Override
 	public void setRequiredCTenantId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -101,7 +100,6 @@ public class CFBamBuffSchemaDefByProjectURLIdxKey
 		return( requiredProjectURL );
 	}
 
-	@Override
 	public void setRequiredProjectURL( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

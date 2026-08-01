@@ -113,7 +113,7 @@ public class CFBamBuffClearSubDep3
 			throw new CFLibNullArgumentException(getClass(), "setContainerClearSubDep2", 1, "argObj");
 		}
 		else {
-			requiredClearSubDep2Id = argObj.getRequiredId();
+			setRequiredClearSubDep2Id(argObj.getRequiredId());
 		}
 	}
 
@@ -123,7 +123,7 @@ public class CFBamBuffClearSubDep3
 			throw new CFLibNullArgumentException(getClass(), "setContainerClearSubDep2", 1, "argObj");
 		}
 		else {
-			requiredClearSubDep2Id = argObj.getRequiredId();
+			setRequiredClearSubDep2Id(argObj.getRequiredId());
 		}
 	}
 
@@ -133,7 +133,7 @@ public class CFBamBuffClearSubDep3
 			throw new CFLibNullArgumentException(getClass(), "setContainerClearSubDep2", 1, "argObj");
 		}
 		else {
-			requiredClearSubDep2Id = argObj.getRequiredId();
+			setRequiredClearSubDep2Id(argObj.getRequiredId());
 		}
 	}
 
@@ -142,12 +142,21 @@ public class CFBamBuffClearSubDep3
 		return( requiredClearSubDep2Id );
 	}
 
+	public void setRequiredClearSubDep2Id( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredClearSubDep2Id",
+				1,
+				"value" );
+		}
+		requiredClearSubDep2Id = value;
+	}
+
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

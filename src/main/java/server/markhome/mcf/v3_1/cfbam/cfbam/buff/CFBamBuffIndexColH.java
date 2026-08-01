@@ -230,19 +230,34 @@ public class CFBamBuffIndexColH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredId() {
-        return( pkey.getRequiredId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredId( CFLibDbKeyHash256 requiredId ) {
-        pkey.setRequiredId( requiredId );
-    }
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredIndexId() {
 		return( requiredIndexId );
+	}
+
+	public void setRequiredIndexId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredIndexId",
+				1,
+				"value" );
+		}
+		requiredIndexId = value;
 	}
 
 	@Override
@@ -250,12 +265,15 @@ public class CFBamBuffIndexColH
 		return( optionalDefSchemaId );
 	}
 
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		optionalDefSchemaId = value;
+	}
+
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -279,7 +297,6 @@ public class CFBamBuffIndexColH
 		return( optionalShortName );
 	}
 
-	@Override
 	public void setOptionalShortName( String value ) {
 		if( value != null && value.length() > 16 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -297,7 +314,6 @@ public class CFBamBuffIndexColH
 		return( optionalLabel );
 	}
 
-	@Override
 	public void setOptionalLabel( String value ) {
 		if( value != null && value.length() > 64 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -315,7 +331,6 @@ public class CFBamBuffIndexColH
 		return( optionalShortDescription );
 	}
 
-	@Override
 	public void setOptionalShortDescription( String value ) {
 		if( value != null && value.length() > 128 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -333,7 +348,6 @@ public class CFBamBuffIndexColH
 		return( optionalDescription );
 	}
 
-	@Override
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 1023 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -351,12 +365,21 @@ public class CFBamBuffIndexColH
 		return( requiredColumnId );
 	}
 
+	public void setRequiredColumnId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredColumnId",
+				1,
+				"value" );
+		}
+		requiredColumnId = value;
+	}
+
 	@Override
 	public boolean getRequiredIsAscending() {
 		return( requiredIsAscending );
 	}
 
-	@Override
 	public void setRequiredIsAscending( boolean value ) {
 		requiredIsAscending = value;
 	}
@@ -366,9 +389,17 @@ public class CFBamBuffIndexColH
 		return( optionalPrevId );
 	}
 
+	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		optionalPrevId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getOptionalNextId() {
 		return( optionalNextId );
+	}
+
+	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		optionalNextId = value;
 	}
 
     @Override

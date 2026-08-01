@@ -83,7 +83,6 @@ public class CFBamBuffIndexColByPrevIdxKey
 		return( optionalPrevId );
 	}
 
-	@Override
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
 		optionalPrevId = value;
 	}

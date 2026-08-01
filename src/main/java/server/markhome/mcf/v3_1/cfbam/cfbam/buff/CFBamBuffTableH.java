@@ -132,9 +132,23 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( requiredSchemaDefId );
 	}
 
+	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSchemaDefId",
+				1,
+				"value" );
+		}
+		requiredSchemaDefId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
 		return( optionalDefSchemaId );
+	}
+
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		optionalDefSchemaId = value;
 	}
 
 	@Override
@@ -142,7 +156,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -166,7 +179,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( optionalDbName );
 	}
 
-	@Override
 	public void setOptionalDbName( String value ) {
 		if( value != null && value.length() > 32 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -184,7 +196,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( optionalShortName );
 	}
 
-	@Override
 	public void setOptionalShortName( String value ) {
 		if( value != null && value.length() > 16 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -202,7 +213,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( optionalLabel );
 	}
 
-	@Override
 	public void setOptionalLabel( String value ) {
 		if( value != null && value.length() > 64 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -220,7 +230,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( optionalShortDescription );
 	}
 
-	@Override
 	public void setOptionalShortDescription( String value ) {
 		if( value != null && value.length() > 50 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -238,7 +247,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( optionalDescription );
 	}
 
-	@Override
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 100 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -256,7 +264,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( requiredPageData );
 	}
 
-	@Override
 	public void setRequiredPageData( boolean value ) {
 		requiredPageData = value;
 	}
@@ -266,12 +273,15 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( optionalPrimaryIndexId );
 	}
 
+	public void setOptionalPrimaryIndexId( CFLibDbKeyHash256 value ) {
+		optionalPrimaryIndexId = value;
+	}
+
 	@Override
 	public String getRequiredTableClassCode() {
 		return( requiredTableClassCode );
 	}
 
-	@Override
 	public void setRequiredTableClassCode( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -295,9 +305,17 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( optionalLookupIndexId );
 	}
 
+	public void setOptionalLookupIndexId( CFLibDbKeyHash256 value ) {
+		optionalLookupIndexId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getOptionalAltIndexId() {
 		return( optionalAltIndexId );
+	}
+
+	public void setOptionalAltIndexId( CFLibDbKeyHash256 value ) {
+		optionalAltIndexId = value;
 	}
 
 	@Override
@@ -305,12 +323,15 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( optionalQualifyingTableId );
 	}
 
+	public void setOptionalQualifyingTableId( CFLibDbKeyHash256 value ) {
+		optionalQualifyingTableId = value;
+	}
+
 	@Override
 	public boolean getRequiredIsInstantiable() {
 		return( requiredIsInstantiable );
 	}
 
-	@Override
 	public void setRequiredIsInstantiable( boolean value ) {
 		requiredIsInstantiable = value;
 	}
@@ -320,7 +341,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( requiredHasHistory );
 	}
 
-	@Override
 	public void setRequiredHasHistory( boolean value ) {
 		requiredHasHistory = value;
 	}
@@ -330,7 +350,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( requiredHasAuditColumns );
 	}
 
-	@Override
 	public void setRequiredHasAuditColumns( boolean value ) {
 		requiredHasAuditColumns = value;
 	}
@@ -340,7 +359,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( requiredIsMutable );
 	}
 
-	@Override
 	public void setRequiredIsMutable( boolean value ) {
 		requiredIsMutable = value;
 	}
@@ -350,7 +368,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( requiredIsServerOnly );
 	}
 
-	@Override
 	public void setRequiredIsServerOnly( boolean value ) {
 		requiredIsServerOnly = value;
 	}
@@ -360,7 +377,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( requiredLoaderBehaviour );
 	}
 
-	@Override
 	public void setRequiredLoaderBehaviour( ICFBamPubSchema.LoaderBehaviourEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -376,7 +392,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( requiredSecScope );
 	}
 
-	@Override
 	public void setRequiredSecScope( ICFBamPubSchema.SecScopeEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -392,7 +407,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 		return( requiredCodeVis );
 	}
 
-	@Override
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

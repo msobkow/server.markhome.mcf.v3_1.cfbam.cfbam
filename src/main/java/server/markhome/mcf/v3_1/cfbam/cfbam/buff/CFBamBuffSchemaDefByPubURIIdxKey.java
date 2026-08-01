@@ -85,7 +85,6 @@ public class CFBamBuffSchemaDefByPubURIIdxKey
 		return( requiredCTenantId );
 	}
 
-	@Override
 	public void setRequiredCTenantId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -101,7 +100,6 @@ public class CFBamBuffSchemaDefByPubURIIdxKey
 		return( requiredPublishURI );
 	}
 
-	@Override
 	public void setRequiredPublishURI( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

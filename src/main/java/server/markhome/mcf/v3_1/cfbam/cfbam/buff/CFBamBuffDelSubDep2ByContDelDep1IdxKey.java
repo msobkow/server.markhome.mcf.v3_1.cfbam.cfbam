@@ -83,7 +83,6 @@ public class CFBamBuffDelSubDep2ByContDelDep1IdxKey
 		return( requiredDelSubDep1Id );
 	}
 
-	@Override
 	public void setRequiredDelSubDep1Id( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

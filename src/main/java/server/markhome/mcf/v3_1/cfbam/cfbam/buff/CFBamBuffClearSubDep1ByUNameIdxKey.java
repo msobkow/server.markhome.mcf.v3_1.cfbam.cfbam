@@ -85,7 +85,6 @@ public class CFBamBuffClearSubDep1ByUNameIdxKey
 		return( requiredClearTopDepId );
 	}
 
-	@Override
 	public void setRequiredClearTopDepId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -101,7 +100,6 @@ public class CFBamBuffClearSubDep1ByUNameIdxKey
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

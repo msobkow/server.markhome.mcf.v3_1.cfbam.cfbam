@@ -95,7 +95,6 @@ public class CFBamBuffFloatDef
 		return( optionalInitValue );
 	}
 
-	@Override
 	public void setOptionalInitValue( Float value ) {
 		if( value < ICFBamFloatDef.INITVALUE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
@@ -121,7 +120,6 @@ public class CFBamBuffFloatDef
 		return( optionalMinValue );
 	}
 
-	@Override
 	public void setOptionalMinValue( Float value ) {
 		if( value < ICFBamFloatDef.MINVALUE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
@@ -147,7 +145,6 @@ public class CFBamBuffFloatDef
 		return( optionalMaxValue );
 	}
 
-	@Override
 	public void setOptionalMaxValue( Float value ) {
 		if( value < ICFBamFloatDef.MAXVALUE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),

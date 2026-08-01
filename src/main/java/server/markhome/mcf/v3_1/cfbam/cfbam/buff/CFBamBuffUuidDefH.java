@@ -90,7 +90,6 @@ public class CFBamBuffUuidDefH extends CFBamBuffAtomH
 		return( optionalInitValue );
 	}
 
-	@Override
 	public void setOptionalInitValue( UUID value ) {
 		optionalInitValue = value;
 	}

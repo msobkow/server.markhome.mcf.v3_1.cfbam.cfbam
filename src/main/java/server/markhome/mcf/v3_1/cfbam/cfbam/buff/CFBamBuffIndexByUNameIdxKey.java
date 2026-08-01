@@ -85,7 +85,6 @@ public class CFBamBuffIndexByUNameIdxKey
 		return( requiredTableId );
 	}
 
-	@Override
 	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -101,7 +100,6 @@ public class CFBamBuffIndexByUNameIdxKey
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

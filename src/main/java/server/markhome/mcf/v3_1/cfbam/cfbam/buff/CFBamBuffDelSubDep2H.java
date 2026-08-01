@@ -92,12 +92,21 @@ public class CFBamBuffDelSubDep2H extends CFBamBuffDelDepH
 		return( requiredDelSubDep1Id );
 	}
 
+	public void setRequiredDelSubDep1Id( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredDelSubDep1Id",
+				1,
+				"value" );
+		}
+		requiredDelSubDep1Id = value;
+	}
+
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

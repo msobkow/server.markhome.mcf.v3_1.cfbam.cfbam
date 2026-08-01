@@ -83,7 +83,6 @@ public class CFBamBuffServerObjFuncByRetTblIdxKey
 		return( optionalRetTableId );
 	}
 
-	@Override
 	public void setOptionalRetTableId( CFLibDbKeyHash256 value ) {
 		optionalRetTableId = value;
 	}

@@ -116,9 +116,23 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 		return( requiredTableId );
 	}
 
+	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTableId",
+				1,
+				"value" );
+		}
+		requiredTableId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
 		return( optionalDefSchemaId );
+	}
+
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		optionalDefSchemaId = value;
 	}
 
 	@Override
@@ -126,7 +140,6 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -150,7 +163,6 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 		return( optionalShortName );
 	}
 
-	@Override
 	public void setOptionalShortName( String value ) {
 		if( value != null && value.length() > 16 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -168,7 +180,6 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 		return( optionalLabel );
 	}
 
-	@Override
 	public void setOptionalLabel( String value ) {
 		if( value != null && value.length() > 64 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -186,7 +197,6 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 		return( optionalShortDescription );
 	}
 
-	@Override
 	public void setOptionalShortDescription( String value ) {
 		if( value != null && value.length() > 128 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -204,7 +214,6 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 		return( optionalDescription );
 	}
 
-	@Override
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 1023 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -222,7 +231,6 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 		return( optionalSuffix );
 	}
 
-	@Override
 	public void setOptionalSuffix( String value ) {
 		if( value != null && value.length() > 16 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -240,7 +248,6 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 		return( requiredIsInstanceMethod );
 	}
 
-	@Override
 	public void setRequiredIsInstanceMethod( boolean value ) {
 		requiredIsInstanceMethod = value;
 	}
@@ -250,7 +257,6 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 		return( requiredIsServerOnly );
 	}
 
-	@Override
 	public void setRequiredIsServerOnly( boolean value ) {
 		requiredIsServerOnly = value;
 	}
@@ -260,7 +266,6 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 		return( requiredCodeVis );
 	}
 
-	@Override
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -276,7 +281,6 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 		return( requiredJMethodBody );
 	}
 
-	@Override
 	public void setRequiredJMethodBody( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -300,7 +304,6 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 		return( requiredCppMethodBody );
 	}
 
-	@Override
 	public void setRequiredCppMethodBody( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -324,7 +327,6 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 		return( requiredCsMethodBody );
 	}
 
-	@Override
 	public void setRequiredCsMethodBody( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

@@ -91,7 +91,6 @@ public class CFBamBuffDbKeyHash512Def
 		return( optionalInitValue );
 	}
 
-	@Override
 	public void setOptionalInitValue( String value ) {
 		if( value != null && value.length() > 128 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

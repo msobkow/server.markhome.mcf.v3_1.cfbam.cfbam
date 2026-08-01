@@ -83,7 +83,6 @@ public class CFBamBuffChainByDefSchemaIdxKey
 		return( optionalDefSchemaId );
 	}
 
-	@Override
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
 		optionalDefSchemaId = value;
 	}

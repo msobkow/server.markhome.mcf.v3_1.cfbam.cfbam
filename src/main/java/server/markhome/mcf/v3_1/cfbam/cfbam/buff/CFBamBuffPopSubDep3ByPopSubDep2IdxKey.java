@@ -83,7 +83,6 @@ public class CFBamBuffPopSubDep3ByPopSubDep2IdxKey
 		return( requiredPopSubDep2Id );
 	}
 
-	@Override
 	public void setRequiredPopSubDep2Id( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

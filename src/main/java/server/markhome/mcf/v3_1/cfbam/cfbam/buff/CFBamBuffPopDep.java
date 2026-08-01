@@ -113,7 +113,7 @@ public class CFBamBuffPopDep
 			throw new CFLibNullArgumentException(getClass(), "setLookupRelation", 1, "argObj");
 		}
 		else {
-			requiredRelationId = argObj.getRequiredId();
+			setRequiredRelationId(argObj.getRequiredId());
 		}
 	}
 
@@ -123,7 +123,7 @@ public class CFBamBuffPopDep
 			throw new CFLibNullArgumentException(getClass(), "setLookupRelation", 1, "argObj");
 		}
 		else {
-			requiredRelationId = argObj.getRequiredId();
+			setRequiredRelationId(argObj.getRequiredId());
 		}
 	}
 
@@ -133,7 +133,7 @@ public class CFBamBuffPopDep
 			throw new CFLibNullArgumentException(getClass(), "setLookupRelation", 1, "argObj");
 		}
 		else {
-			requiredRelationId = argObj.getRequiredId();
+			setRequiredRelationId(argObj.getRequiredId());
 		}
 	}
 
@@ -159,30 +159,30 @@ public class CFBamBuffPopDep
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
-			optionalDefSchemaId = null;
+			setOptionalDefSchemaId(null);
 		}
 		else {
-			optionalDefSchemaId = argObj.getRequiredId();
+			setOptionalDefSchemaId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
 		if(argObj == null) {
-			optionalDefSchemaId = null;
+			setOptionalDefSchemaId(null);
 		}
 		else {
-			optionalDefSchemaId = argObj.getRequiredId();
+			setOptionalDefSchemaId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
 		if(argObj == null) {
-			optionalDefSchemaId = null;
+			setOptionalDefSchemaId(null);
 		}
 		else {
-			optionalDefSchemaId = argObj.getRequiredId();
+			setOptionalDefSchemaId(argObj.getRequiredId());
 		}
 	}
 
@@ -191,9 +191,23 @@ public class CFBamBuffPopDep
 		return( optionalDefSchemaId );
 	}
 
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		optionalDefSchemaId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredRelationId() {
 		return( requiredRelationId );
+	}
+
+	public void setRequiredRelationId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredRelationId",
+				1,
+				"value" );
+		}
+		requiredRelationId = value;
 	}
 
 	@Override

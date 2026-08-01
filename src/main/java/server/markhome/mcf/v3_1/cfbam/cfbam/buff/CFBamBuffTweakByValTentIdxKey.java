@@ -83,7 +83,6 @@ public class CFBamBuffTweakByValTentIdxKey
 		return( requiredTenantId );
 	}
 
-	@Override
 	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

@@ -83,7 +83,6 @@ public class CFBamBuffEnumTagByDefSchemaIdxKey
 		return( optionalDefSchemaId );
 	}
 
-	@Override
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
 		optionalDefSchemaId = value;
 	}

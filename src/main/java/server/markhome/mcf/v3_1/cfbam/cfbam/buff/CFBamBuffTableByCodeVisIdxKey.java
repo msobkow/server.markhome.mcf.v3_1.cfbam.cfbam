@@ -83,7 +83,6 @@ public class CFBamBuffTableByCodeVisIdxKey
 		return( requiredCodeVis );
 	}
 
-	@Override
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

@@ -83,7 +83,6 @@ public class CFBamBuffInt32TypeBySchemaIdxKey
 		return( requiredSchemaDefId );
 	}
 
-	@Override
 	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

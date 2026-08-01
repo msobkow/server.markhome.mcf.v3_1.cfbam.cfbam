@@ -94,7 +94,6 @@ public class CFBamBuffUInt64DefH extends CFBamBuffAtomH
 		return( optionalInitValue );
 	}
 
-	@Override
 	public void setOptionalInitValue( BigDecimal value ) {
 		if( value != null && value.compareTo( ICFBamUInt64Def.INITVALUE_MIN_VALUE ) < 0 ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
@@ -113,7 +112,6 @@ public class CFBamBuffUInt64DefH extends CFBamBuffAtomH
 		return( optionalMinValue );
 	}
 
-	@Override
 	public void setOptionalMinValue( BigDecimal value ) {
 		if( value != null && value.compareTo( ICFBamUInt64Def.MINVALUE_MIN_VALUE ) < 0 ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
@@ -132,7 +130,6 @@ public class CFBamBuffUInt64DefH extends CFBamBuffAtomH
 		return( optionalMaxValue );
 	}
 
-	@Override
 	public void setOptionalMaxValue( BigDecimal value ) {
 		if( value != null && value.compareTo( ICFBamUInt64Def.MAXVALUE_MIN_VALUE ) < 0 ) {
 			throw new CFLibArgumentUnderflowException( getClass(),

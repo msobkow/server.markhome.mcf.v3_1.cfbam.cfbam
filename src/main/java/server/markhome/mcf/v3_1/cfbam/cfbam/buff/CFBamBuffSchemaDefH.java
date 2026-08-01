@@ -114,9 +114,29 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 		return( requiredCTenantId );
 	}
 
+	public void setRequiredCTenantId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredCTenantId",
+				1,
+				"value" );
+		}
+		requiredCTenantId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredMinorVersionId() {
 		return( requiredMinorVersionId );
+	}
+
+	public void setRequiredMinorVersionId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredMinorVersionId",
+				1,
+				"value" );
+		}
+		requiredMinorVersionId = value;
 	}
 
 	@Override
@@ -124,7 +144,6 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -148,7 +167,6 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 		return( optionalDbName );
 	}
 
-	@Override
 	public void setOptionalDbName( String value ) {
 		if( value != null && value.length() > 12 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -166,7 +184,6 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 		return( optionalShortName );
 	}
 
-	@Override
 	public void setOptionalShortName( String value ) {
 		if( value != null && value.length() > 16 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -184,7 +201,6 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 		return( optionalLabel );
 	}
 
-	@Override
 	public void setOptionalLabel( String value ) {
 		if( value != null && value.length() > 64 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -202,7 +218,6 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 		return( optionalShortDescription );
 	}
 
-	@Override
 	public void setOptionalShortDescription( String value ) {
 		if( value != null && value.length() > 128 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -220,7 +235,6 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 		return( optionalDescription );
 	}
 
-	@Override
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 1023 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -238,7 +252,6 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 		return( requiredCopyrightPeriod );
 	}
 
-	@Override
 	public void setRequiredCopyrightPeriod( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -262,7 +275,6 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 		return( requiredCopyrightHolder );
 	}
 
-	@Override
 	public void setRequiredCopyrightHolder( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -286,7 +298,6 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 		return( requiredAuthorEMail );
 	}
 
-	@Override
 	public void setRequiredAuthorEMail( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -310,7 +321,6 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 		return( requiredProjectURL );
 	}
 
-	@Override
 	public void setRequiredProjectURL( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -334,7 +344,6 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 		return( requiredPublishURI );
 	}
 
-	@Override
 	public void setRequiredPublishURI( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

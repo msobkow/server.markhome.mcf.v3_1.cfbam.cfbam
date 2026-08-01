@@ -83,7 +83,6 @@ public class CFBamBuffDelTopDepByNextIdxKey
 		return( optionalNextId );
 	}
 
-	@Override
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
 		optionalNextId = value;
 	}

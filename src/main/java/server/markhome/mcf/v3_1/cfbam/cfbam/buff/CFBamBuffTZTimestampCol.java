@@ -111,7 +111,7 @@ public class CFBamBuffTZTimestampCol
 			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
 		}
 		else {
-			requiredTableId = argObj.getRequiredId();
+			setRequiredTableId(argObj.getRequiredId());
 		}
 	}
 
@@ -121,7 +121,7 @@ public class CFBamBuffTZTimestampCol
 			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
 		}
 		else {
-			requiredTableId = argObj.getRequiredId();
+			setRequiredTableId(argObj.getRequiredId());
 		}
 	}
 
@@ -131,13 +131,23 @@ public class CFBamBuffTZTimestampCol
 			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
 		}
 		else {
-			requiredTableId = argObj.getRequiredId();
+			setRequiredTableId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTableId() {
 		return( requiredTableId );
+	}
+
+	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTableId",
+				1,
+				"value" );
+		}
+		requiredTableId = value;
 	}
 
 	@Override

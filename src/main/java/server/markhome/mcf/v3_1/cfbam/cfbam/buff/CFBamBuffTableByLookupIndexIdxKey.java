@@ -83,7 +83,6 @@ public class CFBamBuffTableByLookupIndexIdxKey
 		return( optionalLookupIndexId );
 	}
 
-	@Override
 	public void setOptionalLookupIndexId( CFLibDbKeyHash256 value ) {
 		optionalLookupIndexId = value;
 	}

@@ -111,7 +111,7 @@ public class CFBamBuffIndexTweak
 			throw new CFLibNullArgumentException(getClass(), "setContainerIndexDef", 1, "argObj");
 		}
 		else {
-			requiredIndexId = argObj.getRequiredId();
+			setRequiredIndexId(argObj.getRequiredId());
 		}
 	}
 
@@ -121,7 +121,7 @@ public class CFBamBuffIndexTweak
 			throw new CFLibNullArgumentException(getClass(), "setContainerIndexDef", 1, "argObj");
 		}
 		else {
-			requiredIndexId = argObj.getRequiredId();
+			setRequiredIndexId(argObj.getRequiredId());
 		}
 	}
 
@@ -131,13 +131,23 @@ public class CFBamBuffIndexTweak
 			throw new CFLibNullArgumentException(getClass(), "setContainerIndexDef", 1, "argObj");
 		}
 		else {
-			requiredIndexId = argObj.getRequiredId();
+			setRequiredIndexId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredIndexId() {
 		return( requiredIndexId );
+	}
+
+	public void setRequiredIndexId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredIndexId",
+				1,
+				"value" );
+		}
+		requiredIndexId = value;
 	}
 
 	@Override

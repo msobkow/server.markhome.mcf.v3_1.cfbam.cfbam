@@ -85,7 +85,6 @@ public class CFBamBuffValueByContNextIdxKey
 		return( requiredScopeId );
 	}
 
-	@Override
 	public void setRequiredScopeId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -101,7 +100,6 @@ public class CFBamBuffValueByContNextIdxKey
 		return( optionalNextId );
 	}
 
-	@Override
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
 		optionalNextId = value;
 	}

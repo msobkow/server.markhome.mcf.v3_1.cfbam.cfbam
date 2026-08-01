@@ -220,24 +220,43 @@ public class CFBamBuffEnumTagH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-    @Override
-    public CFLibDbKeyHash256 getRequiredId() {
-        return( pkey.getRequiredId() );
-    }
+	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return( getPKey() );
+	}
 
-    @Override
-    public void setRequiredId( CFLibDbKeyHash256 requiredId ) {
-        pkey.setRequiredId( requiredId );
-    }
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		setPKey( value );
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
 		return( optionalDefSchemaId );
 	}
 
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		optionalDefSchemaId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredEnumId() {
 		return( requiredEnumId );
+	}
+
+	public void setRequiredEnumId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredEnumId",
+				1,
+				"value" );
+		}
+		requiredEnumId = value;
 	}
 
 	@Override
@@ -271,7 +290,6 @@ public class CFBamBuffEnumTagH
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -295,9 +313,17 @@ public class CFBamBuffEnumTagH
 		return( optionalPrevId );
 	}
 
+	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		optionalPrevId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getOptionalNextId() {
 		return( optionalNextId );
+	}
+
+	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		optionalNextId = value;
 	}
 
     @Override

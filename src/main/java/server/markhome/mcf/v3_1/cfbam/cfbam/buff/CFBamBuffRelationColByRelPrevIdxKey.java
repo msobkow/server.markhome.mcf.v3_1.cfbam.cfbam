@@ -85,7 +85,6 @@ public class CFBamBuffRelationColByRelPrevIdxKey
 		return( requiredRelationId );
 	}
 
-	@Override
 	public void setRequiredRelationId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -101,7 +100,6 @@ public class CFBamBuffRelationColByRelPrevIdxKey
 		return( optionalPrevId );
 	}
 
-	@Override
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
 		optionalPrevId = value;
 	}

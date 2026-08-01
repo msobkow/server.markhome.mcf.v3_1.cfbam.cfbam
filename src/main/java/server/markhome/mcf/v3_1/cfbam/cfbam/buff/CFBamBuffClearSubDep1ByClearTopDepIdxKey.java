@@ -83,7 +83,6 @@ public class CFBamBuffClearSubDep1ByClearTopDepIdxKey
 		return( requiredClearTopDepId );
 	}
 
-	@Override
 	public void setRequiredClearTopDepId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

@@ -85,7 +85,6 @@ public class CFBamBuffTweakByUNameIdxKey
 		return( requiredScopeId );
 	}
 
-	@Override
 	public void setRequiredScopeId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -101,7 +100,6 @@ public class CFBamBuffTweakByUNameIdxKey
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

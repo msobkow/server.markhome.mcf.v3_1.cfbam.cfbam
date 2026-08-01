@@ -87,7 +87,6 @@ public class CFBamBuffRoleDefByUDefIdxKey
 		return( requiredScopeId );
 	}
 
-	@Override
 	public void setRequiredScopeId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -103,7 +102,6 @@ public class CFBamBuffRoleDefByUDefIdxKey
 		return( optionalDefSchemaId );
 	}
 
-	@Override
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
 		optionalDefSchemaId = value;
 	}
@@ -113,7 +111,6 @@ public class CFBamBuffRoleDefByUDefIdxKey
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

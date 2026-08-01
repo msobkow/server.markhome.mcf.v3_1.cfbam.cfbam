@@ -113,7 +113,7 @@ public class CFBamBuffPopSubDep1
 			throw new CFLibNullArgumentException(getClass(), "setContainerContPopTopDep", 1, "argObj");
 		}
 		else {
-			requiredPopTopDepId = argObj.getRequiredId();
+			setRequiredPopTopDepId(argObj.getRequiredId());
 		}
 	}
 
@@ -123,7 +123,7 @@ public class CFBamBuffPopSubDep1
 			throw new CFLibNullArgumentException(getClass(), "setContainerContPopTopDep", 1, "argObj");
 		}
 		else {
-			requiredPopTopDepId = argObj.getRequiredId();
+			setRequiredPopTopDepId(argObj.getRequiredId());
 		}
 	}
 
@@ -133,7 +133,7 @@ public class CFBamBuffPopSubDep1
 			throw new CFLibNullArgumentException(getClass(), "setContainerContPopTopDep", 1, "argObj");
 		}
 		else {
-			requiredPopTopDepId = argObj.getRequiredId();
+			setRequiredPopTopDepId(argObj.getRequiredId());
 		}
 	}
 
@@ -166,12 +166,21 @@ public class CFBamBuffPopSubDep1
 		return( requiredPopTopDepId );
 	}
 
+	public void setRequiredPopTopDepId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredPopTopDepId",
+				1,
+				"value" );
+		}
+		requiredPopTopDepId = value;
+	}
+
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),

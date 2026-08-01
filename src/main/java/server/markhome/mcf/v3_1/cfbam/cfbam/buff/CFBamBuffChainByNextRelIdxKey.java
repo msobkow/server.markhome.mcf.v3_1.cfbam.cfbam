@@ -83,7 +83,6 @@ public class CFBamBuffChainByNextRelIdxKey
 		return( requiredNextRelationId );
 	}
 
-	@Override
 	public void setRequiredNextRelationId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

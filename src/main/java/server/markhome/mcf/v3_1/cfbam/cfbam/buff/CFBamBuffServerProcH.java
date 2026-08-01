@@ -90,7 +90,6 @@ public class CFBamBuffServerProcH extends CFBamBuffServerMethodH
 		return( optionalDummy );
 	}
 
-	@Override
 	public void setOptionalDummy( String value ) {
 		if( value != null && value.length() > 16 ) {
 			throw new CFLibArgumentOverflowException( getClass(),

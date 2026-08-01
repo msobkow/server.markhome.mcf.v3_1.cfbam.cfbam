@@ -121,7 +121,6 @@ public class CFBamBuffChain
 		return( getPKey() );
 	}
 
-	@Override
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -212,7 +211,7 @@ public class CFBamBuffChain
 			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
 		}
 		else {
-			requiredTableId = argObj.getRequiredId();
+			setRequiredTableId(argObj.getRequiredId());
 		}
 	}
 
@@ -222,7 +221,7 @@ public class CFBamBuffChain
 			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
 		}
 		else {
-			requiredTableId = argObj.getRequiredId();
+			setRequiredTableId(argObj.getRequiredId());
 		}
 	}
 
@@ -232,7 +231,7 @@ public class CFBamBuffChain
 			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
 		}
 		else {
-			requiredTableId = argObj.getRequiredId();
+			setRequiredTableId(argObj.getRequiredId());
 		}
 	}
 
@@ -258,30 +257,30 @@ public class CFBamBuffChain
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
 		if(argObj == null) {
-			optionalDefSchemaId = null;
+			setOptionalDefSchemaId(null);
 		}
 		else {
-			optionalDefSchemaId = argObj.getRequiredId();
+			setOptionalDefSchemaId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
 		if(argObj == null) {
-			optionalDefSchemaId = null;
+			setOptionalDefSchemaId(null);
 		}
 		else {
-			optionalDefSchemaId = argObj.getRequiredId();
+			setOptionalDefSchemaId(argObj.getRequiredId());
 		}
 	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
 		if(argObj == null) {
-			optionalDefSchemaId = null;
+			setOptionalDefSchemaId(null);
 		}
 		else {
-			optionalDefSchemaId = argObj.getRequiredId();
+			setOptionalDefSchemaId(argObj.getRequiredId());
 		}
 	}
 
@@ -310,7 +309,7 @@ public class CFBamBuffChain
 			throw new CFLibNullArgumentException(getClass(), "setLookupPrevRel", 1, "argObj");
 		}
 		else {
-			requiredPrevRelationId = argObj.getRequiredId();
+			setRequiredPrevRelationId(argObj.getRequiredId());
 		}
 	}
 
@@ -320,7 +319,7 @@ public class CFBamBuffChain
 			throw new CFLibNullArgumentException(getClass(), "setLookupPrevRel", 1, "argObj");
 		}
 		else {
-			requiredPrevRelationId = argObj.getRequiredId();
+			setRequiredPrevRelationId(argObj.getRequiredId());
 		}
 	}
 
@@ -330,7 +329,7 @@ public class CFBamBuffChain
 			throw new CFLibNullArgumentException(getClass(), "setLookupPrevRel", 1, "argObj");
 		}
 		else {
-			requiredPrevRelationId = argObj.getRequiredId();
+			setRequiredPrevRelationId(argObj.getRequiredId());
 		}
 	}
 
@@ -359,7 +358,7 @@ public class CFBamBuffChain
 			throw new CFLibNullArgumentException(getClass(), "setLookupNextRel", 1, "argObj");
 		}
 		else {
-			requiredNextRelationId = argObj.getRequiredId();
+			setRequiredNextRelationId(argObj.getRequiredId());
 		}
 	}
 
@@ -369,7 +368,7 @@ public class CFBamBuffChain
 			throw new CFLibNullArgumentException(getClass(), "setLookupNextRel", 1, "argObj");
 		}
 		else {
-			requiredNextRelationId = argObj.getRequiredId();
+			setRequiredNextRelationId(argObj.getRequiredId());
 		}
 	}
 
@@ -379,7 +378,7 @@ public class CFBamBuffChain
 			throw new CFLibNullArgumentException(getClass(), "setLookupNextRel", 1, "argObj");
 		}
 		else {
-			requiredNextRelationId = argObj.getRequiredId();
+			setRequiredNextRelationId(argObj.getRequiredId());
 		}
 	}
 
@@ -388,12 +387,15 @@ public class CFBamBuffChain
 		return( optionalDefSchemaId );
 	}
 
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		optionalDefSchemaId = value;
+	}
+
 	@Override
 	public String getRequiredName() {
 		return( requiredName );
 	}
 
-	@Override
 	public void setRequiredName( String value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
@@ -417,7 +419,6 @@ public class CFBamBuffChain
 		return( optionalShortName );
 	}
 
-	@Override
 	public void setOptionalShortName( String value ) {
 		if( value != null && value.length() > 16 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -435,7 +436,6 @@ public class CFBamBuffChain
 		return( optionalLabel );
 	}
 
-	@Override
 	public void setOptionalLabel( String value ) {
 		if( value != null && value.length() > 64 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -453,7 +453,6 @@ public class CFBamBuffChain
 		return( optionalShortDescription );
 	}
 
-	@Override
 	public void setOptionalShortDescription( String value ) {
 		if( value != null && value.length() > 128 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -471,7 +470,6 @@ public class CFBamBuffChain
 		return( optionalDescription );
 	}
 
-	@Override
 	public void setOptionalDescription( String value ) {
 		if( value != null && value.length() > 1023 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -489,12 +487,21 @@ public class CFBamBuffChain
 		return( requiredTableId );
 	}
 
+	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTableId",
+				1,
+				"value" );
+		}
+		requiredTableId = value;
+	}
+
 	@Override
 	public String getOptionalSuffix() {
 		return( optionalSuffix );
 	}
 
-	@Override
 	public void setOptionalSuffix( String value ) {
 		if( value != null && value.length() > 16 ) {
 			throw new CFLibArgumentOverflowException( getClass(),
@@ -512,9 +519,29 @@ public class CFBamBuffChain
 		return( requiredPrevRelationId );
 	}
 
+	public void setRequiredPrevRelationId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredPrevRelationId",
+				1,
+				"value" );
+		}
+		requiredPrevRelationId = value;
+	}
+
 	@Override
 	public CFLibDbKeyHash256 getRequiredNextRelationId() {
 		return( requiredNextRelationId );
+	}
+
+	public void setRequiredNextRelationId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredNextRelationId",
+				1,
+				"value" );
+		}
+		requiredNextRelationId = value;
 	}
 
 	@Override

@@ -83,7 +83,6 @@ public class CFBamBuffIndexTweakByIndexIdxKey
 		return( requiredIndexId );
 	}
 
-	@Override
 	public void setRequiredIndexId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

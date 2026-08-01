@@ -83,7 +83,6 @@ public class CFBamBuffRoleDefByScopeIdxKey
 		return( requiredScopeId );
 	}
 
-	@Override
 	public void setRequiredScopeId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

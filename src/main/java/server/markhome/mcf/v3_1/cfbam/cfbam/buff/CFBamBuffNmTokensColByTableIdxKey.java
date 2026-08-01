@@ -83,7 +83,6 @@ public class CFBamBuffNmTokensColByTableIdxKey
 		return( requiredTableId );
 	}
 
-	@Override
 	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),

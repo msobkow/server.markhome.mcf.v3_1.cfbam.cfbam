@@ -83,7 +83,6 @@ public class CFBamBuffRelationByToTblIdxKey
 		return( requiredToTableId );
 	}
 
-	@Override
 	public void setRequiredToTableId( CFLibDbKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
