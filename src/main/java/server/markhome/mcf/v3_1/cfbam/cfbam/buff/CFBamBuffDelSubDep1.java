@@ -109,7 +109,12 @@ public class CFBamBuffDelSubDep1
 
 	@Override
 	public void setRequiredContainerDelTopDep(ICFBamDelTopDep argObj) {
-		setRequiredContainerDelTopDep(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerDelTopDep", 1, "argObj");
+		}
+		else {
+			requiredDelTopDepId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

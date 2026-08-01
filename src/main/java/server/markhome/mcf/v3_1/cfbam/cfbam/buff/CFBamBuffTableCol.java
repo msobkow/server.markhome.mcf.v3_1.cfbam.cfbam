@@ -113,7 +113,12 @@ public class CFBamBuffTableCol
 
 	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -157,7 +162,12 @@ public class CFBamBuffTableCol
 
 	@Override
 	public void setRequiredParentDataType(ICFBamValue argObj) {
-		setRequiredParentDataType(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setParentDataType", 1, "argObj");
+		}
+		else {
+			optionalDataId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

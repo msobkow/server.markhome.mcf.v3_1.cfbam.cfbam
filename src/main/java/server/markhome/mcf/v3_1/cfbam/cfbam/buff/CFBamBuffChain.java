@@ -208,7 +208,12 @@ public class CFBamBuffChain
 
 	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -252,7 +257,12 @@ public class CFBamBuffChain
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -296,7 +306,12 @@ public class CFBamBuffChain
 
 	@Override
 	public void setRequiredLookupPrevRel(ICFBamRelation argObj) {
-		setRequiredLookupPrevRel(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupPrevRel", 1, "argObj");
+		}
+		else {
+			requiredPrevRelationId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -340,7 +355,12 @@ public class CFBamBuffChain
 
 	@Override
 	public void setRequiredLookupNextRel(ICFBamRelation argObj) {
-		setRequiredLookupNextRel(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupNextRel", 1, "argObj");
+		}
+		else {
+			requiredNextRelationId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

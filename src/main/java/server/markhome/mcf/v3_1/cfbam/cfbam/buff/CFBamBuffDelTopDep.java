@@ -113,7 +113,12 @@ public class CFBamBuffDelTopDep
 
 	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -157,7 +162,12 @@ public class CFBamBuffDelTopDep
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamDelTopDep argObj) {
-		setOptionalLookupPrev(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalPrevId = null;
+		}
+		else {
+			optionalPrevId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -201,7 +211,12 @@ public class CFBamBuffDelTopDep
 
 	@Override
 	public void setOptionalLookupNext(ICFBamDelTopDep argObj) {
-		setOptionalLookupNext(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalNextId = null;
+		}
+		else {
+			optionalNextId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

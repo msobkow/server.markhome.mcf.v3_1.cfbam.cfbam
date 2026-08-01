@@ -202,7 +202,12 @@ public class CFBamBuffTweak
 
 	@Override
 	public void setRequiredContainerScopeDef(ICFBamScope argObj) {
-		setRequiredContainerScopeDef(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerScopeDef", 1, "argObj");
+		}
+		else {
+			requiredScopeId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -246,7 +251,12 @@ public class CFBamBuffTweak
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

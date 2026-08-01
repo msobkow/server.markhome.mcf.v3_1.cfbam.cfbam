@@ -258,7 +258,12 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public void setRequiredContainerIndex(ICFBamIndex argObj) {
-		setRequiredContainerIndex(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerIndex", 1, "argObj");
+		}
+		else {
+			requiredIndexId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -302,7 +307,12 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -346,7 +356,12 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamIndexCol argObj) {
-		setOptionalLookupPrev(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalPrevId = null;
+		}
+		else {
+			optionalPrevId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -390,7 +405,12 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public void setOptionalLookupNext(ICFBamIndexCol argObj) {
-		setOptionalLookupNext(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalNextId = null;
+		}
+		else {
+			optionalNextId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -434,7 +454,12 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public void setRequiredLookupColumn(ICFBamValue argObj) {
-		setRequiredLookupColumn(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupColumn", 1, "argObj");
+		}
+		else {
+			requiredColumnId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

@@ -129,7 +129,12 @@ public class CFBamBuffIndex
 
 	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -173,7 +178,12 @@ public class CFBamBuffIndex
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

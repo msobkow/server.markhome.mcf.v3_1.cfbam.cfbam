@@ -143,7 +143,12 @@ public class CFBamBuffRelation
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -187,7 +192,12 @@ public class CFBamBuffRelation
 
 	@Override
 	public void setRequiredContainerFromTable(ICFBamTable argObj) {
-		setRequiredContainerFromTable(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerFromTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -231,7 +241,12 @@ public class CFBamBuffRelation
 
 	@Override
 	public void setRequiredLookupFromIndex(ICFBamIndex argObj) {
-		setRequiredLookupFromIndex(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupFromIndex", 1, "argObj");
+		}
+		else {
+			requiredFromIndexId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -275,7 +290,12 @@ public class CFBamBuffRelation
 
 	@Override
 	public void setRequiredLookupToTable(ICFBamTable argObj) {
-		setRequiredLookupToTable(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupToTable", 1, "argObj");
+		}
+		else {
+			requiredToTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -319,7 +339,12 @@ public class CFBamBuffRelation
 
 	@Override
 	public void setRequiredLookupToIndex(ICFBamIndex argObj) {
-		setRequiredLookupToIndex(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupToIndex", 1, "argObj");
+		}
+		else {
+			requiredToIndexId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -363,7 +388,12 @@ public class CFBamBuffRelation
 
 	@Override
 	public void setOptionalLookupNarrowed(ICFBamRelation argObj) {
-		setOptionalLookupNarrowed(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalNarrowedId = null;
+		}
+		else {
+			optionalNarrowedId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

@@ -210,7 +210,12 @@ public class CFBamBuffRelationCol
 
 	@Override
 	public void setRequiredContainerRelation(ICFBamRelation argObj) {
-		setRequiredContainerRelation(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerRelation", 1, "argObj");
+		}
+		else {
+			requiredRelationId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -254,7 +259,12 @@ public class CFBamBuffRelationCol
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -298,7 +308,12 @@ public class CFBamBuffRelationCol
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamRelationCol argObj) {
-		setOptionalLookupPrev(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalPrevId = null;
+		}
+		else {
+			optionalPrevId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -342,7 +357,12 @@ public class CFBamBuffRelationCol
 
 	@Override
 	public void setOptionalLookupNext(ICFBamRelationCol argObj) {
-		setOptionalLookupNext(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalNextId = null;
+		}
+		else {
+			optionalNextId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -386,7 +406,12 @@ public class CFBamBuffRelationCol
 
 	@Override
 	public void setRequiredLookupFromCol(ICFBamIndexCol argObj) {
-		setRequiredLookupFromCol(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupFromCol", 1, "argObj");
+		}
+		else {
+			requiredFromColId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -430,7 +455,12 @@ public class CFBamBuffRelationCol
 
 	@Override
 	public void setRequiredLookupToCol(ICFBamIndexCol argObj) {
-		setRequiredLookupToCol(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupToCol", 1, "argObj");
+		}
+		else {
+			requiredToColId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

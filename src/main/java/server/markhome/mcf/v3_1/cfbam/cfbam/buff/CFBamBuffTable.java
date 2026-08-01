@@ -149,7 +149,12 @@ public class CFBamBuffTable
 
 	@Override
 	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj) {
-		setRequiredContainerSchemaDef(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSchemaDef", 1, "argObj");
+		}
+		else {
+			requiredSchemaDefId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -193,7 +198,12 @@ public class CFBamBuffTable
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -237,7 +247,12 @@ public class CFBamBuffTable
 
 	@Override
 	public void setOptionalLookupLookupIndex(ICFBamIndex argObj) {
-		setOptionalLookupLookupIndex(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalLookupIndexId = null;
+		}
+		else {
+			optionalLookupIndexId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -281,7 +296,12 @@ public class CFBamBuffTable
 
 	@Override
 	public void setOptionalLookupAltIndex(ICFBamIndex argObj) {
-		setOptionalLookupAltIndex(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalAltIndexId = null;
+		}
+		else {
+			optionalAltIndexId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -325,7 +345,12 @@ public class CFBamBuffTable
 
 	@Override
 	public void setOptionalLookupQualTable(ICFBamTable argObj) {
-		setOptionalLookupQualTable(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalQualifyingTableId = null;
+		}
+		else {
+			optionalQualifyingTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -369,7 +394,12 @@ public class CFBamBuffTable
 
 	@Override
 	public void setOptionalLookupPrimaryIndex(ICFBamIndex argObj) {
-		setOptionalLookupPrimaryIndex(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalPrimaryIndexId = null;
+		}
+		else {
+			optionalPrimaryIndexId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

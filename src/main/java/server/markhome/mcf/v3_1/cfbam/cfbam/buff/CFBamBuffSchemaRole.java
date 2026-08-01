@@ -109,7 +109,12 @@ public class CFBamBuffSchemaRole
 
 	@Override
 	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj) {
-		setRequiredContainerSchemaDef(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSchemaDef", 1, "argObj");
+		}
+		else {
+			requiredSchemaDefId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

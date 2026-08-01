@@ -107,7 +107,12 @@ public class CFBamBuffTextCol
 
 	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
-		setRequiredContainerTable(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

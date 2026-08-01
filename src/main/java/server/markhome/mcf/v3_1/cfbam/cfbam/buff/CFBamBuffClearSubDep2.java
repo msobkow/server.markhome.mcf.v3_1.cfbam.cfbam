@@ -109,7 +109,12 @@ public class CFBamBuffClearSubDep2
 
 	@Override
 	public void setRequiredContainerClearSubDep1(ICFBamClearSubDep1 argObj) {
-		setRequiredContainerClearSubDep1(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerClearSubDep1", 1, "argObj");
+		}
+		else {
+			requiredClearSubDep1Id = argObj.getRequiredId();
+		}
 	}
 
 	@Override

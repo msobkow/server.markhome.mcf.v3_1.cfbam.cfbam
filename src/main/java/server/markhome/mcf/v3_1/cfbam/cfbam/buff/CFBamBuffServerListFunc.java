@@ -107,7 +107,12 @@ public class CFBamBuffServerListFunc
 
 	@Override
 	public void setOptionalLookupRetTable(ICFBamTable argObj) {
-		setOptionalLookupRetTable(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalRetTableId = null;
+		}
+		else {
+			optionalRetTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

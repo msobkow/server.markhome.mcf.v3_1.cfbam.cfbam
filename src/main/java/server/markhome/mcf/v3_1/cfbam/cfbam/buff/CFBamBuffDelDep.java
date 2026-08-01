@@ -109,7 +109,12 @@ public class CFBamBuffDelDep
 
 	@Override
 	public void setRequiredLookupRelation(ICFBamRelation argObj) {
-		setRequiredLookupRelation(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setLookupRelation", 1, "argObj");
+		}
+		else {
+			requiredRelationId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -153,7 +158,12 @@ public class CFBamBuffDelDep
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

@@ -200,7 +200,12 @@ public class CFBamBuffEnumTag
 
 	@Override
 	public void setRequiredContainerEnumDef(ICFBamEnumDef argObj) {
-		setRequiredContainerEnumDef(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerEnumDef", 1, "argObj");
+		}
+		else {
+			requiredEnumId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -244,7 +249,12 @@ public class CFBamBuffEnumTag
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		setOptionalLookupDefSchema(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalDefSchemaId = null;
+		}
+		else {
+			optionalDefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -288,7 +298,12 @@ public class CFBamBuffEnumTag
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamEnumTag argObj) {
-		setOptionalLookupPrev(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalPrevId = null;
+		}
+		else {
+			optionalPrevId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -332,7 +347,12 @@ public class CFBamBuffEnumTag
 
 	@Override
 	public void setOptionalLookupNext(ICFBamEnumTag argObj) {
-		setOptionalLookupNext(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalNextId = null;
+		}
+		else {
+			optionalNextId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

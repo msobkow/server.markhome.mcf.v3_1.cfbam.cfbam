@@ -109,7 +109,12 @@ public class CFBamBuffPopSubDep2
 
 	@Override
 	public void setRequiredContainerPopSubDep1(ICFBamPopSubDep1 argObj) {
-		setRequiredContainerPopSubDep1(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerPopSubDep1", 1, "argObj");
+		}
+		else {
+			requiredPopSubDep1Id = argObj.getRequiredId();
+		}
 	}
 
 	@Override

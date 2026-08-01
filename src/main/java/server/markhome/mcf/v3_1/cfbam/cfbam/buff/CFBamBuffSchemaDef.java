@@ -131,7 +131,12 @@ public class CFBamBuffSchemaDef
 
 	@Override
 	public void setRequiredContainerMinorVersion(ICFIntPubMinorVersion argObj) {
-		setRequiredContainerMinorVersion(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerMinorVersion", 1, "argObj");
+		}
+		else {
+			requiredMinorVersionId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -155,7 +160,12 @@ public class CFBamBuffSchemaDef
 
 	@Override
 	public void setRequiredOwnerCTenant(ICFSecPubTenant argObj) {
-		setRequiredOwnerCTenant(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOwnerCTenant", 1, "argObj");
+		}
+		else {
+			requiredCTenantId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

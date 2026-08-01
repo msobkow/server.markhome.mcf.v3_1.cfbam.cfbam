@@ -119,7 +119,12 @@ public class CFBamBuffSchemaRef
 
 	@Override
 	public void setRequiredContainerSchema(ICFBamSchemaDef argObj) {
-		setRequiredContainerSchema(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerSchema", 1, "argObj");
+		}
+		else {
+			requiredSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -163,7 +168,12 @@ public class CFBamBuffSchemaRef
 
 	@Override
 	public void setOptionalLookupRefSchema(ICFBamSchemaDef argObj) {
-		setOptionalLookupRefSchema(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalRefSchemaId = null;
+		}
+		else {
+			optionalRefSchemaId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -207,7 +217,12 @@ public class CFBamBuffSchemaRef
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamSchemaRef argObj) {
-		setOptionalLookupPrev(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalPrevId = null;
+		}
+		else {
+			optionalPrevId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
@@ -251,7 +266,12 @@ public class CFBamBuffSchemaRef
 
 	@Override
 	public void setOptionalLookupNext(ICFBamSchemaRef argObj) {
-		setOptionalLookupNext(argObj.getRequiredId());
+		if(argObj == null) {
+			optionalNextId = null;
+		}
+		else {
+			optionalNextId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

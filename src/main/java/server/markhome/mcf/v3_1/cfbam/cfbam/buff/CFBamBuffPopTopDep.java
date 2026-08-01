@@ -109,7 +109,12 @@ public class CFBamBuffPopTopDep
 
 	@Override
 	public void setRequiredContainerContRelation(ICFBamRelation argObj) {
-		setRequiredContainerContRelation(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerContRelation", 1, "argObj");
+		}
+		else {
+			requiredContRelationId = argObj.getRequiredId();
+		}
 	}
 
 	@Override

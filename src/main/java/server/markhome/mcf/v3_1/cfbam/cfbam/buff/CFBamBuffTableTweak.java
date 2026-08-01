@@ -107,7 +107,12 @@ public class CFBamBuffTableTweak
 
 	@Override
 	public void setRequiredContainerTableDef(ICFBamTable argObj) {
-		setRequiredContainerTableDef(argObj.getRequiredId());
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTableDef", 1, "argObj");
+		}
+		else {
+			requiredTableId = argObj.getRequiredId();
+		}
 	}
 
 	@Override
