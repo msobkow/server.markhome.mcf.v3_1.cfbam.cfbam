@@ -106,7 +106,9 @@ public class CFBamBuffDbKeyHash128Type
 	}
 
 	@Override
-	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
+	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj) {
+		setRequiredContainerSchemaDef(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj) {

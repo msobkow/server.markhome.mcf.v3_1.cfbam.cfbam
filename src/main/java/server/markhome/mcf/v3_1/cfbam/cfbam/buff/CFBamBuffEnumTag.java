@@ -199,7 +199,9 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
-	public void setRequiredContainerEnumDef(ICFBamEnumDef argObj);
+	public void setRequiredContainerEnumDef(ICFBamEnumDef argObj) {
+		setRequiredContainerEnumDef(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerEnumDef(ICFBamProtEnumDef argObj) {
@@ -241,7 +243,9 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
@@ -283,7 +287,9 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFBamEnumTag argObj);
+	public void setOptionalLookupPrev(ICFBamEnumTag argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamProtEnumTag argObj) {
@@ -325,7 +331,9 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
-	public void setOptionalLookupNext(ICFBamEnumTag argObj);
+	public void setOptionalLookupNext(ICFBamEnumTag argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupNext(ICFBamProtEnumTag argObj) {

@@ -130,7 +130,9 @@ public class CFBamBuffSchemaDef
 	}
 
 	@Override
-	public void setRequiredContainerMinorVersion(ICFIntPubMinorVersion argObj);
+	public void setRequiredContainerMinorVersion(ICFIntPubMinorVersion argObj) {
+		setRequiredContainerMinorVersion(argObj.getRequiredId());
+	}
 
 	@Override
 	public ICFSecTenant getRequiredOwnerCTenant() {
@@ -152,7 +154,9 @@ public class CFBamBuffSchemaDef
 	}
 
 	@Override
-	public void setRequiredOwnerCTenant(ICFSecPubTenant argObj);
+	public void setRequiredOwnerCTenant(ICFSecPubTenant argObj) {
+		setRequiredOwnerCTenant(argObj.getRequiredId());
+	}
 
 	@Override
 	public List<ICFBamTable> getOptionalComponentsTables() {

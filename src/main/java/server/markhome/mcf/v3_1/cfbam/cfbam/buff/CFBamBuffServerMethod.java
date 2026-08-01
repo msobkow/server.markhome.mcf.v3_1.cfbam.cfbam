@@ -132,7 +132,9 @@ public class CFBamBuffServerMethod
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
@@ -174,7 +176,9 @@ public class CFBamBuffServerMethod
 	}
 
 	@Override
-	public void setRequiredContainerForTable(ICFBamTable argObj);
+	public void setRequiredContainerForTable(ICFBamTable argObj) {
+		setRequiredContainerForTable(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerForTable(ICFBamProtTable argObj) {

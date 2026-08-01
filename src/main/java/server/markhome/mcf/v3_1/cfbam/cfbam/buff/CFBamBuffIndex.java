@@ -128,7 +128,9 @@ public class CFBamBuffIndex
 	}
 
 	@Override
-	public void setRequiredContainerTable(ICFBamTable argObj);
+	public void setRequiredContainerTable(ICFBamTable argObj) {
+		setRequiredContainerTable(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerTable(ICFBamProtTable argObj) {
@@ -170,7 +172,9 @@ public class CFBamBuffIndex
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {

@@ -142,7 +142,9 @@ public class CFBamBuffRelation
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
@@ -184,7 +186,9 @@ public class CFBamBuffRelation
 	}
 
 	@Override
-	public void setRequiredContainerFromTable(ICFBamTable argObj);
+	public void setRequiredContainerFromTable(ICFBamTable argObj) {
+		setRequiredContainerFromTable(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerFromTable(ICFBamProtTable argObj) {
@@ -226,7 +230,9 @@ public class CFBamBuffRelation
 	}
 
 	@Override
-	public void setRequiredLookupFromIndex(ICFBamIndex argObj);
+	public void setRequiredLookupFromIndex(ICFBamIndex argObj) {
+		setRequiredLookupFromIndex(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredLookupFromIndex(ICFBamProtIndex argObj) {
@@ -268,7 +274,9 @@ public class CFBamBuffRelation
 	}
 
 	@Override
-	public void setRequiredLookupToTable(ICFBamTable argObj);
+	public void setRequiredLookupToTable(ICFBamTable argObj) {
+		setRequiredLookupToTable(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredLookupToTable(ICFBamProtTable argObj) {
@@ -310,7 +318,9 @@ public class CFBamBuffRelation
 	}
 
 	@Override
-	public void setRequiredLookupToIndex(ICFBamIndex argObj);
+	public void setRequiredLookupToIndex(ICFBamIndex argObj) {
+		setRequiredLookupToIndex(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredLookupToIndex(ICFBamProtIndex argObj) {
@@ -352,7 +362,9 @@ public class CFBamBuffRelation
 	}
 
 	@Override
-	public void setOptionalLookupNarrowed(ICFBamRelation argObj);
+	public void setOptionalLookupNarrowed(ICFBamRelation argObj) {
+		setOptionalLookupNarrowed(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupNarrowed(ICFBamProtRelation argObj) {

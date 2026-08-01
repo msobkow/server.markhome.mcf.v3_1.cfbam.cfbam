@@ -108,7 +108,9 @@ public class CFBamBuffPopSubDep3
 	}
 
 	@Override
-	public void setRequiredContainerPopSubDep2(ICFBamPopSubDep2 argObj);
+	public void setRequiredContainerPopSubDep2(ICFBamPopSubDep2 argObj) {
+		setRequiredContainerPopSubDep2(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerPopSubDep2(ICFBamProtPopSubDep2 argObj) {

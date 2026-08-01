@@ -108,7 +108,9 @@ public class CFBamBuffClearSubDep2
 	}
 
 	@Override
-	public void setRequiredContainerClearSubDep1(ICFBamClearSubDep1 argObj);
+	public void setRequiredContainerClearSubDep1(ICFBamClearSubDep1 argObj) {
+		setRequiredContainerClearSubDep1(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerClearSubDep1(ICFBamProtClearSubDep1 argObj) {

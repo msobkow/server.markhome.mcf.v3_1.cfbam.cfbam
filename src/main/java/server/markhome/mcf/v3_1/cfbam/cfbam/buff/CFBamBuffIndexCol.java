@@ -119,10 +119,52 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
-	public List<ICFBamRelationCol> getOptionalChildrenRefRelFromCol();
+	public List<ICFBamRelationCol> getOptionalChildrenRefRelFromCol() {
+		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenRefRelFromCol", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamRelationColTable targetTable = targetBackingSchema.getTableRelationCol();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenRefRelFromCol", 0, "ICFBamSchema.getBackingCFBam().getTableRelationCol()");
+		}
+		ICFBamRelationCol[] targetArr = targetTable.readDerivedByFromColIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamRelationCol> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamRelationCol> results = new ArrayList<>();
+			return( results );
+		}
+	}
 
 	@Override
-	public List<ICFBamRelationCol> getOptionalChildrenRefRelToCol();
+	public List<ICFBamRelationCol> getOptionalChildrenRefRelToCol() {
+		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenRefRelToCol", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamRelationColTable targetTable = targetBackingSchema.getTableRelationCol();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenRefRelToCol", 0, "ICFBamSchema.getBackingCFBam().getTableRelationCol()");
+		}
+		ICFBamRelationCol[] targetArr = targetTable.readDerivedByToColIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamRelationCol> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamRelationCol> results = new ArrayList<>();
+			return( results );
+		}
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
@@ -215,7 +257,9 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
-	public void setRequiredContainerIndex(ICFBamIndex argObj);
+	public void setRequiredContainerIndex(ICFBamIndex argObj) {
+		setRequiredContainerIndex(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerIndex(ICFBamProtIndex argObj) {
@@ -257,7 +301,9 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
@@ -299,7 +345,9 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFBamIndexCol argObj);
+	public void setOptionalLookupPrev(ICFBamIndexCol argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamProtIndexCol argObj) {
@@ -341,7 +389,9 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
-	public void setOptionalLookupNext(ICFBamIndexCol argObj);
+	public void setOptionalLookupNext(ICFBamIndexCol argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupNext(ICFBamProtIndexCol argObj) {
@@ -383,7 +433,9 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
-	public void setRequiredLookupColumn(ICFBamValue argObj);
+	public void setRequiredLookupColumn(ICFBamValue argObj) {
+		setRequiredLookupColumn(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredLookupColumn(ICFBamProtValue argObj) {

@@ -205,7 +205,9 @@ public class CFBamBuffParam
 	}
 
 	@Override
-	public void setRequiredContainerServerMeth(ICFBamServerMethod argObj);
+	public void setRequiredContainerServerMeth(ICFBamServerMethod argObj) {
+		setRequiredContainerServerMeth(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerServerMeth(ICFBamProtServerMethod argObj) {
@@ -247,7 +249,9 @@ public class CFBamBuffParam
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
@@ -289,7 +293,9 @@ public class CFBamBuffParam
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFBamParam argObj);
+	public void setOptionalLookupPrev(ICFBamParam argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamProtParam argObj) {
@@ -331,7 +337,9 @@ public class CFBamBuffParam
 	}
 
 	@Override
-	public void setOptionalLookupNext(ICFBamParam argObj);
+	public void setOptionalLookupNext(ICFBamParam argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupNext(ICFBamProtParam argObj) {
@@ -373,7 +381,9 @@ public class CFBamBuffParam
 	}
 
 	@Override
-	public void setRequiredLookupType(ICFBamValue argObj);
+	public void setRequiredLookupType(ICFBamValue argObj) {
+		setRequiredLookupType(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredLookupType(ICFBamProtValue argObj) {

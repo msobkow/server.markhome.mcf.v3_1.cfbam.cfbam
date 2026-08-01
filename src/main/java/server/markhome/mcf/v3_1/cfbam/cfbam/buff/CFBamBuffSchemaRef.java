@@ -118,7 +118,9 @@ public class CFBamBuffSchemaRef
 	}
 
 	@Override
-	public void setRequiredContainerSchema(ICFBamSchemaDef argObj);
+	public void setRequiredContainerSchema(ICFBamSchemaDef argObj) {
+		setRequiredContainerSchema(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerSchema(ICFBamProtSchemaDef argObj) {
@@ -160,7 +162,9 @@ public class CFBamBuffSchemaRef
 	}
 
 	@Override
-	public void setOptionalLookupRefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupRefSchema(ICFBamSchemaDef argObj) {
+		setOptionalLookupRefSchema(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupRefSchema(ICFBamProtSchemaDef argObj) {
@@ -202,7 +206,9 @@ public class CFBamBuffSchemaRef
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFBamSchemaRef argObj);
+	public void setOptionalLookupPrev(ICFBamSchemaRef argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamProtSchemaRef argObj) {
@@ -244,7 +250,9 @@ public class CFBamBuffSchemaRef
 	}
 
 	@Override
-	public void setOptionalLookupNext(ICFBamSchemaRef argObj);
+	public void setOptionalLookupNext(ICFBamSchemaRef argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupNext(ICFBamProtSchemaRef argObj) {

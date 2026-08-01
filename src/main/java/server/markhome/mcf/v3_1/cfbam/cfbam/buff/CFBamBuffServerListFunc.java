@@ -106,7 +106,9 @@ public class CFBamBuffServerListFunc
 	}
 
 	@Override
-	public void setOptionalLookupRetTable(ICFBamTable argObj);
+	public void setOptionalLookupRetTable(ICFBamTable argObj) {
+		setOptionalLookupRetTable(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupRetTable(ICFBamProtTable argObj) {

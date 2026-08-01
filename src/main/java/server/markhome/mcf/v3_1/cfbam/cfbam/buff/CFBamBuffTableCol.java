@@ -112,7 +112,9 @@ public class CFBamBuffTableCol
 	}
 
 	@Override
-	public void setRequiredContainerTable(ICFBamTable argObj);
+	public void setRequiredContainerTable(ICFBamTable argObj) {
+		setRequiredContainerTable(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerTable(ICFBamProtTable argObj) {
@@ -154,7 +156,9 @@ public class CFBamBuffTableCol
 	}
 
 	@Override
-	public void setRequiredParentDataType(ICFBamValue argObj);
+	public void setRequiredParentDataType(ICFBamValue argObj) {
+		setRequiredParentDataType(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredParentDataType(ICFBamProtValue argObj) {

@@ -106,7 +106,9 @@ public class CFBamBuffUInt16Type
 	}
 
 	@Override
-	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj);
+	public void setRequiredContainerSchemaDef(ICFBamSchemaDef argObj) {
+		setRequiredContainerSchemaDef(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerSchemaDef(ICFBamProtSchemaDef argObj) {

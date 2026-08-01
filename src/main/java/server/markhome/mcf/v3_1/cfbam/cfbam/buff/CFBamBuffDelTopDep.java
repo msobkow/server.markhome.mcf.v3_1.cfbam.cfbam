@@ -112,7 +112,9 @@ public class CFBamBuffDelTopDep
 	}
 
 	@Override
-	public void setRequiredContainerTable(ICFBamTable argObj);
+	public void setRequiredContainerTable(ICFBamTable argObj) {
+		setRequiredContainerTable(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerTable(ICFBamProtTable argObj) {
@@ -154,7 +156,9 @@ public class CFBamBuffDelTopDep
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFBamDelTopDep argObj);
+	public void setOptionalLookupPrev(ICFBamDelTopDep argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamProtDelTopDep argObj) {
@@ -196,7 +200,9 @@ public class CFBamBuffDelTopDep
 	}
 
 	@Override
-	public void setOptionalLookupNext(ICFBamDelTopDep argObj);
+	public void setOptionalLookupNext(ICFBamDelTopDep argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupNext(ICFBamProtDelTopDep argObj) {

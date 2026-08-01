@@ -108,7 +108,9 @@ public class CFBamBuffDelDep
 	}
 
 	@Override
-	public void setRequiredLookupRelation(ICFBamRelation argObj);
+	public void setRequiredLookupRelation(ICFBamRelation argObj) {
+		setRequiredLookupRelation(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredLookupRelation(ICFBamProtRelation argObj) {
@@ -150,7 +152,9 @@ public class CFBamBuffDelDep
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {

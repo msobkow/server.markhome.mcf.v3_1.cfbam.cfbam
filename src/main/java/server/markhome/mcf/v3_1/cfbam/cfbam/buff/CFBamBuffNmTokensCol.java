@@ -106,7 +106,9 @@ public class CFBamBuffNmTokensCol
 	}
 
 	@Override
-	public void setRequiredContainerTable(ICFBamTable argObj);
+	public void setRequiredContainerTable(ICFBamTable argObj) {
+		setRequiredContainerTable(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerTable(ICFBamProtTable argObj) {

@@ -197,7 +197,9 @@ public class CFBamBuffRoleDef
 	}
 
 	@Override
-	public void setRequiredContainerScopeDef(ICFBamScope argObj);
+	public void setRequiredContainerScopeDef(ICFBamScope argObj) {
+		setRequiredContainerScopeDef(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerScopeDef(ICFBamProtScope argObj) {
@@ -239,7 +241,9 @@ public class CFBamBuffRoleDef
 	}
 
 	@Override
-	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
+		setOptionalLookupDefSchema(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {

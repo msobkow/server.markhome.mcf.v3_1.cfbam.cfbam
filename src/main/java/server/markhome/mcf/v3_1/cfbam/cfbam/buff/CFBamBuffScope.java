@@ -189,7 +189,9 @@ public class CFBamBuffScope
 	}
 
 	@Override
-	public void setRequiredOwnerTenant(ICFSecPubTenant argObj);
+	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
+		setRequiredOwnerTenant(argObj.getRequiredId());
+	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {

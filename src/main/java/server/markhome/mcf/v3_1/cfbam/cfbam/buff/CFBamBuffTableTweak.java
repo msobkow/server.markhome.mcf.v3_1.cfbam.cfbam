@@ -106,7 +106,9 @@ public class CFBamBuffTableTweak
 	}
 
 	@Override
-	public void setRequiredContainerTableDef(ICFBamTable argObj);
+	public void setRequiredContainerTableDef(ICFBamTable argObj) {
+		setRequiredContainerTableDef(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerTableDef(ICFBamProtTable argObj) {

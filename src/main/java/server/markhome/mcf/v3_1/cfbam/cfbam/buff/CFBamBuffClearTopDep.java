@@ -112,7 +112,9 @@ public class CFBamBuffClearTopDep
 	}
 
 	@Override
-	public void setRequiredContainerTable(ICFBamTable argObj);
+	public void setRequiredContainerTable(ICFBamTable argObj) {
+		setRequiredContainerTable(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setRequiredContainerTable(ICFBamProtTable argObj) {
@@ -154,7 +156,9 @@ public class CFBamBuffClearTopDep
 	}
 
 	@Override
-	public void setOptionalLookupPrev(ICFBamClearTopDep argObj);
+	public void setOptionalLookupPrev(ICFBamClearTopDep argObj) {
+		setOptionalLookupPrev(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupPrev(ICFBamProtClearTopDep argObj) {
@@ -196,7 +200,9 @@ public class CFBamBuffClearTopDep
 	}
 
 	@Override
-	public void setOptionalLookupNext(ICFBamClearTopDep argObj);
+	public void setOptionalLookupNext(ICFBamClearTopDep argObj) {
+		setOptionalLookupNext(argObj.getRequiredId());
+	}
 
 	@Override
 	public void setOptionalLookupNext(ICFBamProtClearTopDep argObj) {
