@@ -252,7 +252,7 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public void setRequiredContainerIndex(CFLibDbKeyHash256 argIndexId) {
-		requiredIndexId = argIndexId;
+		setRequiredIndexId(argIndexId);
 	}
 
 	@Override
@@ -301,7 +301,7 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
+		setOptionalDefSchemaId(argDefSchemaId);
 	}
 
 	@Override
@@ -350,7 +350,7 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
-		optionalPrevId = argPrevId;
+		setOptionalPrevId(argPrevId);
 	}
 
 	@Override
@@ -399,7 +399,7 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId) {
-		optionalNextId = argNextId;
+		setOptionalNextId(argNextId);
 	}
 
 	@Override
@@ -448,7 +448,7 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public void setRequiredLookupColumn(CFLibDbKeyHash256 argColumnId) {
-		requiredColumnId = argColumnId;
+		setRequiredColumnId(argColumnId);
 	}
 
 	@Override

@@ -144,7 +144,7 @@ public class CFBamBuffTable
 
 	@Override
 	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
-		requiredSchemaDefId = argSchemaDefId;
+		setRequiredSchemaDefId(argSchemaDefId);
 	}
 
 	@Override
@@ -193,7 +193,7 @@ public class CFBamBuffTable
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
+		setOptionalDefSchemaId(argDefSchemaId);
 	}
 
 	@Override
@@ -242,7 +242,7 @@ public class CFBamBuffTable
 
 	@Override
 	public void setOptionalLookupLookupIndex(CFLibDbKeyHash256 argLookupIndexId) {
-		optionalLookupIndexId = argLookupIndexId;
+		setOptionalLookupIndexId(argLookupIndexId);
 	}
 
 	@Override
@@ -291,7 +291,7 @@ public class CFBamBuffTable
 
 	@Override
 	public void setOptionalLookupAltIndex(CFLibDbKeyHash256 argAltIndexId) {
-		optionalAltIndexId = argAltIndexId;
+		setOptionalAltIndexId(argAltIndexId);
 	}
 
 	@Override
@@ -340,7 +340,7 @@ public class CFBamBuffTable
 
 	@Override
 	public void setOptionalLookupQualTable(CFLibDbKeyHash256 argQualifyingTableId) {
-		optionalQualifyingTableId = argQualifyingTableId;
+		setOptionalQualifyingTableId(argQualifyingTableId);
 	}
 
 	@Override
@@ -389,7 +389,7 @@ public class CFBamBuffTable
 
 	@Override
 	public void setOptionalLookupPrimaryIndex(CFLibDbKeyHash256 argPrimaryIndexId) {
-		optionalPrimaryIndexId = argPrimaryIndexId;
+		setOptionalPrimaryIndexId(argPrimaryIndexId);
 	}
 
 	@Override

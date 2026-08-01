@@ -102,7 +102,7 @@ public class CFBamBuffTableTweak
 
 	@Override
 	public void setRequiredContainerTableDef(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
+		setRequiredTableId(argTableId);
 	}
 
 	@Override

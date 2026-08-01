@@ -124,7 +124,7 @@ public class CFBamBuffIndex
 
 	@Override
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
+		setRequiredTableId(argTableId);
 	}
 
 	@Override
@@ -173,7 +173,7 @@ public class CFBamBuffIndex
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
+		setOptionalDefSchemaId(argDefSchemaId);
 	}
 
 	@Override

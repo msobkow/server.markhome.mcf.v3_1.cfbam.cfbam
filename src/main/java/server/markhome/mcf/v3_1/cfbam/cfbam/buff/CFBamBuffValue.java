@@ -256,7 +256,7 @@ public class CFBamBuffValue
 
 	@Override
 	public void setRequiredContainerScope(CFLibDbKeyHash256 argScopeId) {
-		requiredScopeId = argScopeId;
+		setRequiredScopeId(argScopeId);
 	}
 
 	@Override
@@ -305,7 +305,7 @@ public class CFBamBuffValue
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
+		setOptionalDefSchemaId(argDefSchemaId);
 	}
 
 	@Override
@@ -354,7 +354,7 @@ public class CFBamBuffValue
 
 	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
-		optionalPrevId = argPrevId;
+		setOptionalPrevId(argPrevId);
 	}
 
 	@Override
@@ -403,7 +403,7 @@ public class CFBamBuffValue
 
 	@Override
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId) {
-		optionalNextId = argNextId;
+		setOptionalNextId(argNextId);
 	}
 
 	@Override

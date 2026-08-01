@@ -114,7 +114,7 @@ public class CFBamBuffSchemaRef
 
 	@Override
 	public void setRequiredContainerSchema(CFLibDbKeyHash256 argSchemaId) {
-		requiredSchemaId = argSchemaId;
+		setRequiredSchemaId(argSchemaId);
 	}
 
 	@Override
@@ -163,7 +163,7 @@ public class CFBamBuffSchemaRef
 
 	@Override
 	public void setOptionalLookupRefSchema(CFLibDbKeyHash256 argRefSchemaId) {
-		optionalRefSchemaId = argRefSchemaId;
+		setOptionalRefSchemaId(argRefSchemaId);
 	}
 
 	@Override
@@ -212,7 +212,7 @@ public class CFBamBuffSchemaRef
 
 	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
-		optionalPrevId = argPrevId;
+		setOptionalPrevId(argPrevId);
 	}
 
 	@Override
@@ -261,7 +261,7 @@ public class CFBamBuffSchemaRef
 
 	@Override
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId) {
-		optionalNextId = argNextId;
+		setOptionalNextId(argNextId);
 	}
 
 	@Override

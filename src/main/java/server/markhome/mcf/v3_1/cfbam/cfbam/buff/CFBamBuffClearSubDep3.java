@@ -104,7 +104,7 @@ public class CFBamBuffClearSubDep3
 
 	@Override
 	public void setRequiredContainerClearSubDep2(CFLibDbKeyHash256 argClearSubDep2Id) {
-		requiredClearSubDep2Id = argClearSubDep2Id;
+		setRequiredClearSubDep2Id(argClearSubDep2Id);
 	}
 
 	@Override

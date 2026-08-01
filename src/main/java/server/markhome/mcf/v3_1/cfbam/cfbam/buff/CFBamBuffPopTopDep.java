@@ -104,7 +104,7 @@ public class CFBamBuffPopTopDep
 
 	@Override
 	public void setRequiredContainerContRelation(CFLibDbKeyHash256 argContRelationId) {
-		requiredContRelationId = argContRelationId;
+		setRequiredContRelationId(argContRelationId);
 	}
 
 	@Override

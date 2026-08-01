@@ -104,7 +104,7 @@ public class CFBamBuffDelDep
 
 	@Override
 	public void setRequiredLookupRelation(CFLibDbKeyHash256 argRelationId) {
-		requiredRelationId = argRelationId;
+		setRequiredRelationId(argRelationId);
 	}
 
 	@Override
@@ -153,7 +153,7 @@ public class CFBamBuffDelDep
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
+		setOptionalDefSchemaId(argDefSchemaId);
 	}
 
 	@Override

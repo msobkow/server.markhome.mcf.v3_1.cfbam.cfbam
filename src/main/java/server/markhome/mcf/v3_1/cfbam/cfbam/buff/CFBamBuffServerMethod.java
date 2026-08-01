@@ -128,7 +128,7 @@ public class CFBamBuffServerMethod
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
+		setOptionalDefSchemaId(argDefSchemaId);
 	}
 
 	@Override
@@ -177,7 +177,7 @@ public class CFBamBuffServerMethod
 
 	@Override
 	public void setRequiredContainerForTable(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
+		setRequiredTableId(argTableId);
 	}
 
 	@Override

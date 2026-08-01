@@ -102,7 +102,7 @@ public class CFBamBuffNmTokenType
 
 	@Override
 	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
-		requiredSchemaDefId = argSchemaDefId;
+		setRequiredSchemaDefId(argSchemaDefId);
 	}
 
 	@Override

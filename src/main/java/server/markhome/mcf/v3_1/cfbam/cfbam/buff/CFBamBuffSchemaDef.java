@@ -126,7 +126,7 @@ public class CFBamBuffSchemaDef
 
 	@Override
 	public void setRequiredContainerMinorVersion(CFLibDbKeyHash256 argMinorVersionId) {
-		requiredMinorVersionId = argMinorVersionId;
+		setRequiredMinorVersionId(argMinorVersionId);
 	}
 
 	@Override
@@ -155,7 +155,7 @@ public class CFBamBuffSchemaDef
 
 	@Override
 	public void setRequiredOwnerCTenant(CFLibDbKeyHash256 argCTenantId) {
-		requiredCTenantId = argCTenantId;
+		setRequiredCTenantId(argCTenantId);
 	}
 
 	@Override

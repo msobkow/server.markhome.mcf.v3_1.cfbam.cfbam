@@ -104,7 +104,7 @@ public class CFBamBuffPopSubDep2
 
 	@Override
 	public void setRequiredContainerPopSubDep1(CFLibDbKeyHash256 argPopSubDep1Id) {
-		requiredPopSubDep1Id = argPopSubDep1Id;
+		setRequiredPopSubDep1Id(argPopSubDep1Id);
 	}
 
 	@Override

@@ -102,7 +102,7 @@ public class CFBamBuffUInt16Col
 
 	@Override
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
+		setRequiredTableId(argTableId);
 	}
 
 	@Override

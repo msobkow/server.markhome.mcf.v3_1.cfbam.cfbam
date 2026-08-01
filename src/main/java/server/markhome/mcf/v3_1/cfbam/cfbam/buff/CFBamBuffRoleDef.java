@@ -192,7 +192,7 @@ public class CFBamBuffRoleDef
 
 	@Override
 	public void setRequiredContainerScopeDef(CFLibDbKeyHash256 argScopeId) {
-		requiredScopeId = argScopeId;
+		setRequiredScopeId(argScopeId);
 	}
 
 	@Override
@@ -241,7 +241,7 @@ public class CFBamBuffRoleDef
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
+		setOptionalDefSchemaId(argDefSchemaId);
 	}
 
 	@Override

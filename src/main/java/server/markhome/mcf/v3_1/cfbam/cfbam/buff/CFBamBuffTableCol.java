@@ -108,7 +108,7 @@ public class CFBamBuffTableCol
 
 	@Override
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
+		setRequiredTableId(argTableId);
 	}
 
 	@Override
@@ -157,7 +157,7 @@ public class CFBamBuffTableCol
 
 	@Override
 	public void setRequiredParentDataType(CFLibDbKeyHash256 argDataId) {
-		optionalDataId = argDataId;
+		setOptionalDataId(argDataId);
 	}
 
 	@Override

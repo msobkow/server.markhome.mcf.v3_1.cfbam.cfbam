@@ -104,7 +104,7 @@ public class CFBamBuffDelSubDep2
 
 	@Override
 	public void setRequiredContainerDelSubDep1(CFLibDbKeyHash256 argDelSubDep1Id) {
-		requiredDelSubDep1Id = argDelSubDep1Id;
+		setRequiredDelSubDep1Id(argDelSubDep1Id);
 	}
 
 	@Override

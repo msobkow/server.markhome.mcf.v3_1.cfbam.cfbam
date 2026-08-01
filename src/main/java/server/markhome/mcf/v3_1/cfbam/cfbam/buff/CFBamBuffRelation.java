@@ -138,7 +138,7 @@ public class CFBamBuffRelation
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
+		setOptionalDefSchemaId(argDefSchemaId);
 	}
 
 	@Override
@@ -187,7 +187,7 @@ public class CFBamBuffRelation
 
 	@Override
 	public void setRequiredContainerFromTable(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
+		setRequiredTableId(argTableId);
 	}
 
 	@Override
@@ -236,7 +236,7 @@ public class CFBamBuffRelation
 
 	@Override
 	public void setRequiredLookupFromIndex(CFLibDbKeyHash256 argFromIndexId) {
-		requiredFromIndexId = argFromIndexId;
+		setRequiredFromIndexId(argFromIndexId);
 	}
 
 	@Override
@@ -285,7 +285,7 @@ public class CFBamBuffRelation
 
 	@Override
 	public void setRequiredLookupToTable(CFLibDbKeyHash256 argToTableId) {
-		requiredToTableId = argToTableId;
+		setRequiredToTableId(argToTableId);
 	}
 
 	@Override
@@ -334,7 +334,7 @@ public class CFBamBuffRelation
 
 	@Override
 	public void setRequiredLookupToIndex(CFLibDbKeyHash256 argToIndexId) {
-		requiredToIndexId = argToIndexId;
+		setRequiredToIndexId(argToIndexId);
 	}
 
 	@Override
@@ -383,7 +383,7 @@ public class CFBamBuffRelation
 
 	@Override
 	public void setOptionalLookupNarrowed(CFLibDbKeyHash256 argNarrowedId) {
-		optionalNarrowedId = argNarrowedId;
+		setOptionalNarrowedId(argNarrowedId);
 	}
 
 	@Override

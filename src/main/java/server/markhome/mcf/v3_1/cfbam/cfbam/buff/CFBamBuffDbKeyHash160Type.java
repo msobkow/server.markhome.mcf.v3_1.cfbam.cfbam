@@ -102,7 +102,7 @@ public class CFBamBuffDbKeyHash160Type
 
 	@Override
 	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
-		requiredSchemaDefId = argSchemaDefId;
+		setRequiredSchemaDefId(argSchemaDefId);
 	}
 
 	@Override

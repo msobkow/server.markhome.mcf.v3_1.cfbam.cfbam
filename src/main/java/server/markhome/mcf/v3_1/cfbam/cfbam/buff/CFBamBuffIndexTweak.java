@@ -102,7 +102,7 @@ public class CFBamBuffIndexTweak
 
 	@Override
 	public void setRequiredContainerIndexDef(CFLibDbKeyHash256 argIndexId) {
-		requiredIndexId = argIndexId;
+		setRequiredIndexId(argIndexId);
 	}
 
 	@Override

@@ -102,7 +102,7 @@ public class CFBamBuffServerListFunc
 
 	@Override
 	public void setOptionalLookupRetTable(CFLibDbKeyHash256 argRetTableId) {
-		optionalRetTableId = argRetTableId;
+		setOptionalRetTableId(argRetTableId);
 	}
 
 	@Override

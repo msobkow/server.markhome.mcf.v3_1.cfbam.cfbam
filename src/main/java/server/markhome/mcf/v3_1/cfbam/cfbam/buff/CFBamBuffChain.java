@@ -202,7 +202,7 @@ public class CFBamBuffChain
 
 	@Override
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
-		requiredTableId = argTableId;
+		setRequiredTableId(argTableId);
 	}
 
 	@Override
@@ -251,7 +251,7 @@ public class CFBamBuffChain
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
-		optionalDefSchemaId = argDefSchemaId;
+		setOptionalDefSchemaId(argDefSchemaId);
 	}
 
 	@Override
@@ -300,7 +300,7 @@ public class CFBamBuffChain
 
 	@Override
 	public void setRequiredLookupPrevRel(CFLibDbKeyHash256 argPrevRelationId) {
-		requiredPrevRelationId = argPrevRelationId;
+		setRequiredPrevRelationId(argPrevRelationId);
 	}
 
 	@Override
@@ -349,7 +349,7 @@ public class CFBamBuffChain
 
 	@Override
 	public void setRequiredLookupNextRel(CFLibDbKeyHash256 argNextRelationId) {
-		requiredNextRelationId = argNextRelationId;
+		setRequiredNextRelationId(argNextRelationId);
 	}
 
 	@Override
