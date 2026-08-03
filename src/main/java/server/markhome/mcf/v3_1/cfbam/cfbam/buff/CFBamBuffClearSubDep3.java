@@ -149,6 +149,7 @@ public class CFBamBuffClearSubDep3
 				1,
 				"value" );
 		}
+		
 		requiredClearSubDep2Id = value;
 	}
 
@@ -172,6 +173,7 @@ public class CFBamBuffClearSubDep3
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

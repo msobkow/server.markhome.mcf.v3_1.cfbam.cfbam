@@ -96,13 +96,22 @@ public class CFBamBuffUInt16DefH extends CFBamBuffAtomH
 
 	@Override
 	public void setOptionalInitValue( Integer value ) {
-		if( value < ICFBamUInt16Def.INITVALUE_MIN_VALUE ) {
+		if( value < ICFBamPubUInt16Def.INITVALUE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setOptionalInitValue",
 				1,
 				"value",
 				value,
-				ICFBamUInt16Def.INITVALUE_MIN_VALUE );
+				ICFBamPubUInt16Def.INITVALUE_MIN_VALUE );
+		}
+		
+		if( value < ICFBamPubUInt16Def.INITVALUE_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setOptionalInitValue",
+				1,
+				"value",
+				value,
+				ICFBamPubUInt16Def.INITVALUE_MIN_VALUE );
 		}
 		optionalInitValue = value;
 	}
@@ -114,13 +123,22 @@ public class CFBamBuffUInt16DefH extends CFBamBuffAtomH
 
 	@Override
 	public void setOptionalMinValue( Integer value ) {
-		if( value < ICFBamUInt16Def.MINVALUE_MIN_VALUE ) {
+		if( value < ICFBamPubUInt16Def.MINVALUE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setOptionalMinValue",
 				1,
 				"value",
 				value,
-				ICFBamUInt16Def.MINVALUE_MIN_VALUE );
+				ICFBamPubUInt16Def.MINVALUE_MIN_VALUE );
+		}
+		
+		if( value < ICFBamPubUInt16Def.MINVALUE_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setOptionalMinValue",
+				1,
+				"value",
+				value,
+				ICFBamPubUInt16Def.MINVALUE_MIN_VALUE );
 		}
 		optionalMinValue = value;
 	}
@@ -132,13 +150,22 @@ public class CFBamBuffUInt16DefH extends CFBamBuffAtomH
 
 	@Override
 	public void setOptionalMaxValue( Integer value ) {
-		if( value < ICFBamUInt16Def.MAXVALUE_MIN_VALUE ) {
+		if( value < ICFBamPubUInt16Def.MAXVALUE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setOptionalMaxValue",
 				1,
 				"value",
 				value,
-				ICFBamUInt16Def.MAXVALUE_MIN_VALUE );
+				ICFBamPubUInt16Def.MAXVALUE_MIN_VALUE );
+		}
+		
+		if( value < ICFBamPubUInt16Def.MAXVALUE_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setOptionalMaxValue",
+				1,
+				"value",
+				value,
+				ICFBamPubUInt16Def.MAXVALUE_MIN_VALUE );
 		}
 		optionalMaxValue = value;
 	}

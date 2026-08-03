@@ -84,6 +84,7 @@ public class CFBamBuffRelationColByNextIdxKey
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		
 		optionalNextId = value;
 	}
 

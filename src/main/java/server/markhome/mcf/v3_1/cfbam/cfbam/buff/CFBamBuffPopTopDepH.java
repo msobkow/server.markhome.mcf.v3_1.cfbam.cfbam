@@ -99,6 +99,7 @@ public class CFBamBuffPopTopDepH extends CFBamBuffPopDepH
 				1,
 				"value" );
 		}
+		
 		requiredContRelationId = value;
 	}
 
@@ -122,6 +123,7 @@ public class CFBamBuffPopTopDepH extends CFBamBuffPopDepH
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

@@ -84,6 +84,7 @@ public class CFBamBuffTableByQualTableIdxKey
 	}
 
 	public void setOptionalQualifyingTableId( CFLibDbKeyHash256 value ) {
+		
 		optionalQualifyingTableId = value;
 	}
 

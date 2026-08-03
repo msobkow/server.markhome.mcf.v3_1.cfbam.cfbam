@@ -100,6 +100,7 @@ public class CFBamBuffServerProc
 				value.length(),
 				16 );
 		}
+		
 		optionalDummy = value;
 	}
 

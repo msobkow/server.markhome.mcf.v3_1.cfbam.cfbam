@@ -84,6 +84,7 @@ public class CFBamBuffSchemaRefByRefSchemaIdxKey
 	}
 
 	public void setOptionalRefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalRefSchemaId = value;
 	}
 

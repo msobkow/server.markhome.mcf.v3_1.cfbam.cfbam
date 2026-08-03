@@ -151,6 +151,7 @@ public class CFBamBuffValueHPKey
 				1,
 				"value" );
 		}
+		
 		requiredId = value;
 	}
 

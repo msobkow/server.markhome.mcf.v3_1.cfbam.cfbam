@@ -147,6 +147,7 @@ public class CFBamBuffTZTimeCol
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

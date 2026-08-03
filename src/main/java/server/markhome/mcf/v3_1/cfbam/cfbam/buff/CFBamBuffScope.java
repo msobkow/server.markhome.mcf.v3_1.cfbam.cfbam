@@ -110,7 +110,8 @@ public class CFBamBuffScope
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -209,6 +210,7 @@ public class CFBamBuffScope
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 

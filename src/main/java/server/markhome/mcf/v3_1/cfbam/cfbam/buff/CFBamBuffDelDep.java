@@ -192,6 +192,7 @@ public class CFBamBuffDelDep
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -207,6 +208,7 @@ public class CFBamBuffDelDep
 				1,
 				"value" );
 		}
+		
 		requiredRelationId = value;
 	}
 

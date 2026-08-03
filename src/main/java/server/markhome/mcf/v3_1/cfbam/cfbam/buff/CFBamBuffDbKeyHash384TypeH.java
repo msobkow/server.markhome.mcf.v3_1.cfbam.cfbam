@@ -97,6 +97,7 @@ public class CFBamBuffDbKeyHash384TypeH extends CFBamBuffDbKeyHash384DefH
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

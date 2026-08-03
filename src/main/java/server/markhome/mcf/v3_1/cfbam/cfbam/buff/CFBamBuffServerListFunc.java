@@ -141,6 +141,7 @@ public class CFBamBuffServerListFunc
 	}
 
 	public void setOptionalRetTableId( CFLibDbKeyHash256 value ) {
+		
 		optionalRetTableId = value;
 	}
 

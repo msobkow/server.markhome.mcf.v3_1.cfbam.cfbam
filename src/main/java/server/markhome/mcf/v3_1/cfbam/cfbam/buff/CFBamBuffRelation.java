@@ -476,6 +476,7 @@ public class CFBamBuffRelation
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 
@@ -485,6 +486,7 @@ public class CFBamBuffRelation
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -508,6 +510,7 @@ public class CFBamBuffRelation
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -525,6 +528,7 @@ public class CFBamBuffRelation
 				value.length(),
 				16 );
 		}
+		
 		optionalShortName = value;
 	}
 
@@ -542,6 +546,7 @@ public class CFBamBuffRelation
 				value.length(),
 				64 );
 		}
+		
 		optionalLabel = value;
 	}
 
@@ -559,6 +564,7 @@ public class CFBamBuffRelation
 				value.length(),
 				128 );
 		}
+		
 		optionalShortDescription = value;
 	}
 
@@ -576,6 +582,7 @@ public class CFBamBuffRelation
 				value.length(),
 				1023 );
 		}
+		
 		optionalDescription = value;
 	}
 
@@ -591,6 +598,7 @@ public class CFBamBuffRelation
 				1,
 				"value" );
 		}
+		
 		requiredRelationType = value;
 	}
 
@@ -608,6 +616,7 @@ public class CFBamBuffRelation
 				value.length(),
 				32 );
 		}
+		
 		optionalDbName = value;
 	}
 
@@ -625,6 +634,7 @@ public class CFBamBuffRelation
 				value.length(),
 				16 );
 		}
+		
 		optionalSuffix = value;
 	}
 
@@ -640,6 +650,7 @@ public class CFBamBuffRelation
 				1,
 				"value" );
 		}
+		
 		requiredFromIndexId = value;
 	}
 
@@ -655,6 +666,7 @@ public class CFBamBuffRelation
 				1,
 				"value" );
 		}
+		
 		requiredToTableId = value;
 	}
 
@@ -670,6 +682,7 @@ public class CFBamBuffRelation
 				1,
 				"value" );
 		}
+		
 		requiredToIndexId = value;
 	}
 
@@ -679,6 +692,7 @@ public class CFBamBuffRelation
 	}
 
 	public void setRequiredIsRequired( boolean value ) {
+		
 		requiredIsRequired = value;
 	}
 
@@ -688,6 +702,7 @@ public class CFBamBuffRelation
 	}
 
 	public void setRequiredIsXsdContainer( boolean value ) {
+		
 		requiredIsXsdContainer = value;
 	}
 
@@ -697,6 +712,7 @@ public class CFBamBuffRelation
 	}
 
 	public void setRequiredIsLateResolver( boolean value ) {
+		
 		requiredIsLateResolver = value;
 	}
 
@@ -706,6 +722,7 @@ public class CFBamBuffRelation
 	}
 
 	public void setRequiredAllowAddendum( boolean value ) {
+		
 		requiredAllowAddendum = value;
 	}
 
@@ -715,6 +732,7 @@ public class CFBamBuffRelation
 	}
 
 	public void setOptionalNarrowedId( CFLibDbKeyHash256 value ) {
+		
 		optionalNarrowedId = value;
 	}
 
@@ -730,6 +748,7 @@ public class CFBamBuffRelation
 				1,
 				"value" );
 		}
+		
 		requiredCodeVis = value;
 	}
 

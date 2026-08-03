@@ -92,6 +92,7 @@ public class CFBamBuffValueByContNextIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredScopeId = value;
 	}
 
@@ -101,6 +102,7 @@ public class CFBamBuffValueByContNextIdxKey
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		
 		optionalNextId = value;
 	}
 

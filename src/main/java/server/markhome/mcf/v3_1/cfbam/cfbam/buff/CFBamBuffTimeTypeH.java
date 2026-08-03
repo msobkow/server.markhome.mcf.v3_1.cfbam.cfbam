@@ -97,6 +97,7 @@ public class CFBamBuffTimeTypeH extends CFBamBuffTimeDefH
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

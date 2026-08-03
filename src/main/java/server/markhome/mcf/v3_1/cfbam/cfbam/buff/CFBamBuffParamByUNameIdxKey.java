@@ -92,6 +92,7 @@ public class CFBamBuffParamByUNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredServerMethodId = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffParamByUNameIdxKey
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

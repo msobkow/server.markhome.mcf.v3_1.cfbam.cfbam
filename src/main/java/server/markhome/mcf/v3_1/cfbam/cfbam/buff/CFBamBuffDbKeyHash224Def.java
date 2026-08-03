@@ -100,6 +100,7 @@ public class CFBamBuffDbKeyHash224Def
 				value.length(),
 				56 );
 		}
+		
 		optionalInitValue = value;
 	}
 

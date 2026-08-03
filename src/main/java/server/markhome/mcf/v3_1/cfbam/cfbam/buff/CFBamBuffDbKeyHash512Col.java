@@ -147,6 +147,7 @@ public class CFBamBuffDbKeyHash512Col
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

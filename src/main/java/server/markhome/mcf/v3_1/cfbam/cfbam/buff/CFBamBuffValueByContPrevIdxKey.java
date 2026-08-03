@@ -92,6 +92,7 @@ public class CFBamBuffValueByContPrevIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredScopeId = value;
 	}
 
@@ -101,6 +102,7 @@ public class CFBamBuffValueByContPrevIdxKey
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		
 		optionalPrevId = value;
 	}
 

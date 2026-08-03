@@ -79,17 +79,18 @@ public class CFBamBuffServerMethodByMethCodeVisIdxKey
 	}
 
 	@Override
-	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
+	public $reference DataType EffCodeVisSchemaName$.$reference DataType Name$ getRequiredCodeVis() {
 		return( requiredCodeVis );
 	}
 
-	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
+	public void setRequiredCodeVis( $reference DataType EffCodeVisSchemaName$.$reference DataType Name$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredCodeVis",
 				1,
 				"value" );
 		}
+		
 		requiredCodeVis = value;
 	}
 

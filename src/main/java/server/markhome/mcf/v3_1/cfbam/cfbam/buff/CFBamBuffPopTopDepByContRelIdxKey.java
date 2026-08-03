@@ -90,6 +90,7 @@ public class CFBamBuffPopTopDepByContRelIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredContRelationId = value;
 	}
 

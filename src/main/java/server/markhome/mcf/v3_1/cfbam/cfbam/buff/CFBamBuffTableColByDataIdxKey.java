@@ -84,6 +84,7 @@ public class CFBamBuffTableColByDataIdxKey
 	}
 
 	public void setOptionalDataId( CFLibDbKeyHash256 value ) {
+		
 		optionalDataId = value;
 	}
 

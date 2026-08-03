@@ -100,6 +100,7 @@ public class CFBamBuffAtom
 				value.length(),
 				32 );
 		}
+		
 		optionalDbName = value;
 	}
 

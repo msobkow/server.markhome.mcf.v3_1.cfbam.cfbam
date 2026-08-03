@@ -90,6 +90,7 @@ public class CFBamBuffDbKeyHash512ColByTableIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

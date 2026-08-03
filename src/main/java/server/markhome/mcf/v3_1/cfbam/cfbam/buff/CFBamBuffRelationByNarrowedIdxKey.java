@@ -84,6 +84,7 @@ public class CFBamBuffRelationByNarrowedIdxKey
 	}
 
 	public void setOptionalNarrowedId( CFLibDbKeyHash256 value ) {
+		
 		optionalNarrowedId = value;
 	}
 

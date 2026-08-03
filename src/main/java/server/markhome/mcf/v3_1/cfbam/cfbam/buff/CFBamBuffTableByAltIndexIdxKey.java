@@ -84,6 +84,7 @@ public class CFBamBuffTableByAltIndexIdxKey
 	}
 
 	public void setOptionalAltIndexId( CFLibDbKeyHash256 value ) {
+		
 		optionalAltIndexId = value;
 	}
 

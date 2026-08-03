@@ -97,6 +97,7 @@ public class CFBamBuffStringTypeH extends CFBamBuffStringDefH
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

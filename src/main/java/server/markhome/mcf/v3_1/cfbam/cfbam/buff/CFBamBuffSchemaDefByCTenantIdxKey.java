@@ -90,6 +90,7 @@ public class CFBamBuffSchemaDefByCTenantIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredCTenantId = value;
 	}
 

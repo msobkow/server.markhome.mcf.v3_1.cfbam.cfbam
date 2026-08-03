@@ -97,6 +97,7 @@ public class CFBamBuffIndexTweakH extends CFBamBuffTweakH
 				1,
 				"value" );
 		}
+		
 		requiredIndexId = value;
 	}
 

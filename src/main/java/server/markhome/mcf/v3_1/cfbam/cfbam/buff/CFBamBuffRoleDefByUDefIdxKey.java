@@ -94,6 +94,7 @@ public class CFBamBuffRoleDefByUDefIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredScopeId = value;
 	}
 
@@ -103,6 +104,7 @@ public class CFBamBuffRoleDefByUDefIdxKey
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -126,6 +128,7 @@ public class CFBamBuffRoleDefByUDefIdxKey
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

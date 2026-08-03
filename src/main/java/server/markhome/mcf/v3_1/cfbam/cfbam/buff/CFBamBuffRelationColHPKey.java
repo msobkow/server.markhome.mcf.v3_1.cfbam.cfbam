@@ -151,6 +151,7 @@ public class CFBamBuffRelationColHPKey
 				1,
 				"value" );
 		}
+		
 		requiredId = value;
 	}
 

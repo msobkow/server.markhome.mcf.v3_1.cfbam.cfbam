@@ -92,6 +92,7 @@ public class CFBamBuffRelationColByRelPrevIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredRelationId = value;
 	}
 
@@ -101,6 +102,7 @@ public class CFBamBuffRelationColByRelPrevIdxKey
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		
 		optionalPrevId = value;
 	}
 

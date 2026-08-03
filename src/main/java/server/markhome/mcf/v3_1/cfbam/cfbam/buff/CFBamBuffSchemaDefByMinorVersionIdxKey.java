@@ -90,6 +90,7 @@ public class CFBamBuffSchemaDefByMinorVersionIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredMinorVersionId = value;
 	}
 

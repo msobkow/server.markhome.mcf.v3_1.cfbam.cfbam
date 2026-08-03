@@ -139,6 +139,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 
@@ -148,6 +149,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -171,6 +173,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -188,6 +191,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				32 );
 		}
+		
 		optionalDbName = value;
 	}
 
@@ -205,6 +209,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				16 );
 		}
+		
 		optionalShortName = value;
 	}
 
@@ -222,6 +227,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				64 );
 		}
+		
 		optionalLabel = value;
 	}
 
@@ -239,6 +245,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				50 );
 		}
+		
 		optionalShortDescription = value;
 	}
 
@@ -256,6 +263,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				100 );
 		}
+		
 		optionalDescription = value;
 	}
 
@@ -265,6 +273,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 	}
 
 	public void setRequiredPageData( boolean value ) {
+		
 		requiredPageData = value;
 	}
 
@@ -274,6 +283,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 	}
 
 	public void setOptionalPrimaryIndexId( CFLibDbKeyHash256 value ) {
+		
 		optionalPrimaryIndexId = value;
 	}
 
@@ -297,6 +307,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				4 );
 		}
+		
 		requiredTableClassCode = value;
 	}
 
@@ -306,6 +317,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 	}
 
 	public void setOptionalLookupIndexId( CFLibDbKeyHash256 value ) {
+		
 		optionalLookupIndexId = value;
 	}
 
@@ -315,6 +327,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 	}
 
 	public void setOptionalAltIndexId( CFLibDbKeyHash256 value ) {
+		
 		optionalAltIndexId = value;
 	}
 
@@ -324,6 +337,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 	}
 
 	public void setOptionalQualifyingTableId( CFLibDbKeyHash256 value ) {
+		
 		optionalQualifyingTableId = value;
 	}
 
@@ -333,6 +347,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 	}
 
 	public void setRequiredIsInstantiable( boolean value ) {
+		
 		requiredIsInstantiable = value;
 	}
 
@@ -342,6 +357,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 	}
 
 	public void setRequiredHasHistory( boolean value ) {
+		
 		requiredHasHistory = value;
 	}
 
@@ -351,6 +367,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 	}
 
 	public void setRequiredHasAuditColumns( boolean value ) {
+		
 		requiredHasAuditColumns = value;
 	}
 
@@ -360,6 +377,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 	}
 
 	public void setRequiredIsMutable( boolean value ) {
+		
 		requiredIsMutable = value;
 	}
 
@@ -369,6 +387,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 	}
 
 	public void setRequiredIsServerOnly( boolean value ) {
+		
 		requiredIsServerOnly = value;
 	}
 
@@ -384,6 +403,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredLoaderBehaviour = value;
 	}
 
@@ -399,6 +419,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredSecScope = value;
 	}
 
@@ -414,6 +435,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredCodeVis = value;
 	}
 

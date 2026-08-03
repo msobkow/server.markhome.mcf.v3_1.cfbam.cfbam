@@ -109,6 +109,7 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredSchemaId = value;
 	}
 
@@ -132,6 +133,7 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -155,6 +157,7 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
 				value.length(),
 				1024 );
 		}
+		
 		requiredRefModelName = value;
 	}
 
@@ -178,6 +181,7 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
 				value.length(),
 				1024 );
 		}
+		
 		requiredIncludeRoot = value;
 	}
 
@@ -187,6 +191,7 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
 	}
 
 	public void setOptionalRefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalRefSchemaId = value;
 	}
 
@@ -196,6 +201,7 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		
 		optionalPrevId = value;
 	}
 
@@ -205,6 +211,7 @@ public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		
 		optionalNextId = value;
 	}
 

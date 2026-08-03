@@ -147,6 +147,7 @@ public class CFBamBuffStringType
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

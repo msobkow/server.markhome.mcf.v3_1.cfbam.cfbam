@@ -149,6 +149,7 @@ public class CFBamBuffSchemaRole
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 
@@ -164,6 +165,7 @@ public class CFBamBuffSchemaRole
 				1,
 				"value" );
 		}
+		
 		requiredRoleScope = value;
 	}
 

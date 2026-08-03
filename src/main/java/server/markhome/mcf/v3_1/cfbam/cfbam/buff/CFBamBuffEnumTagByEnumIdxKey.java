@@ -90,6 +90,7 @@ public class CFBamBuffEnumTagByEnumIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredEnumId = value;
 	}
 

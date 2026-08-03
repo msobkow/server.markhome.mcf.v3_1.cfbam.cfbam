@@ -123,6 +123,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 
@@ -132,6 +133,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -155,6 +157,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -172,6 +175,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 				value.length(),
 				16 );
 		}
+		
 		optionalShortName = value;
 	}
 
@@ -189,6 +193,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 				value.length(),
 				64 );
 		}
+		
 		optionalLabel = value;
 	}
 
@@ -206,6 +211,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 				value.length(),
 				128 );
 		}
+		
 		optionalShortDescription = value;
 	}
 
@@ -223,6 +229,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 				value.length(),
 				1023 );
 		}
+		
 		optionalDescription = value;
 	}
 
@@ -240,6 +247,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 				value.length(),
 				16 );
 		}
+		
 		optionalSuffix = value;
 	}
 
@@ -249,6 +257,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 	}
 
 	public void setRequiredIsInstanceMethod( boolean value ) {
+		
 		requiredIsInstanceMethod = value;
 	}
 
@@ -258,6 +267,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 	}
 
 	public void setRequiredIsServerOnly( boolean value ) {
+		
 		requiredIsServerOnly = value;
 	}
 
@@ -273,6 +283,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredCodeVis = value;
 	}
 
@@ -296,6 +307,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 				value.length(),
 				2000000 );
 		}
+		
 		requiredJMethodBody = value;
 	}
 
@@ -319,6 +331,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 				value.length(),
 				2000000 );
 		}
+		
 		requiredCppMethodBody = value;
 	}
 
@@ -342,6 +355,7 @@ public class CFBamBuffServerMethodH extends CFBamBuffScopeH
 				value.length(),
 				2000000 );
 		}
+		
 		requiredCsMethodBody = value;
 	}
 

@@ -93,6 +93,7 @@ public class CFBamBuffPopDepH extends CFBamBuffScopeH
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -108,6 +109,7 @@ public class CFBamBuffPopDepH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredRelationId = value;
 	}
 

@@ -90,6 +90,7 @@ public class CFBamBuffNumberTypeBySchemaIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

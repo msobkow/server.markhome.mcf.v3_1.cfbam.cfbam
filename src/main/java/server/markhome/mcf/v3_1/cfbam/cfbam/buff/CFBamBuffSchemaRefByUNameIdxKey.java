@@ -92,6 +92,7 @@ public class CFBamBuffSchemaRefByUNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSchemaId = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffSchemaRefByUNameIdxKey
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

@@ -240,7 +240,8 @@ public class CFBamBuffChainH
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -249,6 +250,7 @@ public class CFBamBuffChainH
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -272,6 +274,7 @@ public class CFBamBuffChainH
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -289,6 +292,7 @@ public class CFBamBuffChainH
 				value.length(),
 				16 );
 		}
+		
 		optionalShortName = value;
 	}
 
@@ -306,6 +310,7 @@ public class CFBamBuffChainH
 				value.length(),
 				64 );
 		}
+		
 		optionalLabel = value;
 	}
 
@@ -323,6 +328,7 @@ public class CFBamBuffChainH
 				value.length(),
 				128 );
 		}
+		
 		optionalShortDescription = value;
 	}
 
@@ -340,6 +346,7 @@ public class CFBamBuffChainH
 				value.length(),
 				1023 );
 		}
+		
 		optionalDescription = value;
 	}
 
@@ -355,6 +362,7 @@ public class CFBamBuffChainH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 
@@ -372,6 +380,7 @@ public class CFBamBuffChainH
 				value.length(),
 				16 );
 		}
+		
 		optionalSuffix = value;
 	}
 
@@ -387,6 +396,7 @@ public class CFBamBuffChainH
 				1,
 				"value" );
 		}
+		
 		requiredPrevRelationId = value;
 	}
 
@@ -402,6 +412,7 @@ public class CFBamBuffChainH
 				1,
 				"value" );
 		}
+		
 		requiredNextRelationId = value;
 	}
 

@@ -91,6 +91,7 @@ public class CFBamBuffServerListFuncH extends CFBamBuffServerMethodH
 	}
 
 	public void setOptionalRetTableId( CFLibDbKeyHash256 value ) {
+		
 		optionalRetTableId = value;
 	}
 

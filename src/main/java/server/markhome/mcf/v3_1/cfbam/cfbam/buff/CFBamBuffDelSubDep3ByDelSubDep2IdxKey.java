@@ -90,6 +90,7 @@ public class CFBamBuffDelSubDep3ByDelSubDep2IdxKey
 				1,
 				"value" );
 		}
+		
 		requiredDelSubDep2Id = value;
 	}
 

@@ -99,6 +99,7 @@ public class CFBamBuffSchemaRoleH extends CFBamBuffRoleDefH
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 
@@ -114,6 +115,7 @@ public class CFBamBuffSchemaRoleH extends CFBamBuffRoleDefH
 				1,
 				"value" );
 		}
+		
 		requiredRoleScope = value;
 	}
 

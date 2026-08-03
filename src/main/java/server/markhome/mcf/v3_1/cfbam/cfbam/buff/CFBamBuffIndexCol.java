@@ -178,7 +178,8 @@ public class CFBamBuffIndexCol
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -493,6 +494,7 @@ public class CFBamBuffIndexCol
 				1,
 				"value" );
 		}
+		
 		requiredIndexId = value;
 	}
 
@@ -502,6 +504,7 @@ public class CFBamBuffIndexCol
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -525,6 +528,7 @@ public class CFBamBuffIndexCol
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -542,6 +546,7 @@ public class CFBamBuffIndexCol
 				value.length(),
 				16 );
 		}
+		
 		optionalShortName = value;
 	}
 
@@ -559,6 +564,7 @@ public class CFBamBuffIndexCol
 				value.length(),
 				64 );
 		}
+		
 		optionalLabel = value;
 	}
 
@@ -576,6 +582,7 @@ public class CFBamBuffIndexCol
 				value.length(),
 				128 );
 		}
+		
 		optionalShortDescription = value;
 	}
 
@@ -593,6 +600,7 @@ public class CFBamBuffIndexCol
 				value.length(),
 				1023 );
 		}
+		
 		optionalDescription = value;
 	}
 
@@ -608,6 +616,7 @@ public class CFBamBuffIndexCol
 				1,
 				"value" );
 		}
+		
 		requiredColumnId = value;
 	}
 
@@ -617,6 +626,7 @@ public class CFBamBuffIndexCol
 	}
 
 	public void setRequiredIsAscending( boolean value ) {
+		
 		requiredIsAscending = value;
 	}
 
@@ -626,6 +636,7 @@ public class CFBamBuffIndexCol
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		
 		optionalPrevId = value;
 	}
 
@@ -635,6 +646,7 @@ public class CFBamBuffIndexCol
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		
 		optionalNextId = value;
 	}
 

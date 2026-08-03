@@ -99,6 +99,7 @@ public class CFBamBuffAtomH extends CFBamBuffValueH
 				value.length(),
 				32 );
 		}
+		
 		optionalDbName = value;
 	}
 

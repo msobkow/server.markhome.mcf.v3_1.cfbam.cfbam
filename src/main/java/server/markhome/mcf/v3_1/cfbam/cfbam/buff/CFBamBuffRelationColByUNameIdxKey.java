@@ -92,6 +92,7 @@ public class CFBamBuffRelationColByUNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredRelationId = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffRelationColByUNameIdxKey
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

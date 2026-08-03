@@ -147,6 +147,7 @@ public class CFBamBuffNmTokensCol
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

@@ -84,6 +84,7 @@ public class CFBamBuffDelTopDepByPrevIdxKey
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		
 		optionalPrevId = value;
 	}
 

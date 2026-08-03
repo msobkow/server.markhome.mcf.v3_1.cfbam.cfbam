@@ -151,6 +151,7 @@ public class CFBamBuffChainHPKey
 				1,
 				"value" );
 		}
+		
 		requiredId = value;
 	}
 

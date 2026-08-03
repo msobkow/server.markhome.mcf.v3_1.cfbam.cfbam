@@ -90,6 +90,7 @@ public class CFBamBuffDbKeyHash512TypeBySchemaIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

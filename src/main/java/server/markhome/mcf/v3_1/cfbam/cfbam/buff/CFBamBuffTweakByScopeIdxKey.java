@@ -90,6 +90,7 @@ public class CFBamBuffTweakByScopeIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredScopeId = value;
 	}
 

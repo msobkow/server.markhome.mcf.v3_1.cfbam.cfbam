@@ -99,6 +99,7 @@ public class CFBamBuffClearSubDep1H extends CFBamBuffClearDepH
 				1,
 				"value" );
 		}
+		
 		requiredClearTopDepId = value;
 	}
 
@@ -122,6 +123,7 @@ public class CFBamBuffClearSubDep1H extends CFBamBuffClearDepH
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

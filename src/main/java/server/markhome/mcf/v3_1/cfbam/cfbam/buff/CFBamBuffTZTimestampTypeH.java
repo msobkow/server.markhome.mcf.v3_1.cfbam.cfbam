@@ -97,6 +97,7 @@ public class CFBamBuffTZTimestampTypeH extends CFBamBuffTZTimestampDefH
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

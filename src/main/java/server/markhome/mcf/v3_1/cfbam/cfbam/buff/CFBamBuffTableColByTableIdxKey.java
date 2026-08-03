@@ -90,6 +90,7 @@ public class CFBamBuffTableColByTableIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

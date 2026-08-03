@@ -90,6 +90,7 @@ public class CFBamBuffClearTopDepByClrTopDepTblIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

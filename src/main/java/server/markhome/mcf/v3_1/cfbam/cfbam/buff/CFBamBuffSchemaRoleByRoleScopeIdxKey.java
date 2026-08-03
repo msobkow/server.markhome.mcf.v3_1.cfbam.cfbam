@@ -79,17 +79,18 @@ public class CFBamBuffSchemaRoleByRoleScopeIdxKey
 	}
 
 	@Override
-	public ICFBamPubSchema.RoleScopeEnum getRequiredRoleScope() {
+	public $reference DataType EffCodeVisSchemaName$.$reference DataType Name$ getRequiredRoleScope() {
 		return( requiredRoleScope );
 	}
 
-	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value ) {
+	public void setRequiredRoleScope( $reference DataType EffCodeVisSchemaName$.$reference DataType Name$ value ) {
 		if( value == null ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredRoleScope",
 				1,
 				"value" );
 		}
+		
 		requiredRoleScope = value;
 	}
 

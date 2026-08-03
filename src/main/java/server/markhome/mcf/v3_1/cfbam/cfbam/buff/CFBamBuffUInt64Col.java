@@ -147,6 +147,7 @@ public class CFBamBuffUInt64Col
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

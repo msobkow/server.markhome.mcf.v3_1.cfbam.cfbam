@@ -90,6 +90,7 @@ public class CFBamBuffScopeByTenantIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 

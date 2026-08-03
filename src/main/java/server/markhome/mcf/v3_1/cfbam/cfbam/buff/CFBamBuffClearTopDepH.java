@@ -103,6 +103,7 @@ public class CFBamBuffClearTopDepH extends CFBamBuffClearDepH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 
@@ -126,6 +127,7 @@ public class CFBamBuffClearTopDepH extends CFBamBuffClearDepH
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -135,6 +137,7 @@ public class CFBamBuffClearTopDepH extends CFBamBuffClearDepH
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		
 		optionalPrevId = value;
 	}
 
@@ -144,6 +147,7 @@ public class CFBamBuffClearTopDepH extends CFBamBuffClearDepH
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		
 		optionalNextId = value;
 	}
 

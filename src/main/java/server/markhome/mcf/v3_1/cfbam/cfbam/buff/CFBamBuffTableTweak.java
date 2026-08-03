@@ -147,6 +147,7 @@ public class CFBamBuffTableTweak
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

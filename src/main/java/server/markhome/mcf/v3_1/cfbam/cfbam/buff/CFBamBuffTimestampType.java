@@ -147,6 +147,7 @@ public class CFBamBuffTimestampType
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

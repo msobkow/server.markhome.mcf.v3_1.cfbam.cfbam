@@ -92,6 +92,7 @@ public class CFBamBuffParamByContNextIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredServerMethodId = value;
 	}
 
@@ -101,6 +102,7 @@ public class CFBamBuffParamByContNextIdxKey
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		
 		optionalNextId = value;
 	}
 

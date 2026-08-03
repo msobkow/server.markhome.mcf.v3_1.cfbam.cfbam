@@ -90,6 +90,7 @@ public class CFBamBuffClearSubDep1ByClearTopDepIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredClearTopDepId = value;
 	}
 

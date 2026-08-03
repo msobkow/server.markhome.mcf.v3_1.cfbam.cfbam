@@ -90,6 +90,7 @@ public class CFBamBuffChainByPrevRelIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredPrevRelationId = value;
 	}
 

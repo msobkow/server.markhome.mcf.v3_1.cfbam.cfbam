@@ -90,6 +90,7 @@ public class CFBamBuffRelationByToTblIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredToTableId = value;
 	}
 

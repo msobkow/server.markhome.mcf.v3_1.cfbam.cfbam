@@ -92,6 +92,7 @@ public class CFBamBuffPopSubDep1ByUNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredPopTopDepId = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffPopSubDep1ByUNameIdxKey
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

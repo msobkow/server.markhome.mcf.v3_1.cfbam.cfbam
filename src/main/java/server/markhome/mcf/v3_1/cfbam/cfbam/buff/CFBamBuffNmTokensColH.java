@@ -97,6 +97,7 @@ public class CFBamBuffNmTokensColH extends CFBamBuffNmTokensDefH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

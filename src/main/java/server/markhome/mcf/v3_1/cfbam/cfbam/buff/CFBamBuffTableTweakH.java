@@ -97,6 +97,7 @@ public class CFBamBuffTableTweakH extends CFBamBuffTweakH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

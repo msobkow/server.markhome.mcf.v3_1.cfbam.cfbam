@@ -97,6 +97,7 @@ public class CFBamBuffDbKeyHash224ColH extends CFBamBuffDbKeyHash224DefH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

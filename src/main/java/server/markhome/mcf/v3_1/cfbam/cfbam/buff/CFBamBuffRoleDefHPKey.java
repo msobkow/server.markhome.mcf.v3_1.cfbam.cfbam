@@ -151,6 +151,7 @@ public class CFBamBuffRoleDefHPKey
 				1,
 				"value" );
 		}
+		
 		requiredId = value;
 	}
 

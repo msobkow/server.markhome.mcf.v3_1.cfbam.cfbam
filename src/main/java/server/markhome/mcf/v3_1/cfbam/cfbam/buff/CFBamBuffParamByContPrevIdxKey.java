@@ -92,6 +92,7 @@ public class CFBamBuffParamByContPrevIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredServerMethodId = value;
 	}
 
@@ -101,6 +102,7 @@ public class CFBamBuffParamByContPrevIdxKey
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		
 		optionalPrevId = value;
 	}
 

@@ -111,6 +111,7 @@ public class CFBamBuffDelTopDepH extends CFBamBuffDelDepH
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -126,6 +127,7 @@ public class CFBamBuffDelTopDepH extends CFBamBuffDelDepH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 
@@ -135,6 +137,7 @@ public class CFBamBuffDelTopDepH extends CFBamBuffDelDepH
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		
 		optionalPrevId = value;
 	}
 
@@ -144,6 +147,7 @@ public class CFBamBuffDelTopDepH extends CFBamBuffDelDepH
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		
 		optionalNextId = value;
 	}
 

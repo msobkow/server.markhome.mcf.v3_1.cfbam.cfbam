@@ -90,6 +90,7 @@ public class CFBamBuffDelDepByDelDepIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredRelationId = value;
 	}
 

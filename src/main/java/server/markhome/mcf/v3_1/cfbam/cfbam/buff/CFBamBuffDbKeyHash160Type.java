@@ -147,6 +147,7 @@ public class CFBamBuffDbKeyHash160Type
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

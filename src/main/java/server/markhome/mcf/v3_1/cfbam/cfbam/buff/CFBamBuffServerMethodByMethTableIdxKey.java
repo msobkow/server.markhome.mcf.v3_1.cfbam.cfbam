@@ -90,6 +90,7 @@ public class CFBamBuffServerMethodByMethTableIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

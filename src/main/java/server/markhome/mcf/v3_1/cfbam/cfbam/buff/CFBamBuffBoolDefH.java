@@ -97,6 +97,7 @@ public class CFBamBuffBoolDefH extends CFBamBuffAtomH
 	}
 
 	public void setOptionalInitValue( Boolean value ) {
+		
 		optionalInitValue = value;
 	}
 
@@ -114,6 +115,7 @@ public class CFBamBuffBoolDefH extends CFBamBuffAtomH
 				value.length(),
 				32 );
 		}
+		
 		optionalFalseString = value;
 	}
 
@@ -131,6 +133,7 @@ public class CFBamBuffBoolDefH extends CFBamBuffAtomH
 				value.length(),
 				32 );
 		}
+		
 		optionalTrueString = value;
 	}
 
@@ -148,6 +151,7 @@ public class CFBamBuffBoolDefH extends CFBamBuffAtomH
 				value.length(),
 				32 );
 		}
+		
 		optionalNullString = value;
 	}
 

@@ -97,6 +97,7 @@ public class CFBamBuffSchemaTweakH extends CFBamBuffTweakH
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

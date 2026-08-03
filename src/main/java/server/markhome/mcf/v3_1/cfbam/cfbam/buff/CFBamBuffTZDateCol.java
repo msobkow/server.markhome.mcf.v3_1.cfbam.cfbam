@@ -147,6 +147,7 @@ public class CFBamBuffTZDateCol
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

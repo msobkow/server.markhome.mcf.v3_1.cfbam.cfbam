@@ -92,6 +92,7 @@ public class CFBamBuffClearSubDep1ByUNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredClearTopDepId = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffClearSubDep1ByUNameIdxKey
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

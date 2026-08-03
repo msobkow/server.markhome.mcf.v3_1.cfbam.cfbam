@@ -95,21 +95,38 @@ public class CFBamBuffTokenDef
 
 	@Override
 	public void setRequiredMaxLen( int value ) {
-		if( value < ICFBamTokenDef.MAXLEN_MIN_VALUE ) {
+		if( value < ICFBamPubTokenDef.MAXLEN_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredMaxLen",
 				1,
 				"value",
 				value,
-				ICFBamTokenDef.MAXLEN_MIN_VALUE );
+				ICFBamPubTokenDef.MAXLEN_MIN_VALUE );
 		}
-		if( value > ICFBamTokenDef.MAXLEN_MAX_VALUE ) {
+		if( value > ICFBamPubTokenDef.MAXLEN_MAX_VALUE ) {
 			throw new CFLibArgumentOverflowException( getClass(),
 				"setRequiredMaxLen",
 				1,
 				"value",
 				value,
-				ICFBamTokenDef.MAXLEN_MAX_VALUE );
+				ICFBamPubTokenDef.MAXLEN_MAX_VALUE );
+		}
+		
+		if( value < ICFBamPubTokenDef.MAXLEN_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredMaxLen",
+				1,
+				"value",
+				value,
+				ICFBamPubTokenDef.MAXLEN_MIN_VALUE );
+		}
+		if( value > ICFBamPubTokenDef.MAXLEN_MAX_VALUE ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredMaxLen",
+				1,
+				"value",
+				value,
+				ICFBamPubTokenDef.MAXLEN_MAX_VALUE );
 		}
 		requiredMaxLen = value;
 	}
@@ -128,6 +145,7 @@ public class CFBamBuffTokenDef
 				value.length(),
 				64 );
 		}
+		
 		optionalInitValue = value;
 	}
 

@@ -84,6 +84,7 @@ public class CFBamBuffEnumTagByNextIdxKey
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		
 		optionalNextId = value;
 	}
 

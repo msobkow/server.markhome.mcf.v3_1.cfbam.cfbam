@@ -97,6 +97,7 @@ public class CFBamBuffNmTokenTypeH extends CFBamBuffNmTokenDefH
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

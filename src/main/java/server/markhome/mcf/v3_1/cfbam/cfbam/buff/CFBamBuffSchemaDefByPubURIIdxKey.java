@@ -92,6 +92,7 @@ public class CFBamBuffSchemaDefByPubURIIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredCTenantId = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffSchemaDefByPubURIIdxKey
 				value.length(),
 				512 );
 		}
+		
 		requiredPublishURI = value;
 	}
 

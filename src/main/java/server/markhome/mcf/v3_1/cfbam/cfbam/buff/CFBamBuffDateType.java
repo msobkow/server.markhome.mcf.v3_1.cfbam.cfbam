@@ -147,6 +147,7 @@ public class CFBamBuffDateType
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

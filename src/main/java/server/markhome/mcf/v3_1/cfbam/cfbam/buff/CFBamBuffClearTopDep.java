@@ -275,6 +275,7 @@ public class CFBamBuffClearTopDep
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 
@@ -298,6 +299,7 @@ public class CFBamBuffClearTopDep
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -307,6 +309,7 @@ public class CFBamBuffClearTopDep
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		
 		optionalPrevId = value;
 	}
 
@@ -316,6 +319,7 @@ public class CFBamBuffClearTopDep
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		
 		optionalNextId = value;
 	}
 

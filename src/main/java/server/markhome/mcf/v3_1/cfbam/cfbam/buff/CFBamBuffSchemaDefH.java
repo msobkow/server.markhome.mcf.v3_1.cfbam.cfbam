@@ -121,6 +121,7 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredCTenantId = value;
 	}
 
@@ -136,6 +137,7 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredMinorVersionId = value;
 	}
 
@@ -159,6 +161,7 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -176,6 +179,7 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 				value.length(),
 				12 );
 		}
+		
 		optionalDbName = value;
 	}
 
@@ -193,6 +197,7 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 				value.length(),
 				16 );
 		}
+		
 		optionalShortName = value;
 	}
 
@@ -210,6 +215,7 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 				value.length(),
 				64 );
 		}
+		
 		optionalLabel = value;
 	}
 
@@ -227,6 +233,7 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 				value.length(),
 				128 );
 		}
+		
 		optionalShortDescription = value;
 	}
 
@@ -244,6 +251,7 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 				value.length(),
 				1023 );
 		}
+		
 		optionalDescription = value;
 	}
 
@@ -267,6 +275,7 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 				value.length(),
 				10 );
 		}
+		
 		requiredCopyrightPeriod = value;
 	}
 
@@ -290,6 +299,7 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 				value.length(),
 				511 );
 		}
+		
 		requiredCopyrightHolder = value;
 	}
 
@@ -313,6 +323,7 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 				value.length(),
 				512 );
 		}
+		
 		requiredAuthorEMail = value;
 	}
 
@@ -336,6 +347,7 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 				value.length(),
 				1024 );
 		}
+		
 		requiredProjectURL = value;
 	}
 
@@ -359,6 +371,7 @@ public class CFBamBuffSchemaDefH extends CFBamBuffScopeH
 				value.length(),
 				512 );
 		}
+		
 		requiredPublishURI = value;
 	}
 

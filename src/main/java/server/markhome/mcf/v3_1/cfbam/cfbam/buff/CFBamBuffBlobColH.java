@@ -97,6 +97,7 @@ public class CFBamBuffBlobColH extends CFBamBuffBlobDefH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

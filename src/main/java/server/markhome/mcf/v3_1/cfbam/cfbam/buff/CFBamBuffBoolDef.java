@@ -98,6 +98,7 @@ public class CFBamBuffBoolDef
 	}
 
 	public void setOptionalInitValue( Boolean value ) {
+		
 		optionalInitValue = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffBoolDef
 				value.length(),
 				32 );
 		}
+		
 		optionalFalseString = value;
 	}
 
@@ -132,6 +134,7 @@ public class CFBamBuffBoolDef
 				value.length(),
 				32 );
 		}
+		
 		optionalTrueString = value;
 	}
 
@@ -149,6 +152,7 @@ public class CFBamBuffBoolDef
 				value.length(),
 				32 );
 		}
+		
 		optionalNullString = value;
 	}
 

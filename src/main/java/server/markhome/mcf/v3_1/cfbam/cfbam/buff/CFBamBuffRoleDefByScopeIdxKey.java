@@ -90,6 +90,7 @@ public class CFBamBuffRoleDefByScopeIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredScopeId = value;
 	}
 

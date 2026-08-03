@@ -92,6 +92,7 @@ public class CFBamBuffTableBySchemaCdIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffTableBySchemaCdIdxKey
 				value.length(),
 				4 );
 		}
+		
 		requiredTableClassCode = value;
 	}
 

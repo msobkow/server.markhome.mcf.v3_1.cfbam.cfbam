@@ -202,6 +202,7 @@ public class CFBamBuffTableCol
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 
@@ -219,6 +220,7 @@ public class CFBamBuffTableCol
 				value.length(),
 				32 );
 		}
+		
 		optionalDbName = value;
 	}
 
@@ -228,6 +230,7 @@ public class CFBamBuffTableCol
 	}
 
 	public void setOptionalDataId( CFLibDbKeyHash256 value ) {
+		
 		optionalDataId = value;
 	}
 
@@ -245,6 +248,7 @@ public class CFBamBuffTableCol
 				value.length(),
 				192 );
 		}
+		
 		optionalXmlElementName = value;
 	}
 

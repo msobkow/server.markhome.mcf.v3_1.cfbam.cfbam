@@ -126,7 +126,8 @@ public class CFBamBuffParam
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -441,6 +442,7 @@ public class CFBamBuffParam
 				1,
 				"value" );
 		}
+		
 		requiredServerMethodId = value;
 	}
 
@@ -450,6 +452,7 @@ public class CFBamBuffParam
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -473,6 +476,7 @@ public class CFBamBuffParam
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -490,6 +494,7 @@ public class CFBamBuffParam
 				value.length(),
 				128 );
 		}
+		
 		optionalShortDescription = value;
 	}
 
@@ -507,6 +512,7 @@ public class CFBamBuffParam
 				value.length(),
 				1023 );
 		}
+		
 		optionalDescription = value;
 	}
 
@@ -516,6 +522,7 @@ public class CFBamBuffParam
 	}
 
 	public void setRequiredIsNullable( boolean value ) {
+		
 		requiredIsNullable = value;
 	}
 
@@ -525,6 +532,7 @@ public class CFBamBuffParam
 	}
 
 	public void setOptionalTypeId( CFLibDbKeyHash256 value ) {
+		
 		optionalTypeId = value;
 	}
 
@@ -534,6 +542,7 @@ public class CFBamBuffParam
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		
 		optionalPrevId = value;
 	}
 
@@ -543,6 +552,7 @@ public class CFBamBuffParam
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		
 		optionalNextId = value;
 	}
 

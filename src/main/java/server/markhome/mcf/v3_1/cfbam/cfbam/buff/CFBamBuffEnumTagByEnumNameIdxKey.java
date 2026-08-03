@@ -92,6 +92,7 @@ public class CFBamBuffEnumTagByEnumNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredEnumId = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffEnumTagByEnumNameIdxKey
 				value.length(),
 				64 );
 		}
+		
 		requiredName = value;
 	}
 

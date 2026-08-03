@@ -147,6 +147,7 @@ public class CFBamBuffIndexTweak
 				1,
 				"value" );
 		}
+		
 		requiredIndexId = value;
 	}
 

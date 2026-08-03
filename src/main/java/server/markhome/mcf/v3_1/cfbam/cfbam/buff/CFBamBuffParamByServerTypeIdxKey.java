@@ -84,6 +84,7 @@ public class CFBamBuffParamByServerTypeIdxKey
 	}
 
 	public void setOptionalTypeId( CFLibDbKeyHash256 value ) {
+		
 		optionalTypeId = value;
 	}
 

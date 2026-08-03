@@ -99,6 +99,7 @@ public class CFBamBuffDbKeyHash384DefH extends CFBamBuffAtomH
 				value.length(),
 				96 );
 		}
+		
 		optionalInitValue = value;
 	}
 

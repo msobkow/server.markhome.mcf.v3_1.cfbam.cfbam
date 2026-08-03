@@ -90,6 +90,7 @@ public class CFBamBuffTimestampTypeBySchemaIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

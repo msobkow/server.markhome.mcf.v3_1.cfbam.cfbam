@@ -151,6 +151,7 @@ public class CFBamBuffEnumTagHPKey
 				1,
 				"value" );
 		}
+		
 		requiredId = value;
 	}
 

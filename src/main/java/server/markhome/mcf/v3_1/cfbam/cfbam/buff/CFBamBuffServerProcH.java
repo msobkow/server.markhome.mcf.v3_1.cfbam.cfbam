@@ -99,6 +99,7 @@ public class CFBamBuffServerProcH extends CFBamBuffServerMethodH
 				value.length(),
 				16 );
 		}
+		
 		optionalDummy = value;
 	}
 

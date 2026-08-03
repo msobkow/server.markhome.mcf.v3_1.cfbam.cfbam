@@ -118,7 +118,8 @@ public class CFBamBuffRoleDef
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -286,6 +287,7 @@ public class CFBamBuffRoleDef
 				1,
 				"value" );
 		}
+		
 		requiredScopeId = value;
 	}
 
@@ -295,6 +297,7 @@ public class CFBamBuffRoleDef
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -318,6 +321,7 @@ public class CFBamBuffRoleDef
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -341,6 +345,7 @@ public class CFBamBuffRoleDef
 				value.length(),
 				2000000 );
 		}
+		
 		requiredEnables = value;
 	}
 
@@ -364,6 +369,7 @@ public class CFBamBuffRoleDef
 				value.length(),
 				2000000 );
 		}
+		
 		requiredIncludes = value;
 	}
 

@@ -90,6 +90,7 @@ public class CFBamBuffIndexTweakByIndexIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredIndexId = value;
 	}
 

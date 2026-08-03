@@ -99,6 +99,7 @@ public class CFBamBuffDelSubDep1H extends CFBamBuffDelDepH
 				1,
 				"value" );
 		}
+		
 		requiredDelTopDepId = value;
 	}
 
@@ -122,6 +123,7 @@ public class CFBamBuffDelSubDep1H extends CFBamBuffDelDepH
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

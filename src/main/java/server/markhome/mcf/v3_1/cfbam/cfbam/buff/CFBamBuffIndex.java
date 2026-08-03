@@ -266,6 +266,7 @@ public class CFBamBuffIndex
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 
@@ -275,6 +276,7 @@ public class CFBamBuffIndex
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -298,6 +300,7 @@ public class CFBamBuffIndex
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -315,6 +318,7 @@ public class CFBamBuffIndex
 				value.length(),
 				16 );
 		}
+		
 		optionalShortName = value;
 	}
 
@@ -332,6 +336,7 @@ public class CFBamBuffIndex
 				value.length(),
 				64 );
 		}
+		
 		optionalLabel = value;
 	}
 
@@ -349,6 +354,7 @@ public class CFBamBuffIndex
 				value.length(),
 				128 );
 		}
+		
 		optionalShortDescription = value;
 	}
 
@@ -366,6 +372,7 @@ public class CFBamBuffIndex
 				value.length(),
 				1023 );
 		}
+		
 		optionalDescription = value;
 	}
 
@@ -383,6 +390,7 @@ public class CFBamBuffIndex
 				value.length(),
 				32 );
 		}
+		
 		optionalDbName = value;
 	}
 
@@ -400,6 +408,7 @@ public class CFBamBuffIndex
 				value.length(),
 				16 );
 		}
+		
 		optionalSuffix = value;
 	}
 
@@ -409,6 +418,7 @@ public class CFBamBuffIndex
 	}
 
 	public void setRequiredIsUnique( boolean value ) {
+		
 		requiredIsUnique = value;
 	}
 
@@ -418,6 +428,7 @@ public class CFBamBuffIndex
 	}
 
 	public void setRequiredIsDbMapped( boolean value ) {
+		
 		requiredIsDbMapped = value;
 	}
 
@@ -433,6 +444,7 @@ public class CFBamBuffIndex
 				1,
 				"value" );
 		}
+		
 		requiredCodeVis = value;
 	}
 

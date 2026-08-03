@@ -90,6 +90,7 @@ public class CFBamBuffParamByServerMethodIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredServerMethodId = value;
 	}
 

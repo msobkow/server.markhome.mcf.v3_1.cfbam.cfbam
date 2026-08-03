@@ -198,6 +198,7 @@ public class CFBamBuffClearDep
 				1,
 				"value" );
 		}
+		
 		requiredRelationId = value;
 	}
 
@@ -207,6 +208,7 @@ public class CFBamBuffClearDep
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 

@@ -98,6 +98,7 @@ public class CFBamBuffTweakByUDefIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 
@@ -113,6 +114,7 @@ public class CFBamBuffTweakByUDefIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredScopeId = value;
 	}
 
@@ -122,6 +124,7 @@ public class CFBamBuffTweakByUDefIdxKey
 	}
 
 	public void setOptionalDefSchemaTenantId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaTenantId = value;
 	}
 
@@ -131,6 +134,7 @@ public class CFBamBuffTweakByUDefIdxKey
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -154,6 +158,7 @@ public class CFBamBuffTweakByUDefIdxKey
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

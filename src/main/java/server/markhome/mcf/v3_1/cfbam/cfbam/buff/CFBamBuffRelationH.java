@@ -133,6 +133,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 
@@ -142,6 +143,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -165,6 +167,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -182,6 +185,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 				value.length(),
 				16 );
 		}
+		
 		optionalShortName = value;
 	}
 
@@ -199,6 +203,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 				value.length(),
 				64 );
 		}
+		
 		optionalLabel = value;
 	}
 
@@ -216,6 +221,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 				value.length(),
 				128 );
 		}
+		
 		optionalShortDescription = value;
 	}
 
@@ -233,6 +239,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 				value.length(),
 				1023 );
 		}
+		
 		optionalDescription = value;
 	}
 
@@ -248,6 +255,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredRelationType = value;
 	}
 
@@ -265,6 +273,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 				value.length(),
 				32 );
 		}
+		
 		optionalDbName = value;
 	}
 
@@ -282,6 +291,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 				value.length(),
 				16 );
 		}
+		
 		optionalSuffix = value;
 	}
 
@@ -297,6 +307,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredFromIndexId = value;
 	}
 
@@ -312,6 +323,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredToTableId = value;
 	}
 
@@ -327,6 +339,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredToIndexId = value;
 	}
 
@@ -336,6 +349,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 	}
 
 	public void setRequiredIsRequired( boolean value ) {
+		
 		requiredIsRequired = value;
 	}
 
@@ -345,6 +359,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 	}
 
 	public void setRequiredIsXsdContainer( boolean value ) {
+		
 		requiredIsXsdContainer = value;
 	}
 
@@ -354,6 +369,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 	}
 
 	public void setRequiredIsLateResolver( boolean value ) {
+		
 		requiredIsLateResolver = value;
 	}
 
@@ -363,6 +379,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 	}
 
 	public void setRequiredAllowAddendum( boolean value ) {
+		
 		requiredAllowAddendum = value;
 	}
 
@@ -372,6 +389,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 	}
 
 	public void setOptionalNarrowedId( CFLibDbKeyHash256 value ) {
+		
 		optionalNarrowedId = value;
 	}
 
@@ -387,6 +405,7 @@ public class CFBamBuffRelationH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredCodeVis = value;
 	}
 

@@ -122,7 +122,8 @@ public class CFBamBuffTweak
 				1,
 				"value" );
 		}
-		setPKey( value );
+		
+		setPKey(value);
 	}
 
 	@Override
@@ -290,6 +291,7 @@ public class CFBamBuffTweak
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 
@@ -305,6 +307,7 @@ public class CFBamBuffTweak
 				1,
 				"value" );
 		}
+		
 		requiredScopeId = value;
 	}
 
@@ -314,6 +317,7 @@ public class CFBamBuffTweak
 	}
 
 	public void setOptionalDefSchemaTenantId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaTenantId = value;
 	}
 
@@ -323,6 +327,7 @@ public class CFBamBuffTweak
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 
@@ -346,6 +351,7 @@ public class CFBamBuffTweak
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -355,6 +361,7 @@ public class CFBamBuffTweak
 	}
 
 	public void setRequiredReplacesInherited( boolean value ) {
+		
 		requiredReplacesInherited = value;
 	}
 
@@ -378,6 +385,7 @@ public class CFBamBuffTweak
 				value.length(),
 				2000000 );
 		}
+		
 		requiredTweakGelText = value;
 	}
 

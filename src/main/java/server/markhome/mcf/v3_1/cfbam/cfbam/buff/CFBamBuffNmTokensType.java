@@ -147,6 +147,7 @@ public class CFBamBuffNmTokensType
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

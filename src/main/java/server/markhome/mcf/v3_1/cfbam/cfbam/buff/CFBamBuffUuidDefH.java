@@ -91,6 +91,7 @@ public class CFBamBuffUuidDefH extends CFBamBuffAtomH
 	}
 
 	public void setOptionalInitValue( UUID value ) {
+		
 		optionalInitValue = value;
 	}
 

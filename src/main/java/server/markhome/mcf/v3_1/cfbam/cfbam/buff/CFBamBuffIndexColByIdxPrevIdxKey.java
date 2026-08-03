@@ -92,6 +92,7 @@ public class CFBamBuffIndexColByIdxPrevIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredIndexId = value;
 	}
 
@@ -101,6 +102,7 @@ public class CFBamBuffIndexColByIdxPrevIdxKey
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		
 		optionalPrevId = value;
 	}
 

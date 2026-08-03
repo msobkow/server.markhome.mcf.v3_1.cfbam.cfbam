@@ -90,6 +90,7 @@ public class CFBamBuffPopSubDep2ByPopSubDep1IdxKey
 				1,
 				"value" );
 		}
+		
 		requiredPopSubDep1Id = value;
 	}
 

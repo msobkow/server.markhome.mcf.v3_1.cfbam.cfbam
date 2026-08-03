@@ -99,6 +99,7 @@ public class CFBamBuffTimeDefH extends CFBamBuffAtomH
 				value.length(),
 				4 );
 		}
+		
 		optionalDummy = value;
 	}
 

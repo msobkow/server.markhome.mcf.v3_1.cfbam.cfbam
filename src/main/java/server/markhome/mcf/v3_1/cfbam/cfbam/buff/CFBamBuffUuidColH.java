@@ -97,6 +97,7 @@ public class CFBamBuffUuidColH extends CFBamBuffUuidDefH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

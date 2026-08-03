@@ -147,6 +147,7 @@ public class CFBamBuffSchemaTweak
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

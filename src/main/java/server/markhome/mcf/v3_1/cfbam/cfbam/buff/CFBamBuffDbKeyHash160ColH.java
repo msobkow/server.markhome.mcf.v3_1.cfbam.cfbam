@@ -97,6 +97,7 @@ public class CFBamBuffDbKeyHash160ColH extends CFBamBuffDbKeyHash160DefH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

@@ -97,6 +97,7 @@ public class CFBamBuffTextColH extends CFBamBuffTextDefH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

@@ -147,6 +147,7 @@ public class CFBamBuffFloatType
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

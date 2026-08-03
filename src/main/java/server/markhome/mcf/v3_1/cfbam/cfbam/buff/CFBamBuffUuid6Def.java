@@ -100,6 +100,7 @@ public class CFBamBuffUuid6Def
 				value.length(),
 				62 );
 		}
+		
 		optionalInitValue = value;
 	}
 

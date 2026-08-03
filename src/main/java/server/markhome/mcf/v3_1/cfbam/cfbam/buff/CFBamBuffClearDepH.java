@@ -99,6 +99,7 @@ public class CFBamBuffClearDepH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
+		
 		requiredRelationId = value;
 	}
 
@@ -108,6 +109,7 @@ public class CFBamBuffClearDepH extends CFBamBuffScopeH
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
+		
 		optionalDefSchemaId = value;
 	}
 

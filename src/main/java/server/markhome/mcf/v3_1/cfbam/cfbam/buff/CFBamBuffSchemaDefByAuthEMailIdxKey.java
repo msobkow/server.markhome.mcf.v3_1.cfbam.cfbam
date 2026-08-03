@@ -92,6 +92,7 @@ public class CFBamBuffSchemaDefByAuthEMailIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredCTenantId = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffSchemaDefByAuthEMailIdxKey
 				value.length(),
 				512 );
 		}
+		
 		requiredAuthorEMail = value;
 	}
 

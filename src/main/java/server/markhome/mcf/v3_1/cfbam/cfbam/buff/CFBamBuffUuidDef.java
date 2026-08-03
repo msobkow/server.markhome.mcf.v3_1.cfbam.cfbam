@@ -92,6 +92,7 @@ public class CFBamBuffUuidDef
 	}
 
 	public void setOptionalInitValue( UUID value ) {
+		
 		optionalInitValue = value;
 	}
 

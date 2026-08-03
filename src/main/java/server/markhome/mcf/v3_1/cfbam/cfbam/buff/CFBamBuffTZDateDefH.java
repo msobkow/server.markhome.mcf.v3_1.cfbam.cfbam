@@ -99,6 +99,7 @@ public class CFBamBuffTZDateDefH extends CFBamBuffAtomH
 				value.length(),
 				4 );
 		}
+		
 		optionalDummy = value;
 	}
 

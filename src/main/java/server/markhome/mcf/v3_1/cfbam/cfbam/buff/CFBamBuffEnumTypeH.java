@@ -97,6 +97,7 @@ public class CFBamBuffEnumTypeH extends CFBamBuffEnumDefH
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

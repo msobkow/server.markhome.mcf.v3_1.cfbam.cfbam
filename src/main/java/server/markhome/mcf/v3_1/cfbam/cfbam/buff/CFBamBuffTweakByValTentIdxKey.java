@@ -90,6 +90,7 @@ public class CFBamBuffTweakByValTentIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTenantId = value;
 	}
 

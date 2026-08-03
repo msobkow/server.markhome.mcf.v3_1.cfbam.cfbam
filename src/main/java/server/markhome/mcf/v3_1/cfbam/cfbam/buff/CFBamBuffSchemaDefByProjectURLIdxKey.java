@@ -92,6 +92,7 @@ public class CFBamBuffSchemaDefByProjectURLIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredCTenantId = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffSchemaDefByProjectURLIdxKey
 				value.length(),
 				1024 );
 		}
+		
 		requiredProjectURL = value;
 	}
 

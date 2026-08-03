@@ -97,6 +97,7 @@ public class CFBamBuffTZDateColH extends CFBamBuffTZDateDefH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

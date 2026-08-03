@@ -90,6 +90,7 @@ public class CFBamBuffIndexColByColIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredColumnId = value;
 	}
 

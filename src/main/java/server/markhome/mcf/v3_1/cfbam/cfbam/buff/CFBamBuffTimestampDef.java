@@ -100,6 +100,7 @@ public class CFBamBuffTimestampDef
 				value.length(),
 				4 );
 		}
+		
 		optionalDummy = value;
 	}
 

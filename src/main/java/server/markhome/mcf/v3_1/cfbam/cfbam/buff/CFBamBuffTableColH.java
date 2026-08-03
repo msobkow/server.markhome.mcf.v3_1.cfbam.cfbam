@@ -103,6 +103,7 @@ public class CFBamBuffTableColH extends CFBamBuffValueH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 
@@ -120,6 +121,7 @@ public class CFBamBuffTableColH extends CFBamBuffValueH
 				value.length(),
 				32 );
 		}
+		
 		optionalDbName = value;
 	}
 
@@ -129,6 +131,7 @@ public class CFBamBuffTableColH extends CFBamBuffValueH
 	}
 
 	public void setOptionalDataId( CFLibDbKeyHash256 value ) {
+		
 		optionalDataId = value;
 	}
 
@@ -146,6 +149,7 @@ public class CFBamBuffTableColH extends CFBamBuffValueH
 				value.length(),
 				192 );
 		}
+		
 		optionalXmlElementName = value;
 	}
 

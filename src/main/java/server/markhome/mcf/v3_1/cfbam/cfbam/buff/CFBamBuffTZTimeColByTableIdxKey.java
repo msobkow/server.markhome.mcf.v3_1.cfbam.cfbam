@@ -90,6 +90,7 @@ public class CFBamBuffTZTimeColByTableIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

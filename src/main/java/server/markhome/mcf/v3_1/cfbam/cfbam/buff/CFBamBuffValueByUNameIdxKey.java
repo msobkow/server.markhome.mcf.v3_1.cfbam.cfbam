@@ -92,6 +92,7 @@ public class CFBamBuffValueByUNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredScopeId = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffValueByUNameIdxKey
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

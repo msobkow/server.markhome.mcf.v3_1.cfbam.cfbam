@@ -92,6 +92,7 @@ public class CFBamBuffSchemaDefByUNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredMinorVersionId = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffSchemaDefByUNameIdxKey
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

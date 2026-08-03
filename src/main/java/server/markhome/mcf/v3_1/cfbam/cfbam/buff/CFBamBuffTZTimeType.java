@@ -147,6 +147,7 @@ public class CFBamBuffTZTimeType
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

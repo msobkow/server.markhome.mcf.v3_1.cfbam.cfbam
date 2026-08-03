@@ -90,6 +90,7 @@ public class CFBamBuffDelTopDepByDelTopDepTblIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

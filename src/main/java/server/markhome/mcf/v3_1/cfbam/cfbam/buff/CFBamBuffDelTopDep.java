@@ -283,6 +283,7 @@ public class CFBamBuffDelTopDep
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 
@@ -298,6 +299,7 @@ public class CFBamBuffDelTopDep
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 
@@ -307,6 +309,7 @@ public class CFBamBuffDelTopDep
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+		
 		optionalPrevId = value;
 	}
 
@@ -316,6 +319,7 @@ public class CFBamBuffDelTopDep
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+		
 		optionalNextId = value;
 	}
 

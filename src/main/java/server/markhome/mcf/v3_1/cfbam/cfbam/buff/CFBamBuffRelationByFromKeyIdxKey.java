@@ -90,6 +90,7 @@ public class CFBamBuffRelationByFromKeyIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredFromIndexId = value;
 	}
 

@@ -92,6 +92,7 @@ public class CFBamBuffIndexColByUNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredIndexId = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffIndexColByUNameIdxKey
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

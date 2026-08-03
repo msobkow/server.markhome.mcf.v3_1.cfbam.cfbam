@@ -99,6 +99,7 @@ public class CFBamBuffUuid6DefH extends CFBamBuffAtomH
 				value.length(),
 				62 );
 		}
+		
 		optionalInitValue = value;
 	}
 

@@ -97,6 +97,7 @@ public class CFBamBuffTimestampColH extends CFBamBuffTimestampDefH
 				1,
 				"value" );
 		}
+		
 		requiredTableId = value;
 	}
 

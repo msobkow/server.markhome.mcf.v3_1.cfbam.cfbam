@@ -97,6 +97,7 @@ public class CFBamBuffFloatTypeH extends CFBamBuffFloatDefH
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 

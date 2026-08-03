@@ -90,6 +90,7 @@ public class CFBamBuffPopSubDep1ByPopTopDepIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredPopTopDepId = value;
 	}
 

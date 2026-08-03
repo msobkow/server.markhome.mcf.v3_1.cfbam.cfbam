@@ -151,6 +151,7 @@ public class CFBamBuffTweakHPKey
 				1,
 				"value" );
 		}
+		
 		requiredId = value;
 	}
 

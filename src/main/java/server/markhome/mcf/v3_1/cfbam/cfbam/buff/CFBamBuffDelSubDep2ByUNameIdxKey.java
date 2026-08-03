@@ -92,6 +92,7 @@ public class CFBamBuffDelSubDep2ByUNameIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredDelSubDep1Id = value;
 	}
 
@@ -115,6 +116,7 @@ public class CFBamBuffDelSubDep2ByUNameIdxKey
 				value.length(),
 				192 );
 		}
+		
 		requiredName = value;
 	}
 

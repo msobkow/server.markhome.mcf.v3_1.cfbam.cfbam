@@ -90,6 +90,7 @@ public class CFBamBuffSchemaTweakBySchemaIdxKey
 				1,
 				"value" );
 		}
+		
 		requiredSchemaDefId = value;
 	}
 
