@@ -142,8 +142,7 @@ public class CFBamBuffDbKeyHash224Def
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDbKeyHash224DefH ) {
-			ICFBamDbKeyHash224DefH rhs = (ICFBamDbKeyHash224DefH)obj;
+		else if( obj instanceof ICFBamDbKeyHash224DefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

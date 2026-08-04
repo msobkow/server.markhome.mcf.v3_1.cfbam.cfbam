@@ -239,8 +239,7 @@ public class CFBamBuffUInt32Def
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamUInt32DefH ) {
-			ICFBamUInt32DefH rhs = (ICFBamUInt32DefH)obj;
+		else if( obj instanceof ICFBamUInt32DefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

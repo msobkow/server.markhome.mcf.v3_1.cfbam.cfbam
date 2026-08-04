@@ -142,8 +142,7 @@ public class CFBamBuffTimestampDef
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamTimestampDefH ) {
-			ICFBamTimestampDefH rhs = (ICFBamTimestampDefH)obj;
+		else if( obj instanceof ICFBamTimestampDefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

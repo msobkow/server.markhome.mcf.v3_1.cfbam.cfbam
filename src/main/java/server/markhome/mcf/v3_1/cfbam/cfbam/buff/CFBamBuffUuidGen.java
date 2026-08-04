@@ -203,8 +203,7 @@ public class CFBamBuffUuidGen
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamUuidGenH ) {
-			ICFBamUuidGenH rhs = (ICFBamUuidGenH)obj;
+		else if( obj instanceof ICFBamUuidGenH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

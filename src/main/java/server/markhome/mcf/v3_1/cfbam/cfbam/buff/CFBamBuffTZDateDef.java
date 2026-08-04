@@ -142,8 +142,7 @@ public class CFBamBuffTZDateDef
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamTZDateDefH ) {
-			ICFBamTZDateDefH rhs = (ICFBamTZDateDefH)obj;
+		else if( obj instanceof ICFBamTZDateDefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

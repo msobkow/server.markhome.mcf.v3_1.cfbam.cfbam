@@ -254,8 +254,7 @@ public class CFBamBuffDelSubDep1
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDelSubDep1H ) {
-			ICFBamDelSubDep1H rhs = (ICFBamDelSubDep1H)obj;
+		else if( obj instanceof ICFBamDelSubDep1H rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -322,8 +321,7 @@ public class CFBamBuffDelSubDep1
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDelSubDep1ByDelTopDepIdxKey ) {
-			ICFBamDelSubDep1ByDelTopDepIdxKey rhs = (ICFBamDelSubDep1ByDelTopDepIdxKey)obj;
+		else if( obj instanceof ICFBamDelSubDep1ByDelTopDepIdxKey rhs ) {
 			if( getRequiredDelTopDepId() != null ) {
 				if( rhs.getRequiredDelTopDepId() != null ) {
 					if( ! getRequiredDelTopDepId().equals( rhs.getRequiredDelTopDepId() ) ) {
@@ -341,8 +339,7 @@ public class CFBamBuffDelSubDep1
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDelSubDep1ByUNameIdxKey ) {
-			ICFBamDelSubDep1ByUNameIdxKey rhs = (ICFBamDelSubDep1ByUNameIdxKey)obj;
+		else if( obj instanceof ICFBamDelSubDep1ByUNameIdxKey rhs ) {
 			if( getRequiredDelTopDepId() != null ) {
 				if( rhs.getRequiredDelTopDepId() != null ) {
 					if( ! getRequiredDelTopDepId().equals( rhs.getRequiredDelTopDepId() ) ) {
@@ -489,8 +486,7 @@ public class CFBamBuffDelSubDep1
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDelSubDep1ByDelTopDepIdxKey ) {
-			ICFBamDelSubDep1ByDelTopDepIdxKey rhs = (ICFBamDelSubDep1ByDelTopDepIdxKey)obj;
+		else if( obj instanceof ICFBamDelSubDep1ByDelTopDepIdxKey rhs ) {
 			if( getRequiredDelTopDepId() != null ) {
 				if( rhs.getRequiredDelTopDepId() != null ) {
 					if( ! getRequiredDelTopDepId().equals( rhs.getRequiredDelTopDepId() ) ) {
@@ -508,8 +504,7 @@ public class CFBamBuffDelSubDep1
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDelSubDep1ByUNameIdxKey ) {
-			ICFBamDelSubDep1ByUNameIdxKey rhs = (ICFBamDelSubDep1ByUNameIdxKey)obj;
+		else if( obj instanceof ICFBamDelSubDep1ByUNameIdxKey rhs ) {
 			if( getRequiredDelTopDepId() != null ) {
 				if( rhs.getRequiredDelTopDepId() != null ) {
 					if( ! getRequiredDelTopDepId().equals( rhs.getRequiredDelTopDepId() ) ) {
@@ -656,8 +651,7 @@ public class CFBamBuffDelSubDep1
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDelSubDep1ByDelTopDepIdxKey ) {
-			ICFBamDelSubDep1ByDelTopDepIdxKey rhs = (ICFBamDelSubDep1ByDelTopDepIdxKey)obj;
+		else if( obj instanceof ICFBamDelSubDep1ByDelTopDepIdxKey rhs ) {
 			if( getRequiredDelTopDepId() != null ) {
 				if( rhs.getRequiredDelTopDepId() != null ) {
 					if( ! getRequiredDelTopDepId().equals( rhs.getRequiredDelTopDepId() ) ) {
@@ -675,8 +669,7 @@ public class CFBamBuffDelSubDep1
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDelSubDep1ByUNameIdxKey ) {
-			ICFBamDelSubDep1ByUNameIdxKey rhs = (ICFBamDelSubDep1ByUNameIdxKey)obj;
+		else if( obj instanceof ICFBamDelSubDep1ByUNameIdxKey rhs ) {
 			if( getRequiredDelTopDepId() != null ) {
 				if( rhs.getRequiredDelTopDepId() != null ) {
 					if( ! getRequiredDelTopDepId().equals( rhs.getRequiredDelTopDepId() ) ) {

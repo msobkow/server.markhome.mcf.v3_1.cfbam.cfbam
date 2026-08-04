@@ -284,8 +284,7 @@ public class CFBamBuffFloatDef
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamFloatDefH ) {
-			ICFBamFloatDefH rhs = (ICFBamFloatDefH)obj;
+		else if( obj instanceof ICFBamFloatDefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

@@ -225,8 +225,7 @@ public class CFBamBuffTextDef
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamTextDefH ) {
-			ICFBamTextDefH rhs = (ICFBamTextDefH)obj;
+		else if( obj instanceof ICFBamTextDefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

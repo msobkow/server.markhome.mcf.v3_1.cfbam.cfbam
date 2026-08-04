@@ -284,8 +284,7 @@ public class CFBamBuffDoubleDef
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDoubleDefH ) {
-			ICFBamDoubleDefH rhs = (ICFBamDoubleDefH)obj;
+		else if( obj instanceof ICFBamDoubleDefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

@@ -203,8 +203,7 @@ public class CFBamBuffDbKeyHash384Gen
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDbKeyHash384GenH ) {
-			ICFBamDbKeyHash384GenH rhs = (ICFBamDbKeyHash384GenH)obj;
+		else if( obj instanceof ICFBamDbKeyHash384GenH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

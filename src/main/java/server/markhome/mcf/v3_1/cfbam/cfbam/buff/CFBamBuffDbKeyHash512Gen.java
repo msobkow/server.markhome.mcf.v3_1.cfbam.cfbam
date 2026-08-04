@@ -203,8 +203,7 @@ public class CFBamBuffDbKeyHash512Gen
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDbKeyHash512GenH ) {
-			ICFBamDbKeyHash512GenH rhs = (ICFBamDbKeyHash512GenH)obj;
+		else if( obj instanceof ICFBamDbKeyHash512GenH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

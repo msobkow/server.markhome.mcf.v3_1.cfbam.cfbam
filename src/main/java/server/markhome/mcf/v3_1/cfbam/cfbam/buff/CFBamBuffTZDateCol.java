@@ -189,8 +189,7 @@ public class CFBamBuffTZDateCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamTZDateColH ) {
-			ICFBamTZDateColH rhs = (ICFBamTZDateColH)obj;
+		else if( obj instanceof ICFBamTZDateColH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -242,8 +241,7 @@ public class CFBamBuffTZDateCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamTZDateColByTableIdxKey ) {
-			ICFBamTZDateColByTableIdxKey rhs = (ICFBamTZDateColByTableIdxKey)obj;
+		else if( obj instanceof ICFBamTZDateColByTableIdxKey rhs ) {
 			if( getRequiredTableId() != null ) {
 				if( rhs.getRequiredTableId() != null ) {
 					if( ! getRequiredTableId().equals( rhs.getRequiredTableId() ) ) {
@@ -345,8 +343,7 @@ public class CFBamBuffTZDateCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamTZDateColByTableIdxKey ) {
-			ICFBamTZDateColByTableIdxKey rhs = (ICFBamTZDateColByTableIdxKey)obj;
+		else if( obj instanceof ICFBamTZDateColByTableIdxKey rhs ) {
 			if( getRequiredTableId() != null ) {
 				if( rhs.getRequiredTableId() != null ) {
 					if( ! getRequiredTableId().equals( rhs.getRequiredTableId() ) ) {
@@ -448,8 +445,7 @@ public class CFBamBuffTZDateCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamTZDateColByTableIdxKey ) {
-			ICFBamTZDateColByTableIdxKey rhs = (ICFBamTZDateColByTableIdxKey)obj;
+		else if( obj instanceof ICFBamTZDateColByTableIdxKey rhs ) {
 			if( getRequiredTableId() != null ) {
 				if( rhs.getRequiredTableId() != null ) {
 					if( ! getRequiredTableId().equals( rhs.getRequiredTableId() ) ) {

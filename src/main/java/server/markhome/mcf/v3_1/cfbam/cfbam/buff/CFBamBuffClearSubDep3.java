@@ -230,8 +230,7 @@ public class CFBamBuffClearSubDep3
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamClearSubDep3H ) {
-			ICFBamClearSubDep3H rhs = (ICFBamClearSubDep3H)obj;
+		else if( obj instanceof ICFBamClearSubDep3H rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -298,8 +297,7 @@ public class CFBamBuffClearSubDep3
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamClearSubDep3ByClearSubDep2IdxKey ) {
-			ICFBamClearSubDep3ByClearSubDep2IdxKey rhs = (ICFBamClearSubDep3ByClearSubDep2IdxKey)obj;
+		else if( obj instanceof ICFBamClearSubDep3ByClearSubDep2IdxKey rhs ) {
 			if( getRequiredClearSubDep2Id() != null ) {
 				if( rhs.getRequiredClearSubDep2Id() != null ) {
 					if( ! getRequiredClearSubDep2Id().equals( rhs.getRequiredClearSubDep2Id() ) ) {
@@ -317,8 +315,7 @@ public class CFBamBuffClearSubDep3
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamClearSubDep3ByUNameIdxKey ) {
-			ICFBamClearSubDep3ByUNameIdxKey rhs = (ICFBamClearSubDep3ByUNameIdxKey)obj;
+		else if( obj instanceof ICFBamClearSubDep3ByUNameIdxKey rhs ) {
 			if( getRequiredClearSubDep2Id() != null ) {
 				if( rhs.getRequiredClearSubDep2Id() != null ) {
 					if( ! getRequiredClearSubDep2Id().equals( rhs.getRequiredClearSubDep2Id() ) ) {
@@ -465,8 +462,7 @@ public class CFBamBuffClearSubDep3
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamClearSubDep3ByClearSubDep2IdxKey ) {
-			ICFBamClearSubDep3ByClearSubDep2IdxKey rhs = (ICFBamClearSubDep3ByClearSubDep2IdxKey)obj;
+		else if( obj instanceof ICFBamClearSubDep3ByClearSubDep2IdxKey rhs ) {
 			if( getRequiredClearSubDep2Id() != null ) {
 				if( rhs.getRequiredClearSubDep2Id() != null ) {
 					if( ! getRequiredClearSubDep2Id().equals( rhs.getRequiredClearSubDep2Id() ) ) {
@@ -484,8 +480,7 @@ public class CFBamBuffClearSubDep3
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamClearSubDep3ByUNameIdxKey ) {
-			ICFBamClearSubDep3ByUNameIdxKey rhs = (ICFBamClearSubDep3ByUNameIdxKey)obj;
+		else if( obj instanceof ICFBamClearSubDep3ByUNameIdxKey rhs ) {
 			if( getRequiredClearSubDep2Id() != null ) {
 				if( rhs.getRequiredClearSubDep2Id() != null ) {
 					if( ! getRequiredClearSubDep2Id().equals( rhs.getRequiredClearSubDep2Id() ) ) {
@@ -632,8 +627,7 @@ public class CFBamBuffClearSubDep3
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamClearSubDep3ByClearSubDep2IdxKey ) {
-			ICFBamClearSubDep3ByClearSubDep2IdxKey rhs = (ICFBamClearSubDep3ByClearSubDep2IdxKey)obj;
+		else if( obj instanceof ICFBamClearSubDep3ByClearSubDep2IdxKey rhs ) {
 			if( getRequiredClearSubDep2Id() != null ) {
 				if( rhs.getRequiredClearSubDep2Id() != null ) {
 					if( ! getRequiredClearSubDep2Id().equals( rhs.getRequiredClearSubDep2Id() ) ) {
@@ -651,8 +645,7 @@ public class CFBamBuffClearSubDep3
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamClearSubDep3ByUNameIdxKey ) {
-			ICFBamClearSubDep3ByUNameIdxKey rhs = (ICFBamClearSubDep3ByUNameIdxKey)obj;
+		else if( obj instanceof ICFBamClearSubDep3ByUNameIdxKey rhs ) {
 			if( getRequiredClearSubDep2Id() != null ) {
 				if( rhs.getRequiredClearSubDep2Id() != null ) {
 					if( ! getRequiredClearSubDep2Id().equals( rhs.getRequiredClearSubDep2Id() ) ) {

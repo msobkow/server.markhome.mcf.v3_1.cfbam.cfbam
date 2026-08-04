@@ -142,8 +142,7 @@ public class CFBamBuffAtom
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamAtomH ) {
-			ICFBamAtomH rhs = (ICFBamAtomH)obj;
+		else if( obj instanceof ICFBamAtomH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

@@ -222,8 +222,7 @@ public class CFBamBuffSchemaRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamSchemaRoleH ) {
-			ICFBamSchemaRoleH rhs = (ICFBamSchemaRoleH)obj;
+		else if( obj instanceof ICFBamSchemaRoleH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -290,8 +289,7 @@ public class CFBamBuffSchemaRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamSchemaRoleBySchemaIdxKey ) {
-			ICFBamSchemaRoleBySchemaIdxKey rhs = (ICFBamSchemaRoleBySchemaIdxKey)obj;
+		else if( obj instanceof ICFBamSchemaRoleBySchemaIdxKey rhs ) {
 			if( getRequiredSchemaDefId() != null ) {
 				if( rhs.getRequiredSchemaDefId() != null ) {
 					if( ! getRequiredSchemaDefId().equals( rhs.getRequiredSchemaDefId() ) ) {
@@ -309,8 +307,7 @@ public class CFBamBuffSchemaRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamSchemaRoleByRoleScopeIdxKey ) {
-			ICFBamSchemaRoleByRoleScopeIdxKey rhs = (ICFBamSchemaRoleByRoleScopeIdxKey)obj;
+		else if( obj instanceof ICFBamSchemaRoleByRoleScopeIdxKey rhs ) {
 			if( getRequiredRoleScope() != null ) {
 				if( rhs.getRequiredRoleScope() != null ) {
 					if( ! getRequiredRoleScope().equals( rhs.getRequiredRoleScope() ) ) {
@@ -328,8 +325,7 @@ public class CFBamBuffSchemaRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamSchemaRoleBySchRoleScpIdxKey ) {
-			ICFBamSchemaRoleBySchRoleScpIdxKey rhs = (ICFBamSchemaRoleBySchRoleScpIdxKey)obj;
+		else if( obj instanceof ICFBamSchemaRoleBySchRoleScpIdxKey rhs ) {
 			if( getRequiredSchemaDefId() != null ) {
 				if( rhs.getRequiredSchemaDefId() != null ) {
 					if( ! getRequiredSchemaDefId().equals( rhs.getRequiredSchemaDefId() ) ) {
@@ -476,8 +472,7 @@ public class CFBamBuffSchemaRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamSchemaRoleBySchemaIdxKey ) {
-			ICFBamSchemaRoleBySchemaIdxKey rhs = (ICFBamSchemaRoleBySchemaIdxKey)obj;
+		else if( obj instanceof ICFBamSchemaRoleBySchemaIdxKey rhs ) {
 			if( getRequiredSchemaDefId() != null ) {
 				if( rhs.getRequiredSchemaDefId() != null ) {
 					if( ! getRequiredSchemaDefId().equals( rhs.getRequiredSchemaDefId() ) ) {
@@ -495,8 +490,7 @@ public class CFBamBuffSchemaRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamSchemaRoleByRoleScopeIdxKey ) {
-			ICFBamSchemaRoleByRoleScopeIdxKey rhs = (ICFBamSchemaRoleByRoleScopeIdxKey)obj;
+		else if( obj instanceof ICFBamSchemaRoleByRoleScopeIdxKey rhs ) {
 			if( getRequiredRoleScope() != null ) {
 				if( rhs.getRequiredRoleScope() != null ) {
 					if( ! getRequiredRoleScope().equals( rhs.getRequiredRoleScope() ) ) {
@@ -514,8 +508,7 @@ public class CFBamBuffSchemaRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamSchemaRoleBySchRoleScpIdxKey ) {
-			ICFBamSchemaRoleBySchRoleScpIdxKey rhs = (ICFBamSchemaRoleBySchRoleScpIdxKey)obj;
+		else if( obj instanceof ICFBamSchemaRoleBySchRoleScpIdxKey rhs ) {
 			if( getRequiredSchemaDefId() != null ) {
 				if( rhs.getRequiredSchemaDefId() != null ) {
 					if( ! getRequiredSchemaDefId().equals( rhs.getRequiredSchemaDefId() ) ) {
@@ -662,8 +655,7 @@ public class CFBamBuffSchemaRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamSchemaRoleBySchemaIdxKey ) {
-			ICFBamSchemaRoleBySchemaIdxKey rhs = (ICFBamSchemaRoleBySchemaIdxKey)obj;
+		else if( obj instanceof ICFBamSchemaRoleBySchemaIdxKey rhs ) {
 			if( getRequiredSchemaDefId() != null ) {
 				if( rhs.getRequiredSchemaDefId() != null ) {
 					if( ! getRequiredSchemaDefId().equals( rhs.getRequiredSchemaDefId() ) ) {
@@ -681,8 +673,7 @@ public class CFBamBuffSchemaRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamSchemaRoleByRoleScopeIdxKey ) {
-			ICFBamSchemaRoleByRoleScopeIdxKey rhs = (ICFBamSchemaRoleByRoleScopeIdxKey)obj;
+		else if( obj instanceof ICFBamSchemaRoleByRoleScopeIdxKey rhs ) {
 			if( getRequiredRoleScope() != null ) {
 				if( rhs.getRequiredRoleScope() != null ) {
 					if( ! getRequiredRoleScope().equals( rhs.getRequiredRoleScope() ) ) {
@@ -700,8 +691,7 @@ public class CFBamBuffSchemaRole
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamSchemaRoleBySchRoleScpIdxKey ) {
-			ICFBamSchemaRoleBySchRoleScpIdxKey rhs = (ICFBamSchemaRoleBySchRoleScpIdxKey)obj;
+		else if( obj instanceof ICFBamSchemaRoleBySchRoleScpIdxKey rhs ) {
 			if( getRequiredSchemaDefId() != null ) {
 				if( rhs.getRequiredSchemaDefId() != null ) {
 					if( ! getRequiredSchemaDefId().equals( rhs.getRequiredSchemaDefId() ) ) {

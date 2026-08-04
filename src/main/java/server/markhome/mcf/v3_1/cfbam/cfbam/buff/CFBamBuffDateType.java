@@ -189,8 +189,7 @@ public class CFBamBuffDateType
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDateTypeH ) {
-			ICFBamDateTypeH rhs = (ICFBamDateTypeH)obj;
+		else if( obj instanceof ICFBamDateTypeH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -242,8 +241,7 @@ public class CFBamBuffDateType
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDateTypeBySchemaIdxKey ) {
-			ICFBamDateTypeBySchemaIdxKey rhs = (ICFBamDateTypeBySchemaIdxKey)obj;
+		else if( obj instanceof ICFBamDateTypeBySchemaIdxKey rhs ) {
 			if( getRequiredSchemaDefId() != null ) {
 				if( rhs.getRequiredSchemaDefId() != null ) {
 					if( ! getRequiredSchemaDefId().equals( rhs.getRequiredSchemaDefId() ) ) {
@@ -345,8 +343,7 @@ public class CFBamBuffDateType
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDateTypeBySchemaIdxKey ) {
-			ICFBamDateTypeBySchemaIdxKey rhs = (ICFBamDateTypeBySchemaIdxKey)obj;
+		else if( obj instanceof ICFBamDateTypeBySchemaIdxKey rhs ) {
 			if( getRequiredSchemaDefId() != null ) {
 				if( rhs.getRequiredSchemaDefId() != null ) {
 					if( ! getRequiredSchemaDefId().equals( rhs.getRequiredSchemaDefId() ) ) {
@@ -448,8 +445,7 @@ public class CFBamBuffDateType
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDateTypeBySchemaIdxKey ) {
-			ICFBamDateTypeBySchemaIdxKey rhs = (ICFBamDateTypeBySchemaIdxKey)obj;
+		else if( obj instanceof ICFBamDateTypeBySchemaIdxKey rhs ) {
 			if( getRequiredSchemaDefId() != null ) {
 				if( rhs.getRequiredSchemaDefId() != null ) {
 					if( ! getRequiredSchemaDefId().equals( rhs.getRequiredSchemaDefId() ) ) {

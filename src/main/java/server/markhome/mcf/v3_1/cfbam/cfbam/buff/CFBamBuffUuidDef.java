@@ -134,8 +134,7 @@ public class CFBamBuffUuidDef
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamUuidDefH ) {
-			ICFBamUuidDefH rhs = (ICFBamUuidDefH)obj;
+		else if( obj instanceof ICFBamUuidDefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

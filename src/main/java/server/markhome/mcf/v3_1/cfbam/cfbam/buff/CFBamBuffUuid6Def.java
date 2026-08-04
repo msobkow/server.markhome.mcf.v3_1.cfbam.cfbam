@@ -142,8 +142,7 @@ public class CFBamBuffUuid6Def
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamUuid6DefH ) {
-			ICFBamUuid6DefH rhs = (ICFBamUuid6DefH)obj;
+		else if( obj instanceof ICFBamUuid6DefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

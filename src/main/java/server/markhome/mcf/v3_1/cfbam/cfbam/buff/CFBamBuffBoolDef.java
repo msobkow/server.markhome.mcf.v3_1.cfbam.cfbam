@@ -239,8 +239,7 @@ public class CFBamBuffBoolDef
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamBoolDefH ) {
-			ICFBamBoolDefH rhs = (ICFBamBoolDefH)obj;
+		else if( obj instanceof ICFBamBoolDefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

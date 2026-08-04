@@ -100,7 +100,7 @@ public class CFBamBuffScope
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( getPKey() );
+		return( requiredId );
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -111,7 +111,7 @@ public class CFBamBuffScope
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredId = value;
 	}
 
 	@Override
@@ -264,8 +264,7 @@ public class CFBamBuffScope
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamScopeH ) {
-			ICFBamScopeH rhs = (ICFBamScopeH)obj;
+		else if( obj instanceof ICFBamScopeH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -317,8 +316,7 @@ public class CFBamBuffScope
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamScopeByTenantIdxKey ) {
-			ICFBamScopeByTenantIdxKey rhs = (ICFBamScopeByTenantIdxKey)obj;
+		else if( obj instanceof ICFBamScopeByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -432,8 +430,7 @@ public class CFBamBuffScope
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamScopeByTenantIdxKey ) {
-			ICFBamScopeByTenantIdxKey rhs = (ICFBamScopeByTenantIdxKey)obj;
+		else if( obj instanceof ICFBamScopeByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {
@@ -547,8 +544,7 @@ public class CFBamBuffScope
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamScopeByTenantIdxKey ) {
-			ICFBamScopeByTenantIdxKey rhs = (ICFBamScopeByTenantIdxKey)obj;
+		else if( obj instanceof ICFBamScopeByTenantIdxKey rhs ) {
 			if( getRequiredTenantId() != null ) {
 				if( rhs.getRequiredTenantId() != null ) {
 					if( ! getRequiredTenantId().equals( rhs.getRequiredTenantId() ) ) {

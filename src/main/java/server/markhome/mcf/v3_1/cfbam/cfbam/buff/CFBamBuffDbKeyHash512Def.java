@@ -142,8 +142,7 @@ public class CFBamBuffDbKeyHash512Def
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamDbKeyHash512DefH ) {
-			ICFBamDbKeyHash512DefH rhs = (ICFBamDbKeyHash512DefH)obj;
+		else if( obj instanceof ICFBamDbKeyHash512DefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

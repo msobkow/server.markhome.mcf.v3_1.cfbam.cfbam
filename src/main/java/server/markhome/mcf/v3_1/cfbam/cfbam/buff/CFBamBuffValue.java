@@ -172,7 +172,7 @@ public class CFBamBuffValue
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( getPKey() );
+		return( requiredId );
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -183,7 +183,7 @@ public class CFBamBuffValue
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredId = value;
 	}
 
 	@Override
@@ -833,8 +833,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueH ) {
-			ICFBamValueH rhs = (ICFBamValueH)obj;
+		else if( obj instanceof ICFBamValueH rhs ) {
 			if( getRequiredScopeId() != null ) {
 				if( rhs.getRequiredScopeId() != null ) {
 					if( ! getRequiredScopeId().equals( rhs.getRequiredScopeId() ) ) {
@@ -1042,8 +1041,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByUNameIdxKey ) {
-			ICFBamValueByUNameIdxKey rhs = (ICFBamValueByUNameIdxKey)obj;
+		else if( obj instanceof ICFBamValueByUNameIdxKey rhs ) {
 			if( getRequiredScopeId() != null ) {
 				if( rhs.getRequiredScopeId() != null ) {
 					if( ! getRequiredScopeId().equals( rhs.getRequiredScopeId() ) ) {
@@ -1076,8 +1074,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByScopeIdxKey ) {
-			ICFBamValueByScopeIdxKey rhs = (ICFBamValueByScopeIdxKey)obj;
+		else if( obj instanceof ICFBamValueByScopeIdxKey rhs ) {
 			if( getRequiredScopeId() != null ) {
 				if( rhs.getRequiredScopeId() != null ) {
 					if( ! getRequiredScopeId().equals( rhs.getRequiredScopeId() ) ) {
@@ -1095,8 +1092,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByDefSchemaIdxKey ) {
-			ICFBamValueByDefSchemaIdxKey rhs = (ICFBamValueByDefSchemaIdxKey)obj;
+		else if( obj instanceof ICFBamValueByDefSchemaIdxKey rhs ) {
 			if( getOptionalDefSchemaId() != null ) {
 				if( rhs.getOptionalDefSchemaId() != null ) {
 					if( ! getOptionalDefSchemaId().equals( rhs.getOptionalDefSchemaId() ) ) {
@@ -1114,8 +1110,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByPrevIdxKey ) {
-			ICFBamValueByPrevIdxKey rhs = (ICFBamValueByPrevIdxKey)obj;
+		else if( obj instanceof ICFBamValueByPrevIdxKey rhs ) {
 			if( getOptionalPrevId() != null ) {
 				if( rhs.getOptionalPrevId() != null ) {
 					if( ! getOptionalPrevId().equals( rhs.getOptionalPrevId() ) ) {
@@ -1133,8 +1128,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByNextIdxKey ) {
-			ICFBamValueByNextIdxKey rhs = (ICFBamValueByNextIdxKey)obj;
+		else if( obj instanceof ICFBamValueByNextIdxKey rhs ) {
 			if( getOptionalNextId() != null ) {
 				if( rhs.getOptionalNextId() != null ) {
 					if( ! getOptionalNextId().equals( rhs.getOptionalNextId() ) ) {
@@ -1152,8 +1146,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByContPrevIdxKey ) {
-			ICFBamValueByContPrevIdxKey rhs = (ICFBamValueByContPrevIdxKey)obj;
+		else if( obj instanceof ICFBamValueByContPrevIdxKey rhs ) {
 			if( getRequiredScopeId() != null ) {
 				if( rhs.getRequiredScopeId() != null ) {
 					if( ! getRequiredScopeId().equals( rhs.getRequiredScopeId() ) ) {
@@ -1186,8 +1179,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByContNextIdxKey ) {
-			ICFBamValueByContNextIdxKey rhs = (ICFBamValueByContNextIdxKey)obj;
+		else if( obj instanceof ICFBamValueByContNextIdxKey rhs ) {
 			if( getRequiredScopeId() != null ) {
 				if( rhs.getRequiredScopeId() != null ) {
 					if( ! getRequiredScopeId().equals( rhs.getRequiredScopeId() ) ) {
@@ -1628,8 +1620,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByUNameIdxKey ) {
-			ICFBamValueByUNameIdxKey rhs = (ICFBamValueByUNameIdxKey)obj;
+		else if( obj instanceof ICFBamValueByUNameIdxKey rhs ) {
 			if( getRequiredScopeId() != null ) {
 				if( rhs.getRequiredScopeId() != null ) {
 					if( ! getRequiredScopeId().equals( rhs.getRequiredScopeId() ) ) {
@@ -1662,8 +1653,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByScopeIdxKey ) {
-			ICFBamValueByScopeIdxKey rhs = (ICFBamValueByScopeIdxKey)obj;
+		else if( obj instanceof ICFBamValueByScopeIdxKey rhs ) {
 			if( getRequiredScopeId() != null ) {
 				if( rhs.getRequiredScopeId() != null ) {
 					if( ! getRequiredScopeId().equals( rhs.getRequiredScopeId() ) ) {
@@ -1681,8 +1671,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByDefSchemaIdxKey ) {
-			ICFBamValueByDefSchemaIdxKey rhs = (ICFBamValueByDefSchemaIdxKey)obj;
+		else if( obj instanceof ICFBamValueByDefSchemaIdxKey rhs ) {
 			if( getOptionalDefSchemaId() != null ) {
 				if( rhs.getOptionalDefSchemaId() != null ) {
 					if( ! getOptionalDefSchemaId().equals( rhs.getOptionalDefSchemaId() ) ) {
@@ -1700,8 +1689,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByPrevIdxKey ) {
-			ICFBamValueByPrevIdxKey rhs = (ICFBamValueByPrevIdxKey)obj;
+		else if( obj instanceof ICFBamValueByPrevIdxKey rhs ) {
 			if( getOptionalPrevId() != null ) {
 				if( rhs.getOptionalPrevId() != null ) {
 					if( ! getOptionalPrevId().equals( rhs.getOptionalPrevId() ) ) {
@@ -1719,8 +1707,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByNextIdxKey ) {
-			ICFBamValueByNextIdxKey rhs = (ICFBamValueByNextIdxKey)obj;
+		else if( obj instanceof ICFBamValueByNextIdxKey rhs ) {
 			if( getOptionalNextId() != null ) {
 				if( rhs.getOptionalNextId() != null ) {
 					if( ! getOptionalNextId().equals( rhs.getOptionalNextId() ) ) {
@@ -1738,8 +1725,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByContPrevIdxKey ) {
-			ICFBamValueByContPrevIdxKey rhs = (ICFBamValueByContPrevIdxKey)obj;
+		else if( obj instanceof ICFBamValueByContPrevIdxKey rhs ) {
 			if( getRequiredScopeId() != null ) {
 				if( rhs.getRequiredScopeId() != null ) {
 					if( ! getRequiredScopeId().equals( rhs.getRequiredScopeId() ) ) {
@@ -1772,8 +1758,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByContNextIdxKey ) {
-			ICFBamValueByContNextIdxKey rhs = (ICFBamValueByContNextIdxKey)obj;
+		else if( obj instanceof ICFBamValueByContNextIdxKey rhs ) {
 			if( getRequiredScopeId() != null ) {
 				if( rhs.getRequiredScopeId() != null ) {
 					if( ! getRequiredScopeId().equals( rhs.getRequiredScopeId() ) ) {
@@ -2214,8 +2199,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByUNameIdxKey ) {
-			ICFBamValueByUNameIdxKey rhs = (ICFBamValueByUNameIdxKey)obj;
+		else if( obj instanceof ICFBamValueByUNameIdxKey rhs ) {
 			if( getRequiredScopeId() != null ) {
 				if( rhs.getRequiredScopeId() != null ) {
 					if( ! getRequiredScopeId().equals( rhs.getRequiredScopeId() ) ) {
@@ -2248,8 +2232,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByScopeIdxKey ) {
-			ICFBamValueByScopeIdxKey rhs = (ICFBamValueByScopeIdxKey)obj;
+		else if( obj instanceof ICFBamValueByScopeIdxKey rhs ) {
 			if( getRequiredScopeId() != null ) {
 				if( rhs.getRequiredScopeId() != null ) {
 					if( ! getRequiredScopeId().equals( rhs.getRequiredScopeId() ) ) {
@@ -2267,8 +2250,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByDefSchemaIdxKey ) {
-			ICFBamValueByDefSchemaIdxKey rhs = (ICFBamValueByDefSchemaIdxKey)obj;
+		else if( obj instanceof ICFBamValueByDefSchemaIdxKey rhs ) {
 			if( getOptionalDefSchemaId() != null ) {
 				if( rhs.getOptionalDefSchemaId() != null ) {
 					if( ! getOptionalDefSchemaId().equals( rhs.getOptionalDefSchemaId() ) ) {
@@ -2286,8 +2268,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByPrevIdxKey ) {
-			ICFBamValueByPrevIdxKey rhs = (ICFBamValueByPrevIdxKey)obj;
+		else if( obj instanceof ICFBamValueByPrevIdxKey rhs ) {
 			if( getOptionalPrevId() != null ) {
 				if( rhs.getOptionalPrevId() != null ) {
 					if( ! getOptionalPrevId().equals( rhs.getOptionalPrevId() ) ) {
@@ -2305,8 +2286,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByNextIdxKey ) {
-			ICFBamValueByNextIdxKey rhs = (ICFBamValueByNextIdxKey)obj;
+		else if( obj instanceof ICFBamValueByNextIdxKey rhs ) {
 			if( getOptionalNextId() != null ) {
 				if( rhs.getOptionalNextId() != null ) {
 					if( ! getOptionalNextId().equals( rhs.getOptionalNextId() ) ) {
@@ -2324,8 +2304,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByContPrevIdxKey ) {
-			ICFBamValueByContPrevIdxKey rhs = (ICFBamValueByContPrevIdxKey)obj;
+		else if( obj instanceof ICFBamValueByContPrevIdxKey rhs ) {
 			if( getRequiredScopeId() != null ) {
 				if( rhs.getRequiredScopeId() != null ) {
 					if( ! getRequiredScopeId().equals( rhs.getRequiredScopeId() ) ) {
@@ -2358,8 +2337,7 @@ public class CFBamBuffValue
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamValueByContNextIdxKey ) {
-			ICFBamValueByContNextIdxKey rhs = (ICFBamValueByContNextIdxKey)obj;
+		else if( obj instanceof ICFBamValueByContNextIdxKey rhs ) {
 			if( getRequiredScopeId() != null ) {
 				if( rhs.getRequiredScopeId() != null ) {
 					if( ! getRequiredScopeId().equals( rhs.getRequiredScopeId() ) ) {

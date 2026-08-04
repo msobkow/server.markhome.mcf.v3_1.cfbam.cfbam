@@ -287,8 +287,7 @@ public class CFBamBuffInt64Def
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamInt64DefH ) {
-			ICFBamInt64DefH rhs = (ICFBamInt64DefH)obj;
+		else if( obj instanceof ICFBamInt64DefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

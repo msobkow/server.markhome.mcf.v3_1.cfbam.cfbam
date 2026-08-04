@@ -190,8 +190,7 @@ public class CFBamBuffBlobDef
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamBlobDefH ) {
-			ICFBamBlobDefH rhs = (ICFBamBlobDefH)obj;
+		else if( obj instanceof ICFBamBlobDefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

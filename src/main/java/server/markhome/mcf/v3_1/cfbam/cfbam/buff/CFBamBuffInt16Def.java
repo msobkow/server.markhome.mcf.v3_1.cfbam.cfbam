@@ -287,8 +287,7 @@ public class CFBamBuffInt16Def
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamInt16DefH ) {
-			ICFBamInt16DefH rhs = (ICFBamInt16DefH)obj;
+		else if( obj instanceof ICFBamInt16DefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

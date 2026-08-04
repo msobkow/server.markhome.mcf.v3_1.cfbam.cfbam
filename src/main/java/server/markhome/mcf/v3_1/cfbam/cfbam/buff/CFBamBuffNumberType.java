@@ -189,8 +189,7 @@ public class CFBamBuffNumberType
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamNumberTypeH ) {
-			ICFBamNumberTypeH rhs = (ICFBamNumberTypeH)obj;
+		else if( obj instanceof ICFBamNumberTypeH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -242,8 +241,7 @@ public class CFBamBuffNumberType
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamNumberTypeBySchemaIdxKey ) {
-			ICFBamNumberTypeBySchemaIdxKey rhs = (ICFBamNumberTypeBySchemaIdxKey)obj;
+		else if( obj instanceof ICFBamNumberTypeBySchemaIdxKey rhs ) {
 			if( getRequiredSchemaDefId() != null ) {
 				if( rhs.getRequiredSchemaDefId() != null ) {
 					if( ! getRequiredSchemaDefId().equals( rhs.getRequiredSchemaDefId() ) ) {
@@ -345,8 +343,7 @@ public class CFBamBuffNumberType
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamNumberTypeBySchemaIdxKey ) {
-			ICFBamNumberTypeBySchemaIdxKey rhs = (ICFBamNumberTypeBySchemaIdxKey)obj;
+		else if( obj instanceof ICFBamNumberTypeBySchemaIdxKey rhs ) {
 			if( getRequiredSchemaDefId() != null ) {
 				if( rhs.getRequiredSchemaDefId() != null ) {
 					if( ! getRequiredSchemaDefId().equals( rhs.getRequiredSchemaDefId() ) ) {
@@ -448,8 +445,7 @@ public class CFBamBuffNumberType
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamNumberTypeBySchemaIdxKey ) {
-			ICFBamNumberTypeBySchemaIdxKey rhs = (ICFBamNumberTypeBySchemaIdxKey)obj;
+		else if( obj instanceof ICFBamNumberTypeBySchemaIdxKey rhs ) {
 			if( getRequiredSchemaDefId() != null ) {
 				if( rhs.getRequiredSchemaDefId() != null ) {
 					if( ! getRequiredSchemaDefId().equals( rhs.getRequiredSchemaDefId() ) ) {

@@ -287,8 +287,7 @@ public class CFBamBuffInt32Def
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamInt32DefH ) {
-			ICFBamInt32DefH rhs = (ICFBamInt32DefH)obj;
+		else if( obj instanceof ICFBamInt32DefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

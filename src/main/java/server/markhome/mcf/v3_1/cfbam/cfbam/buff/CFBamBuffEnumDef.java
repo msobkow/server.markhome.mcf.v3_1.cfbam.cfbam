@@ -131,8 +131,7 @@ public class CFBamBuffEnumDef
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamEnumDefH ) {
-			ICFBamEnumDefH rhs = (ICFBamEnumDefH)obj;
+		else if( obj instanceof ICFBamEnumDefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

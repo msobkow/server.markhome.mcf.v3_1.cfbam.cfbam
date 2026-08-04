@@ -190,8 +190,7 @@ public class CFBamBuffTokenDef
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamTokenDefH ) {
-			ICFBamTokenDefH rhs = (ICFBamTokenDefH)obj;
+		else if( obj instanceof ICFBamTokenDefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

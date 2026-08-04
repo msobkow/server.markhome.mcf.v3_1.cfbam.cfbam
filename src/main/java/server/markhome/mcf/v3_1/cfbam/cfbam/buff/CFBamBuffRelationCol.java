@@ -120,7 +120,7 @@ public class CFBamBuffRelationCol
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( getPKey() );
+		return( requiredId );
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -131,7 +131,7 @@ public class CFBamBuffRelationCol
 				"value" );
 		}
 		
-		setPKey(value);
+		requiredId = value;
 	}
 
 	@Override
@@ -857,8 +857,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColH ) {
-			ICFBamRelationColH rhs = (ICFBamRelationColH)obj;
+		else if( obj instanceof ICFBamRelationColH rhs ) {
 			if( getRequiredRelationId() != null ) {
 				if( rhs.getRequiredRelationId() != null ) {
 					if( ! getRequiredRelationId().equals( rhs.getRequiredRelationId() ) ) {
@@ -1060,8 +1059,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByUNameIdxKey ) {
-			ICFBamRelationColByUNameIdxKey rhs = (ICFBamRelationColByUNameIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByUNameIdxKey rhs ) {
 			if( getRequiredRelationId() != null ) {
 				if( rhs.getRequiredRelationId() != null ) {
 					if( ! getRequiredRelationId().equals( rhs.getRequiredRelationId() ) ) {
@@ -1094,8 +1092,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByRelationIdxKey ) {
-			ICFBamRelationColByRelationIdxKey rhs = (ICFBamRelationColByRelationIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByRelationIdxKey rhs ) {
 			if( getRequiredRelationId() != null ) {
 				if( rhs.getRequiredRelationId() != null ) {
 					if( ! getRequiredRelationId().equals( rhs.getRequiredRelationId() ) ) {
@@ -1113,8 +1110,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByDefSchemaIdxKey ) {
-			ICFBamRelationColByDefSchemaIdxKey rhs = (ICFBamRelationColByDefSchemaIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByDefSchemaIdxKey rhs ) {
 			if( getOptionalDefSchemaId() != null ) {
 				if( rhs.getOptionalDefSchemaId() != null ) {
 					if( ! getOptionalDefSchemaId().equals( rhs.getOptionalDefSchemaId() ) ) {
@@ -1132,8 +1128,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByFromColIdxKey ) {
-			ICFBamRelationColByFromColIdxKey rhs = (ICFBamRelationColByFromColIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByFromColIdxKey rhs ) {
 			if( getRequiredFromColId() != null ) {
 				if( rhs.getRequiredFromColId() != null ) {
 					if( ! getRequiredFromColId().equals( rhs.getRequiredFromColId() ) ) {
@@ -1151,8 +1146,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByToColIdxKey ) {
-			ICFBamRelationColByToColIdxKey rhs = (ICFBamRelationColByToColIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByToColIdxKey rhs ) {
 			if( getRequiredToColId() != null ) {
 				if( rhs.getRequiredToColId() != null ) {
 					if( ! getRequiredToColId().equals( rhs.getRequiredToColId() ) ) {
@@ -1170,8 +1164,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByPrevIdxKey ) {
-			ICFBamRelationColByPrevIdxKey rhs = (ICFBamRelationColByPrevIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByPrevIdxKey rhs ) {
 			if( getOptionalPrevId() != null ) {
 				if( rhs.getOptionalPrevId() != null ) {
 					if( ! getOptionalPrevId().equals( rhs.getOptionalPrevId() ) ) {
@@ -1189,8 +1182,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByNextIdxKey ) {
-			ICFBamRelationColByNextIdxKey rhs = (ICFBamRelationColByNextIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByNextIdxKey rhs ) {
 			if( getOptionalNextId() != null ) {
 				if( rhs.getOptionalNextId() != null ) {
 					if( ! getOptionalNextId().equals( rhs.getOptionalNextId() ) ) {
@@ -1208,8 +1200,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByRelPrevIdxKey ) {
-			ICFBamRelationColByRelPrevIdxKey rhs = (ICFBamRelationColByRelPrevIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByRelPrevIdxKey rhs ) {
 			if( getRequiredRelationId() != null ) {
 				if( rhs.getRequiredRelationId() != null ) {
 					if( ! getRequiredRelationId().equals( rhs.getRequiredRelationId() ) ) {
@@ -1242,8 +1233,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByRelNextIdxKey ) {
-			ICFBamRelationColByRelNextIdxKey rhs = (ICFBamRelationColByRelNextIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByRelNextIdxKey rhs ) {
 			if( getRequiredRelationId() != null ) {
 				if( rhs.getRequiredRelationId() != null ) {
 					if( ! getRequiredRelationId().equals( rhs.getRequiredRelationId() ) ) {
@@ -1672,8 +1662,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByUNameIdxKey ) {
-			ICFBamRelationColByUNameIdxKey rhs = (ICFBamRelationColByUNameIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByUNameIdxKey rhs ) {
 			if( getRequiredRelationId() != null ) {
 				if( rhs.getRequiredRelationId() != null ) {
 					if( ! getRequiredRelationId().equals( rhs.getRequiredRelationId() ) ) {
@@ -1706,8 +1695,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByRelationIdxKey ) {
-			ICFBamRelationColByRelationIdxKey rhs = (ICFBamRelationColByRelationIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByRelationIdxKey rhs ) {
 			if( getRequiredRelationId() != null ) {
 				if( rhs.getRequiredRelationId() != null ) {
 					if( ! getRequiredRelationId().equals( rhs.getRequiredRelationId() ) ) {
@@ -1725,8 +1713,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByDefSchemaIdxKey ) {
-			ICFBamRelationColByDefSchemaIdxKey rhs = (ICFBamRelationColByDefSchemaIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByDefSchemaIdxKey rhs ) {
 			if( getOptionalDefSchemaId() != null ) {
 				if( rhs.getOptionalDefSchemaId() != null ) {
 					if( ! getOptionalDefSchemaId().equals( rhs.getOptionalDefSchemaId() ) ) {
@@ -1744,8 +1731,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByFromColIdxKey ) {
-			ICFBamRelationColByFromColIdxKey rhs = (ICFBamRelationColByFromColIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByFromColIdxKey rhs ) {
 			if( getRequiredFromColId() != null ) {
 				if( rhs.getRequiredFromColId() != null ) {
 					if( ! getRequiredFromColId().equals( rhs.getRequiredFromColId() ) ) {
@@ -1763,8 +1749,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByToColIdxKey ) {
-			ICFBamRelationColByToColIdxKey rhs = (ICFBamRelationColByToColIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByToColIdxKey rhs ) {
 			if( getRequiredToColId() != null ) {
 				if( rhs.getRequiredToColId() != null ) {
 					if( ! getRequiredToColId().equals( rhs.getRequiredToColId() ) ) {
@@ -1782,8 +1767,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByPrevIdxKey ) {
-			ICFBamRelationColByPrevIdxKey rhs = (ICFBamRelationColByPrevIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByPrevIdxKey rhs ) {
 			if( getOptionalPrevId() != null ) {
 				if( rhs.getOptionalPrevId() != null ) {
 					if( ! getOptionalPrevId().equals( rhs.getOptionalPrevId() ) ) {
@@ -1801,8 +1785,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByNextIdxKey ) {
-			ICFBamRelationColByNextIdxKey rhs = (ICFBamRelationColByNextIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByNextIdxKey rhs ) {
 			if( getOptionalNextId() != null ) {
 				if( rhs.getOptionalNextId() != null ) {
 					if( ! getOptionalNextId().equals( rhs.getOptionalNextId() ) ) {
@@ -1820,8 +1803,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByRelPrevIdxKey ) {
-			ICFBamRelationColByRelPrevIdxKey rhs = (ICFBamRelationColByRelPrevIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByRelPrevIdxKey rhs ) {
 			if( getRequiredRelationId() != null ) {
 				if( rhs.getRequiredRelationId() != null ) {
 					if( ! getRequiredRelationId().equals( rhs.getRequiredRelationId() ) ) {
@@ -1854,8 +1836,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByRelNextIdxKey ) {
-			ICFBamRelationColByRelNextIdxKey rhs = (ICFBamRelationColByRelNextIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByRelNextIdxKey rhs ) {
 			if( getRequiredRelationId() != null ) {
 				if( rhs.getRequiredRelationId() != null ) {
 					if( ! getRequiredRelationId().equals( rhs.getRequiredRelationId() ) ) {
@@ -2284,8 +2265,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByUNameIdxKey ) {
-			ICFBamRelationColByUNameIdxKey rhs = (ICFBamRelationColByUNameIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByUNameIdxKey rhs ) {
 			if( getRequiredRelationId() != null ) {
 				if( rhs.getRequiredRelationId() != null ) {
 					if( ! getRequiredRelationId().equals( rhs.getRequiredRelationId() ) ) {
@@ -2318,8 +2298,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByRelationIdxKey ) {
-			ICFBamRelationColByRelationIdxKey rhs = (ICFBamRelationColByRelationIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByRelationIdxKey rhs ) {
 			if( getRequiredRelationId() != null ) {
 				if( rhs.getRequiredRelationId() != null ) {
 					if( ! getRequiredRelationId().equals( rhs.getRequiredRelationId() ) ) {
@@ -2337,8 +2316,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByDefSchemaIdxKey ) {
-			ICFBamRelationColByDefSchemaIdxKey rhs = (ICFBamRelationColByDefSchemaIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByDefSchemaIdxKey rhs ) {
 			if( getOptionalDefSchemaId() != null ) {
 				if( rhs.getOptionalDefSchemaId() != null ) {
 					if( ! getOptionalDefSchemaId().equals( rhs.getOptionalDefSchemaId() ) ) {
@@ -2356,8 +2334,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByFromColIdxKey ) {
-			ICFBamRelationColByFromColIdxKey rhs = (ICFBamRelationColByFromColIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByFromColIdxKey rhs ) {
 			if( getRequiredFromColId() != null ) {
 				if( rhs.getRequiredFromColId() != null ) {
 					if( ! getRequiredFromColId().equals( rhs.getRequiredFromColId() ) ) {
@@ -2375,8 +2352,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByToColIdxKey ) {
-			ICFBamRelationColByToColIdxKey rhs = (ICFBamRelationColByToColIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByToColIdxKey rhs ) {
 			if( getRequiredToColId() != null ) {
 				if( rhs.getRequiredToColId() != null ) {
 					if( ! getRequiredToColId().equals( rhs.getRequiredToColId() ) ) {
@@ -2394,8 +2370,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByPrevIdxKey ) {
-			ICFBamRelationColByPrevIdxKey rhs = (ICFBamRelationColByPrevIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByPrevIdxKey rhs ) {
 			if( getOptionalPrevId() != null ) {
 				if( rhs.getOptionalPrevId() != null ) {
 					if( ! getOptionalPrevId().equals( rhs.getOptionalPrevId() ) ) {
@@ -2413,8 +2388,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByNextIdxKey ) {
-			ICFBamRelationColByNextIdxKey rhs = (ICFBamRelationColByNextIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByNextIdxKey rhs ) {
 			if( getOptionalNextId() != null ) {
 				if( rhs.getOptionalNextId() != null ) {
 					if( ! getOptionalNextId().equals( rhs.getOptionalNextId() ) ) {
@@ -2432,8 +2406,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByRelPrevIdxKey ) {
-			ICFBamRelationColByRelPrevIdxKey rhs = (ICFBamRelationColByRelPrevIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByRelPrevIdxKey rhs ) {
 			if( getRequiredRelationId() != null ) {
 				if( rhs.getRequiredRelationId() != null ) {
 					if( ! getRequiredRelationId().equals( rhs.getRequiredRelationId() ) ) {
@@ -2466,8 +2439,7 @@ public class CFBamBuffRelationCol
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamRelationColByRelNextIdxKey ) {
-			ICFBamRelationColByRelNextIdxKey rhs = (ICFBamRelationColByRelNextIdxKey)obj;
+		else if( obj instanceof ICFBamRelationColByRelNextIdxKey rhs ) {
 			if( getRequiredRelationId() != null ) {
 				if( rhs.getRequiredRelationId() != null ) {
 					if( ! getRequiredRelationId().equals( rhs.getRequiredRelationId() ) ) {

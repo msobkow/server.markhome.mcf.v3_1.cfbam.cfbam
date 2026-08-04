@@ -239,8 +239,7 @@ public class CFBamBuffUInt16Def
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamUInt16DefH ) {
-			ICFBamUInt16DefH rhs = (ICFBamUInt16DefH)obj;
+		else if( obj instanceof ICFBamUInt16DefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

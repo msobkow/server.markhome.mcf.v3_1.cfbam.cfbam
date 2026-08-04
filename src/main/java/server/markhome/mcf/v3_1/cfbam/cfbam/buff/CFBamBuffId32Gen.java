@@ -203,8 +203,7 @@ public class CFBamBuffId32Gen
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamId32GenH ) {
-			ICFBamId32GenH rhs = (ICFBamId32GenH)obj;
+		else if( obj instanceof ICFBamId32GenH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

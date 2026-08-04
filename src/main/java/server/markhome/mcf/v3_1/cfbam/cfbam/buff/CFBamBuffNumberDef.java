@@ -287,8 +287,7 @@ public class CFBamBuffNumberDef
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamNumberDefH ) {
-			ICFBamNumberDefH rhs = (ICFBamNumberDefH)obj;
+		else if( obj instanceof ICFBamNumberDefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

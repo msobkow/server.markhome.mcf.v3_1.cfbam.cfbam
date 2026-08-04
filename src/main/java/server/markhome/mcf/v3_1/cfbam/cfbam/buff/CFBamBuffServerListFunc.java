@@ -183,8 +183,7 @@ public class CFBamBuffServerListFunc
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamServerListFuncH ) {
-			ICFBamServerListFuncH rhs = (ICFBamServerListFuncH)obj;
+		else if( obj instanceof ICFBamServerListFuncH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
@@ -236,8 +235,7 @@ public class CFBamBuffServerListFunc
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamServerListFuncByRetTblIdxKey ) {
-			ICFBamServerListFuncByRetTblIdxKey rhs = (ICFBamServerListFuncByRetTblIdxKey)obj;
+		else if( obj instanceof ICFBamServerListFuncByRetTblIdxKey rhs ) {
 			if( getOptionalRetTableId() != null ) {
 				if( rhs.getOptionalRetTableId() != null ) {
 					if( ! getOptionalRetTableId().equals( rhs.getOptionalRetTableId() ) ) {
@@ -339,8 +337,7 @@ public class CFBamBuffServerListFunc
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamServerListFuncByRetTblIdxKey ) {
-			ICFBamServerListFuncByRetTblIdxKey rhs = (ICFBamServerListFuncByRetTblIdxKey)obj;
+		else if( obj instanceof ICFBamServerListFuncByRetTblIdxKey rhs ) {
 			if( getOptionalRetTableId() != null ) {
 				if( rhs.getOptionalRetTableId() != null ) {
 					if( ! getOptionalRetTableId().equals( rhs.getOptionalRetTableId() ) ) {
@@ -442,8 +439,7 @@ public class CFBamBuffServerListFunc
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamServerListFuncByRetTblIdxKey ) {
-			ICFBamServerListFuncByRetTblIdxKey rhs = (ICFBamServerListFuncByRetTblIdxKey)obj;
+		else if( obj instanceof ICFBamServerListFuncByRetTblIdxKey rhs ) {
 			if( getOptionalRetTableId() != null ) {
 				if( rhs.getOptionalRetTableId() != null ) {
 					if( ! getOptionalRetTableId().equals( rhs.getOptionalRetTableId() ) ) {

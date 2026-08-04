@@ -142,8 +142,7 @@ public class CFBamBuffServerProc
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamServerProcH ) {
-			ICFBamServerProcH rhs = (ICFBamServerProcH)obj;
+		else if( obj instanceof ICFBamServerProcH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {

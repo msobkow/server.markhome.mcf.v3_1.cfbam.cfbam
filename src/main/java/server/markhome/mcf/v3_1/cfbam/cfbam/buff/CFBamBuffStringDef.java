@@ -205,8 +205,7 @@ public class CFBamBuffStringDef
 			}
 			return( true );
 		}
-		else if( obj instanceof ICFBamStringDefH ) {
-			ICFBamStringDefH rhs = (ICFBamStringDefH)obj;
+		else if( obj instanceof ICFBamStringDefH rhs ) {
 			if( getRequiredId() != null ) {
 				if( rhs.getRequiredId() != null ) {
 					if( ! getRequiredId().equals( rhs.getRequiredId() ) ) {
