@@ -74,9 +74,11 @@ public class CFBamBuffScopeH
     implements ICFBamScopeH, Comparable<Object>, Serializable
 {
     protected CFBamBuffScopeHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamScope.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_INIT_CREATED_BY.toString());
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamScope.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_INIT_UPDATED_BY.toString());
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredTenantId;
 
@@ -222,7 +224,7 @@ public class CFBamBuffScopeH
 				1,
 				"value" );
 		}
-		requiredId = value;
+		getPKey().setRequiredId(value);
 	}
 
 	@Override

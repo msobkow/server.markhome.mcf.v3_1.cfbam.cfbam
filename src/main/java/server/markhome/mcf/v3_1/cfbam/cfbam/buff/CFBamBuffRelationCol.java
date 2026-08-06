@@ -75,9 +75,11 @@ public class CFBamBuffRelationCol
 {
 	protected CFLibDbKeyHash256 requiredId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamRelationCol.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_INIT_CREATED_BY.toString());
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamRelationCol.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_INIT_UPDATED_BY.toString());
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredRelationId;
 	protected CFLibDbKeyHash256 optionalDefSchemaId;
@@ -130,7 +132,7 @@ public class CFBamBuffRelationCol
 				1,
 				"value" );
 		}
-		requiredId = value;
+		getPKey().setRequiredId(value);
 	}
 
 	@Override
