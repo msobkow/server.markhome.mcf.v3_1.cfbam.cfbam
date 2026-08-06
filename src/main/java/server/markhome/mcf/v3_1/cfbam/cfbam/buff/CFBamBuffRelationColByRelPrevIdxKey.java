@@ -76,7 +76,7 @@ public class CFBamBuffRelationColByRelPrevIdxKey
 	protected CFLibDbKeyHash256 requiredRelationId;
 	protected CFLibDbKeyHash256 optionalPrevId;
 	public CFBamBuffRelationColByRelPrevIdxKey() {
-		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamRelationCol.RELATIONID_INIT_VALUE.toString() );
+		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubRelationCol.RELATIONID_INIT_VALUE.toString() );
 		optionalPrevId = CFLibDbKeyHash256.nullGet();
 	}
 

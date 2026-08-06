@@ -76,8 +76,8 @@ public class CFBamBuffServerMethodByMethTableVisIdxKey
 	protected CFLibDbKeyHash256 requiredTableId;
 	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 	public CFBamBuffServerMethodByMethTableVisIdxKey() {
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamServerMethod.TABLEID_INIT_VALUE.toString() );
-		requiredCodeVis = ICFBamServerMethod.CODEVIS_INIT_VALUE;
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubServerMethod.TABLEID_INIT_VALUE.toString() );
+		requiredCodeVis = ICFBamPubServerMethod.CODEVIS_INIT_VALUE;
 	}
 
 	@Override

@@ -76,8 +76,8 @@ public class CFBamBuffChainByUNameIdxKey
 	protected CFLibDbKeyHash256 requiredTableId;
 	protected String requiredName;
 	public CFBamBuffChainByUNameIdxKey() {
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamChain.TABLEID_INIT_VALUE.toString() );
-		requiredName = ICFBamChain.NAME_INIT_VALUE;
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubChain.TABLEID_INIT_VALUE.toString() );
+		requiredName = ICFBamPubChain.NAME_INIT_VALUE;
 	}
 
 	@Override

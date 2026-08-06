@@ -75,7 +75,7 @@ public class CFBamBuffRelationByToTblIdxKey
 {
 	protected CFLibDbKeyHash256 requiredToTableId;
 	public CFBamBuffRelationByToTblIdxKey() {
-		requiredToTableId = CFLibDbKeyHash256.fromHex( ICFBamRelation.TOTABLEID_INIT_VALUE.toString() );
+		requiredToTableId = CFLibDbKeyHash256.fromHex( ICFBamPubRelation.TOTABLEID_INIT_VALUE.toString() );
 	}
 
 	@Override

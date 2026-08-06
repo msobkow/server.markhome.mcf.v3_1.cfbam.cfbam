@@ -76,8 +76,8 @@ public class CFBamBuffPopSubDep3ByUNameIdxKey
 	protected CFLibDbKeyHash256 requiredPopSubDep2Id;
 	protected String requiredName;
 	public CFBamBuffPopSubDep3ByUNameIdxKey() {
-		requiredPopSubDep2Id = CFLibDbKeyHash256.fromHex( ICFBamPopSubDep3.POPSUBDEP2ID_INIT_VALUE.toString() );
-		requiredName = ICFBamPopSubDep3.NAME_INIT_VALUE;
+		requiredPopSubDep2Id = CFLibDbKeyHash256.fromHex( ICFBamPubPopSubDep3.POPSUBDEP2ID_INIT_VALUE.toString() );
+		requiredName = ICFBamPubPopSubDep3.NAME_INIT_VALUE;
 	}
 
 	@Override

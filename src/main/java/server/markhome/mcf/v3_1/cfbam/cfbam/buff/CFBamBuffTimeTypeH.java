@@ -77,7 +77,7 @@ public class CFBamBuffTimeTypeH extends CFBamBuffTimeDefH
 
     public CFBamBuffTimeTypeH() {
             super();
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamTimeType.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubTimeType.SCHEMADEFID_INIT_VALUE.toString() );
     }
 
     @Override

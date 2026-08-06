@@ -76,7 +76,7 @@ public class CFBamBuffValueByContPrevIdxKey
 	protected CFLibDbKeyHash256 requiredScopeId;
 	protected CFLibDbKeyHash256 optionalPrevId;
 	public CFBamBuffValueByContPrevIdxKey() {
-		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamValue.SCOPEID_INIT_VALUE.toString() );
+		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.SCOPEID_INIT_VALUE.toString() );
 		optionalPrevId = CFLibDbKeyHash256.nullGet();
 	}
 

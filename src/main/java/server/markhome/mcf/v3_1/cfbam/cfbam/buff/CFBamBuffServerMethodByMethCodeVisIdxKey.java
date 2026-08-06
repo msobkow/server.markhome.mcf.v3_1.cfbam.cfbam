@@ -75,7 +75,7 @@ public class CFBamBuffServerMethodByMethCodeVisIdxKey
 {
 	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 	public CFBamBuffServerMethodByMethCodeVisIdxKey() {
-		requiredCodeVis = ICFBamServerMethod.CODEVIS_INIT_VALUE;
+		requiredCodeVis = ICFBamPubServerMethod.CODEVIS_INIT_VALUE;
 	}
 
 	@Override

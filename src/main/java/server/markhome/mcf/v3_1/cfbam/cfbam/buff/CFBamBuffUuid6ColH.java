@@ -77,7 +77,7 @@ public class CFBamBuffUuid6ColH extends CFBamBuffUuid6DefH
 
     public CFBamBuffUuid6ColH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamUuid6Col.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubUuid6Col.TABLEID_INIT_VALUE.toString() );
     }
 
     @Override

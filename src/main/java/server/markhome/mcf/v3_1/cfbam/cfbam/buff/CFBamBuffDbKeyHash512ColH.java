@@ -77,7 +77,7 @@ public class CFBamBuffDbKeyHash512ColH extends CFBamBuffDbKeyHash512DefH
 
     public CFBamBuffDbKeyHash512ColH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamDbKeyHash512Col.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubDbKeyHash512Col.TABLEID_INIT_VALUE.toString() );
     }
 
     @Override

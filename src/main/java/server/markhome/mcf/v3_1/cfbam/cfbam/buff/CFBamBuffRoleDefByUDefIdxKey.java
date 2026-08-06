@@ -77,9 +77,9 @@ public class CFBamBuffRoleDefByUDefIdxKey
 	protected CFLibDbKeyHash256 optionalDefSchemaId;
 	protected String requiredName;
 	public CFBamBuffRoleDefByUDefIdxKey() {
-		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamRoleDef.SCOPEID_INIT_VALUE.toString() );
+		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamPubRoleDef.SCOPEID_INIT_VALUE.toString() );
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
-		requiredName = ICFBamRoleDef.NAME_INIT_VALUE;
+		requiredName = ICFBamPubRoleDef.NAME_INIT_VALUE;
 	}
 
 	@Override

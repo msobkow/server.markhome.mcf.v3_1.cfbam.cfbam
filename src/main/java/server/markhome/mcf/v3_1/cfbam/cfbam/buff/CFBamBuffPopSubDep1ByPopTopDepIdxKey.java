@@ -75,7 +75,7 @@ public class CFBamBuffPopSubDep1ByPopTopDepIdxKey
 {
 	protected CFLibDbKeyHash256 requiredPopTopDepId;
 	public CFBamBuffPopSubDep1ByPopTopDepIdxKey() {
-		requiredPopTopDepId = CFLibDbKeyHash256.fromHex( ICFBamPopSubDep1.POPTOPDEPID_INIT_VALUE.toString() );
+		requiredPopTopDepId = CFLibDbKeyHash256.fromHex( ICFBamPubPopSubDep1.POPTOPDEPID_INIT_VALUE.toString() );
 	}
 
 	@Override

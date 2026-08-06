@@ -75,7 +75,7 @@ public class CFBamBuffPopDepByRelationIdxKey
 {
 	protected CFLibDbKeyHash256 requiredRelationId;
 	public CFBamBuffPopDepByRelationIdxKey() {
-		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamPopDep.RELATIONID_INIT_VALUE.toString() );
+		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubPopDep.RELATIONID_INIT_VALUE.toString() );
 	}
 
 	@Override

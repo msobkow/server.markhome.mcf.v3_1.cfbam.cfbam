@@ -77,7 +77,7 @@ public class CFBamBuffDateColH extends CFBamBuffDateDefH
 
     public CFBamBuffDateColH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamDateCol.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubDateCol.TABLEID_INIT_VALUE.toString() );
     }
 
     @Override

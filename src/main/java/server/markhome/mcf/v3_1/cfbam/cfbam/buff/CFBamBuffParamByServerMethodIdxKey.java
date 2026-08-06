@@ -75,7 +75,7 @@ public class CFBamBuffParamByServerMethodIdxKey
 {
 	protected CFLibDbKeyHash256 requiredServerMethodId;
 	public CFBamBuffParamByServerMethodIdxKey() {
-		requiredServerMethodId = CFLibDbKeyHash256.fromHex( ICFBamParam.SERVERMETHODID_INIT_VALUE.toString() );
+		requiredServerMethodId = CFLibDbKeyHash256.fromHex( ICFBamPubParam.SERVERMETHODID_INIT_VALUE.toString() );
 	}
 
 	@Override

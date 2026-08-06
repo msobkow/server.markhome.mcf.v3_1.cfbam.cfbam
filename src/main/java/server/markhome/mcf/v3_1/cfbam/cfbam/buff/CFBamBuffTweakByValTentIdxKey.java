@@ -75,7 +75,7 @@ public class CFBamBuffTweakByValTentIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTenantId;
 	public CFBamBuffTweakByValTentIdxKey() {
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFBamTweak.TENANTID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFBamPubTweak.TENANTID_INIT_VALUE.toString() );
 	}
 
 	@Override

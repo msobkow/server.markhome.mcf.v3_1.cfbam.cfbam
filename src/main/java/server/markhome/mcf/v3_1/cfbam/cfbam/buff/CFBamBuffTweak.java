@@ -75,11 +75,11 @@ public class CFBamBuffTweak
 {
 	protected CFLibDbKeyHash256 requiredId;
 	protected int requiredRevision;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredTenantId;
 	protected CFLibDbKeyHash256 requiredScopeId;
@@ -90,14 +90,14 @@ public class CFBamBuffTweak
 	protected String requiredTweakGelText;
 
 	public CFBamBuffTweak() {
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamTweak.ID_INIT_VALUE.toString() );
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFBamTweak.TENANTID_INIT_VALUE.toString() );
-		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamTweak.SCOPEID_INIT_VALUE.toString() );
+		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubTweak.ID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFBamPubTweak.TENANTID_INIT_VALUE.toString() );
+		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamPubTweak.SCOPEID_INIT_VALUE.toString() );
 		optionalDefSchemaTenantId = CFLibDbKeyHash256.nullGet();
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
-		requiredName = ICFBamTweak.NAME_INIT_VALUE;
-		requiredReplacesInherited = ICFBamTweak.REPLACESINHERITED_INIT_VALUE;
-		requiredTweakGelText = ICFBamTweak.TWEAKGELTEXT_INIT_VALUE;
+		requiredName = ICFBamPubTweak.NAME_INIT_VALUE;
+		requiredReplacesInherited = ICFBamPubTweak.REPLACESINHERITED_INIT_VALUE;
+		requiredTweakGelText = ICFBamPubTweak.TWEAKGELTEXT_INIT_VALUE;
 	}
 
 	@Override

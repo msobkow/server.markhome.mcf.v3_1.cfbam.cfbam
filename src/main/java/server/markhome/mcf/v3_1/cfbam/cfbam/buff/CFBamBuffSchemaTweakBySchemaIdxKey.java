@@ -75,7 +75,7 @@ public class CFBamBuffSchemaTweakBySchemaIdxKey
 {
 	protected CFLibDbKeyHash256 requiredSchemaDefId;
 	public CFBamBuffSchemaTweakBySchemaIdxKey() {
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamSchemaTweak.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaTweak.SCHEMADEFID_INIT_VALUE.toString() );
 	}
 
 	@Override

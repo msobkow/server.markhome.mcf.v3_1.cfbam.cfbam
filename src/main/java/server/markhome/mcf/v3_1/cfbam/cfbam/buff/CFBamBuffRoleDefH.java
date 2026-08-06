@@ -74,11 +74,11 @@ public class CFBamBuffRoleDefH
     implements ICFBamRoleDefH, Comparable<Object>, Serializable
 {
     protected CFBamBuffRoleDefHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredScopeId;
 	protected CFLibDbKeyHash256 optionalDefSchemaId;
@@ -89,11 +89,11 @@ public class CFBamBuffRoleDefH
     public CFBamBuffRoleDefH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFBamBuffRoleDefHPKey();
-		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamRoleDef.SCOPEID_INIT_VALUE.toString() );
+		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamPubRoleDef.SCOPEID_INIT_VALUE.toString() );
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
-		requiredName = ICFBamRoleDef.NAME_INIT_VALUE;
-		requiredEnables = ICFBamRoleDef.ENABLES_INIT_VALUE;
-		requiredIncludes = ICFBamRoleDef.INCLUDES_INIT_VALUE;
+		requiredName = ICFBamPubRoleDef.NAME_INIT_VALUE;
+		requiredEnables = ICFBamPubRoleDef.ENABLES_INIT_VALUE;
+		requiredIncludes = ICFBamPubRoleDef.INCLUDES_INIT_VALUE;
     }
 
     @Override

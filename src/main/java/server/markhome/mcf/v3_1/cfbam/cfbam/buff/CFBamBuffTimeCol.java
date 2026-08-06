@@ -78,7 +78,7 @@ public class CFBamBuffTimeCol
 
 	public CFBamBuffTimeCol() {
 		super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamTimeCol.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubTimeCol.TABLEID_INIT_VALUE.toString() );
 	}
 
 	@Override

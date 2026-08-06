@@ -75,7 +75,7 @@ public class CFBamBuffClearDepByClearDepIdxKey
 {
 	protected CFLibDbKeyHash256 requiredRelationId;
 	public CFBamBuffClearDepByClearDepIdxKey() {
-		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamClearDep.RELATIONID_INIT_VALUE.toString() );
+		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubClearDep.RELATIONID_INIT_VALUE.toString() );
 	}
 
 	@Override

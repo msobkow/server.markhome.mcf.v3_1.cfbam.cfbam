@@ -79,8 +79,8 @@ public class CFBamBuffId32Gen
 
 	public CFBamBuffId32Gen() {
 		super();
-		requiredSlice = ICFBamId32Gen.SLICE_INIT_VALUE;
-		requiredBlockSize = ICFBamId32Gen.BLOCKSIZE_INIT_VALUE;
+		requiredSlice = ICFBamPubId32Gen.SLICE_INIT_VALUE;
+		requiredBlockSize = ICFBamPubId32Gen.BLOCKSIZE_INIT_VALUE;
 	}
 
 	@Override

@@ -78,7 +78,7 @@ public class CFBamBuffInt32Col
 
 	public CFBamBuffInt32Col() {
 		super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamInt32Col.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubInt32Col.TABLEID_INIT_VALUE.toString() );
 	}
 
 	@Override

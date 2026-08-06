@@ -81,7 +81,7 @@ public class CFBamBuffTableCol
 
 	public CFBamBuffTableCol() {
 		super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamTableCol.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubTableCol.TABLEID_INIT_VALUE.toString() );
 		optionalDbName = null;
 		optionalDataId = CFLibDbKeyHash256.nullGet();
 		optionalXmlElementName = null;

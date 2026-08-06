@@ -76,8 +76,8 @@ public class CFBamBuffClearTopDepByUNameIdxKey
 	protected CFLibDbKeyHash256 requiredTableId;
 	protected String requiredName;
 	public CFBamBuffClearTopDepByUNameIdxKey() {
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamClearTopDep.TABLEID_INIT_VALUE.toString() );
-		requiredName = ICFBamClearTopDep.NAME_INIT_VALUE;
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubClearTopDep.TABLEID_INIT_VALUE.toString() );
+		requiredName = ICFBamPubClearTopDep.NAME_INIT_VALUE;
 	}
 
 	@Override

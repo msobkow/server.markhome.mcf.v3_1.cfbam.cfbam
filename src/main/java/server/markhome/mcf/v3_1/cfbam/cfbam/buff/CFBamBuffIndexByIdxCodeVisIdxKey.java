@@ -75,7 +75,7 @@ public class CFBamBuffIndexByIdxCodeVisIdxKey
 {
 	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 	public CFBamBuffIndexByIdxCodeVisIdxKey() {
-		requiredCodeVis = ICFBamIndex.CODEVIS_INIT_VALUE;
+		requiredCodeVis = ICFBamPubIndex.CODEVIS_INIT_VALUE;
 	}
 
 	@Override

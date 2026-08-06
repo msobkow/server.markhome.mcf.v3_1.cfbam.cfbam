@@ -77,7 +77,7 @@ public class CFBamBuffInt64ColH extends CFBamBuffInt64DefH
 
     public CFBamBuffInt64ColH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamInt64Col.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubInt64Col.TABLEID_INIT_VALUE.toString() );
     }
 
     @Override

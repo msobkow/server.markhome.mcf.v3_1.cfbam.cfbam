@@ -75,7 +75,7 @@ public class CFBamBuffEnumTagByEnumIdxKey
 {
 	protected CFLibDbKeyHash256 requiredEnumId;
 	public CFBamBuffEnumTagByEnumIdxKey() {
-		requiredEnumId = CFLibDbKeyHash256.fromHex( ICFBamEnumTag.ENUMID_INIT_VALUE.toString() );
+		requiredEnumId = CFLibDbKeyHash256.fromHex( ICFBamPubEnumTag.ENUMID_INIT_VALUE.toString() );
 	}
 
 	@Override

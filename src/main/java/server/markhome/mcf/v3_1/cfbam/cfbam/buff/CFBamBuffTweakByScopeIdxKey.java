@@ -75,7 +75,7 @@ public class CFBamBuffTweakByScopeIdxKey
 {
 	protected CFLibDbKeyHash256 requiredScopeId;
 	public CFBamBuffTweakByScopeIdxKey() {
-		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamTweak.SCOPEID_INIT_VALUE.toString() );
+		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamPubTweak.SCOPEID_INIT_VALUE.toString() );
 	}
 
 	@Override

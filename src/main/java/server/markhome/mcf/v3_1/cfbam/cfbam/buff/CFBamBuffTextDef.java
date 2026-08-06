@@ -80,7 +80,7 @@ public class CFBamBuffTextDef
 
 	public CFBamBuffTextDef() {
 		super();
-		requiredMaxLen = ICFBamTextDef.MAXLEN_INIT_VALUE;
+		requiredMaxLen = ICFBamPubTextDef.MAXLEN_INIT_VALUE;
 		optionalInitValue = null;
 		optionalXmlElementName = null;
 	}

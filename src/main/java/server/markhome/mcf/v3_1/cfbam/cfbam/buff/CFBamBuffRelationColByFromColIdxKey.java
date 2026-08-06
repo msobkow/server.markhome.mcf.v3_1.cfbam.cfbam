@@ -75,7 +75,7 @@ public class CFBamBuffRelationColByFromColIdxKey
 {
 	protected CFLibDbKeyHash256 requiredFromColId;
 	public CFBamBuffRelationColByFromColIdxKey() {
-		requiredFromColId = CFLibDbKeyHash256.fromHex( ICFBamRelationCol.FROMCOLID_INIT_VALUE.toString() );
+		requiredFromColId = CFLibDbKeyHash256.fromHex( ICFBamPubRelationCol.FROMCOLID_INIT_VALUE.toString() );
 	}
 
 	@Override

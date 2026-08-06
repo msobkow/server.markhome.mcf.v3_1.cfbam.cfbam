@@ -76,8 +76,8 @@ public class CFBamBuffRelationColByUNameIdxKey
 	protected CFLibDbKeyHash256 requiredRelationId;
 	protected String requiredName;
 	public CFBamBuffRelationColByUNameIdxKey() {
-		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamRelationCol.RELATIONID_INIT_VALUE.toString() );
-		requiredName = ICFBamRelationCol.NAME_INIT_VALUE;
+		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubRelationCol.RELATIONID_INIT_VALUE.toString() );
+		requiredName = ICFBamPubRelationCol.NAME_INIT_VALUE;
 	}
 
 	@Override

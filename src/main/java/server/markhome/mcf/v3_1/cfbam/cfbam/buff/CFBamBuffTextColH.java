@@ -77,7 +77,7 @@ public class CFBamBuffTextColH extends CFBamBuffTextDefH
 
     public CFBamBuffTextColH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamTextCol.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubTextCol.TABLEID_INIT_VALUE.toString() );
     }
 
     @Override

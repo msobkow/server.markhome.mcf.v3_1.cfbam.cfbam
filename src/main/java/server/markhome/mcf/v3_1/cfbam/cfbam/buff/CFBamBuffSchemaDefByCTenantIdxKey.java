@@ -75,7 +75,7 @@ public class CFBamBuffSchemaDefByCTenantIdxKey
 {
 	protected CFLibDbKeyHash256 requiredCTenantId;
 	public CFBamBuffSchemaDefByCTenantIdxKey() {
-		requiredCTenantId = CFLibDbKeyHash256.fromHex( ICFBamSchemaDef.CTENANTID_INIT_VALUE.toString() );
+		requiredCTenantId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaDef.CTENANTID_INIT_VALUE.toString() );
 	}
 
 	@Override

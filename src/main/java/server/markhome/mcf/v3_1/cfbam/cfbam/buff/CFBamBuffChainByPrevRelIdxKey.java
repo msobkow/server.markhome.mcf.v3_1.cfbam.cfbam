@@ -75,7 +75,7 @@ public class CFBamBuffChainByPrevRelIdxKey
 {
 	protected CFLibDbKeyHash256 requiredPrevRelationId;
 	public CFBamBuffChainByPrevRelIdxKey() {
-		requiredPrevRelationId = CFLibDbKeyHash256.fromHex( ICFBamChain.PREVRELATIONID_INIT_VALUE.toString() );
+		requiredPrevRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubChain.PREVRELATIONID_INIT_VALUE.toString() );
 	}
 
 	@Override

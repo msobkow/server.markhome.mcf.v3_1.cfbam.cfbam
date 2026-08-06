@@ -75,7 +75,7 @@ public class CFBamBuffSchemaRoleByRoleScopeIdxKey
 {
 	protected ICFBamPubSchema.RoleScopeEnum requiredRoleScope;
 	public CFBamBuffSchemaRoleByRoleScopeIdxKey() {
-		requiredRoleScope = ICFBamSchemaRole.ROLESCOPE_INIT_VALUE;
+		requiredRoleScope = ICFBamPubSchemaRole.ROLESCOPE_INIT_VALUE;
 	}
 
 	@Override

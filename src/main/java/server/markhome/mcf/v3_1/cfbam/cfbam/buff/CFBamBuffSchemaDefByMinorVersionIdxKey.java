@@ -75,7 +75,7 @@ public class CFBamBuffSchemaDefByMinorVersionIdxKey
 {
 	protected CFLibDbKeyHash256 requiredMinorVersionId;
 	public CFBamBuffSchemaDefByMinorVersionIdxKey() {
-		requiredMinorVersionId = CFLibDbKeyHash256.fromHex( ICFBamSchemaDef.MINORVERSIONID_INIT_VALUE.toString() );
+		requiredMinorVersionId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaDef.MINORVERSIONID_INIT_VALUE.toString() );
 	}
 
 	@Override

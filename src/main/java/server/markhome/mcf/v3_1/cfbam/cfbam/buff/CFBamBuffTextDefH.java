@@ -79,7 +79,7 @@ public class CFBamBuffTextDefH extends CFBamBuffAtomH
 
     public CFBamBuffTextDefH() {
             super();
-		requiredMaxLen = ICFBamTextDef.MAXLEN_INIT_VALUE;
+		requiredMaxLen = ICFBamPubTextDef.MAXLEN_INIT_VALUE;
 		optionalInitValue = null;
 		optionalXmlElementName = null;
     }

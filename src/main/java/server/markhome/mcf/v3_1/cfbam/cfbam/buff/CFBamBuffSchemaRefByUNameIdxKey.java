@@ -76,8 +76,8 @@ public class CFBamBuffSchemaRefByUNameIdxKey
 	protected CFLibDbKeyHash256 requiredSchemaId;
 	protected String requiredName;
 	public CFBamBuffSchemaRefByUNameIdxKey() {
-		requiredSchemaId = CFLibDbKeyHash256.fromHex( ICFBamSchemaRef.SCHEMAID_INIT_VALUE.toString() );
-		requiredName = ICFBamSchemaRef.NAME_INIT_VALUE;
+		requiredSchemaId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaRef.SCHEMAID_INIT_VALUE.toString() );
+		requiredName = ICFBamPubSchemaRef.NAME_INIT_VALUE;
 	}
 
 	@Override

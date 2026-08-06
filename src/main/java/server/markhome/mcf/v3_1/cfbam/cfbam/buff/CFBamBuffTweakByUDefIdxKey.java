@@ -79,11 +79,11 @@ public class CFBamBuffTweakByUDefIdxKey
 	protected CFLibDbKeyHash256 optionalDefSchemaId;
 	protected String requiredName;
 	public CFBamBuffTweakByUDefIdxKey() {
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFBamTweak.TENANTID_INIT_VALUE.toString() );
-		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamTweak.SCOPEID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFBamPubTweak.TENANTID_INIT_VALUE.toString() );
+		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamPubTweak.SCOPEID_INIT_VALUE.toString() );
 		optionalDefSchemaTenantId = CFLibDbKeyHash256.nullGet();
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
-		requiredName = ICFBamTweak.NAME_INIT_VALUE;
+		requiredName = ICFBamPubTweak.NAME_INIT_VALUE;
 	}
 
 	@Override

@@ -79,7 +79,7 @@ public class CFBamBuffDelDepH extends CFBamBuffScopeH
     public CFBamBuffDelDepH() {
             super();
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
-		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamDelDep.RELATIONID_INIT_VALUE.toString() );
+		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubDelDep.RELATIONID_INIT_VALUE.toString() );
     }
 
     @Override

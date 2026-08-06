@@ -76,8 +76,8 @@ public class CFBamBuffIndexColByUNameIdxKey
 	protected CFLibDbKeyHash256 requiredIndexId;
 	protected String requiredName;
 	public CFBamBuffIndexColByUNameIdxKey() {
-		requiredIndexId = CFLibDbKeyHash256.fromHex( ICFBamIndexCol.INDEXID_INIT_VALUE.toString() );
-		requiredName = ICFBamIndexCol.NAME_INIT_VALUE;
+		requiredIndexId = CFLibDbKeyHash256.fromHex( ICFBamPubIndexCol.INDEXID_INIT_VALUE.toString() );
+		requiredName = ICFBamPubIndexCol.NAME_INIT_VALUE;
 	}
 
 	@Override

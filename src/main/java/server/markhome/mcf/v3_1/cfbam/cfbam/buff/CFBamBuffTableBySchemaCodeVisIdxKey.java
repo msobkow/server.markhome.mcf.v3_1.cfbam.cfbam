@@ -76,8 +76,8 @@ public class CFBamBuffTableBySchemaCodeVisIdxKey
 	protected CFLibDbKeyHash256 requiredSchemaDefId;
 	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 	public CFBamBuffTableBySchemaCodeVisIdxKey() {
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamTable.SCHEMADEFID_INIT_VALUE.toString() );
-		requiredCodeVis = ICFBamTable.CODEVIS_INIT_VALUE;
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubTable.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredCodeVis = ICFBamPubTable.CODEVIS_INIT_VALUE;
 	}
 
 	@Override

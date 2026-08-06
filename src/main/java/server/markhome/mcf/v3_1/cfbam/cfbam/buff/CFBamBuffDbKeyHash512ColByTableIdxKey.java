@@ -75,7 +75,7 @@ public class CFBamBuffDbKeyHash512ColByTableIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTableId;
 	public CFBamBuffDbKeyHash512ColByTableIdxKey() {
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamDbKeyHash512Col.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubDbKeyHash512Col.TABLEID_INIT_VALUE.toString() );
 	}
 
 	@Override

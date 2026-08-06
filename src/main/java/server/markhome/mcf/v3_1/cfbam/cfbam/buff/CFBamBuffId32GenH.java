@@ -78,8 +78,8 @@ public class CFBamBuffId32GenH extends CFBamBuffInt32TypeH
 
     public CFBamBuffId32GenH() {
             super();
-		requiredSlice = ICFBamId32Gen.SLICE_INIT_VALUE;
-		requiredBlockSize = ICFBamId32Gen.BLOCKSIZE_INIT_VALUE;
+		requiredSlice = ICFBamPubId32Gen.SLICE_INIT_VALUE;
+		requiredBlockSize = ICFBamPubId32Gen.BLOCKSIZE_INIT_VALUE;
     }
 
     @Override

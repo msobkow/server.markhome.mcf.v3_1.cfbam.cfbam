@@ -77,7 +77,7 @@ public class CFBamBuffNmTokensColH extends CFBamBuffNmTokensDefH
 
     public CFBamBuffNmTokensColH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamNmTokensCol.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubNmTokensCol.TABLEID_INIT_VALUE.toString() );
     }
 
     @Override

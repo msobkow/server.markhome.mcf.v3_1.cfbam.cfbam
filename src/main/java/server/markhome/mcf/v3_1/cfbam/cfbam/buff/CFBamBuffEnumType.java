@@ -78,7 +78,7 @@ public class CFBamBuffEnumType
 
 	public CFBamBuffEnumType() {
 		super();
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamEnumType.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubEnumType.SCHEMADEFID_INIT_VALUE.toString() );
 	}
 
 	@Override

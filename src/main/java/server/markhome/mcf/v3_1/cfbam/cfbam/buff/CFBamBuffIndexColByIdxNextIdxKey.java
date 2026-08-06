@@ -76,7 +76,7 @@ public class CFBamBuffIndexColByIdxNextIdxKey
 	protected CFLibDbKeyHash256 requiredIndexId;
 	protected CFLibDbKeyHash256 optionalNextId;
 	public CFBamBuffIndexColByIdxNextIdxKey() {
-		requiredIndexId = CFLibDbKeyHash256.fromHex( ICFBamIndexCol.INDEXID_INIT_VALUE.toString() );
+		requiredIndexId = CFLibDbKeyHash256.fromHex( ICFBamPubIndexCol.INDEXID_INIT_VALUE.toString() );
 		optionalNextId = CFLibDbKeyHash256.nullGet();
 	}
 

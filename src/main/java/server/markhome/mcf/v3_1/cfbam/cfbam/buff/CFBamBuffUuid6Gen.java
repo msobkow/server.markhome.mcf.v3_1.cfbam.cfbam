@@ -79,8 +79,8 @@ public class CFBamBuffUuid6Gen
 
 	public CFBamBuffUuid6Gen() {
 		super();
-		requiredSlice = ICFBamUuid6Gen.SLICE_INIT_VALUE;
-		requiredBlockSize = ICFBamUuid6Gen.BLOCKSIZE_INIT_VALUE;
+		requiredSlice = ICFBamPubUuid6Gen.SLICE_INIT_VALUE;
+		requiredBlockSize = ICFBamPubUuid6Gen.BLOCKSIZE_INIT_VALUE;
 	}
 
 	@Override

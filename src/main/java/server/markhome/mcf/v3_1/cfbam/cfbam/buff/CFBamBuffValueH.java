@@ -74,11 +74,11 @@ public class CFBamBuffValueH
     implements ICFBamValueH, Comparable<Object>, Serializable
 {
     protected CFBamBuffValueHPKey pkey;
-	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY.toString());
-	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_INIT_CREATED_BY.toString());
+	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
+	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime createdAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY.toString());
-	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_INIT_UPDATED_BY.toString());
+	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
+	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
 	protected CFLibDbKeyHash256 requiredScopeId;
 	protected CFLibDbKeyHash256 optionalDefSchemaId;
@@ -97,17 +97,17 @@ public class CFBamBuffValueH
     public CFBamBuffValueH() {
             // The primary key member attributes are initialized on construction
             pkey = new CFBamBuffValueHPKey();
-		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamValue.SCOPEID_INIT_VALUE.toString() );
+		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.SCOPEID_INIT_VALUE.toString() );
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
-		requiredName = ICFBamValue.NAME_INIT_VALUE;
+		requiredName = ICFBamPubValue.NAME_INIT_VALUE;
 		optionalShortName = null;
 		optionalLabel = null;
 		optionalShortDescription = null;
 		optionalDescription = null;
 		optionalDefaultXmlValue = null;
-		requiredIsNullable = ICFBamValue.ISNULLABLE_INIT_VALUE;
+		requiredIsNullable = ICFBamPubValue.ISNULLABLE_INIT_VALUE;
 		optionalGenerateId = null;
-		requiredImplementsPolymorph = ICFBamValue.IMPLEMENTSPOLYMORPH_INIT_VALUE;
+		requiredImplementsPolymorph = ICFBamPubValue.IMPLEMENTSPOLYMORPH_INIT_VALUE;
 		optionalPrevId = CFLibDbKeyHash256.nullGet();
 		optionalNextId = CFLibDbKeyHash256.nullGet();
     }

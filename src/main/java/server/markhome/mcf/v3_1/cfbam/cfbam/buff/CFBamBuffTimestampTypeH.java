@@ -77,7 +77,7 @@ public class CFBamBuffTimestampTypeH extends CFBamBuffTimestampDefH
 
     public CFBamBuffTimestampTypeH() {
             super();
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamTimestampType.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubTimestampType.SCHEMADEFID_INIT_VALUE.toString() );
     }
 
     @Override

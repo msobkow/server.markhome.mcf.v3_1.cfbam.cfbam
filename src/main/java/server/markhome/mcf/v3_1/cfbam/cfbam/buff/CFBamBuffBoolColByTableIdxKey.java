@@ -75,7 +75,7 @@ public class CFBamBuffBoolColByTableIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTableId;
 	public CFBamBuffBoolColByTableIdxKey() {
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamBoolCol.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubBoolCol.TABLEID_INIT_VALUE.toString() );
 	}
 
 	@Override

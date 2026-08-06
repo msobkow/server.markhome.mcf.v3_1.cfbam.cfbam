@@ -77,7 +77,7 @@ public class CFBamBuffTZTimestampColH extends CFBamBuffTZTimestampDefH
 
     public CFBamBuffTZTimestampColH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamTZTimestampCol.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubTZTimestampCol.TABLEID_INIT_VALUE.toString() );
     }
 
     @Override

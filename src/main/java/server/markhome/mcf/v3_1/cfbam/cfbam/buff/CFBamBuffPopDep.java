@@ -80,7 +80,7 @@ public class CFBamBuffPopDep
 	public CFBamBuffPopDep() {
 		super();
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
-		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamPopDep.RELATIONID_INIT_VALUE.toString() );
+		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubPopDep.RELATIONID_INIT_VALUE.toString() );
 	}
 
 	@Override

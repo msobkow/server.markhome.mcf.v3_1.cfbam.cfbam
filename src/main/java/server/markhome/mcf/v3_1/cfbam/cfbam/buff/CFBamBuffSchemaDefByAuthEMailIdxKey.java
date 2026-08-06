@@ -76,8 +76,8 @@ public class CFBamBuffSchemaDefByAuthEMailIdxKey
 	protected CFLibDbKeyHash256 requiredCTenantId;
 	protected String requiredAuthorEMail;
 	public CFBamBuffSchemaDefByAuthEMailIdxKey() {
-		requiredCTenantId = CFLibDbKeyHash256.fromHex( ICFBamSchemaDef.CTENANTID_INIT_VALUE.toString() );
-		requiredAuthorEMail = ICFBamSchemaDef.AUTHOREMAIL_INIT_VALUE;
+		requiredCTenantId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaDef.CTENANTID_INIT_VALUE.toString() );
+		requiredAuthorEMail = ICFBamPubSchemaDef.AUTHOREMAIL_INIT_VALUE;
 	}
 
 	@Override

@@ -75,7 +75,7 @@ public class CFBamBuffNmTokensTypeBySchemaIdxKey
 {
 	protected CFLibDbKeyHash256 requiredSchemaDefId;
 	public CFBamBuffNmTokensTypeBySchemaIdxKey() {
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamNmTokensType.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubNmTokensType.SCHEMADEFID_INIT_VALUE.toString() );
 	}
 
 	@Override

@@ -76,8 +76,8 @@ public class CFBamBuffSchemaDefByProjectURLIdxKey
 	protected CFLibDbKeyHash256 requiredCTenantId;
 	protected String requiredProjectURL;
 	public CFBamBuffSchemaDefByProjectURLIdxKey() {
-		requiredCTenantId = CFLibDbKeyHash256.fromHex( ICFBamSchemaDef.CTENANTID_INIT_VALUE.toString() );
-		requiredProjectURL = ICFBamSchemaDef.PROJECTURL_INIT_VALUE;
+		requiredCTenantId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaDef.CTENANTID_INIT_VALUE.toString() );
+		requiredProjectURL = ICFBamPubSchemaDef.PROJECTURL_INIT_VALUE;
 	}
 
 	@Override

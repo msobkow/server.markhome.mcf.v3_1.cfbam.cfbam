@@ -75,7 +75,7 @@ public class CFBamBuffTZTimeTypeBySchemaIdxKey
 {
 	protected CFLibDbKeyHash256 requiredSchemaDefId;
 	public CFBamBuffTZTimeTypeBySchemaIdxKey() {
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamTZTimeType.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubTZTimeType.SCHEMADEFID_INIT_VALUE.toString() );
 	}
 
 	@Override

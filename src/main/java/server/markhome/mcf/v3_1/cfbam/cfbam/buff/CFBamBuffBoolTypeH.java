@@ -77,7 +77,7 @@ public class CFBamBuffBoolTypeH extends CFBamBuffBoolDefH
 
     public CFBamBuffBoolTypeH() {
             super();
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamBoolType.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubBoolType.SCHEMADEFID_INIT_VALUE.toString() );
     }
 
     @Override

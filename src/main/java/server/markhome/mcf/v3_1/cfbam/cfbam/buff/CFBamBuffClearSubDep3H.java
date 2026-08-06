@@ -78,8 +78,8 @@ public class CFBamBuffClearSubDep3H extends CFBamBuffClearDepH
 
     public CFBamBuffClearSubDep3H() {
             super();
-		requiredClearSubDep2Id = CFLibDbKeyHash256.fromHex( ICFBamClearSubDep3.CLEARSUBDEP2ID_INIT_VALUE.toString() );
-		requiredName = ICFBamClearSubDep3.NAME_INIT_VALUE;
+		requiredClearSubDep2Id = CFLibDbKeyHash256.fromHex( ICFBamPubClearSubDep3.CLEARSUBDEP2ID_INIT_VALUE.toString() );
+		requiredName = ICFBamPubClearSubDep3.NAME_INIT_VALUE;
     }
 
     @Override

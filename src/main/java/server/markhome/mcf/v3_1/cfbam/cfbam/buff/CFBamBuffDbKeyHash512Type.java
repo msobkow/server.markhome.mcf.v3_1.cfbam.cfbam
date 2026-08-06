@@ -78,7 +78,7 @@ public class CFBamBuffDbKeyHash512Type
 
 	public CFBamBuffDbKeyHash512Type() {
 		super();
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamDbKeyHash512Type.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubDbKeyHash512Type.SCHEMADEFID_INIT_VALUE.toString() );
 	}
 
 	@Override

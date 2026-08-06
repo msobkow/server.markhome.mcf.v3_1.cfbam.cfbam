@@ -79,7 +79,7 @@ public class CFBamBuffTokenDef
 
 	public CFBamBuffTokenDef() {
 		super();
-		requiredMaxLen = ICFBamTokenDef.MAXLEN_INIT_VALUE;
+		requiredMaxLen = ICFBamPubTokenDef.MAXLEN_INIT_VALUE;
 		optionalInitValue = null;
 	}
 

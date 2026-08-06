@@ -78,8 +78,8 @@ public class CFBamBuffDbKeyHash224GenH extends CFBamBuffDbKeyHash224TypeH
 
     public CFBamBuffDbKeyHash224GenH() {
             super();
-		requiredSlice = ICFBamDbKeyHash224Gen.SLICE_INIT_VALUE;
-		requiredBlockSize = ICFBamDbKeyHash224Gen.BLOCKSIZE_INIT_VALUE;
+		requiredSlice = ICFBamPubDbKeyHash224Gen.SLICE_INIT_VALUE;
+		requiredBlockSize = ICFBamPubDbKeyHash224Gen.BLOCKSIZE_INIT_VALUE;
     }
 
     @Override

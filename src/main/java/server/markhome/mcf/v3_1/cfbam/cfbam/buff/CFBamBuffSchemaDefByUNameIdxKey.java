@@ -76,8 +76,8 @@ public class CFBamBuffSchemaDefByUNameIdxKey
 	protected CFLibDbKeyHash256 requiredMinorVersionId;
 	protected String requiredName;
 	public CFBamBuffSchemaDefByUNameIdxKey() {
-		requiredMinorVersionId = CFLibDbKeyHash256.fromHex( ICFBamSchemaDef.MINORVERSIONID_INIT_VALUE.toString() );
-		requiredName = ICFBamSchemaDef.NAME_INIT_VALUE;
+		requiredMinorVersionId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaDef.MINORVERSIONID_INIT_VALUE.toString() );
+		requiredName = ICFBamPubSchemaDef.NAME_INIT_VALUE;
 	}
 
 	@Override

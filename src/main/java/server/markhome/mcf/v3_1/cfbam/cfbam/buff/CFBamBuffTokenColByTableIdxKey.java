@@ -75,7 +75,7 @@ public class CFBamBuffTokenColByTableIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTableId;
 	public CFBamBuffTokenColByTableIdxKey() {
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamTokenCol.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubTokenCol.TABLEID_INIT_VALUE.toString() );
 	}
 
 	@Override

@@ -76,8 +76,8 @@ public class CFBamBuffSchemaDefByPubURIIdxKey
 	protected CFLibDbKeyHash256 requiredCTenantId;
 	protected String requiredPublishURI;
 	public CFBamBuffSchemaDefByPubURIIdxKey() {
-		requiredCTenantId = CFLibDbKeyHash256.fromHex( ICFBamSchemaDef.CTENANTID_INIT_VALUE.toString() );
-		requiredPublishURI = ICFBamSchemaDef.PUBLISHURI_INIT_VALUE;
+		requiredCTenantId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaDef.CTENANTID_INIT_VALUE.toString() );
+		requiredPublishURI = ICFBamPubSchemaDef.PUBLISHURI_INIT_VALUE;
 	}
 
 	@Override

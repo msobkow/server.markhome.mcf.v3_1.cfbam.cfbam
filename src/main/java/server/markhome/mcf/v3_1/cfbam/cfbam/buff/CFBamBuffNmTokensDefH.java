@@ -78,7 +78,7 @@ public class CFBamBuffNmTokensDefH extends CFBamBuffAtomH
 
     public CFBamBuffNmTokensDefH() {
             super();
-		requiredMaxLen = ICFBamNmTokensDef.MAXLEN_INIT_VALUE;
+		requiredMaxLen = ICFBamPubNmTokensDef.MAXLEN_INIT_VALUE;
 		optionalInitValue = null;
     }
 

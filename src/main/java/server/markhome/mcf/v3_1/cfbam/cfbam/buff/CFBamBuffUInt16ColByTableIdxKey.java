@@ -75,7 +75,7 @@ public class CFBamBuffUInt16ColByTableIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTableId;
 	public CFBamBuffUInt16ColByTableIdxKey() {
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamUInt16Col.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubUInt16Col.TABLEID_INIT_VALUE.toString() );
 	}
 
 	@Override

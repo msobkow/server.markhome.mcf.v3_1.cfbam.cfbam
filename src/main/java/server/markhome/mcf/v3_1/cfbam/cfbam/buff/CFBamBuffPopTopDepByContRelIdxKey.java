@@ -75,7 +75,7 @@ public class CFBamBuffPopTopDepByContRelIdxKey
 {
 	protected CFLibDbKeyHash256 requiredContRelationId;
 	public CFBamBuffPopTopDepByContRelIdxKey() {
-		requiredContRelationId = CFLibDbKeyHash256.fromHex( ICFBamPopTopDep.CONTRELATIONID_INIT_VALUE.toString() );
+		requiredContRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubPopTopDep.CONTRELATIONID_INIT_VALUE.toString() );
 	}
 
 	@Override

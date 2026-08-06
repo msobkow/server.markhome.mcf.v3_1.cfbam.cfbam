@@ -75,7 +75,7 @@ public class CFBamBuffFloatColByTableIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTableId;
 	public CFBamBuffFloatColByTableIdxKey() {
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamFloatCol.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubFloatCol.TABLEID_INIT_VALUE.toString() );
 	}
 
 	@Override

@@ -75,7 +75,7 @@ public class CFBamBuffClearSubDep2ByClearSubDep1IdxKey
 {
 	protected CFLibDbKeyHash256 requiredClearSubDep1Id;
 	public CFBamBuffClearSubDep2ByClearSubDep1IdxKey() {
-		requiredClearSubDep1Id = CFLibDbKeyHash256.fromHex( ICFBamClearSubDep2.CLEARSUBDEP1ID_INIT_VALUE.toString() );
+		requiredClearSubDep1Id = CFLibDbKeyHash256.fromHex( ICFBamPubClearSubDep2.CLEARSUBDEP1ID_INIT_VALUE.toString() );
 	}
 
 	@Override

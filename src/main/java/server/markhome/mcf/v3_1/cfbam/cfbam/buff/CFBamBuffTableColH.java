@@ -80,7 +80,7 @@ public class CFBamBuffTableColH extends CFBamBuffValueH
 
     public CFBamBuffTableColH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamTableCol.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubTableCol.TABLEID_INIT_VALUE.toString() );
 		optionalDbName = null;
 		optionalDataId = CFLibDbKeyHash256.nullGet();
 		optionalXmlElementName = null;

@@ -78,7 +78,7 @@ public class CFBamBuffBlobDefH extends CFBamBuffAtomH
 
     public CFBamBuffBlobDefH() {
             super();
-		requiredMaxLen = ICFBamBlobDef.MAXLEN_INIT_VALUE;
+		requiredMaxLen = ICFBamPubBlobDef.MAXLEN_INIT_VALUE;
 		optionalInitValue = null;
     }
 

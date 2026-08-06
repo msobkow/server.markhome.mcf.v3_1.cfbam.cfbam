@@ -75,7 +75,7 @@ public class CFBamBuffChainByNextRelIdxKey
 {
 	protected CFLibDbKeyHash256 requiredNextRelationId;
 	public CFBamBuffChainByNextRelIdxKey() {
-		requiredNextRelationId = CFLibDbKeyHash256.fromHex( ICFBamChain.NEXTRELATIONID_INIT_VALUE.toString() );
+		requiredNextRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubChain.NEXTRELATIONID_INIT_VALUE.toString() );
 	}
 
 	@Override

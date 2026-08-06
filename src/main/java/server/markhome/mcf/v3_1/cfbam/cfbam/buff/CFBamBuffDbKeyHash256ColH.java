@@ -77,7 +77,7 @@ public class CFBamBuffDbKeyHash256ColH extends CFBamBuffDbKeyHash256DefH
 
     public CFBamBuffDbKeyHash256ColH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamDbKeyHash256Col.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubDbKeyHash256Col.TABLEID_INIT_VALUE.toString() );
     }
 
     @Override

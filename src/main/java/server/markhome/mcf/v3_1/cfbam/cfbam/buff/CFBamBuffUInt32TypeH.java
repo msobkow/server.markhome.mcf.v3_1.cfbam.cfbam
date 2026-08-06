@@ -77,7 +77,7 @@ public class CFBamBuffUInt32TypeH extends CFBamBuffUInt32DefH
 
     public CFBamBuffUInt32TypeH() {
             super();
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamUInt32Type.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubUInt32Type.SCHEMADEFID_INIT_VALUE.toString() );
     }
 
     @Override

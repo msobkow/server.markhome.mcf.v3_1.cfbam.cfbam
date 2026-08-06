@@ -77,7 +77,7 @@ public class CFBamBuffUuid6TypeH extends CFBamBuffUuid6DefH
 
     public CFBamBuffUuid6TypeH() {
             super();
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamUuid6Type.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubUuid6Type.SCHEMADEFID_INIT_VALUE.toString() );
     }
 
     @Override

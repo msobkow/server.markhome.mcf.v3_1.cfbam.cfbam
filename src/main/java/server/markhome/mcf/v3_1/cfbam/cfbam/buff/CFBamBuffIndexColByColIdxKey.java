@@ -75,7 +75,7 @@ public class CFBamBuffIndexColByColIdxKey
 {
 	protected CFLibDbKeyHash256 requiredColumnId;
 	public CFBamBuffIndexColByColIdxKey() {
-		requiredColumnId = CFLibDbKeyHash256.fromHex( ICFBamIndexCol.COLUMNID_INIT_VALUE.toString() );
+		requiredColumnId = CFLibDbKeyHash256.fromHex( ICFBamPubIndexCol.COLUMNID_INIT_VALUE.toString() );
 	}
 
 	@Override

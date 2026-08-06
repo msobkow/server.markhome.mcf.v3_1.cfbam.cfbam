@@ -78,8 +78,8 @@ public class CFBamBuffDbKeyHash160GenH extends CFBamBuffDbKeyHash160TypeH
 
     public CFBamBuffDbKeyHash160GenH() {
             super();
-		requiredSlice = ICFBamDbKeyHash160Gen.SLICE_INIT_VALUE;
-		requiredBlockSize = ICFBamDbKeyHash160Gen.BLOCKSIZE_INIT_VALUE;
+		requiredSlice = ICFBamPubDbKeyHash160Gen.SLICE_INIT_VALUE;
+		requiredBlockSize = ICFBamPubDbKeyHash160Gen.BLOCKSIZE_INIT_VALUE;
     }
 
     @Override

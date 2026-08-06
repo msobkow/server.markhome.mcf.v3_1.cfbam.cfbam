@@ -77,7 +77,7 @@ public class CFBamBuffNmTokensTypeH extends CFBamBuffNmTokensDefH
 
     public CFBamBuffNmTokensTypeH() {
             super();
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamNmTokensType.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubNmTokensType.SCHEMADEFID_INIT_VALUE.toString() );
     }
 
     @Override

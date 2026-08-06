@@ -75,7 +75,7 @@ public class CFBamBuffDelTopDepByDelTopDepTblIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTableId;
 	public CFBamBuffDelTopDepByDelTopDepTblIdxKey() {
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamDelTopDep.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubDelTopDep.TABLEID_INIT_VALUE.toString() );
 	}
 
 	@Override

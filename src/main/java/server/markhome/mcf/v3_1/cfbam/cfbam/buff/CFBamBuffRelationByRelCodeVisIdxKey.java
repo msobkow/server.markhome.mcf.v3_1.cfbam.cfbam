@@ -75,7 +75,7 @@ public class CFBamBuffRelationByRelCodeVisIdxKey
 {
 	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 	public CFBamBuffRelationByRelCodeVisIdxKey() {
-		requiredCodeVis = ICFBamRelation.CODEVIS_INIT_VALUE;
+		requiredCodeVis = ICFBamPubRelation.CODEVIS_INIT_VALUE;
 	}
 
 	@Override

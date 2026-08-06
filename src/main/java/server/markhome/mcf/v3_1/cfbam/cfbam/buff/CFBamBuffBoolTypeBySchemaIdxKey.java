@@ -75,7 +75,7 @@ public class CFBamBuffBoolTypeBySchemaIdxKey
 {
 	protected CFLibDbKeyHash256 requiredSchemaDefId;
 	public CFBamBuffBoolTypeBySchemaIdxKey() {
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamBoolType.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubBoolType.SCHEMADEFID_INIT_VALUE.toString() );
 	}
 
 	@Override

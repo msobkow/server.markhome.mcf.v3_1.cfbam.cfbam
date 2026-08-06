@@ -77,7 +77,7 @@ public class CFBamBuffDbKeyHash256TypeH extends CFBamBuffDbKeyHash256DefH
 
     public CFBamBuffDbKeyHash256TypeH() {
             super();
-		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamDbKeyHash256Type.SCHEMADEFID_INIT_VALUE.toString() );
+		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubDbKeyHash256Type.SCHEMADEFID_INIT_VALUE.toString() );
     }
 
     @Override

@@ -78,8 +78,8 @@ public class CFBamBuffUuidGenH extends CFBamBuffUuidTypeH
 
     public CFBamBuffUuidGenH() {
             super();
-		requiredSlice = ICFBamUuidGen.SLICE_INIT_VALUE;
-		requiredBlockSize = ICFBamUuidGen.BLOCKSIZE_INIT_VALUE;
+		requiredSlice = ICFBamPubUuidGen.SLICE_INIT_VALUE;
+		requiredBlockSize = ICFBamPubUuidGen.BLOCKSIZE_INIT_VALUE;
     }
 
     @Override

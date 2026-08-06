@@ -80,8 +80,8 @@ public class CFBamBuffClearTopDepH extends CFBamBuffClearDepH
 
     public CFBamBuffClearTopDepH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamClearTopDep.TABLEID_INIT_VALUE.toString() );
-		requiredName = ICFBamClearTopDep.NAME_INIT_VALUE;
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubClearTopDep.TABLEID_INIT_VALUE.toString() );
+		requiredName = ICFBamPubClearTopDep.NAME_INIT_VALUE;
 		optionalPrevId = CFLibDbKeyHash256.nullGet();
 		optionalNextId = CFLibDbKeyHash256.nullGet();
     }

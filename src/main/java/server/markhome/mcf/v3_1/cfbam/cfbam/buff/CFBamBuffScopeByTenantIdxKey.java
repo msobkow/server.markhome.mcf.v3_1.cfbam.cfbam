@@ -75,7 +75,7 @@ public class CFBamBuffScopeByTenantIdxKey
 {
 	protected CFLibDbKeyHash256 requiredTenantId;
 	public CFBamBuffScopeByTenantIdxKey() {
-		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFBamScope.TENANTID_INIT_VALUE.toString() );
+		requiredTenantId = CFLibDbKeyHash256.fromHex( ICFBamPubScope.TENANTID_INIT_VALUE.toString() );
 	}
 
 	@Override

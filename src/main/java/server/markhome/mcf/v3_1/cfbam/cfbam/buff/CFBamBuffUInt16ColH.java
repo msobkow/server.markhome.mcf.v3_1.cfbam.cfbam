@@ -77,7 +77,7 @@ public class CFBamBuffUInt16ColH extends CFBamBuffUInt16DefH
 
     public CFBamBuffUInt16ColH() {
             super();
-		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamUInt16Col.TABLEID_INIT_VALUE.toString() );
+		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubUInt16Col.TABLEID_INIT_VALUE.toString() );
     }
 
     @Override

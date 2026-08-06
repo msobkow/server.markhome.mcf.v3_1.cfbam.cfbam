@@ -76,8 +76,8 @@ public class CFBamBuffTweakByUNameIdxKey
 	protected CFLibDbKeyHash256 requiredScopeId;
 	protected String requiredName;
 	public CFBamBuffTweakByUNameIdxKey() {
-		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamTweak.SCOPEID_INIT_VALUE.toString() );
-		requiredName = ICFBamTweak.NAME_INIT_VALUE;
+		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamPubTweak.SCOPEID_INIT_VALUE.toString() );
+		requiredName = ICFBamPubTweak.NAME_INIT_VALUE;
 	}
 
 	@Override
