@@ -80,7 +80,7 @@ public class CFBamBuffPopSubDep3ByPopSubDep2IdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredPopSubDep2Id() {
-		return( requiredPopSubDep2Id );
+		return(requiredPopSubDep2Id);
 	}
 
 	public void setRequiredPopSubDep2Id( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffPopSubDep3ByPopSubDep2IdxKey
 				1,
 				"value" );
 		}
-		
 		requiredPopSubDep2Id = value;
 	}
 

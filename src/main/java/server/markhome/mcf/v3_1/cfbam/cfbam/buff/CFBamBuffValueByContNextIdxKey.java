@@ -82,7 +82,7 @@ public class CFBamBuffValueByContNextIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredScopeId() {
-		return( requiredScopeId );
+		return(requiredScopeId);
 	}
 
 	public void setRequiredScopeId( CFLibDbKeyHash256 value ) {
@@ -92,17 +92,15 @@ public class CFBamBuffValueByContNextIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredScopeId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalNextId() {
-		return( optionalNextId );
+		return(optionalNextId);
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
-		
 		optionalNextId = value;
 	}
 

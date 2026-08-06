@@ -137,7 +137,7 @@ public class CFBamBuffBlobType
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
-		return( requiredSchemaDefId );
+		return(requiredSchemaDefId);
 	}
 
 	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
@@ -147,7 +147,6 @@ public class CFBamBuffBlobType
 				1,
 				"value" );
 		}
-		
 		requiredSchemaDefId = value;
 	}
 
@@ -749,6 +748,7 @@ public class CFBamBuffBlobType
 	public void setBlobType( ICFBamBlobType src ) {
 		super.setBlobDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredContainerSchemaDef());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -769,6 +769,7 @@ public class CFBamBuffBlobType
 	public void setBlobType( ICFBamBlobTypeH src ) {
 		super.setBlobDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredSchemaDefId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -789,6 +790,7 @@ public class CFBamBuffBlobType
 	public void setBlobType( ICFBamProtBlobType src ) {
 		super.setBlobDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredContainerSchemaDef());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -809,6 +811,7 @@ public class CFBamBuffBlobType
 	public void setBlobType( ICFBamProtBlobTypeH src ) {
 		super.setBlobDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredSchemaDefId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -829,6 +832,7 @@ public class CFBamBuffBlobType
 	public void setBlobType( ICFBamPubBlobType src ) {
 		super.setBlobDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredContainerSchemaDef());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -849,6 +853,7 @@ public class CFBamBuffBlobType
 	public void setBlobType( ICFBamPubBlobTypeH src ) {
 		super.setBlobDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredSchemaDefId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override

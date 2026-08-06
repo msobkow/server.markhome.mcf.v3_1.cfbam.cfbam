@@ -91,7 +91,7 @@ public class CFBamBuffUInt64DefH extends CFBamBuffAtomH
 
 	@Override
 	public BigDecimal getOptionalInitValue() {
-		return( optionalInitValue );
+		return(optionalInitValue);
 	}
 
 	public void setOptionalInitValue( BigDecimal value ) {
@@ -104,21 +104,12 @@ public class CFBamBuffUInt64DefH extends CFBamBuffAtomH
 				ICFBamPubUInt64Def.INITVALUE_MIN_VALUE.toString() );
 		}
 		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".InitValue", 19, 0, value );
-		
-		if( value.compareTo( ICFBamPubUInt64Def.INITVALUE_MIN_VALUE ) < 0 ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setOptionalInitValue",
-				1,
-				"value",
-				value.toString(),
-				ICFBamPubUInt64Def.INITVALUE_MIN_VALUE.toString() );
-		}
 		optionalInitValue = value;
 	}
 
 	@Override
 	public BigDecimal getOptionalMinValue() {
-		return( optionalMinValue );
+		return(optionalMinValue);
 	}
 
 	public void setOptionalMinValue( BigDecimal value ) {
@@ -131,21 +122,12 @@ public class CFBamBuffUInt64DefH extends CFBamBuffAtomH
 				ICFBamPubUInt64Def.MINVALUE_MIN_VALUE.toString() );
 		}
 		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".MinValue", 19, 0, value );
-		
-		if( value.compareTo( ICFBamPubUInt64Def.MINVALUE_MIN_VALUE ) < 0 ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setOptionalMinValue",
-				1,
-				"value",
-				value.toString(),
-				ICFBamPubUInt64Def.MINVALUE_MIN_VALUE.toString() );
-		}
 		optionalMinValue = value;
 	}
 
 	@Override
 	public BigDecimal getOptionalMaxValue() {
-		return( optionalMaxValue );
+		return(optionalMaxValue);
 	}
 
 	public void setOptionalMaxValue( BigDecimal value ) {
@@ -158,15 +140,6 @@ public class CFBamBuffUInt64DefH extends CFBamBuffAtomH
 				ICFBamPubUInt64Def.MAXVALUE_MIN_VALUE.toString() );
 		}
 		value = CFLibBigDecimalUtil.coerce( getClass().getName() + ".MaxValue", 19, 0, value );
-		
-		if( value.compareTo( ICFBamPubUInt64Def.MAXVALUE_MIN_VALUE ) < 0 ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setOptionalMaxValue",
-				1,
-				"value",
-				value.toString(),
-				ICFBamPubUInt64Def.MAXVALUE_MIN_VALUE.toString() );
-		}
 		optionalMaxValue = value;
 	}
 

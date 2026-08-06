@@ -87,7 +87,7 @@ public class CFBamBuffAtomH extends CFBamBuffValueH
 
 	@Override
 	public String getOptionalDbName() {
-		return( optionalDbName );
+		return(optionalDbName);
 	}
 
 	public void setOptionalDbName( String value ) {
@@ -99,7 +99,6 @@ public class CFBamBuffAtomH extends CFBamBuffValueH
 				value.length(),
 				32 );
 		}
-		
 		optionalDbName = value;
 	}
 

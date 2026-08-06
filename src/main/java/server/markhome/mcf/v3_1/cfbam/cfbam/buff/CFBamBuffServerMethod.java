@@ -236,7 +236,7 @@ public class CFBamBuffServerMethod
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTableId() {
-		return( requiredTableId );
+		return(requiredTableId);
 	}
 
 	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
@@ -246,23 +246,21 @@ public class CFBamBuffServerMethod
 				1,
 				"value" );
 		}
-		
 		requiredTableId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
-		return( optionalDefSchemaId );
+		return(optionalDefSchemaId);
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		
 		optionalDefSchemaId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -280,13 +278,12 @@ public class CFBamBuffServerMethod
 				value.length(),
 				192 );
 		}
-		
 		requiredName = value;
 	}
 
 	@Override
 	public String getOptionalShortName() {
-		return( optionalShortName );
+		return(optionalShortName);
 	}
 
 	public void setOptionalShortName( String value ) {
@@ -298,13 +295,12 @@ public class CFBamBuffServerMethod
 				value.length(),
 				16 );
 		}
-		
 		optionalShortName = value;
 	}
 
 	@Override
 	public String getOptionalLabel() {
-		return( optionalLabel );
+		return(optionalLabel);
 	}
 
 	public void setOptionalLabel( String value ) {
@@ -316,13 +312,12 @@ public class CFBamBuffServerMethod
 				value.length(),
 				64 );
 		}
-		
 		optionalLabel = value;
 	}
 
 	@Override
 	public String getOptionalShortDescription() {
-		return( optionalShortDescription );
+		return(optionalShortDescription);
 	}
 
 	public void setOptionalShortDescription( String value ) {
@@ -334,13 +329,12 @@ public class CFBamBuffServerMethod
 				value.length(),
 				128 );
 		}
-		
 		optionalShortDescription = value;
 	}
 
 	@Override
 	public String getOptionalDescription() {
-		return( optionalDescription );
+		return(optionalDescription);
 	}
 
 	public void setOptionalDescription( String value ) {
@@ -352,13 +346,12 @@ public class CFBamBuffServerMethod
 				value.length(),
 				1023 );
 		}
-		
 		optionalDescription = value;
 	}
 
 	@Override
 	public String getOptionalSuffix() {
-		return( optionalSuffix );
+		return(optionalSuffix);
 	}
 
 	public void setOptionalSuffix( String value ) {
@@ -370,33 +363,30 @@ public class CFBamBuffServerMethod
 				value.length(),
 				16 );
 		}
-		
 		optionalSuffix = value;
 	}
 
 	@Override
 	public boolean getRequiredIsInstanceMethod() {
-		return( requiredIsInstanceMethod );
+		return(requiredIsInstanceMethod);
 	}
 
 	public void setRequiredIsInstanceMethod( boolean value ) {
-		
 		requiredIsInstanceMethod = value;
 	}
 
 	@Override
 	public boolean getRequiredIsServerOnly() {
-		return( requiredIsServerOnly );
+		return(requiredIsServerOnly);
 	}
 
 	public void setRequiredIsServerOnly( boolean value ) {
-		
 		requiredIsServerOnly = value;
 	}
 
 	@Override
 	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
-		return( requiredCodeVis );
+		return(requiredCodeVis);
 	}
 
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
@@ -406,13 +396,12 @@ public class CFBamBuffServerMethod
 				1,
 				"value" );
 		}
-		
 		requiredCodeVis = value;
 	}
 
 	@Override
 	public String getRequiredJMethodBody() {
-		return( requiredJMethodBody );
+		return(requiredJMethodBody);
 	}
 
 	public void setRequiredJMethodBody( String value ) {
@@ -430,13 +419,12 @@ public class CFBamBuffServerMethod
 				value.length(),
 				2000000 );
 		}
-		
 		requiredJMethodBody = value;
 	}
 
 	@Override
 	public String getRequiredCppMethodBody() {
-		return( requiredCppMethodBody );
+		return(requiredCppMethodBody);
 	}
 
 	public void setRequiredCppMethodBody( String value ) {
@@ -454,13 +442,12 @@ public class CFBamBuffServerMethod
 				value.length(),
 				2000000 );
 		}
-		
 		requiredCppMethodBody = value;
 	}
 
 	@Override
 	public String getRequiredCsMethodBody() {
-		return( requiredCsMethodBody );
+		return(requiredCsMethodBody);
 	}
 
 	public void setRequiredCsMethodBody( String value ) {
@@ -478,7 +465,6 @@ public class CFBamBuffServerMethod
 				value.length(),
 				2000000 );
 		}
-		
 		requiredCsMethodBody = value;
 	}
 
@@ -3854,6 +3840,8 @@ public class CFBamBuffServerMethod
 		super.setScope( src );
 		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
 		setRequiredContainerForTable(src.getRequiredContainerForTable());
+		setRequiredTableId(src.getRequiredTableId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
@@ -3887,6 +3875,8 @@ public class CFBamBuffServerMethod
 		super.setScope( src );
 		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
 		setRequiredContainerForTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
@@ -3920,6 +3910,8 @@ public class CFBamBuffServerMethod
 		super.setScope( src );
 		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
 		setRequiredContainerForTable(src.getRequiredContainerForTable());
+		setRequiredTableId(src.getRequiredTableId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
@@ -3953,6 +3945,8 @@ public class CFBamBuffServerMethod
 		super.setScope( src );
 		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
 		setRequiredContainerForTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
@@ -3986,6 +3980,8 @@ public class CFBamBuffServerMethod
 		super.setScope( src );
 		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
 		setRequiredContainerForTable(src.getRequiredContainerForTable());
+		setRequiredTableId(src.getRequiredTableId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
@@ -4019,6 +4015,8 @@ public class CFBamBuffServerMethod
 		super.setScope( src );
 		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
 		setRequiredContainerForTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());

@@ -109,7 +109,9 @@ public interface ICFBamServerMethod
 	public List<ICFBamParam> getOptionalComponentsParams();
 
 	public CFLibDbKeyHash256 getRequiredTableId();
+	public void setRequiredTableId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();

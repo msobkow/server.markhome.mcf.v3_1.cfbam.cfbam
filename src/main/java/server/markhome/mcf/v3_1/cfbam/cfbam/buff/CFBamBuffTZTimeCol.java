@@ -137,7 +137,7 @@ public class CFBamBuffTZTimeCol
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTableId() {
-		return( requiredTableId );
+		return(requiredTableId);
 	}
 
 	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
@@ -147,7 +147,6 @@ public class CFBamBuffTZTimeCol
 				1,
 				"value" );
 		}
-		
 		requiredTableId = value;
 	}
 
@@ -749,6 +748,7 @@ public class CFBamBuffTZTimeCol
 	public void setTZTimeCol( ICFBamTZTimeCol src ) {
 		super.setTZTimeDef( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -769,6 +769,7 @@ public class CFBamBuffTZTimeCol
 	public void setTZTimeCol( ICFBamTZTimeColH src ) {
 		super.setTZTimeDef( src );
 		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -789,6 +790,7 @@ public class CFBamBuffTZTimeCol
 	public void setTZTimeCol( ICFBamProtTZTimeCol src ) {
 		super.setTZTimeDef( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -809,6 +811,7 @@ public class CFBamBuffTZTimeCol
 	public void setTZTimeCol( ICFBamProtTZTimeColH src ) {
 		super.setTZTimeDef( src );
 		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -829,6 +832,7 @@ public class CFBamBuffTZTimeCol
 	public void setTZTimeCol( ICFBamPubTZTimeCol src ) {
 		super.setTZTimeDef( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -849,6 +853,7 @@ public class CFBamBuffTZTimeCol
 	public void setTZTimeCol( ICFBamPubTZTimeColH src ) {
 		super.setTZTimeDef( src );
 		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override

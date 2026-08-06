@@ -139,7 +139,7 @@ public class CFBamBuffSchemaRole
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
-		return( requiredSchemaDefId );
+		return(requiredSchemaDefId);
 	}
 
 	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
@@ -149,13 +149,12 @@ public class CFBamBuffSchemaRole
 				1,
 				"value" );
 		}
-		
 		requiredSchemaDefId = value;
 	}
 
 	@Override
 	public ICFBamPubSchema.RoleScopeEnum getRequiredRoleScope() {
-		return( requiredRoleScope );
+		return(requiredRoleScope);
 	}
 
 	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value ) {
@@ -165,7 +164,6 @@ public class CFBamBuffSchemaRole
 				1,
 				"value" );
 		}
-		
 		requiredRoleScope = value;
 	}
 
@@ -1233,6 +1231,7 @@ public class CFBamBuffSchemaRole
 	public void setSchemaRole( ICFBamSchemaRole src ) {
 		super.setRoleDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredContainerSchemaDef());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 		setRequiredRoleScope(src.getRequiredRoleScope());
 	}
 
@@ -1254,6 +1253,7 @@ public class CFBamBuffSchemaRole
 	public void setSchemaRole( ICFBamSchemaRoleH src ) {
 		super.setRoleDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredSchemaDefId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 		setRequiredRoleScope(src.getRequiredRoleScope());
 	}
 
@@ -1275,6 +1275,7 @@ public class CFBamBuffSchemaRole
 	public void setSchemaRole( ICFBamProtSchemaRole src ) {
 		super.setRoleDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredContainerSchemaDef());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 		setRequiredRoleScope(src.getRequiredRoleScope());
 	}
 
@@ -1296,6 +1297,7 @@ public class CFBamBuffSchemaRole
 	public void setSchemaRole( ICFBamProtSchemaRoleH src ) {
 		super.setRoleDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredSchemaDefId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 		setRequiredRoleScope(src.getRequiredRoleScope());
 	}
 
@@ -1317,6 +1319,7 @@ public class CFBamBuffSchemaRole
 	public void setSchemaRole( ICFBamPubSchemaRole src ) {
 		super.setRoleDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredContainerSchemaDef());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 		setRequiredRoleScope(src.getRequiredRoleScope());
 	}
 
@@ -1338,6 +1341,7 @@ public class CFBamBuffSchemaRole
 	public void setSchemaRole( ICFBamPubSchemaRoleH src ) {
 		super.setRoleDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredSchemaDefId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 		setRequiredRoleScope(src.getRequiredRoleScope());
 	}
 

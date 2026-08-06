@@ -188,17 +188,16 @@ public class CFBamBuffDelDep
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
-		return( optionalDefSchemaId );
+		return(optionalDefSchemaId);
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		
 		optionalDefSchemaId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredRelationId() {
-		return( requiredRelationId );
+		return(requiredRelationId);
 	}
 
 	public void setRequiredRelationId( CFLibDbKeyHash256 value ) {
@@ -208,7 +207,6 @@ public class CFBamBuffDelDep
 				1,
 				"value" );
 		}
-		
 		requiredRelationId = value;
 	}
 
@@ -1108,6 +1106,8 @@ public class CFBamBuffDelDep
 		super.setScope( src );
 		setRequiredLookupRelation(src.getRequiredLookupRelation());
 		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
+		setRequiredRelationId(src.getRequiredRelationId());
 	}
 
 	@Override
@@ -1129,6 +1129,8 @@ public class CFBamBuffDelDep
 		super.setScope( src );
 		setRequiredLookupRelation(src.getRequiredRelationId());
 		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
+		setRequiredRelationId(src.getRequiredRelationId());
 	}
 
 	@Override
@@ -1150,6 +1152,8 @@ public class CFBamBuffDelDep
 		super.setScope( src );
 		setRequiredLookupRelation(src.getRequiredLookupRelation());
 		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
+		setRequiredRelationId(src.getRequiredRelationId());
 	}
 
 	@Override
@@ -1171,6 +1175,8 @@ public class CFBamBuffDelDep
 		super.setScope( src );
 		setRequiredLookupRelation(src.getRequiredRelationId());
 		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
+		setRequiredRelationId(src.getRequiredRelationId());
 	}
 
 	@Override
@@ -1192,6 +1198,8 @@ public class CFBamBuffDelDep
 		super.setScope( src );
 		setRequiredLookupRelation(src.getRequiredLookupRelation());
 		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
+		setRequiredRelationId(src.getRequiredRelationId());
 	}
 
 	@Override
@@ -1213,6 +1221,8 @@ public class CFBamBuffDelDep
 		super.setScope( src );
 		setRequiredLookupRelation(src.getRequiredRelationId());
 		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
+		setRequiredRelationId(src.getRequiredRelationId());
 	}
 
 	@Override

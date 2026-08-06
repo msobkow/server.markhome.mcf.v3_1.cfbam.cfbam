@@ -87,7 +87,7 @@ public class CFBamBuffTimestampDefH extends CFBamBuffAtomH
 
 	@Override
 	public String getOptionalDummy() {
-		return( optionalDummy );
+		return(optionalDummy);
 	}
 
 	public void setOptionalDummy( String value ) {
@@ -99,7 +99,6 @@ public class CFBamBuffTimestampDefH extends CFBamBuffAtomH
 				value.length(),
 				4 );
 		}
-		
 		optionalDummy = value;
 	}
 

@@ -88,7 +88,7 @@ public class CFBamBuffDbKeyHash160Def
 
 	@Override
 	public String getOptionalInitValue() {
-		return( optionalInitValue );
+		return(optionalInitValue);
 	}
 
 	public void setOptionalInitValue( String value ) {
@@ -100,7 +100,6 @@ public class CFBamBuffDbKeyHash160Def
 				value.length(),
 				40 );
 		}
-		
 		optionalInitValue = value;
 	}
 

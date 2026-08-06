@@ -82,7 +82,7 @@ public class CFBamBuffSchemaDefByProjectURLIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredCTenantId() {
-		return( requiredCTenantId );
+		return(requiredCTenantId);
 	}
 
 	public void setRequiredCTenantId( CFLibDbKeyHash256 value ) {
@@ -92,13 +92,12 @@ public class CFBamBuffSchemaDefByProjectURLIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredCTenantId = value;
 	}
 
 	@Override
 	public String getRequiredProjectURL() {
-		return( requiredProjectURL );
+		return(requiredProjectURL);
 	}
 
 	public void setRequiredProjectURL( String value ) {
@@ -116,7 +115,6 @@ public class CFBamBuffSchemaDefByProjectURLIdxKey
 				value.length(),
 				1024 );
 		}
-		
 		requiredProjectURL = value;
 	}
 

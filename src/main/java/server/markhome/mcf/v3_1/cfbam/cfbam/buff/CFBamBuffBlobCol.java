@@ -137,7 +137,7 @@ public class CFBamBuffBlobCol
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTableId() {
-		return( requiredTableId );
+		return(requiredTableId);
 	}
 
 	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
@@ -147,7 +147,6 @@ public class CFBamBuffBlobCol
 				1,
 				"value" );
 		}
-		
 		requiredTableId = value;
 	}
 
@@ -749,6 +748,7 @@ public class CFBamBuffBlobCol
 	public void setBlobCol( ICFBamBlobCol src ) {
 		super.setBlobDef( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -769,6 +769,7 @@ public class CFBamBuffBlobCol
 	public void setBlobCol( ICFBamBlobColH src ) {
 		super.setBlobDef( src );
 		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -789,6 +790,7 @@ public class CFBamBuffBlobCol
 	public void setBlobCol( ICFBamProtBlobCol src ) {
 		super.setBlobDef( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -809,6 +811,7 @@ public class CFBamBuffBlobCol
 	public void setBlobCol( ICFBamProtBlobColH src ) {
 		super.setBlobDef( src );
 		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -829,6 +832,7 @@ public class CFBamBuffBlobCol
 	public void setBlobCol( ICFBamPubBlobCol src ) {
 		super.setBlobDef( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -849,6 +853,7 @@ public class CFBamBuffBlobCol
 	public void setBlobCol( ICFBamPubBlobColH src ) {
 		super.setBlobDef( src );
 		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override

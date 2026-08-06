@@ -80,7 +80,7 @@ public class CFBamBuffChainByPrevRelIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredPrevRelationId() {
-		return( requiredPrevRelationId );
+		return(requiredPrevRelationId);
 	}
 
 	public void setRequiredPrevRelationId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffChainByPrevRelIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredPrevRelationId = value;
 	}
 

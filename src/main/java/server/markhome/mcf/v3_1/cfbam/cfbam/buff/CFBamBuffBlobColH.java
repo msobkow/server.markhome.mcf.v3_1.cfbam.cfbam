@@ -87,7 +87,7 @@ public class CFBamBuffBlobColH extends CFBamBuffBlobDefH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTableId() {
-		return( requiredTableId );
+		return(requiredTableId);
 	}
 
 	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
@@ -97,7 +97,6 @@ public class CFBamBuffBlobColH extends CFBamBuffBlobDefH
 				1,
 				"value" );
 		}
-		
 		requiredTableId = value;
 	}
 

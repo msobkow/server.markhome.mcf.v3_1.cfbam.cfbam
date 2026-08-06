@@ -80,7 +80,7 @@ public class CFBamBuffParamByServerMethodIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredServerMethodId() {
-		return( requiredServerMethodId );
+		return(requiredServerMethodId);
 	}
 
 	public void setRequiredServerMethodId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffParamByServerMethodIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredServerMethodId = value;
 	}
 

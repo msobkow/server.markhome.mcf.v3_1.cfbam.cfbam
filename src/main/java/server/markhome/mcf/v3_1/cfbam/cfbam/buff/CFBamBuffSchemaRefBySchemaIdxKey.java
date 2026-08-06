@@ -80,7 +80,7 @@ public class CFBamBuffSchemaRefBySchemaIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSchemaId() {
-		return( requiredSchemaId );
+		return(requiredSchemaId);
 	}
 
 	public void setRequiredSchemaId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffSchemaRefBySchemaIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredSchemaId = value;
 	}
 

@@ -80,7 +80,7 @@ public class CFBamBuffPopTopDepByContRelIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredContRelationId() {
-		return( requiredContRelationId );
+		return(requiredContRelationId);
 	}
 
 	public void setRequiredContRelationId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffPopTopDepByContRelIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredContRelationId = value;
 	}
 

@@ -110,7 +110,7 @@ public class CFBamBuffEnumTag
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
+		return(requiredId);
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -120,7 +120,6 @@ public class CFBamBuffEnumTag
 				1,
 				"value" );
 		}
-		
 		requiredId = value;
 	}
 
@@ -377,17 +376,16 @@ public class CFBamBuffEnumTag
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
-		return( optionalDefSchemaId );
+		return(optionalDefSchemaId);
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		
 		optionalDefSchemaId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredEnumId() {
-		return( requiredEnumId );
+		return(requiredEnumId);
 	}
 
 	public void setRequiredEnumId( CFLibDbKeyHash256 value ) {
@@ -397,34 +395,16 @@ public class CFBamBuffEnumTag
 				1,
 				"value" );
 		}
-		
 		requiredEnumId = value;
 	}
 
 	@Override
 	public Short getOptionalEnumCode() {
-		return( optionalEnumCode );
+		return(optionalEnumCode);
 	}
 
 	@Override
 	public void setOptionalEnumCode( Short value ) {
-		if( value < ICFBamPubEnumTag.ENUMCODE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setOptionalEnumCode",
-				1,
-				"value",
-				value,
-				ICFBamPubEnumTag.ENUMCODE_MIN_VALUE );
-		}
-		if( value > ICFBamPubEnumTag.ENUMCODE_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setOptionalEnumCode",
-				1,
-				"value",
-				value,
-				ICFBamPubEnumTag.ENUMCODE_MAX_VALUE );
-		}
-		
 		if( value < ICFBamPubEnumTag.ENUMCODE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setOptionalEnumCode",
@@ -446,7 +426,7 @@ public class CFBamBuffEnumTag
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -464,27 +444,24 @@ public class CFBamBuffEnumTag
 				value.length(),
 				64 );
 		}
-		
 		requiredName = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalPrevId() {
-		return( optionalPrevId );
+		return(optionalPrevId);
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
-		
 		optionalPrevId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalNextId() {
-		return( optionalNextId );
+		return(optionalNextId);
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
-		
 		optionalNextId = value;
 	}
 
@@ -2719,8 +2696,12 @@ public class CFBamBuffEnumTag
 		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
 		setOptionalLookupPrev(src.getOptionalLookupPrev());
 		setOptionalLookupNext(src.getOptionalLookupNext());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
+		setRequiredEnumId(src.getRequiredEnumId());
 		setOptionalEnumCode(src.getOptionalEnumCode());
 		setRequiredName(src.getRequiredName());
+		setOptionalPrevId(src.getOptionalPrevId());
+		setOptionalNextId(src.getOptionalNextId());
 	}
 
 	@Override
@@ -2735,8 +2716,12 @@ public class CFBamBuffEnumTag
 		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
 		setOptionalLookupPrev(src.getOptionalPrevId());
 		setOptionalLookupNext(src.getOptionalNextId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
+		setRequiredEnumId(src.getRequiredEnumId());
 		setOptionalEnumCode(src.getOptionalEnumCode());
 		setRequiredName(src.getRequiredName());
+		setOptionalPrevId(src.getOptionalPrevId());
+		setOptionalNextId(src.getOptionalNextId());
 	}
 
 	@Override
@@ -2756,8 +2741,12 @@ public class CFBamBuffEnumTag
 		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
 		setOptionalLookupPrev(src.getOptionalLookupPrev());
 		setOptionalLookupNext(src.getOptionalLookupNext());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
+		setRequiredEnumId(src.getRequiredEnumId());
 		setOptionalEnumCode(src.getOptionalEnumCode());
 		setRequiredName(src.getRequiredName());
+		setOptionalPrevId(src.getOptionalPrevId());
+		setOptionalNextId(src.getOptionalNextId());
 	}
 
 	@Override
@@ -2772,8 +2761,12 @@ public class CFBamBuffEnumTag
 		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
 		setOptionalLookupPrev(src.getOptionalPrevId());
 		setOptionalLookupNext(src.getOptionalNextId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
+		setRequiredEnumId(src.getRequiredEnumId());
 		setOptionalEnumCode(src.getOptionalEnumCode());
 		setRequiredName(src.getRequiredName());
+		setOptionalPrevId(src.getOptionalPrevId());
+		setOptionalNextId(src.getOptionalNextId());
 	}
 
 	@Override
@@ -2793,8 +2786,12 @@ public class CFBamBuffEnumTag
 		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
 		setOptionalLookupPrev(src.getOptionalLookupPrev());
 		setOptionalLookupNext(src.getOptionalLookupNext());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
+		setRequiredEnumId(src.getRequiredEnumId());
 		setOptionalEnumCode(src.getOptionalEnumCode());
 		setRequiredName(src.getRequiredName());
+		setOptionalPrevId(src.getOptionalPrevId());
+		setOptionalNextId(src.getOptionalNextId());
 	}
 
 	@Override
@@ -2809,8 +2806,12 @@ public class CFBamBuffEnumTag
 		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
 		setOptionalLookupPrev(src.getOptionalPrevId());
 		setOptionalLookupNext(src.getOptionalNextId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
+		setRequiredEnumId(src.getRequiredEnumId());
 		setOptionalEnumCode(src.getOptionalEnumCode());
 		setRequiredName(src.getRequiredName());
+		setOptionalPrevId(src.getOptionalPrevId());
+		setOptionalNextId(src.getOptionalNextId());
 	}
 
 	@Override

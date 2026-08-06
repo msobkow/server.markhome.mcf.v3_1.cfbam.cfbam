@@ -100,7 +100,7 @@ public class CFBamBuffScope
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
+		return(requiredId);
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -110,7 +110,6 @@ public class CFBamBuffScope
 				1,
 				"value" );
 		}
-		
 		requiredId = value;
 	}
 
@@ -200,7 +199,7 @@ public class CFBamBuffScope
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
-		return( requiredTenantId );
+		return(requiredTenantId);
 	}
 
 	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
@@ -210,7 +209,6 @@ public class CFBamBuffScope
 				1,
 				"value" );
 		}
-		
 		requiredTenantId = value;
 	}
 
@@ -980,6 +978,7 @@ public class CFBamBuffScope
 		setUpdatedByUserId( src.getUpdatedByUserId() );
 		setUpdatedAt( src.getUpdatedAt() );
 		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredTenantId(src.getRequiredTenantId());
 	}
 
 	@Override
@@ -991,6 +990,7 @@ public class CFBamBuffScope
 	public void setScope( ICFBamScopeH src ) {
 		setRequiredId(src.getRequiredId());
 		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredTenantId(src.getRequiredTenantId());
 	}
 
 	@Override
@@ -1007,6 +1007,7 @@ public class CFBamBuffScope
 		setUpdatedByUserId( src.getUpdatedByUserId() );
 		setUpdatedAt( src.getUpdatedAt() );
 		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredTenantId(src.getRequiredTenantId());
 	}
 
 	@Override
@@ -1018,6 +1019,7 @@ public class CFBamBuffScope
 	public void setScope( ICFBamProtScopeH src ) {
 		setRequiredId(src.getRequiredId());
 		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredTenantId(src.getRequiredTenantId());
 	}
 
 	@Override
@@ -1034,6 +1036,7 @@ public class CFBamBuffScope
 		setUpdatedByUserId( src.getUpdatedByUserId() );
 		setUpdatedAt( src.getUpdatedAt() );
 		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredTenantId(src.getRequiredTenantId());
 	}
 
 	@Override
@@ -1045,6 +1048,7 @@ public class CFBamBuffScope
 	public void setScope( ICFBamPubScopeH src ) {
 		setRequiredId(src.getRequiredId());
 		setRequiredOwnerTenant(src.getRequiredTenantId());
+		setRequiredTenantId(src.getRequiredTenantId());
 	}
 
 	@Override

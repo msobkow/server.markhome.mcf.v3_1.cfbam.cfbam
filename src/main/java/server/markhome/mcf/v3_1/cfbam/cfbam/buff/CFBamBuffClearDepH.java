@@ -89,7 +89,7 @@ public class CFBamBuffClearDepH extends CFBamBuffScopeH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredRelationId() {
-		return( requiredRelationId );
+		return(requiredRelationId);
 	}
 
 	public void setRequiredRelationId( CFLibDbKeyHash256 value ) {
@@ -99,17 +99,15 @@ public class CFBamBuffClearDepH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
-		
 		requiredRelationId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
-		return( optionalDefSchemaId );
+		return(optionalDefSchemaId);
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		
 		optionalDefSchemaId = value;
 	}
 

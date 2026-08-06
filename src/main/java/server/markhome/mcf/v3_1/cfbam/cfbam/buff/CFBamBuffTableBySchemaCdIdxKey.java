@@ -82,7 +82,7 @@ public class CFBamBuffTableBySchemaCdIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
-		return( requiredSchemaDefId );
+		return(requiredSchemaDefId);
 	}
 
 	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
@@ -92,13 +92,12 @@ public class CFBamBuffTableBySchemaCdIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredSchemaDefId = value;
 	}
 
 	@Override
 	public String getRequiredTableClassCode() {
-		return( requiredTableClassCode );
+		return(requiredTableClassCode);
 	}
 
 	public void setRequiredTableClassCode( String value ) {
@@ -116,7 +115,6 @@ public class CFBamBuffTableBySchemaCdIdxKey
 				value.length(),
 				4 );
 		}
-		
 		requiredTableClassCode = value;
 	}
 

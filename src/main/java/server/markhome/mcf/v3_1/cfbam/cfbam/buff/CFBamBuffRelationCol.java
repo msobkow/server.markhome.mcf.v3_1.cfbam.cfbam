@@ -120,7 +120,7 @@ public class CFBamBuffRelationCol
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
+		return(requiredId);
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -130,7 +130,6 @@ public class CFBamBuffRelationCol
 				1,
 				"value" );
 		}
-		
 		requiredId = value;
 	}
 
@@ -485,7 +484,7 @@ public class CFBamBuffRelationCol
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredRelationId() {
-		return( requiredRelationId );
+		return(requiredRelationId);
 	}
 
 	public void setRequiredRelationId( CFLibDbKeyHash256 value ) {
@@ -495,23 +494,21 @@ public class CFBamBuffRelationCol
 				1,
 				"value" );
 		}
-		
 		requiredRelationId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
-		return( optionalDefSchemaId );
+		return(optionalDefSchemaId);
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		
 		optionalDefSchemaId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -529,13 +526,12 @@ public class CFBamBuffRelationCol
 				value.length(),
 				192 );
 		}
-		
 		requiredName = value;
 	}
 
 	@Override
 	public String getOptionalShortName() {
-		return( optionalShortName );
+		return(optionalShortName);
 	}
 
 	public void setOptionalShortName( String value ) {
@@ -547,13 +543,12 @@ public class CFBamBuffRelationCol
 				value.length(),
 				16 );
 		}
-		
 		optionalShortName = value;
 	}
 
 	@Override
 	public String getOptionalLabel() {
-		return( optionalLabel );
+		return(optionalLabel);
 	}
 
 	public void setOptionalLabel( String value ) {
@@ -565,13 +560,12 @@ public class CFBamBuffRelationCol
 				value.length(),
 				64 );
 		}
-		
 		optionalLabel = value;
 	}
 
 	@Override
 	public String getOptionalShortDescription() {
-		return( optionalShortDescription );
+		return(optionalShortDescription);
 	}
 
 	public void setOptionalShortDescription( String value ) {
@@ -583,13 +577,12 @@ public class CFBamBuffRelationCol
 				value.length(),
 				128 );
 		}
-		
 		optionalShortDescription = value;
 	}
 
 	@Override
 	public String getOptionalDescription() {
-		return( optionalDescription );
+		return(optionalDescription);
 	}
 
 	public void setOptionalDescription( String value ) {
@@ -601,13 +594,12 @@ public class CFBamBuffRelationCol
 				value.length(),
 				1023 );
 		}
-		
 		optionalDescription = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredFromColId() {
-		return( requiredFromColId );
+		return(requiredFromColId);
 	}
 
 	public void setRequiredFromColId( CFLibDbKeyHash256 value ) {
@@ -617,13 +609,12 @@ public class CFBamBuffRelationCol
 				1,
 				"value" );
 		}
-		
 		requiredFromColId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredToColId() {
-		return( requiredToColId );
+		return(requiredToColId);
 	}
 
 	public void setRequiredToColId( CFLibDbKeyHash256 value ) {
@@ -633,27 +624,24 @@ public class CFBamBuffRelationCol
 				1,
 				"value" );
 		}
-		
 		requiredToColId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalPrevId() {
-		return( optionalPrevId );
+		return(optionalPrevId);
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
-		
 		optionalPrevId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalNextId() {
-		return( optionalNextId );
+		return(optionalNextId);
 	}
 
 	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
-		
 		optionalNextId = value;
 	}
 
@@ -4386,11 +4374,17 @@ public class CFBamBuffRelationCol
 		setOptionalLookupNext(src.getOptionalLookupNext());
 		setRequiredLookupFromCol(src.getRequiredLookupFromCol());
 		setRequiredLookupToCol(src.getRequiredLookupToCol());
+		setRequiredRelationId(src.getRequiredRelationId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
 		setOptionalShortDescription(src.getOptionalShortDescription());
 		setOptionalDescription(src.getOptionalDescription());
+		setRequiredFromColId(src.getRequiredFromColId());
+		setRequiredToColId(src.getRequiredToColId());
+		setOptionalPrevId(src.getOptionalPrevId());
+		setOptionalNextId(src.getOptionalNextId());
 	}
 
 	@Override
@@ -4407,11 +4401,17 @@ public class CFBamBuffRelationCol
 		setOptionalLookupNext(src.getOptionalNextId());
 		setRequiredLookupFromCol(src.getRequiredFromColId());
 		setRequiredLookupToCol(src.getRequiredToColId());
+		setRequiredRelationId(src.getRequiredRelationId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
 		setOptionalShortDescription(src.getOptionalShortDescription());
 		setOptionalDescription(src.getOptionalDescription());
+		setRequiredFromColId(src.getRequiredFromColId());
+		setRequiredToColId(src.getRequiredToColId());
+		setOptionalPrevId(src.getOptionalPrevId());
+		setOptionalNextId(src.getOptionalNextId());
 	}
 
 	@Override
@@ -4433,11 +4433,17 @@ public class CFBamBuffRelationCol
 		setOptionalLookupNext(src.getOptionalLookupNext());
 		setRequiredLookupFromCol(src.getRequiredLookupFromCol());
 		setRequiredLookupToCol(src.getRequiredLookupToCol());
+		setRequiredRelationId(src.getRequiredRelationId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
 		setOptionalShortDescription(src.getOptionalShortDescription());
 		setOptionalDescription(src.getOptionalDescription());
+		setRequiredFromColId(src.getRequiredFromColId());
+		setRequiredToColId(src.getRequiredToColId());
+		setOptionalPrevId(src.getOptionalPrevId());
+		setOptionalNextId(src.getOptionalNextId());
 	}
 
 	@Override
@@ -4454,11 +4460,17 @@ public class CFBamBuffRelationCol
 		setOptionalLookupNext(src.getOptionalNextId());
 		setRequiredLookupFromCol(src.getRequiredFromColId());
 		setRequiredLookupToCol(src.getRequiredToColId());
+		setRequiredRelationId(src.getRequiredRelationId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
 		setOptionalShortDescription(src.getOptionalShortDescription());
 		setOptionalDescription(src.getOptionalDescription());
+		setRequiredFromColId(src.getRequiredFromColId());
+		setRequiredToColId(src.getRequiredToColId());
+		setOptionalPrevId(src.getOptionalPrevId());
+		setOptionalNextId(src.getOptionalNextId());
 	}
 
 	@Override
@@ -4480,11 +4492,17 @@ public class CFBamBuffRelationCol
 		setOptionalLookupNext(src.getOptionalLookupNext());
 		setRequiredLookupFromCol(src.getRequiredLookupFromCol());
 		setRequiredLookupToCol(src.getRequiredLookupToCol());
+		setRequiredRelationId(src.getRequiredRelationId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
 		setOptionalShortDescription(src.getOptionalShortDescription());
 		setOptionalDescription(src.getOptionalDescription());
+		setRequiredFromColId(src.getRequiredFromColId());
+		setRequiredToColId(src.getRequiredToColId());
+		setOptionalPrevId(src.getOptionalPrevId());
+		setOptionalNextId(src.getOptionalNextId());
 	}
 
 	@Override
@@ -4501,11 +4519,17 @@ public class CFBamBuffRelationCol
 		setOptionalLookupNext(src.getOptionalNextId());
 		setRequiredLookupFromCol(src.getRequiredFromColId());
 		setRequiredLookupToCol(src.getRequiredToColId());
+		setRequiredRelationId(src.getRequiredRelationId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
 		setOptionalShortDescription(src.getOptionalShortDescription());
 		setOptionalDescription(src.getOptionalDescription());
+		setRequiredFromColId(src.getRequiredFromColId());
+		setRequiredToColId(src.getRequiredToColId());
+		setOptionalPrevId(src.getOptionalPrevId());
+		setOptionalNextId(src.getOptionalNextId());
 	}
 
 	@Override

@@ -137,7 +137,7 @@ public class CFBamBuffTZTimeType
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
-		return( requiredSchemaDefId );
+		return(requiredSchemaDefId);
 	}
 
 	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
@@ -147,7 +147,6 @@ public class CFBamBuffTZTimeType
 				1,
 				"value" );
 		}
-		
 		requiredSchemaDefId = value;
 	}
 
@@ -749,6 +748,7 @@ public class CFBamBuffTZTimeType
 	public void setTZTimeType( ICFBamTZTimeType src ) {
 		super.setTZTimeDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredContainerSchemaDef());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -769,6 +769,7 @@ public class CFBamBuffTZTimeType
 	public void setTZTimeType( ICFBamTZTimeTypeH src ) {
 		super.setTZTimeDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredSchemaDefId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -789,6 +790,7 @@ public class CFBamBuffTZTimeType
 	public void setTZTimeType( ICFBamProtTZTimeType src ) {
 		super.setTZTimeDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredContainerSchemaDef());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -809,6 +811,7 @@ public class CFBamBuffTZTimeType
 	public void setTZTimeType( ICFBamProtTZTimeTypeH src ) {
 		super.setTZTimeDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredSchemaDefId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -829,6 +832,7 @@ public class CFBamBuffTZTimeType
 	public void setTZTimeType( ICFBamPubTZTimeType src ) {
 		super.setTZTimeDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredContainerSchemaDef());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -849,6 +853,7 @@ public class CFBamBuffTZTimeType
 	public void setTZTimeType( ICFBamPubTZTimeTypeH src ) {
 		super.setTZTimeDef( src );
 		setRequiredContainerSchemaDef(src.getRequiredSchemaDefId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override

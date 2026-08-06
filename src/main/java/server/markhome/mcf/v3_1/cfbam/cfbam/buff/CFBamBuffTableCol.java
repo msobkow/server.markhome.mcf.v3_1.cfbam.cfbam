@@ -192,7 +192,7 @@ public class CFBamBuffTableCol
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTableId() {
-		return( requiredTableId );
+		return(requiredTableId);
 	}
 
 	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
@@ -202,13 +202,12 @@ public class CFBamBuffTableCol
 				1,
 				"value" );
 		}
-		
 		requiredTableId = value;
 	}
 
 	@Override
 	public String getOptionalDbName() {
-		return( optionalDbName );
+		return(optionalDbName);
 	}
 
 	public void setOptionalDbName( String value ) {
@@ -220,23 +219,21 @@ public class CFBamBuffTableCol
 				value.length(),
 				32 );
 		}
-		
 		optionalDbName = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalDataId() {
-		return( optionalDataId );
+		return(optionalDataId);
 	}
 
 	public void setOptionalDataId( CFLibDbKeyHash256 value ) {
-		
 		optionalDataId = value;
 	}
 
 	@Override
 	public String getOptionalXmlElementName() {
-		return( optionalXmlElementName );
+		return(optionalXmlElementName);
 	}
 
 	public void setOptionalXmlElementName( String value ) {
@@ -248,7 +245,6 @@ public class CFBamBuffTableCol
 				value.length(),
 				192 );
 		}
-		
 		optionalXmlElementName = value;
 	}
 
@@ -1526,7 +1522,9 @@ public class CFBamBuffTableCol
 		super.setValue( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
 		setRequiredParentDataType(src.getRequiredParentDataType());
+		setRequiredTableId(src.getRequiredTableId());
 		setOptionalDbName(src.getOptionalDbName());
+		setOptionalDataId(src.getOptionalDataId());
 		setOptionalXmlElementName(src.getOptionalXmlElementName());
 	}
 
@@ -1549,7 +1547,9 @@ public class CFBamBuffTableCol
 		super.setValue( src );
 		setRequiredContainerTable(src.getRequiredTableId());
 		setRequiredParentDataType(src.getOptionalDataId());
+		setRequiredTableId(src.getRequiredTableId());
 		setOptionalDbName(src.getOptionalDbName());
+		setOptionalDataId(src.getOptionalDataId());
 		setOptionalXmlElementName(src.getOptionalXmlElementName());
 	}
 
@@ -1572,7 +1572,9 @@ public class CFBamBuffTableCol
 		super.setValue( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
 		setRequiredParentDataType(src.getRequiredParentDataType());
+		setRequiredTableId(src.getRequiredTableId());
 		setOptionalDbName(src.getOptionalDbName());
+		setOptionalDataId(src.getOptionalDataId());
 		setOptionalXmlElementName(src.getOptionalXmlElementName());
 	}
 
@@ -1595,7 +1597,9 @@ public class CFBamBuffTableCol
 		super.setValue( src );
 		setRequiredContainerTable(src.getRequiredTableId());
 		setRequiredParentDataType(src.getOptionalDataId());
+		setRequiredTableId(src.getRequiredTableId());
 		setOptionalDbName(src.getOptionalDbName());
+		setOptionalDataId(src.getOptionalDataId());
 		setOptionalXmlElementName(src.getOptionalXmlElementName());
 	}
 
@@ -1618,7 +1622,9 @@ public class CFBamBuffTableCol
 		super.setValue( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
 		setRequiredParentDataType(src.getRequiredParentDataType());
+		setRequiredTableId(src.getRequiredTableId());
 		setOptionalDbName(src.getOptionalDbName());
+		setOptionalDataId(src.getOptionalDataId());
 		setOptionalXmlElementName(src.getOptionalXmlElementName());
 	}
 
@@ -1641,7 +1647,9 @@ public class CFBamBuffTableCol
 		super.setValue( src );
 		setRequiredContainerTable(src.getRequiredTableId());
 		setRequiredParentDataType(src.getOptionalDataId());
+		setRequiredTableId(src.getRequiredTableId());
 		setOptionalDbName(src.getOptionalDbName());
+		setOptionalDataId(src.getOptionalDataId());
 		setOptionalXmlElementName(src.getOptionalXmlElementName());
 	}
 

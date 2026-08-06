@@ -87,7 +87,7 @@ public class CFBamBuffDbKeyHash512DefH extends CFBamBuffAtomH
 
 	@Override
 	public String getOptionalInitValue() {
-		return( optionalInitValue );
+		return(optionalInitValue);
 	}
 
 	public void setOptionalInitValue( String value ) {
@@ -99,7 +99,6 @@ public class CFBamBuffDbKeyHash512DefH extends CFBamBuffAtomH
 				value.length(),
 				128 );
 		}
-		
 		optionalInitValue = value;
 	}
 

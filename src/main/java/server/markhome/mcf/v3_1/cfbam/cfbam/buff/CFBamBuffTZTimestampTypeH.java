@@ -87,7 +87,7 @@ public class CFBamBuffTZTimestampTypeH extends CFBamBuffTZTimestampDefH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
-		return( requiredSchemaDefId );
+		return(requiredSchemaDefId);
 	}
 
 	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
@@ -97,7 +97,6 @@ public class CFBamBuffTZTimestampTypeH extends CFBamBuffTZTimestampDefH
 				1,
 				"value" );
 		}
-		
 		requiredSchemaDefId = value;
 	}
 

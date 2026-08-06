@@ -89,7 +89,7 @@ public class CFBamBuffDelSubDep1H extends CFBamBuffDelDepH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredDelTopDepId() {
-		return( requiredDelTopDepId );
+		return(requiredDelTopDepId);
 	}
 
 	public void setRequiredDelTopDepId( CFLibDbKeyHash256 value ) {
@@ -99,13 +99,12 @@ public class CFBamBuffDelSubDep1H extends CFBamBuffDelDepH
 				1,
 				"value" );
 		}
-		
 		requiredDelTopDepId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -123,7 +122,6 @@ public class CFBamBuffDelSubDep1H extends CFBamBuffDelDepH
 				value.length(),
 				192 );
 		}
-		
 		requiredName = value;
 	}
 

@@ -80,7 +80,7 @@ public class CFBamBuffDelSubDep2ByContDelDep1IdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredDelSubDep1Id() {
-		return( requiredDelSubDep1Id );
+		return(requiredDelSubDep1Id);
 	}
 
 	public void setRequiredDelSubDep1Id( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffDelSubDep2ByContDelDep1IdxKey
 				1,
 				"value" );
 		}
-		
 		requiredDelSubDep1Id = value;
 	}
 

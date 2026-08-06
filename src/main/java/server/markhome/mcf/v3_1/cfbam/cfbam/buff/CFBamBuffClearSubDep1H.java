@@ -89,7 +89,7 @@ public class CFBamBuffClearSubDep1H extends CFBamBuffClearDepH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClearTopDepId() {
-		return( requiredClearTopDepId );
+		return(requiredClearTopDepId);
 	}
 
 	public void setRequiredClearTopDepId( CFLibDbKeyHash256 value ) {
@@ -99,13 +99,12 @@ public class CFBamBuffClearSubDep1H extends CFBamBuffClearDepH
 				1,
 				"value" );
 		}
-		
 		requiredClearTopDepId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -123,7 +122,6 @@ public class CFBamBuffClearSubDep1H extends CFBamBuffClearDepH
 				value.length(),
 				192 );
 		}
-		
 		requiredName = value;
 	}
 

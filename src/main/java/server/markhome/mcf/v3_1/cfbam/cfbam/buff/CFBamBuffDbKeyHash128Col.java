@@ -137,7 +137,7 @@ public class CFBamBuffDbKeyHash128Col
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTableId() {
-		return( requiredTableId );
+		return(requiredTableId);
 	}
 
 	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
@@ -147,7 +147,6 @@ public class CFBamBuffDbKeyHash128Col
 				1,
 				"value" );
 		}
-		
 		requiredTableId = value;
 	}
 
@@ -749,6 +748,7 @@ public class CFBamBuffDbKeyHash128Col
 	public void setDbKeyHash128Col( ICFBamDbKeyHash128Col src ) {
 		super.setDbKeyHash128Def( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -769,6 +769,7 @@ public class CFBamBuffDbKeyHash128Col
 	public void setDbKeyHash128Col( ICFBamDbKeyHash128ColH src ) {
 		super.setDbKeyHash128Def( src );
 		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -789,6 +790,7 @@ public class CFBamBuffDbKeyHash128Col
 	public void setDbKeyHash128Col( ICFBamProtDbKeyHash128Col src ) {
 		super.setDbKeyHash128Def( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -809,6 +811,7 @@ public class CFBamBuffDbKeyHash128Col
 	public void setDbKeyHash128Col( ICFBamProtDbKeyHash128ColH src ) {
 		super.setDbKeyHash128Def( src );
 		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -829,6 +832,7 @@ public class CFBamBuffDbKeyHash128Col
 	public void setDbKeyHash128Col( ICFBamPubDbKeyHash128Col src ) {
 		super.setDbKeyHash128Def( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -849,6 +853,7 @@ public class CFBamBuffDbKeyHash128Col
 	public void setDbKeyHash128Col( ICFBamPubDbKeyHash128ColH src ) {
 		super.setDbKeyHash128Def( src );
 		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override

@@ -80,7 +80,7 @@ public class CFBamBuffIndexColByIndexIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredIndexId() {
-		return( requiredIndexId );
+		return(requiredIndexId);
 	}
 
 	public void setRequiredIndexId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffIndexColByIndexIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredIndexId = value;
 	}
 

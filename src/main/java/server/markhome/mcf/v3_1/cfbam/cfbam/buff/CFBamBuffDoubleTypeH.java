@@ -87,7 +87,7 @@ public class CFBamBuffDoubleTypeH extends CFBamBuffDoubleDefH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
-		return( requiredSchemaDefId );
+		return(requiredSchemaDefId);
 	}
 
 	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
@@ -97,7 +97,6 @@ public class CFBamBuffDoubleTypeH extends CFBamBuffDoubleDefH
 				1,
 				"value" );
 		}
-		
 		requiredSchemaDefId = value;
 	}
 

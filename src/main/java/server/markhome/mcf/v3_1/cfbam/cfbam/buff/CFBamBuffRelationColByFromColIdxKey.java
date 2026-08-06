@@ -80,7 +80,7 @@ public class CFBamBuffRelationColByFromColIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredFromColId() {
-		return( requiredFromColId );
+		return(requiredFromColId);
 	}
 
 	public void setRequiredFromColId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffRelationColByFromColIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredFromColId = value;
 	}
 

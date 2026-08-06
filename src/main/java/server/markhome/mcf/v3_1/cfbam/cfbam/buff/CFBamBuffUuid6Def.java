@@ -88,7 +88,7 @@ public class CFBamBuffUuid6Def
 
 	@Override
 	public String getOptionalInitValue() {
-		return( optionalInitValue );
+		return(optionalInitValue);
 	}
 
 	public void setOptionalInitValue( String value ) {
@@ -100,7 +100,6 @@ public class CFBamBuffUuid6Def
 				value.length(),
 				62 );
 		}
-		
 		optionalInitValue = value;
 	}
 

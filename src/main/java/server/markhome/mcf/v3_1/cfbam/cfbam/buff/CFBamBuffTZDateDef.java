@@ -88,7 +88,7 @@ public class CFBamBuffTZDateDef
 
 	@Override
 	public String getOptionalDummy() {
-		return( optionalDummy );
+		return(optionalDummy);
 	}
 
 	public void setOptionalDummy( String value ) {
@@ -100,7 +100,6 @@ public class CFBamBuffTZDateDef
 				value.length(),
 				4 );
 		}
-		
 		optionalDummy = value;
 	}
 

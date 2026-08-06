@@ -139,7 +139,7 @@ public class CFBamBuffClearSubDep3
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClearSubDep2Id() {
-		return( requiredClearSubDep2Id );
+		return(requiredClearSubDep2Id);
 	}
 
 	public void setRequiredClearSubDep2Id( CFLibDbKeyHash256 value ) {
@@ -149,13 +149,12 @@ public class CFBamBuffClearSubDep3
 				1,
 				"value" );
 		}
-		
 		requiredClearSubDep2Id = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -173,7 +172,6 @@ public class CFBamBuffClearSubDep3
 				value.length(),
 				192 );
 		}
-		
 		requiredName = value;
 	}
 
@@ -1141,6 +1139,7 @@ public class CFBamBuffClearSubDep3
 	public void setClearSubDep3( ICFBamClearSubDep3 src ) {
 		super.setClearDep( src );
 		setRequiredContainerClearSubDep2(src.getRequiredContainerClearSubDep2());
+		setRequiredClearSubDep2Id(src.getRequiredClearSubDep2Id());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1162,6 +1161,7 @@ public class CFBamBuffClearSubDep3
 	public void setClearSubDep3( ICFBamClearSubDep3H src ) {
 		super.setClearDep( src );
 		setRequiredContainerClearSubDep2(src.getRequiredClearSubDep2Id());
+		setRequiredClearSubDep2Id(src.getRequiredClearSubDep2Id());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1183,6 +1183,7 @@ public class CFBamBuffClearSubDep3
 	public void setClearSubDep3( ICFBamProtClearSubDep3 src ) {
 		super.setClearDep( src );
 		setRequiredContainerClearSubDep2(src.getRequiredContainerClearSubDep2());
+		setRequiredClearSubDep2Id(src.getRequiredClearSubDep2Id());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1204,6 +1205,7 @@ public class CFBamBuffClearSubDep3
 	public void setClearSubDep3( ICFBamProtClearSubDep3H src ) {
 		super.setClearDep( src );
 		setRequiredContainerClearSubDep2(src.getRequiredClearSubDep2Id());
+		setRequiredClearSubDep2Id(src.getRequiredClearSubDep2Id());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1225,6 +1227,7 @@ public class CFBamBuffClearSubDep3
 	public void setClearSubDep3( ICFBamPubClearSubDep3 src ) {
 		super.setClearDep( src );
 		setRequiredContainerClearSubDep2(src.getRequiredContainerClearSubDep2());
+		setRequiredClearSubDep2Id(src.getRequiredClearSubDep2Id());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1246,6 +1249,7 @@ public class CFBamBuffClearSubDep3
 	public void setClearSubDep3( ICFBamPubClearSubDep3H src ) {
 		super.setClearDep( src );
 		setRequiredContainerClearSubDep2(src.getRequiredClearSubDep2Id());
+		setRequiredClearSubDep2Id(src.getRequiredClearSubDep2Id());
 		setRequiredName(src.getRequiredName());
 	}
 

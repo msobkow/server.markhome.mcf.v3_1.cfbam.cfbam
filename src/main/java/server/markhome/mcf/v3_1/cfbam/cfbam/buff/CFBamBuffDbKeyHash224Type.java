@@ -137,7 +137,7 @@ public class CFBamBuffDbKeyHash224Type
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
-		return( requiredSchemaDefId );
+		return(requiredSchemaDefId);
 	}
 
 	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
@@ -147,7 +147,6 @@ public class CFBamBuffDbKeyHash224Type
 				1,
 				"value" );
 		}
-		
 		requiredSchemaDefId = value;
 	}
 
@@ -749,6 +748,7 @@ public class CFBamBuffDbKeyHash224Type
 	public void setDbKeyHash224Type( ICFBamDbKeyHash224Type src ) {
 		super.setDbKeyHash224Def( src );
 		setRequiredContainerSchemaDef(src.getRequiredContainerSchemaDef());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -769,6 +769,7 @@ public class CFBamBuffDbKeyHash224Type
 	public void setDbKeyHash224Type( ICFBamDbKeyHash224TypeH src ) {
 		super.setDbKeyHash224Def( src );
 		setRequiredContainerSchemaDef(src.getRequiredSchemaDefId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -789,6 +790,7 @@ public class CFBamBuffDbKeyHash224Type
 	public void setDbKeyHash224Type( ICFBamProtDbKeyHash224Type src ) {
 		super.setDbKeyHash224Def( src );
 		setRequiredContainerSchemaDef(src.getRequiredContainerSchemaDef());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -809,6 +811,7 @@ public class CFBamBuffDbKeyHash224Type
 	public void setDbKeyHash224Type( ICFBamProtDbKeyHash224TypeH src ) {
 		super.setDbKeyHash224Def( src );
 		setRequiredContainerSchemaDef(src.getRequiredSchemaDefId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -829,6 +832,7 @@ public class CFBamBuffDbKeyHash224Type
 	public void setDbKeyHash224Type( ICFBamPubDbKeyHash224Type src ) {
 		super.setDbKeyHash224Def( src );
 		setRequiredContainerSchemaDef(src.getRequiredContainerSchemaDef());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override
@@ -849,6 +853,7 @@ public class CFBamBuffDbKeyHash224Type
 	public void setDbKeyHash224Type( ICFBamPubDbKeyHash224TypeH src ) {
 		super.setDbKeyHash224Def( src );
 		setRequiredContainerSchemaDef(src.getRequiredSchemaDefId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
 	}
 
 	@Override

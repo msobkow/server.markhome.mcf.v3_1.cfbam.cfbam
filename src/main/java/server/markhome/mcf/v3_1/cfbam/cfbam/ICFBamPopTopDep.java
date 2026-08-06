@@ -89,6 +89,7 @@ public interface ICFBamPopTopDep
 	public List<ICFBamPopSubDep1> getOptionalComponentsPopDep();
 
 	public CFLibDbKeyHash256 getRequiredContRelationId();
+	public void setRequiredContRelationId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );

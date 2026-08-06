@@ -137,7 +137,7 @@ public class CFBamBuffNmTokenCol
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTableId() {
-		return( requiredTableId );
+		return(requiredTableId);
 	}
 
 	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
@@ -147,7 +147,6 @@ public class CFBamBuffNmTokenCol
 				1,
 				"value" );
 		}
-		
 		requiredTableId = value;
 	}
 
@@ -749,6 +748,7 @@ public class CFBamBuffNmTokenCol
 	public void setNmTokenCol( ICFBamNmTokenCol src ) {
 		super.setNmTokenDef( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -769,6 +769,7 @@ public class CFBamBuffNmTokenCol
 	public void setNmTokenCol( ICFBamNmTokenColH src ) {
 		super.setNmTokenDef( src );
 		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -789,6 +790,7 @@ public class CFBamBuffNmTokenCol
 	public void setNmTokenCol( ICFBamProtNmTokenCol src ) {
 		super.setNmTokenDef( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -809,6 +811,7 @@ public class CFBamBuffNmTokenCol
 	public void setNmTokenCol( ICFBamProtNmTokenColH src ) {
 		super.setNmTokenDef( src );
 		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -829,6 +832,7 @@ public class CFBamBuffNmTokenCol
 	public void setNmTokenCol( ICFBamPubNmTokenCol src ) {
 		super.setNmTokenDef( src );
 		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -849,6 +853,7 @@ public class CFBamBuffNmTokenCol
 	public void setNmTokenCol( ICFBamPubNmTokenColH src ) {
 		super.setNmTokenDef( src );
 		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override

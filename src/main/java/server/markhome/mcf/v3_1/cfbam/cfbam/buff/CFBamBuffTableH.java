@@ -129,7 +129,7 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
-		return( requiredSchemaDefId );
+		return(requiredSchemaDefId);
 	}
 
 	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
@@ -139,23 +139,21 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
-		
 		requiredSchemaDefId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
-		return( optionalDefSchemaId );
+		return(optionalDefSchemaId);
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		
 		optionalDefSchemaId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -173,13 +171,12 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				192 );
 		}
-		
 		requiredName = value;
 	}
 
 	@Override
 	public String getOptionalDbName() {
-		return( optionalDbName );
+		return(optionalDbName);
 	}
 
 	public void setOptionalDbName( String value ) {
@@ -191,13 +188,12 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				32 );
 		}
-		
 		optionalDbName = value;
 	}
 
 	@Override
 	public String getOptionalShortName() {
-		return( optionalShortName );
+		return(optionalShortName);
 	}
 
 	public void setOptionalShortName( String value ) {
@@ -209,13 +205,12 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				16 );
 		}
-		
 		optionalShortName = value;
 	}
 
 	@Override
 	public String getOptionalLabel() {
-		return( optionalLabel );
+		return(optionalLabel);
 	}
 
 	public void setOptionalLabel( String value ) {
@@ -227,13 +222,12 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				64 );
 		}
-		
 		optionalLabel = value;
 	}
 
 	@Override
 	public String getOptionalShortDescription() {
-		return( optionalShortDescription );
+		return(optionalShortDescription);
 	}
 
 	public void setOptionalShortDescription( String value ) {
@@ -245,13 +239,12 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				50 );
 		}
-		
 		optionalShortDescription = value;
 	}
 
 	@Override
 	public String getOptionalDescription() {
-		return( optionalDescription );
+		return(optionalDescription);
 	}
 
 	public void setOptionalDescription( String value ) {
@@ -263,33 +256,30 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				100 );
 		}
-		
 		optionalDescription = value;
 	}
 
 	@Override
 	public boolean getRequiredPageData() {
-		return( requiredPageData );
+		return(requiredPageData);
 	}
 
 	public void setRequiredPageData( boolean value ) {
-		
 		requiredPageData = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalPrimaryIndexId() {
-		return( optionalPrimaryIndexId );
+		return(optionalPrimaryIndexId);
 	}
 
 	public void setOptionalPrimaryIndexId( CFLibDbKeyHash256 value ) {
-		
 		optionalPrimaryIndexId = value;
 	}
 
 	@Override
 	public String getRequiredTableClassCode() {
-		return( requiredTableClassCode );
+		return(requiredTableClassCode);
 	}
 
 	public void setRequiredTableClassCode( String value ) {
@@ -307,93 +297,84 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				value.length(),
 				4 );
 		}
-		
 		requiredTableClassCode = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalLookupIndexId() {
-		return( optionalLookupIndexId );
+		return(optionalLookupIndexId);
 	}
 
 	public void setOptionalLookupIndexId( CFLibDbKeyHash256 value ) {
-		
 		optionalLookupIndexId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalAltIndexId() {
-		return( optionalAltIndexId );
+		return(optionalAltIndexId);
 	}
 
 	public void setOptionalAltIndexId( CFLibDbKeyHash256 value ) {
-		
 		optionalAltIndexId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalQualifyingTableId() {
-		return( optionalQualifyingTableId );
+		return(optionalQualifyingTableId);
 	}
 
 	public void setOptionalQualifyingTableId( CFLibDbKeyHash256 value ) {
-		
 		optionalQualifyingTableId = value;
 	}
 
 	@Override
 	public boolean getRequiredIsInstantiable() {
-		return( requiredIsInstantiable );
+		return(requiredIsInstantiable);
 	}
 
 	public void setRequiredIsInstantiable( boolean value ) {
-		
 		requiredIsInstantiable = value;
 	}
 
 	@Override
 	public boolean getRequiredHasHistory() {
-		return( requiredHasHistory );
+		return(requiredHasHistory);
 	}
 
 	public void setRequiredHasHistory( boolean value ) {
-		
 		requiredHasHistory = value;
 	}
 
 	@Override
 	public boolean getRequiredHasAuditColumns() {
-		return( requiredHasAuditColumns );
+		return(requiredHasAuditColumns);
 	}
 
 	public void setRequiredHasAuditColumns( boolean value ) {
-		
 		requiredHasAuditColumns = value;
 	}
 
 	@Override
 	public boolean getRequiredIsMutable() {
-		return( requiredIsMutable );
+		return(requiredIsMutable);
 	}
 
 	public void setRequiredIsMutable( boolean value ) {
-		
 		requiredIsMutable = value;
 	}
 
 	@Override
 	public boolean getRequiredIsServerOnly() {
-		return( requiredIsServerOnly );
+		return(requiredIsServerOnly);
 	}
 
 	public void setRequiredIsServerOnly( boolean value ) {
-		
 		requiredIsServerOnly = value;
 	}
 
 	@Override
 	public ICFBamPubSchema.LoaderBehaviourEnum getRequiredLoaderBehaviour() {
-		return( requiredLoaderBehaviour );
+		return(requiredLoaderBehaviour);
 	}
 
 	public void setRequiredLoaderBehaviour( ICFBamPubSchema.LoaderBehaviourEnum value ) {
@@ -403,13 +384,12 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
-		
 		requiredLoaderBehaviour = value;
 	}
 
 	@Override
 	public ICFBamPubSchema.SecScopeEnum getRequiredSecScope() {
-		return( requiredSecScope );
+		return(requiredSecScope);
 	}
 
 	public void setRequiredSecScope( ICFBamPubSchema.SecScopeEnum value ) {
@@ -419,13 +399,12 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
-		
 		requiredSecScope = value;
 	}
 
 	@Override
 	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
-		return( requiredCodeVis );
+		return(requiredCodeVis);
 	}
 
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
@@ -435,7 +414,6 @@ public class CFBamBuffTableH extends CFBamBuffScopeH
 				1,
 				"value" );
 		}
-		
 		requiredCodeVis = value;
 	}
 

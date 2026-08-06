@@ -82,7 +82,7 @@ public class CFBamBuffTableBySchemaCodeVisIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
-		return( requiredSchemaDefId );
+		return(requiredSchemaDefId);
 	}
 
 	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
@@ -92,13 +92,12 @@ public class CFBamBuffTableBySchemaCodeVisIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredSchemaDefId = value;
 	}
 
 	@Override
 	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
-		return( requiredCodeVis );
+		return(requiredCodeVis);
 	}
 
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
@@ -108,7 +107,6 @@ public class CFBamBuffTableBySchemaCodeVisIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredCodeVis = value;
 	}
 

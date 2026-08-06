@@ -137,7 +137,7 @@ public class CFBamBuffIndexTweak
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredIndexId() {
-		return( requiredIndexId );
+		return(requiredIndexId);
 	}
 
 	public void setRequiredIndexId( CFLibDbKeyHash256 value ) {
@@ -147,7 +147,6 @@ public class CFBamBuffIndexTweak
 				1,
 				"value" );
 		}
-		
 		requiredIndexId = value;
 	}
 
@@ -749,6 +748,7 @@ public class CFBamBuffIndexTweak
 	public void setIndexTweak( ICFBamIndexTweak src ) {
 		super.setTweak( src );
 		setRequiredContainerIndexDef(src.getRequiredContainerIndexDef());
+		setRequiredIndexId(src.getRequiredIndexId());
 	}
 
 	@Override
@@ -769,6 +769,7 @@ public class CFBamBuffIndexTweak
 	public void setIndexTweak( ICFBamIndexTweakH src ) {
 		super.setTweak( src );
 		setRequiredContainerIndexDef(src.getRequiredIndexId());
+		setRequiredIndexId(src.getRequiredIndexId());
 	}
 
 	@Override
@@ -789,6 +790,7 @@ public class CFBamBuffIndexTweak
 	public void setIndexTweak( ICFBamProtIndexTweak src ) {
 		super.setTweak( src );
 		setRequiredContainerIndexDef(src.getRequiredContainerIndexDef());
+		setRequiredIndexId(src.getRequiredIndexId());
 	}
 
 	@Override
@@ -809,6 +811,7 @@ public class CFBamBuffIndexTweak
 	public void setIndexTweak( ICFBamProtIndexTweakH src ) {
 		super.setTweak( src );
 		setRequiredContainerIndexDef(src.getRequiredIndexId());
+		setRequiredIndexId(src.getRequiredIndexId());
 	}
 
 	@Override
@@ -829,6 +832,7 @@ public class CFBamBuffIndexTweak
 	public void setIndexTweak( ICFBamPubIndexTweak src ) {
 		super.setTweak( src );
 		setRequiredContainerIndexDef(src.getRequiredContainerIndexDef());
+		setRequiredIndexId(src.getRequiredIndexId());
 	}
 
 	@Override
@@ -849,6 +853,7 @@ public class CFBamBuffIndexTweak
 	public void setIndexTweak( ICFBamPubIndexTweakH src ) {
 		super.setTweak( src );
 		setRequiredContainerIndexDef(src.getRequiredIndexId());
+		setRequiredIndexId(src.getRequiredIndexId());
 	}
 
 	@Override

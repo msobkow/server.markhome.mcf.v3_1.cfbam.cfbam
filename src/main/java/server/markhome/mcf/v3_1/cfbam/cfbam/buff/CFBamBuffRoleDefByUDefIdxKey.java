@@ -84,7 +84,7 @@ public class CFBamBuffRoleDefByUDefIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredScopeId() {
-		return( requiredScopeId );
+		return(requiredScopeId);
 	}
 
 	public void setRequiredScopeId( CFLibDbKeyHash256 value ) {
@@ -94,23 +94,21 @@ public class CFBamBuffRoleDefByUDefIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredScopeId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
-		return( optionalDefSchemaId );
+		return(optionalDefSchemaId);
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		
 		optionalDefSchemaId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -128,7 +126,6 @@ public class CFBamBuffRoleDefByUDefIdxKey
 				value.length(),
 				192 );
 		}
-		
 		requiredName = value;
 	}
 

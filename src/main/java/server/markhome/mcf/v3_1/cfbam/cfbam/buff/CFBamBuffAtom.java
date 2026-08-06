@@ -88,7 +88,7 @@ public class CFBamBuffAtom
 
 	@Override
 	public String getOptionalDbName() {
-		return( optionalDbName );
+		return(optionalDbName);
 	}
 
 	public void setOptionalDbName( String value ) {
@@ -100,7 +100,6 @@ public class CFBamBuffAtom
 				value.length(),
 				32 );
 		}
-		
 		optionalDbName = value;
 	}
 

@@ -87,7 +87,7 @@ public class CFBamBuffServerProcH extends CFBamBuffServerMethodH
 
 	@Override
 	public String getOptionalDummy() {
-		return( optionalDummy );
+		return(optionalDummy);
 	}
 
 	public void setOptionalDummy( String value ) {
@@ -99,7 +99,6 @@ public class CFBamBuffServerProcH extends CFBamBuffServerMethodH
 				value.length(),
 				16 );
 		}
-		
 		optionalDummy = value;
 	}
 

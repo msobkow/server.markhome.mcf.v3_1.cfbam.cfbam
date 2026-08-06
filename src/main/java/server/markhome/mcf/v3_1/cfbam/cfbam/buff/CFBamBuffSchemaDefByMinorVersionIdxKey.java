@@ -80,7 +80,7 @@ public class CFBamBuffSchemaDefByMinorVersionIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredMinorVersionId() {
-		return( requiredMinorVersionId );
+		return(requiredMinorVersionId);
 	}
 
 	public void setRequiredMinorVersionId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffSchemaDefByMinorVersionIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredMinorVersionId = value;
 	}
 

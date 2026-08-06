@@ -137,7 +137,7 @@ public class CFBamBuffTableTweak
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTableId() {
-		return( requiredTableId );
+		return(requiredTableId);
 	}
 
 	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
@@ -147,7 +147,6 @@ public class CFBamBuffTableTweak
 				1,
 				"value" );
 		}
-		
 		requiredTableId = value;
 	}
 
@@ -749,6 +748,7 @@ public class CFBamBuffTableTweak
 	public void setTableTweak( ICFBamTableTweak src ) {
 		super.setTweak( src );
 		setRequiredContainerTableDef(src.getRequiredContainerTableDef());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -769,6 +769,7 @@ public class CFBamBuffTableTweak
 	public void setTableTweak( ICFBamTableTweakH src ) {
 		super.setTweak( src );
 		setRequiredContainerTableDef(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -789,6 +790,7 @@ public class CFBamBuffTableTweak
 	public void setTableTweak( ICFBamProtTableTweak src ) {
 		super.setTweak( src );
 		setRequiredContainerTableDef(src.getRequiredContainerTableDef());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -809,6 +811,7 @@ public class CFBamBuffTableTweak
 	public void setTableTweak( ICFBamProtTableTweakH src ) {
 		super.setTweak( src );
 		setRequiredContainerTableDef(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -829,6 +832,7 @@ public class CFBamBuffTableTweak
 	public void setTableTweak( ICFBamPubTableTweak src ) {
 		super.setTweak( src );
 		setRequiredContainerTableDef(src.getRequiredContainerTableDef());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override
@@ -849,6 +853,7 @@ public class CFBamBuffTableTweak
 	public void setTableTweak( ICFBamPubTableTweakH src ) {
 		super.setTweak( src );
 		setRequiredContainerTableDef(src.getRequiredTableId());
+		setRequiredTableId(src.getRequiredTableId());
 	}
 
 	@Override

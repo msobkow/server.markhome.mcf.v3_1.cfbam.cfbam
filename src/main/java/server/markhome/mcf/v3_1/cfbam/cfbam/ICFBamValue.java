@@ -159,7 +159,9 @@ public interface ICFBamValue
 	public void setOptionalLookupNext(ICFBamPubValue argObj);
 
 	public CFLibDbKeyHash256 getRequiredScopeId();
+	public void setRequiredScopeId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();
@@ -179,7 +181,9 @@ public interface ICFBamValue
 	public boolean getRequiredImplementsPolymorph();
 	public void setRequiredImplementsPolymorph( boolean value );
 	public CFLibDbKeyHash256 getOptionalPrevId();
+	public void setOptionalPrevId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalNextId();
+	public void setOptionalNextId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

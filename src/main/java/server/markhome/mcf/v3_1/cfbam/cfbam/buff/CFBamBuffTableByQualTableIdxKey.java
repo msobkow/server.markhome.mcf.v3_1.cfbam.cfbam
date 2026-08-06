@@ -80,11 +80,10 @@ public class CFBamBuffTableByQualTableIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalQualifyingTableId() {
-		return( optionalQualifyingTableId );
+		return(optionalQualifyingTableId);
 	}
 
 	public void setOptionalQualifyingTableId( CFLibDbKeyHash256 value ) {
-		
 		optionalQualifyingTableId = value;
 	}
 

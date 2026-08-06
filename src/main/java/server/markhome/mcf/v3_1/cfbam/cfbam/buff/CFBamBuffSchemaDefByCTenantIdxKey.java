@@ -80,7 +80,7 @@ public class CFBamBuffSchemaDefByCTenantIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredCTenantId() {
-		return( requiredCTenantId );
+		return(requiredCTenantId);
 	}
 
 	public void setRequiredCTenantId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffSchemaDefByCTenantIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredCTenantId = value;
 	}
 

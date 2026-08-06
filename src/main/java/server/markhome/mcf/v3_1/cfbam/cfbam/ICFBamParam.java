@@ -166,7 +166,9 @@ public interface ICFBamParam
 	public void setRequiredLookupType(ICFBamPubValue argObj);
 
 	public CFLibDbKeyHash256 getRequiredServerMethodId();
+	public void setRequiredServerMethodId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortDescription();
@@ -176,8 +178,11 @@ public interface ICFBamParam
 	public boolean getRequiredIsNullable();
 	public void setRequiredIsNullable( boolean value );
 	public CFLibDbKeyHash256 getOptionalTypeId();
+	public void setOptionalTypeId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalPrevId();
+	public void setOptionalPrevId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalNextId();
+	public void setOptionalNextId( CFLibDbKeyHash256 value );
 	public boolean equals( Object obj );
 
 	public int hashCode();

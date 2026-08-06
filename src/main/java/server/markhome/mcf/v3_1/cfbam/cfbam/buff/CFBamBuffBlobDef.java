@@ -90,28 +90,11 @@ public class CFBamBuffBlobDef
 
 	@Override
 	public int getRequiredMaxLen() {
-		return( requiredMaxLen );
+		return(requiredMaxLen);
 	}
 
 	@Override
 	public void setRequiredMaxLen( int value ) {
-		if( value < ICFBamPubBlobDef.MAXLEN_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredMaxLen",
-				1,
-				"value",
-				value,
-				ICFBamPubBlobDef.MAXLEN_MIN_VALUE );
-		}
-		if( value > ICFBamPubBlobDef.MAXLEN_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredMaxLen",
-				1,
-				"value",
-				value,
-				ICFBamPubBlobDef.MAXLEN_MAX_VALUE );
-		}
-		
 		if( value < ICFBamPubBlobDef.MAXLEN_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setRequiredMaxLen",
@@ -133,7 +116,7 @@ public class CFBamBuffBlobDef
 
 	@Override
 	public byte[] getOptionalInitValue() {
-		return( optionalInitValue );
+		return(optionalInitValue);
 	}
 
 	public void setOptionalInitValue( byte[] value ) {
@@ -145,7 +128,6 @@ public class CFBamBuffBlobDef
 				value.length,
 				16384 );
 		}
-		
 		optionalInitValue = value;
 	}
 

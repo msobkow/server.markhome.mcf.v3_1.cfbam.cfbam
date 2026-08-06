@@ -640,7 +640,7 @@ public class CFBamBuffTable
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
-		return( requiredSchemaDefId );
+		return(requiredSchemaDefId);
 	}
 
 	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
@@ -650,23 +650,21 @@ public class CFBamBuffTable
 				1,
 				"value" );
 		}
-		
 		requiredSchemaDefId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
-		return( optionalDefSchemaId );
+		return(optionalDefSchemaId);
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		
 		optionalDefSchemaId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -684,13 +682,12 @@ public class CFBamBuffTable
 				value.length(),
 				192 );
 		}
-		
 		requiredName = value;
 	}
 
 	@Override
 	public String getOptionalDbName() {
-		return( optionalDbName );
+		return(optionalDbName);
 	}
 
 	public void setOptionalDbName( String value ) {
@@ -702,13 +699,12 @@ public class CFBamBuffTable
 				value.length(),
 				32 );
 		}
-		
 		optionalDbName = value;
 	}
 
 	@Override
 	public String getOptionalShortName() {
-		return( optionalShortName );
+		return(optionalShortName);
 	}
 
 	public void setOptionalShortName( String value ) {
@@ -720,13 +716,12 @@ public class CFBamBuffTable
 				value.length(),
 				16 );
 		}
-		
 		optionalShortName = value;
 	}
 
 	@Override
 	public String getOptionalLabel() {
-		return( optionalLabel );
+		return(optionalLabel);
 	}
 
 	public void setOptionalLabel( String value ) {
@@ -738,13 +733,12 @@ public class CFBamBuffTable
 				value.length(),
 				64 );
 		}
-		
 		optionalLabel = value;
 	}
 
 	@Override
 	public String getOptionalShortDescription() {
-		return( optionalShortDescription );
+		return(optionalShortDescription);
 	}
 
 	public void setOptionalShortDescription( String value ) {
@@ -756,13 +750,12 @@ public class CFBamBuffTable
 				value.length(),
 				50 );
 		}
-		
 		optionalShortDescription = value;
 	}
 
 	@Override
 	public String getOptionalDescription() {
-		return( optionalDescription );
+		return(optionalDescription);
 	}
 
 	public void setOptionalDescription( String value ) {
@@ -774,33 +767,30 @@ public class CFBamBuffTable
 				value.length(),
 				100 );
 		}
-		
 		optionalDescription = value;
 	}
 
 	@Override
 	public boolean getRequiredPageData() {
-		return( requiredPageData );
+		return(requiredPageData);
 	}
 
 	public void setRequiredPageData( boolean value ) {
-		
 		requiredPageData = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalPrimaryIndexId() {
-		return( optionalPrimaryIndexId );
+		return(optionalPrimaryIndexId);
 	}
 
 	public void setOptionalPrimaryIndexId( CFLibDbKeyHash256 value ) {
-		
 		optionalPrimaryIndexId = value;
 	}
 
 	@Override
 	public String getRequiredTableClassCode() {
-		return( requiredTableClassCode );
+		return(requiredTableClassCode);
 	}
 
 	public void setRequiredTableClassCode( String value ) {
@@ -818,93 +808,84 @@ public class CFBamBuffTable
 				value.length(),
 				4 );
 		}
-		
 		requiredTableClassCode = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalLookupIndexId() {
-		return( optionalLookupIndexId );
+		return(optionalLookupIndexId);
 	}
 
 	public void setOptionalLookupIndexId( CFLibDbKeyHash256 value ) {
-		
 		optionalLookupIndexId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalAltIndexId() {
-		return( optionalAltIndexId );
+		return(optionalAltIndexId);
 	}
 
 	public void setOptionalAltIndexId( CFLibDbKeyHash256 value ) {
-		
 		optionalAltIndexId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalQualifyingTableId() {
-		return( optionalQualifyingTableId );
+		return(optionalQualifyingTableId);
 	}
 
 	public void setOptionalQualifyingTableId( CFLibDbKeyHash256 value ) {
-		
 		optionalQualifyingTableId = value;
 	}
 
 	@Override
 	public boolean getRequiredIsInstantiable() {
-		return( requiredIsInstantiable );
+		return(requiredIsInstantiable);
 	}
 
 	public void setRequiredIsInstantiable( boolean value ) {
-		
 		requiredIsInstantiable = value;
 	}
 
 	@Override
 	public boolean getRequiredHasHistory() {
-		return( requiredHasHistory );
+		return(requiredHasHistory);
 	}
 
 	public void setRequiredHasHistory( boolean value ) {
-		
 		requiredHasHistory = value;
 	}
 
 	@Override
 	public boolean getRequiredHasAuditColumns() {
-		return( requiredHasAuditColumns );
+		return(requiredHasAuditColumns);
 	}
 
 	public void setRequiredHasAuditColumns( boolean value ) {
-		
 		requiredHasAuditColumns = value;
 	}
 
 	@Override
 	public boolean getRequiredIsMutable() {
-		return( requiredIsMutable );
+		return(requiredIsMutable);
 	}
 
 	public void setRequiredIsMutable( boolean value ) {
-		
 		requiredIsMutable = value;
 	}
 
 	@Override
 	public boolean getRequiredIsServerOnly() {
-		return( requiredIsServerOnly );
+		return(requiredIsServerOnly);
 	}
 
 	public void setRequiredIsServerOnly( boolean value ) {
-		
 		requiredIsServerOnly = value;
 	}
 
 	@Override
 	public ICFBamPubSchema.LoaderBehaviourEnum getRequiredLoaderBehaviour() {
-		return( requiredLoaderBehaviour );
+		return(requiredLoaderBehaviour);
 	}
 
 	public void setRequiredLoaderBehaviour( ICFBamPubSchema.LoaderBehaviourEnum value ) {
@@ -914,13 +895,12 @@ public class CFBamBuffTable
 				1,
 				"value" );
 		}
-		
 		requiredLoaderBehaviour = value;
 	}
 
 	@Override
 	public ICFBamPubSchema.SecScopeEnum getRequiredSecScope() {
-		return( requiredSecScope );
+		return(requiredSecScope);
 	}
 
 	public void setRequiredSecScope( ICFBamPubSchema.SecScopeEnum value ) {
@@ -930,13 +910,12 @@ public class CFBamBuffTable
 				1,
 				"value" );
 		}
-		
 		requiredSecScope = value;
 	}
 
 	@Override
 	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
-		return( requiredCodeVis );
+		return(requiredCodeVis);
 	}
 
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
@@ -946,7 +925,6 @@ public class CFBamBuffTable
 				1,
 				"value" );
 		}
-		
 		requiredCodeVis = value;
 	}
 
@@ -6035,6 +6013,8 @@ public class CFBamBuffTable
 		setOptionalLookupAltIndex(src.getOptionalLookupAltIndex());
 		setOptionalLookupQualTable(src.getOptionalLookupQualTable());
 		setOptionalLookupPrimaryIndex(src.getOptionalLookupPrimaryIndex());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalShortName(src.getOptionalShortName());
@@ -6042,7 +6022,11 @@ public class CFBamBuffTable
 		setOptionalShortDescription(src.getOptionalShortDescription());
 		setOptionalDescription(src.getOptionalDescription());
 		setRequiredPageData(src.getRequiredPageData());
+		setOptionalPrimaryIndexId(src.getOptionalPrimaryIndexId());
 		setRequiredTableClassCode(src.getRequiredTableClassCode());
+		setOptionalLookupIndexId(src.getOptionalLookupIndexId());
+		setOptionalAltIndexId(src.getOptionalAltIndexId());
+		setOptionalQualifyingTableId(src.getOptionalQualifyingTableId());
 		setRequiredIsInstantiable(src.getRequiredIsInstantiable());
 		setRequiredHasHistory(src.getRequiredHasHistory());
 		setRequiredHasAuditColumns(src.getRequiredHasAuditColumns());
@@ -6076,6 +6060,8 @@ public class CFBamBuffTable
 		setOptionalLookupAltIndex(src.getOptionalAltIndexId());
 		setOptionalLookupQualTable(src.getOptionalQualifyingTableId());
 		setOptionalLookupPrimaryIndex(src.getOptionalPrimaryIndexId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalShortName(src.getOptionalShortName());
@@ -6083,7 +6069,11 @@ public class CFBamBuffTable
 		setOptionalShortDescription(src.getOptionalShortDescription());
 		setOptionalDescription(src.getOptionalDescription());
 		setRequiredPageData(src.getRequiredPageData());
+		setOptionalPrimaryIndexId(src.getOptionalPrimaryIndexId());
 		setRequiredTableClassCode(src.getRequiredTableClassCode());
+		setOptionalLookupIndexId(src.getOptionalLookupIndexId());
+		setOptionalAltIndexId(src.getOptionalAltIndexId());
+		setOptionalQualifyingTableId(src.getOptionalQualifyingTableId());
 		setRequiredIsInstantiable(src.getRequiredIsInstantiable());
 		setRequiredHasHistory(src.getRequiredHasHistory());
 		setRequiredHasAuditColumns(src.getRequiredHasAuditColumns());
@@ -6117,6 +6107,8 @@ public class CFBamBuffTable
 		setOptionalLookupAltIndex(src.getOptionalLookupAltIndex());
 		setOptionalLookupQualTable(src.getOptionalLookupQualTable());
 		setOptionalLookupPrimaryIndex(src.getOptionalLookupPrimaryIndex());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalShortName(src.getOptionalShortName());
@@ -6124,7 +6116,11 @@ public class CFBamBuffTable
 		setOptionalShortDescription(src.getOptionalShortDescription());
 		setOptionalDescription(src.getOptionalDescription());
 		setRequiredPageData(src.getRequiredPageData());
+		setOptionalPrimaryIndexId(src.getOptionalPrimaryIndexId());
 		setRequiredTableClassCode(src.getRequiredTableClassCode());
+		setOptionalLookupIndexId(src.getOptionalLookupIndexId());
+		setOptionalAltIndexId(src.getOptionalAltIndexId());
+		setOptionalQualifyingTableId(src.getOptionalQualifyingTableId());
 		setRequiredIsInstantiable(src.getRequiredIsInstantiable());
 		setRequiredHasHistory(src.getRequiredHasHistory());
 		setRequiredHasAuditColumns(src.getRequiredHasAuditColumns());
@@ -6158,6 +6154,8 @@ public class CFBamBuffTable
 		setOptionalLookupAltIndex(src.getOptionalAltIndexId());
 		setOptionalLookupQualTable(src.getOptionalQualifyingTableId());
 		setOptionalLookupPrimaryIndex(src.getOptionalPrimaryIndexId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalShortName(src.getOptionalShortName());
@@ -6165,7 +6163,11 @@ public class CFBamBuffTable
 		setOptionalShortDescription(src.getOptionalShortDescription());
 		setOptionalDescription(src.getOptionalDescription());
 		setRequiredPageData(src.getRequiredPageData());
+		setOptionalPrimaryIndexId(src.getOptionalPrimaryIndexId());
 		setRequiredTableClassCode(src.getRequiredTableClassCode());
+		setOptionalLookupIndexId(src.getOptionalLookupIndexId());
+		setOptionalAltIndexId(src.getOptionalAltIndexId());
+		setOptionalQualifyingTableId(src.getOptionalQualifyingTableId());
 		setRequiredIsInstantiable(src.getRequiredIsInstantiable());
 		setRequiredHasHistory(src.getRequiredHasHistory());
 		setRequiredHasAuditColumns(src.getRequiredHasAuditColumns());
@@ -6199,6 +6201,8 @@ public class CFBamBuffTable
 		setOptionalLookupAltIndex(src.getOptionalLookupAltIndex());
 		setOptionalLookupQualTable(src.getOptionalLookupQualTable());
 		setOptionalLookupPrimaryIndex(src.getOptionalLookupPrimaryIndex());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalShortName(src.getOptionalShortName());
@@ -6206,7 +6210,11 @@ public class CFBamBuffTable
 		setOptionalShortDescription(src.getOptionalShortDescription());
 		setOptionalDescription(src.getOptionalDescription());
 		setRequiredPageData(src.getRequiredPageData());
+		setOptionalPrimaryIndexId(src.getOptionalPrimaryIndexId());
 		setRequiredTableClassCode(src.getRequiredTableClassCode());
+		setOptionalLookupIndexId(src.getOptionalLookupIndexId());
+		setOptionalAltIndexId(src.getOptionalAltIndexId());
+		setOptionalQualifyingTableId(src.getOptionalQualifyingTableId());
 		setRequiredIsInstantiable(src.getRequiredIsInstantiable());
 		setRequiredHasHistory(src.getRequiredHasHistory());
 		setRequiredHasAuditColumns(src.getRequiredHasAuditColumns());
@@ -6240,6 +6248,8 @@ public class CFBamBuffTable
 		setOptionalLookupAltIndex(src.getOptionalAltIndexId());
 		setOptionalLookupQualTable(src.getOptionalQualifyingTableId());
 		setOptionalLookupPrimaryIndex(src.getOptionalPrimaryIndexId());
+		setRequiredSchemaDefId(src.getRequiredSchemaDefId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalShortName(src.getOptionalShortName());
@@ -6247,7 +6257,11 @@ public class CFBamBuffTable
 		setOptionalShortDescription(src.getOptionalShortDescription());
 		setOptionalDescription(src.getOptionalDescription());
 		setRequiredPageData(src.getRequiredPageData());
+		setOptionalPrimaryIndexId(src.getOptionalPrimaryIndexId());
 		setRequiredTableClassCode(src.getRequiredTableClassCode());
+		setOptionalLookupIndexId(src.getOptionalLookupIndexId());
+		setOptionalAltIndexId(src.getOptionalAltIndexId());
+		setOptionalQualifyingTableId(src.getOptionalQualifyingTableId());
 		setRequiredIsInstantiable(src.getRequiredIsInstantiable());
 		setRequiredHasHistory(src.getRequiredHasHistory());
 		setRequiredHasAuditColumns(src.getRequiredHasAuditColumns());

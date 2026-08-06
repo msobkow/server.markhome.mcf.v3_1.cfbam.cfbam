@@ -137,11 +137,10 @@ public class CFBamBuffServerListFunc
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalRetTableId() {
-		return( optionalRetTableId );
+		return(optionalRetTableId);
 	}
 
 	public void setOptionalRetTableId( CFLibDbKeyHash256 value ) {
-		
 		optionalRetTableId = value;
 	}
 
@@ -763,6 +762,7 @@ public class CFBamBuffServerListFunc
 	public void setServerListFunc( ICFBamServerListFunc src ) {
 		super.setServerMethod( src );
 		setOptionalLookupRetTable(src.getOptionalLookupRetTable());
+		setOptionalRetTableId(src.getOptionalRetTableId());
 	}
 
 	@Override
@@ -783,6 +783,7 @@ public class CFBamBuffServerListFunc
 	public void setServerListFunc( ICFBamServerListFuncH src ) {
 		super.setServerMethod( src );
 		setOptionalLookupRetTable(src.getOptionalRetTableId());
+		setOptionalRetTableId(src.getOptionalRetTableId());
 	}
 
 	@Override
@@ -803,6 +804,7 @@ public class CFBamBuffServerListFunc
 	public void setServerListFunc( ICFBamProtServerListFunc src ) {
 		super.setServerMethod( src );
 		setOptionalLookupRetTable(src.getOptionalLookupRetTable());
+		setOptionalRetTableId(src.getOptionalRetTableId());
 	}
 
 	@Override
@@ -823,6 +825,7 @@ public class CFBamBuffServerListFunc
 	public void setServerListFunc( ICFBamProtServerListFuncH src ) {
 		super.setServerMethod( src );
 		setOptionalLookupRetTable(src.getOptionalRetTableId());
+		setOptionalRetTableId(src.getOptionalRetTableId());
 	}
 
 	@Override
@@ -843,6 +846,7 @@ public class CFBamBuffServerListFunc
 	public void setServerListFunc( ICFBamPubServerListFunc src ) {
 		super.setServerMethod( src );
 		setOptionalLookupRetTable(src.getOptionalLookupRetTable());
+		setOptionalRetTableId(src.getOptionalRetTableId());
 	}
 
 	@Override
@@ -863,6 +867,7 @@ public class CFBamBuffServerListFunc
 	public void setServerListFunc( ICFBamPubServerListFuncH src ) {
 		super.setServerMethod( src );
 		setOptionalLookupRetTable(src.getOptionalRetTableId());
+		setOptionalRetTableId(src.getOptionalRetTableId());
 	}
 
 	@Override

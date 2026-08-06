@@ -163,7 +163,7 @@ public class CFBamBuffDelSubDep2
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredDelSubDep1Id() {
-		return( requiredDelSubDep1Id );
+		return(requiredDelSubDep1Id);
 	}
 
 	public void setRequiredDelSubDep1Id( CFLibDbKeyHash256 value ) {
@@ -173,13 +173,12 @@ public class CFBamBuffDelSubDep2
 				1,
 				"value" );
 		}
-		
 		requiredDelSubDep1Id = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -197,7 +196,6 @@ public class CFBamBuffDelSubDep2
 				value.length(),
 				192 );
 		}
-		
 		requiredName = value;
 	}
 
@@ -1165,6 +1163,7 @@ public class CFBamBuffDelSubDep2
 	public void setDelSubDep2( ICFBamDelSubDep2 src ) {
 		super.setDelDep( src );
 		setRequiredContainerDelSubDep1(src.getRequiredContainerDelSubDep1());
+		setRequiredDelSubDep1Id(src.getRequiredDelSubDep1Id());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1186,6 +1185,7 @@ public class CFBamBuffDelSubDep2
 	public void setDelSubDep2( ICFBamDelSubDep2H src ) {
 		super.setDelDep( src );
 		setRequiredContainerDelSubDep1(src.getRequiredDelSubDep1Id());
+		setRequiredDelSubDep1Id(src.getRequiredDelSubDep1Id());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1207,6 +1207,7 @@ public class CFBamBuffDelSubDep2
 	public void setDelSubDep2( ICFBamProtDelSubDep2 src ) {
 		super.setDelDep( src );
 		setRequiredContainerDelSubDep1(src.getRequiredContainerDelSubDep1());
+		setRequiredDelSubDep1Id(src.getRequiredDelSubDep1Id());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1228,6 +1229,7 @@ public class CFBamBuffDelSubDep2
 	public void setDelSubDep2( ICFBamProtDelSubDep2H src ) {
 		super.setDelDep( src );
 		setRequiredContainerDelSubDep1(src.getRequiredDelSubDep1Id());
+		setRequiredDelSubDep1Id(src.getRequiredDelSubDep1Id());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1249,6 +1251,7 @@ public class CFBamBuffDelSubDep2
 	public void setDelSubDep2( ICFBamPubDelSubDep2 src ) {
 		super.setDelDep( src );
 		setRequiredContainerDelSubDep1(src.getRequiredContainerDelSubDep1());
+		setRequiredDelSubDep1Id(src.getRequiredDelSubDep1Id());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1270,6 +1273,7 @@ public class CFBamBuffDelSubDep2
 	public void setDelSubDep2( ICFBamPubDelSubDep2H src ) {
 		super.setDelDep( src );
 		setRequiredContainerDelSubDep1(src.getRequiredDelSubDep1Id());
+		setRequiredDelSubDep1Id(src.getRequiredDelSubDep1Id());
 		setRequiredName(src.getRequiredName());
 	}
 

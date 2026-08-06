@@ -161,7 +161,9 @@ public interface ICFBamRelation
 	public List<ICFBamPopTopDep> getOptionalComponentsPopDep();
 
 	public CFLibDbKeyHash256 getRequiredTableId();
+	public void setRequiredTableId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();
@@ -179,8 +181,11 @@ public interface ICFBamRelation
 	public String getOptionalSuffix();
 	public void setOptionalSuffix( String value );
 	public CFLibDbKeyHash256 getRequiredFromIndexId();
+	public void setRequiredFromIndexId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredToTableId();
+	public void setRequiredToTableId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredToIndexId();
+	public void setRequiredToIndexId( CFLibDbKeyHash256 value );
 	public boolean getRequiredIsRequired();
 	public void setRequiredIsRequired( boolean value );
 	public boolean getRequiredIsXsdContainer();
@@ -190,6 +195,7 @@ public interface ICFBamRelation
 	public boolean getRequiredAllowAddendum();
 	public void setRequiredAllowAddendum( boolean value );
 	public CFLibDbKeyHash256 getOptionalNarrowedId();
+	public void setOptionalNarrowedId( CFLibDbKeyHash256 value );
 	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value );
 	public boolean equals( Object obj );

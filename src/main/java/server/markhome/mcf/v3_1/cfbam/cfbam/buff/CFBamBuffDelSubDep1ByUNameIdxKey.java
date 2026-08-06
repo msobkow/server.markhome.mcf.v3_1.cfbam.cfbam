@@ -82,7 +82,7 @@ public class CFBamBuffDelSubDep1ByUNameIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredDelTopDepId() {
-		return( requiredDelTopDepId );
+		return(requiredDelTopDepId);
 	}
 
 	public void setRequiredDelTopDepId( CFLibDbKeyHash256 value ) {
@@ -92,13 +92,12 @@ public class CFBamBuffDelSubDep1ByUNameIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredDelTopDepId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -116,7 +115,6 @@ public class CFBamBuffDelSubDep1ByUNameIdxKey
 				value.length(),
 				192 );
 		}
-		
 		requiredName = value;
 	}
 

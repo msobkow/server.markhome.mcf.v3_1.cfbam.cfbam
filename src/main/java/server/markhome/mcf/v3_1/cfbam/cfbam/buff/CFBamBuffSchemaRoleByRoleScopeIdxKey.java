@@ -80,7 +80,7 @@ public class CFBamBuffSchemaRoleByRoleScopeIdxKey
 
 	@Override
 	public ICFBamPubSchema.RoleScopeEnum getRequiredRoleScope() {
-		return( requiredRoleScope );
+		return(requiredRoleScope);
 	}
 
 	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffSchemaRoleByRoleScopeIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredRoleScope = value;
 	}
 

@@ -82,7 +82,7 @@ public class CFBamBuffEnumTagByEnumNameIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredEnumId() {
-		return( requiredEnumId );
+		return(requiredEnumId);
 	}
 
 	public void setRequiredEnumId( CFLibDbKeyHash256 value ) {
@@ -92,13 +92,12 @@ public class CFBamBuffEnumTagByEnumNameIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredEnumId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -116,7 +115,6 @@ public class CFBamBuffEnumTagByEnumNameIdxKey
 				value.length(),
 				64 );
 		}
-		
 		requiredName = value;
 	}
 

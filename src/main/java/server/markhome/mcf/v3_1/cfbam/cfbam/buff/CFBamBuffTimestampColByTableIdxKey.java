@@ -80,7 +80,7 @@ public class CFBamBuffTimestampColByTableIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTableId() {
-		return( requiredTableId );
+		return(requiredTableId);
 	}
 
 	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffTimestampColByTableIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredTableId = value;
 	}
 

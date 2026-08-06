@@ -82,7 +82,7 @@ public class CFBamBuffIndexColByIdxPrevIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredIndexId() {
-		return( requiredIndexId );
+		return(requiredIndexId);
 	}
 
 	public void setRequiredIndexId( CFLibDbKeyHash256 value ) {
@@ -92,17 +92,15 @@ public class CFBamBuffIndexColByIdxPrevIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredIndexId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalPrevId() {
-		return( optionalPrevId );
+		return(optionalPrevId);
 	}
 
 	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
-		
 		optionalPrevId = value;
 	}
 

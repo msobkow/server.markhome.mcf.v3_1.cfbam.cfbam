@@ -80,7 +80,7 @@ public class CFBamBuffClearSubDep1ByClearTopDepIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredClearTopDepId() {
-		return( requiredClearTopDepId );
+		return(requiredClearTopDepId);
 	}
 
 	public void setRequiredClearTopDepId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffClearSubDep1ByClearTopDepIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredClearTopDepId = value;
 	}
 

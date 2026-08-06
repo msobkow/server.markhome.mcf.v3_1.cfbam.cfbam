@@ -87,11 +87,10 @@ public class CFBamBuffUuidDefH extends CFBamBuffAtomH
 
 	@Override
 	public UUID getOptionalInitValue() {
-		return( optionalInitValue );
+		return(optionalInitValue);
 	}
 
 	public void setOptionalInitValue( UUID value ) {
-		
 		optionalInitValue = value;
 	}
 

@@ -80,7 +80,7 @@ public class CFBamBuffRoleDefByScopeIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredScopeId() {
-		return( requiredScopeId );
+		return(requiredScopeId);
 	}
 
 	public void setRequiredScopeId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffRoleDefByScopeIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredScopeId = value;
 	}
 

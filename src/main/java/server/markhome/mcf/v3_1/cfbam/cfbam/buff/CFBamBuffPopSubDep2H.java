@@ -89,7 +89,7 @@ public class CFBamBuffPopSubDep2H extends CFBamBuffPopDepH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredPopSubDep1Id() {
-		return( requiredPopSubDep1Id );
+		return(requiredPopSubDep1Id);
 	}
 
 	public void setRequiredPopSubDep1Id( CFLibDbKeyHash256 value ) {
@@ -99,13 +99,12 @@ public class CFBamBuffPopSubDep2H extends CFBamBuffPopDepH
 				1,
 				"value" );
 		}
-		
 		requiredPopSubDep1Id = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -123,7 +122,6 @@ public class CFBamBuffPopSubDep2H extends CFBamBuffPopDepH
 				value.length(),
 				192 );
 		}
-		
 		requiredName = value;
 	}
 

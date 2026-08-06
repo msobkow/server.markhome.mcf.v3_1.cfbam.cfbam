@@ -80,11 +80,10 @@ public class CFBamBuffTableColByDataIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalDataId() {
-		return( optionalDataId );
+		return(optionalDataId);
 	}
 
 	public void setOptionalDataId( CFLibDbKeyHash256 value ) {
-		
 		optionalDataId = value;
 	}
 

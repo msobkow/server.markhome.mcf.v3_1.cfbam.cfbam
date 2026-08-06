@@ -82,7 +82,7 @@ public class CFBamBuffRelationByRelTableCodeVisXKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTableId() {
-		return( requiredTableId );
+		return(requiredTableId);
 	}
 
 	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
@@ -92,13 +92,12 @@ public class CFBamBuffRelationByRelTableCodeVisXKey
 				1,
 				"value" );
 		}
-		
 		requiredTableId = value;
 	}
 
 	@Override
 	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
-		return( requiredCodeVis );
+		return(requiredCodeVis);
 	}
 
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
@@ -108,7 +107,6 @@ public class CFBamBuffRelationByRelTableCodeVisXKey
 				1,
 				"value" );
 		}
-		
 		requiredCodeVis = value;
 	}
 

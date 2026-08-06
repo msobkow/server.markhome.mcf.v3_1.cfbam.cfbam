@@ -82,7 +82,7 @@ public class CFBamBuffSchemaDefByAuthEMailIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredCTenantId() {
-		return( requiredCTenantId );
+		return(requiredCTenantId);
 	}
 
 	public void setRequiredCTenantId( CFLibDbKeyHash256 value ) {
@@ -92,13 +92,12 @@ public class CFBamBuffSchemaDefByAuthEMailIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredCTenantId = value;
 	}
 
 	@Override
 	public String getRequiredAuthorEMail() {
-		return( requiredAuthorEMail );
+		return(requiredAuthorEMail);
 	}
 
 	public void setRequiredAuthorEMail( String value ) {
@@ -116,7 +115,6 @@ public class CFBamBuffSchemaDefByAuthEMailIdxKey
 				value.length(),
 				512 );
 		}
-		
 		requiredAuthorEMail = value;
 	}
 

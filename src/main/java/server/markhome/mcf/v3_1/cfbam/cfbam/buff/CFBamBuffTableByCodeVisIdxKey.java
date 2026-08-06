@@ -80,7 +80,7 @@ public class CFBamBuffTableByCodeVisIdxKey
 
 	@Override
 	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
-		return( requiredCodeVis );
+		return(requiredCodeVis);
 	}
 
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffTableByCodeVisIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredCodeVis = value;
 	}
 

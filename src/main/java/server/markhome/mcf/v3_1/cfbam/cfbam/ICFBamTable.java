@@ -181,7 +181,9 @@ public interface ICFBamTable
 	public List<ICFBamTweak> getOptionalComponentsTweaks();
 
 	public CFLibDbKeyHash256 getRequiredSchemaDefId();
+	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalDbName();
@@ -197,11 +199,15 @@ public interface ICFBamTable
 	public boolean getRequiredPageData();
 	public void setRequiredPageData( boolean value );
 	public CFLibDbKeyHash256 getOptionalPrimaryIndexId();
+	public void setOptionalPrimaryIndexId( CFLibDbKeyHash256 value );
 	public String getRequiredTableClassCode();
 	public void setRequiredTableClassCode( String value );
 	public CFLibDbKeyHash256 getOptionalLookupIndexId();
+	public void setOptionalLookupIndexId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalAltIndexId();
+	public void setOptionalAltIndexId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getOptionalQualifyingTableId();
+	public void setOptionalQualifyingTableId( CFLibDbKeyHash256 value );
 	public boolean getRequiredIsInstantiable();
 	public void setRequiredIsInstantiable( boolean value );
 	public boolean getRequiredHasHistory();

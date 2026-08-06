@@ -80,7 +80,7 @@ public class CFBamBuffChainByNextRelIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredNextRelationId() {
-		return( requiredNextRelationId );
+		return(requiredNextRelationId);
 	}
 
 	public void setRequiredNextRelationId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffChainByNextRelIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredNextRelationId = value;
 	}
 

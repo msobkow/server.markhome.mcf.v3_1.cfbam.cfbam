@@ -466,7 +466,7 @@ public class CFBamBuffRelation
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTableId() {
-		return( requiredTableId );
+		return(requiredTableId);
 	}
 
 	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
@@ -476,23 +476,21 @@ public class CFBamBuffRelation
 				1,
 				"value" );
 		}
-		
 		requiredTableId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
-		return( optionalDefSchemaId );
+		return(optionalDefSchemaId);
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
-		
 		optionalDefSchemaId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -510,13 +508,12 @@ public class CFBamBuffRelation
 				value.length(),
 				192 );
 		}
-		
 		requiredName = value;
 	}
 
 	@Override
 	public String getOptionalShortName() {
-		return( optionalShortName );
+		return(optionalShortName);
 	}
 
 	public void setOptionalShortName( String value ) {
@@ -528,13 +525,12 @@ public class CFBamBuffRelation
 				value.length(),
 				16 );
 		}
-		
 		optionalShortName = value;
 	}
 
 	@Override
 	public String getOptionalLabel() {
-		return( optionalLabel );
+		return(optionalLabel);
 	}
 
 	public void setOptionalLabel( String value ) {
@@ -546,13 +542,12 @@ public class CFBamBuffRelation
 				value.length(),
 				64 );
 		}
-		
 		optionalLabel = value;
 	}
 
 	@Override
 	public String getOptionalShortDescription() {
-		return( optionalShortDescription );
+		return(optionalShortDescription);
 	}
 
 	public void setOptionalShortDescription( String value ) {
@@ -564,13 +559,12 @@ public class CFBamBuffRelation
 				value.length(),
 				128 );
 		}
-		
 		optionalShortDescription = value;
 	}
 
 	@Override
 	public String getOptionalDescription() {
-		return( optionalDescription );
+		return(optionalDescription);
 	}
 
 	public void setOptionalDescription( String value ) {
@@ -582,13 +576,12 @@ public class CFBamBuffRelation
 				value.length(),
 				1023 );
 		}
-		
 		optionalDescription = value;
 	}
 
 	@Override
 	public ICFBamPubSchema.RelationTypeEnum getRequiredRelationType() {
-		return( requiredRelationType );
+		return(requiredRelationType);
 	}
 
 	public void setRequiredRelationType( ICFBamPubSchema.RelationTypeEnum value ) {
@@ -598,13 +591,12 @@ public class CFBamBuffRelation
 				1,
 				"value" );
 		}
-		
 		requiredRelationType = value;
 	}
 
 	@Override
 	public String getOptionalDbName() {
-		return( optionalDbName );
+		return(optionalDbName);
 	}
 
 	public void setOptionalDbName( String value ) {
@@ -616,13 +608,12 @@ public class CFBamBuffRelation
 				value.length(),
 				32 );
 		}
-		
 		optionalDbName = value;
 	}
 
 	@Override
 	public String getOptionalSuffix() {
-		return( optionalSuffix );
+		return(optionalSuffix);
 	}
 
 	public void setOptionalSuffix( String value ) {
@@ -634,13 +625,12 @@ public class CFBamBuffRelation
 				value.length(),
 				16 );
 		}
-		
 		optionalSuffix = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredFromIndexId() {
-		return( requiredFromIndexId );
+		return(requiredFromIndexId);
 	}
 
 	public void setRequiredFromIndexId( CFLibDbKeyHash256 value ) {
@@ -650,13 +640,12 @@ public class CFBamBuffRelation
 				1,
 				"value" );
 		}
-		
 		requiredFromIndexId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredToTableId() {
-		return( requiredToTableId );
+		return(requiredToTableId);
 	}
 
 	public void setRequiredToTableId( CFLibDbKeyHash256 value ) {
@@ -666,13 +655,12 @@ public class CFBamBuffRelation
 				1,
 				"value" );
 		}
-		
 		requiredToTableId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredToIndexId() {
-		return( requiredToIndexId );
+		return(requiredToIndexId);
 	}
 
 	public void setRequiredToIndexId( CFLibDbKeyHash256 value ) {
@@ -682,63 +670,57 @@ public class CFBamBuffRelation
 				1,
 				"value" );
 		}
-		
 		requiredToIndexId = value;
 	}
 
 	@Override
 	public boolean getRequiredIsRequired() {
-		return( requiredIsRequired );
+		return(requiredIsRequired);
 	}
 
 	public void setRequiredIsRequired( boolean value ) {
-		
 		requiredIsRequired = value;
 	}
 
 	@Override
 	public boolean getRequiredIsXsdContainer() {
-		return( requiredIsXsdContainer );
+		return(requiredIsXsdContainer);
 	}
 
 	public void setRequiredIsXsdContainer( boolean value ) {
-		
 		requiredIsXsdContainer = value;
 	}
 
 	@Override
 	public boolean getRequiredIsLateResolver() {
-		return( requiredIsLateResolver );
+		return(requiredIsLateResolver);
 	}
 
 	public void setRequiredIsLateResolver( boolean value ) {
-		
 		requiredIsLateResolver = value;
 	}
 
 	@Override
 	public boolean getRequiredAllowAddendum() {
-		return( requiredAllowAddendum );
+		return(requiredAllowAddendum);
 	}
 
 	public void setRequiredAllowAddendum( boolean value ) {
-		
 		requiredAllowAddendum = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalNarrowedId() {
-		return( optionalNarrowedId );
+		return(optionalNarrowedId);
 	}
 
 	public void setOptionalNarrowedId( CFLibDbKeyHash256 value ) {
-		
 		optionalNarrowedId = value;
 	}
 
 	@Override
 	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
-		return( requiredCodeVis );
+		return(requiredCodeVis);
 	}
 
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
@@ -748,7 +730,6 @@ public class CFBamBuffRelation
 				1,
 				"value" );
 		}
-		
 		requiredCodeVis = value;
 	}
 
@@ -5257,6 +5238,8 @@ public class CFBamBuffRelation
 		setRequiredLookupToTable(src.getRequiredLookupToTable());
 		setRequiredLookupToIndex(src.getRequiredLookupToIndex());
 		setOptionalLookupNarrowed(src.getOptionalLookupNarrowed());
+		setRequiredTableId(src.getRequiredTableId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
@@ -5265,10 +5248,14 @@ public class CFBamBuffRelation
 		setRequiredRelationType(src.getRequiredRelationType());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalSuffix(src.getOptionalSuffix());
+		setRequiredFromIndexId(src.getRequiredFromIndexId());
+		setRequiredToTableId(src.getRequiredToTableId());
+		setRequiredToIndexId(src.getRequiredToIndexId());
 		setRequiredIsRequired(src.getRequiredIsRequired());
 		setRequiredIsXsdContainer(src.getRequiredIsXsdContainer());
 		setRequiredIsLateResolver(src.getRequiredIsLateResolver());
 		setRequiredAllowAddendum(src.getRequiredAllowAddendum());
+		setOptionalNarrowedId(src.getOptionalNarrowedId());
 		setRequiredCodeVis(src.getRequiredCodeVis());
 	}
 
@@ -5295,6 +5282,8 @@ public class CFBamBuffRelation
 		setRequiredLookupToTable(src.getRequiredToTableId());
 		setRequiredLookupToIndex(src.getRequiredToIndexId());
 		setOptionalLookupNarrowed(src.getOptionalNarrowedId());
+		setRequiredTableId(src.getRequiredTableId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
@@ -5303,10 +5292,14 @@ public class CFBamBuffRelation
 		setRequiredRelationType(src.getRequiredRelationType());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalSuffix(src.getOptionalSuffix());
+		setRequiredFromIndexId(src.getRequiredFromIndexId());
+		setRequiredToTableId(src.getRequiredToTableId());
+		setRequiredToIndexId(src.getRequiredToIndexId());
 		setRequiredIsRequired(src.getRequiredIsRequired());
 		setRequiredIsXsdContainer(src.getRequiredIsXsdContainer());
 		setRequiredIsLateResolver(src.getRequiredIsLateResolver());
 		setRequiredAllowAddendum(src.getRequiredAllowAddendum());
+		setOptionalNarrowedId(src.getOptionalNarrowedId());
 		setRequiredCodeVis(src.getRequiredCodeVis());
 	}
 
@@ -5333,6 +5326,8 @@ public class CFBamBuffRelation
 		setRequiredLookupToTable(src.getRequiredLookupToTable());
 		setRequiredLookupToIndex(src.getRequiredLookupToIndex());
 		setOptionalLookupNarrowed(src.getOptionalLookupNarrowed());
+		setRequiredTableId(src.getRequiredTableId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
@@ -5341,10 +5336,14 @@ public class CFBamBuffRelation
 		setRequiredRelationType(src.getRequiredRelationType());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalSuffix(src.getOptionalSuffix());
+		setRequiredFromIndexId(src.getRequiredFromIndexId());
+		setRequiredToTableId(src.getRequiredToTableId());
+		setRequiredToIndexId(src.getRequiredToIndexId());
 		setRequiredIsRequired(src.getRequiredIsRequired());
 		setRequiredIsXsdContainer(src.getRequiredIsXsdContainer());
 		setRequiredIsLateResolver(src.getRequiredIsLateResolver());
 		setRequiredAllowAddendum(src.getRequiredAllowAddendum());
+		setOptionalNarrowedId(src.getOptionalNarrowedId());
 		setRequiredCodeVis(src.getRequiredCodeVis());
 	}
 
@@ -5371,6 +5370,8 @@ public class CFBamBuffRelation
 		setRequiredLookupToTable(src.getRequiredToTableId());
 		setRequiredLookupToIndex(src.getRequiredToIndexId());
 		setOptionalLookupNarrowed(src.getOptionalNarrowedId());
+		setRequiredTableId(src.getRequiredTableId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
@@ -5379,10 +5380,14 @@ public class CFBamBuffRelation
 		setRequiredRelationType(src.getRequiredRelationType());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalSuffix(src.getOptionalSuffix());
+		setRequiredFromIndexId(src.getRequiredFromIndexId());
+		setRequiredToTableId(src.getRequiredToTableId());
+		setRequiredToIndexId(src.getRequiredToIndexId());
 		setRequiredIsRequired(src.getRequiredIsRequired());
 		setRequiredIsXsdContainer(src.getRequiredIsXsdContainer());
 		setRequiredIsLateResolver(src.getRequiredIsLateResolver());
 		setRequiredAllowAddendum(src.getRequiredAllowAddendum());
+		setOptionalNarrowedId(src.getOptionalNarrowedId());
 		setRequiredCodeVis(src.getRequiredCodeVis());
 	}
 
@@ -5409,6 +5414,8 @@ public class CFBamBuffRelation
 		setRequiredLookupToTable(src.getRequiredLookupToTable());
 		setRequiredLookupToIndex(src.getRequiredLookupToIndex());
 		setOptionalLookupNarrowed(src.getOptionalLookupNarrowed());
+		setRequiredTableId(src.getRequiredTableId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
@@ -5417,10 +5424,14 @@ public class CFBamBuffRelation
 		setRequiredRelationType(src.getRequiredRelationType());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalSuffix(src.getOptionalSuffix());
+		setRequiredFromIndexId(src.getRequiredFromIndexId());
+		setRequiredToTableId(src.getRequiredToTableId());
+		setRequiredToIndexId(src.getRequiredToIndexId());
 		setRequiredIsRequired(src.getRequiredIsRequired());
 		setRequiredIsXsdContainer(src.getRequiredIsXsdContainer());
 		setRequiredIsLateResolver(src.getRequiredIsLateResolver());
 		setRequiredAllowAddendum(src.getRequiredAllowAddendum());
+		setOptionalNarrowedId(src.getOptionalNarrowedId());
 		setRequiredCodeVis(src.getRequiredCodeVis());
 	}
 
@@ -5447,6 +5458,8 @@ public class CFBamBuffRelation
 		setRequiredLookupToTable(src.getRequiredToTableId());
 		setRequiredLookupToIndex(src.getRequiredToIndexId());
 		setOptionalLookupNarrowed(src.getOptionalNarrowedId());
+		setRequiredTableId(src.getRequiredTableId());
+		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
 		setOptionalShortName(src.getOptionalShortName());
 		setOptionalLabel(src.getOptionalLabel());
@@ -5455,10 +5468,14 @@ public class CFBamBuffRelation
 		setRequiredRelationType(src.getRequiredRelationType());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalSuffix(src.getOptionalSuffix());
+		setRequiredFromIndexId(src.getRequiredFromIndexId());
+		setRequiredToTableId(src.getRequiredToTableId());
+		setRequiredToIndexId(src.getRequiredToIndexId());
 		setRequiredIsRequired(src.getRequiredIsRequired());
 		setRequiredIsXsdContainer(src.getRequiredIsXsdContainer());
 		setRequiredIsLateResolver(src.getRequiredIsLateResolver());
 		setRequiredAllowAddendum(src.getRequiredAllowAddendum());
+		setOptionalNarrowedId(src.getOptionalNarrowedId());
 		setRequiredCodeVis(src.getRequiredCodeVis());
 	}
 

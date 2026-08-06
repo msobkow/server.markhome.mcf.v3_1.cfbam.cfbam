@@ -92,20 +92,11 @@ public class CFBamBuffUInt32Def
 
 	@Override
 	public Long getOptionalInitValue() {
-		return( optionalInitValue );
+		return(optionalInitValue);
 	}
 
 	@Override
 	public void setOptionalInitValue( Long value ) {
-		if( value < ICFBamPubUInt32Def.INITVALUE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setOptionalInitValue",
-				1,
-				"value",
-				value,
-				ICFBamPubUInt32Def.INITVALUE_MIN_VALUE );
-		}
-		
 		if( value < ICFBamPubUInt32Def.INITVALUE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setOptionalInitValue",
@@ -119,20 +110,11 @@ public class CFBamBuffUInt32Def
 
 	@Override
 	public Long getOptionalMinValue() {
-		return( optionalMinValue );
+		return(optionalMinValue);
 	}
 
 	@Override
 	public void setOptionalMinValue( Long value ) {
-		if( value < ICFBamPubUInt32Def.MINVALUE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setOptionalMinValue",
-				1,
-				"value",
-				value,
-				ICFBamPubUInt32Def.MINVALUE_MIN_VALUE );
-		}
-		
 		if( value < ICFBamPubUInt32Def.MINVALUE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setOptionalMinValue",
@@ -146,20 +128,11 @@ public class CFBamBuffUInt32Def
 
 	@Override
 	public Long getOptionalMaxValue() {
-		return( optionalMaxValue );
+		return(optionalMaxValue);
 	}
 
 	@Override
 	public void setOptionalMaxValue( Long value ) {
-		if( value < ICFBamPubUInt32Def.MAXVALUE_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setOptionalMaxValue",
-				1,
-				"value",
-				value,
-				ICFBamPubUInt32Def.MAXVALUE_MIN_VALUE );
-		}
-		
 		if( value < ICFBamPubUInt32Def.MAXVALUE_MIN_VALUE ) {
 			throw new CFLibArgumentUnderflowException( getClass(),
 				"setOptionalMaxValue",

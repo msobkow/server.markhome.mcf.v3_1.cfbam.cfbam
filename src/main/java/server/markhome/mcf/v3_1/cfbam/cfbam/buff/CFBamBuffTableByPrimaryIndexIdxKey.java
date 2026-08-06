@@ -80,11 +80,10 @@ public class CFBamBuffTableByPrimaryIndexIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalPrimaryIndexId() {
-		return( optionalPrimaryIndexId );
+		return(optionalPrimaryIndexId);
 	}
 
 	public void setOptionalPrimaryIndexId( CFLibDbKeyHash256 value ) {
-		
 		optionalPrimaryIndexId = value;
 	}
 

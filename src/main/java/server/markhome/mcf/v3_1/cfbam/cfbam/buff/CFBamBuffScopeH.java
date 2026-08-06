@@ -212,7 +212,7 @@ public class CFBamBuffScopeH
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredId() {
-		return( requiredId );
+		return(requiredId);
 	}
 
 	public void setRequiredId( CFLibDbKeyHash256 value ) {
@@ -222,13 +222,12 @@ public class CFBamBuffScopeH
 				1,
 				"value" );
 		}
-		
 		requiredId = value;
 	}
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredTenantId() {
-		return( requiredTenantId );
+		return(requiredTenantId);
 	}
 
 	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
@@ -238,7 +237,6 @@ public class CFBamBuffScopeH
 				1,
 				"value" );
 		}
-		
 		requiredTenantId = value;
 	}
 

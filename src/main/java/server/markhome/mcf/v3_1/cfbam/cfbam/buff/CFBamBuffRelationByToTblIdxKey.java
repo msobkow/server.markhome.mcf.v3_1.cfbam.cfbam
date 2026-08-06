@@ -80,7 +80,7 @@ public class CFBamBuffRelationByToTblIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredToTableId() {
-		return( requiredToTableId );
+		return(requiredToTableId);
 	}
 
 	public void setRequiredToTableId( CFLibDbKeyHash256 value ) {
@@ -90,7 +90,6 @@ public class CFBamBuffRelationByToTblIdxKey
 				1,
 				"value" );
 		}
-		
 		requiredToTableId = value;
 	}
 

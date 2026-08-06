@@ -163,7 +163,7 @@ public class CFBamBuffPopSubDep1
 
 	@Override
 	public CFLibDbKeyHash256 getRequiredPopTopDepId() {
-		return( requiredPopTopDepId );
+		return(requiredPopTopDepId);
 	}
 
 	public void setRequiredPopTopDepId( CFLibDbKeyHash256 value ) {
@@ -173,13 +173,12 @@ public class CFBamBuffPopSubDep1
 				1,
 				"value" );
 		}
-		
 		requiredPopTopDepId = value;
 	}
 
 	@Override
 	public String getRequiredName() {
-		return( requiredName );
+		return(requiredName);
 	}
 
 	public void setRequiredName( String value ) {
@@ -197,7 +196,6 @@ public class CFBamBuffPopSubDep1
 				value.length(),
 				192 );
 		}
-		
 		requiredName = value;
 	}
 
@@ -1165,6 +1163,7 @@ public class CFBamBuffPopSubDep1
 	public void setPopSubDep1( ICFBamPopSubDep1 src ) {
 		super.setPopDep( src );
 		setRequiredContainerContPopTopDep(src.getRequiredContainerContPopTopDep());
+		setRequiredPopTopDepId(src.getRequiredPopTopDepId());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1186,6 +1185,7 @@ public class CFBamBuffPopSubDep1
 	public void setPopSubDep1( ICFBamPopSubDep1H src ) {
 		super.setPopDep( src );
 		setRequiredContainerContPopTopDep(src.getRequiredPopTopDepId());
+		setRequiredPopTopDepId(src.getRequiredPopTopDepId());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1207,6 +1207,7 @@ public class CFBamBuffPopSubDep1
 	public void setPopSubDep1( ICFBamProtPopSubDep1 src ) {
 		super.setPopDep( src );
 		setRequiredContainerContPopTopDep(src.getRequiredContainerContPopTopDep());
+		setRequiredPopTopDepId(src.getRequiredPopTopDepId());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1228,6 +1229,7 @@ public class CFBamBuffPopSubDep1
 	public void setPopSubDep1( ICFBamProtPopSubDep1H src ) {
 		super.setPopDep( src );
 		setRequiredContainerContPopTopDep(src.getRequiredPopTopDepId());
+		setRequiredPopTopDepId(src.getRequiredPopTopDepId());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1249,6 +1251,7 @@ public class CFBamBuffPopSubDep1
 	public void setPopSubDep1( ICFBamPubPopSubDep1 src ) {
 		super.setPopDep( src );
 		setRequiredContainerContPopTopDep(src.getRequiredContainerContPopTopDep());
+		setRequiredPopTopDepId(src.getRequiredPopTopDepId());
 		setRequiredName(src.getRequiredName());
 	}
 
@@ -1270,6 +1273,7 @@ public class CFBamBuffPopSubDep1
 	public void setPopSubDep1( ICFBamPubPopSubDep1H src ) {
 		super.setPopDep( src );
 		setRequiredContainerContPopTopDep(src.getRequiredPopTopDepId());
+		setRequiredPopTopDepId(src.getRequiredPopTopDepId());
 		setRequiredName(src.getRequiredName());
 	}
 

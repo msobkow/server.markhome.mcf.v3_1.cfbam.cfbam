@@ -80,11 +80,10 @@ public class CFBamBuffSchemaRefByRefSchemaIdxKey
 
 	@Override
 	public CFLibDbKeyHash256 getOptionalRefSchemaId() {
-		return( optionalRefSchemaId );
+		return(optionalRefSchemaId);
 	}
 
 	public void setOptionalRefSchemaId( CFLibDbKeyHash256 value ) {
-		
 		optionalRefSchemaId = value;
 	}
 
