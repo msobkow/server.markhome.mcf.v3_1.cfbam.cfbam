@@ -81,6 +81,48 @@ public interface ICFBamSecSessionEditObj
 	 */
 	CFSecSecSessionEditObj update();
 
+	/**
+	 *	Get the ICFSecSecUserObj instance referenced by the SecUser key.
+	 *
+	 *	@return	The ICFSecSecUserObj instance referenced by the SecUser key.
+	 */
+	ICFSecSecUserObj getRequiredContainerSecUser();
+
+	/**
+	 *	Get the required ICFSecSecUserObj instance referenced by the SecUser key.
+	 *
+	 *	@return	The required ICFSecSecUserObj instance referenced by the SecUser key.
+	 */
+	ICFSecSecUserObj getRequiredContainerSecUser( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecSecUserObj instance referenced by the SecUser key.
+	 *
+	 *	@param	value	the ICFSecSecUserObj instance to be referenced by the SecUser key.
+	 */
+	void setRequiredContainerSecUser( ICFSecSecUserObj value );
+
+	/**
+	 *	Get the ICFSecSecUserObj instance referenced by the SecProxy key.
+	 *
+	 *	@return	The ICFSecSecUserObj instance referenced by the SecProxy key.
+	 */
+	ICFSecSecUserObj getRequiredParentSecProxy();
+
+	/**
+	 *	Get the required ICFSecSecUserObj instance referenced by the SecProxy key.
+	 *
+	 *	@return	The required ICFSecSecUserObj instance referenced by the SecProxy key.
+	 */
+	ICFSecSecUserObj getRequiredParentSecProxy( boolean forceRead );
+
+	/**
+	 *	Set the ICFSecSecUserObj instance referenced by the SecProxy key.
+	 *
+	 *	@param	value	the ICFSecSecUserObj instance to be referenced by the SecProxy key.
+	 */
+	void setRequiredParentSecProxy( ICFSecSecUserObj value );
+
 	public void copyRecToOrig();
 	public void copyOrigToRec();
 

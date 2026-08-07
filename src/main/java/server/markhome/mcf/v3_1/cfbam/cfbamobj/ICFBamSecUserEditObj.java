@@ -110,6 +110,20 @@ public interface ICFBamSecUserEditObj
 	void setUpdatedAt( LocalDateTime value );
 
 	/**
+	 *	Get a list ICFSecSecSessionObj instances referenced by the SecSess key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecSessionObj instances referenced by the SecSess key.
+	 */
+	List<ICFSecSecSessionObj> getOptionalComponentsSecSess();
+
+	/**
+	 *	Get a list ICFSecSecSessionObj instances referenced by the SecProxy key.
+	 *
+	 *	@return	The (potentially empty) list of ICFSecSecSessionObj instances referenced by the SecProxy key.
+	 */
+	List<ICFSecSecSessionObj> getOptionalChildrenSecProxy();
+
+	/**
 	 *	Get the ICFSecSecUserPasswordObj instance referenced by the Password key.
 	 *
 	 *	@return	The ICFSecSecUserPasswordObj instance referenced by the Password key.
@@ -150,6 +164,20 @@ public interface ICFBamSecUserEditObj
 	 *	@return	The optional ICFSecSecUserPWResetObj instance referenced by the PWReset key.
 	 */
 	ICFSecSecUserPWResetObj getOptionalComponentsPWReset( boolean forceRead );
+
+	/**
+	 *	Get the ICFSecSecUserPWHistoryObj instance referenced by the PWHistory key.
+	 *
+	 *	@return	The ICFSecSecUserPWHistoryObj instance referenced by the PWHistory key.
+	 */
+	ICFSecSecUserPWHistoryObj getOptionalChildrenPWHistory();
+
+	/**
+	 *	Get the optional ICFSecSecUserPWHistoryObj instance referenced by the PWHistory key.
+	 *
+	 *	@return	The optional ICFSecSecUserPWHistoryObj instance referenced by the PWHistory key.
+	 */
+	ICFSecSecUserPWHistoryObj getOptionalChildrenPWHistory( boolean forceRead );
 
 	/**
 	 *	Get a list ICFSecSecSysGrpMembObj instances referenced by the SysSecGrpMemb key.

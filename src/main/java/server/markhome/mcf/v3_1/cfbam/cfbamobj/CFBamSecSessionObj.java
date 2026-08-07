@@ -70,15 +70,21 @@ public class CFBamSecSessionObj
 	protected ICFSecSchemaObj schema;
 	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecSecSession rec;
+	protected ICFSecSecUserObj requiredContainerSecUser;
+	protected ICFSecSecUserObj requiredParentSecProxy;
 
 	public CFBamSecSessionObj() {
 		isNew = true;
+		requiredContainerSecUser = null;
+		requiredParentSecProxy = null;
 	}
 
 	public CFBamSecSessionObj( ICFSecSchemaObj argSchema ) {
 		schema = argSchema;
 		isNew = true;
 		edit = null;
+		requiredContainerSecUser = null;
+		requiredParentSecProxy = null;
 	}
 
 	@Override
@@ -93,7 +99,8 @@ public class CFBamSecSessionObj
 
 	@Override
 	public ICFLibAnyObj getObjScope() {
-		return( null );
+		ICFSecSecUserObj scope = getRequiredContainerSecUser();
+		return( scope );
 	}
 
 	@Override
@@ -287,6 +294,8 @@ public class CFBamSecSessionObj
 		}
 		rec = value;
 		copyRecToPKey();
+		requiredContainerSecUser = null;
+		requiredParentSecProxy = null;
 	}
 
 	@Override
@@ -351,6 +360,41 @@ public class CFBamSecSessionObj
 	@Override
 	public CFLibDbKeyHash256 getRequiredSecSessionId() {
 		return( getPKey() );
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredContainerSecUser() {
+		return( getRequiredContainerSecUser( false ) );
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredContainerSecUser( boolean forceRead ) {
+		if( ( requiredContainerSecUser == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( ! anyMissing ) {
+				requiredContainerSecUser = ((ICFBamSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( getSecSessionRec().getRequiredSecUserId(), forceRead );
+			}
+		}
+		return( requiredContainerSecUser );
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredParentSecProxy() {
+		return( getRequiredParentSecProxy( false ) );
+	}
+
+	@Override
+	public ICFSecSecUserObj getRequiredParentSecProxy( boolean forceRead ) {
+		if( ( requiredParentSecProxy == null ) || forceRead ) {
+			boolean anyMissing = false;
+			if( getSecSessionRec().getOptionalSecProxyId() == null ) {
+				anyMissing = true;
+			}
+			if( ! anyMissing ) {
+				requiredParentSecProxy = ((ICFBamSchemaObj)getSchema()).getSecUserTableObj().readSecUserByIdIdx( getSecSessionRec().getOptionalSecProxyId(), forceRead );
+			}
+		}
+		return( requiredParentSecProxy );
 	}
 
 	@Override
