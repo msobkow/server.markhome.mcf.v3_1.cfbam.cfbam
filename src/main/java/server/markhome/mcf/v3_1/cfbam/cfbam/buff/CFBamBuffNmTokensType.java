@@ -78,6 +78,7 @@ public class CFBamBuffNmTokensType
 
 	public CFBamBuffNmTokensType() {
 		super();
+		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubNmTokensType.SCHEMADEFID_INIT_VALUE.toString() );
 	}
 
@@ -133,21 +134,6 @@ public class CFBamBuffNmTokensType
 		else {
 			setRequiredSchemaDefId(argObj.getRequiredId());
 		}
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
-		return(requiredSchemaDefId);
-	}
-
-	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSchemaDefId",
-				1,
-				"value" );
-		}
-		requiredSchemaDefId = value;
 	}
 
 	@Override

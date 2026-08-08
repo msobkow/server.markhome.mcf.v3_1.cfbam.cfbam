@@ -79,6 +79,7 @@ public class CFBamBuffBlobDef
 
 	public CFBamBuffBlobDef() {
 		super();
+		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		requiredMaxLen = ICFBamPubBlobDef.MAXLEN_INIT_VALUE;
 		optionalInitValue = null;
 	}
@@ -86,32 +87,6 @@ public class CFBamBuffBlobDef
 	@Override
 	public int getClassCode() {
 		return( ICFBamBlobDef.CLASS_CODE );
-	}
-
-	@Override
-	public int getRequiredMaxLen() {
-		return(requiredMaxLen);
-	}
-
-	@Override
-	public void setRequiredMaxLen( int value ) {
-		if( value < ICFBamPubBlobDef.MAXLEN_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredMaxLen",
-				1,
-				"value",
-				value,
-				ICFBamPubBlobDef.MAXLEN_MIN_VALUE );
-		}
-		if( value > ICFBamPubBlobDef.MAXLEN_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredMaxLen",
-				1,
-				"value",
-				value,
-				ICFBamPubBlobDef.MAXLEN_MAX_VALUE );
-		}
-		requiredMaxLen = value;
 	}
 
 	@Override

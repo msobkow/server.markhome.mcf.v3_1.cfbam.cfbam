@@ -78,6 +78,7 @@ public class CFBamBuffIndexTweak
 
 	public CFBamBuffIndexTweak() {
 		super();
+		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubTweak.ID_INIT_VALUE.toString() );
 		requiredIndexId = CFLibDbKeyHash256.fromHex( ICFBamPubIndexTweak.INDEXID_INIT_VALUE.toString() );
 	}
 
@@ -133,21 +134,6 @@ public class CFBamBuffIndexTweak
 		else {
 			setRequiredIndexId(argObj.getRequiredId());
 		}
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredIndexId() {
-		return(requiredIndexId);
-	}
-
-	public void setRequiredIndexId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredIndexId",
-				1,
-				"value" );
-		}
-		requiredIndexId = value;
 	}
 
 	@Override

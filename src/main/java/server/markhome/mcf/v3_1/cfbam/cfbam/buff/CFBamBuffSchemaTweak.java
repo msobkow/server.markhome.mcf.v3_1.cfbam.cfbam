@@ -78,6 +78,7 @@ public class CFBamBuffSchemaTweak
 
 	public CFBamBuffSchemaTweak() {
 		super();
+		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubTweak.ID_INIT_VALUE.toString() );
 		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaTweak.SCHEMADEFID_INIT_VALUE.toString() );
 	}
 
@@ -133,21 +134,6 @@ public class CFBamBuffSchemaTweak
 		else {
 			setRequiredSchemaDefId(argObj.getRequiredId());
 		}
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
-		return(requiredSchemaDefId);
-	}
-
-	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSchemaDefId",
-				1,
-				"value" );
-		}
-		requiredSchemaDefId = value;
 	}
 
 	@Override

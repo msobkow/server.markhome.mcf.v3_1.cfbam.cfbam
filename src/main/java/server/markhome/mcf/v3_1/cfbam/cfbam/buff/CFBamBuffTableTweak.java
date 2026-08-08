@@ -78,6 +78,7 @@ public class CFBamBuffTableTweak
 
 	public CFBamBuffTableTweak() {
 		super();
+		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubTweak.ID_INIT_VALUE.toString() );
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubTableTweak.TABLEID_INIT_VALUE.toString() );
 	}
 
@@ -133,21 +134,6 @@ public class CFBamBuffTableTweak
 		else {
 			setRequiredTableId(argObj.getRequiredId());
 		}
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredTableId() {
-		return(requiredTableId);
-	}
-
-	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredTableId",
-				1,
-				"value" );
-		}
-		requiredTableId = value;
 	}
 
 	@Override

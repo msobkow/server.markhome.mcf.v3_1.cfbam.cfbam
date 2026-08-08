@@ -80,6 +80,7 @@ public class CFBamBuffFloatDef
 
 	public CFBamBuffFloatDef() {
 		super();
+		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		optionalInitValue = null;
 		optionalMinValue = null;
 		optionalMaxValue = null;

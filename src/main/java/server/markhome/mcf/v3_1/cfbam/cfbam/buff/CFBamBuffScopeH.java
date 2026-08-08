@@ -212,36 +212,6 @@ public class CFBamBuffScopeH
         pkey.setAuditSessionId(auditSessionId);
     }
 
-	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
-		return(requiredId);
-	}
-
-	public void setRequiredId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredId",
-				1,
-				"value" );
-		}
-		getPKey().setRequiredId(value);
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredTenantId() {
-		return(requiredTenantId);
-	}
-
-	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredTenantId",
-				1,
-				"value" );
-		}
-		requiredTenantId = value;
-	}
-
     @Override
     public boolean equals( Object obj ) {
         if (obj == null) {

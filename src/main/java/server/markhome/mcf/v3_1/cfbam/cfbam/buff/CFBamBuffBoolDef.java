@@ -81,6 +81,7 @@ public class CFBamBuffBoolDef
 
 	public CFBamBuffBoolDef() {
 		super();
+		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		optionalInitValue = null;
 		optionalFalseString = null;
 		optionalTrueString = null;

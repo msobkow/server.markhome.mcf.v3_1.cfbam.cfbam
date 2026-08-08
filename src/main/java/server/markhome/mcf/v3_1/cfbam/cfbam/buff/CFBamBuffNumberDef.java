@@ -82,6 +82,7 @@ public class CFBamBuffNumberDef
 
 	public CFBamBuffNumberDef() {
 		super();
+		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		requiredDigits = ICFBamPubNumberDef.DIGITS_INIT_VALUE;
 		requiredPrecis = ICFBamPubNumberDef.PRECIS_INIT_VALUE;
 		optionalInitValue = null;
@@ -92,58 +93,6 @@ public class CFBamBuffNumberDef
 	@Override
 	public int getClassCode() {
 		return( ICFBamNumberDef.CLASS_CODE );
-	}
-
-	@Override
-	public short getRequiredDigits() {
-		return(requiredDigits);
-	}
-
-	@Override
-	public void setRequiredDigits( short value ) {
-		if( value < ICFBamPubNumberDef.DIGITS_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredDigits",
-				1,
-				"value",
-				value,
-				ICFBamPubNumberDef.DIGITS_MIN_VALUE );
-		}
-		if( value > ICFBamPubNumberDef.DIGITS_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredDigits",
-				1,
-				"value",
-				value,
-				ICFBamPubNumberDef.DIGITS_MAX_VALUE );
-		}
-		requiredDigits = value;
-	}
-
-	@Override
-	public short getRequiredPrecis() {
-		return(requiredPrecis);
-	}
-
-	@Override
-	public void setRequiredPrecis( short value ) {
-		if( value < ICFBamPubNumberDef.PRECIS_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredPrecis",
-				1,
-				"value",
-				value,
-				ICFBamPubNumberDef.PRECIS_MIN_VALUE );
-		}
-		if( value > ICFBamPubNumberDef.PRECIS_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredPrecis",
-				1,
-				"value",
-				value,
-				ICFBamPubNumberDef.PRECIS_MAX_VALUE );
-		}
-		requiredPrecis = value;
 	}
 
 	@Override

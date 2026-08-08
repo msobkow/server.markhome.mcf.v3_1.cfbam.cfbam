@@ -79,6 +79,7 @@ public class CFBamBuffNmTokensDef
 
 	public CFBamBuffNmTokensDef() {
 		super();
+		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		requiredMaxLen = ICFBamPubNmTokensDef.MAXLEN_INIT_VALUE;
 		optionalInitValue = null;
 	}
@@ -86,32 +87,6 @@ public class CFBamBuffNmTokensDef
 	@Override
 	public int getClassCode() {
 		return( ICFBamNmTokensDef.CLASS_CODE );
-	}
-
-	@Override
-	public int getRequiredMaxLen() {
-		return(requiredMaxLen);
-	}
-
-	@Override
-	public void setRequiredMaxLen( int value ) {
-		if( value < ICFBamPubNmTokensDef.MAXLEN_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredMaxLen",
-				1,
-				"value",
-				value,
-				ICFBamPubNmTokensDef.MAXLEN_MIN_VALUE );
-		}
-		if( value > ICFBamPubNmTokensDef.MAXLEN_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredMaxLen",
-				1,
-				"value",
-				value,
-				ICFBamPubNmTokensDef.MAXLEN_MAX_VALUE );
-		}
-		requiredMaxLen = value;
 	}
 
 	@Override

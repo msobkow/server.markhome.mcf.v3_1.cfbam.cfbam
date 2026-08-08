@@ -79,21 +79,6 @@ public class CFBamBuffPopSubDep1ByPopTopDepIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredPopTopDepId() {
-		return(requiredPopTopDepId);
-	}
-
-	public void setRequiredPopTopDepId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredPopTopDepId",
-				1,
-				"value" );
-		}
-		requiredPopTopDepId = value;
-	}
-
-	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );

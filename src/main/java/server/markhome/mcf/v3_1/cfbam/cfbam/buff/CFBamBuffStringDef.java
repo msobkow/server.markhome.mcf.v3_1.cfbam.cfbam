@@ -80,6 +80,7 @@ public class CFBamBuffStringDef
 
 	public CFBamBuffStringDef() {
 		super();
+		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		requiredMaxLen = ICFBamPubStringDef.MAXLEN_INIT_VALUE;
 		requiredIsPolymorph = ICFBamPubStringDef.ISPOLYMORPH_INIT_VALUE;
 		optionalInitValue = null;
@@ -88,41 +89,6 @@ public class CFBamBuffStringDef
 	@Override
 	public int getClassCode() {
 		return( ICFBamStringDef.CLASS_CODE );
-	}
-
-	@Override
-	public int getRequiredMaxLen() {
-		return(requiredMaxLen);
-	}
-
-	@Override
-	public void setRequiredMaxLen( int value ) {
-		if( value < ICFBamPubStringDef.MAXLEN_MIN_VALUE ) {
-			throw new CFLibArgumentUnderflowException( getClass(),
-				"setRequiredMaxLen",
-				1,
-				"value",
-				value,
-				ICFBamPubStringDef.MAXLEN_MIN_VALUE );
-		}
-		if( value > ICFBamPubStringDef.MAXLEN_MAX_VALUE ) {
-			throw new CFLibArgumentOverflowException( getClass(),
-				"setRequiredMaxLen",
-				1,
-				"value",
-				value,
-				ICFBamPubStringDef.MAXLEN_MAX_VALUE );
-		}
-		requiredMaxLen = value;
-	}
-
-	@Override
-	public boolean getRequiredIsPolymorph() {
-		return(requiredIsPolymorph);
-	}
-
-	public void setRequiredIsPolymorph( boolean value ) {
-		requiredIsPolymorph = value;
 	}
 
 	@Override

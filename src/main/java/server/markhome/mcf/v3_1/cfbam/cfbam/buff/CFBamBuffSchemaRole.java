@@ -79,6 +79,7 @@ public class CFBamBuffSchemaRole
 
 	public CFBamBuffSchemaRole() {
 		super();
+		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubRoleDef.ID_INIT_VALUE.toString() );
 		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaRole.SCHEMADEFID_INIT_VALUE.toString() );
 		requiredRoleScope = ICFBamPubSchemaRole.ROLESCOPE_INIT_VALUE;
 	}
@@ -135,36 +136,6 @@ public class CFBamBuffSchemaRole
 		else {
 			setRequiredSchemaDefId(argObj.getRequiredId());
 		}
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
-		return(requiredSchemaDefId);
-	}
-
-	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredSchemaDefId",
-				1,
-				"value" );
-		}
-		requiredSchemaDefId = value;
-	}
-
-	@Override
-	public ICFBamPubSchema.RoleScopeEnum getRequiredRoleScope() {
-		return(requiredRoleScope);
-	}
-
-	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value ) {
-		if( value == null ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredRoleScope",
-				1,
-				"value" );
-		}
-		requiredRoleScope = value;
 	}
 
 	@Override

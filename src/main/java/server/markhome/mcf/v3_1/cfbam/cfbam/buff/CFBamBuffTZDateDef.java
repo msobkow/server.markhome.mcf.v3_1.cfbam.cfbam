@@ -78,6 +78,7 @@ public class CFBamBuffTZDateDef
 
 	public CFBamBuffTZDateDef() {
 		super();
+		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		optionalDummy = null;
 	}
 
