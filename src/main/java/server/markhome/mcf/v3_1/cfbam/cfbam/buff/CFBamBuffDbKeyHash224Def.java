@@ -78,7 +78,6 @@ public class CFBamBuffDbKeyHash224Def
 
 	public CFBamBuffDbKeyHash224Def() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		optionalInitValue = null;
 	}
 

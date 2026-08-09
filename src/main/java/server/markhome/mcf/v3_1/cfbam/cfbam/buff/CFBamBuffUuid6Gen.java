@@ -79,7 +79,6 @@ public class CFBamBuffUuid6Gen
 
 	public CFBamBuffUuid6Gen() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		requiredSlice = ICFBamPubUuid6Gen.SLICE_INIT_VALUE;
 		requiredBlockSize = ICFBamPubUuid6Gen.BLOCKSIZE_INIT_VALUE;
 	}
@@ -87,6 +86,58 @@ public class CFBamBuffUuid6Gen
 	@Override
 	public int getClassCode() {
 		return( ICFBamUuid6Gen.CLASS_CODE );
+	}
+
+	@Override
+	public short getRequiredSlice() {
+		return(requiredSlice);
+	}
+
+	@Override
+	public void setRequiredSlice( short value ) {
+		if( value < ICFBamPubUuid6Gen.SLICE_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredSlice",
+				1,
+				"value",
+				value,
+				ICFBamPubUuid6Gen.SLICE_MIN_VALUE );
+		}
+		if( value > ICFBamPubUuid6Gen.SLICE_MAX_VALUE ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredSlice",
+				1,
+				"value",
+				value,
+				ICFBamPubUuid6Gen.SLICE_MAX_VALUE );
+		}
+		requiredSlice = value;
+	}
+
+	@Override
+	public int getRequiredBlockSize() {
+		return(requiredBlockSize);
+	}
+
+	@Override
+	public void setRequiredBlockSize( int value ) {
+		if( value < ICFBamPubUuid6Gen.BLOCKSIZE_MIN_VALUE ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				"setRequiredBlockSize",
+				1,
+				"value",
+				value,
+				ICFBamPubUuid6Gen.BLOCKSIZE_MIN_VALUE );
+		}
+		if( value > ICFBamPubUuid6Gen.BLOCKSIZE_MAX_VALUE ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredBlockSize",
+				1,
+				"value",
+				value,
+				ICFBamPubUuid6Gen.BLOCKSIZE_MAX_VALUE );
+		}
+		requiredBlockSize = value;
 	}
 
 	@Override

@@ -78,7 +78,6 @@ public class CFBamBuffServerProc
 
 	public CFBamBuffServerProc() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubScope.ID_INIT_VALUE.toString() );
 		optionalDummy = null;
 	}
 

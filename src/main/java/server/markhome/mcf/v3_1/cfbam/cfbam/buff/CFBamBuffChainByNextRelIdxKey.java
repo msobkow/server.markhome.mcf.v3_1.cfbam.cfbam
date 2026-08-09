@@ -79,6 +79,21 @@ public class CFBamBuffChainByNextRelIdxKey
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredNextRelationId() {
+		return(requiredNextRelationId);
+	}
+
+	public void setRequiredNextRelationId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredNextRelationId",
+				1,
+				"value" );
+		}
+		requiredNextRelationId = value;
+	}
+
+	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );

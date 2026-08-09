@@ -89,7 +89,6 @@ public class CFBamBuffIndex
 
 	public CFBamBuffIndex() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubScope.ID_INIT_VALUE.toString() );
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubIndex.TABLEID_INIT_VALUE.toString() );
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
 		requiredName = ICFBamPubIndex.NAME_INIT_VALUE;
@@ -256,12 +255,50 @@ public class CFBamBuffIndex
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredTableId() {
+		return(requiredTableId);
+	}
+
+	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTableId",
+				1,
+				"value" );
+		}
+		requiredTableId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
 		return(optionalDefSchemaId);
 	}
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
 		optionalDefSchemaId = value;
+	}
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 192 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				192 );
+		}
+		requiredName = value;
 	}
 
 	@Override
@@ -364,6 +401,39 @@ public class CFBamBuffIndex
 				16 );
 		}
 		optionalSuffix = value;
+	}
+
+	@Override
+	public boolean getRequiredIsUnique() {
+		return(requiredIsUnique);
+	}
+
+	public void setRequiredIsUnique( boolean value ) {
+		requiredIsUnique = value;
+	}
+
+	@Override
+	public boolean getRequiredIsDbMapped() {
+		return(requiredIsDbMapped);
+	}
+
+	public void setRequiredIsDbMapped( boolean value ) {
+		requiredIsDbMapped = value;
+	}
+
+	@Override
+	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
+		return(requiredCodeVis);
+	}
+
+	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredCodeVis",
+				1,
+				"value" );
+		}
+		requiredCodeVis = value;
 	}
 
 	@Override

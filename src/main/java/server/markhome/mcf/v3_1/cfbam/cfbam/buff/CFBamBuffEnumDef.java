@@ -77,7 +77,6 @@ public class CFBamBuffEnumDef
 
 	public CFBamBuffEnumDef() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 	}
 
 	@Override

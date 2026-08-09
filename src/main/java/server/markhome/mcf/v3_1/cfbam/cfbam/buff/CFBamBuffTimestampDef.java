@@ -78,7 +78,6 @@ public class CFBamBuffTimestampDef
 
 	public CFBamBuffTimestampDef() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		optionalDummy = null;
 	}
 

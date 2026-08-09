@@ -113,6 +113,36 @@ public class CFBamBuffTweak
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return(requiredId);
+	}
+
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredId(value);
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return(requiredId);
+	}
+
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		requiredId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -266,6 +296,36 @@ public class CFBamBuffTweak
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredTenantId() {
+		return(requiredTenantId);
+	}
+
+	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTenantId",
+				1,
+				"value" );
+		}
+		requiredTenantId = value;
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredScopeId() {
+		return(requiredScopeId);
+	}
+
+	public void setRequiredScopeId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredScopeId",
+				1,
+				"value" );
+		}
+		requiredScopeId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getOptionalDefSchemaTenantId() {
 		return(optionalDefSchemaTenantId);
 	}
@@ -281,6 +341,61 @@ public class CFBamBuffTweak
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
 		optionalDefSchemaId = value;
+	}
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 192 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				192 );
+		}
+		requiredName = value;
+	}
+
+	@Override
+	public boolean getRequiredReplacesInherited() {
+		return(requiredReplacesInherited);
+	}
+
+	public void setRequiredReplacesInherited( boolean value ) {
+		requiredReplacesInherited = value;
+	}
+
+	@Override
+	public String getRequiredTweakGelText() {
+		return(requiredTweakGelText);
+	}
+
+	public void setRequiredTweakGelText( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTweakGelText",
+				1,
+				"value" );
+		}
+		else if( value.length() > 2000000 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredTweakGelText",
+				1,
+				"value.length()",
+				value.length(),
+				2000000 );
+		}
+		requiredTweakGelText = value;
 	}
 
 	@Override

@@ -79,7 +79,6 @@ public class CFBamBuffPopDep
 
 	public CFBamBuffPopDep() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubScope.ID_INIT_VALUE.toString() );
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
 		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubPopDep.RELATIONID_INIT_VALUE.toString() );
 	}
@@ -194,6 +193,21 @@ public class CFBamBuffPopDep
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
 		optionalDefSchemaId = value;
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredRelationId() {
+		return(requiredRelationId);
+	}
+
+	public void setRequiredRelationId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredRelationId",
+				1,
+				"value" );
+		}
+		requiredRelationId = value;
 	}
 
 	@Override

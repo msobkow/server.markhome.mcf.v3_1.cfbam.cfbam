@@ -78,7 +78,6 @@ public class CFBamBuffDbKeyHash384Type
 
 	public CFBamBuffDbKeyHash384Type() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubDbKeyHash384Type.SCHEMADEFID_INIT_VALUE.toString() );
 	}
 
@@ -134,6 +133,21 @@ public class CFBamBuffDbKeyHash384Type
 		else {
 			setRequiredSchemaDefId(argObj.getRequiredId());
 		}
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
+		return(requiredSchemaDefId);
+	}
+
+	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredSchemaDefId",
+				1,
+				"value" );
+		}
+		requiredSchemaDefId = value;
 	}
 
 	@Override

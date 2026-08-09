@@ -125,6 +125,84 @@ public class CFBamBuffValue
 	}
 
 	@Override
+	public List<ICFBamTableCol> getOptionalChildrenRefTableCol() {
+		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenRefTableCol", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTableColTable targetTable = targetBackingSchema.getTableTableCol();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenRefTableCol", 0, "ICFBamSchema.getBackingCFBam().getTableTableCol()");
+		}
+		ICFBamTableCol[] targetArr = targetTable.readDerivedByDataIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamTableCol> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamTableCol> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFBamIndexCol> getOptionalChildrenRefIndexCol() {
+		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenRefIndexCol", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamIndexColTable targetTable = targetBackingSchema.getTableIndexCol();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenRefIndexCol", 0, "ICFBamSchema.getBackingCFBam().getTableIndexCol()");
+		}
+		ICFBamIndexCol[] targetArr = targetTable.readDerivedByColIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamIndexCol> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamIndexCol> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return(requiredId);
+	}
+
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		getPKey().setRequiredId(value);
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return(requiredId);
+	}
+
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		requiredId = value;
+	}
+
+	@Override
 	public CFLibDbKeyHash256 getCreatedByUserId() {
 		return( createdByUserId );
 	}
@@ -376,51 +454,18 @@ public class CFBamBuffValue
 	}
 
 	@Override
-	public List<ICFBamTableCol> getOptionalChildrenRefTableCol() {
-		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenRefTableCol", 0, "ICFBamSchema.getBackingCFBam()");
-		}
-		ICFBamTableColTable targetTable = targetBackingSchema.getTableTableCol();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenRefTableCol", 0, "ICFBamSchema.getBackingCFBam().getTableTableCol()");
-		}
-		ICFBamTableCol[] targetArr = targetTable.readDerivedByDataIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
-		if( targetArr != null ) {
-			List<ICFBamTableCol> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFBamTableCol> results = new ArrayList<>();
-			return( results );
-		}
+	public CFLibDbKeyHash256 getRequiredScopeId() {
+		return(requiredScopeId);
 	}
 
-	@Override
-	public List<ICFBamIndexCol> getOptionalChildrenRefIndexCol() {
-		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenRefIndexCol", 0, "ICFBamSchema.getBackingCFBam()");
+	public void setRequiredScopeId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredScopeId",
+				1,
+				"value" );
 		}
-		ICFBamIndexColTable targetTable = targetBackingSchema.getTableIndexCol();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalChildrenRefIndexCol", 0, "ICFBamSchema.getBackingCFBam().getTableIndexCol()");
-		}
-		ICFBamIndexCol[] targetArr = targetTable.readDerivedByColIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
-		if( targetArr != null ) {
-			List<ICFBamIndexCol> results = new ArrayList<>(targetArr.length);
-			for (int idx = 0; idx < targetArr.length; idx++) {
-				results.add(targetArr[idx]);
-			}
-			return( results );
-		}
-		else {
-			List<ICFBamIndexCol> results = new ArrayList<>();
-			return( results );
-		}
+		requiredScopeId = value;
 	}
 
 	@Override
@@ -430,6 +475,29 @@ public class CFBamBuffValue
 
 	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value ) {
 		optionalDefSchemaId = value;
+	}
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 192 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				192 );
+		}
+		requiredName = value;
 	}
 
 	@Override
@@ -518,12 +586,30 @@ public class CFBamBuffValue
 	}
 
 	@Override
+	public boolean getRequiredIsNullable() {
+		return(requiredIsNullable);
+	}
+
+	public void setRequiredIsNullable( boolean value ) {
+		requiredIsNullable = value;
+	}
+
+	@Override
 	public Boolean getOptionalGenerateId() {
 		return(optionalGenerateId);
 	}
 
 	public void setOptionalGenerateId( Boolean value ) {
 		optionalGenerateId = value;
+	}
+
+	@Override
+	public boolean getRequiredImplementsPolymorph() {
+		return(requiredImplementsPolymorph);
+	}
+
+	public void setRequiredImplementsPolymorph( boolean value ) {
+		requiredImplementsPolymorph = value;
 	}
 
 	@Override

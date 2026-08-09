@@ -78,7 +78,6 @@ public class CFBamBuffNumberCol
 
 	public CFBamBuffNumberCol() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubNumberCol.TABLEID_INIT_VALUE.toString() );
 	}
 
@@ -134,6 +133,21 @@ public class CFBamBuffNumberCol
 		else {
 			setRequiredTableId(argObj.getRequiredId());
 		}
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredTableId() {
+		return(requiredTableId);
+	}
+
+	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredTableId",
+				1,
+				"value" );
+		}
+		requiredTableId = value;
 	}
 
 	@Override

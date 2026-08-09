@@ -78,7 +78,6 @@ public class CFBamBuffUuid6Def
 
 	public CFBamBuffUuid6Def() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		optionalInitValue = null;
 	}
 

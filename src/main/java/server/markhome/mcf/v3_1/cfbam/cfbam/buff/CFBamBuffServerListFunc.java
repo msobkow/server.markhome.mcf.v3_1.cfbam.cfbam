@@ -78,7 +78,6 @@ public class CFBamBuffServerListFunc
 
 	public CFBamBuffServerListFunc() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubScope.ID_INIT_VALUE.toString() );
 		optionalRetTableId = CFLibDbKeyHash256.nullGet();
 	}
 

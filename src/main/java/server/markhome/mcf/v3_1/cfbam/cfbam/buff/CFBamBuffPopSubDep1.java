@@ -79,7 +79,6 @@ public class CFBamBuffPopSubDep1
 
 	public CFBamBuffPopSubDep1() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubScope.ID_INIT_VALUE.toString() );
 		requiredPopTopDepId = CFLibDbKeyHash256.fromHex( ICFBamPubPopSubDep1.POPTOPDEPID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubPopSubDep1.NAME_INIT_VALUE;
 	}
@@ -160,6 +159,44 @@ public class CFBamBuffPopSubDep1
 			List<ICFBamPopSubDep2> results = new ArrayList<>();
 			return( results );
 		}
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredPopTopDepId() {
+		return(requiredPopTopDepId);
+	}
+
+	public void setRequiredPopTopDepId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredPopTopDepId",
+				1,
+				"value" );
+		}
+		requiredPopTopDepId = value;
+	}
+
+	@Override
+	public String getRequiredName() {
+		return(requiredName);
+	}
+
+	public void setRequiredName( String value ) {
+		if( value == null ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredName",
+				1,
+				"value" );
+		}
+		else if( value.length() > 192 ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+				"setRequiredName",
+				1,
+				"value.length()",
+				value.length(),
+				192 );
+		}
+		requiredName = value;
 	}
 
 	@Override

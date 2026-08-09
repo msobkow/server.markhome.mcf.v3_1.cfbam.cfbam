@@ -78,7 +78,6 @@ public class CFBamBuffAtom
 
 	public CFBamBuffAtom() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
 		optionalDbName = null;
 	}
 

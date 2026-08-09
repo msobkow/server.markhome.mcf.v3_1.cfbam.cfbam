@@ -79,7 +79,6 @@ public class CFBamBuffClearDep
 
 	public CFBamBuffClearDep() {
 		super();
-		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubScope.ID_INIT_VALUE.toString() );
 		requiredRelationId = CFLibDbKeyHash256.fromHex( ICFBamPubClearDep.RELATIONID_INIT_VALUE.toString() );
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();
 	}
@@ -185,6 +184,21 @@ public class CFBamBuffClearDep
 		else {
 			setOptionalDefSchemaId(argObj.getRequiredId());
 		}
+	}
+
+	@Override
+	public CFLibDbKeyHash256 getRequiredRelationId() {
+		return(requiredRelationId);
+	}
+
+	public void setRequiredRelationId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredRelationId",
+				1,
+				"value" );
+		}
+		requiredRelationId = value;
 	}
 
 	@Override
