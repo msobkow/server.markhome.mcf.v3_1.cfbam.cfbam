@@ -122,7 +122,7 @@ public class CFBamBuffEnumTag
 				1,
 				"value" );
 		}
-		getPKey().setRequiredId(value);
+		requiredId = value;
 	}
 
 	@Override

@@ -112,7 +112,7 @@ public class CFBamBuffScope
 				1,
 				"value" );
 		}
-		getPKey().setRequiredId(value);
+		requiredId = value;
 	}
 
 	@Override
