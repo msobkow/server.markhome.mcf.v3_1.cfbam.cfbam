@@ -125,6 +125,21 @@ public class CFBamBuffValue
 	}
 
 	@Override
+	public CFLibDbKeyHash256 getRequiredId() {
+		return(requiredId);
+	}
+
+	public void setRequiredId( CFLibDbKeyHash256 value ) {
+		if( value == null || value.isNull() ) {
+			throw new CFLibNullArgumentException( getClass(),
+				"setRequiredId",
+				1,
+				"value" );
+		}
+		requiredId = value;
+	}
+
+	@Override
 	public List<ICFBamTableCol> getOptionalChildrenRefTableCol() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
@@ -170,36 +185,6 @@ public class CFBamBuffValue
 			List<ICFBamIndexCol> results = new ArrayList<>();
 			return( results );
 		}
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
-		return(requiredId);
-	}
-
-	public void setRequiredId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredId",
-				1,
-				"value" );
-		}
-		requiredId = value;
-	}
-
-	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
-		return(requiredId);
-	}
-
-	public void setRequiredId( CFLibDbKeyHash256 value ) {
-		if( value == null || value.isNull() ) {
-			throw new CFLibNullArgumentException( getClass(),
-				"setRequiredId",
-				1,
-				"value" );
-		}
-		requiredId = value;
 	}
 
 	@Override
