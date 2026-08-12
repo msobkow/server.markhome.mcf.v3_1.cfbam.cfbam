@@ -101,8 +101,27 @@ public class CFBamBuffNumberCol
 	}
 
 	@Override
-	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
+	public void setRequiredContainerScope(CFLibDbKeyHash256 argTableId) {
+		ICFBamScope found = super.getRequiredContainerScope(argTableId);
+		if (found == null || (found != null && ((!found instanceof ICFBamTable) && (!found instanceof ICFBamProtTable) && (!found instanceof ICFBamPubTable))) {
+			super.setRequiredContainerScope(argTableId);
 		setRequiredTableId(argTableId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "ICFBamTableICFBamProtTableICFBamPubTable", found);
+		}
+	}
+
+	@Override
+	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
+		ICFBamScope found = super.getRequiredContainerScope(argTableId);
+		if (found == null || (found != null && ((!found instanceof ICFBamTable) && (!found instanceof ICFBamProtTable) && (!found instanceof ICFBamPubTable))) {
+			super.setRequiredContainerScope(argTableId);
+		setRequiredTableId(argTableId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "ICFBamTableICFBamProtTableICFBamPubTable", found);
+		}
 	}
 
 	@Override

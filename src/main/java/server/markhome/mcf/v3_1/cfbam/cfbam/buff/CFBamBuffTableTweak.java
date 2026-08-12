@@ -101,8 +101,27 @@ public class CFBamBuffTableTweak
 	}
 
 	@Override
-	public void setRequiredContainerTableDef(CFLibDbKeyHash256 argTableId) {
+	public void setRequiredContainerScopeDef(CFLibDbKeyHash256 argTableId) {
+		ICFBamScope found = super.getRequiredContainerScopeDef(argTableId);
+		if (found == null || (found != null && ((!found instanceof ICFBamTable) && (!found instanceof ICFBamProtTable) && (!found instanceof ICFBamPubTable))) {
+			super.setRequiredContainerScopeDef(argTableId);
 		setRequiredTableId(argTableId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "ICFBamTableICFBamProtTableICFBamPubTable", found);
+		}
+	}
+
+	@Override
+	public void setRequiredContainerTableDef(CFLibDbKeyHash256 argTableId) {
+		ICFBamScope found = super.getRequiredContainerScopeDef(argTableId);
+		if (found == null || (found != null && ((!found instanceof ICFBamTable) && (!found instanceof ICFBamProtTable) && (!found instanceof ICFBamPubTable))) {
+			super.setRequiredContainerScopeDef(argTableId);
+		setRequiredTableId(argTableId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "ICFBamTableICFBamProtTableICFBamPubTable", found);
+		}
 	}
 
 	@Override

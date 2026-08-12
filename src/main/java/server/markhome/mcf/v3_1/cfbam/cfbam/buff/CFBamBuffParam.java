@@ -202,7 +202,13 @@ public class CFBamBuffParam
 
 	@Override
 	public void setRequiredContainerServerMeth(CFLibDbKeyHash256 argServerMethodId) {
+		ICFBamServerMethod found = getRequiredContainerServerMeth(argServerMethodId);
+		if (found == null || (found != null && ((!found instanceof ICFBamServerMethod) && (!found instanceof ICFBamProtServerMethod) && (!found instanceof ICFBamPubServerMethod))) {
 		setRequiredServerMethodId(argServerMethodId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerServerMeth-args", "ICFBamServerMethodICFBamProtServerMethodICFBamPubServerMethod", found);
+		}
 	}
 
 	@Override
@@ -251,7 +257,13 @@ public class CFBamBuffParam
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		ICFBamSchemaDef found = getOptionalLookupDefSchema(argDefSchemaId);
+		if (found == null || (found != null && ((!found instanceof ICFBamSchemaDef) && (!found instanceof ICFBamProtSchemaDef) && (!found instanceof ICFBamPubSchemaDef))) {
 		setOptionalDefSchemaId(argDefSchemaId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef", found);
+		}
 	}
 
 	@Override
@@ -300,7 +312,13 @@ public class CFBamBuffParam
 
 	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
+		ICFBamParam found = getOptionalLookupPrev(argPrevId);
+		if (found == null || (found != null && ((!found instanceof ICFBamParam) && (!found instanceof ICFBamProtParam) && (!found instanceof ICFBamPubParam))) {
 		setOptionalPrevId(argPrevId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupPrev-args", "ICFBamParamICFBamProtParamICFBamPubParam", found);
+		}
 	}
 
 	@Override
@@ -349,7 +367,13 @@ public class CFBamBuffParam
 
 	@Override
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId) {
+		ICFBamParam found = getOptionalLookupNext(argNextId);
+		if (found == null || (found != null && ((!found instanceof ICFBamParam) && (!found instanceof ICFBamProtParam) && (!found instanceof ICFBamPubParam))) {
 		setOptionalNextId(argNextId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupNext-args", "ICFBamParamICFBamProtParamICFBamPubParam", found);
+		}
 	}
 
 	@Override
@@ -398,7 +422,13 @@ public class CFBamBuffParam
 
 	@Override
 	public void setRequiredLookupType(CFLibDbKeyHash256 argTypeId) {
+		ICFBamValue found = getRequiredLookupType(argTypeId);
+		if (found == null || (found != null && ((!found instanceof ICFBamValue) && (!found instanceof ICFBamProtValue) && (!found instanceof ICFBamPubValue))) {
 		setOptionalTypeId(argTypeId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredLookupType-args", "ICFBamValueICFBamProtValueICFBamPubValue", found);
+		}
 	}
 
 	@Override

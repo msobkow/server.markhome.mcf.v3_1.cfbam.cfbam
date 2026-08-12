@@ -101,8 +101,27 @@ public class CFBamBuffIndexTweak
 	}
 
 	@Override
-	public void setRequiredContainerIndexDef(CFLibDbKeyHash256 argIndexId) {
+	public void setRequiredContainerScopeDef(CFLibDbKeyHash256 argIndexId) {
+		ICFBamScope found = super.getRequiredContainerScopeDef(argIndexId);
+		if (found == null || (found != null && ((!found instanceof ICFBamIndex) && (!found instanceof ICFBamProtIndex) && (!found instanceof ICFBamPubIndex))) {
+			super.setRequiredContainerScopeDef(argIndexId);
 		setRequiredIndexId(argIndexId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "ICFBamIndexICFBamProtIndexICFBamPubIndex", found);
+		}
+	}
+
+	@Override
+	public void setRequiredContainerIndexDef(CFLibDbKeyHash256 argIndexId) {
+		ICFBamScope found = super.getRequiredContainerScopeDef(argIndexId);
+		if (found == null || (found != null && ((!found instanceof ICFBamIndex) && (!found instanceof ICFBamProtIndex) && (!found instanceof ICFBamPubIndex))) {
+			super.setRequiredContainerScopeDef(argIndexId);
+		setRequiredIndexId(argIndexId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "ICFBamIndexICFBamProtIndexICFBamPubIndex", found);
+		}
 	}
 
 	@Override

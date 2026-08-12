@@ -124,7 +124,13 @@ public class CFBamBuffIndex
 
 	@Override
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
+		ICFBamTable found = getRequiredContainerTable(argTableId);
+		if (found == null || (found != null && ((!found instanceof ICFBamTable) && (!found instanceof ICFBamProtTable) && (!found instanceof ICFBamPubTable))) {
 		setRequiredTableId(argTableId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerTable-args", "ICFBamTableICFBamProtTableICFBamPubTable", found);
+		}
 	}
 
 	@Override
@@ -173,7 +179,13 @@ public class CFBamBuffIndex
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		ICFBamSchemaDef found = getOptionalLookupDefSchema(argDefSchemaId);
+		if (found == null || (found != null && ((!found instanceof ICFBamSchemaDef) && (!found instanceof ICFBamProtSchemaDef) && (!found instanceof ICFBamPubSchemaDef))) {
 		setOptionalDefSchemaId(argDefSchemaId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef", found);
+		}
 	}
 
 	@Override

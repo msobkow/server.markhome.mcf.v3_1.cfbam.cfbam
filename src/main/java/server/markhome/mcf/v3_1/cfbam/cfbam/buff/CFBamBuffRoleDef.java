@@ -194,7 +194,13 @@ public class CFBamBuffRoleDef
 
 	@Override
 	public void setRequiredContainerScopeDef(CFLibDbKeyHash256 argScopeId) {
+		ICFBamScope found = getRequiredContainerScopeDef(argScopeId);
+		if (found == null || (found != null && ((!found instanceof ICFBamScope) && (!found instanceof ICFBamProtScope) && (!found instanceof ICFBamPubScope))) {
 		setRequiredScopeId(argScopeId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "ICFBamScopeICFBamProtScopeICFBamPubScope", found);
+		}
 	}
 
 	@Override
@@ -243,7 +249,13 @@ public class CFBamBuffRoleDef
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		ICFBamSchemaDef found = getOptionalLookupDefSchema(argDefSchemaId);
+		if (found == null || (found != null && ((!found instanceof ICFBamSchemaDef) && (!found instanceof ICFBamProtSchemaDef) && (!found instanceof ICFBamPubSchemaDef))) {
 		setOptionalDefSchemaId(argDefSchemaId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef", found);
+		}
 	}
 
 	@Override

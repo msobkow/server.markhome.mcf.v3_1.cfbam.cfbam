@@ -107,8 +107,27 @@ public class CFBamBuffTableCol
 	}
 
 	@Override
-	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
+	public void setRequiredContainerScope(CFLibDbKeyHash256 argTableId) {
+		ICFBamScope found = super.getRequiredContainerScope(argTableId);
+		if (found == null || (found != null && ((!found instanceof ICFBamTable) && (!found instanceof ICFBamProtTable) && (!found instanceof ICFBamPubTable))) {
+			super.setRequiredContainerScope(argTableId);
 		setRequiredTableId(argTableId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "ICFBamTableICFBamProtTableICFBamPubTable", found);
+		}
+	}
+
+	@Override
+	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
+		ICFBamScope found = super.getRequiredContainerScope(argTableId);
+		if (found == null || (found != null && ((!found instanceof ICFBamTable) && (!found instanceof ICFBamProtTable) && (!found instanceof ICFBamPubTable))) {
+			super.setRequiredContainerScope(argTableId);
+		setRequiredTableId(argTableId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "ICFBamTableICFBamProtTableICFBamPubTable", found);
+		}
 	}
 
 	@Override
@@ -157,7 +176,13 @@ public class CFBamBuffTableCol
 
 	@Override
 	public void setRequiredParentDataType(CFLibDbKeyHash256 argDataId) {
+		ICFBamValue found = getRequiredParentDataType(argDataId);
+		if (found == null || (found != null && ((!found instanceof ICFBamValue) && (!found instanceof ICFBamProtValue) && (!found instanceof ICFBamPubValue))) {
 		setOptionalDataId(argDataId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentDataType-args", "ICFBamValueICFBamProtValueICFBamPubValue", found);
+		}
 	}
 
 	@Override

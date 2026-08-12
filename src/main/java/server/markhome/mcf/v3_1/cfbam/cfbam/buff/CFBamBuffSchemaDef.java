@@ -126,7 +126,13 @@ public class CFBamBuffSchemaDef
 
 	@Override
 	public void setRequiredContainerMinorVersion(CFLibDbKeyHash256 argMinorVersionId) {
+		ICFIntMinorVersion found = getRequiredContainerMinorVersion(argMinorVersionId);
+		if (found == null || (found != null && ((!found instanceof ICFIntMinorVersion) && (!found instanceof ICFIntProtMinorVersion) && (!found instanceof ICFIntPubMinorVersion))) {
 		setRequiredMinorVersionId(argMinorVersionId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerMinorVersion-args", "ICFIntMinorVersionICFIntProtMinorVersionICFIntPubMinorVersion", found);
+		}
 	}
 
 	@Override
@@ -154,8 +160,27 @@ public class CFBamBuffSchemaDef
 	}
 
 	@Override
-	public void setRequiredOwnerCTenant(CFLibDbKeyHash256 argCTenantId) {
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argCTenantId) {
+		ICFSecTenant found = super.getRequiredOwnerTenant(argCTenantId);
+		if (found == null || (found != null && ((!found instanceof ICFSecTenant) && (!found instanceof ICFSecProtTenant) && (!found instanceof ICFSecPubTenant))) {
+			super.setRequiredOwnerTenant(argCTenantId);
 		setRequiredCTenantId(argCTenantId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "ICFSecTenantICFSecProtTenantICFSecPubTenant", found);
+		}
+	}
+
+	@Override
+	public void setRequiredOwnerCTenant(CFLibDbKeyHash256 argCTenantId) {
+		ICFSecTenant found = super.getRequiredOwnerTenant(argCTenantId);
+		if (found == null || (found != null && ((!found instanceof ICFSecTenant) && (!found instanceof ICFSecProtTenant) && (!found instanceof ICFSecPubTenant))) {
+			super.setRequiredOwnerTenant(argCTenantId);
+		setRequiredCTenantId(argCTenantId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "ICFSecTenantICFSecProtTenantICFSecPubTenant", found);
+		}
 	}
 
 	@Override

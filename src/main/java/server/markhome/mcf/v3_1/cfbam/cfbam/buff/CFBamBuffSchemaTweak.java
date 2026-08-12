@@ -101,8 +101,27 @@ public class CFBamBuffSchemaTweak
 	}
 
 	@Override
-	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
+	public void setRequiredContainerScopeDef(CFLibDbKeyHash256 argSchemaDefId) {
+		ICFBamScope found = super.getRequiredContainerScopeDef(argSchemaDefId);
+		if (found == null || (found != null && ((!found instanceof ICFBamSchemaDef) && (!found instanceof ICFBamProtSchemaDef) && (!found instanceof ICFBamPubSchemaDef))) {
+			super.setRequiredContainerScopeDef(argSchemaDefId);
 		setRequiredSchemaDefId(argSchemaDefId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef", found);
+		}
+	}
+
+	@Override
+	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
+		ICFBamScope found = super.getRequiredContainerScopeDef(argSchemaDefId);
+		if (found == null || (found != null && ((!found instanceof ICFBamSchemaDef) && (!found instanceof ICFBamProtSchemaDef) && (!found instanceof ICFBamPubSchemaDef))) {
+			super.setRequiredContainerScopeDef(argSchemaDefId);
+		setRequiredSchemaDefId(argSchemaDefId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef", found);
+		}
 	}
 
 	@Override

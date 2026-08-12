@@ -196,7 +196,13 @@ public class CFBamBuffEnumTag
 
 	@Override
 	public void setRequiredContainerEnumDef(CFLibDbKeyHash256 argEnumId) {
+		ICFBamEnumDef found = getRequiredContainerEnumDef(argEnumId);
+		if (found == null || (found != null && ((!found instanceof ICFBamEnumDef) && (!found instanceof ICFBamProtEnumDef) && (!found instanceof ICFBamPubEnumDef))) {
 		setRequiredEnumId(argEnumId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerEnumDef-args", "ICFBamEnumDefICFBamProtEnumDefICFBamPubEnumDef", found);
+		}
 	}
 
 	@Override
@@ -245,7 +251,13 @@ public class CFBamBuffEnumTag
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		ICFBamSchemaDef found = getOptionalLookupDefSchema(argDefSchemaId);
+		if (found == null || (found != null && ((!found instanceof ICFBamSchemaDef) && (!found instanceof ICFBamProtSchemaDef) && (!found instanceof ICFBamPubSchemaDef))) {
 		setOptionalDefSchemaId(argDefSchemaId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef", found);
+		}
 	}
 
 	@Override
@@ -294,7 +306,13 @@ public class CFBamBuffEnumTag
 
 	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
+		ICFBamEnumTag found = getOptionalLookupPrev(argPrevId);
+		if (found == null || (found != null && ((!found instanceof ICFBamEnumTag) && (!found instanceof ICFBamProtEnumTag) && (!found instanceof ICFBamPubEnumTag))) {
 		setOptionalPrevId(argPrevId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupPrev-args", "ICFBamEnumTagICFBamProtEnumTagICFBamPubEnumTag", found);
+		}
 	}
 
 	@Override
@@ -343,7 +361,13 @@ public class CFBamBuffEnumTag
 
 	@Override
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId) {
+		ICFBamEnumTag found = getOptionalLookupNext(argNextId);
+		if (found == null || (found != null && ((!found instanceof ICFBamEnumTag) && (!found instanceof ICFBamProtEnumTag) && (!found instanceof ICFBamPubEnumTag))) {
 		setOptionalNextId(argNextId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupNext-args", "ICFBamEnumTagICFBamProtEnumTagICFBamPubEnumTag", found);
+		}
 	}
 
 	@Override

@@ -102,7 +102,13 @@ public class CFBamBuffServerListFunc
 
 	@Override
 	public void setOptionalLookupRetTable(CFLibDbKeyHash256 argRetTableId) {
+		ICFBamTable found = getOptionalLookupRetTable(argRetTableId);
+		if (found == null || (found != null && ((!found instanceof ICFBamTable) && (!found instanceof ICFBamProtTable) && (!found instanceof ICFBamPubTable))) {
 		setOptionalRetTableId(argRetTableId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupRetTable-args", "ICFBamTableICFBamProtTableICFBamPubTable", found);
+		}
 	}
 
 	@Override

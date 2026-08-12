@@ -104,7 +104,13 @@ public class CFBamBuffPopTopDep
 
 	@Override
 	public void setRequiredContainerContRelation(CFLibDbKeyHash256 argContRelationId) {
+		ICFBamRelation found = getRequiredContainerContRelation(argContRelationId);
+		if (found == null || (found != null && ((!found instanceof ICFBamRelation) && (!found instanceof ICFBamProtRelation) && (!found instanceof ICFBamPubRelation))) {
 		setRequiredContRelationId(argContRelationId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerContRelation-args", "ICFBamRelationICFBamProtRelationICFBamPubRelation", found);
+		}
 	}
 
 	@Override

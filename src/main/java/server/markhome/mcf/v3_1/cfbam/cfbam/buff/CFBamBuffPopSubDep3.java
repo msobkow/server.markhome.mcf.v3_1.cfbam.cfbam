@@ -104,7 +104,13 @@ public class CFBamBuffPopSubDep3
 
 	@Override
 	public void setRequiredContainerPopSubDep2(CFLibDbKeyHash256 argPopSubDep2Id) {
+		ICFBamPopSubDep2 found = getRequiredContainerPopSubDep2(argPopSubDep2Id);
+		if (found == null || (found != null && ((!found instanceof ICFBamPopSubDep2) && (!found instanceof ICFBamProtPopSubDep2) && (!found instanceof ICFBamPubPopSubDep2))) {
 		setRequiredPopSubDep2Id(argPopSubDep2Id);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerPopSubDep2-args", "ICFBamPopSubDep2ICFBamProtPopSubDep2ICFBamPubPopSubDep2", found);
+		}
 	}
 
 	@Override

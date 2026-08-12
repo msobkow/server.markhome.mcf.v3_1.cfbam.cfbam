@@ -104,7 +104,13 @@ public class CFBamBuffPopDep
 
 	@Override
 	public void setRequiredLookupRelation(CFLibDbKeyHash256 argRelationId) {
+		ICFBamRelation found = getRequiredLookupRelation(argRelationId);
+		if (found == null || (found != null && ((!found instanceof ICFBamRelation) && (!found instanceof ICFBamProtRelation) && (!found instanceof ICFBamPubRelation))) {
 		setRequiredRelationId(argRelationId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredLookupRelation-args", "ICFBamRelationICFBamProtRelationICFBamPubRelation", found);
+		}
 	}
 
 	@Override
@@ -153,7 +159,13 @@ public class CFBamBuffPopDep
 
 	@Override
 	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		ICFBamSchemaDef found = getOptionalLookupDefSchema(argDefSchemaId);
+		if (found == null || (found != null && ((!found instanceof ICFBamSchemaDef) && (!found instanceof ICFBamProtSchemaDef) && (!found instanceof ICFBamPubSchemaDef))) {
 		setOptionalDefSchemaId(argDefSchemaId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef", found);
+		}
 	}
 
 	@Override

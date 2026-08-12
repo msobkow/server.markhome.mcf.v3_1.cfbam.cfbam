@@ -104,7 +104,13 @@ public class CFBamBuffDelSubDep1
 
 	@Override
 	public void setRequiredContainerDelTopDep(CFLibDbKeyHash256 argDelTopDepId) {
+		ICFBamDelTopDep found = getRequiredContainerDelTopDep(argDelTopDepId);
+		if (found == null || (found != null && ((!found instanceof ICFBamDelTopDep) && (!found instanceof ICFBamProtDelTopDep) && (!found instanceof ICFBamPubDelTopDep))) {
 		setRequiredDelTopDepId(argDelTopDepId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerDelTopDep-args", "ICFBamDelTopDepICFBamProtDelTopDepICFBamPubDelTopDep", found);
+		}
 	}
 
 	@Override

@@ -104,7 +104,13 @@ public class CFBamBuffDelSubDep2
 
 	@Override
 	public void setRequiredContainerDelSubDep1(CFLibDbKeyHash256 argDelSubDep1Id) {
+		ICFBamDelSubDep1 found = getRequiredContainerDelSubDep1(argDelSubDep1Id);
+		if (found == null || (found != null && ((!found instanceof ICFBamDelSubDep1) && (!found instanceof ICFBamProtDelSubDep1) && (!found instanceof ICFBamPubDelSubDep1))) {
 		setRequiredDelSubDep1Id(argDelSubDep1Id);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerDelSubDep1-args", "ICFBamDelSubDep1ICFBamProtDelSubDep1ICFBamPubDelSubDep1", found);
+		}
 	}
 
 	@Override

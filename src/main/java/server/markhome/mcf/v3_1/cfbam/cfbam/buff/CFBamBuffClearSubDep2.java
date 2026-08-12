@@ -104,7 +104,13 @@ public class CFBamBuffClearSubDep2
 
 	@Override
 	public void setRequiredContainerClearSubDep1(CFLibDbKeyHash256 argClearSubDep1Id) {
+		ICFBamClearSubDep1 found = getRequiredContainerClearSubDep1(argClearSubDep1Id);
+		if (found == null || (found != null && ((!found instanceof ICFBamClearSubDep1) && (!found instanceof ICFBamProtClearSubDep1) && (!found instanceof ICFBamPubClearSubDep1))) {
 		setRequiredClearSubDep1Id(argClearSubDep1Id);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerClearSubDep1-args", "ICFBamClearSubDep1ICFBamProtClearSubDep1ICFBamPubClearSubDep1", found);
+		}
 	}
 
 	@Override

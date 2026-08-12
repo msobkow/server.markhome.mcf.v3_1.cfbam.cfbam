@@ -108,7 +108,13 @@ public class CFBamBuffClearTopDep
 
 	@Override
 	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId) {
+		ICFBamTable found = getRequiredContainerTable(argTableId);
+		if (found == null || (found != null && ((!found instanceof ICFBamTable) && (!found instanceof ICFBamProtTable) && (!found instanceof ICFBamPubTable))) {
 		setRequiredTableId(argTableId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerTable-args", "ICFBamTableICFBamProtTableICFBamPubTable", found);
+		}
 	}
 
 	@Override
@@ -157,7 +163,13 @@ public class CFBamBuffClearTopDep
 
 	@Override
 	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
+		ICFBamClearTopDep found = getOptionalLookupPrev(argPrevId);
+		if (found == null || (found != null && ((!found instanceof ICFBamClearTopDep) && (!found instanceof ICFBamProtClearTopDep) && (!found instanceof ICFBamPubClearTopDep))) {
 		setOptionalPrevId(argPrevId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupPrev-args", "ICFBamClearTopDepICFBamProtClearTopDepICFBamPubClearTopDep", found);
+		}
 	}
 
 	@Override
@@ -206,7 +218,13 @@ public class CFBamBuffClearTopDep
 
 	@Override
 	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId) {
+		ICFBamClearTopDep found = getOptionalLookupNext(argNextId);
+		if (found == null || (found != null && ((!found instanceof ICFBamClearTopDep) && (!found instanceof ICFBamProtClearTopDep) && (!found instanceof ICFBamPubClearTopDep))) {
 		setOptionalNextId(argNextId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupNext-args", "ICFBamClearTopDepICFBamProtClearTopDepICFBamPubClearTopDep", found);
+		}
 	}
 
 	@Override

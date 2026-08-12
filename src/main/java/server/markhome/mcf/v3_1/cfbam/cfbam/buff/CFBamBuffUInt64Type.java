@@ -101,8 +101,27 @@ public class CFBamBuffUInt64Type
 	}
 
 	@Override
-	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
+	public void setRequiredContainerScope(CFLibDbKeyHash256 argSchemaDefId) {
+		ICFBamScope found = super.getRequiredContainerScope(argSchemaDefId);
+		if (found == null || (found != null && ((!found instanceof ICFBamSchemaDef) && (!found instanceof ICFBamProtSchemaDef) && (!found instanceof ICFBamPubSchemaDef))) {
+			super.setRequiredContainerScope(argSchemaDefId);
 		setRequiredSchemaDefId(argSchemaDefId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef", found);
+		}
+	}
+
+	@Override
+	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
+		ICFBamScope found = super.getRequiredContainerScope(argSchemaDefId);
+		if (found == null || (found != null && ((!found instanceof ICFBamSchemaDef) && (!found instanceof ICFBamProtSchemaDef) && (!found instanceof ICFBamPubSchemaDef))) {
+			super.setRequiredContainerScope(argSchemaDefId);
+		setRequiredSchemaDefId(argSchemaDefId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef", found);
+		}
 	}
 
 	@Override
