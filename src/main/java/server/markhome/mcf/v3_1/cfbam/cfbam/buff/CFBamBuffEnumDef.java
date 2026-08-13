@@ -86,11 +86,11 @@ public class CFBamBuffEnumDef
 
 	@Override
 	public List<ICFBamEnumTag> getRequiredComponentsTag() {
-		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
-		if (targetBackingSchema == null) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredComponentsTag", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamEnumTagTable targetTable = targetBackingSchema.getTableEnumTag();
+		ICFBamEnumTagTable targetTable = targetBackingCFBam.getTableEnumTag();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredComponentsTag", 0, "ICFBamSchema.getBackingCFBam().getTableEnumTag()");
 		}

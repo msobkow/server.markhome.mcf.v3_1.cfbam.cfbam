@@ -88,16 +88,62 @@ public class CFBamBuffStringType
 
 	@Override
 	public ICFBamSchemaDef getRequiredContainerSchemaDef() {
-		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
-		if (targetBackingSchema == null) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerSchemaDef", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamSchemaDefTable targetTable = targetBackingSchema.getTableSchemaDef();
+		ICFBamSchemaDefTable targetTable = targetBackingCFBam.getTableSchemaDef();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerSchemaDef", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredSchemaDefId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerScope(CFLibDbKeyHash256 argSchemaDefId) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSchemaDef-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamScopeTable targetTable = targetBackingCFBam.getTableScope();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope", 0, "ICFBamSchema.getBackingCFBam().getTableScope()");
+		}
+		ICFBamScope found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSchemaDefId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope-args", 0, "found");
+		}
+		else if (found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)) {
+			super.setRequiredContainerScope(argSchemaDefId);
+		setRequiredSchemaDefId(argSchemaDefId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
+		}
+	}
+
+	@Override
+	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSchemaDef-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamScopeTable targetTable = targetBackingCFBam.getTableScope();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope", 0, "ICFBamSchema.getBackingCFBam().getTableScope()");
+		}
+		ICFBamScope found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSchemaDefId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope-args", 0, "found");
+		}
+		else if (found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)) {
+			super.setRequiredContainerScope(argSchemaDefId);
+		setRequiredSchemaDefId(argSchemaDefId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
+		}
 	}
 
 	@Override
@@ -117,6 +163,52 @@ public class CFBamBuffStringType
 		}
 		else {
 			setRequiredSchemaDefId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerScope(CFLibDbKeyHash256 argSchemaDefId) {
+		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSchemaDef-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+		}
+		ICFBamPubScopeTable targetTable = targetBackingCFBam.getTableScope();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope", 0, "ICFBamPubSchema.getBackingCFBam().getTableScope()");
+		}
+		ICFBamPubScope found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSchemaDefId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope-args", 0, "found");
+		}
+		else if (found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)) {
+			super.setRequiredContainerScope(argSchemaDefId);
+		setRequiredSchemaDefId(argSchemaDefId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
+		}
+	}
+
+	@Override
+	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
+		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSchemaDef-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+		}
+		ICFBamPubScopeTable targetTable = targetBackingCFBam.getTableScope();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope", 0, "ICFBamPubSchema.getBackingCFBam().getTableScope()");
+		}
+		ICFBamPubScope found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSchemaDefId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope-args", 0, "found");
+		}
+		else if (found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)) {
+			super.setRequiredContainerScope(argSchemaDefId);
+		setRequiredSchemaDefId(argSchemaDefId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
 		}
 	}
 

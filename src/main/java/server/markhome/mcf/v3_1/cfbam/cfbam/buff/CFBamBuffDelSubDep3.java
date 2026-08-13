@@ -90,16 +90,38 @@ public class CFBamBuffDelSubDep3
 
 	@Override
 	public ICFBamDelSubDep2 getRequiredContainerDelSubDep2() {
-		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
-		if (targetBackingSchema == null) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerDelSubDep2", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamDelSubDep2Table targetTable = targetBackingSchema.getTableDelSubDep2();
+		ICFBamDelSubDep2Table targetTable = targetBackingCFBam.getTableDelSubDep2();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerDelSubDep2", 0, "ICFBamSchema.getBackingCFBam().getTableDelSubDep2()");
 		}
 		ICFBamDelSubDep2 targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredDelSubDep2Id());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerDelSubDep2(CFLibDbKeyHash256 argDelSubDep2Id) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelSubDep2-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamDelSubDep2Table targetTable = targetBackingCFBam.getTableDelSubDep2();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelSubDep2", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamDelSubDep2 found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDelSubDep2Id);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelSubDep2-args", 0, "found");
+		}
+		else if ((found instanceof ICFBamDelSubDep2) || (found instanceof ICFBamProtDelSubDep2) || (found instanceof ICFBamPubDelSubDep2)) {
+		setRequiredDelSubDep2Id(argDelSubDep2Id);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerDelSubDep2-args", "found", found, "ICFBamDelSubDep2ICFBamProtDelSubDep2ICFBamPubDelSubDep2");
+		}
 	}
 
 	@Override
@@ -119,6 +141,28 @@ public class CFBamBuffDelSubDep3
 		}
 		else {
 			setRequiredDelSubDep2Id(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerDelSubDep2(CFLibDbKeyHash256 argDelSubDep2Id) {
+		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelSubDep2-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+		}
+		ICFBamPubDelSubDep2Table targetTable = targetBackingCFBam.getTableDelSubDep2();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelSubDep2", 0, "ICFBamPubSchema.getBackingCFBam().getTableDelSubDep2()");
+		}
+		ICFBamPubDelSubDep2 found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDelSubDep2Id);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelSubDep2-args", 0, "found");
+		}
+		else if ((found instanceof ICFBamDelSubDep2) || (found instanceof ICFBamProtDelSubDep2) || (found instanceof ICFBamPubDelSubDep2)) {
+		setRequiredDelSubDep2Id(argDelSubDep2Id);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerDelSubDep2-args", "found", found, "ICFBamDelSubDep2ICFBamProtDelSubDep2ICFBamPubDelSubDep2");
 		}
 	}
 

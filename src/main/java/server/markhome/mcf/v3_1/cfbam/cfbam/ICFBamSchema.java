@@ -305,7 +305,7 @@ extends ICFSecSchema,
 		
 		public ICFBamSchema getCFBamSchema();
 		public void setCFBamSchema(ICFBamSchema schema);
-		
+
 		public static int doInitClassMapEntries(int value) {
 			value = ICFSecSchema.doInitClassMapEntries(value);
 			value = ICFIntSchema.doInitClassMapEntries(value);

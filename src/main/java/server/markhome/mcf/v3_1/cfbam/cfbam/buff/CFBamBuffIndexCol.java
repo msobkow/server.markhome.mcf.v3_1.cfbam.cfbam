@@ -137,11 +137,11 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public List<ICFBamRelationCol> getOptionalChildrenRefRelFromCol() {
-		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
-		if (targetBackingSchema == null) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenRefRelFromCol", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamRelationColTable targetTable = targetBackingSchema.getTableRelationCol();
+		ICFBamRelationColTable targetTable = targetBackingCFBam.getTableRelationCol();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenRefRelFromCol", 0, "ICFBamSchema.getBackingCFBam().getTableRelationCol()");
 		}
@@ -161,11 +161,11 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public List<ICFBamRelationCol> getOptionalChildrenRefRelToCol() {
-		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
-		if (targetBackingSchema == null) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenRefRelToCol", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamRelationColTable targetTable = targetBackingSchema.getTableRelationCol();
+		ICFBamRelationColTable targetTable = targetBackingCFBam.getTableRelationCol();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalChildrenRefRelToCol", 0, "ICFBamSchema.getBackingCFBam().getTableRelationCol()");
 		}
@@ -240,16 +240,38 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public ICFBamIndex getRequiredContainerIndex() {
-		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
-		if (targetBackingSchema == null) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerIndex", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamIndexTable targetTable = targetBackingSchema.getTableIndex();
+		ICFBamIndexTable targetTable = targetBackingCFBam.getTableIndex();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerIndex", 0, "ICFBamSchema.getBackingCFBam().getTableIndex()");
 		}
 		ICFBamIndex targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredIndexId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredContainerIndex(CFLibDbKeyHash256 argIndexId) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerIndex-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamIndexTable targetTable = targetBackingCFBam.getTableIndex();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerIndex", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamIndex found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argIndexId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerIndex-args", 0, "found");
+		}
+		else if ((found instanceof ICFBamIndex) || (found instanceof ICFBamProtIndex) || (found instanceof ICFBamPubIndex)) {
+		setRequiredIndexId(argIndexId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerIndex-args", "found", found, "ICFBamIndexICFBamProtIndexICFBamPubIndex");
+		}
 	}
 
 	@Override
@@ -273,6 +295,28 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
+	public void setRequiredContainerIndex(CFLibDbKeyHash256 argIndexId) {
+		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerIndex-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+		}
+		ICFBamPubIndexTable targetTable = targetBackingCFBam.getTableIndex();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerIndex", 0, "ICFBamPubSchema.getBackingCFBam().getTableIndex()");
+		}
+		ICFBamPubIndex found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argIndexId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerIndex-args", 0, "found");
+		}
+		else if ((found instanceof ICFBamIndex) || (found instanceof ICFBamProtIndex) || (found instanceof ICFBamPubIndex)) {
+		setRequiredIndexId(argIndexId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerIndex-args", "found", found, "ICFBamIndexICFBamProtIndexICFBamPubIndex");
+		}
+	}
+
+	@Override
 	public void setRequiredContainerIndex(ICFBamPubIndex argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerIndex", 1, "argObj");
@@ -284,16 +328,35 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public ICFBamSchemaDef getOptionalLookupDefSchema() {
-		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
-		if (targetBackingSchema == null) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamSchemaDefTable targetTable = targetBackingSchema.getTableSchemaDef();
+		ICFBamSchemaDefTable targetTable = targetBackingCFBam.getTableSchemaDef();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamSchemaDefTable targetTable = targetBackingCFBam.getTableSchemaDef();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamSchemaDef found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDefSchemaId);
+		if (found == null || (found != null && ((found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)))) {
+		setOptionalDefSchemaId(argDefSchemaId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
+		}
 	}
 
 	@Override
@@ -317,6 +380,25 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
+	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId) {
+		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+		}
+		ICFBamPubSchemaDefTable targetTable = targetBackingCFBam.getTableSchemaDef();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamPubSchema.getBackingCFBam().getTableSchemaDef()");
+		}
+		ICFBamPubSchemaDef found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDefSchemaId);
+		if (found == null || (found != null && ((found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)))) {
+		setOptionalDefSchemaId(argDefSchemaId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
+		}
+	}
+
+	@Override
 	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
 		if(argObj == null) {
 			setOptionalDefSchemaId(null);
@@ -328,16 +410,35 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public ICFBamIndexCol getOptionalLookupPrev() {
-		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
-		if (targetBackingSchema == null) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupPrev", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamIndexColTable targetTable = targetBackingSchema.getTableIndexCol();
+		ICFBamIndexColTable targetTable = targetBackingCFBam.getTableIndexCol();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupPrev", 0, "ICFBamSchema.getBackingCFBam().getTableIndexCol()");
 		}
 		ICFBamIndexCol targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalPrevId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupPrev-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamIndexColTable targetTable = targetBackingCFBam.getTableIndexCol();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupPrev", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamIndexCol found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argPrevId);
+		if (found == null || (found != null && ((found instanceof ICFBamIndexCol) || (found instanceof ICFBamProtIndexCol) || (found instanceof ICFBamPubIndexCol)))) {
+		setOptionalPrevId(argPrevId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupPrev-args", "found", found, "ICFBamIndexColICFBamProtIndexColICFBamPubIndexCol");
+		}
 	}
 
 	@Override
@@ -361,6 +462,25 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
+	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId) {
+		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupPrev-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+		}
+		ICFBamPubIndexColTable targetTable = targetBackingCFBam.getTableIndexCol();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupPrev", 0, "ICFBamPubSchema.getBackingCFBam().getTableIndexCol()");
+		}
+		ICFBamPubIndexCol found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argPrevId);
+		if (found == null || (found != null && ((found instanceof ICFBamIndexCol) || (found instanceof ICFBamProtIndexCol) || (found instanceof ICFBamPubIndexCol)))) {
+		setOptionalPrevId(argPrevId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupPrev-args", "found", found, "ICFBamIndexColICFBamProtIndexColICFBamPubIndexCol");
+		}
+	}
+
+	@Override
 	public void setOptionalLookupPrev(ICFBamPubIndexCol argObj) {
 		if(argObj == null) {
 			setOptionalPrevId(null);
@@ -372,16 +492,35 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public ICFBamIndexCol getOptionalLookupNext() {
-		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
-		if (targetBackingSchema == null) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupNext", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamIndexColTable targetTable = targetBackingSchema.getTableIndexCol();
+		ICFBamIndexColTable targetTable = targetBackingCFBam.getTableIndexCol();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupNext", 0, "ICFBamSchema.getBackingCFBam().getTableIndexCol()");
 		}
 		ICFBamIndexCol targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalNextId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupNext-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamIndexColTable targetTable = targetBackingCFBam.getTableIndexCol();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupNext", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamIndexCol found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argNextId);
+		if (found == null || (found != null && ((found instanceof ICFBamIndexCol) || (found instanceof ICFBamProtIndexCol) || (found instanceof ICFBamPubIndexCol)))) {
+		setOptionalNextId(argNextId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupNext-args", "found", found, "ICFBamIndexColICFBamProtIndexColICFBamPubIndexCol");
+		}
 	}
 
 	@Override
@@ -405,6 +544,25 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
+	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId) {
+		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupNext-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+		}
+		ICFBamPubIndexColTable targetTable = targetBackingCFBam.getTableIndexCol();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupNext", 0, "ICFBamPubSchema.getBackingCFBam().getTableIndexCol()");
+		}
+		ICFBamPubIndexCol found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argNextId);
+		if (found == null || (found != null && ((found instanceof ICFBamIndexCol) || (found instanceof ICFBamProtIndexCol) || (found instanceof ICFBamPubIndexCol)))) {
+		setOptionalNextId(argNextId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupNext-args", "found", found, "ICFBamIndexColICFBamProtIndexColICFBamPubIndexCol");
+		}
+	}
+
+	@Override
 	public void setOptionalLookupNext(ICFBamPubIndexCol argObj) {
 		if(argObj == null) {
 			setOptionalNextId(null);
@@ -416,16 +574,38 @@ public class CFBamBuffIndexCol
 
 	@Override
 	public ICFBamValue getRequiredLookupColumn() {
-		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
-		if (targetBackingSchema == null) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredLookupColumn", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamValueTable targetTable = targetBackingSchema.getTableValue();
+		ICFBamValueTable targetTable = targetBackingCFBam.getTableValue();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredLookupColumn", 0, "ICFBamSchema.getBackingCFBam().getTableValue()");
 		}
 		ICFBamValue targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredColumnId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredLookupColumn(CFLibDbKeyHash256 argColumnId) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupColumn-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamValueTable targetTable = targetBackingCFBam.getTableValue();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupColumn", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamValue found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argColumnId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupColumn-args", 0, "found");
+		}
+		else if ((found instanceof ICFBamValue) || (found instanceof ICFBamProtValue) || (found instanceof ICFBamPubValue)) {
+		setRequiredColumnId(argColumnId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredLookupColumn-args", "found", found, "ICFBamValueICFBamProtValueICFBamPubValue");
+		}
 	}
 
 	@Override
@@ -445,6 +625,28 @@ public class CFBamBuffIndexCol
 		}
 		else {
 			setRequiredColumnId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredLookupColumn(CFLibDbKeyHash256 argColumnId) {
+		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupColumn-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+		}
+		ICFBamPubValueTable targetTable = targetBackingCFBam.getTableValue();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupColumn", 0, "ICFBamPubSchema.getBackingCFBam().getTableValue()");
+		}
+		ICFBamPubValue found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argColumnId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupColumn-args", 0, "found");
+		}
+		else if ((found instanceof ICFBamValue) || (found instanceof ICFBamProtValue) || (found instanceof ICFBamPubValue)) {
+		setRequiredColumnId(argColumnId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredLookupColumn-args", "found", found, "ICFBamValueICFBamProtValueICFBamPubValue");
 		}
 	}
 

@@ -88,16 +88,35 @@ public class CFBamBuffServerListFunc
 
 	@Override
 	public ICFBamTable getOptionalLookupRetTable() {
-		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
-		if (targetBackingSchema == null) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamTableTable targetTable = targetBackingSchema.getTableTable();
+		ICFBamTableTable targetTable = targetBackingCFBam.getTableTable();
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
 		}
 		ICFBamTable targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalRetTableId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setOptionalLookupRetTable(CFLibDbKeyHash256 argRetTableId) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupRetTable-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTableTable targetTable = targetBackingCFBam.getTableTable();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTable found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argRetTableId);
+		if (found == null || (found != null && ((found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)))) {
+		setOptionalRetTableId(argRetTableId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupRetTable-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");
+		}
 	}
 
 	@Override
@@ -117,6 +136,25 @@ public class CFBamBuffServerListFunc
 		}
 		else {
 			setOptionalRetTableId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setOptionalLookupRetTable(CFLibDbKeyHash256 argRetTableId) {
+		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupRetTable-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+		}
+		ICFBamPubTableTable targetTable = targetBackingCFBam.getTableTable();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupRetTable", 0, "ICFBamPubSchema.getBackingCFBam().getTableTable()");
+		}
+		ICFBamPubTable found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argRetTableId);
+		if (found == null || (found != null && ((found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)))) {
+		setOptionalRetTableId(argRetTableId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupRetTable-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");
 		}
 	}
 

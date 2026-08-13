@@ -172,16 +172,38 @@ public class CFBamBuffScope
 
 	@Override
 	public ICFSecTenant getRequiredOwnerTenant() {
-		ICFSecPubSchema targetBackingSchema = ICFSecSchema.getBackingPubCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingPubCFSec()");
+		ICFSecPubSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec()");
 		}
-		ICFSecTenantTable targetTable = targetBackingSchema.getTableTenant();
+		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingPubCFSec().getTableTenant()");
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
 		}
 		ICFSecPubTenant targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argTenantId) {
+		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+		}
+		ICFSecPubTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
+		}
+		ICFSecPubTenant found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
+		}
+		else if (found instanceof ICFSecPubTenant) {
+		setRequiredTenantId(argTenantId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecPubTenant");
+		}
 	}
 
 	@Override
