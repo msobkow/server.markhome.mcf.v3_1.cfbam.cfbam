@@ -112,38 +112,16 @@ public class CFBamBuffSchemaDef
 
 	@Override
 	public ICFIntMinorVersion getRequiredContainerMinorVersion() {
-		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
+		ICFIntPubSchema targetBackingSchema = ICFIntSchema.getBackingPubCFInt();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerMinorVersion", 0, "ICFIntSchema.getBackingCFInt()");
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerMinorVersion", 0, "ICFIntPubSchema.getBackingPubCFInt()");
 		}
 		ICFIntMinorVersionTable targetTable = targetBackingSchema.getTableMinorVersion();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerMinorVersion", 0, "ICFIntSchema.getBackingCFInt().getTableMinorVersion()");
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerMinorVersion", 0, "ICFIntPubSchema.getBackingPubCFInt().getTableMinorVersion()");
 		}
-		ICFIntMinorVersion targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredMinorVersionId());
+		ICFIntPubMinorVersion targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredMinorVersionId());
 		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredContainerMinorVersion(CFLibDbKeyHash256 argMinorVersionId) {
-		ICFIntSchema targetBackingSchema = ICFIntSchema.getBackingCFInt();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerMinorVersion-args", 0, "ICFIntSchema.getBackingCFInt()");
-		}
-		ICFIntMinorVersionTable targetTable = targetBackingSchema.getTableMinorVersion();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerMinorVersion", 0, "ICFIntSchema.getBackingCFInt().getTableMinorVersion()");
-		}
-		ICFIntMinorVersion found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argMinorVersionId);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerMinorVersion-args", 0, "found");
-		}
-		else if ((found instanceof ICFIntMinorVersion) || (found instanceof ICFIntProtMinorVersion) || (found instanceof ICFIntPubMinorVersion)) {
-		setRequiredMinorVersionId(argMinorVersionId);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerMinorVersion-args", "found", found, "ICFIntMinorVersionICFIntProtMinorVersionICFIntPubMinorVersion");
-		}
 	}
 
 	@Override
@@ -158,62 +136,16 @@ public class CFBamBuffSchemaDef
 
 	@Override
 	public ICFSecTenant getRequiredOwnerCTenant() {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
+		ICFSecPubSchema targetBackingSchema = ICFSecSchema.getBackingPubCFSec();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCTenant", 0, "ICFSecSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerCTenant", 0, "ICFSecPubSchema.getBackingPubCFSec()");
 		}
 		ICFSecTenantTable targetTable = targetBackingSchema.getTableTenant();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerCTenant", 0, "ICFSecPubSchema.getBackingPubCFSec().getTableTenant()");
 		}
-		ICFSecTenant targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredCTenantId());
+		ICFSecPubTenant targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredCTenantId());
 		return(targetRec);
-	}
-
-	@Override
-	public void setRequiredOwnerTenant(CFLibDbKeyHash256 argCTenantId) {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecTenantTable targetTable = targetBackingSchema.getTableTenant();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
-		}
-		ICFSecTenant found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argCTenantId);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
-		}
-		else if (found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
-			super.setRequiredOwnerTenant(argCTenantId);
-		setRequiredCTenantId(argCTenantId);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
-		}
-	}
-
-	@Override
-	public void setRequiredOwnerCTenant(CFLibDbKeyHash256 argCTenantId) {
-		ICFSecSchema targetBackingSchema = ICFSecSchema.getBackingCFSec();
-		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
-		}
-		ICFSecTenantTable targetTable = targetBackingSchema.getTableTenant();
-		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
-		}
-		ICFSecTenant found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argCTenantId);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
-		}
-		else if (found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
-			super.setRequiredOwnerTenant(argCTenantId);
-		setRequiredCTenantId(argCTenantId);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
-		}
 	}
 
 	@Override
@@ -230,11 +162,11 @@ public class CFBamBuffSchemaDef
 	public List<ICFBamTable> getOptionalComponentsTables() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTables", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTables", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamTableTable targetTable = targetBackingSchema.getTableTable();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTables", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTables", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
 		}
 		ICFBamTable[] targetArr = targetTable.readDerivedBySchemaDefIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
 		if( targetArr != null ) {
@@ -254,11 +186,11 @@ public class CFBamBuffSchemaDef
 	public List<ICFBamValue> getOptionalComponentsTypes() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTypes", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTypes", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamValueTable targetTable = targetBackingSchema.getTableValue();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTypes", 0, "ICFBamSchema.getBackingCFBam().getTableValue()");
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTypes", 0, "ICFBamSchema.getBackingCFBam().getTableValue()");
 		}
 		ICFBamValue[] targetArr = targetTable.readDerivedByScopeIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
 		if( targetArr != null ) {
@@ -278,11 +210,11 @@ public class CFBamBuffSchemaDef
 	public List<ICFBamSchemaRef> getOptionalComponentsSchemaRefs() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSchemaRefs", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSchemaRefs", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamSchemaRefTable targetTable = targetBackingSchema.getTableSchemaRef();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsSchemaRefs", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaRef()");
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSchemaRefs", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaRef()");
 		}
 		ICFBamSchemaRef[] targetArr = targetTable.readDerivedBySchemaIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
 		if( targetArr != null ) {
@@ -302,11 +234,11 @@ public class CFBamBuffSchemaDef
 	public List<ICFBamTweak> getOptionalComponentsTweaks() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTweaks", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTweaks", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamTweakTable targetTable = targetBackingSchema.getTableTweak();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsTweaks", 0, "ICFBamSchema.getBackingCFBam().getTableTweak()");
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTweaks", 0, "ICFBamSchema.getBackingCFBam().getTableTweak()");
 		}
 		ICFBamTweak[] targetArr = targetTable.readDerivedByScopeIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
 		if( targetArr != null ) {
@@ -326,11 +258,11 @@ public class CFBamBuffSchemaDef
 	public List<ICFBamSchemaRole> getOptionalComponentsRoles() {
 		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
 		if (targetBackingSchema == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsRoles", 0, "ICFBamSchema.getBackingCFBam()");
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsRoles", 0, "ICFBamSchema.getBackingCFBam()");
 		}
 		ICFBamSchemaRoleTable targetTable = targetBackingSchema.getTableSchemaRole();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setOptionalComponentsRoles", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaRole()");
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsRoles", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaRole()");
 		}
 		ICFBamSchemaRole[] targetArr = targetTable.readDerivedBySchemaIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
 		if( targetArr != null ) {
