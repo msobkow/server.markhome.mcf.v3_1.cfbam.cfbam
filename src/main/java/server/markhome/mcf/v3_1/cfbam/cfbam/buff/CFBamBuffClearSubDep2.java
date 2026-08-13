@@ -104,12 +104,23 @@ public class CFBamBuffClearSubDep2
 
 	@Override
 	public void setRequiredContainerClearSubDep1(CFLibDbKeyHash256 argClearSubDep1Id) {
-		ICFBamClearSubDep1 found = getRequiredContainerClearSubDep1(argClearSubDep1Id);
-		if (found == null || (found != null && ((!found instanceof ICFBamClearSubDep1) && (!found instanceof ICFBamProtClearSubDep1) && (!found instanceof ICFBamPubClearSubDep1))) {
+		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearSubDep1-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamClearSubDep1Table targetTable = targetBackingSchema.getTableClearSubDep1();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearSubDep1", 0, "ICFBamSchema.getBackingCFBam().getTableClearSubDep1()");
+		}
+		ICFBamClearSubDep1 found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argClearSubDep1Id);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearSubDep1-args", 0, "found");
+		}
+		else if ((found instanceof ICFBamClearSubDep1) || (found instanceof ICFBamProtClearSubDep1) || (found instanceof ICFBamPubClearSubDep1)) {
 		setRequiredClearSubDep1Id(argClearSubDep1Id);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerClearSubDep1-args", "ICFBamClearSubDep1ICFBamProtClearSubDep1ICFBamPubClearSubDep1", found);
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerClearSubDep1-args", "found", found, "ICFBamClearSubDep1ICFBamProtClearSubDep1ICFBamPubClearSubDep1");
 		}
 	}
 

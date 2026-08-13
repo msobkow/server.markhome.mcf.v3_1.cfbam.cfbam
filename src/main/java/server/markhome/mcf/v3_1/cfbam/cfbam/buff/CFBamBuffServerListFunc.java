@@ -102,12 +102,20 @@ public class CFBamBuffServerListFunc
 
 	@Override
 	public void setOptionalLookupRetTable(CFLibDbKeyHash256 argRetTableId) {
-		ICFBamTable found = getOptionalLookupRetTable(argRetTableId);
-		if (found == null || (found != null && ((!found instanceof ICFBamTable) && (!found instanceof ICFBamProtTable) && (!found instanceof ICFBamPubTable))) {
+		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupRetTable-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTableTable targetTable = targetBackingSchema.getTableTable();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+		}
+		ICFBamTable found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argRetTableId);
+		if (found == null || (found != null && ((found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)))) {
 		setOptionalRetTableId(argRetTableId);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupRetTable-args", "ICFBamTableICFBamProtTableICFBamPubTable", found);
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupRetTable-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");
 		}
 	}
 

@@ -104,12 +104,23 @@ public class CFBamBuffPopTopDep
 
 	@Override
 	public void setRequiredContainerContRelation(CFLibDbKeyHash256 argContRelationId) {
-		ICFBamRelation found = getRequiredContainerContRelation(argContRelationId);
-		if (found == null || (found != null && ((!found instanceof ICFBamRelation) && (!found instanceof ICFBamProtRelation) && (!found instanceof ICFBamPubRelation))) {
+		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerContRelation-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamRelationTable targetTable = targetBackingSchema.getTableRelation();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerContRelation", 0, "ICFBamSchema.getBackingCFBam().getTableRelation()");
+		}
+		ICFBamRelation found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argContRelationId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerContRelation-args", 0, "found");
+		}
+		else if ((found instanceof ICFBamRelation) || (found instanceof ICFBamProtRelation) || (found instanceof ICFBamPubRelation)) {
 		setRequiredContRelationId(argContRelationId);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerContRelation-args", "ICFBamRelationICFBamProtRelationICFBamPubRelation", found);
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerContRelation-args", "found", found, "ICFBamRelationICFBamProtRelationICFBamPubRelation");
 		}
 	}
 

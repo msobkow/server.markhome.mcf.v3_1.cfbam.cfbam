@@ -104,12 +104,23 @@ public class CFBamBuffPopSubDep2
 
 	@Override
 	public void setRequiredContainerPopSubDep1(CFLibDbKeyHash256 argPopSubDep1Id) {
-		ICFBamPopSubDep1 found = getRequiredContainerPopSubDep1(argPopSubDep1Id);
-		if (found == null || (found != null && ((!found instanceof ICFBamPopSubDep1) && (!found instanceof ICFBamProtPopSubDep1) && (!found instanceof ICFBamPubPopSubDep1))) {
+		ICFBamSchema targetBackingSchema = ICFBamSchema.getBackingCFBam();
+		if (targetBackingSchema == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerPopSubDep1-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamPopSubDep1Table targetTable = targetBackingSchema.getTablePopSubDep1();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerPopSubDep1", 0, "ICFBamSchema.getBackingCFBam().getTablePopSubDep1()");
+		}
+		ICFBamPopSubDep1 found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argPopSubDep1Id);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerPopSubDep1-args", 0, "found");
+		}
+		else if ((found instanceof ICFBamPopSubDep1) || (found instanceof ICFBamProtPopSubDep1) || (found instanceof ICFBamPubPopSubDep1)) {
 		setRequiredPopSubDep1Id(argPopSubDep1Id);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerPopSubDep1-args", "ICFBamPopSubDep1ICFBamProtPopSubDep1ICFBamPubPopSubDep1", found);
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerPopSubDep1-args", "found", found, "ICFBamPopSubDep1ICFBamProtPopSubDep1ICFBamPubPopSubDep1");
 		}
 	}
 
