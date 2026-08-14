@@ -172,7 +172,7 @@ public class CFBamBuffScope
 
 	@Override
 	public ICFSecTenant getRequiredOwnerTenant() {
-		ICFSecPubSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec()");
 		}

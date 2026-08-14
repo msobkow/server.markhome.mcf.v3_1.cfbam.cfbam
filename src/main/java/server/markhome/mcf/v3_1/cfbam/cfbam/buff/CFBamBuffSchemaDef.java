@@ -112,7 +112,7 @@ public class CFBamBuffSchemaDef
 
 	@Override
 	public ICFIntMinorVersion getRequiredContainerMinorVersion() {
-		ICFIntPubSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
+		ICFIntPubSchema targetBackingCFInt = ICFIntPubSchema.getBackingCFInt();
 		if (targetBackingCFInt == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerMinorVersion", 0, "ICFIntPubSchema.getBackingCFInt()");
 		}
@@ -162,7 +162,7 @@ public class CFBamBuffSchemaDef
 
 	@Override
 	public ICFSecTenant getRequiredOwnerCTenant() {
-		ICFSecPubSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerCTenant", 0, "ICFSecPubSchema.getBackingCFSec()");
 		}
@@ -184,17 +184,7 @@ public class CFBamBuffSchemaDef
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
 		}
-		ICFSecPubTenant found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argCTenantId);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
-		}
-		else if (found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
-			super.setRequiredOwnerTenant(argCTenantId);
-		setRequiredCTenantId(argCTenantId);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
-		}
+		ICFSecPubreference Narrowed reference ToTable TableName$found = targetTable.$switch IsToIndexPrimaryKeyIndex yes derefBuffTableRelationNarrowedPKeyReadDerivedViaArgs default derefBuffTableRelationNarrowedDataReadDerivedViaArgs$;$switch IsRequired yes implUseNarrowedArgsRequired default implUseNarrowedArgsOptional$
 	}
 
 	@Override
@@ -207,17 +197,7 @@ public class CFBamBuffSchemaDef
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
 		}
-		ICFSecPubTenant found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argCTenantId);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
-		}
-		else if (found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
-			super.setRequiredOwnerTenant(argCTenantId);
-		setRequiredCTenantId(argCTenantId);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
-		}
+		ICFSecPubreference Narrowed reference ToTable TableName$found = targetTable.$switch IsToIndexPrimaryKeyIndex yes derefBuffTableRelationNarrowedPKeyReadDerivedViaArgs default derefBuffTableRelationNarrowedDataReadDerivedViaArgs$;$switch IsRequired yes implUseNarrowedArgsRequired default implUseNarrowedArgsOptional$
 	}
 
 	@Override

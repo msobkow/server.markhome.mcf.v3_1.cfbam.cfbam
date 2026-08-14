@@ -168,48 +168,28 @@ public class CFBamBuffUInt16Type
 
 	@Override
 	public void setRequiredContainerScope(CFLibDbKeyHash256 argSchemaDefId) {
-		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSchemaDef-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSchemaDef-args", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamPubScopeTable targetTable = targetBackingCFBam.getTableScope();
+		ICFBamScopeTable targetTable = targetBackingCFBam.getTableScope();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope", 0, "ICFBamPubSchema.getBackingCFBam().getTableScope()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope", 0, "ICFBamSchema.getBackingCFBam().getTableScope()");
 		}
-		ICFBamPubScope found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSchemaDefId);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope-args", 0, "found");
-		}
-		else if (found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)) {
-			super.setRequiredContainerScope(argSchemaDefId);
-		setRequiredSchemaDefId(argSchemaDefId);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
-		}
+		ICFBamreference Narrowed reference ToTable TableName$found = targetTable.$switch IsToIndexPrimaryKeyIndex yes derefBuffTableRelationNarrowedPKeyReadDerivedViaArgs default derefBuffTableRelationNarrowedDataReadDerivedViaArgs$;$switch IsRequired yes implUseNarrowedArgsRequired default implUseNarrowedArgsOptional$
 	}
 
 	@Override
 	public void setRequiredContainerSchemaDef(CFLibDbKeyHash256 argSchemaDefId) {
-		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSchemaDef-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerSchemaDef-args", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamPubScopeTable targetTable = targetBackingCFBam.getTableScope();
+		ICFBamScopeTable targetTable = targetBackingCFBam.getTableScope();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope", 0, "ICFBamPubSchema.getBackingCFBam().getTableScope()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope", 0, "ICFBamSchema.getBackingCFBam().getTableScope()");
 		}
-		ICFBamPubScope found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argSchemaDefId);
-		if (found == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScope-args", 0, "found");
-		}
-		else if (found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)) {
-			super.setRequiredContainerScope(argSchemaDefId);
-		setRequiredSchemaDefId(argSchemaDefId);
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
-		}
+		ICFBamreference Narrowed reference ToTable TableName$found = targetTable.$switch IsToIndexPrimaryKeyIndex yes derefBuffTableRelationNarrowedPKeyReadDerivedViaArgs default derefBuffTableRelationNarrowedDataReadDerivedViaArgs$;$switch IsRequired yes implUseNarrowedArgsRequired default implUseNarrowedArgsOptional$
 	}
 
 	@Override

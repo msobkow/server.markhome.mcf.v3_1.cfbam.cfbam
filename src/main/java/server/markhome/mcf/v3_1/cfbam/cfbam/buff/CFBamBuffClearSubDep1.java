@@ -146,15 +146,15 @@ public class CFBamBuffClearSubDep1
 
 	@Override
 	public void setRequiredContainerClearTopDep(CFLibDbKeyHash256 argClearTopDepId) {
-		ICFBamPubSchema targetBackingCFBam = ICFBamPubSchema.getBackingCFBam();
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearTopDep-args", 0, "ICFBamPubSchema.getBackingCFBam()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearTopDep-args", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamPubClearTopDepTable targetTable = targetBackingCFBam.getTableClearTopDep();
+		ICFBamClearTopDepTable targetTable = targetBackingCFBam.getTableClearTopDep();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearTopDep", 0, "ICFBamPubSchema.getBackingCFBam().getTableClearTopDep()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearTopDep", 0, "ICFBamSchema.getBackingCFBam().getTableClearTopDep()");
 		}
-		ICFBamPubClearTopDep found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argClearTopDepId);
+		ICFBamClearTopDep found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argClearTopDepId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearTopDep-args", 0, "found");
 		}
