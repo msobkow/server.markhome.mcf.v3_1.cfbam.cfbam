@@ -180,7 +180,7 @@ public class CFBamBuffScope
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
 		}
-		ICFSecPubTenant targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
+		ICFSecPubTenant targetRec = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTenantId());
 		return(targetRec);
 	}
 
@@ -194,7 +194,7 @@ public class CFBamBuffScope
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
 		}
-		ICFSecPubTenant found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
+		ICFSecPubTenant found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argTenantId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
 		}

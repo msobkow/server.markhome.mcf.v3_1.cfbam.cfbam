@@ -98,7 +98,7 @@ public class CFBamBuffPopSubDep3
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerPopSubDep2", 0, "ICFBamSchema.getBackingCFBam().getTablePopSubDep2()");
 		}
-		ICFBamPopSubDep2 targetRec = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredPopSubDep2Id());
+		ICFBamPopSubDep2 targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredPopSubDep2Id());
 		return(targetRec);
 	}
 
@@ -112,7 +112,7 @@ public class CFBamBuffPopSubDep3
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerPopSubDep2", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		ICFBamPopSubDep2 found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argPopSubDep2Id);
+		ICFBamPopSubDep2 found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argPopSubDep2Id);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerPopSubDep2-args", 0, "found");
 		}
@@ -154,7 +154,7 @@ public class CFBamBuffPopSubDep3
 		if (targetTable == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerPopSubDep2", 0, "ICFBamPubSchema.getBackingCFBam().getTablePopSubDep2()");
 		}
-		ICFBamPubPopSubDep2 found = targetTable.readDerivedByIdIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argPopSubDep2Id);
+		ICFBamPubPopSubDep2 found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argPopSubDep2Id);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerPopSubDep2-args", 0, "found");
 		}
