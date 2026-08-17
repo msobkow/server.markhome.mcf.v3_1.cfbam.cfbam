@@ -74,7 +74,7 @@ public class CFBamBuffDbKeyHash128Col
 	extends CFBamBuffDbKeyHash128Def
 	implements ICFBamDbKeyHash128Col
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
 	public CFBamBuffDbKeyHash128Col() {
 		super();

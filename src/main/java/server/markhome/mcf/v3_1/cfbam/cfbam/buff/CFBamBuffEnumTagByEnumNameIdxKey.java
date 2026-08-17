@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffEnumTagByEnumNameIdxKey
 	implements ICFBamEnumTagByEnumNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredEnumId;
-	protected $implJavaAtomType$ requiredName;
+	protected ICFLibKeyHash256 requiredEnumId;
+	protected String requiredName;
 	public CFBamBuffEnumTagByEnumNameIdxKey() {
 		requiredEnumId = CFLibDbKeyHash256.fromHex( ICFBamPubEnumTag.ENUMID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubEnumTag.NAME_INIT_VALUE;

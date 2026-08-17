@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffSchemaRefByPrevIdxKey
 	implements ICFBamSchemaRefByPrevIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ optionalPrevId;
+	protected ICFLibKeyHash256 optionalPrevId;
 	public CFBamBuffSchemaRefByPrevIdxKey() {
 		optionalPrevId = CFLibDbKeyHash256.nullGet();
 	}

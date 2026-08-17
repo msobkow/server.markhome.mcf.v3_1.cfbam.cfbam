@@ -74,7 +74,7 @@ public class CFBamBuffTZTimestampType
 	extends CFBamBuffTZTimestampDef
 	implements ICFBamTZTimestampType
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
 
 	public CFBamBuffTZTimestampType() {
 		super();

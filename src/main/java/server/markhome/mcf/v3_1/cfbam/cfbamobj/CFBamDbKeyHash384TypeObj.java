@@ -318,7 +318,7 @@ public class CFBamDbKeyHash384TypeObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -339,7 +339,7 @@ public class CFBamDbKeyHash384TypeObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSchemaDefId() {
+	public ICFLibKeyHash256 getRequiredSchemaDefId() {
 		return( getDbKeyHash384TypeRec().getRequiredSchemaDefId() );
 	}
 }

@@ -313,22 +313,22 @@ public class CFBamFloatDefObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalInitValue() {
+	public Float getOptionalInitValue() {
 		return( getFloatDefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalMinValue() {
+	public Float getOptionalMinValue() {
 		return( getFloatDefRec().getOptionalMinValue() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalMaxValue() {
+	public Float getOptionalMaxValue() {
 		return( getFloatDefRec().getOptionalMaxValue() );
 	}
 }

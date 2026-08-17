@@ -74,10 +74,10 @@ public class CFBamBuffClearTopDep
 	extends CFBamBuffClearDep
 	implements ICFBamClearTopDep
 {
-	protected $implJavaAtomType$ requiredTableId;
-	protected $implJavaAtomType$ requiredName;
-	protected $implJavaAtomType$ optionalPrevId;
-	protected $implJavaAtomType$ optionalNextId;
+	protected ICFLibKeyHash256 requiredTableId;
+	protected String requiredName;
+	protected ICFLibKeyHash256 optionalPrevId;
+	protected ICFLibKeyHash256 optionalNextId;
 
 	public CFBamBuffClearTopDep() {
 		super();

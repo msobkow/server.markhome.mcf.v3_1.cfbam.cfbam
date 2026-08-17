@@ -73,13 +73,13 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffSchemaRefH extends CFBamBuffScopeH
     implements ICFBamSchemaRefH
 {
-	protected $implJavaAtomType$ requiredSchemaId;
-	protected $implJavaAtomType$ requiredName;
-	protected $implJavaAtomType$ requiredRefModelName;
-	protected $implJavaAtomType$ requiredIncludeRoot;
-	protected $implJavaAtomType$ optionalRefSchemaId;
-	protected $implJavaAtomType$ optionalPrevId;
-	protected $implJavaAtomType$ optionalNextId;
+	protected ICFLibKeyHash256 requiredSchemaId;
+	protected String requiredName;
+	protected String requiredRefModelName;
+	protected String requiredIncludeRoot;
+	protected ICFLibKeyHash256 optionalRefSchemaId;
+	protected ICFLibKeyHash256 optionalPrevId;
+	protected ICFLibKeyHash256 optionalNextId;
 
     public CFBamBuffSchemaRefH() {
             super();

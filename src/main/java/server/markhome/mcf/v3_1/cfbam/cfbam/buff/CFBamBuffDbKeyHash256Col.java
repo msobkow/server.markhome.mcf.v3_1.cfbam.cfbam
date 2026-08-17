@@ -74,7 +74,7 @@ public class CFBamBuffDbKeyHash256Col
 	extends CFBamBuffDbKeyHash256Def
 	implements ICFBamDbKeyHash256Col
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
 	public CFBamBuffDbKeyHash256Col() {
 		super();

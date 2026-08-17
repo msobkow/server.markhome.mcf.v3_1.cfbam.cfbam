@@ -362,29 +362,29 @@ public class CFBamSecUserPasswordEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecUserId() {
+	public ICFLibKeyHash256 getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredPWSetStamp() {
+	public LocalDateTime getRequiredPWSetStamp() {
 		return( getSecUserPasswordRec().getRequiredPWSetStamp() );
 	}
 
 	@Override
-	public void setRequiredPWSetStamp( $implJavaAtomType$ value ) {
+	public void setRequiredPWSetStamp( LocalDateTime value ) {
 		if( getSecUserPasswordRec().getRequiredPWSetStamp() != value ) {
 			getSecUserPasswordRec().setRequiredPWSetStamp( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredPasswordHash() {
+	public String getRequiredPasswordHash() {
 		return( getSecUserPasswordRec().getRequiredPasswordHash() );
 	}
 
 	@Override
-	public void setRequiredPasswordHash( $implJavaAtomType$ value ) {
+	public void setRequiredPasswordHash( String value ) {
 		if( getSecUserPasswordRec().getRequiredPasswordHash() != value ) {
 			getSecUserPasswordRec().setRequiredPasswordHash( value );
 		}

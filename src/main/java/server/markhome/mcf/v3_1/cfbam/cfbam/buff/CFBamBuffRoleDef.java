@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffRoleDef
 	implements ICFBamRoleDef, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredId;
+	protected ICFLibKeyHash256 requiredId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -81,11 +81,11 @@ public class CFBamBuffRoleDef
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected $implJavaAtomType$ requiredScopeId;
-	protected $implJavaAtomType$ optionalDefSchemaId;
-	protected $implJavaAtomType$ requiredName;
-	protected $implJavaAtomType$ requiredEnables;
-	protected $implJavaAtomType$ requiredIncludes;
+	protected ICFLibKeyHash256 requiredScopeId;
+	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected String requiredName;
+	protected String requiredEnables;
+	protected String requiredIncludes;
 
 	public CFBamBuffRoleDef() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubRoleDef.ID_INIT_VALUE.toString() );
@@ -97,12 +97,12 @@ public class CFBamBuffRoleDef
 	}
 
 	@Override
-	public $implJavaOptAtomType$ getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return (requiredId);
 	}
 
 	@Override
-	public void setPKey($implJavaOptAtomType$ requiredId) {
+	public void setPKey(ICFLibKeyHash256 requiredId) {
 		if(requiredId != null) {
 			this.requiredId = requiredId;
 		}

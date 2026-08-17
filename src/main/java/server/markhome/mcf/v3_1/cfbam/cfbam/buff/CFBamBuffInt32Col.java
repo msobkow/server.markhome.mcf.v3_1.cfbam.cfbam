@@ -74,7 +74,7 @@ public class CFBamBuffInt32Col
 	extends CFBamBuffInt32Def
 	implements ICFBamInt32Col
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
 	public CFBamBuffInt32Col() {
 		super();

@@ -74,7 +74,7 @@ public class CFBamBuffUuidCol
 	extends CFBamBuffUuidDef
 	implements ICFBamUuidCol
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
 	public CFBamBuffUuidCol() {
 		super();

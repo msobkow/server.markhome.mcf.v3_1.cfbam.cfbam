@@ -73,18 +73,18 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffIndexH extends CFBamBuffScopeH
     implements ICFBamIndexH
 {
-	protected $implJavaAtomType$ requiredTableId;
-	protected $implJavaAtomType$ optionalDefSchemaId;
-	protected $implJavaAtomType$ requiredName;
-	protected $implJavaAtomType$ optionalShortName;
-	protected $implJavaAtomType$ optionalLabel;
-	protected $implJavaAtomType$ optionalShortDescription;
-	protected $implJavaAtomType$ optionalDescription;
-	protected $implJavaAtomType$ optionalDbName;
-	protected $implJavaAtomType$ optionalSuffix;
-	protected $implJavaAtomType$ requiredIsUnique;
-	protected $implJavaAtomType$ requiredIsDbMapped;
-	protected $implJavaAtomType$ requiredCodeVis;
+	protected ICFLibKeyHash256 requiredTableId;
+	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected String requiredName;
+	protected String optionalShortName;
+	protected String optionalLabel;
+	protected String optionalShortDescription;
+	protected String optionalDescription;
+	protected String optionalDbName;
+	protected String optionalSuffix;
+	protected boolean requiredIsUnique;
+	protected boolean requiredIsDbMapped;
+	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
 
     public CFBamBuffIndexH() {
             super();

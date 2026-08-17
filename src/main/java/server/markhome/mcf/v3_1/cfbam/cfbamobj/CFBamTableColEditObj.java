@@ -270,12 +270,12 @@ public class CFBamTableColEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -288,34 +288,34 @@ public class CFBamTableColEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTableId() {
+	public ICFLibKeyHash256 getRequiredTableId() {
 		return( getTableColRec().getRequiredTableId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDbName() {
+	public String getOptionalDbName() {
 		return( getTableColRec().getOptionalDbName() );
 	}
 
 	@Override
-	public void setOptionalDbName( $implJavaAtomType$ value ) {
+	public void setOptionalDbName( String value ) {
 		if( getTableColRec().getOptionalDbName() != value ) {
 			getTableColRec().setOptionalDbName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDataId() {
+	public ICFLibKeyHash256 getOptionalDataId() {
 		return( getTableColRec().getOptionalDataId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalXmlElementName() {
+	public String getOptionalXmlElementName() {
 		return( getTableColRec().getOptionalXmlElementName() );
 	}
 
 	@Override
-	public void setOptionalXmlElementName( $implJavaAtomType$ value ) {
+	public void setOptionalXmlElementName( String value ) {
 		if( getTableColRec().getOptionalXmlElementName() != value ) {
 			getTableColRec().setOptionalXmlElementName( value );
 		}

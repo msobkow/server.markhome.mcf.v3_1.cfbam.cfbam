@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffUInt32ColH extends CFBamBuffUInt32DefH
     implements ICFBamUInt32ColH
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
     public CFBamBuffUInt32ColH() {
             super();

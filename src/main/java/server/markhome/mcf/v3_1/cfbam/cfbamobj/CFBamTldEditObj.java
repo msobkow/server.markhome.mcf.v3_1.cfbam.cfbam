@@ -217,7 +217,7 @@ public class CFBamTldEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTopDomainTableObj().readTopDomainByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -428,12 +428,12 @@ public class CFBamTldEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerTenant = null;
@@ -442,29 +442,29 @@ public class CFBamTldEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getTldRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getTldRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( $implJavaAtomType$ value ) {
+	public void setRequiredName( String value ) {
 		if( getTldRec().getRequiredName() != value ) {
 			getTldRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getTldRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( $implJavaAtomType$ value ) {
+	public void setOptionalDescription( String value ) {
 		if( getTldRec().getOptionalDescription() != value ) {
 			getTldRec().setOptionalDescription( value );
 		}

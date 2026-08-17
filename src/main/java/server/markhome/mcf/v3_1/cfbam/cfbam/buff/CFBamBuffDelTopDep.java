@@ -74,10 +74,10 @@ public class CFBamBuffDelTopDep
 	extends CFBamBuffDelDep
 	implements ICFBamDelTopDep
 {
-	protected $implJavaAtomType$ requiredName;
-	protected $implJavaAtomType$ requiredTableId;
-	protected $implJavaAtomType$ optionalPrevId;
-	protected $implJavaAtomType$ optionalNextId;
+	protected String requiredName;
+	protected ICFLibKeyHash256 requiredTableId;
+	protected ICFLibKeyHash256 optionalPrevId;
+	protected ICFLibKeyHash256 optionalNextId;
 
 	public CFBamBuffDelTopDep() {
 		super();

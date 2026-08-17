@@ -322,7 +322,7 @@ public class CFBamTableColObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -362,22 +362,22 @@ public class CFBamTableColObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTableId() {
+	public ICFLibKeyHash256 getRequiredTableId() {
 		return( getTableColRec().getRequiredTableId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDbName() {
+	public String getOptionalDbName() {
 		return( getTableColRec().getOptionalDbName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDataId() {
+	public ICFLibKeyHash256 getOptionalDataId() {
 		return( getTableColRec().getOptionalDataId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalXmlElementName() {
+	public String getOptionalXmlElementName() {
 		return( getTableColRec().getOptionalXmlElementName() );
 	}
 }

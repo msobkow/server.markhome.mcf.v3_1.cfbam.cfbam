@@ -74,7 +74,7 @@ public class CFBamBuffDbKeyHash384Type
 	extends CFBamBuffDbKeyHash384Def
 	implements ICFBamDbKeyHash384Type
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
 
 	public CFBamBuffDbKeyHash384Type() {
 		super();

@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffUuid6ColH extends CFBamBuffUuid6DefH
     implements ICFBamUuid6ColH
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
     public CFBamBuffUuid6ColH() {
             super();

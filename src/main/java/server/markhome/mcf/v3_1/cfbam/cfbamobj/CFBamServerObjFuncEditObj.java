@@ -256,19 +256,19 @@ public class CFBamServerObjFuncEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalRetTableId() {
+	public ICFLibKeyHash256 getOptionalRetTableId() {
 		return( getServerObjFuncRec().getOptionalRetTableId() );
 	}
 

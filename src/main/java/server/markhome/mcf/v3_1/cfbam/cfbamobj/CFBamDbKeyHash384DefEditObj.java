@@ -263,12 +263,12 @@ public class CFBamDbKeyHash384DefEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,12 +281,12 @@ public class CFBamDbKeyHash384DefEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalInitValue() {
+	public String getOptionalInitValue() {
 		return( getDbKeyHash384DefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public void setOptionalInitValue( $implJavaAtomType$ value ) {
+	public void setOptionalInitValue( String value ) {
 		if( getDbKeyHash384DefRec().getOptionalInitValue() != value ) {
 			getDbKeyHash384DefRec().setOptionalInitValue( value );
 		}

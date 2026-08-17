@@ -74,7 +74,7 @@ public class CFBamBuffDbKeyHash160Type
 	extends CFBamBuffDbKeyHash160Def
 	implements ICFBamDbKeyHash160Type
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
 
 	public CFBamBuffDbKeyHash160Type() {
 		super();

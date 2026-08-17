@@ -155,7 +155,7 @@ public class CFBamIndexEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getIndexColTableObj().readIndexColByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -277,142 +277,142 @@ public class CFBamIndexEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTableId() {
+	public ICFLibKeyHash256 getRequiredTableId() {
 		return( getIndexRec().getRequiredTableId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDefSchemaId() {
+	public ICFLibKeyHash256 getOptionalDefSchemaId() {
 		return( getIndexRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getIndexRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( $implJavaAtomType$ value ) {
+	public void setRequiredName( String value ) {
 		if( getIndexRec().getRequiredName() != value ) {
 			getIndexRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalShortName() {
+	public String getOptionalShortName() {
 		return( getIndexRec().getOptionalShortName() );
 	}
 
 	@Override
-	public void setOptionalShortName( $implJavaAtomType$ value ) {
+	public void setOptionalShortName( String value ) {
 		if( getIndexRec().getOptionalShortName() != value ) {
 			getIndexRec().setOptionalShortName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalLabel() {
+	public String getOptionalLabel() {
 		return( getIndexRec().getOptionalLabel() );
 	}
 
 	@Override
-	public void setOptionalLabel( $implJavaAtomType$ value ) {
+	public void setOptionalLabel( String value ) {
 		if( getIndexRec().getOptionalLabel() != value ) {
 			getIndexRec().setOptionalLabel( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalShortDescription() {
+	public String getOptionalShortDescription() {
 		return( getIndexRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public void setOptionalShortDescription( $implJavaAtomType$ value ) {
+	public void setOptionalShortDescription( String value ) {
 		if( getIndexRec().getOptionalShortDescription() != value ) {
 			getIndexRec().setOptionalShortDescription( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getIndexRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( $implJavaAtomType$ value ) {
+	public void setOptionalDescription( String value ) {
 		if( getIndexRec().getOptionalDescription() != value ) {
 			getIndexRec().setOptionalDescription( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDbName() {
+	public String getOptionalDbName() {
 		return( getIndexRec().getOptionalDbName() );
 	}
 
 	@Override
-	public void setOptionalDbName( $implJavaAtomType$ value ) {
+	public void setOptionalDbName( String value ) {
 		if( getIndexRec().getOptionalDbName() != value ) {
 			getIndexRec().setOptionalDbName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalSuffix() {
+	public String getOptionalSuffix() {
 		return( getIndexRec().getOptionalSuffix() );
 	}
 
 	@Override
-	public void setOptionalSuffix( $implJavaAtomType$ value ) {
+	public void setOptionalSuffix( String value ) {
 		if( getIndexRec().getOptionalSuffix() != value ) {
 			getIndexRec().setOptionalSuffix( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIsUnique() {
+	public boolean getRequiredIsUnique() {
 		return( getIndexRec().getRequiredIsUnique() );
 	}
 
 	@Override
-	public void setRequiredIsUnique( $implJavaAtomType$ value ) {
+	public void setRequiredIsUnique( boolean value ) {
 		if( getIndexRec().getRequiredIsUnique() != value ) {
 			getIndexRec().setRequiredIsUnique( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIsDbMapped() {
+	public boolean getRequiredIsDbMapped() {
 		return( getIndexRec().getRequiredIsDbMapped() );
 	}
 
 	@Override
-	public void setRequiredIsDbMapped( $implJavaAtomType$ value ) {
+	public void setRequiredIsDbMapped( boolean value ) {
 		if( getIndexRec().getRequiredIsDbMapped() != value ) {
 			getIndexRec().setRequiredIsDbMapped( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredCodeVis() {
+	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
 		return( getIndexRec().getRequiredCodeVis() );
 	}
 
 	@Override
-	public void setRequiredCodeVis( $implJavaAtomType$ value ) {
+	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
 		if( getIndexRec().getRequiredCodeVis() != value ) {
 			getIndexRec().setRequiredCodeVis( value );
 		}

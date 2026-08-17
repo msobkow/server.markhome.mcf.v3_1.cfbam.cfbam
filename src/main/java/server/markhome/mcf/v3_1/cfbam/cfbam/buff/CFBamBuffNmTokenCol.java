@@ -74,7 +74,7 @@ public class CFBamBuffNmTokenCol
 	extends CFBamBuffNmTokenDef
 	implements ICFBamNmTokenCol
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
 	public CFBamBuffNmTokenCol() {
 		super();

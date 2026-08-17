@@ -306,7 +306,7 @@ public class CFBamClearSubDep2Obj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -343,12 +343,12 @@ public class CFBamClearSubDep2Obj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredClearSubDep1Id() {
+	public ICFLibKeyHash256 getRequiredClearSubDep1Id() {
 		return( getClearSubDep2Rec().getRequiredClearSubDep1Id() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getClearSubDep2Rec().getRequiredName() );
 	}
 }

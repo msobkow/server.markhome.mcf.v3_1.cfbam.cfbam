@@ -221,7 +221,7 @@ public class CFBamTopDomainEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTopProjectTableObj().readTopProjectByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -234,7 +234,7 @@ public class CFBamTopDomainEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getLicenseTableObj().readLicenseByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -446,12 +446,12 @@ public class CFBamTopDomainEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredOwnerTenant = null;
@@ -462,34 +462,34 @@ public class CFBamTopDomainEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getTopDomainRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTldId() {
+	public ICFLibKeyHash256 getRequiredTldId() {
 		return( getTopDomainRec().getRequiredTldId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getTopDomainRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( $implJavaAtomType$ value ) {
+	public void setRequiredName( String value ) {
 		if( getTopDomainRec().getRequiredName() != value ) {
 			getTopDomainRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getTopDomainRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( $implJavaAtomType$ value ) {
+	public void setOptionalDescription( String value ) {
 		if( getTopDomainRec().getOptionalDescription() != value ) {
 			getTopDomainRec().setOptionalDescription( value );
 		}

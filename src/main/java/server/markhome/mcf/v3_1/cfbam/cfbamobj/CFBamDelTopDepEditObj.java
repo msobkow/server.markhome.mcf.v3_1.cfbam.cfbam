@@ -274,41 +274,41 @@ public class CFBamDelTopDepEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getDelTopDepRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( $implJavaAtomType$ value ) {
+	public void setRequiredName( String value ) {
 		if( getDelTopDepRec().getRequiredName() != value ) {
 			getDelTopDepRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTableId() {
+	public ICFLibKeyHash256 getRequiredTableId() {
 		return( getDelTopDepRec().getRequiredTableId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalPrevId() {
+	public ICFLibKeyHash256 getOptionalPrevId() {
 		return( getDelTopDepRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalNextId() {
+	public ICFLibKeyHash256 getOptionalNextId() {
 		return( getDelTopDepRec().getOptionalNextId() );
 	}
 

@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffPopSubDep1H extends CFBamBuffPopDepH
     implements ICFBamPopSubDep1H
 {
-	protected $implJavaAtomType$ requiredPopTopDepId;
-	protected $implJavaAtomType$ requiredName;
+	protected ICFLibKeyHash256 requiredPopTopDepId;
+	protected String requiredName;
 
     public CFBamBuffPopSubDep1H() {
             super();

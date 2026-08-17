@@ -358,7 +358,7 @@ public class CFBamSecSessionObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecSessionId() {
+	public ICFLibKeyHash256 getRequiredSecSessionId() {
 		return( getPKey() );
 	}
 
@@ -398,22 +398,22 @@ public class CFBamSecSessionObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecUserId() {
+	public ICFLibKeyHash256 getRequiredSecUserId() {
 		return( getSecSessionRec().getRequiredSecUserId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredStart() {
+	public LocalDateTime getRequiredStart() {
 		return( getSecSessionRec().getRequiredStart() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalFinish() {
+	public LocalDateTime getOptionalFinish() {
 		return( getSecSessionRec().getOptionalFinish() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalSecProxyId() {
+	public ICFLibKeyHash256 getOptionalSecProxyId() {
 		return( getSecSessionRec().getOptionalSecProxyId() );
 	}
 

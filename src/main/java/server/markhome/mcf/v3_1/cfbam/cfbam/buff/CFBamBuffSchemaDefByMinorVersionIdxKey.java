@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffSchemaDefByMinorVersionIdxKey
 	implements ICFBamSchemaDefByMinorVersionIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredMinorVersionId;
+	protected ICFLibKeyHash256 requiredMinorVersionId;
 	public CFBamBuffSchemaDefByMinorVersionIdxKey() {
 		requiredMinorVersionId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaDef.MINORVERSIONID_INIT_VALUE.toString() );
 	}

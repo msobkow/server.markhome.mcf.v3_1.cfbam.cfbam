@@ -263,12 +263,12 @@ public class CFBamBoolDefEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,48 +281,48 @@ public class CFBamBoolDefEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalInitValue() {
+	public Boolean getOptionalInitValue() {
 		return( getBoolDefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public void setOptionalInitValue( $implJavaAtomType$ value ) {
+	public void setOptionalInitValue( Boolean value ) {
 		if( getBoolDefRec().getOptionalInitValue() != value ) {
 			getBoolDefRec().setOptionalInitValue( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalFalseString() {
+	public String getOptionalFalseString() {
 		return( getBoolDefRec().getOptionalFalseString() );
 	}
 
 	@Override
-	public void setOptionalFalseString( $implJavaAtomType$ value ) {
+	public void setOptionalFalseString( String value ) {
 		if( getBoolDefRec().getOptionalFalseString() != value ) {
 			getBoolDefRec().setOptionalFalseString( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalTrueString() {
+	public String getOptionalTrueString() {
 		return( getBoolDefRec().getOptionalTrueString() );
 	}
 
 	@Override
-	public void setOptionalTrueString( $implJavaAtomType$ value ) {
+	public void setOptionalTrueString( String value ) {
 		if( getBoolDefRec().getOptionalTrueString() != value ) {
 			getBoolDefRec().setOptionalTrueString( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalNullString() {
+	public String getOptionalNullString() {
 		return( getBoolDefRec().getOptionalNullString() );
 	}
 
 	@Override
-	public void setOptionalNullString( $implJavaAtomType$ value ) {
+	public void setOptionalNullString( String value ) {
 		if( getBoolDefRec().getOptionalNullString() != value ) {
 			getBoolDefRec().setOptionalNullString( value );
 		}

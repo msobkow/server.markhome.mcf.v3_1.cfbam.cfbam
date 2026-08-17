@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffIndexCol
 	implements ICFBamIndexCol, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredId;
+	protected ICFLibKeyHash256 requiredId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -81,17 +81,17 @@ public class CFBamBuffIndexCol
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected $implJavaAtomType$ requiredIndexId;
-	protected $implJavaAtomType$ optionalDefSchemaId;
-	protected $implJavaAtomType$ requiredName;
-	protected $implJavaAtomType$ optionalShortName;
-	protected $implJavaAtomType$ optionalLabel;
-	protected $implJavaAtomType$ optionalShortDescription;
-	protected $implJavaAtomType$ optionalDescription;
-	protected $implJavaAtomType$ requiredColumnId;
-	protected $implJavaAtomType$ requiredIsAscending;
-	protected $implJavaAtomType$ optionalPrevId;
-	protected $implJavaAtomType$ optionalNextId;
+	protected ICFLibKeyHash256 requiredIndexId;
+	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected String requiredName;
+	protected String optionalShortName;
+	protected String optionalLabel;
+	protected String optionalShortDescription;
+	protected String optionalDescription;
+	protected ICFLibKeyHash256 requiredColumnId;
+	protected boolean requiredIsAscending;
+	protected ICFLibKeyHash256 optionalPrevId;
+	protected ICFLibKeyHash256 optionalNextId;
 
 	public CFBamBuffIndexCol() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubIndexCol.ID_INIT_VALUE.toString() );
@@ -109,12 +109,12 @@ public class CFBamBuffIndexCol
 	}
 
 	@Override
-	public $implJavaOptAtomType$ getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return (requiredId);
 	}
 
 	@Override
-	public void setPKey($implJavaOptAtomType$ requiredId) {
+	public void setPKey(ICFLibKeyHash256 requiredId) {
 		if(requiredId != null) {
 			this.requiredId = requiredId;
 		}

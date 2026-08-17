@@ -74,7 +74,7 @@ public class CFBamBuffTimestampCol
 	extends CFBamBuffTimestampDef
 	implements ICFBamTimestampCol
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
 	public CFBamBuffTimestampCol() {
 		super();

@@ -318,7 +318,7 @@ public class CFBamUuid6TypeObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -339,7 +339,7 @@ public class CFBamUuid6TypeObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSchemaDefId() {
+	public ICFLibKeyHash256 getRequiredSchemaDefId() {
 		return( getUuid6TypeRec().getRequiredSchemaDefId() );
 	}
 }

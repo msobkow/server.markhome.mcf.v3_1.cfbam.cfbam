@@ -74,7 +74,7 @@ public class CFBamBuffDbKeyHash512Col
 	extends CFBamBuffDbKeyHash512Def
 	implements ICFBamDbKeyHash512Col
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
 	public CFBamBuffDbKeyHash512Col() {
 		super();

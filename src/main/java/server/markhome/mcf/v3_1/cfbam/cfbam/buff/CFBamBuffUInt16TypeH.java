@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffUInt16TypeH extends CFBamBuffUInt16DefH
     implements ICFBamUInt16TypeH
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
 
     public CFBamBuffUInt16TypeH() {
             super();

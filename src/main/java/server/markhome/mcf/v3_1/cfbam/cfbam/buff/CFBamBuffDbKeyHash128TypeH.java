@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffDbKeyHash128TypeH extends CFBamBuffDbKeyHash128DefH
     implements ICFBamDbKeyHash128TypeH
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
 
     public CFBamBuffDbKeyHash128TypeH() {
             super();

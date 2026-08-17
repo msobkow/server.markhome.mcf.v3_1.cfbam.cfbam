@@ -318,7 +318,7 @@ public class CFBamUuidColObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -339,7 +339,7 @@ public class CFBamUuidColObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTableId() {
+	public ICFLibKeyHash256 getRequiredTableId() {
 		return( getUuidColRec().getRequiredTableId() );
 	}
 }

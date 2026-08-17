@@ -412,7 +412,7 @@ public class CFBamParamObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -509,47 +509,47 @@ public class CFBamParamObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredServerMethodId() {
+	public ICFLibKeyHash256 getRequiredServerMethodId() {
 		return( getParamRec().getRequiredServerMethodId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDefSchemaId() {
+	public ICFLibKeyHash256 getOptionalDefSchemaId() {
 		return( getParamRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getParamRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalShortDescription() {
+	public String getOptionalShortDescription() {
 		return( getParamRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getParamRec().getOptionalDescription() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIsNullable() {
+	public boolean getRequiredIsNullable() {
 		return( getParamRec().getRequiredIsNullable() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalTypeId() {
+	public ICFLibKeyHash256 getOptionalTypeId() {
 		return( getParamRec().getOptionalTypeId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalPrevId() {
+	public ICFLibKeyHash256 getOptionalPrevId() {
 		return( getParamRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalNextId() {
+	public ICFLibKeyHash256 getOptionalNextId() {
 		return( getParamRec().getOptionalNextId() );
 	}
 

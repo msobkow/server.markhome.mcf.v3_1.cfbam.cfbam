@@ -74,7 +74,7 @@ public class CFBamBuffAtom
 	extends CFBamBuffValue
 	implements ICFBamAtom
 {
-	protected $implJavaAtomType$ optionalDbName;
+	protected String optionalDbName;
 
 	public CFBamBuffAtom() {
 		super();

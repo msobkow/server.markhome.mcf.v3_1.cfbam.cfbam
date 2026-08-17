@@ -74,7 +74,7 @@ public class CFBamBuffUuid6Def
 	extends CFBamBuffAtom
 	implements ICFBamUuid6Def
 {
-	protected $implJavaAtomType$ optionalInitValue;
+	protected String optionalInitValue;
 
 	public CFBamBuffUuid6Def() {
 		super();

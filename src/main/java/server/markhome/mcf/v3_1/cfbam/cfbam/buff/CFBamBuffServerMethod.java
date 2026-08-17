@@ -74,20 +74,20 @@ public class CFBamBuffServerMethod
 	extends CFBamBuffScope
 	implements ICFBamServerMethod
 {
-	protected $implJavaAtomType$ requiredTableId;
-	protected $implJavaAtomType$ optionalDefSchemaId;
-	protected $implJavaAtomType$ requiredName;
-	protected $implJavaAtomType$ optionalShortName;
-	protected $implJavaAtomType$ optionalLabel;
-	protected $implJavaAtomType$ optionalShortDescription;
-	protected $implJavaAtomType$ optionalDescription;
-	protected $implJavaAtomType$ optionalSuffix;
-	protected $implJavaAtomType$ requiredIsInstanceMethod;
-	protected $implJavaAtomType$ requiredIsServerOnly;
-	protected $implJavaAtomType$ requiredCodeVis;
-	protected $implJavaAtomType$ requiredJMethodBody;
-	protected $implJavaAtomType$ requiredCppMethodBody;
-	protected $implJavaAtomType$ requiredCsMethodBody;
+	protected ICFLibKeyHash256 requiredTableId;
+	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected String requiredName;
+	protected String optionalShortName;
+	protected String optionalLabel;
+	protected String optionalShortDescription;
+	protected String optionalDescription;
+	protected String optionalSuffix;
+	protected boolean requiredIsInstanceMethod;
+	protected boolean requiredIsServerOnly;
+	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
+	protected String requiredJMethodBody;
+	protected String requiredCppMethodBody;
+	protected String requiredCsMethodBody;
 
 	public CFBamBuffServerMethod() {
 		super();

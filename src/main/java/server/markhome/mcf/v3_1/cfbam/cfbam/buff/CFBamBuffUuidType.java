@@ -74,7 +74,7 @@ public class CFBamBuffUuidType
 	extends CFBamBuffUuidDef
 	implements ICFBamUuidType
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
 
 	public CFBamBuffUuidType() {
 		super();

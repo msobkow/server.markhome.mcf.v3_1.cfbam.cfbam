@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTableByPrimaryIndexIdxKey
 	implements ICFBamTableByPrimaryIndexIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ optionalPrimaryIndexId;
+	protected ICFLibKeyHash256 optionalPrimaryIndexId;
 	public CFBamBuffTableByPrimaryIndexIdxKey() {
 		optionalPrimaryIndexId = CFLibDbKeyHash256.nullGet();
 	}

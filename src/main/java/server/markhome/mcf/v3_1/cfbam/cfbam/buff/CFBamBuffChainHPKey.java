@@ -78,7 +78,7 @@ public class CFBamBuffChainHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected $implJavaAtomType$ requiredId;
+	protected ICFLibKeyHash256 requiredId;
 
 	public CFBamBuffChainHPKey() {
 		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;

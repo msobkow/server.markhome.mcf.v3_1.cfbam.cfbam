@@ -313,12 +313,12 @@ public class CFBamTZDateDefObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDummy() {
+	public String getOptionalDummy() {
 		return( getTZDateDefRec().getOptionalDummy() );
 	}
 }

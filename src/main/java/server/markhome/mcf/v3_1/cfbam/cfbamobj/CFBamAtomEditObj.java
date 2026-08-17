@@ -263,12 +263,12 @@ public class CFBamAtomEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,12 +281,12 @@ public class CFBamAtomEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDbName() {
+	public String getOptionalDbName() {
 		return( getAtomRec().getOptionalDbName() );
 	}
 
 	@Override
-	public void setOptionalDbName( $implJavaAtomType$ value ) {
+	public void setOptionalDbName( String value ) {
 		if( getAtomRec().getOptionalDbName() != value ) {
 			getAtomRec().setOptionalDbName( value );
 		}

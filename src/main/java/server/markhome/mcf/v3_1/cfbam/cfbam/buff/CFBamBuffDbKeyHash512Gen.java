@@ -74,8 +74,8 @@ public class CFBamBuffDbKeyHash512Gen
 	extends CFBamBuffDbKeyHash512Type
 	implements ICFBamDbKeyHash512Gen
 {
-	protected $implJavaAtomType$ requiredSlice;
-	protected $implJavaAtomType$ requiredBlockSize;
+	protected short requiredSlice;
+	protected int requiredBlockSize;
 
 	public CFBamBuffDbKeyHash512Gen() {
 		super();

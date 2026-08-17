@@ -383,7 +383,7 @@ public class CFBamSecClusGrpObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecClusGrpId() {
+	public ICFLibKeyHash256 getRequiredSecClusGrpId() {
 		return( getPKey() );
 	}
 
@@ -436,12 +436,12 @@ public class CFBamSecClusGrpObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredClusterId() {
+	public ICFLibKeyHash256 getRequiredClusterId() {
 		return( getSecClusGrpRec().getRequiredClusterId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getSecClusGrpRec().getRequiredName() );
 	}
 

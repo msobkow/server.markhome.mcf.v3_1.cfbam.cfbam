@@ -415,12 +415,12 @@ public class CFBamSecClusRoleMembEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecClusRoleId() {
+	public ICFLibKeyHash256 getRequiredSecClusRoleId() {
 		return( getPKey().getRequiredSecClusRoleId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredLoginId() {
+	public String getRequiredLoginId() {
 		return( getPKey().getRequiredLoginId() );
 	}
 

@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffEnumTagByNextIdxKey
 	implements ICFBamEnumTagByNextIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ optionalNextId;
+	protected ICFLibKeyHash256 optionalNextId;
 	public CFBamBuffEnumTagByNextIdxKey() {
 		optionalNextId = CFLibDbKeyHash256.nullGet();
 	}

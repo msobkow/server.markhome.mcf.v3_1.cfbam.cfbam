@@ -263,12 +263,12 @@ public class CFBamUuidGenEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,24 +281,24 @@ public class CFBamUuidGenEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSlice() {
+	public short getRequiredSlice() {
 		return( getUuidGenRec().getRequiredSlice() );
 	}
 
 	@Override
-	public void setRequiredSlice( $implJavaAtomType$ value ) {
+	public void setRequiredSlice( short value ) {
 		if( getUuidGenRec().getRequiredSlice() != value ) {
 			getUuidGenRec().setRequiredSlice( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredBlockSize() {
+	public int getRequiredBlockSize() {
 		return( getUuidGenRec().getRequiredBlockSize() );
 	}
 
 	@Override
-	public void setRequiredBlockSize( $implJavaAtomType$ value ) {
+	public void setRequiredBlockSize( int value ) {
 		if( getUuidGenRec().getRequiredBlockSize() != value ) {
 			getUuidGenRec().setRequiredBlockSize( value );
 		}

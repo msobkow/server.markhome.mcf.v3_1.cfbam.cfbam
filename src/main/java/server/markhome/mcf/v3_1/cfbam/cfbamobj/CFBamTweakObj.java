@@ -388,7 +388,7 @@ public class CFBamTweakObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -428,37 +428,37 @@ public class CFBamTweakObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getTweakRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredScopeId() {
+	public ICFLibKeyHash256 getRequiredScopeId() {
 		return( getTweakRec().getRequiredScopeId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDefSchemaTenantId() {
+	public ICFLibKeyHash256 getOptionalDefSchemaTenantId() {
 		return( getTweakRec().getOptionalDefSchemaTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDefSchemaId() {
+	public ICFLibKeyHash256 getOptionalDefSchemaId() {
 		return( getTweakRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getTweakRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredReplacesInherited() {
+	public boolean getRequiredReplacesInherited() {
 		return( getTweakRec().getRequiredReplacesInherited() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTweakGelText() {
+	public String getRequiredTweakGelText() {
 		return( getTweakRec().getRequiredTweakGelText() );
 	}
 

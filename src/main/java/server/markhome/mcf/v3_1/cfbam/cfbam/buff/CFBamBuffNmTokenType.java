@@ -74,7 +74,7 @@ public class CFBamBuffNmTokenType
 	extends CFBamBuffNmTokenDef
 	implements ICFBamNmTokenType
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
 
 	public CFBamBuffNmTokenType() {
 		super();

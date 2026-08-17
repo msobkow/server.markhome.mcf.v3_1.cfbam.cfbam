@@ -408,7 +408,7 @@ public class CFBamEnumTagObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -486,32 +486,32 @@ public class CFBamEnumTagObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDefSchemaId() {
+	public ICFLibKeyHash256 getOptionalDefSchemaId() {
 		return( getEnumTagRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredEnumId() {
+	public ICFLibKeyHash256 getRequiredEnumId() {
 		return( getEnumTagRec().getRequiredEnumId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalEnumCode() {
+	public Short getOptionalEnumCode() {
 		return( getEnumTagRec().getOptionalEnumCode() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getEnumTagRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalPrevId() {
+	public ICFLibKeyHash256 getOptionalPrevId() {
 		return( getEnumTagRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalNextId() {
+	public ICFLibKeyHash256 getOptionalNextId() {
 		return( getEnumTagRec().getOptionalNextId() );
 	}
 

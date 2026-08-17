@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTZTimestampTypeH extends CFBamBuffTZTimestampDefH
     implements ICFBamTZTimestampTypeH
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
 
     public CFBamBuffTZTimestampTypeH() {
             super();

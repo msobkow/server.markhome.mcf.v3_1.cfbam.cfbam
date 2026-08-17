@@ -74,8 +74,8 @@ public class CFBamBuffNmTokensDef
 	extends CFBamBuffAtom
 	implements ICFBamNmTokensDef
 {
-	protected $implJavaAtomType$ requiredMaxLen;
-	protected $implJavaAtomType$ optionalInitValue;
+	protected int requiredMaxLen;
+	protected String optionalInitValue;
 
 	public CFBamBuffNmTokensDef() {
 		super();

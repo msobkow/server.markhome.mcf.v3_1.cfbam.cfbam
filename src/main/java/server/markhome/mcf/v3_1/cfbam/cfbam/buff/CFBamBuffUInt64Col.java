@@ -74,7 +74,7 @@ public class CFBamBuffUInt64Col
 	extends CFBamBuffUInt64Def
 	implements ICFBamUInt64Col
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
 	public CFBamBuffUInt64Col() {
 		super();

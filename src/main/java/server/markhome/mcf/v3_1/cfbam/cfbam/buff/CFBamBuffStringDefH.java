@@ -73,9 +73,9 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffStringDefH extends CFBamBuffAtomH
     implements ICFBamStringDefH
 {
-	protected $implJavaAtomType$ requiredMaxLen;
-	protected $implJavaAtomType$ requiredIsPolymorph;
-	protected $implJavaAtomType$ optionalInitValue;
+	protected int requiredMaxLen;
+	protected boolean requiredIsPolymorph;
+	protected String optionalInitValue;
 
     public CFBamBuffStringDefH() {
             super();

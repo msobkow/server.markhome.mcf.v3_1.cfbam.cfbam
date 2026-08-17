@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffUuidDefH extends CFBamBuffAtomH
     implements ICFBamUuidDefH
 {
-	protected $implJavaAtomType$ optionalInitValue;
+	protected UUID optionalInitValue;
 
     public CFBamBuffUuidDefH() {
             super();

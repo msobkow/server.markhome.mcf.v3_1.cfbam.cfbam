@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffSchemaRoleH extends CFBamBuffRoleDefH
     implements ICFBamSchemaRoleH
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
-	protected $implJavaAtomType$ requiredRoleScope;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
+	protected ICFBamPubSchema.RoleScopeEnum requiredRoleScope;
 
     public CFBamBuffSchemaRoleH() {
             super();

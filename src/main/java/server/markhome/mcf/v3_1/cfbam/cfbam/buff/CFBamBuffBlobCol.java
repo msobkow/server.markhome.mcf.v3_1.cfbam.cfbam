@@ -74,7 +74,7 @@ public class CFBamBuffBlobCol
 	extends CFBamBuffBlobDef
 	implements ICFBamBlobCol
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
 	public CFBamBuffBlobCol() {
 		super();

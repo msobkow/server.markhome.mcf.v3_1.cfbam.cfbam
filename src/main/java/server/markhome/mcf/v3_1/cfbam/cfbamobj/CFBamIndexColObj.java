@@ -414,7 +414,7 @@ public class CFBamIndexColObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -540,57 +540,57 @@ public class CFBamIndexColObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIndexId() {
+	public ICFLibKeyHash256 getRequiredIndexId() {
 		return( getIndexColRec().getRequiredIndexId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDefSchemaId() {
+	public ICFLibKeyHash256 getOptionalDefSchemaId() {
 		return( getIndexColRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getIndexColRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalShortName() {
+	public String getOptionalShortName() {
 		return( getIndexColRec().getOptionalShortName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalLabel() {
+	public String getOptionalLabel() {
 		return( getIndexColRec().getOptionalLabel() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalShortDescription() {
+	public String getOptionalShortDescription() {
 		return( getIndexColRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getIndexColRec().getOptionalDescription() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredColumnId() {
+	public ICFLibKeyHash256 getRequiredColumnId() {
 		return( getIndexColRec().getRequiredColumnId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIsAscending() {
+	public boolean getRequiredIsAscending() {
 		return( getIndexColRec().getRequiredIsAscending() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalPrevId() {
+	public ICFLibKeyHash256 getOptionalPrevId() {
 		return( getIndexColRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalNextId() {
+	public ICFLibKeyHash256 getOptionalNextId() {
 		return( getIndexColRec().getOptionalNextId() );
 	}
 

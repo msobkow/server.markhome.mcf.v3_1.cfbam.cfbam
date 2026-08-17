@@ -374,7 +374,7 @@ public class CFBamISOCcyObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredISOCcyId() {
+	public short getRequiredISOCcyId() {
 		return( getPKey() );
 	}
 
@@ -395,22 +395,22 @@ public class CFBamISOCcyObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredISOCode() {
+	public String getRequiredISOCode() {
 		return( getISOCcyRec().getRequiredISOCode() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getISOCcyRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalUnitSymbol() {
+	public String getOptionalUnitSymbol() {
 		return( getISOCcyRec().getOptionalUnitSymbol() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredPrecis() {
+	public short getRequiredPrecis() {
 		return( getISOCcyRec().getRequiredPrecis() );
 	}
 

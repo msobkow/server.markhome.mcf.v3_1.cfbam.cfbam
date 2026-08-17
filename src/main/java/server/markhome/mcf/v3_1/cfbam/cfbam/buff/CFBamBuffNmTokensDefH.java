@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffNmTokensDefH extends CFBamBuffAtomH
     implements ICFBamNmTokensDefH
 {
-	protected $implJavaAtomType$ requiredMaxLen;
-	protected $implJavaAtomType$ optionalInitValue;
+	protected int requiredMaxLen;
+	protected String optionalInitValue;
 
     public CFBamBuffNmTokensDefH() {
             super();

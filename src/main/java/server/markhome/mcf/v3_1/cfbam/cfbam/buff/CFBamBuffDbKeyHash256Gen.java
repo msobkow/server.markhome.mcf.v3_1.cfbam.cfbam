@@ -74,8 +74,8 @@ public class CFBamBuffDbKeyHash256Gen
 	extends CFBamBuffDbKeyHash256Type
 	implements ICFBamDbKeyHash256Gen
 {
-	protected $implJavaAtomType$ requiredSlice;
-	protected $implJavaAtomType$ requiredBlockSize;
+	protected short requiredSlice;
+	protected int requiredBlockSize;
 
 	public CFBamBuffDbKeyHash256Gen() {
 		super();

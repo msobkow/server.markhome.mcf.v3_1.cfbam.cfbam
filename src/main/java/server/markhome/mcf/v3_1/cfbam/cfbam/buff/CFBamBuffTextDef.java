@@ -74,9 +74,9 @@ public class CFBamBuffTextDef
 	extends CFBamBuffAtom
 	implements ICFBamTextDef
 {
-	protected $implJavaAtomType$ requiredMaxLen;
-	protected $implJavaAtomType$ optionalInitValue;
-	protected $implJavaAtomType$ optionalXmlElementName;
+	protected int requiredMaxLen;
+	protected String optionalInitValue;
+	protected String optionalXmlElementName;
 
 	public CFBamBuffTextDef() {
 		super();

@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffClearTopDepByUNameIdxKey
 	implements ICFBamClearTopDepByUNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredTableId;
-	protected $implJavaAtomType$ requiredName;
+	protected ICFLibKeyHash256 requiredTableId;
+	protected String requiredName;
 	public CFBamBuffClearTopDepByUNameIdxKey() {
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubClearTopDep.TABLEID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubClearTopDep.NAME_INIT_VALUE;

@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffDelTopDepByNextIdxKey
 	implements ICFBamDelTopDepByNextIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ optionalNextId;
+	protected ICFLibKeyHash256 optionalNextId;
 	public CFBamBuffDelTopDepByNextIdxKey() {
 		optionalNextId = CFLibDbKeyHash256.nullGet();
 	}

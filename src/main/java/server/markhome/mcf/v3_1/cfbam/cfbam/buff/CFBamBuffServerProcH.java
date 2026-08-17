@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffServerProcH extends CFBamBuffServerMethodH
     implements ICFBamServerProcH
 {
-	protected $implJavaAtomType$ optionalDummy;
+	protected String optionalDummy;
 
     public CFBamBuffServerProcH() {
             super();

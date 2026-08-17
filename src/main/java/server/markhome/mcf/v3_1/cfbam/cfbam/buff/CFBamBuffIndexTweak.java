@@ -74,7 +74,7 @@ public class CFBamBuffIndexTweak
 	extends CFBamBuffTweak
 	implements ICFBamIndexTweak
 {
-	protected $implJavaAtomType$ requiredIndexId;
+	protected ICFLibKeyHash256 requiredIndexId;
 
 	public CFBamBuffIndexTweak() {
 		super();

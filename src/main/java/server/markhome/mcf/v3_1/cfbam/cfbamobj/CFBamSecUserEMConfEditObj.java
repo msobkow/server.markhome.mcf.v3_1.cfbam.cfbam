@@ -418,53 +418,53 @@ public class CFBamSecUserEMConfEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecUserId() {
+	public ICFLibKeyHash256 getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredConfirmEMailAddr() {
+	public String getRequiredConfirmEMailAddr() {
 		return( getSecUserEMConfRec().getRequiredConfirmEMailAddr() );
 	}
 
 	@Override
-	public void setRequiredConfirmEMailAddr( $implJavaAtomType$ value ) {
+	public void setRequiredConfirmEMailAddr( String value ) {
 		if( getSecUserEMConfRec().getRequiredConfirmEMailAddr() != value ) {
 			getSecUserEMConfRec().setRequiredConfirmEMailAddr( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredEMailSentStamp() {
+	public LocalDateTime getRequiredEMailSentStamp() {
 		return( getSecUserEMConfRec().getRequiredEMailSentStamp() );
 	}
 
 	@Override
-	public void setRequiredEMailSentStamp( $implJavaAtomType$ value ) {
+	public void setRequiredEMailSentStamp( LocalDateTime value ) {
 		if( getSecUserEMConfRec().getRequiredEMailSentStamp() != value ) {
 			getSecUserEMConfRec().setRequiredEMailSentStamp( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredEMConfirmationUuid6() {
+	public ICFLibUuid6 getRequiredEMConfirmationUuid6() {
 		return( getSecUserEMConfRec().getRequiredEMConfirmationUuid6() );
 	}
 
 	@Override
-	public void setRequiredEMConfirmationUuid6( $implJavaAtomType$ value ) {
+	public void setRequiredEMConfirmationUuid6( ICFLibUuid6 value ) {
 		if( getSecUserEMConfRec().getRequiredEMConfirmationUuid6() != value ) {
 			getSecUserEMConfRec().setRequiredEMConfirmationUuid6( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredNewAccount() {
+	public boolean getRequiredNewAccount() {
 		return( getSecUserEMConfRec().getRequiredNewAccount() );
 	}
 
 	@Override
-	public void setRequiredNewAccount( $implJavaAtomType$ value ) {
+	public void setRequiredNewAccount( boolean value ) {
 		if( getSecUserEMConfRec().getRequiredNewAccount() != value ) {
 			getSecUserEMConfRec().setRequiredNewAccount( value );
 		}

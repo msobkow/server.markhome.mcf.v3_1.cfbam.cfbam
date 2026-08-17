@@ -74,7 +74,7 @@ public class CFBamBuffUInt32Type
 	extends CFBamBuffUInt32Def
 	implements ICFBamUInt32Type
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
 
 	public CFBamBuffUInt32Type() {
 		super();

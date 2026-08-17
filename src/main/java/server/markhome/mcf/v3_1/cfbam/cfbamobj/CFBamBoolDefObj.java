@@ -313,27 +313,27 @@ public class CFBamBoolDefObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalInitValue() {
+	public Boolean getOptionalInitValue() {
 		return( getBoolDefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalFalseString() {
+	public String getOptionalFalseString() {
 		return( getBoolDefRec().getOptionalFalseString() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalTrueString() {
+	public String getOptionalTrueString() {
 		return( getBoolDefRec().getOptionalTrueString() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalNullString() {
+	public String getOptionalNullString() {
 		return( getBoolDefRec().getOptionalNullString() );
 	}
 }

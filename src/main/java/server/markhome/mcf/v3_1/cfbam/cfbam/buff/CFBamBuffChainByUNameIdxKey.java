@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffChainByUNameIdxKey
 	implements ICFBamChainByUNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredTableId;
-	protected $implJavaAtomType$ requiredName;
+	protected ICFLibKeyHash256 requiredTableId;
+	protected String requiredName;
 	public CFBamBuffChainByUNameIdxKey() {
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubChain.TABLEID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubChain.NAME_INIT_VALUE;

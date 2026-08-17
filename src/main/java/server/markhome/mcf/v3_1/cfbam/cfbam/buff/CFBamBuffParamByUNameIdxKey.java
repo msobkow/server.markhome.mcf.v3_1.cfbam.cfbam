@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffParamByUNameIdxKey
 	implements ICFBamParamByUNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredServerMethodId;
-	protected $implJavaAtomType$ requiredName;
+	protected ICFLibKeyHash256 requiredServerMethodId;
+	protected String requiredName;
 	public CFBamBuffParamByUNameIdxKey() {
 		requiredServerMethodId = CFLibDbKeyHash256.fromHex( ICFBamPubParam.SERVERMETHODID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubParam.NAME_INIT_VALUE;

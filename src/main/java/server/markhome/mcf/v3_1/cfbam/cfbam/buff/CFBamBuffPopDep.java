@@ -74,8 +74,8 @@ public class CFBamBuffPopDep
 	extends CFBamBuffScope
 	implements ICFBamPopDep
 {
-	protected $implJavaAtomType$ optionalDefSchemaId;
-	protected $implJavaAtomType$ requiredRelationId;
+	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected ICFLibKeyHash256 requiredRelationId;
 
 	public CFBamBuffPopDep() {
 		super();

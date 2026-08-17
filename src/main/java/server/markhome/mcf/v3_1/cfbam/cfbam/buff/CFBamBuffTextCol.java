@@ -74,7 +74,7 @@ public class CFBamBuffTextCol
 	extends CFBamBuffTextDef
 	implements ICFBamTextCol
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
 	public CFBamBuffTextCol() {
 		super();

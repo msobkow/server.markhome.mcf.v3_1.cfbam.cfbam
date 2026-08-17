@@ -170,7 +170,7 @@ public class CFBamClusterObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredTenantName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTenantTableObj().readTenantByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -390,7 +390,7 @@ public class CFBamClusterObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -459,12 +459,12 @@ public class CFBamClusterObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredFullDomName() {
+	public String getRequiredFullDomName() {
 		return( getClusterRec().getRequiredFullDomName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredDescription() {
+	public String getRequiredDescription() {
 		return( getClusterRec().getRequiredDescription() );
 	}
 

@@ -263,12 +263,12 @@ public class CFBamStringDefEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,36 +281,36 @@ public class CFBamStringDefEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredMaxLen() {
+	public int getRequiredMaxLen() {
 		return( getStringDefRec().getRequiredMaxLen() );
 	}
 
 	@Override
-	public void setRequiredMaxLen( $implJavaAtomType$ value ) {
+	public void setRequiredMaxLen( int value ) {
 		if( getStringDefRec().getRequiredMaxLen() != value ) {
 			getStringDefRec().setRequiredMaxLen( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIsPolymorph() {
+	public boolean getRequiredIsPolymorph() {
 		return( getStringDefRec().getRequiredIsPolymorph() );
 	}
 
 	@Override
-	public void setRequiredIsPolymorph( $implJavaAtomType$ value ) {
+	public void setRequiredIsPolymorph( boolean value ) {
 		if( getStringDefRec().getRequiredIsPolymorph() != value ) {
 			getStringDefRec().setRequiredIsPolymorph( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalInitValue() {
+	public String getOptionalInitValue() {
 		return( getStringDefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public void setOptionalInitValue( $implJavaAtomType$ value ) {
+	public void setOptionalInitValue( String value ) {
 		if( getStringDefRec().getOptionalInitValue() != value ) {
 			getStringDefRec().setOptionalInitValue( value );
 		}

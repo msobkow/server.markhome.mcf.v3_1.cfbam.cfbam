@@ -313,22 +313,22 @@ public class CFBamInt16DefObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalInitValue() {
+	public Short getOptionalInitValue() {
 		return( getInt16DefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalMinValue() {
+	public Short getOptionalMinValue() {
 		return( getInt16DefRec().getOptionalMinValue() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalMaxValue() {
+	public Short getOptionalMaxValue() {
 		return( getInt16DefRec().getOptionalMaxValue() );
 	}
 }

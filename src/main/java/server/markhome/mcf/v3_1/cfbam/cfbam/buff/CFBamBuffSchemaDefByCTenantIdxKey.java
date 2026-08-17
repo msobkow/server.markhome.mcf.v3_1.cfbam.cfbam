@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffSchemaDefByCTenantIdxKey
 	implements ICFBamSchemaDefByCTenantIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredCTenantId;
+	protected ICFLibKeyHash256 requiredCTenantId;
 	public CFBamBuffSchemaDefByCTenantIdxKey() {
 		requiredCTenantId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaDef.CTENANTID_INIT_VALUE.toString() );
 	}

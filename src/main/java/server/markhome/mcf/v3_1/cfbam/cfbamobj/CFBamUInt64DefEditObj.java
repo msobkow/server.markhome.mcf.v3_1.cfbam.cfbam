@@ -263,12 +263,12 @@ public class CFBamUInt64DefEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,36 +281,36 @@ public class CFBamUInt64DefEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalInitValue() {
+	public BigDecimal getOptionalInitValue() {
 		return( getUInt64DefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public void setOptionalInitValue( $implJavaAtomType$ value ) {
+	public void setOptionalInitValue( BigDecimal value ) {
 		if( getUInt64DefRec().getOptionalInitValue() != value ) {
 			getUInt64DefRec().setOptionalInitValue( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalMinValue() {
+	public BigDecimal getOptionalMinValue() {
 		return( getUInt64DefRec().getOptionalMinValue() );
 	}
 
 	@Override
-	public void setOptionalMinValue( $implJavaAtomType$ value ) {
+	public void setOptionalMinValue( BigDecimal value ) {
 		if( getUInt64DefRec().getOptionalMinValue() != value ) {
 			getUInt64DefRec().setOptionalMinValue( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalMaxValue() {
+	public BigDecimal getOptionalMaxValue() {
 		return( getUInt64DefRec().getOptionalMaxValue() );
 	}
 
 	@Override
-	public void setOptionalMaxValue( $implJavaAtomType$ value ) {
+	public void setOptionalMaxValue( BigDecimal value ) {
 		if( getUInt64DefRec().getOptionalMaxValue() != value ) {
 			getUInt64DefRec().setOptionalMaxValue( value );
 		}

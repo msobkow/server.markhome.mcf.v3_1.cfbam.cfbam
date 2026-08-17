@@ -223,7 +223,7 @@ public class CFBamSecUserEditObj
 				if (nextName == null || (nextName != null && nextName.isEmpty())) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredEMConfirmationUuid6");
 				}
-				$implJavaAtomType$ natNextName = CFLibUuid6.fromString(nextName);
+				ICFLibUuid6 natNextName = CFLibUuid6.fromString(nextName);
 				subObj = ((ICFBamSchemaObj)getSchema()).getSecUserEMConfTableObj().readSecUserEMConfByUUuid6Idx( natNextName, false );
 			}
 			catch (Throwable th) {
@@ -235,7 +235,7 @@ public class CFBamSecUserEditObj
 				if (nextName == null || (nextName != null && nextName.isEmpty())) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredPasswordResetUuid6");
 				}
-				$implJavaAtomType$ natNextName = CFLibUuid6.fromString(nextName);
+				ICFLibUuid6 natNextName = CFLibUuid6.fromString(nextName);
 				subObj = ((ICFBamSchemaObj)getSchema()).getSecUserPWResetTableObj().readSecUserPWResetByUUuid6Idx( natNextName, false );
 			}
 			catch (Throwable th) {
@@ -441,12 +441,12 @@ public class CFBamSecUserEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecUserId() {
+	public ICFLibKeyHash256 getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSecUserId($implJavaAtomType$ value) {
+	public void setRequiredSecUserId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalComponentsSecSess = null;
@@ -462,12 +462,12 @@ public class CFBamSecUserEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredLoginId() {
+	public String getRequiredLoginId() {
 		return( getSecUserRec().getRequiredLoginId() );
 	}
 
 	@Override
-	public void setRequiredLoginId( $implJavaAtomType$ value ) {
+	public void setRequiredLoginId( String value ) {
 		if( getSecUserRec().getRequiredLoginId() != value ) {
 			getSecUserRec().setRequiredLoginId( value );
 			optionalComponentsSecSess = null;
@@ -483,60 +483,60 @@ public class CFBamSecUserEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredAccountStatus() {
+	public ICFSecPubSchema.SecAccountStatusEnum getRequiredAccountStatus() {
 		return( getSecUserRec().getRequiredAccountStatus() );
 	}
 
 	@Override
-	public void setRequiredAccountStatus( $implJavaAtomType$ value ) {
+	public void setRequiredAccountStatus( ICFSecPubSchema.SecAccountStatusEnum value ) {
 		if( getSecUserRec().getRequiredAccountStatus() != value ) {
 			getSecUserRec().setRequiredAccountStatus( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDfltSysGrpName() {
+	public String getOptionalDfltSysGrpName() {
 		return( getSecUserRec().getOptionalDfltSysGrpName() );
 	}
 
 	@Override
-	public void setOptionalDfltSysGrpName( $implJavaAtomType$ value ) {
+	public void setOptionalDfltSysGrpName( String value ) {
 		if( getSecUserRec().getOptionalDfltSysGrpName() != value ) {
 			getSecUserRec().setOptionalDfltSysGrpName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDfltClusGrpName() {
+	public String getOptionalDfltClusGrpName() {
 		return( getSecUserRec().getOptionalDfltClusGrpName() );
 	}
 
 	@Override
-	public void setOptionalDfltClusGrpName( $implJavaAtomType$ value ) {
+	public void setOptionalDfltClusGrpName( String value ) {
 		if( getSecUserRec().getOptionalDfltClusGrpName() != value ) {
 			getSecUserRec().setOptionalDfltClusGrpName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDfltTentGrpName() {
+	public String getOptionalDfltTentGrpName() {
 		return( getSecUserRec().getOptionalDfltTentGrpName() );
 	}
 
 	@Override
-	public void setOptionalDfltTentGrpName( $implJavaAtomType$ value ) {
+	public void setOptionalDfltTentGrpName( String value ) {
 		if( getSecUserRec().getOptionalDfltTentGrpName() != value ) {
 			getSecUserRec().setOptionalDfltTentGrpName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredEMailAddress() {
+	public String getRequiredEMailAddress() {
 		return( getSecUserRec().getRequiredEMailAddress() );
 	}
 
 	@Override
-	public void setRequiredEMailAddress( $implJavaAtomType$ value ) {
+	public void setRequiredEMailAddress( String value ) {
 		if( getSecUserRec().getRequiredEMailAddress() != value ) {
 			getSecUserRec().setRequiredEMailAddress( value );
 		}

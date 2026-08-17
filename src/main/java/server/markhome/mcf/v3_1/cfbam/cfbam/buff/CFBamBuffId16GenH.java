@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffId16GenH extends CFBamBuffInt16TypeH
     implements ICFBamId16GenH
 {
-	protected $implJavaAtomType$ requiredSlice;
-	protected $implJavaAtomType$ requiredBlockSize;
+	protected short requiredSlice;
+	protected short requiredBlockSize;
 
     public CFBamBuffId16GenH() {
             super();

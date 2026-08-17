@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffClearSubDep1H extends CFBamBuffClearDepH
     implements ICFBamClearSubDep1H
 {
-	protected $implJavaAtomType$ requiredClearTopDepId;
-	protected $implJavaAtomType$ requiredName;
+	protected ICFLibKeyHash256 requiredClearTopDepId;
+	protected String requiredName;
 
     public CFBamBuffClearSubDep1H() {
             super();

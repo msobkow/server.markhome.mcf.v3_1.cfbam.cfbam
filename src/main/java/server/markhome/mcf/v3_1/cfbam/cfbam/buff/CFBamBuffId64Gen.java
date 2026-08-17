@@ -74,8 +74,8 @@ public class CFBamBuffId64Gen
 	extends CFBamBuffInt64Type
 	implements ICFBamId64Gen
 {
-	protected $implJavaAtomType$ requiredSlice;
-	protected $implJavaAtomType$ requiredBlockSize;
+	protected short requiredSlice;
+	protected long requiredBlockSize;
 
 	public CFBamBuffId64Gen() {
 		super();

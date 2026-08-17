@@ -263,12 +263,12 @@ public class CFBamTimeDefEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,12 +281,12 @@ public class CFBamTimeDefEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDummy() {
+	public String getOptionalDummy() {
 		return( getTimeDefRec().getOptionalDummy() );
 	}
 
 	@Override
-	public void setOptionalDummy( $implJavaAtomType$ value ) {
+	public void setOptionalDummy( String value ) {
 		if( getTimeDefRec().getOptionalDummy() != value ) {
 			getTimeDefRec().setOptionalDummy( value );
 		}

@@ -74,7 +74,7 @@ public class CFBamBuffSchemaTweak
 	extends CFBamBuffTweak
 	implements ICFBamSchemaTweak
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
 
 	public CFBamBuffSchemaTweak() {
 		super();

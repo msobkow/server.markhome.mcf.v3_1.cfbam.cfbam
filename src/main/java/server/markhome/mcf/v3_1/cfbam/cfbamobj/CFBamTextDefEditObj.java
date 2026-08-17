@@ -263,12 +263,12 @@ public class CFBamTextDefEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,36 +281,36 @@ public class CFBamTextDefEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredMaxLen() {
+	public int getRequiredMaxLen() {
 		return( getTextDefRec().getRequiredMaxLen() );
 	}
 
 	@Override
-	public void setRequiredMaxLen( $implJavaAtomType$ value ) {
+	public void setRequiredMaxLen( int value ) {
 		if( getTextDefRec().getRequiredMaxLen() != value ) {
 			getTextDefRec().setRequiredMaxLen( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalInitValue() {
+	public String getOptionalInitValue() {
 		return( getTextDefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public void setOptionalInitValue( $implJavaAtomType$ value ) {
+	public void setOptionalInitValue( String value ) {
 		if( getTextDefRec().getOptionalInitValue() != value ) {
 			getTextDefRec().setOptionalInitValue( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalXmlElementName() {
+	public String getOptionalXmlElementName() {
 		return( getTextDefRec().getOptionalXmlElementName() );
 	}
 
 	@Override
-	public void setOptionalXmlElementName( $implJavaAtomType$ value ) {
+	public void setOptionalXmlElementName( String value ) {
 		if( getTextDefRec().getOptionalXmlElementName() != value ) {
 			getTextDefRec().setOptionalXmlElementName( value );
 		}

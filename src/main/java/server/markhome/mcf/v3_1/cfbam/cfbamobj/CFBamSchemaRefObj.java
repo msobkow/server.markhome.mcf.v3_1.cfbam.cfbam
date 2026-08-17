@@ -324,7 +324,7 @@ public class CFBamSchemaRefObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -402,37 +402,37 @@ public class CFBamSchemaRefObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSchemaId() {
+	public ICFLibKeyHash256 getRequiredSchemaId() {
 		return( getSchemaRefRec().getRequiredSchemaId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getSchemaRefRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredRefModelName() {
+	public String getRequiredRefModelName() {
 		return( getSchemaRefRec().getRequiredRefModelName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIncludeRoot() {
+	public String getRequiredIncludeRoot() {
 		return( getSchemaRefRec().getRequiredIncludeRoot() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalRefSchemaId() {
+	public ICFLibKeyHash256 getOptionalRefSchemaId() {
 		return( getSchemaRefRec().getOptionalRefSchemaId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalPrevId() {
+	public ICFLibKeyHash256 getOptionalPrevId() {
 		return( getSchemaRefRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalNextId() {
+	public ICFLibKeyHash256 getOptionalNextId() {
 		return( getSchemaRefRec().getOptionalNextId() );
 	}
 }

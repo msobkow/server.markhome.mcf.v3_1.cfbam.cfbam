@@ -313,22 +313,22 @@ public class CFBamTextDefObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredMaxLen() {
+	public int getRequiredMaxLen() {
 		return( getTextDefRec().getRequiredMaxLen() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalInitValue() {
+	public String getOptionalInitValue() {
 		return( getTextDefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalXmlElementName() {
+	public String getOptionalXmlElementName() {
 		return( getTextDefRec().getOptionalXmlElementName() );
 	}
 }

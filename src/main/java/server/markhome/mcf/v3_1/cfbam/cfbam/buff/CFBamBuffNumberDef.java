@@ -74,11 +74,11 @@ public class CFBamBuffNumberDef
 	extends CFBamBuffAtom
 	implements ICFBamNumberDef
 {
-	protected $implJavaAtomType$ requiredDigits;
-	protected $implJavaAtomType$ requiredPrecis;
-	protected $implJavaAtomType$ optionalInitValue;
-	protected $implJavaAtomType$ optionalMinValue;
-	protected $implJavaAtomType$ optionalMaxValue;
+	protected short requiredDigits;
+	protected short requiredPrecis;
+	protected BigDecimal optionalInitValue;
+	protected BigDecimal optionalMinValue;
+	protected BigDecimal optionalMaxValue;
 
 	public CFBamBuffNumberDef() {
 		super();

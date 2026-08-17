@@ -304,7 +304,7 @@ public class CFBamSchemaRoleObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -325,12 +325,12 @@ public class CFBamSchemaRoleObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSchemaDefId() {
+	public ICFLibKeyHash256 getRequiredSchemaDefId() {
 		return( getSchemaRoleRec().getRequiredSchemaDefId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredRoleScope() {
+	public ICFBamPubSchema.RoleScopeEnum getRequiredRoleScope() {
 		return( getSchemaRoleRec().getRequiredRoleScope() );
 	}
 }

@@ -373,17 +373,17 @@ public class CFBamMimeTypeObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredMimeTypeId() {
+	public int getRequiredMimeTypeId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getMimeTypeRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalFileTypes() {
+	public String getOptionalFileTypes() {
 		return( getMimeTypeRec().getOptionalFileTypes() );
 	}
 

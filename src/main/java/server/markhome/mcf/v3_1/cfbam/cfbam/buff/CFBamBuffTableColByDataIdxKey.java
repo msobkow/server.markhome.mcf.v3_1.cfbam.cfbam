@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTableColByDataIdxKey
 	implements ICFBamTableColByDataIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ optionalDataId;
+	protected ICFLibKeyHash256 optionalDataId;
 	public CFBamBuffTableColByDataIdxKey() {
 		optionalDataId = CFLibDbKeyHash256.nullGet();
 	}

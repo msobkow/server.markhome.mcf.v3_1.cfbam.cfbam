@@ -314,17 +314,17 @@ public class CFBamId16GenObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSlice() {
+	public short getRequiredSlice() {
 		return( getId16GenRec().getRequiredSlice() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredBlockSize() {
+	public short getRequiredBlockSize() {
 		return( getId16GenRec().getRequiredBlockSize() );
 	}
 }

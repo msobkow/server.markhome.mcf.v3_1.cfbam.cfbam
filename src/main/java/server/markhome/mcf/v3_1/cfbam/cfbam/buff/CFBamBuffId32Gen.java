@@ -74,8 +74,8 @@ public class CFBamBuffId32Gen
 	extends CFBamBuffInt32Type
 	implements ICFBamId32Gen
 {
-	protected $implJavaAtomType$ requiredSlice;
-	protected $implJavaAtomType$ requiredBlockSize;
+	protected short requiredSlice;
+	protected int requiredBlockSize;
 
 	public CFBamBuffId32Gen() {
 		super();

@@ -74,7 +74,7 @@ public class CFBamBuffDateType
 	extends CFBamBuffDateDef
 	implements ICFBamDateType
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
 
 	public CFBamBuffDateType() {
 		super();

@@ -313,22 +313,22 @@ public class CFBamStringDefObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredMaxLen() {
+	public int getRequiredMaxLen() {
 		return( getStringDefRec().getRequiredMaxLen() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIsPolymorph() {
+	public boolean getRequiredIsPolymorph() {
 		return( getStringDefRec().getRequiredIsPolymorph() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalInitValue() {
+	public String getOptionalInitValue() {
 		return( getStringDefRec().getOptionalInitValue() );
 	}
 }

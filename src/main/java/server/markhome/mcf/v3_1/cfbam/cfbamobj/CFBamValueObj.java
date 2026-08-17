@@ -410,7 +410,7 @@ public class CFBamValueObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -520,67 +520,67 @@ public class CFBamValueObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredScopeId() {
+	public ICFLibKeyHash256 getRequiredScopeId() {
 		return( getValueRec().getRequiredScopeId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDefSchemaId() {
+	public ICFLibKeyHash256 getOptionalDefSchemaId() {
 		return( getValueRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getValueRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalShortName() {
+	public String getOptionalShortName() {
 		return( getValueRec().getOptionalShortName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalLabel() {
+	public String getOptionalLabel() {
 		return( getValueRec().getOptionalLabel() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalShortDescription() {
+	public String getOptionalShortDescription() {
 		return( getValueRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getValueRec().getOptionalDescription() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDefaultXmlValue() {
+	public String getOptionalDefaultXmlValue() {
 		return( getValueRec().getOptionalDefaultXmlValue() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIsNullable() {
+	public boolean getRequiredIsNullable() {
 		return( getValueRec().getRequiredIsNullable() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalGenerateId() {
+	public Boolean getOptionalGenerateId() {
 		return( getValueRec().getOptionalGenerateId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredImplementsPolymorph() {
+	public boolean getRequiredImplementsPolymorph() {
 		return( getValueRec().getRequiredImplementsPolymorph() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalPrevId() {
+	public ICFLibKeyHash256 getOptionalPrevId() {
 		return( getValueRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalNextId() {
+	public ICFLibKeyHash256 getOptionalNextId() {
 		return( getValueRec().getOptionalNextId() );
 	}
 

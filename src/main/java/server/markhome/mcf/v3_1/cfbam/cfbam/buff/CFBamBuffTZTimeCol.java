@@ -74,7 +74,7 @@ public class CFBamBuffTZTimeCol
 	extends CFBamBuffTZTimeDef
 	implements ICFBamTZTimeCol
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
 	public CFBamBuffTZTimeCol() {
 		super();

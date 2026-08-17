@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffServerListFuncByRetTblIdxKey
 	implements ICFBamServerListFuncByRetTblIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ optionalRetTableId;
+	protected ICFLibKeyHash256 optionalRetTableId;
 	public CFBamBuffServerListFuncByRetTblIdxKey() {
 		optionalRetTableId = CFLibDbKeyHash256.nullGet();
 	}

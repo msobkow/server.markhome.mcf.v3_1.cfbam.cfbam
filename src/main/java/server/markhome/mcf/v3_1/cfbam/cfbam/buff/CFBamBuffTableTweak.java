@@ -74,7 +74,7 @@ public class CFBamBuffTableTweak
 	extends CFBamBuffTweak
 	implements ICFBamTableTweak
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
 	public CFBamBuffTableTweak() {
 		super();

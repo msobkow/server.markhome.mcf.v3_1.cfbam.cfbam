@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffServerObjFuncH extends CFBamBuffServerMethodH
     implements ICFBamServerObjFuncH
 {
-	protected $implJavaAtomType$ optionalRetTableId;
+	protected ICFLibKeyHash256 optionalRetTableId;
 
     public CFBamBuffServerObjFuncH() {
             super();

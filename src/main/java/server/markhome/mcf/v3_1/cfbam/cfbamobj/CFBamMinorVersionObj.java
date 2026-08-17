@@ -174,7 +174,7 @@ public class CFBamMinorVersionObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getSchemaDefTableObj().readSchemaDefByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -399,7 +399,7 @@ public class CFBamMinorVersionObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -452,22 +452,22 @@ public class CFBamMinorVersionObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getMinorVersionRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredMajorVersionId() {
+	public ICFLibKeyHash256 getRequiredMajorVersionId() {
 		return( getMinorVersionRec().getRequiredMajorVersionId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getMinorVersionRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getMinorVersionRec().getOptionalDescription() );
 	}
 

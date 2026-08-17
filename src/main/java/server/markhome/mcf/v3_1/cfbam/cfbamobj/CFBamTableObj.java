@@ -179,7 +179,7 @@ public class CFBamTableObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getRelationTableObj().readRelationByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -192,7 +192,7 @@ public class CFBamTableObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getIndexTableObj().readIndexByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -205,7 +205,7 @@ public class CFBamTableObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getValueTableObj().readValueByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -218,7 +218,7 @@ public class CFBamTableObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getChainTableObj().readChainByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -231,7 +231,7 @@ public class CFBamTableObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getServerMethodTableObj().readServerMethodByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -244,7 +244,7 @@ public class CFBamTableObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				$implJavaAtomType$ natNextName = nextName;
+				String natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -410,7 +410,7 @@ public class CFBamTableObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -670,112 +670,112 @@ public class CFBamTableObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSchemaDefId() {
+	public ICFLibKeyHash256 getRequiredSchemaDefId() {
 		return( getTableRec().getRequiredSchemaDefId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDefSchemaId() {
+	public ICFLibKeyHash256 getOptionalDefSchemaId() {
 		return( getTableRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getTableRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDbName() {
+	public String getOptionalDbName() {
 		return( getTableRec().getOptionalDbName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalShortName() {
+	public String getOptionalShortName() {
 		return( getTableRec().getOptionalShortName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalLabel() {
+	public String getOptionalLabel() {
 		return( getTableRec().getOptionalLabel() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalShortDescription() {
+	public String getOptionalShortDescription() {
 		return( getTableRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getTableRec().getOptionalDescription() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredPageData() {
+	public boolean getRequiredPageData() {
 		return( getTableRec().getRequiredPageData() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalPrimaryIndexId() {
+	public ICFLibKeyHash256 getOptionalPrimaryIndexId() {
 		return( getTableRec().getOptionalPrimaryIndexId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTableClassCode() {
+	public String getRequiredTableClassCode() {
 		return( getTableRec().getRequiredTableClassCode() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalLookupIndexId() {
+	public ICFLibKeyHash256 getOptionalLookupIndexId() {
 		return( getTableRec().getOptionalLookupIndexId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalAltIndexId() {
+	public ICFLibKeyHash256 getOptionalAltIndexId() {
 		return( getTableRec().getOptionalAltIndexId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalQualifyingTableId() {
+	public ICFLibKeyHash256 getOptionalQualifyingTableId() {
 		return( getTableRec().getOptionalQualifyingTableId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIsInstantiable() {
+	public boolean getRequiredIsInstantiable() {
 		return( getTableRec().getRequiredIsInstantiable() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredHasHistory() {
+	public boolean getRequiredHasHistory() {
 		return( getTableRec().getRequiredHasHistory() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredHasAuditColumns() {
+	public boolean getRequiredHasAuditColumns() {
 		return( getTableRec().getRequiredHasAuditColumns() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIsMutable() {
+	public boolean getRequiredIsMutable() {
 		return( getTableRec().getRequiredIsMutable() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIsServerOnly() {
+	public boolean getRequiredIsServerOnly() {
 		return( getTableRec().getRequiredIsServerOnly() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredLoaderBehaviour() {
+	public ICFBamPubSchema.LoaderBehaviourEnum getRequiredLoaderBehaviour() {
 		return( getTableRec().getRequiredLoaderBehaviour() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecScope() {
+	public ICFBamPubSchema.SecScopeEnum getRequiredSecScope() {
 		return( getTableRec().getRequiredSecScope() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredCodeVis() {
+	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
 		return( getTableRec().getRequiredCodeVis() );
 	}
 

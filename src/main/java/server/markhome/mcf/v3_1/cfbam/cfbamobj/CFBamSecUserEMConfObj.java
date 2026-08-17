@@ -384,7 +384,7 @@ public class CFBamSecUserEMConfObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecUserId() {
+	public ICFLibKeyHash256 getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
@@ -405,22 +405,22 @@ public class CFBamSecUserEMConfObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredConfirmEMailAddr() {
+	public String getRequiredConfirmEMailAddr() {
 		return( getSecUserEMConfRec().getRequiredConfirmEMailAddr() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredEMailSentStamp() {
+	public LocalDateTime getRequiredEMailSentStamp() {
 		return( getSecUserEMConfRec().getRequiredEMailSentStamp() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredEMConfirmationUuid6() {
+	public ICFLibUuid6 getRequiredEMConfirmationUuid6() {
 		return( getSecUserEMConfRec().getRequiredEMConfirmationUuid6() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredNewAccount() {
+	public boolean getRequiredNewAccount() {
 		return( getSecUserEMConfRec().getRequiredNewAccount() );
 	}
 

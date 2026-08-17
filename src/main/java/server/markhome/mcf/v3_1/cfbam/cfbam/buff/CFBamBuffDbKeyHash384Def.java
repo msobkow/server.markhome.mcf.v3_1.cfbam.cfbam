@@ -74,7 +74,7 @@ public class CFBamBuffDbKeyHash384Def
 	extends CFBamBuffAtom
 	implements ICFBamDbKeyHash384Def
 {
-	protected $implJavaAtomType$ optionalInitValue;
+	protected String optionalInitValue;
 
 	public CFBamBuffDbKeyHash384Def() {
 		super();

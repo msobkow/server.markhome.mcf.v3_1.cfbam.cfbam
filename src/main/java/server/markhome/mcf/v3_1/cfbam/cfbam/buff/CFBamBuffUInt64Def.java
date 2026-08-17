@@ -74,9 +74,9 @@ public class CFBamBuffUInt64Def
 	extends CFBamBuffAtom
 	implements ICFBamUInt64Def
 {
-	protected $implJavaAtomType$ optionalInitValue;
-	protected $implJavaAtomType$ optionalMinValue;
-	protected $implJavaAtomType$ optionalMaxValue;
+	protected BigDecimal optionalInitValue;
+	protected BigDecimal optionalMinValue;
+	protected BigDecimal optionalMaxValue;
 
 	public CFBamBuffUInt64Def() {
 		super();

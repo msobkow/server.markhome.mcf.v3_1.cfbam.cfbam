@@ -74,8 +74,8 @@ public class CFBamBuffDelDep
 	extends CFBamBuffScope
 	implements ICFBamDelDep
 {
-	protected $implJavaAtomType$ optionalDefSchemaId;
-	protected $implJavaAtomType$ requiredRelationId;
+	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected ICFLibKeyHash256 requiredRelationId;
 
 	public CFBamBuffDelDep() {
 		super();

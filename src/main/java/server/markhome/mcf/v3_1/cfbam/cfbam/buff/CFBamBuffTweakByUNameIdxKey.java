@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTweakByUNameIdxKey
 	implements ICFBamTweakByUNameIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredScopeId;
-	protected $implJavaAtomType$ requiredName;
+	protected ICFLibKeyHash256 requiredScopeId;
+	protected String requiredName;
 	public CFBamBuffTweakByUNameIdxKey() {
 		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamPubTweak.SCOPEID_INIT_VALUE.toString() );
 		requiredName = ICFBamPubTweak.NAME_INIT_VALUE;

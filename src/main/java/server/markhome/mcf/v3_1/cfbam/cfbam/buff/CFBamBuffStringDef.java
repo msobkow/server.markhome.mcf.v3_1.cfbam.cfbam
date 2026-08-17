@@ -74,9 +74,9 @@ public class CFBamBuffStringDef
 	extends CFBamBuffAtom
 	implements ICFBamStringDef
 {
-	protected $implJavaAtomType$ requiredMaxLen;
-	protected $implJavaAtomType$ requiredIsPolymorph;
-	protected $implJavaAtomType$ optionalInitValue;
+	protected int requiredMaxLen;
+	protected boolean requiredIsPolymorph;
+	protected String optionalInitValue;
 
 	public CFBamBuffStringDef() {
 		super();

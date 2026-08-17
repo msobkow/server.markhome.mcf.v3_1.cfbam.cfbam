@@ -74,8 +74,8 @@ public class CFBamBuffPopSubDep1
 	extends CFBamBuffPopDep
 	implements ICFBamPopSubDep1
 {
-	protected $implJavaAtomType$ requiredPopTopDepId;
-	protected $implJavaAtomType$ requiredName;
+	protected ICFLibKeyHash256 requiredPopTopDepId;
+	protected String requiredName;
 
 	public CFBamBuffPopSubDep1() {
 		super();

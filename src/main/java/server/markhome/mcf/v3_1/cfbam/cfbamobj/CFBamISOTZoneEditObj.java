@@ -408,84 +408,84 @@ public class CFBamISOTZoneEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredISOTZoneId() {
+	public short getRequiredISOTZoneId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredISOTZoneId($implJavaAtomType$ value) {
+	public void setRequiredISOTZoneId(short value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIso8601() {
+	public String getRequiredIso8601() {
 		return( getISOTZoneRec().getRequiredIso8601() );
 	}
 
 	@Override
-	public void setRequiredIso8601( $implJavaAtomType$ value ) {
+	public void setRequiredIso8601( String value ) {
 		if( getISOTZoneRec().getRequiredIso8601() != value ) {
 			getISOTZoneRec().setRequiredIso8601( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTZName() {
+	public String getRequiredTZName() {
 		return( getISOTZoneRec().getRequiredTZName() );
 	}
 
 	@Override
-	public void setRequiredTZName( $implJavaAtomType$ value ) {
+	public void setRequiredTZName( String value ) {
 		if( getISOTZoneRec().getRequiredTZName() != value ) {
 			getISOTZoneRec().setRequiredTZName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTZHourOffset() {
+	public short getRequiredTZHourOffset() {
 		return( getISOTZoneRec().getRequiredTZHourOffset() );
 	}
 
 	@Override
-	public void setRequiredTZHourOffset( $implJavaAtomType$ value ) {
+	public void setRequiredTZHourOffset( short value ) {
 		if( getISOTZoneRec().getRequiredTZHourOffset() != value ) {
 			getISOTZoneRec().setRequiredTZHourOffset( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTZMinOffset() {
+	public short getRequiredTZMinOffset() {
 		return( getISOTZoneRec().getRequiredTZMinOffset() );
 	}
 
 	@Override
-	public void setRequiredTZMinOffset( $implJavaAtomType$ value ) {
+	public void setRequiredTZMinOffset( short value ) {
 		if( getISOTZoneRec().getRequiredTZMinOffset() != value ) {
 			getISOTZoneRec().setRequiredTZMinOffset( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredDescription() {
+	public String getRequiredDescription() {
 		return( getISOTZoneRec().getRequiredDescription() );
 	}
 
 	@Override
-	public void setRequiredDescription( $implJavaAtomType$ value ) {
+	public void setRequiredDescription( String value ) {
 		if( getISOTZoneRec().getRequiredDescription() != value ) {
 			getISOTZoneRec().setRequiredDescription( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredVisible() {
+	public boolean getRequiredVisible() {
 		return( getISOTZoneRec().getRequiredVisible() );
 	}
 
 	@Override
-	public void setRequiredVisible( $implJavaAtomType$ value ) {
+	public void setRequiredVisible( boolean value ) {
 		if( getISOTZoneRec().getRequiredVisible() != value ) {
 			getISOTZoneRec().setRequiredVisible( value );
 		}

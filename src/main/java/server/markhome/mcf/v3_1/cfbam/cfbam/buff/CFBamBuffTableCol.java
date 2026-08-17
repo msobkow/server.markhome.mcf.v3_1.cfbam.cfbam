@@ -74,10 +74,10 @@ public class CFBamBuffTableCol
 	extends CFBamBuffValue
 	implements ICFBamTableCol
 {
-	protected $implJavaAtomType$ requiredTableId;
-	protected $implJavaAtomType$ optionalDbName;
-	protected $implJavaAtomType$ optionalDataId;
-	protected $implJavaAtomType$ optionalXmlElementName;
+	protected ICFLibKeyHash256 requiredTableId;
+	protected String optionalDbName;
+	protected ICFLibKeyHash256 optionalDataId;
+	protected String optionalXmlElementName;
 
 	public CFBamBuffTableCol() {
 		super();

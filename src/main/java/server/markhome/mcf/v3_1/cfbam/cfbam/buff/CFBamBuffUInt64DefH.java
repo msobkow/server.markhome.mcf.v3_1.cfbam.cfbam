@@ -73,9 +73,9 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffUInt64DefH extends CFBamBuffAtomH
     implements ICFBamUInt64DefH
 {
-	protected $implJavaAtomType$ optionalInitValue;
-	protected $implJavaAtomType$ optionalMinValue;
-	protected $implJavaAtomType$ optionalMaxValue;
+	protected BigDecimal optionalInitValue;
+	protected BigDecimal optionalMinValue;
+	protected BigDecimal optionalMaxValue;
 
     public CFBamBuffUInt64DefH() {
             super();

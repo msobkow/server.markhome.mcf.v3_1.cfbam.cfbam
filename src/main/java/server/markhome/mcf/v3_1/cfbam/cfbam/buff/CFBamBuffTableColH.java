@@ -73,10 +73,10 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTableColH extends CFBamBuffValueH
     implements ICFBamTableColH
 {
-	protected $implJavaAtomType$ requiredTableId;
-	protected $implJavaAtomType$ optionalDbName;
-	protected $implJavaAtomType$ optionalDataId;
-	protected $implJavaAtomType$ optionalXmlElementName;
+	protected ICFLibKeyHash256 requiredTableId;
+	protected String optionalDbName;
+	protected ICFLibKeyHash256 optionalDataId;
+	protected String optionalXmlElementName;
 
     public CFBamBuffTableColH() {
             super();

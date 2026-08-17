@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffSchemaRoleBySchRoleScpIdxKey
 	implements ICFBamSchemaRoleBySchRoleScpIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
-	protected $implJavaAtomType$ requiredRoleScope;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
+	protected ICFBamPubSchema.RoleScopeEnum requiredRoleScope;
 	public CFBamBuffSchemaRoleBySchRoleScpIdxKey() {
 		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaRole.SCHEMADEFID_INIT_VALUE.toString() );
 		requiredRoleScope = ICFBamPubSchemaRole.ROLESCOPE_INIT_VALUE;

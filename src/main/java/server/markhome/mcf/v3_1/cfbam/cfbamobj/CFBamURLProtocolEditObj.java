@@ -408,48 +408,48 @@ public class CFBamURLProtocolEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredURLProtocolId() {
+	public int getRequiredURLProtocolId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredURLProtocolId($implJavaAtomType$ value) {
+	public void setRequiredURLProtocolId(int value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getURLProtocolRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( $implJavaAtomType$ value ) {
+	public void setRequiredName( String value ) {
 		if( getURLProtocolRec().getRequiredName() != value ) {
 			getURLProtocolRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredDescription() {
+	public String getRequiredDescription() {
 		return( getURLProtocolRec().getRequiredDescription() );
 	}
 
 	@Override
-	public void setRequiredDescription( $implJavaAtomType$ value ) {
+	public void setRequiredDescription( String value ) {
 		if( getURLProtocolRec().getRequiredDescription() != value ) {
 			getURLProtocolRec().setRequiredDescription( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIsSecure() {
+	public boolean getRequiredIsSecure() {
 		return( getURLProtocolRec().getRequiredIsSecure() );
 	}
 
 	@Override
-	public void setRequiredIsSecure( $implJavaAtomType$ value ) {
+	public void setRequiredIsSecure( boolean value ) {
 		if( getURLProtocolRec().getRequiredIsSecure() != value ) {
 			getURLProtocolRec().setRequiredIsSecure( value );
 		}

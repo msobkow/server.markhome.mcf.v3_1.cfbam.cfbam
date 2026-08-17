@@ -73,10 +73,10 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffBoolDefH extends CFBamBuffAtomH
     implements ICFBamBoolDefH
 {
-	protected $implJavaAtomType$ optionalInitValue;
-	protected $implJavaAtomType$ optionalFalseString;
-	protected $implJavaAtomType$ optionalTrueString;
-	protected $implJavaAtomType$ optionalNullString;
+	protected Boolean optionalInitValue;
+	protected String optionalFalseString;
+	protected String optionalTrueString;
+	protected String optionalNullString;
 
     public CFBamBuffBoolDefH() {
             super();
@@ -340,9 +340,9 @@ public class CFBamBuffBoolDefH extends CFBamBuffAtomH
         }
         ICFBamBoolDef rhs = (ICFBamBoolDef)obj;
 			if( getOptionalInitValue() != null ) {
-				$implJavaAtomType$ lhsInitValue = getOptionalInitValue();
+				Boolean lhsInitValue = getOptionalInitValue();
 				if( rhs.getOptionalInitValue() ) {
-					$implJavaAtomType$ rhsInitValue = rhs.getOptionalInitValue();
+					Boolean rhsInitValue = rhs.getOptionalInitValue();
 					if( lhsInitValue ) {
 						if( ! rhsInitValue ) {
 							return( 1 );
@@ -423,9 +423,9 @@ public class CFBamBuffBoolDefH extends CFBamBuffAtomH
         }
         ICFBamBoolDefH rhs = (ICFBamBoolDefH)obj;
 			if( getOptionalInitValue() != null ) {
-				$implJavaAtomType$ lhsInitValue = getOptionalInitValue();
+				Boolean lhsInitValue = getOptionalInitValue();
 				if( rhs.getOptionalInitValue() ) {
-					$implJavaAtomType$ rhsInitValue = rhs.getOptionalInitValue();
+					Boolean rhsInitValue = rhs.getOptionalInitValue();
 					if( lhsInitValue ) {
 						if( ! rhsInitValue ) {
 							return( 1 );

@@ -74,7 +74,7 @@ public class CFBamBuffEnumType
 	extends CFBamBuffEnumDef
 	implements ICFBamEnumType
 {
-	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected ICFLibKeyHash256 requiredSchemaDefId;
 
 	public CFBamBuffEnumType() {
 		super();

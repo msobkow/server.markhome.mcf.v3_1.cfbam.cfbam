@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffPopSubDep1ByPopTopDepIdxKey
 	implements ICFBamPopSubDep1ByPopTopDepIdxKey, Comparable<Object>, Serializable
 {
-	protected $implJavaAtomType$ requiredPopTopDepId;
+	protected ICFLibKeyHash256 requiredPopTopDepId;
 	public CFBamBuffPopSubDep1ByPopTopDepIdxKey() {
 		requiredPopTopDepId = CFLibDbKeyHash256.fromHex( ICFBamPubPopSubDep1.POPTOPDEPID_INIT_VALUE.toString() );
 	}

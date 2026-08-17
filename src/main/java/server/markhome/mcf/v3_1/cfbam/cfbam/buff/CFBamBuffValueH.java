@@ -80,19 +80,19 @@ public class CFBamBuffValueH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected $implJavaAtomType$ requiredScopeId;
-	protected $implJavaAtomType$ optionalDefSchemaId;
-	protected $implJavaAtomType$ requiredName;
-	protected $implJavaAtomType$ optionalShortName;
-	protected $implJavaAtomType$ optionalLabel;
-	protected $implJavaAtomType$ optionalShortDescription;
-	protected $implJavaAtomType$ optionalDescription;
-	protected $implJavaAtomType$ optionalDefaultXmlValue;
-	protected $implJavaAtomType$ requiredIsNullable;
-	protected $implJavaAtomType$ optionalGenerateId;
-	protected $implJavaAtomType$ requiredImplementsPolymorph;
-	protected $implJavaAtomType$ optionalPrevId;
-	protected $implJavaAtomType$ optionalNextId;
+	protected ICFLibKeyHash256 requiredScopeId;
+	protected ICFLibKeyHash256 optionalDefSchemaId;
+	protected String requiredName;
+	protected String optionalShortName;
+	protected String optionalLabel;
+	protected String optionalShortDescription;
+	protected String optionalDescription;
+	protected String optionalDefaultXmlValue;
+	protected boolean requiredIsNullable;
+	protected Boolean optionalGenerateId;
+	protected boolean requiredImplementsPolymorph;
+	protected ICFLibKeyHash256 optionalPrevId;
+	protected ICFLibKeyHash256 optionalNextId;
 
     public CFBamBuffValueH() {
             // The primary key member attributes are initialized on construction
@@ -1229,9 +1229,9 @@ public class CFBamBuffValueH
 				}
 			}
 			if( getOptionalGenerateId() != null ) {
-				$implJavaAtomType$ lhsGenerateId = getOptionalGenerateId();
+				Boolean lhsGenerateId = getOptionalGenerateId();
 				if( rhs.getOptionalGenerateId() ) {
-					$implJavaAtomType$ rhsGenerateId = rhs.getOptionalGenerateId();
+					Boolean rhsGenerateId = rhs.getOptionalGenerateId();
 					if( lhsGenerateId ) {
 						if( ! rhsGenerateId ) {
 							return( 1 );
@@ -1457,9 +1457,9 @@ public class CFBamBuffValueH
 				}
 			}
 			if( getOptionalGenerateId() != null ) {
-				$implJavaAtomType$ lhsGenerateId = getOptionalGenerateId();
+				Boolean lhsGenerateId = getOptionalGenerateId();
 				if( rhs.getOptionalGenerateId() ) {
-					$implJavaAtomType$ rhsGenerateId = rhs.getOptionalGenerateId();
+					Boolean rhsGenerateId = rhs.getOptionalGenerateId();
 					if( lhsGenerateId ) {
 						if( ! rhsGenerateId ) {
 							return( 1 );

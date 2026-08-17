@@ -388,12 +388,12 @@ public class CFBamSecSysRoleEnablesObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecSysRoleId() {
+	public ICFLibKeyHash256 getRequiredSecSysRoleId() {
 		return( getPKey().getRequiredSecSysRoleId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredEnableName() {
+	public String getRequiredEnableName() {
 		return( getPKey().getRequiredEnableName() );
 	}
 

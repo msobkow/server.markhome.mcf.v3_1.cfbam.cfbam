@@ -355,7 +355,7 @@ public class CFBamLicenseObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -392,32 +392,32 @@ public class CFBamLicenseObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getLicenseRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTopDomainId() {
+	public ICFLibKeyHash256 getRequiredTopDomainId() {
 		return( getLicenseRec().getRequiredTopDomainId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getLicenseRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getLicenseRec().getOptionalDescription() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalEmbeddedText() {
+	public String getOptionalEmbeddedText() {
 		return( getLicenseRec().getOptionalEmbeddedText() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalFullText() {
+	public String getOptionalFullText() {
 		return( getLicenseRec().getOptionalFullText() );
 	}
 

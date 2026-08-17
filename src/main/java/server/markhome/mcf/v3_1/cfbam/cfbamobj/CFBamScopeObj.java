@@ -386,7 +386,7 @@ public class CFBamScopeObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -407,7 +407,7 @@ public class CFBamScopeObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getScopeRec().getRequiredTenantId() );
 	}
 

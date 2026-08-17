@@ -442,12 +442,12 @@ public class CFBamIndexColEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerIndex = null;
@@ -461,99 +461,99 @@ public class CFBamIndexColEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIndexId() {
+	public ICFLibKeyHash256 getRequiredIndexId() {
 		return( getIndexColRec().getRequiredIndexId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDefSchemaId() {
+	public ICFLibKeyHash256 getOptionalDefSchemaId() {
 		return( getIndexColRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getIndexColRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( $implJavaAtomType$ value ) {
+	public void setRequiredName( String value ) {
 		if( getIndexColRec().getRequiredName() != value ) {
 			getIndexColRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalShortName() {
+	public String getOptionalShortName() {
 		return( getIndexColRec().getOptionalShortName() );
 	}
 
 	@Override
-	public void setOptionalShortName( $implJavaAtomType$ value ) {
+	public void setOptionalShortName( String value ) {
 		if( getIndexColRec().getOptionalShortName() != value ) {
 			getIndexColRec().setOptionalShortName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalLabel() {
+	public String getOptionalLabel() {
 		return( getIndexColRec().getOptionalLabel() );
 	}
 
 	@Override
-	public void setOptionalLabel( $implJavaAtomType$ value ) {
+	public void setOptionalLabel( String value ) {
 		if( getIndexColRec().getOptionalLabel() != value ) {
 			getIndexColRec().setOptionalLabel( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalShortDescription() {
+	public String getOptionalShortDescription() {
 		return( getIndexColRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public void setOptionalShortDescription( $implJavaAtomType$ value ) {
+	public void setOptionalShortDescription( String value ) {
 		if( getIndexColRec().getOptionalShortDescription() != value ) {
 			getIndexColRec().setOptionalShortDescription( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getIndexColRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( $implJavaAtomType$ value ) {
+	public void setOptionalDescription( String value ) {
 		if( getIndexColRec().getOptionalDescription() != value ) {
 			getIndexColRec().setOptionalDescription( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredColumnId() {
+	public ICFLibKeyHash256 getRequiredColumnId() {
 		return( getIndexColRec().getRequiredColumnId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredIsAscending() {
+	public boolean getRequiredIsAscending() {
 		return( getIndexColRec().getRequiredIsAscending() );
 	}
 
 	@Override
-	public void setRequiredIsAscending( $implJavaAtomType$ value ) {
+	public void setRequiredIsAscending( boolean value ) {
 		if( getIndexColRec().getRequiredIsAscending() != value ) {
 			getIndexColRec().setRequiredIsAscending( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalPrevId() {
+	public ICFLibKeyHash256 getOptionalPrevId() {
 		return( getIndexColRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalNextId() {
+	public ICFLibKeyHash256 getOptionalNextId() {
 		return( getIndexColRec().getOptionalNextId() );
 	}
 

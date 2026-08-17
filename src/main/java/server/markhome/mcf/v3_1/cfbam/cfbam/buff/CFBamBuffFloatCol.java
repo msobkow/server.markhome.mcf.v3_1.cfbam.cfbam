@@ -74,7 +74,7 @@ public class CFBamBuffFloatCol
 	extends CFBamBuffFloatDef
 	implements ICFBamFloatCol
 {
-	protected $implJavaAtomType$ requiredTableId;
+	protected ICFLibKeyHash256 requiredTableId;
 
 	public CFBamBuffFloatCol() {
 		super();

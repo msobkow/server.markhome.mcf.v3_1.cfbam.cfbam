@@ -74,8 +74,8 @@ public class CFBamBuffClearDep
 	extends CFBamBuffScope
 	implements ICFBamClearDep
 {
-	protected $implJavaAtomType$ requiredRelationId;
-	protected $implJavaAtomType$ optionalDefSchemaId;
+	protected ICFLibKeyHash256 requiredRelationId;
+	protected ICFLibKeyHash256 optionalDefSchemaId;
 
 	public CFBamBuffClearDep() {
 		super();

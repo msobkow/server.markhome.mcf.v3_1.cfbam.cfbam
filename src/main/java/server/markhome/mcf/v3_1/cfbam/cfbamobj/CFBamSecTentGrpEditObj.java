@@ -416,12 +416,12 @@ public class CFBamSecTentGrpEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredSecTentGrpId() {
+	public ICFLibKeyHash256 getRequiredSecTentGrpId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSecTentGrpId($implJavaAtomType$ value) {
+	public void setRequiredSecTentGrpId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredOwnerTenant = null;
@@ -431,12 +431,12 @@ public class CFBamSecTentGrpEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredTenantId() {
+	public ICFLibKeyHash256 getRequiredTenantId() {
 		return( getSecTentGrpRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getSecTentGrpRec().getRequiredName() );
 	}
 

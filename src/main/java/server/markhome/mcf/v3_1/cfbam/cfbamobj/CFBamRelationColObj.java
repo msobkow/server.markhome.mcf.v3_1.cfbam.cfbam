@@ -416,7 +416,7 @@ public class CFBamRelationColObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -526,57 +526,57 @@ public class CFBamRelationColObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredRelationId() {
+	public ICFLibKeyHash256 getRequiredRelationId() {
 		return( getRelationColRec().getRequiredRelationId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDefSchemaId() {
+	public ICFLibKeyHash256 getOptionalDefSchemaId() {
 		return( getRelationColRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getRelationColRec().getRequiredName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalShortName() {
+	public String getOptionalShortName() {
 		return( getRelationColRec().getOptionalShortName() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalLabel() {
+	public String getOptionalLabel() {
 		return( getRelationColRec().getOptionalLabel() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalShortDescription() {
+	public String getOptionalShortDescription() {
 		return( getRelationColRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDescription() {
+	public String getOptionalDescription() {
 		return( getRelationColRec().getOptionalDescription() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredFromColId() {
+	public ICFLibKeyHash256 getRequiredFromColId() {
 		return( getRelationColRec().getRequiredFromColId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredToColId() {
+	public ICFLibKeyHash256 getRequiredToColId() {
 		return( getRelationColRec().getRequiredToColId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalPrevId() {
+	public ICFLibKeyHash256 getOptionalPrevId() {
 		return( getRelationColRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalNextId() {
+	public ICFLibKeyHash256 getOptionalNextId() {
 		return( getRelationColRec().getOptionalNextId() );
 	}
 

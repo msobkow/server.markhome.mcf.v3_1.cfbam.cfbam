@@ -74,8 +74,8 @@ public class CFBamBuffDbKeyHash224Gen
 	extends CFBamBuffDbKeyHash224Type
 	implements ICFBamDbKeyHash224Gen
 {
-	protected $implJavaAtomType$ requiredSlice;
-	protected $implJavaAtomType$ requiredBlockSize;
+	protected short requiredSlice;
+	protected int requiredBlockSize;
 
 	public CFBamBuffDbKeyHash224Gen() {
 		super();

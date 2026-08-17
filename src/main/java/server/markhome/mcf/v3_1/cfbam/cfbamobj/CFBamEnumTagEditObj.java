@@ -437,58 +437,58 @@ public class CFBamEnumTagEditObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId($implJavaAtomType$ value) {
+	public void setRequiredId(ICFLibKeyHash256 value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalDefSchemaId() {
+	public ICFLibKeyHash256 getOptionalDefSchemaId() {
 		return( getEnumTagRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredEnumId() {
+	public ICFLibKeyHash256 getRequiredEnumId() {
 		return( getEnumTagRec().getRequiredEnumId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalEnumCode() {
+	public Short getOptionalEnumCode() {
 		return( getEnumTagRec().getOptionalEnumCode() );
 	}
 
 	@Override
-	public void setOptionalEnumCode( $implJavaAtomType$ value ) {
+	public void setOptionalEnumCode( Short value ) {
 		if( getEnumTagRec().getOptionalEnumCode() != value ) {
 			getEnumTagRec().setOptionalEnumCode( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredName() {
+	public String getRequiredName() {
 		return( getEnumTagRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( $implJavaAtomType$ value ) {
+	public void setRequiredName( String value ) {
 		if( getEnumTagRec().getRequiredName() != value ) {
 			getEnumTagRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalPrevId() {
+	public ICFLibKeyHash256 getOptionalPrevId() {
 		return( getEnumTagRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalNextId() {
+	public ICFLibKeyHash256 getOptionalNextId() {
 		return( getEnumTagRec().getOptionalNextId() );
 	}
 

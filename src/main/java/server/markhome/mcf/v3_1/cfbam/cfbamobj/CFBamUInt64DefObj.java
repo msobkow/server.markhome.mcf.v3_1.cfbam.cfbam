@@ -313,22 +313,22 @@ public class CFBamUInt64DefObj
 	}
 
 	@Override
-	public $implJavaAtomType$ getRequiredId() {
+	public ICFLibKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalInitValue() {
+	public BigDecimal getOptionalInitValue() {
 		return( getUInt64DefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalMinValue() {
+	public BigDecimal getOptionalMinValue() {
 		return( getUInt64DefRec().getOptionalMinValue() );
 	}
 
 	@Override
-	public $implJavaAtomType$ getOptionalMaxValue() {
+	public BigDecimal getOptionalMaxValue() {
 		return( getUInt64DefRec().getOptionalMaxValue() );
 	}
 }
