@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamTableBySchemaCdIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredSchemaDefId();
-	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredSchemaDefId();
+	public void setRequiredSchemaDefId( ICFLibKeyHash256 value );
 	public String getRequiredTableClassCode();
 	public void setRequiredTableClassCode( String value );
 	@Override

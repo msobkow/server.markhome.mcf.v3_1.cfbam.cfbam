@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamRelationColByUNameIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredRelationId();
-	public void setRequiredRelationId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredRelationId();
+	public void setRequiredRelationId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override

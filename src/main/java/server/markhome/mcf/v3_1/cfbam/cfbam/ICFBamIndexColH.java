@@ -96,10 +96,10 @@ public interface ICFBamIndexColH
 	public ICFLibKeyHash256 getRequiredId();
 	public void setRequiredId( ICFLibKeyHash256 requiredId );
 
-	public CFLibDbKeyHash256 getRequiredIndexId();
-	public void setRequiredIndexId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredIndexId();
+	public void setRequiredIndexId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();
@@ -110,14 +110,14 @@ public interface ICFBamIndexColH
 	public void setOptionalShortDescription( String value );
 	public String getOptionalDescription();
 	public void setOptionalDescription( String value );
-	public CFLibDbKeyHash256 getRequiredColumnId();
-	public void setRequiredColumnId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredColumnId();
+	public void setRequiredColumnId( ICFLibKeyHash256 value );
 	public boolean getRequiredIsAscending();
 	public void setRequiredIsAscending( boolean value );
-	public CFLibDbKeyHash256 getOptionalPrevId();
-	public void setOptionalPrevId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalNextId();
-	public void setOptionalNextId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalPrevId();
+	public void setOptionalPrevId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalNextId();
+	public void setOptionalNextId( ICFLibKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

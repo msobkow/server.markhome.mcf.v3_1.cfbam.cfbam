@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamSchemaRefBySchemaIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredSchemaId();
-	public void setRequiredSchemaId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredSchemaId();
+	public void setRequiredSchemaId( ICFLibKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

@@ -82,11 +82,11 @@ public class CFBamBuffParamByContNextIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredServerMethodId() {
+	public ICFLibKeyHash256 getRequiredServerMethodId() {
 		return(requiredServerMethodId);
 	}
 
-	public void setRequiredServerMethodId( CFLibDbKeyHash256 value ) {
+	public void setRequiredServerMethodId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredServerMethodId",
@@ -97,11 +97,11 @@ public class CFBamBuffParamByContNextIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalNextId() {
+	public ICFLibKeyHash256 getOptionalNextId() {
 		return(optionalNextId);
 	}
 
-	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+	public void setOptionalNextId( ICFLibKeyHash256 value ) {
 		optionalNextId = value;
 	}
 

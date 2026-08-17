@@ -82,11 +82,11 @@ public class CFBamBuffRelationColByRelPrevIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredRelationId() {
+	public ICFLibKeyHash256 getRequiredRelationId() {
 		return(requiredRelationId);
 	}
 
-	public void setRequiredRelationId( CFLibDbKeyHash256 value ) {
+	public void setRequiredRelationId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredRelationId",
@@ -97,11 +97,11 @@ public class CFBamBuffRelationColByRelPrevIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalPrevId() {
+	public ICFLibKeyHash256 getOptionalPrevId() {
 		return(optionalPrevId);
 	}
 
-	public void setOptionalPrevId( CFLibDbKeyHash256 value ) {
+	public void setOptionalPrevId( ICFLibKeyHash256 value ) {
 		optionalPrevId = value;
 	}
 

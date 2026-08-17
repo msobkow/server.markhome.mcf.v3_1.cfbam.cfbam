@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamClearSubDep3H extends ICFBamClearDepH
 {
-	public CFLibDbKeyHash256 getRequiredClearSubDep2Id();
-	public void setRequiredClearSubDep2Id( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredClearSubDep2Id();
+	public void setRequiredClearSubDep2Id( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override

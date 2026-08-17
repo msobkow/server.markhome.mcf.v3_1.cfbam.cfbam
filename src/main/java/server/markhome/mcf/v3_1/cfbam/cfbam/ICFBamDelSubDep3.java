@@ -80,8 +80,8 @@ public interface ICFBamDelSubDep3
 
 	public void setRequiredContainerDelSubDep2(ICFBamPubDelSubDep2 argObj);
 
-	public CFLibDbKeyHash256 getRequiredDelSubDep2Id();
-	public void setRequiredDelSubDep2Id( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredDelSubDep2Id();
+	public void setRequiredDelSubDep2Id( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean equals( Object obj );

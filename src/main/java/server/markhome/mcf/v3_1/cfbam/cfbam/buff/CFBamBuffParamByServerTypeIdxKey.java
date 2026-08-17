@@ -80,11 +80,11 @@ public class CFBamBuffParamByServerTypeIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalTypeId() {
+	public ICFLibKeyHash256 getOptionalTypeId() {
 		return(optionalTypeId);
 	}
 
-	public void setOptionalTypeId( CFLibDbKeyHash256 value ) {
+	public void setOptionalTypeId( ICFLibKeyHash256 value ) {
 		optionalTypeId = value;
 	}
 

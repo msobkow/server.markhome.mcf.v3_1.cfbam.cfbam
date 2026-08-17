@@ -80,11 +80,11 @@ public class CFBamBuffRelationByNarrowedIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalNarrowedId() {
+	public ICFLibKeyHash256 getOptionalNarrowedId() {
 		return(optionalNarrowedId);
 	}
 
-	public void setOptionalNarrowedId( CFLibDbKeyHash256 value ) {
+	public void setOptionalNarrowedId( ICFLibKeyHash256 value ) {
 		optionalNarrowedId = value;
 	}
 

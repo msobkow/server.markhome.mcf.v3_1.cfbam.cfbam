@@ -96,10 +96,10 @@ public interface ICFBamParamH
 	public ICFLibKeyHash256 getRequiredId();
 	public void setRequiredId( ICFLibKeyHash256 requiredId );
 
-	public CFLibDbKeyHash256 getRequiredServerMethodId();
-	public void setRequiredServerMethodId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredServerMethodId();
+	public void setRequiredServerMethodId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortDescription();
@@ -108,12 +108,12 @@ public interface ICFBamParamH
 	public void setOptionalDescription( String value );
 	public boolean getRequiredIsNullable();
 	public void setRequiredIsNullable( boolean value );
-	public CFLibDbKeyHash256 getOptionalTypeId();
-	public void setOptionalTypeId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalPrevId();
-	public void setOptionalPrevId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalNextId();
-	public void setOptionalNextId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalTypeId();
+	public void setOptionalTypeId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalPrevId();
+	public void setOptionalPrevId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalNextId();
+	public void setOptionalNextId( ICFLibKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

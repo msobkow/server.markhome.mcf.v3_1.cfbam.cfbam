@@ -96,18 +96,18 @@ public interface ICFBamEnumTagH
 	public ICFLibKeyHash256 getRequiredId();
 	public void setRequiredId( ICFLibKeyHash256 requiredId );
 
-	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getRequiredEnumId();
-	public void setRequiredEnumId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredEnumId();
+	public void setRequiredEnumId( ICFLibKeyHash256 value );
 	public Short getOptionalEnumCode();
 	public void setOptionalEnumCode( Short value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
-	public CFLibDbKeyHash256 getOptionalPrevId();
-	public void setOptionalPrevId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalNextId();
-	public void setOptionalNextId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalPrevId();
+	public void setOptionalPrevId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalNextId();
+	public void setOptionalNextId( ICFLibKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

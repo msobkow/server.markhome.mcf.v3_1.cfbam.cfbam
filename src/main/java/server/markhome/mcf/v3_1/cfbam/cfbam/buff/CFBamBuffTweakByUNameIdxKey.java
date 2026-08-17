@@ -82,11 +82,11 @@ public class CFBamBuffTweakByUNameIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredScopeId() {
+	public ICFLibKeyHash256 getRequiredScopeId() {
 		return(requiredScopeId);
 	}
 
-	public void setRequiredScopeId( CFLibDbKeyHash256 value ) {
+	public void setRequiredScopeId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredScopeId",

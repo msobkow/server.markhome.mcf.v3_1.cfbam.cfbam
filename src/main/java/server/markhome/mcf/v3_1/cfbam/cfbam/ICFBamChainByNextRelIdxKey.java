@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamChainByNextRelIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredNextRelationId();
-	public void setRequiredNextRelationId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredNextRelationId();
+	public void setRequiredNextRelationId( ICFLibKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

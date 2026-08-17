@@ -87,11 +87,11 @@ public class CFBamBuffUuid6TypeH extends CFBamBuffUuid6DefH
     }
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
+	public ICFLibKeyHash256 getRequiredSchemaDefId() {
 		return(requiredSchemaDefId);
 	}
 
-	public void setRequiredSchemaDefId( CFLibDbKeyHash256 value ) {
+	public void setRequiredSchemaDefId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredSchemaDefId",

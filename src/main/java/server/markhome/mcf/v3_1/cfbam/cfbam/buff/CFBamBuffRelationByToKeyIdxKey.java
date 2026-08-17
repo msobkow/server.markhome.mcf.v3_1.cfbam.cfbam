@@ -80,11 +80,11 @@ public class CFBamBuffRelationByToKeyIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredToIndexId() {
+	public ICFLibKeyHash256 getRequiredToIndexId() {
 		return(requiredToIndexId);
 	}
 
-	public void setRequiredToIndexId( CFLibDbKeyHash256 value ) {
+	public void setRequiredToIndexId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredToIndexId",

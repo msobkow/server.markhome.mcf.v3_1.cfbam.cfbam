@@ -69,10 +69,10 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamRelationH extends ICFBamScopeH
 {
-	public CFLibDbKeyHash256 getRequiredTableId();
-	public void setRequiredTableId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalDefSchemaId();
-	public void setOptionalDefSchemaId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredTableId();
+	public void setRequiredTableId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalDefSchemaId();
+	public void setOptionalDefSchemaId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getOptionalShortName();
@@ -89,12 +89,12 @@ public interface ICFBamRelationH extends ICFBamScopeH
 	public void setOptionalDbName( String value );
 	public String getOptionalSuffix();
 	public void setOptionalSuffix( String value );
-	public CFLibDbKeyHash256 getRequiredFromIndexId();
-	public void setRequiredFromIndexId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getRequiredToTableId();
-	public void setRequiredToTableId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getRequiredToIndexId();
-	public void setRequiredToIndexId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredFromIndexId();
+	public void setRequiredFromIndexId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredToTableId();
+	public void setRequiredToTableId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredToIndexId();
+	public void setRequiredToIndexId( ICFLibKeyHash256 value );
 	public boolean getRequiredIsRequired();
 	public void setRequiredIsRequired( boolean value );
 	public boolean getRequiredIsXsdContainer();
@@ -103,8 +103,8 @@ public interface ICFBamRelationH extends ICFBamScopeH
 	public void setRequiredIsLateResolver( boolean value );
 	public boolean getRequiredAllowAddendum();
 	public void setRequiredAllowAddendum( boolean value );
-	public CFLibDbKeyHash256 getOptionalNarrowedId();
-	public void setOptionalNarrowedId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalNarrowedId();
+	public void setOptionalNarrowedId( ICFLibKeyHash256 value );
 	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis();
 	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value );
 	@Override

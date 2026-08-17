@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamParamByServerTypeIdxKey
 {
-	public CFLibDbKeyHash256 getOptionalTypeId();
-	public void setOptionalTypeId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalTypeId();
+	public void setOptionalTypeId( ICFLibKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

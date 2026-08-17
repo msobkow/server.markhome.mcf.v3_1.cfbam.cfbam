@@ -80,11 +80,11 @@ public class CFBamBuffDelSubDep1ByDelTopDepIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredDelTopDepId() {
+	public ICFLibKeyHash256 getRequiredDelTopDepId() {
 		return(requiredDelTopDepId);
 	}
 
-	public void setRequiredDelTopDepId( CFLibDbKeyHash256 value ) {
+	public void setRequiredDelTopDepId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredDelTopDepId",

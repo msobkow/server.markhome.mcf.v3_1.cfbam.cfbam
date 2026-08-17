@@ -122,11 +122,11 @@ public class CFBamBuffTableCol
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTableId() {
+	public ICFLibKeyHash256 getRequiredTableId() {
 		return(requiredTableId);
 	}
 
-	public void setRequiredTableId( CFLibDbKeyHash256 value ) {
+	public void setRequiredTableId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredTableId",
@@ -154,11 +154,11 @@ public class CFBamBuffTableCol
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDataId() {
+	public ICFLibKeyHash256 getOptionalDataId() {
 		return(optionalDataId);
 	}
 
-	public void setOptionalDataId( CFLibDbKeyHash256 value ) {
+	public void setOptionalDataId( ICFLibKeyHash256 value ) {
 		optionalDataId = value;
 	}
 

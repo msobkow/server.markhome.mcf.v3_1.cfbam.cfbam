@@ -80,11 +80,11 @@ public class CFBamBuffRelationByToTblIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredToTableId() {
+	public ICFLibKeyHash256 getRequiredToTableId() {
 		return(requiredToTableId);
 	}
 
-	public void setRequiredToTableId( CFLibDbKeyHash256 value ) {
+	public void setRequiredToTableId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredToTableId",

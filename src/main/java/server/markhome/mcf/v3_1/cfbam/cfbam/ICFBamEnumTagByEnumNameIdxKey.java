@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamEnumTagByEnumNameIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredEnumId();
-	public void setRequiredEnumId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredEnumId();
+	public void setRequiredEnumId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override

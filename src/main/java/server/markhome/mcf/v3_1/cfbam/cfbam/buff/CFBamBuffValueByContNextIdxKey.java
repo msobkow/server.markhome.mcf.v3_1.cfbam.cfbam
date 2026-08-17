@@ -82,11 +82,11 @@ public class CFBamBuffValueByContNextIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredScopeId() {
+	public ICFLibKeyHash256 getRequiredScopeId() {
 		return(requiredScopeId);
 	}
 
-	public void setRequiredScopeId( CFLibDbKeyHash256 value ) {
+	public void setRequiredScopeId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredScopeId",
@@ -97,11 +97,11 @@ public class CFBamBuffValueByContNextIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalNextId() {
+	public ICFLibKeyHash256 getOptionalNextId() {
 		return(optionalNextId);
 	}
 
-	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+	public void setOptionalNextId( ICFLibKeyHash256 value ) {
 		optionalNextId = value;
 	}
 

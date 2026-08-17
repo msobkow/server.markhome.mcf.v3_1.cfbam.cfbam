@@ -82,11 +82,11 @@ public class CFBamBuffIndexColByIdxNextIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredIndexId() {
+	public ICFLibKeyHash256 getRequiredIndexId() {
 		return(requiredIndexId);
 	}
 
-	public void setRequiredIndexId( CFLibDbKeyHash256 value ) {
+	public void setRequiredIndexId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredIndexId",
@@ -97,11 +97,11 @@ public class CFBamBuffIndexColByIdxNextIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalNextId() {
+	public ICFLibKeyHash256 getOptionalNextId() {
 		return(optionalNextId);
 	}
 
-	public void setOptionalNextId( CFLibDbKeyHash256 value ) {
+	public void setOptionalNextId( ICFLibKeyHash256 value ) {
 		optionalNextId = value;
 	}
 

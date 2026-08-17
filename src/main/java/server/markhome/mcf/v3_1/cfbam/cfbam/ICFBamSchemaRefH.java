@@ -69,20 +69,20 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamSchemaRefH extends ICFBamScopeH
 {
-	public CFLibDbKeyHash256 getRequiredSchemaId();
-	public void setRequiredSchemaId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredSchemaId();
+	public void setRequiredSchemaId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public String getRequiredRefModelName();
 	public void setRequiredRefModelName( String value );
 	public String getRequiredIncludeRoot();
 	public void setRequiredIncludeRoot( String value );
-	public CFLibDbKeyHash256 getOptionalRefSchemaId();
-	public void setOptionalRefSchemaId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalPrevId();
-	public void setOptionalPrevId( CFLibDbKeyHash256 value );
-	public CFLibDbKeyHash256 getOptionalNextId();
-	public void setOptionalNextId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalRefSchemaId();
+	public void setOptionalRefSchemaId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalPrevId();
+	public void setOptionalPrevId( ICFLibKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalNextId();
+	public void setOptionalNextId( ICFLibKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

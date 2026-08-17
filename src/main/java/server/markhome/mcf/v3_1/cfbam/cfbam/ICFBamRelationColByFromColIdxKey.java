@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamRelationColByFromColIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredFromColId();
-	public void setRequiredFromColId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredFromColId();
+	public void setRequiredFromColId( ICFLibKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamDelSubDep1ByDelTopDepIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredDelTopDepId();
-	public void setRequiredDelTopDepId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredDelTopDepId();
+	public void setRequiredDelTopDepId( ICFLibKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

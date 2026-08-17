@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamDelSubDep1H extends ICFBamDelDepH
 {
-	public CFLibDbKeyHash256 getRequiredDelTopDepId();
-	public void setRequiredDelTopDepId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredDelTopDepId();
+	public void setRequiredDelTopDepId( ICFLibKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	@Override

@@ -82,11 +82,11 @@ public class CFBamBuffClearSubDep2ByUNameIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredClearSubDep1Id() {
+	public ICFLibKeyHash256 getRequiredClearSubDep1Id() {
 		return(requiredClearSubDep1Id);
 	}
 
-	public void setRequiredClearSubDep1Id( CFLibDbKeyHash256 value ) {
+	public void setRequiredClearSubDep1Id( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredClearSubDep1Id",

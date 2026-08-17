@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamTableByLookupIndexIdxKey
 {
-	public CFLibDbKeyHash256 getOptionalLookupIndexId();
-	public void setOptionalLookupIndexId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getOptionalLookupIndexId();
+	public void setOptionalLookupIndexId( ICFLibKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

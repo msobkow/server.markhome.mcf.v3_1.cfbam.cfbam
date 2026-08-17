@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamSchemaDefByProjectURLIdxKey
 {
-	public CFLibDbKeyHash256 getRequiredCTenantId();
-	public void setRequiredCTenantId( CFLibDbKeyHash256 value );
+	public ICFLibKeyHash256 getRequiredCTenantId();
+	public void setRequiredCTenantId( ICFLibKeyHash256 value );
 	public String getRequiredProjectURL();
 	public void setRequiredProjectURL( String value );
 	@Override

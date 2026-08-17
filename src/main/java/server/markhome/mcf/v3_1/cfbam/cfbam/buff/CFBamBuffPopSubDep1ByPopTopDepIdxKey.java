@@ -80,11 +80,11 @@ public class CFBamBuffPopSubDep1ByPopTopDepIdxKey
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredPopTopDepId() {
+	public ICFLibKeyHash256 getRequiredPopTopDepId() {
 		return(requiredPopTopDepId);
 	}
 
-	public void setRequiredPopTopDepId( CFLibDbKeyHash256 value ) {
+	public void setRequiredPopTopDepId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredPopTopDepId",

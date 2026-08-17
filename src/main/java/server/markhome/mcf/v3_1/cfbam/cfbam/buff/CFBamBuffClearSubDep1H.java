@@ -89,11 +89,11 @@ public class CFBamBuffClearSubDep1H extends CFBamBuffClearDepH
     }
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredClearTopDepId() {
+	public ICFLibKeyHash256 getRequiredClearTopDepId() {
 		return(requiredClearTopDepId);
 	}
 
-	public void setRequiredClearTopDepId( CFLibDbKeyHash256 value ) {
+	public void setRequiredClearTopDepId( ICFLibKeyHash256 value ) {
 		if( value == null || value.isNull() ) {
 			throw new CFLibNullArgumentException( getClass(),
 				"setRequiredClearTopDepId",
