@@ -114,7 +114,7 @@ public interface ICFBamBoolDefTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteBoolDefByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the BoolDef instances identified by the key UNameIdx.
 	 *
@@ -125,7 +125,7 @@ public interface ICFBamBoolDefTable
 	 *	@param	Name	The BoolDef key attribute of the instance generating the id.
 	 */
 	void deleteBoolDefByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
+		ICFLibKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -145,7 +145,7 @@ public interface ICFBamBoolDefTable
 	 *	@param	ScopeId	The BoolDef key attribute of the instance generating the id.
 	 */
 	void deleteBoolDefByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId );
+		ICFLibKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the BoolDef instances identified by the key ScopeIdx.
@@ -164,7 +164,7 @@ public interface ICFBamBoolDefTable
 	 *	@param	DefSchemaId	The BoolDef key attribute of the instance generating the id.
 	 */
 	void deleteBoolDefByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		ICFLibKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the BoolDef instances identified by the key DefSchemaIdx.
@@ -183,7 +183,7 @@ public interface ICFBamBoolDefTable
 	 *	@param	PrevId	The BoolDef key attribute of the instance generating the id.
 	 */
 	void deleteBoolDefByPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		ICFLibKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the BoolDef instances identified by the key PrevIdx.
@@ -202,7 +202,7 @@ public interface ICFBamBoolDefTable
 	 *	@param	NextId	The BoolDef key attribute of the instance generating the id.
 	 */
 	void deleteBoolDefByNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		ICFLibKeyHash256 argNextId );
 
 	/**
 	 *	Delete the BoolDef instances identified by the key NextIdx.
@@ -223,8 +223,8 @@ public interface ICFBamBoolDefTable
 	 *	@param	PrevId	The BoolDef key attribute of the instance generating the id.
 	 */
 	void deleteBoolDefByContPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argPrevId );
+		ICFLibKeyHash256 argScopeId,
+		ICFLibKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the BoolDef instances identified by the key ContPrevIdx.
@@ -245,8 +245,8 @@ public interface ICFBamBoolDefTable
 	 *	@param	NextId	The BoolDef key attribute of the instance generating the id.
 	 */
 	void deleteBoolDefByContNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argNextId );
+		ICFLibKeyHash256 argScopeId,
+		ICFLibKeyHash256 argNextId );
 
 	/**
 	 *	Delete the BoolDef instances identified by the key ContNextIdx.
@@ -270,7 +270,7 @@ public interface ICFBamBoolDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamBoolDef readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived BoolDef record instance by primary key.
@@ -283,7 +283,7 @@ public interface ICFBamBoolDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamBoolDef lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all BoolDef instances.
@@ -305,7 +305,7 @@ public interface ICFBamBoolDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamBoolDef readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read the derived BoolDef record instance identified by the unique key UNameIdx.
@@ -320,7 +320,7 @@ public interface ICFBamBoolDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamBoolDef readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -333,7 +333,7 @@ public interface ICFBamBoolDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamBoolDef[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived BoolDef record instances identified by the duplicate key DefSchemaIdx.
@@ -345,7 +345,7 @@ public interface ICFBamBoolDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamBoolDef[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived BoolDef record instances identified by the duplicate key PrevIdx.
@@ -357,7 +357,7 @@ public interface ICFBamBoolDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamBoolDef[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived BoolDef record instances identified by the duplicate key NextIdx.
@@ -369,7 +369,7 @@ public interface ICFBamBoolDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamBoolDef[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived BoolDef record instances identified by the duplicate key ContPrevIdx.
@@ -383,8 +383,8 @@ public interface ICFBamBoolDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamBoolDef[] readDerivedByContPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived BoolDef record instances identified by the duplicate key ContNextIdx.
@@ -398,8 +398,8 @@ public interface ICFBamBoolDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamBoolDef[] readDerivedByContNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read the specific BoolDef record instance identified by the primary key.
@@ -414,7 +414,7 @@ public interface ICFBamBoolDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBoolDef readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific BoolDef record instance identified by the primary key.
@@ -429,7 +429,7 @@ public interface ICFBamBoolDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBoolDef lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific BoolDef record instances.
@@ -453,7 +453,7 @@ public interface ICFBamBoolDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBoolDef readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read the specific BoolDef record instance identified by the unique key UNameIdx.
@@ -470,7 +470,7 @@ public interface ICFBamBoolDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBoolDef readRecByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -485,7 +485,7 @@ public interface ICFBamBoolDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBoolDef[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific BoolDef record instances identified by the duplicate key DefSchemaIdx.
@@ -499,7 +499,7 @@ public interface ICFBamBoolDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBoolDef[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific BoolDef record instances identified by the duplicate key PrevIdx.
@@ -513,7 +513,7 @@ public interface ICFBamBoolDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBoolDef[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific BoolDef record instances identified by the duplicate key NextIdx.
@@ -527,7 +527,7 @@ public interface ICFBamBoolDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBoolDef[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific BoolDef record instances identified by the duplicate key ContPrevIdx.
@@ -543,8 +543,8 @@ public interface ICFBamBoolDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBoolDef[] readRecByContPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific BoolDef record instances identified by the duplicate key ContNextIdx.
@@ -560,8 +560,8 @@ public interface ICFBamBoolDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBoolDef[] readRecByContNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -569,7 +569,7 @@ public interface ICFBamBoolDefTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamBoolDef moveRecUp( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id,
+		ICFLibKeyHash256 Id,
 		int revision );
 
 	/**
@@ -578,6 +578,6 @@ public interface ICFBamBoolDefTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamBoolDef moveRecDown( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id,
+		ICFLibKeyHash256 Id,
 		int revision );
 }

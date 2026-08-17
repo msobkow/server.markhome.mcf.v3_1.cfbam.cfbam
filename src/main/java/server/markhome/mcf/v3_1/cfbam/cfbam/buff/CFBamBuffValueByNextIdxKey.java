@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffValueByNextIdxKey
 	implements ICFBamValueByNextIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 optionalNextId;
+	protected $implJavaAtomType$ optionalNextId;
 	public CFBamBuffValueByNextIdxKey() {
 		optionalNextId = CFLibDbKeyHash256.nullGet();
 	}

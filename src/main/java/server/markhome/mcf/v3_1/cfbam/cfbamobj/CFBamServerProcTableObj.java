@@ -71,26 +71,26 @@ public class CFBamServerProcTableObj
 	protected ICFBamSchemaObj schema;
 	protected static int runtimeClassCode = ICFBamServerProc.CLASS_CODE;
 	protected static final int backingClassCode = ICFBamServerProc.CLASS_CODE;
-	private Map<CFLibDbKeyHash256, ICFBamServerProcObj> members;
-	private Map<CFLibDbKeyHash256, ICFBamServerProcObj> allServerProc;
+	private Map<ICFLibKeyHash256, ICFBamServerProcObj> members;
+	private Map<ICFLibKeyHash256, ICFBamServerProcObj> allServerProc;
 	private Map< ICFBamScopeByTenantIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamServerProcObj > > indexByTenantIdx;
+		Map<ICFLibKeyHash256, ICFBamServerProcObj > > indexByTenantIdx;
 	private Map< ICFBamServerMethodByUNameIdxKey,
 		ICFBamServerProcObj > indexByUNameIdx;
 	private Map< ICFBamServerMethodByMethTableIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamServerProcObj > > indexByMethTableIdx;
+		Map<ICFLibKeyHash256, ICFBamServerProcObj > > indexByMethTableIdx;
 	private Map< ICFBamServerMethodByMethCodeVisIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamServerProcObj > > indexByMethCodeVisIdx;
+		Map<ICFLibKeyHash256, ICFBamServerProcObj > > indexByMethCodeVisIdx;
 	private Map< ICFBamServerMethodByMethTableVisIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamServerProcObj > > indexByMethTableVisIdx;
+		Map<ICFLibKeyHash256, ICFBamServerProcObj > > indexByMethTableVisIdx;
 	private Map< ICFBamServerMethodByDefSchemaIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamServerProcObj > > indexByDefSchemaIdx;
+		Map<ICFLibKeyHash256, ICFBamServerProcObj > > indexByDefSchemaIdx;
 	public static String TABLE_NAME = "ServerProc";
 	public static String TABLE_DBNAME = "srvprc";
 
 	public CFBamServerProcTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamServerProcObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamServerProcObj>();
 		allServerProc = null;
 		indexByTenantIdx = null;
 		indexByUNameIdx = null;
@@ -102,7 +102,7 @@ public class CFBamServerProcTableObj
 
 	public CFBamServerProcTableObj( ICFBamSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamServerProcObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamServerProcObj>();
 		allServerProc = null;
 		indexByTenantIdx = null;
 		indexByUNameIdx = null;
@@ -235,7 +235,7 @@ public class CFBamServerProcTableObj
 	@Override
 	public ICFBamServerProcObj realiseServerProc( ICFBamServerProcObj Obj ) {
 		ICFBamServerProcObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamServerProcObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFBamServerProcObj existingObj = members.get( pkey );
@@ -252,7 +252,7 @@ public class CFBamServerProcTableObj
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					indexByTenantIdx.remove( keyTenantIdx );
 				}
@@ -270,7 +270,7 @@ public class CFBamServerProcTableObj
 				ICFBamServerMethodByMethTableIdxKey keyMethTableIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableIdxKey();
 				keyMethTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapMethTableIdx = indexByMethTableIdx.get( keyMethTableIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapMethTableIdx = indexByMethTableIdx.get( keyMethTableIdx );
 				if( mapMethTableIdx != null ) {
 					indexByMethTableIdx.remove( keyMethTableIdx );
 				}
@@ -280,7 +280,7 @@ public class CFBamServerProcTableObj
 				ICFBamServerMethodByMethCodeVisIdxKey keyMethCodeVisIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethCodeVisIdxKey();
 				keyMethCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapMethCodeVisIdx = indexByMethCodeVisIdx.get( keyMethCodeVisIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapMethCodeVisIdx = indexByMethCodeVisIdx.get( keyMethCodeVisIdx );
 				if( mapMethCodeVisIdx != null ) {
 					indexByMethCodeVisIdx.remove( keyMethCodeVisIdx );
 				}
@@ -291,7 +291,7 @@ public class CFBamServerProcTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableVisIdxKey();
 				keyMethTableVisIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyMethTableVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapMethTableVisIdx = indexByMethTableVisIdx.get( keyMethTableVisIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapMethTableVisIdx = indexByMethTableVisIdx.get( keyMethTableVisIdx );
 				if( mapMethTableVisIdx != null ) {
 					indexByMethTableVisIdx.remove( keyMethTableVisIdx );
 				}
@@ -301,7 +301,7 @@ public class CFBamServerProcTableObj
 				ICFBamServerMethodByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					indexByDefSchemaIdx.remove( keyDefSchemaIdx );
 				}
@@ -317,7 +317,7 @@ public class CFBamServerProcTableObj
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -335,7 +335,7 @@ public class CFBamServerProcTableObj
 				ICFBamServerMethodByMethTableIdxKey keyMethTableIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableIdxKey();
 				keyMethTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapMethTableIdx = indexByMethTableIdx.get( keyMethTableIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapMethTableIdx = indexByMethTableIdx.get( keyMethTableIdx );
 				if( mapMethTableIdx != null ) {
 					mapMethTableIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -345,7 +345,7 @@ public class CFBamServerProcTableObj
 				ICFBamServerMethodByMethCodeVisIdxKey keyMethCodeVisIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethCodeVisIdxKey();
 				keyMethCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapMethCodeVisIdx = indexByMethCodeVisIdx.get( keyMethCodeVisIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapMethCodeVisIdx = indexByMethCodeVisIdx.get( keyMethCodeVisIdx );
 				if( mapMethCodeVisIdx != null ) {
 					mapMethCodeVisIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -356,7 +356,7 @@ public class CFBamServerProcTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableVisIdxKey();
 				keyMethTableVisIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyMethTableVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapMethTableVisIdx = indexByMethTableVisIdx.get( keyMethTableVisIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapMethTableVisIdx = indexByMethTableVisIdx.get( keyMethTableVisIdx );
 				if( mapMethTableVisIdx != null ) {
 					mapMethTableVisIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -366,7 +366,7 @@ public class CFBamServerProcTableObj
 				ICFBamServerMethodByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -390,7 +390,7 @@ public class CFBamServerProcTableObj
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -408,7 +408,7 @@ public class CFBamServerProcTableObj
 				ICFBamServerMethodByMethTableIdxKey keyMethTableIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableIdxKey();
 				keyMethTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapMethTableIdx = indexByMethTableIdx.get( keyMethTableIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapMethTableIdx = indexByMethTableIdx.get( keyMethTableIdx );
 				if( mapMethTableIdx != null ) {
 					mapMethTableIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -418,7 +418,7 @@ public class CFBamServerProcTableObj
 				ICFBamServerMethodByMethCodeVisIdxKey keyMethCodeVisIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethCodeVisIdxKey();
 				keyMethCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapMethCodeVisIdx = indexByMethCodeVisIdx.get( keyMethCodeVisIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapMethCodeVisIdx = indexByMethCodeVisIdx.get( keyMethCodeVisIdx );
 				if( mapMethCodeVisIdx != null ) {
 					mapMethCodeVisIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -429,7 +429,7 @@ public class CFBamServerProcTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableVisIdxKey();
 				keyMethTableVisIdx.setRequiredTableId( keepObj.getRequiredTableId() );
 				keyMethTableVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapMethTableVisIdx = indexByMethTableVisIdx.get( keyMethTableVisIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapMethTableVisIdx = indexByMethTableVisIdx.get( keyMethTableVisIdx );
 				if( mapMethTableVisIdx != null ) {
 					mapMethTableVisIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -439,7 +439,7 @@ public class CFBamServerProcTableObj
 				ICFBamServerMethodByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamServerProcObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamServerProcObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -465,12 +465,12 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public ICFBamServerProcObj readServerProc( CFLibDbKeyHash256 pkey ) {
+	public ICFBamServerProcObj readServerProc( ICFLibKeyHash256 pkey ) {
 		return( readServerProc( pkey, false ) );
 	}
 
 	@Override
-	public ICFBamServerProcObj readServerProc( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFBamServerProcObj readServerProc( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFBamServerProcObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -489,7 +489,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public ICFBamServerProcObj readCachedServerProc( CFLibDbKeyHash256 pkey ) {
+	public ICFBamServerProcObj readCachedServerProc( ICFLibKeyHash256 pkey ) {
 		ICFBamServerProcObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -505,7 +505,7 @@ public class CFBamServerProcTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamServerProcObj existing = readCachedServerProc( pkey );
 		if( existing == null ) {
 			return;
@@ -518,7 +518,7 @@ public class CFBamServerProcTableObj
 		schema.getServerMethodTableObj().reallyDeepDisposeServerMethod( obj );
 	}
 	@Override
-	public void deepDisposeServerProc( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeServerProc( ICFLibKeyHash256 pkey ) {
 		ICFBamServerProcObj obj = readCachedServerProc( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -526,7 +526,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public ICFBamServerProcObj lockServerProc( CFLibDbKeyHash256 pkey ) {
+	public ICFBamServerProcObj lockServerProc( ICFLibKeyHash256 pkey ) {
 		ICFBamServerProcObj locked = null;
 		ICFBamServerProc lockRec = schema.getCFBamBackingStore().getTableServerProc().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -550,7 +550,7 @@ public class CFBamServerProcTableObj
 	public List<ICFBamServerProcObj> readAllServerProc( boolean forceRead ) {
 		final String S_ProcName = "readAllServerProc";
 		if( ( allServerProc == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFBamServerProcObj> map = new HashMap<CFLibDbKeyHash256,ICFBamServerProcObj>();
+			Map<ICFLibKeyHash256, ICFBamServerProcObj> map = new HashMap<ICFLibKeyHash256,ICFBamServerProcObj>();
 			allServerProc = map;
 			ICFBamServerProc[] recList = schema.getCFBamBackingStore().getTableServerProc().readAllDerived( null );
 			ICFBamServerProc rec;
@@ -606,8 +606,8 @@ public class CFBamServerProcTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -664,8 +664,8 @@ public class CFBamServerProcTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -676,43 +676,43 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public ICFBamServerProcObj readServerProcByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamServerProcObj readServerProcByIdIdx( ICFLibKeyHash256 Id )
 	{
 		return( readServerProcByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamServerProcObj readServerProcByIdIdx( CFLibDbKeyHash256 Id, boolean forceRead )
+	public ICFBamServerProcObj readServerProcByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamServerProcObj obj = readServerProc( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readServerProcByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFBamServerProcObj> readServerProcByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		return( readServerProcByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readServerProcByTenantIdx( CFLibDbKeyHash256 TenantId,
+	public List<ICFBamServerProcObj> readServerProcByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readServerProcByTenantIdx";
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
-		Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict;
+		Map<ICFLibKeyHash256, ICFBamServerProcObj> dict;
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamServerProcObj > >();
+				Map< ICFLibKeyHash256, ICFBamServerProcObj > >();
 		}
 		if( ( ! forceRead ) && indexByTenantIdx.containsKey( key ) ) {
 			dict = indexByTenantIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamServerProcObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamServerProcObj>();
 			ICFBamScopeObj obj;
 			ICFBamScope[] recList = schema.getCFBamBackingStore().getTableScope().readDerivedByTenantIdx( null,
 				TenantId );
@@ -770,8 +770,8 @@ public class CFBamServerProcTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -783,7 +783,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public ICFBamServerProcObj readServerProcByUNameIdx( CFLibDbKeyHash256 TableId,
+	public ICFBamServerProcObj readServerProcByUNameIdx( ICFLibKeyHash256 TableId,
 		String Name )
 	{
 		return( readServerProcByUNameIdx( TableId,
@@ -792,7 +792,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public ICFBamServerProcObj readServerProcByUNameIdx( CFLibDbKeyHash256 TableId,
+	public ICFBamServerProcObj readServerProcByUNameIdx( ICFLibKeyHash256 TableId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -821,29 +821,29 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readServerProcByMethTableIdx( CFLibDbKeyHash256 TableId )
+	public List<ICFBamServerProcObj> readServerProcByMethTableIdx( ICFLibKeyHash256 TableId )
 	{
 		return( readServerProcByMethTableIdx( TableId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readServerProcByMethTableIdx( CFLibDbKeyHash256 TableId,
+	public List<ICFBamServerProcObj> readServerProcByMethTableIdx( ICFLibKeyHash256 TableId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readServerProcByMethTableIdx";
 		ICFBamServerMethodByMethTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableIdxKey();
 		key.setRequiredTableId( TableId );
-		Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict;
+		Map<ICFLibKeyHash256, ICFBamServerProcObj> dict;
 		if( indexByMethTableIdx == null ) {
 			indexByMethTableIdx = new HashMap< ICFBamServerMethodByMethTableIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamServerProcObj > >();
+				Map< ICFLibKeyHash256, ICFBamServerProcObj > >();
 		}
 		if( ( ! forceRead ) && indexByMethTableIdx.containsKey( key ) ) {
 			dict = indexByMethTableIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamServerProcObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamServerProcObj>();
 			ICFBamServerMethodObj obj;
 			ICFBamServerMethod[] recList = schema.getCFBamBackingStore().getTableServerMethod().readDerivedByMethTableIdx( null,
 				TableId );
@@ -901,8 +901,8 @@ public class CFBamServerProcTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -927,16 +927,16 @@ public class CFBamServerProcTableObj
 		final String S_ProcName = "readServerProcByMethCodeVisIdx";
 		ICFBamServerMethodByMethCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethCodeVisIdxKey();
 		key.setRequiredCodeVis( CodeVis );
-		Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict;
+		Map<ICFLibKeyHash256, ICFBamServerProcObj> dict;
 		if( indexByMethCodeVisIdx == null ) {
 			indexByMethCodeVisIdx = new HashMap< ICFBamServerMethodByMethCodeVisIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamServerProcObj > >();
+				Map< ICFLibKeyHash256, ICFBamServerProcObj > >();
 		}
 		if( ( ! forceRead ) && indexByMethCodeVisIdx.containsKey( key ) ) {
 			dict = indexByMethCodeVisIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamServerProcObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamServerProcObj>();
 			ICFBamServerMethodObj obj;
 			ICFBamServerMethod[] recList = schema.getCFBamBackingStore().getTableServerMethod().readDerivedByMethCodeVisIdx( null,
 				CodeVis );
@@ -994,8 +994,8 @@ public class CFBamServerProcTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1007,7 +1007,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+	public List<ICFBamServerProcObj> readServerProcByMethTableVisIdx( ICFLibKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		return( readServerProcByMethTableVisIdx( TableId,
@@ -1016,7 +1016,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+	public List<ICFBamServerProcObj> readServerProcByMethTableVisIdx( ICFLibKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead )
 	{
@@ -1024,16 +1024,16 @@ public class CFBamServerProcTableObj
 		ICFBamServerMethodByMethTableVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableVisIdxKey();
 		key.setRequiredTableId( TableId );
 		key.setRequiredCodeVis( CodeVis );
-		Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict;
+		Map<ICFLibKeyHash256, ICFBamServerProcObj> dict;
 		if( indexByMethTableVisIdx == null ) {
 			indexByMethTableVisIdx = new HashMap< ICFBamServerMethodByMethTableVisIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamServerProcObj > >();
+				Map< ICFLibKeyHash256, ICFBamServerProcObj > >();
 		}
 		if( ( ! forceRead ) && indexByMethTableVisIdx.containsKey( key ) ) {
 			dict = indexByMethTableVisIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamServerProcObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamServerProcObj>();
 			ICFBamServerMethodObj obj;
 			ICFBamServerMethod[] recList = schema.getCFBamBackingStore().getTableServerMethod().readDerivedByMethTableVisIdx( null,
 				TableId,
@@ -1092,8 +1092,8 @@ public class CFBamServerProcTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1105,29 +1105,29 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readServerProcByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamServerProcObj> readServerProcByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		return( readServerProcByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readServerProcByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	public List<ICFBamServerProcObj> readServerProcByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readServerProcByDefSchemaIdx";
 		ICFBamServerMethodByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
-		Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict;
+		Map<ICFLibKeyHash256, ICFBamServerProcObj> dict;
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamServerMethodByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamServerProcObj > >();
+				Map< ICFLibKeyHash256, ICFBamServerProcObj > >();
 		}
 		if( ( ! forceRead ) && indexByDefSchemaIdx.containsKey( key ) ) {
 			dict = indexByDefSchemaIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamServerProcObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamServerProcObj>();
 			ICFBamServerMethodObj obj;
 			ICFBamServerMethod[] recList = schema.getCFBamBackingStore().getTableServerMethod().readDerivedByDefSchemaIdx( null,
 				DefSchemaId );
@@ -1185,8 +1185,8 @@ public class CFBamServerProcTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1198,7 +1198,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public ICFBamServerProcObj readCachedServerProcByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamServerProcObj readCachedServerProcByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamServerProcObj obj = null;
 		obj = readCachedServerProc( Id );
@@ -1206,14 +1206,14 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readCachedServerProcByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFBamServerProcObj> readCachedServerProcByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedServerProcByTenantIdx";
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFBamServerProcObj> arrayList = new ArrayList<ICFBamServerProcObj>();
 		if( indexByTenantIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict;
+			Map<ICFLibKeyHash256, ICFBamServerProcObj> dict;
 			if( indexByTenantIdx.containsKey( key ) ) {
 				dict = indexByTenantIdx.get( key );
 				int len = dict.size();
@@ -1271,8 +1271,8 @@ public class CFBamServerProcTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1283,7 +1283,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public ICFBamServerProcObj readCachedServerProcByUNameIdx( CFLibDbKeyHash256 TableId,
+	public ICFBamServerProcObj readCachedServerProcByUNameIdx( ICFLibKeyHash256 TableId,
 		String Name )
 	{
 		ICFBamServerProcObj obj = null;
@@ -1321,14 +1321,14 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readCachedServerProcByMethTableIdx( CFLibDbKeyHash256 TableId )
+	public List<ICFBamServerProcObj> readCachedServerProcByMethTableIdx( ICFLibKeyHash256 TableId )
 	{
 		final String S_ProcName = "readCachedServerProcByMethTableIdx";
 		ICFBamServerMethodByMethTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableIdxKey();
 		key.setRequiredTableId( TableId );
 		ArrayList<ICFBamServerProcObj> arrayList = new ArrayList<ICFBamServerProcObj>();
 		if( indexByMethTableIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict;
+			Map<ICFLibKeyHash256, ICFBamServerProcObj> dict;
 			if( indexByMethTableIdx.containsKey( key ) ) {
 				dict = indexByMethTableIdx.get( key );
 				int len = dict.size();
@@ -1386,8 +1386,8 @@ public class CFBamServerProcTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1405,7 +1405,7 @@ public class CFBamServerProcTableObj
 		key.setRequiredCodeVis( CodeVis );
 		ArrayList<ICFBamServerProcObj> arrayList = new ArrayList<ICFBamServerProcObj>();
 		if( indexByMethCodeVisIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict;
+			Map<ICFLibKeyHash256, ICFBamServerProcObj> dict;
 			if( indexByMethCodeVisIdx.containsKey( key ) ) {
 				dict = indexByMethCodeVisIdx.get( key );
 				int len = dict.size();
@@ -1463,8 +1463,8 @@ public class CFBamServerProcTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1475,7 +1475,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readCachedServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+	public List<ICFBamServerProcObj> readCachedServerProcByMethTableVisIdx( ICFLibKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "readCachedServerProcByMethTableVisIdx";
@@ -1484,7 +1484,7 @@ public class CFBamServerProcTableObj
 		key.setRequiredCodeVis( CodeVis );
 		ArrayList<ICFBamServerProcObj> arrayList = new ArrayList<ICFBamServerProcObj>();
 		if( indexByMethTableVisIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict;
+			Map<ICFLibKeyHash256, ICFBamServerProcObj> dict;
 			if( indexByMethTableVisIdx.containsKey( key ) ) {
 				dict = indexByMethTableVisIdx.get( key );
 				int len = dict.size();
@@ -1542,8 +1542,8 @@ public class CFBamServerProcTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1554,14 +1554,14 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public List<ICFBamServerProcObj> readCachedServerProcByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamServerProcObj> readCachedServerProcByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedServerProcByDefSchemaIdx";
 		ICFBamServerMethodByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamServerProcObj> arrayList = new ArrayList<ICFBamServerProcObj>();
 		if( indexByDefSchemaIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict;
+			Map<ICFLibKeyHash256, ICFBamServerProcObj> dict;
 			if( indexByDefSchemaIdx.containsKey( key ) ) {
 				dict = indexByDefSchemaIdx.get( key );
 				int len = dict.size();
@@ -1619,8 +1619,8 @@ public class CFBamServerProcTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1631,7 +1631,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deepDisposeServerProcByIdIdx( CFLibDbKeyHash256 Id )
+	public void deepDisposeServerProcByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamServerProcObj obj = readCachedServerProcByIdIdx( Id );
 		if( obj != null ) {
@@ -1640,7 +1640,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deepDisposeServerProcByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deepDisposeServerProcByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeServerProcByTenantIdx";
 		ICFBamServerProcObj obj;
@@ -1657,7 +1657,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deepDisposeServerProcByUNameIdx( CFLibDbKeyHash256 TableId,
+	public void deepDisposeServerProcByUNameIdx( ICFLibKeyHash256 TableId,
 		String Name )
 	{
 		ICFBamServerProcObj obj = readCachedServerProcByUNameIdx( TableId,
@@ -1668,7 +1668,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deepDisposeServerProcByMethTableIdx( CFLibDbKeyHash256 TableId )
+	public void deepDisposeServerProcByMethTableIdx( ICFLibKeyHash256 TableId )
 	{
 		final String S_ProcName = "deepDisposeServerProcByMethTableIdx";
 		ICFBamServerProcObj obj;
@@ -1702,7 +1702,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deepDisposeServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+	public void deepDisposeServerProcByMethTableVisIdx( ICFLibKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		final String S_ProcName = "deepDisposeServerProcByMethTableVisIdx";
@@ -1721,7 +1721,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deepDisposeServerProcByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deepDisposeServerProcByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeServerProcByDefSchemaIdx";
 		ICFBamServerProcObj obj;
@@ -1758,7 +1758,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deleteServerProcByIdIdx( CFLibDbKeyHash256 Id )
+	public void deleteServerProcByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamServerProcObj obj = readServerProc(Id);
 		if( obj != null ) {
@@ -1788,16 +1788,16 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deleteServerProcByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deleteServerProcByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamServerProcObj > >();
+				Map< ICFLibKeyHash256, ICFBamServerProcObj > >();
 		}
 		if( indexByTenantIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict = indexByTenantIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamServerProcObj> dict = indexByTenantIdx.get( key );
 			schema.getCFBamBackingStore().getTableServerProc().deleteServerProcByTenantIdx( null,
 				TenantId );
 			Iterator<ICFBamServerProcObj> iter = dict.values().iterator();
@@ -1822,7 +1822,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deleteServerProcByUNameIdx( CFLibDbKeyHash256 TableId,
+	public void deleteServerProcByUNameIdx( ICFLibKeyHash256 TableId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -1850,16 +1850,16 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deleteServerProcByMethTableIdx( CFLibDbKeyHash256 TableId )
+	public void deleteServerProcByMethTableIdx( ICFLibKeyHash256 TableId )
 	{
 		ICFBamServerMethodByMethTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableIdxKey();
 		key.setRequiredTableId( TableId );
 		if( indexByMethTableIdx == null ) {
 			indexByMethTableIdx = new HashMap< ICFBamServerMethodByMethTableIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamServerProcObj > >();
+				Map< ICFLibKeyHash256, ICFBamServerProcObj > >();
 		}
 		if( indexByMethTableIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict = indexByMethTableIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamServerProcObj> dict = indexByMethTableIdx.get( key );
 			schema.getCFBamBackingStore().getTableServerProc().deleteServerProcByMethTableIdx( null,
 				TableId );
 			Iterator<ICFBamServerProcObj> iter = dict.values().iterator();
@@ -1890,10 +1890,10 @@ public class CFBamServerProcTableObj
 		key.setRequiredCodeVis( CodeVis );
 		if( indexByMethCodeVisIdx == null ) {
 			indexByMethCodeVisIdx = new HashMap< ICFBamServerMethodByMethCodeVisIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamServerProcObj > >();
+				Map< ICFLibKeyHash256, ICFBamServerProcObj > >();
 		}
 		if( indexByMethCodeVisIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict = indexByMethCodeVisIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamServerProcObj> dict = indexByMethCodeVisIdx.get( key );
 			schema.getCFBamBackingStore().getTableServerProc().deleteServerProcByMethCodeVisIdx( null,
 				CodeVis );
 			Iterator<ICFBamServerProcObj> iter = dict.values().iterator();
@@ -1918,7 +1918,7 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deleteServerProcByMethTableVisIdx( CFLibDbKeyHash256 TableId,
+	public void deleteServerProcByMethTableVisIdx( ICFLibKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
 	{
 		ICFBamServerMethodByMethTableVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByMethTableVisIdxKey();
@@ -1926,10 +1926,10 @@ public class CFBamServerProcTableObj
 		key.setRequiredCodeVis( CodeVis );
 		if( indexByMethTableVisIdx == null ) {
 			indexByMethTableVisIdx = new HashMap< ICFBamServerMethodByMethTableVisIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamServerProcObj > >();
+				Map< ICFLibKeyHash256, ICFBamServerProcObj > >();
 		}
 		if( indexByMethTableVisIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict = indexByMethTableVisIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamServerProcObj> dict = indexByMethTableVisIdx.get( key );
 			schema.getCFBamBackingStore().getTableServerProc().deleteServerProcByMethTableVisIdx( null,
 				TableId,
 				CodeVis );
@@ -1957,16 +1957,16 @@ public class CFBamServerProcTableObj
 	}
 
 	@Override
-	public void deleteServerProcByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deleteServerProcByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		ICFBamServerMethodByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryServerMethod().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamServerMethodByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamServerProcObj > >();
+				Map< ICFLibKeyHash256, ICFBamServerProcObj > >();
 		}
 		if( indexByDefSchemaIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamServerProcObj> dict = indexByDefSchemaIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamServerProcObj> dict = indexByDefSchemaIdx.get( key );
 			schema.getCFBamBackingStore().getTableServerProc().deleteServerProcByDefSchemaIdx( null,
 				DefSchemaId );
 			Iterator<ICFBamServerProcObj> iter = dict.values().iterator();

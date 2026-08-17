@@ -78,7 +78,7 @@ public class CFBamBuffEnumTagHPKey
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 auditSessionId;
 
-	protected CFLibDbKeyHash256 requiredId;
+	protected $implJavaAtomType$ requiredId;
 
 	public CFBamBuffEnumTagHPKey() {
 		auditClusterId = ICFSecPubCluster.ID_INIT_VALUE;

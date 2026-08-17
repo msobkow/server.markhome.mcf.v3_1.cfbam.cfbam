@@ -80,17 +80,17 @@ public class CFBamBuffIndexColH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 requiredIndexId;
-	protected CFLibDbKeyHash256 optionalDefSchemaId;
-	protected String requiredName;
-	protected String optionalShortName;
-	protected String optionalLabel;
-	protected String optionalShortDescription;
-	protected String optionalDescription;
-	protected CFLibDbKeyHash256 requiredColumnId;
-	protected boolean requiredIsAscending;
-	protected CFLibDbKeyHash256 optionalPrevId;
-	protected CFLibDbKeyHash256 optionalNextId;
+	protected $implJavaAtomType$ requiredIndexId;
+	protected $implJavaAtomType$ optionalDefSchemaId;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalShortName;
+	protected $implJavaAtomType$ optionalLabel;
+	protected $implJavaAtomType$ optionalShortDescription;
+	protected $implJavaAtomType$ optionalDescription;
+	protected $implJavaAtomType$ requiredColumnId;
+	protected $implJavaAtomType$ requiredIsAscending;
+	protected $implJavaAtomType$ optionalPrevId;
+	protected $implJavaAtomType$ optionalNextId;
 
     public CFBamBuffIndexColH() {
             // The primary key member attributes are initialized on construction

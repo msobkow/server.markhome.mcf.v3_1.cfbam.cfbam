@@ -70,7 +70,7 @@ public class CFBamTopDomainObj
 	protected boolean isNew;
 	protected ICFIntTopDomainEditObj edit;
 	protected ICFIntSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFIntTopDomain rec;
 	protected ICFSecTenantObj requiredOwnerTenant;
 	protected ICFIntTldObj requiredContainerParentTld;
@@ -175,7 +175,7 @@ public class CFBamTopDomainObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTopProjectTableObj().readTopProjectByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -188,7 +188,7 @@ public class CFBamTopDomainObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getLicenseTableObj().readLicenseByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -331,12 +331,12 @@ public class CFBamTopDomainObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -413,7 +413,7 @@ public class CFBamTopDomainObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -482,22 +482,22 @@ public class CFBamTopDomainObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTenantId() {
+	public $implJavaAtomType$ getRequiredTenantId() {
 		return( getTopDomainRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTldId() {
+	public $implJavaAtomType$ getRequiredTldId() {
 		return( getTopDomainRec().getRequiredTldId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getTopDomainRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getTopDomainRec().getOptionalDescription() );
 	}
 

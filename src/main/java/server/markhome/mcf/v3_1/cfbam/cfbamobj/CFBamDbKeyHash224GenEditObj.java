@@ -263,12 +263,12 @@ public class CFBamDbKeyHash224GenEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,24 +281,24 @@ public class CFBamDbKeyHash224GenEditObj
 	}
 
 	@Override
-	public short getRequiredSlice() {
+	public $implJavaAtomType$ getRequiredSlice() {
 		return( getDbKeyHash224GenRec().getRequiredSlice() );
 	}
 
 	@Override
-	public void setRequiredSlice( short value ) {
+	public void setRequiredSlice( $implJavaAtomType$ value ) {
 		if( getDbKeyHash224GenRec().getRequiredSlice() != value ) {
 			getDbKeyHash224GenRec().setRequiredSlice( value );
 		}
 	}
 
 	@Override
-	public int getRequiredBlockSize() {
+	public $implJavaAtomType$ getRequiredBlockSize() {
 		return( getDbKeyHash224GenRec().getRequiredBlockSize() );
 	}
 
 	@Override
-	public void setRequiredBlockSize( int value ) {
+	public void setRequiredBlockSize( $implJavaAtomType$ value ) {
 		if( getDbKeyHash224GenRec().getRequiredBlockSize() != value ) {
 			getDbKeyHash224GenRec().setRequiredBlockSize( value );
 		}

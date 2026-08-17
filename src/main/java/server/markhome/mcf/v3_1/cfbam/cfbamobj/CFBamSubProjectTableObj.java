@@ -66,12 +66,12 @@ public class CFBamSubProjectTableObj
 	implements ICFBamSubProjectTableObj
 {
 	protected ICFBamSchemaObj schema;
-	private Map<CFLibDbKeyHash256, ICFIntSubProjectObj> members;
-	private Map<CFLibDbKeyHash256, ICFIntSubProjectObj> allSubProject;
+	private Map<ICFLibKeyHash256, ICFIntSubProjectObj> members;
+	private Map<ICFLibKeyHash256, ICFIntSubProjectObj> allSubProject;
 	private Map< ICFIntSubProjectByTenantIdxKey,
-		Map<CFLibDbKeyHash256, ICFIntSubProjectObj > > indexByTenantIdx;
+		Map<ICFLibKeyHash256, ICFIntSubProjectObj > > indexByTenantIdx;
 	private Map< ICFIntSubProjectByTopProjectIdxKey,
-		Map<CFLibDbKeyHash256, ICFIntSubProjectObj > > indexByTopProjectIdx;
+		Map<ICFLibKeyHash256, ICFIntSubProjectObj > > indexByTopProjectIdx;
 	private Map< ICFIntSubProjectByNameIdxKey,
 		ICFIntSubProjectObj > indexByNameIdx;
 	public static String TABLE_NAME = "SubProject";
@@ -79,7 +79,7 @@ public class CFBamSubProjectTableObj
 
 	public CFBamSubProjectTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFIntSubProjectObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFIntSubProjectObj>();
 		allSubProject = null;
 		indexByTenantIdx = null;
 		indexByTopProjectIdx = null;
@@ -88,7 +88,7 @@ public class CFBamSubProjectTableObj
 
 	public CFBamSubProjectTableObj( ICFIntSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFIntSubProjectObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFIntSubProjectObj>();
 		allSubProject = null;
 		indexByTenantIdx = null;
 		indexByTopProjectIdx = null;
@@ -201,7 +201,7 @@ public class CFBamSubProjectTableObj
 	@Override
 	public ICFIntSubProjectObj realiseSubProject( ICFIntSubProjectObj Obj ) {
 		ICFIntSubProjectObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFIntSubProjectObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFIntSubProjectObj existingObj = members.get( pkey );
@@ -218,7 +218,7 @@ public class CFBamSubProjectTableObj
 				ICFIntSubProjectByTenantIdxKey keyTenantIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactorySubProject().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFIntSubProjectObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFIntSubProjectObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.remove( keepObj.getPKey() );
 					if( mapTenantIdx.size() <= 0 ) {
@@ -231,7 +231,7 @@ public class CFBamSubProjectTableObj
 				ICFIntSubProjectByTopProjectIdxKey keyTopProjectIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactorySubProject().newByTopProjectIdxKey();
 				keyTopProjectIdx.setRequiredTopProjectId( keepObj.getRequiredTopProjectId() );
-				Map<CFLibDbKeyHash256, ICFIntSubProjectObj > mapTopProjectIdx = indexByTopProjectIdx.get( keyTopProjectIdx );
+				Map<ICFLibKeyHash256, ICFIntSubProjectObj > mapTopProjectIdx = indexByTopProjectIdx.get( keyTopProjectIdx );
 				if( mapTopProjectIdx != null ) {
 					mapTopProjectIdx.remove( keepObj.getPKey() );
 					if( mapTopProjectIdx.size() <= 0 ) {
@@ -255,7 +255,7 @@ public class CFBamSubProjectTableObj
 				ICFIntSubProjectByTenantIdxKey keyTenantIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactorySubProject().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFIntSubProjectObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFIntSubProjectObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -265,7 +265,7 @@ public class CFBamSubProjectTableObj
 				ICFIntSubProjectByTopProjectIdxKey keyTopProjectIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactorySubProject().newByTopProjectIdxKey();
 				keyTopProjectIdx.setRequiredTopProjectId( keepObj.getRequiredTopProjectId() );
-				Map<CFLibDbKeyHash256, ICFIntSubProjectObj > mapTopProjectIdx = indexByTopProjectIdx.get( keyTopProjectIdx );
+				Map<ICFLibKeyHash256, ICFIntSubProjectObj > mapTopProjectIdx = indexByTopProjectIdx.get( keyTopProjectIdx );
 				if( mapTopProjectIdx != null ) {
 					mapTopProjectIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -297,7 +297,7 @@ public class CFBamSubProjectTableObj
 				ICFIntSubProjectByTenantIdxKey keyTenantIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactorySubProject().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFIntSubProjectObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFIntSubProjectObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -307,7 +307,7 @@ public class CFBamSubProjectTableObj
 				ICFIntSubProjectByTopProjectIdxKey keyTopProjectIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactorySubProject().newByTopProjectIdxKey();
 				keyTopProjectIdx.setRequiredTopProjectId( keepObj.getRequiredTopProjectId() );
-				Map<CFLibDbKeyHash256, ICFIntSubProjectObj > mapTopProjectIdx = indexByTopProjectIdx.get( keyTopProjectIdx );
+				Map<ICFLibKeyHash256, ICFIntSubProjectObj > mapTopProjectIdx = indexByTopProjectIdx.get( keyTopProjectIdx );
 				if( mapTopProjectIdx != null ) {
 					mapTopProjectIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -339,12 +339,12 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public ICFIntSubProjectObj readSubProject( CFLibDbKeyHash256 pkey ) {
+	public ICFIntSubProjectObj readSubProject( ICFLibKeyHash256 pkey ) {
 		return( readSubProject( pkey, false ) );
 	}
 
 	@Override
-	public ICFIntSubProjectObj readSubProject( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFIntSubProjectObj readSubProject( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFIntSubProjectObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -363,7 +363,7 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public ICFIntSubProjectObj readCachedSubProject( CFLibDbKeyHash256 pkey ) {
+	public ICFIntSubProjectObj readCachedSubProject( ICFLibKeyHash256 pkey ) {
 		ICFIntSubProjectObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -379,7 +379,7 @@ public class CFBamSubProjectTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFIntSubProjectObj existing = readCachedSubProject( pkey );
 		if( existing == null ) {
 			return;
@@ -423,7 +423,7 @@ public class CFBamSubProjectTableObj
 
 	}
 	@Override
-	public void deepDisposeSubProject( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeSubProject( ICFLibKeyHash256 pkey ) {
 		ICFIntSubProjectObj obj = readCachedSubProject( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -431,7 +431,7 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public ICFIntSubProjectObj lockSubProject( CFLibDbKeyHash256 pkey ) {
+	public ICFIntSubProjectObj lockSubProject( ICFLibKeyHash256 pkey ) {
 		ICFIntSubProjectObj locked = null;
 		ICFIntSubProject lockRec = schema.getCFIntBackingStore().getTableSubProject().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -455,7 +455,7 @@ public class CFBamSubProjectTableObj
 	public List<ICFIntSubProjectObj> readAllSubProject( boolean forceRead ) {
 		final String S_ProcName = "readAllSubProject";
 		if( ( allSubProject == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFIntSubProjectObj> map = new HashMap<CFLibDbKeyHash256,ICFIntSubProjectObj>();
+			Map<ICFLibKeyHash256, ICFIntSubProjectObj> map = new HashMap<ICFLibKeyHash256,ICFIntSubProjectObj>();
 			allSubProject = map;
 			ICFIntSubProject[] recList = schema.getCFIntBackingStore().getTableSubProject().readAllDerived( null );
 			ICFIntSubProject rec;
@@ -511,8 +511,8 @@ public class CFBamSubProjectTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -569,8 +569,8 @@ public class CFBamSubProjectTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -581,43 +581,43 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public ICFIntSubProjectObj readSubProjectByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFIntSubProjectObj readSubProjectByIdIdx( ICFLibKeyHash256 Id )
 	{
 		return( readSubProjectByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFIntSubProjectObj readSubProjectByIdIdx( CFLibDbKeyHash256 Id, boolean forceRead )
+	public ICFIntSubProjectObj readSubProjectByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
 	{
 		ICFIntSubProjectObj obj = readSubProject( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFIntSubProjectObj> readSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFIntSubProjectObj> readSubProjectByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		return( readSubProjectByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntSubProjectObj> readSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId,
+	public List<ICFIntSubProjectObj> readSubProjectByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSubProjectByTenantIdx";
 		ICFIntSubProjectByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactorySubProject().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
-		Map<CFLibDbKeyHash256, ICFIntSubProjectObj> dict;
+		Map<ICFLibKeyHash256, ICFIntSubProjectObj> dict;
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFIntSubProjectByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFIntSubProjectObj > >();
+				Map< ICFLibKeyHash256, ICFIntSubProjectObj > >();
 		}
 		if( ( ! forceRead ) && indexByTenantIdx.containsKey( key ) ) {
 			dict = indexByTenantIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFIntSubProjectObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFIntSubProjectObj>();
 			ICFIntSubProjectObj obj;
 			ICFIntSubProject[] recList = schema.getCFIntBackingStore().getTableSubProject().readDerivedByTenantIdx( null,
 				TenantId );
@@ -675,8 +675,8 @@ public class CFBamSubProjectTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -688,29 +688,29 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public List<ICFIntSubProjectObj> readSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId )
+	public List<ICFIntSubProjectObj> readSubProjectByTopProjectIdx( ICFLibKeyHash256 TopProjectId )
 	{
 		return( readSubProjectByTopProjectIdx( TopProjectId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntSubProjectObj> readSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId,
+	public List<ICFIntSubProjectObj> readSubProjectByTopProjectIdx( ICFLibKeyHash256 TopProjectId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSubProjectByTopProjectIdx";
 		ICFIntSubProjectByTopProjectIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactorySubProject().newByTopProjectIdxKey();
 		key.setRequiredTopProjectId( TopProjectId );
-		Map<CFLibDbKeyHash256, ICFIntSubProjectObj> dict;
+		Map<ICFLibKeyHash256, ICFIntSubProjectObj> dict;
 		if( indexByTopProjectIdx == null ) {
 			indexByTopProjectIdx = new HashMap< ICFIntSubProjectByTopProjectIdxKey,
-				Map< CFLibDbKeyHash256, ICFIntSubProjectObj > >();
+				Map< ICFLibKeyHash256, ICFIntSubProjectObj > >();
 		}
 		if( ( ! forceRead ) && indexByTopProjectIdx.containsKey( key ) ) {
 			dict = indexByTopProjectIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFIntSubProjectObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFIntSubProjectObj>();
 			ICFIntSubProjectObj obj;
 			ICFIntSubProject[] recList = schema.getCFIntBackingStore().getTableSubProject().readDerivedByTopProjectIdx( null,
 				TopProjectId );
@@ -768,8 +768,8 @@ public class CFBamSubProjectTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -781,7 +781,7 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public ICFIntSubProjectObj readSubProjectByNameIdx( CFLibDbKeyHash256 TopProjectId,
+	public ICFIntSubProjectObj readSubProjectByNameIdx( ICFLibKeyHash256 TopProjectId,
 		String Name )
 	{
 		return( readSubProjectByNameIdx( TopProjectId,
@@ -790,7 +790,7 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public ICFIntSubProjectObj readSubProjectByNameIdx( CFLibDbKeyHash256 TopProjectId,
+	public ICFIntSubProjectObj readSubProjectByNameIdx( ICFLibKeyHash256 TopProjectId,
 		String Name, boolean forceRead )
 	{
 		if( indexByNameIdx == null ) {
@@ -819,7 +819,7 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public ICFIntSubProjectObj readCachedSubProjectByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFIntSubProjectObj readCachedSubProjectByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFIntSubProjectObj obj = null;
 		obj = readCachedSubProject( Id );
@@ -827,14 +827,14 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public List<ICFIntSubProjectObj> readCachedSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFIntSubProjectObj> readCachedSubProjectByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedSubProjectByTenantIdx";
 		ICFIntSubProjectByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactorySubProject().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFIntSubProjectObj> arrayList = new ArrayList<ICFIntSubProjectObj>();
 		if( indexByTenantIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFIntSubProjectObj> dict;
+			Map<ICFLibKeyHash256, ICFIntSubProjectObj> dict;
 			if( indexByTenantIdx.containsKey( key ) ) {
 				dict = indexByTenantIdx.get( key );
 				int len = dict.size();
@@ -892,8 +892,8 @@ public class CFBamSubProjectTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -904,14 +904,14 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public List<ICFIntSubProjectObj> readCachedSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId )
+	public List<ICFIntSubProjectObj> readCachedSubProjectByTopProjectIdx( ICFLibKeyHash256 TopProjectId )
 	{
 		final String S_ProcName = "readCachedSubProjectByTopProjectIdx";
 		ICFIntSubProjectByTopProjectIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactorySubProject().newByTopProjectIdxKey();
 		key.setRequiredTopProjectId( TopProjectId );
 		ArrayList<ICFIntSubProjectObj> arrayList = new ArrayList<ICFIntSubProjectObj>();
 		if( indexByTopProjectIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFIntSubProjectObj> dict;
+			Map<ICFLibKeyHash256, ICFIntSubProjectObj> dict;
 			if( indexByTopProjectIdx.containsKey( key ) ) {
 				dict = indexByTopProjectIdx.get( key );
 				int len = dict.size();
@@ -969,8 +969,8 @@ public class CFBamSubProjectTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -981,7 +981,7 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public ICFIntSubProjectObj readCachedSubProjectByNameIdx( CFLibDbKeyHash256 TopProjectId,
+	public ICFIntSubProjectObj readCachedSubProjectByNameIdx( ICFLibKeyHash256 TopProjectId,
 		String Name )
 	{
 		ICFIntSubProjectObj obj = null;
@@ -1019,7 +1019,7 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public void deepDisposeSubProjectByIdIdx( CFLibDbKeyHash256 Id )
+	public void deepDisposeSubProjectByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFIntSubProjectObj obj = readCachedSubProjectByIdIdx( Id );
 		if( obj != null ) {
@@ -1028,7 +1028,7 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public void deepDisposeSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deepDisposeSubProjectByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeSubProjectByTenantIdx";
 		ICFIntSubProjectObj obj;
@@ -1045,7 +1045,7 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public void deepDisposeSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId )
+	public void deepDisposeSubProjectByTopProjectIdx( ICFLibKeyHash256 TopProjectId )
 	{
 		final String S_ProcName = "deepDisposeSubProjectByTopProjectIdx";
 		ICFIntSubProjectObj obj;
@@ -1062,7 +1062,7 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public void deepDisposeSubProjectByNameIdx( CFLibDbKeyHash256 TopProjectId,
+	public void deepDisposeSubProjectByNameIdx( ICFLibKeyHash256 TopProjectId,
 		String Name )
 	{
 		ICFIntSubProjectObj obj = readCachedSubProjectByNameIdx( TopProjectId,
@@ -1091,7 +1091,7 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public void deleteSubProjectByIdIdx( CFLibDbKeyHash256 Id )
+	public void deleteSubProjectByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFIntSubProjectObj obj = readSubProject(Id);
 		if( obj != null ) {
@@ -1121,16 +1121,16 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public void deleteSubProjectByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deleteSubProjectByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		ICFIntSubProjectByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactorySubProject().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFIntSubProjectByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFIntSubProjectObj > >();
+				Map< ICFLibKeyHash256, ICFIntSubProjectObj > >();
 		}
 		if( indexByTenantIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFIntSubProjectObj> dict = indexByTenantIdx.get( key );
+			Map<ICFLibKeyHash256, ICFIntSubProjectObj> dict = indexByTenantIdx.get( key );
 			schema.getCFIntBackingStore().getTableSubProject().deleteSubProjectByTenantIdx( null,
 				TenantId );
 			Iterator<ICFIntSubProjectObj> iter = dict.values().iterator();
@@ -1155,16 +1155,16 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public void deleteSubProjectByTopProjectIdx( CFLibDbKeyHash256 TopProjectId )
+	public void deleteSubProjectByTopProjectIdx( ICFLibKeyHash256 TopProjectId )
 	{
 		ICFIntSubProjectByTopProjectIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactorySubProject().newByTopProjectIdxKey();
 		key.setRequiredTopProjectId( TopProjectId );
 		if( indexByTopProjectIdx == null ) {
 			indexByTopProjectIdx = new HashMap< ICFIntSubProjectByTopProjectIdxKey,
-				Map< CFLibDbKeyHash256, ICFIntSubProjectObj > >();
+				Map< ICFLibKeyHash256, ICFIntSubProjectObj > >();
 		}
 		if( indexByTopProjectIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFIntSubProjectObj> dict = indexByTopProjectIdx.get( key );
+			Map<ICFLibKeyHash256, ICFIntSubProjectObj> dict = indexByTopProjectIdx.get( key );
 			schema.getCFIntBackingStore().getTableSubProject().deleteSubProjectByTopProjectIdx( null,
 				TopProjectId );
 			Iterator<ICFIntSubProjectObj> iter = dict.values().iterator();
@@ -1189,7 +1189,7 @@ public class CFBamSubProjectTableObj
 	}
 
 	@Override
-	public void deleteSubProjectByNameIdx( CFLibDbKeyHash256 TopProjectId,
+	public void deleteSubProjectByNameIdx( ICFLibKeyHash256 TopProjectId,
 		String Name )
 	{
 		if( indexByNameIdx == null ) {

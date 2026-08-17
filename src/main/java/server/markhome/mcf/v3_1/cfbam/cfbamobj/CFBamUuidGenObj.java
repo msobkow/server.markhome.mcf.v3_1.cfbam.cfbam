@@ -314,17 +314,17 @@ public class CFBamUuidGenObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public short getRequiredSlice() {
+	public $implJavaAtomType$ getRequiredSlice() {
 		return( getUuidGenRec().getRequiredSlice() );
 	}
 
 	@Override
-	public int getRequiredBlockSize() {
+	public $implJavaAtomType$ getRequiredBlockSize() {
 		return( getUuidGenRec().getRequiredBlockSize() );
 	}
 }

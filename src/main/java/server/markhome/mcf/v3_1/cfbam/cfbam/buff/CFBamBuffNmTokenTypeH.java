@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffNmTokenTypeH extends CFBamBuffNmTokenDefH
     implements ICFBamNmTokenTypeH
 {
-	protected CFLibDbKeyHash256 requiredSchemaDefId;
+	protected $implJavaAtomType$ requiredSchemaDefId;
 
     public CFBamBuffNmTokenTypeH() {
             super();

@@ -258,29 +258,29 @@ public class CFBamDelSubDep1EditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredDelTopDepId() {
+	public $implJavaAtomType$ getRequiredDelTopDepId() {
 		return( getDelSubDep1Rec().getRequiredDelTopDepId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getDelSubDep1Rec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getDelSubDep1Rec().getRequiredName() != value ) {
 			getDelSubDep1Rec().setRequiredName( value );
 		}

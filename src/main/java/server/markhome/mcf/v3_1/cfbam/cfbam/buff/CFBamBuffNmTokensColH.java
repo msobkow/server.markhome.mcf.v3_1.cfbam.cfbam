@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffNmTokensColH extends CFBamBuffNmTokensDefH
     implements ICFBamNmTokensColH
 {
-	protected CFLibDbKeyHash256 requiredTableId;
+	protected $implJavaAtomType$ requiredTableId;
 
     public CFBamBuffNmTokensColH() {
             super();

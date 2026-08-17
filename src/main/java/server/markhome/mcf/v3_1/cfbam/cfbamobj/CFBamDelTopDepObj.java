@@ -326,7 +326,7 @@ public class CFBamDelTopDepObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -401,22 +401,22 @@ public class CFBamDelTopDepObj
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getDelTopDepRec().getRequiredName() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTableId() {
+	public $implJavaAtomType$ getRequiredTableId() {
 		return( getDelTopDepRec().getRequiredTableId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalPrevId() {
+	public $implJavaAtomType$ getOptionalPrevId() {
 		return( getDelTopDepRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalNextId() {
+	public $implJavaAtomType$ getOptionalNextId() {
 		return( getDelTopDepRec().getOptionalNextId() );
 	}
 }

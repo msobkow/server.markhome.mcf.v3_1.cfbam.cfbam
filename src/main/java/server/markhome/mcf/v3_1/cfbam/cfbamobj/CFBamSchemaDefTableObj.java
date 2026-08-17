@@ -71,20 +71,20 @@ public class CFBamSchemaDefTableObj
 	protected ICFBamSchemaObj schema;
 	protected static int runtimeClassCode = ICFBamSchemaDef.CLASS_CODE;
 	protected static final int backingClassCode = ICFBamSchemaDef.CLASS_CODE;
-	private Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> members;
-	private Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> allSchemaDef;
+	private Map<ICFLibKeyHash256, ICFBamSchemaDefObj> members;
+	private Map<ICFLibKeyHash256, ICFBamSchemaDefObj> allSchemaDef;
 	private Map< ICFBamScopeByTenantIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > > indexByTenantIdx;
+		Map<ICFLibKeyHash256, ICFBamSchemaDefObj > > indexByTenantIdx;
 	private Map< ICFBamSchemaDefByCTenantIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > > indexByCTenantIdx;
+		Map<ICFLibKeyHash256, ICFBamSchemaDefObj > > indexByCTenantIdx;
 	private Map< ICFBamSchemaDefByMinorVersionIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > > indexByMinorVersionIdx;
+		Map<ICFLibKeyHash256, ICFBamSchemaDefObj > > indexByMinorVersionIdx;
 	private Map< ICFBamSchemaDefByUNameIdxKey,
 		ICFBamSchemaDefObj > indexByUNameIdx;
 	private Map< ICFBamSchemaDefByAuthEMailIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > > indexByAuthEMailIdx;
+		Map<ICFLibKeyHash256, ICFBamSchemaDefObj > > indexByAuthEMailIdx;
 	private Map< ICFBamSchemaDefByProjectURLIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > > indexByProjectURLIdx;
+		Map<ICFLibKeyHash256, ICFBamSchemaDefObj > > indexByProjectURLIdx;
 	private Map< ICFBamSchemaDefByPubURIIdxKey,
 		ICFBamSchemaDefObj > indexByPubURIIdx;
 	public static String TABLE_NAME = "SchemaDef";
@@ -92,7 +92,7 @@ public class CFBamSchemaDefTableObj
 
 	public CFBamSchemaDefTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamSchemaDefObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamSchemaDefObj>();
 		allSchemaDef = null;
 		indexByTenantIdx = null;
 		indexByCTenantIdx = null;
@@ -105,7 +105,7 @@ public class CFBamSchemaDefTableObj
 
 	public CFBamSchemaDefTableObj( ICFBamSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamSchemaDefObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamSchemaDefObj>();
 		allSchemaDef = null;
 		indexByTenantIdx = null;
 		indexByCTenantIdx = null;
@@ -240,7 +240,7 @@ public class CFBamSchemaDefTableObj
 	@Override
 	public ICFBamSchemaDefObj realiseSchemaDef( ICFBamSchemaDefObj Obj ) {
 		ICFBamSchemaDefObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamSchemaDefObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFBamSchemaDefObj existingObj = members.get( pkey );
@@ -257,7 +257,7 @@ public class CFBamSchemaDefTableObj
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					indexByTenantIdx.remove( keyTenantIdx );
 				}
@@ -267,7 +267,7 @@ public class CFBamSchemaDefTableObj
 				ICFBamSchemaDefByCTenantIdxKey keyCTenantIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByCTenantIdxKey();
 				keyCTenantIdx.setRequiredCTenantId( keepObj.getRequiredCTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapCTenantIdx = indexByCTenantIdx.get( keyCTenantIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapCTenantIdx = indexByCTenantIdx.get( keyCTenantIdx );
 				if( mapCTenantIdx != null ) {
 					mapCTenantIdx.remove( keepObj.getPKey() );
 					if( mapCTenantIdx.size() <= 0 ) {
@@ -280,7 +280,7 @@ public class CFBamSchemaDefTableObj
 				ICFBamSchemaDefByMinorVersionIdxKey keyMinorVersionIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByMinorVersionIdxKey();
 				keyMinorVersionIdx.setRequiredMinorVersionId( keepObj.getRequiredMinorVersionId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapMinorVersionIdx = indexByMinorVersionIdx.get( keyMinorVersionIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapMinorVersionIdx = indexByMinorVersionIdx.get( keyMinorVersionIdx );
 				if( mapMinorVersionIdx != null ) {
 					mapMinorVersionIdx.remove( keepObj.getPKey() );
 					if( mapMinorVersionIdx.size() <= 0 ) {
@@ -302,7 +302,7 @@ public class CFBamSchemaDefTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByAuthEMailIdxKey();
 				keyAuthEMailIdx.setRequiredCTenantId( keepObj.getRequiredCTenantId() );
 				keyAuthEMailIdx.setRequiredAuthorEMail( keepObj.getRequiredAuthorEMail() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapAuthEMailIdx = indexByAuthEMailIdx.get( keyAuthEMailIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapAuthEMailIdx = indexByAuthEMailIdx.get( keyAuthEMailIdx );
 				if( mapAuthEMailIdx != null ) {
 					mapAuthEMailIdx.remove( keepObj.getPKey() );
 					if( mapAuthEMailIdx.size() <= 0 ) {
@@ -316,7 +316,7 @@ public class CFBamSchemaDefTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByProjectURLIdxKey();
 				keyProjectURLIdx.setRequiredCTenantId( keepObj.getRequiredCTenantId() );
 				keyProjectURLIdx.setRequiredProjectURL( keepObj.getRequiredProjectURL() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapProjectURLIdx = indexByProjectURLIdx.get( keyProjectURLIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapProjectURLIdx = indexByProjectURLIdx.get( keyProjectURLIdx );
 				if( mapProjectURLIdx != null ) {
 					mapProjectURLIdx.remove( keepObj.getPKey() );
 					if( mapProjectURLIdx.size() <= 0 ) {
@@ -343,7 +343,7 @@ public class CFBamSchemaDefTableObj
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -353,7 +353,7 @@ public class CFBamSchemaDefTableObj
 				ICFBamSchemaDefByCTenantIdxKey keyCTenantIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByCTenantIdxKey();
 				keyCTenantIdx.setRequiredCTenantId( keepObj.getRequiredCTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapCTenantIdx = indexByCTenantIdx.get( keyCTenantIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapCTenantIdx = indexByCTenantIdx.get( keyCTenantIdx );
 				if( mapCTenantIdx != null ) {
 					mapCTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -363,7 +363,7 @@ public class CFBamSchemaDefTableObj
 				ICFBamSchemaDefByMinorVersionIdxKey keyMinorVersionIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByMinorVersionIdxKey();
 				keyMinorVersionIdx.setRequiredMinorVersionId( keepObj.getRequiredMinorVersionId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapMinorVersionIdx = indexByMinorVersionIdx.get( keyMinorVersionIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapMinorVersionIdx = indexByMinorVersionIdx.get( keyMinorVersionIdx );
 				if( mapMinorVersionIdx != null ) {
 					mapMinorVersionIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -382,7 +382,7 @@ public class CFBamSchemaDefTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByAuthEMailIdxKey();
 				keyAuthEMailIdx.setRequiredCTenantId( keepObj.getRequiredCTenantId() );
 				keyAuthEMailIdx.setRequiredAuthorEMail( keepObj.getRequiredAuthorEMail() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapAuthEMailIdx = indexByAuthEMailIdx.get( keyAuthEMailIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapAuthEMailIdx = indexByAuthEMailIdx.get( keyAuthEMailIdx );
 				if( mapAuthEMailIdx != null ) {
 					mapAuthEMailIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -393,7 +393,7 @@ public class CFBamSchemaDefTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByProjectURLIdxKey();
 				keyProjectURLIdx.setRequiredCTenantId( keepObj.getRequiredCTenantId() );
 				keyProjectURLIdx.setRequiredProjectURL( keepObj.getRequiredProjectURL() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapProjectURLIdx = indexByProjectURLIdx.get( keyProjectURLIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapProjectURLIdx = indexByProjectURLIdx.get( keyProjectURLIdx );
 				if( mapProjectURLIdx != null ) {
 					mapProjectURLIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -425,7 +425,7 @@ public class CFBamSchemaDefTableObj
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -435,7 +435,7 @@ public class CFBamSchemaDefTableObj
 				ICFBamSchemaDefByCTenantIdxKey keyCTenantIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByCTenantIdxKey();
 				keyCTenantIdx.setRequiredCTenantId( keepObj.getRequiredCTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapCTenantIdx = indexByCTenantIdx.get( keyCTenantIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapCTenantIdx = indexByCTenantIdx.get( keyCTenantIdx );
 				if( mapCTenantIdx != null ) {
 					mapCTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -445,7 +445,7 @@ public class CFBamSchemaDefTableObj
 				ICFBamSchemaDefByMinorVersionIdxKey keyMinorVersionIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByMinorVersionIdxKey();
 				keyMinorVersionIdx.setRequiredMinorVersionId( keepObj.getRequiredMinorVersionId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapMinorVersionIdx = indexByMinorVersionIdx.get( keyMinorVersionIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapMinorVersionIdx = indexByMinorVersionIdx.get( keyMinorVersionIdx );
 				if( mapMinorVersionIdx != null ) {
 					mapMinorVersionIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -464,7 +464,7 @@ public class CFBamSchemaDefTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByAuthEMailIdxKey();
 				keyAuthEMailIdx.setRequiredCTenantId( keepObj.getRequiredCTenantId() );
 				keyAuthEMailIdx.setRequiredAuthorEMail( keepObj.getRequiredAuthorEMail() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapAuthEMailIdx = indexByAuthEMailIdx.get( keyAuthEMailIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapAuthEMailIdx = indexByAuthEMailIdx.get( keyAuthEMailIdx );
 				if( mapAuthEMailIdx != null ) {
 					mapAuthEMailIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -475,7 +475,7 @@ public class CFBamSchemaDefTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByProjectURLIdxKey();
 				keyProjectURLIdx.setRequiredCTenantId( keepObj.getRequiredCTenantId() );
 				keyProjectURLIdx.setRequiredProjectURL( keepObj.getRequiredProjectURL() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaDefObj > mapProjectURLIdx = indexByProjectURLIdx.get( keyProjectURLIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaDefObj > mapProjectURLIdx = indexByProjectURLIdx.get( keyProjectURLIdx );
 				if( mapProjectURLIdx != null ) {
 					mapProjectURLIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -509,12 +509,12 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public ICFBamSchemaDefObj readSchemaDef( CFLibDbKeyHash256 pkey ) {
+	public ICFBamSchemaDefObj readSchemaDef( ICFLibKeyHash256 pkey ) {
 		return( readSchemaDef( pkey, false ) );
 	}
 
 	@Override
-	public ICFBamSchemaDefObj readSchemaDef( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFBamSchemaDefObj readSchemaDef( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFBamSchemaDefObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -533,7 +533,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public ICFBamSchemaDefObj readCachedSchemaDef( CFLibDbKeyHash256 pkey ) {
+	public ICFBamSchemaDefObj readCachedSchemaDef( ICFLibKeyHash256 pkey ) {
 		ICFBamSchemaDefObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -549,7 +549,7 @@ public class CFBamSchemaDefTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamSchemaDefObj existing = readCachedSchemaDef( pkey );
 		if( existing == null ) {
 			return;
@@ -803,7 +803,7 @@ public class CFBamSchemaDefTableObj
 		schema.getScopeTableObj().reallyDeepDisposeScope( obj );
 	}
 	@Override
-	public void deepDisposeSchemaDef( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeSchemaDef( ICFLibKeyHash256 pkey ) {
 		ICFBamSchemaDefObj obj = readCachedSchemaDef( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -811,7 +811,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public ICFBamSchemaDefObj lockSchemaDef( CFLibDbKeyHash256 pkey ) {
+	public ICFBamSchemaDefObj lockSchemaDef( ICFLibKeyHash256 pkey ) {
 		ICFBamSchemaDefObj locked = null;
 		ICFBamSchemaDef lockRec = schema.getCFBamBackingStore().getTableSchemaDef().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -835,7 +835,7 @@ public class CFBamSchemaDefTableObj
 	public List<ICFBamSchemaDefObj> readAllSchemaDef( boolean forceRead ) {
 		final String S_ProcName = "readAllSchemaDef";
 		if( ( allSchemaDef == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> map = new HashMap<CFLibDbKeyHash256,ICFBamSchemaDefObj>();
+			Map<ICFLibKeyHash256, ICFBamSchemaDefObj> map = new HashMap<ICFLibKeyHash256,ICFBamSchemaDefObj>();
 			allSchemaDef = map;
 			ICFBamSchemaDef[] recList = schema.getCFBamBackingStore().getTableSchemaDef().readAllDerived( null );
 			ICFBamSchemaDef rec;
@@ -891,8 +891,8 @@ public class CFBamSchemaDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -949,8 +949,8 @@ public class CFBamSchemaDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -961,43 +961,43 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public ICFBamSchemaDefObj readSchemaDefByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamSchemaDefObj readSchemaDefByIdIdx( ICFLibKeyHash256 Id )
 	{
 		return( readSchemaDefByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamSchemaDefObj readSchemaDefByIdIdx( CFLibDbKeyHash256 Id, boolean forceRead )
+	public ICFBamSchemaDefObj readSchemaDefByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamSchemaDefObj obj = readSchemaDef( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readSchemaDefByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFBamSchemaDefObj> readSchemaDefByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		return( readSchemaDefByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readSchemaDefByTenantIdx( CFLibDbKeyHash256 TenantId,
+	public List<ICFBamSchemaDefObj> readSchemaDefByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSchemaDefByTenantIdx";
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
-		Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict;
+		Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict;
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaDefObj > >();
 		}
 		if( ( ! forceRead ) && indexByTenantIdx.containsKey( key ) ) {
 			dict = indexByTenantIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamSchemaDefObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamSchemaDefObj>();
 			ICFBamScopeObj obj;
 			ICFBamScope[] recList = schema.getCFBamBackingStore().getTableScope().readDerivedByTenantIdx( null,
 				TenantId );
@@ -1055,8 +1055,8 @@ public class CFBamSchemaDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1068,29 +1068,29 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readSchemaDefByCTenantIdx( CFLibDbKeyHash256 CTenantId )
+	public List<ICFBamSchemaDefObj> readSchemaDefByCTenantIdx( ICFLibKeyHash256 CTenantId )
 	{
 		return( readSchemaDefByCTenantIdx( CTenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readSchemaDefByCTenantIdx( CFLibDbKeyHash256 CTenantId,
+	public List<ICFBamSchemaDefObj> readSchemaDefByCTenantIdx( ICFLibKeyHash256 CTenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSchemaDefByCTenantIdx";
 		ICFBamSchemaDefByCTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByCTenantIdxKey();
 		key.setRequiredCTenantId( CTenantId );
-		Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict;
+		Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict;
 		if( indexByCTenantIdx == null ) {
 			indexByCTenantIdx = new HashMap< ICFBamSchemaDefByCTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaDefObj > >();
 		}
 		if( ( ! forceRead ) && indexByCTenantIdx.containsKey( key ) ) {
 			dict = indexByCTenantIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamSchemaDefObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamSchemaDefObj>();
 			ICFBamSchemaDefObj obj;
 			ICFBamSchemaDef[] recList = schema.getCFBamBackingStore().getTableSchemaDef().readDerivedByCTenantIdx( null,
 				CTenantId );
@@ -1148,8 +1148,8 @@ public class CFBamSchemaDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1161,29 +1161,29 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readSchemaDefByMinorVersionIdx( CFLibDbKeyHash256 MinorVersionId )
+	public List<ICFBamSchemaDefObj> readSchemaDefByMinorVersionIdx( ICFLibKeyHash256 MinorVersionId )
 	{
 		return( readSchemaDefByMinorVersionIdx( MinorVersionId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readSchemaDefByMinorVersionIdx( CFLibDbKeyHash256 MinorVersionId,
+	public List<ICFBamSchemaDefObj> readSchemaDefByMinorVersionIdx( ICFLibKeyHash256 MinorVersionId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSchemaDefByMinorVersionIdx";
 		ICFBamSchemaDefByMinorVersionIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByMinorVersionIdxKey();
 		key.setRequiredMinorVersionId( MinorVersionId );
-		Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict;
+		Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict;
 		if( indexByMinorVersionIdx == null ) {
 			indexByMinorVersionIdx = new HashMap< ICFBamSchemaDefByMinorVersionIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaDefObj > >();
 		}
 		if( ( ! forceRead ) && indexByMinorVersionIdx.containsKey( key ) ) {
 			dict = indexByMinorVersionIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamSchemaDefObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamSchemaDefObj>();
 			ICFBamSchemaDefObj obj;
 			ICFBamSchemaDef[] recList = schema.getCFBamBackingStore().getTableSchemaDef().readDerivedByMinorVersionIdx( null,
 				MinorVersionId );
@@ -1241,8 +1241,8 @@ public class CFBamSchemaDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1254,7 +1254,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public ICFBamSchemaDefObj readSchemaDefByUNameIdx( CFLibDbKeyHash256 MinorVersionId,
+	public ICFBamSchemaDefObj readSchemaDefByUNameIdx( ICFLibKeyHash256 MinorVersionId,
 		String Name )
 	{
 		return( readSchemaDefByUNameIdx( MinorVersionId,
@@ -1263,7 +1263,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public ICFBamSchemaDefObj readSchemaDefByUNameIdx( CFLibDbKeyHash256 MinorVersionId,
+	public ICFBamSchemaDefObj readSchemaDefByUNameIdx( ICFLibKeyHash256 MinorVersionId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -1292,7 +1292,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readSchemaDefByAuthEMailIdx( CFLibDbKeyHash256 CTenantId,
+	public List<ICFBamSchemaDefObj> readSchemaDefByAuthEMailIdx( ICFLibKeyHash256 CTenantId,
 		String AuthorEMail )
 	{
 		return( readSchemaDefByAuthEMailIdx( CTenantId,
@@ -1301,7 +1301,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readSchemaDefByAuthEMailIdx( CFLibDbKeyHash256 CTenantId,
+	public List<ICFBamSchemaDefObj> readSchemaDefByAuthEMailIdx( ICFLibKeyHash256 CTenantId,
 		String AuthorEMail,
 		boolean forceRead )
 	{
@@ -1309,16 +1309,16 @@ public class CFBamSchemaDefTableObj
 		ICFBamSchemaDefByAuthEMailIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByAuthEMailIdxKey();
 		key.setRequiredCTenantId( CTenantId );
 		key.setRequiredAuthorEMail( AuthorEMail );
-		Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict;
+		Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict;
 		if( indexByAuthEMailIdx == null ) {
 			indexByAuthEMailIdx = new HashMap< ICFBamSchemaDefByAuthEMailIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaDefObj > >();
 		}
 		if( ( ! forceRead ) && indexByAuthEMailIdx.containsKey( key ) ) {
 			dict = indexByAuthEMailIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamSchemaDefObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamSchemaDefObj>();
 			ICFBamSchemaDefObj obj;
 			ICFBamSchemaDef[] recList = schema.getCFBamBackingStore().getTableSchemaDef().readDerivedByAuthEMailIdx( null,
 				CTenantId,
@@ -1377,8 +1377,8 @@ public class CFBamSchemaDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1390,7 +1390,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readSchemaDefByProjectURLIdx( CFLibDbKeyHash256 CTenantId,
+	public List<ICFBamSchemaDefObj> readSchemaDefByProjectURLIdx( ICFLibKeyHash256 CTenantId,
 		String ProjectURL )
 	{
 		return( readSchemaDefByProjectURLIdx( CTenantId,
@@ -1399,7 +1399,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readSchemaDefByProjectURLIdx( CFLibDbKeyHash256 CTenantId,
+	public List<ICFBamSchemaDefObj> readSchemaDefByProjectURLIdx( ICFLibKeyHash256 CTenantId,
 		String ProjectURL,
 		boolean forceRead )
 	{
@@ -1407,16 +1407,16 @@ public class CFBamSchemaDefTableObj
 		ICFBamSchemaDefByProjectURLIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByProjectURLIdxKey();
 		key.setRequiredCTenantId( CTenantId );
 		key.setRequiredProjectURL( ProjectURL );
-		Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict;
+		Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict;
 		if( indexByProjectURLIdx == null ) {
 			indexByProjectURLIdx = new HashMap< ICFBamSchemaDefByProjectURLIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaDefObj > >();
 		}
 		if( ( ! forceRead ) && indexByProjectURLIdx.containsKey( key ) ) {
 			dict = indexByProjectURLIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamSchemaDefObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamSchemaDefObj>();
 			ICFBamSchemaDefObj obj;
 			ICFBamSchemaDef[] recList = schema.getCFBamBackingStore().getTableSchemaDef().readDerivedByProjectURLIdx( null,
 				CTenantId,
@@ -1475,8 +1475,8 @@ public class CFBamSchemaDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1488,7 +1488,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public ICFBamSchemaDefObj readSchemaDefByPubURIIdx( CFLibDbKeyHash256 CTenantId,
+	public ICFBamSchemaDefObj readSchemaDefByPubURIIdx( ICFLibKeyHash256 CTenantId,
 		String PublishURI )
 	{
 		return( readSchemaDefByPubURIIdx( CTenantId,
@@ -1497,7 +1497,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public ICFBamSchemaDefObj readSchemaDefByPubURIIdx( CFLibDbKeyHash256 CTenantId,
+	public ICFBamSchemaDefObj readSchemaDefByPubURIIdx( ICFLibKeyHash256 CTenantId,
 		String PublishURI, boolean forceRead )
 	{
 		if( indexByPubURIIdx == null ) {
@@ -1526,7 +1526,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public ICFBamSchemaDefObj readCachedSchemaDefByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamSchemaDefObj readCachedSchemaDefByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamSchemaDefObj obj = null;
 		obj = readCachedSchemaDef( Id );
@@ -1534,14 +1534,14 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readCachedSchemaDefByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFBamSchemaDefObj> readCachedSchemaDefByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedSchemaDefByTenantIdx";
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFBamSchemaDefObj> arrayList = new ArrayList<ICFBamSchemaDefObj>();
 		if( indexByTenantIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict;
+			Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict;
 			if( indexByTenantIdx.containsKey( key ) ) {
 				dict = indexByTenantIdx.get( key );
 				int len = dict.size();
@@ -1599,8 +1599,8 @@ public class CFBamSchemaDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1611,14 +1611,14 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readCachedSchemaDefByCTenantIdx( CFLibDbKeyHash256 CTenantId )
+	public List<ICFBamSchemaDefObj> readCachedSchemaDefByCTenantIdx( ICFLibKeyHash256 CTenantId )
 	{
 		final String S_ProcName = "readCachedSchemaDefByCTenantIdx";
 		ICFBamSchemaDefByCTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByCTenantIdxKey();
 		key.setRequiredCTenantId( CTenantId );
 		ArrayList<ICFBamSchemaDefObj> arrayList = new ArrayList<ICFBamSchemaDefObj>();
 		if( indexByCTenantIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict;
+			Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict;
 			if( indexByCTenantIdx.containsKey( key ) ) {
 				dict = indexByCTenantIdx.get( key );
 				int len = dict.size();
@@ -1676,8 +1676,8 @@ public class CFBamSchemaDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1688,14 +1688,14 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readCachedSchemaDefByMinorVersionIdx( CFLibDbKeyHash256 MinorVersionId )
+	public List<ICFBamSchemaDefObj> readCachedSchemaDefByMinorVersionIdx( ICFLibKeyHash256 MinorVersionId )
 	{
 		final String S_ProcName = "readCachedSchemaDefByMinorVersionIdx";
 		ICFBamSchemaDefByMinorVersionIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByMinorVersionIdxKey();
 		key.setRequiredMinorVersionId( MinorVersionId );
 		ArrayList<ICFBamSchemaDefObj> arrayList = new ArrayList<ICFBamSchemaDefObj>();
 		if( indexByMinorVersionIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict;
+			Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict;
 			if( indexByMinorVersionIdx.containsKey( key ) ) {
 				dict = indexByMinorVersionIdx.get( key );
 				int len = dict.size();
@@ -1753,8 +1753,8 @@ public class CFBamSchemaDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1765,7 +1765,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public ICFBamSchemaDefObj readCachedSchemaDefByUNameIdx( CFLibDbKeyHash256 MinorVersionId,
+	public ICFBamSchemaDefObj readCachedSchemaDefByUNameIdx( ICFLibKeyHash256 MinorVersionId,
 		String Name )
 	{
 		ICFBamSchemaDefObj obj = null;
@@ -1803,7 +1803,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readCachedSchemaDefByAuthEMailIdx( CFLibDbKeyHash256 CTenantId,
+	public List<ICFBamSchemaDefObj> readCachedSchemaDefByAuthEMailIdx( ICFLibKeyHash256 CTenantId,
 		String AuthorEMail )
 	{
 		final String S_ProcName = "readCachedSchemaDefByAuthEMailIdx";
@@ -1812,7 +1812,7 @@ public class CFBamSchemaDefTableObj
 		key.setRequiredAuthorEMail( AuthorEMail );
 		ArrayList<ICFBamSchemaDefObj> arrayList = new ArrayList<ICFBamSchemaDefObj>();
 		if( indexByAuthEMailIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict;
+			Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict;
 			if( indexByAuthEMailIdx.containsKey( key ) ) {
 				dict = indexByAuthEMailIdx.get( key );
 				int len = dict.size();
@@ -1870,8 +1870,8 @@ public class CFBamSchemaDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1882,7 +1882,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaDefObj> readCachedSchemaDefByProjectURLIdx( CFLibDbKeyHash256 CTenantId,
+	public List<ICFBamSchemaDefObj> readCachedSchemaDefByProjectURLIdx( ICFLibKeyHash256 CTenantId,
 		String ProjectURL )
 	{
 		final String S_ProcName = "readCachedSchemaDefByProjectURLIdx";
@@ -1891,7 +1891,7 @@ public class CFBamSchemaDefTableObj
 		key.setRequiredProjectURL( ProjectURL );
 		ArrayList<ICFBamSchemaDefObj> arrayList = new ArrayList<ICFBamSchemaDefObj>();
 		if( indexByProjectURLIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict;
+			Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict;
 			if( indexByProjectURLIdx.containsKey( key ) ) {
 				dict = indexByProjectURLIdx.get( key );
 				int len = dict.size();
@@ -1949,8 +1949,8 @@ public class CFBamSchemaDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1961,7 +1961,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public ICFBamSchemaDefObj readCachedSchemaDefByPubURIIdx( CFLibDbKeyHash256 CTenantId,
+	public ICFBamSchemaDefObj readCachedSchemaDefByPubURIIdx( ICFLibKeyHash256 CTenantId,
 		String PublishURI )
 	{
 		ICFBamSchemaDefObj obj = null;
@@ -1999,7 +1999,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaDefByIdIdx( CFLibDbKeyHash256 Id )
+	public void deepDisposeSchemaDefByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamSchemaDefObj obj = readCachedSchemaDefByIdIdx( Id );
 		if( obj != null ) {
@@ -2008,7 +2008,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaDefByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deepDisposeSchemaDefByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeSchemaDefByTenantIdx";
 		ICFBamSchemaDefObj obj;
@@ -2025,7 +2025,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaDefByCTenantIdx( CFLibDbKeyHash256 CTenantId )
+	public void deepDisposeSchemaDefByCTenantIdx( ICFLibKeyHash256 CTenantId )
 	{
 		final String S_ProcName = "deepDisposeSchemaDefByCTenantIdx";
 		ICFBamSchemaDefObj obj;
@@ -2042,7 +2042,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaDefByMinorVersionIdx( CFLibDbKeyHash256 MinorVersionId )
+	public void deepDisposeSchemaDefByMinorVersionIdx( ICFLibKeyHash256 MinorVersionId )
 	{
 		final String S_ProcName = "deepDisposeSchemaDefByMinorVersionIdx";
 		ICFBamSchemaDefObj obj;
@@ -2059,7 +2059,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaDefByUNameIdx( CFLibDbKeyHash256 MinorVersionId,
+	public void deepDisposeSchemaDefByUNameIdx( ICFLibKeyHash256 MinorVersionId,
 		String Name )
 	{
 		ICFBamSchemaDefObj obj = readCachedSchemaDefByUNameIdx( MinorVersionId,
@@ -2070,7 +2070,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaDefByAuthEMailIdx( CFLibDbKeyHash256 CTenantId,
+	public void deepDisposeSchemaDefByAuthEMailIdx( ICFLibKeyHash256 CTenantId,
 		String AuthorEMail )
 	{
 		final String S_ProcName = "deepDisposeSchemaDefByAuthEMailIdx";
@@ -2089,7 +2089,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaDefByProjectURLIdx( CFLibDbKeyHash256 CTenantId,
+	public void deepDisposeSchemaDefByProjectURLIdx( ICFLibKeyHash256 CTenantId,
 		String ProjectURL )
 	{
 		final String S_ProcName = "deepDisposeSchemaDefByProjectURLIdx";
@@ -2108,7 +2108,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaDefByPubURIIdx( CFLibDbKeyHash256 CTenantId,
+	public void deepDisposeSchemaDefByPubURIIdx( ICFLibKeyHash256 CTenantId,
 		String PublishURI )
 	{
 		ICFBamSchemaDefObj obj = readCachedSchemaDefByPubURIIdx( CTenantId,
@@ -2139,7 +2139,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deleteSchemaDefByIdIdx( CFLibDbKeyHash256 Id )
+	public void deleteSchemaDefByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamSchemaDefObj obj = readSchemaDef(Id);
 		if( obj != null ) {
@@ -2169,16 +2169,16 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deleteSchemaDefByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deleteSchemaDefByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaDefObj > >();
 		}
 		if( indexByTenantIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict = indexByTenantIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict = indexByTenantIdx.get( key );
 			schema.getCFBamBackingStore().getTableSchemaDef().deleteSchemaDefByTenantIdx( null,
 				TenantId );
 			Iterator<ICFBamSchemaDefObj> iter = dict.values().iterator();
@@ -2203,16 +2203,16 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deleteSchemaDefByCTenantIdx( CFLibDbKeyHash256 CTenantId )
+	public void deleteSchemaDefByCTenantIdx( ICFLibKeyHash256 CTenantId )
 	{
 		ICFBamSchemaDefByCTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByCTenantIdxKey();
 		key.setRequiredCTenantId( CTenantId );
 		if( indexByCTenantIdx == null ) {
 			indexByCTenantIdx = new HashMap< ICFBamSchemaDefByCTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaDefObj > >();
 		}
 		if( indexByCTenantIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict = indexByCTenantIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict = indexByCTenantIdx.get( key );
 			schema.getCFBamBackingStore().getTableSchemaDef().deleteSchemaDefByCTenantIdx( null,
 				CTenantId );
 			Iterator<ICFBamSchemaDefObj> iter = dict.values().iterator();
@@ -2237,16 +2237,16 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deleteSchemaDefByMinorVersionIdx( CFLibDbKeyHash256 MinorVersionId )
+	public void deleteSchemaDefByMinorVersionIdx( ICFLibKeyHash256 MinorVersionId )
 	{
 		ICFBamSchemaDefByMinorVersionIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByMinorVersionIdxKey();
 		key.setRequiredMinorVersionId( MinorVersionId );
 		if( indexByMinorVersionIdx == null ) {
 			indexByMinorVersionIdx = new HashMap< ICFBamSchemaDefByMinorVersionIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaDefObj > >();
 		}
 		if( indexByMinorVersionIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict = indexByMinorVersionIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict = indexByMinorVersionIdx.get( key );
 			schema.getCFBamBackingStore().getTableSchemaDef().deleteSchemaDefByMinorVersionIdx( null,
 				MinorVersionId );
 			Iterator<ICFBamSchemaDefObj> iter = dict.values().iterator();
@@ -2271,7 +2271,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deleteSchemaDefByUNameIdx( CFLibDbKeyHash256 MinorVersionId,
+	public void deleteSchemaDefByUNameIdx( ICFLibKeyHash256 MinorVersionId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2299,7 +2299,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deleteSchemaDefByAuthEMailIdx( CFLibDbKeyHash256 CTenantId,
+	public void deleteSchemaDefByAuthEMailIdx( ICFLibKeyHash256 CTenantId,
 		String AuthorEMail )
 	{
 		ICFBamSchemaDefByAuthEMailIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByAuthEMailIdxKey();
@@ -2307,10 +2307,10 @@ public class CFBamSchemaDefTableObj
 		key.setRequiredAuthorEMail( AuthorEMail );
 		if( indexByAuthEMailIdx == null ) {
 			indexByAuthEMailIdx = new HashMap< ICFBamSchemaDefByAuthEMailIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaDefObj > >();
 		}
 		if( indexByAuthEMailIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict = indexByAuthEMailIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict = indexByAuthEMailIdx.get( key );
 			schema.getCFBamBackingStore().getTableSchemaDef().deleteSchemaDefByAuthEMailIdx( null,
 				CTenantId,
 				AuthorEMail );
@@ -2338,7 +2338,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deleteSchemaDefByProjectURLIdx( CFLibDbKeyHash256 CTenantId,
+	public void deleteSchemaDefByProjectURLIdx( ICFLibKeyHash256 CTenantId,
 		String ProjectURL )
 	{
 		ICFBamSchemaDefByProjectURLIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaDef().newByProjectURLIdxKey();
@@ -2346,10 +2346,10 @@ public class CFBamSchemaDefTableObj
 		key.setRequiredProjectURL( ProjectURL );
 		if( indexByProjectURLIdx == null ) {
 			indexByProjectURLIdx = new HashMap< ICFBamSchemaDefByProjectURLIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaDefObj > >();
 		}
 		if( indexByProjectURLIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaDefObj> dict = indexByProjectURLIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamSchemaDefObj> dict = indexByProjectURLIdx.get( key );
 			schema.getCFBamBackingStore().getTableSchemaDef().deleteSchemaDefByProjectURLIdx( null,
 				CTenantId,
 				ProjectURL );
@@ -2377,7 +2377,7 @@ public class CFBamSchemaDefTableObj
 	}
 
 	@Override
-	public void deleteSchemaDefByPubURIIdx( CFLibDbKeyHash256 CTenantId,
+	public void deleteSchemaDefByPubURIIdx( ICFLibKeyHash256 CTenantId,
 		String PublishURI )
 	{
 		if( indexByPubURIIdx == null ) {

@@ -114,7 +114,7 @@ public interface ICFBamBlobTypeTable
 	 *	@param	SchemaDefId	The BlobType key attribute of the instance generating the id.
 	 */
 	void deleteBlobTypeBySchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argSchemaDefId );
+		ICFLibKeyHash256 argSchemaDefId );
 
 	/**
 	 *	Delete the BlobType instances identified by the key SchemaIdx.
@@ -133,7 +133,7 @@ public interface ICFBamBlobTypeTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteBlobTypeByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the BlobType instances identified by the key UNameIdx.
 	 *
@@ -144,7 +144,7 @@ public interface ICFBamBlobTypeTable
 	 *	@param	Name	The BlobType key attribute of the instance generating the id.
 	 */
 	void deleteBlobTypeByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
+		ICFLibKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -164,7 +164,7 @@ public interface ICFBamBlobTypeTable
 	 *	@param	ScopeId	The BlobType key attribute of the instance generating the id.
 	 */
 	void deleteBlobTypeByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId );
+		ICFLibKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the BlobType instances identified by the key ScopeIdx.
@@ -183,7 +183,7 @@ public interface ICFBamBlobTypeTable
 	 *	@param	DefSchemaId	The BlobType key attribute of the instance generating the id.
 	 */
 	void deleteBlobTypeByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		ICFLibKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the BlobType instances identified by the key DefSchemaIdx.
@@ -202,7 +202,7 @@ public interface ICFBamBlobTypeTable
 	 *	@param	PrevId	The BlobType key attribute of the instance generating the id.
 	 */
 	void deleteBlobTypeByPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		ICFLibKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the BlobType instances identified by the key PrevIdx.
@@ -221,7 +221,7 @@ public interface ICFBamBlobTypeTable
 	 *	@param	NextId	The BlobType key attribute of the instance generating the id.
 	 */
 	void deleteBlobTypeByNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		ICFLibKeyHash256 argNextId );
 
 	/**
 	 *	Delete the BlobType instances identified by the key NextIdx.
@@ -242,8 +242,8 @@ public interface ICFBamBlobTypeTable
 	 *	@param	PrevId	The BlobType key attribute of the instance generating the id.
 	 */
 	void deleteBlobTypeByContPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argPrevId );
+		ICFLibKeyHash256 argScopeId,
+		ICFLibKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the BlobType instances identified by the key ContPrevIdx.
@@ -264,8 +264,8 @@ public interface ICFBamBlobTypeTable
 	 *	@param	NextId	The BlobType key attribute of the instance generating the id.
 	 */
 	void deleteBlobTypeByContNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argNextId );
+		ICFLibKeyHash256 argScopeId,
+		ICFLibKeyHash256 argNextId );
 
 	/**
 	 *	Delete the BlobType instances identified by the key ContNextIdx.
@@ -289,7 +289,7 @@ public interface ICFBamBlobTypeTable
 	 *		no such existing key value.
 	 */
 	ICFBamBlobType readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived BlobType record instance by primary key.
@@ -302,7 +302,7 @@ public interface ICFBamBlobTypeTable
 	 *		no such existing key value.
 	 */
 	ICFBamBlobType lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all BlobType instances.
@@ -324,7 +324,7 @@ public interface ICFBamBlobTypeTable
 	 *		no such existing key value.
 	 */
 	ICFBamBlobType readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read the derived BlobType record instance identified by the unique key UNameIdx.
@@ -339,7 +339,7 @@ public interface ICFBamBlobTypeTable
 	 *		no such existing key value.
 	 */
 	ICFBamBlobType readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -352,7 +352,7 @@ public interface ICFBamBlobTypeTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamBlobType[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived BlobType record instances identified by the duplicate key DefSchemaIdx.
@@ -364,7 +364,7 @@ public interface ICFBamBlobTypeTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamBlobType[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived BlobType record instances identified by the duplicate key PrevIdx.
@@ -376,7 +376,7 @@ public interface ICFBamBlobTypeTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamBlobType[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived BlobType record instances identified by the duplicate key NextIdx.
@@ -388,7 +388,7 @@ public interface ICFBamBlobTypeTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamBlobType[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived BlobType record instances identified by the duplicate key ContPrevIdx.
@@ -402,8 +402,8 @@ public interface ICFBamBlobTypeTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamBlobType[] readDerivedByContPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived BlobType record instances identified by the duplicate key ContNextIdx.
@@ -417,8 +417,8 @@ public interface ICFBamBlobTypeTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamBlobType[] readDerivedByContNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived BlobType record instances identified by the duplicate key SchemaIdx.
@@ -430,7 +430,7 @@ public interface ICFBamBlobTypeTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamBlobType[] readDerivedBySchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SchemaDefId );
+		ICFLibKeyHash256 SchemaDefId );
 
 	/**
 	 *	Read the specific BlobType record instance identified by the primary key.
@@ -445,7 +445,7 @@ public interface ICFBamBlobTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBlobType readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific BlobType record instance identified by the primary key.
@@ -460,7 +460,7 @@ public interface ICFBamBlobTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBlobType lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific BlobType record instances.
@@ -484,7 +484,7 @@ public interface ICFBamBlobTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBlobType readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read the specific BlobType record instance identified by the unique key UNameIdx.
@@ -501,7 +501,7 @@ public interface ICFBamBlobTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBlobType readRecByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -516,7 +516,7 @@ public interface ICFBamBlobTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBlobType[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific BlobType record instances identified by the duplicate key DefSchemaIdx.
@@ -530,7 +530,7 @@ public interface ICFBamBlobTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBlobType[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific BlobType record instances identified by the duplicate key PrevIdx.
@@ -544,7 +544,7 @@ public interface ICFBamBlobTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBlobType[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific BlobType record instances identified by the duplicate key NextIdx.
@@ -558,7 +558,7 @@ public interface ICFBamBlobTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBlobType[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific BlobType record instances identified by the duplicate key ContPrevIdx.
@@ -574,8 +574,8 @@ public interface ICFBamBlobTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBlobType[] readRecByContPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific BlobType record instances identified by the duplicate key ContNextIdx.
@@ -591,8 +591,8 @@ public interface ICFBamBlobTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBlobType[] readRecByContNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific BlobType record instances identified by the duplicate key SchemaIdx.
@@ -606,7 +606,7 @@ public interface ICFBamBlobTypeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamBlobType[] readRecBySchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 SchemaDefId );
+		ICFLibKeyHash256 SchemaDefId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -614,7 +614,7 @@ public interface ICFBamBlobTypeTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamBlobType moveRecUp( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id,
+		ICFLibKeyHash256 Id,
 		int revision );
 
 	/**
@@ -623,6 +623,6 @@ public interface ICFBamBlobTypeTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamBlobType moveRecDown( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id,
+		ICFLibKeyHash256 Id,
 		int revision );
 }

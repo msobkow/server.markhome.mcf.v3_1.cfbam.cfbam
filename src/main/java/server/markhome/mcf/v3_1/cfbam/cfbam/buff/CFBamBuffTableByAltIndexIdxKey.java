@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTableByAltIndexIdxKey
 	implements ICFBamTableByAltIndexIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 optionalAltIndexId;
+	protected $implJavaAtomType$ optionalAltIndexId;
 	public CFBamBuffTableByAltIndexIdxKey() {
 		optionalAltIndexId = CFLibDbKeyHash256.nullGet();
 	}

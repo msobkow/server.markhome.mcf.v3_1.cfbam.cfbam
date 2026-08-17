@@ -74,8 +74,8 @@ public class CFBamBuffDelSubDep1
 	extends CFBamBuffDelDep
 	implements ICFBamDelSubDep1
 {
-	protected CFLibDbKeyHash256 requiredDelTopDepId;
-	protected String requiredName;
+	protected $implJavaAtomType$ requiredDelTopDepId;
+	protected $implJavaAtomType$ requiredName;
 
 	public CFBamBuffDelSubDep1() {
 		super();

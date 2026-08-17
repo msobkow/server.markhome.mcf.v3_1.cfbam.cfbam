@@ -73,10 +73,10 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffClearTopDepH extends CFBamBuffClearDepH
     implements ICFBamClearTopDepH
 {
-	protected CFLibDbKeyHash256 requiredTableId;
-	protected String requiredName;
-	protected CFLibDbKeyHash256 optionalPrevId;
-	protected CFLibDbKeyHash256 optionalNextId;
+	protected $implJavaAtomType$ requiredTableId;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalPrevId;
+	protected $implJavaAtomType$ optionalNextId;
 
     public CFBamBuffClearTopDepH() {
             super();

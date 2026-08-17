@@ -258,29 +258,29 @@ public class CFBamClearSubDep1EditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredClearTopDepId() {
+	public $implJavaAtomType$ getRequiredClearTopDepId() {
 		return( getClearSubDep1Rec().getRequiredClearTopDepId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getClearSubDep1Rec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getClearSubDep1Rec().getRequiredName() != value ) {
 			getClearSubDep1Rec().setRequiredName( value );
 		}

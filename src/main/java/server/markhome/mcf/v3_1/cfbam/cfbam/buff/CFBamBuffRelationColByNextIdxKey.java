@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffRelationColByNextIdxKey
 	implements ICFBamRelationColByNextIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 optionalNextId;
+	protected $implJavaAtomType$ optionalNextId;
 	public CFBamBuffRelationColByNextIdxKey() {
 		optionalNextId = CFLibDbKeyHash256.nullGet();
 	}

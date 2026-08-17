@@ -73,7 +73,7 @@ public class CFBamParamObj
 	protected boolean isNew;
 	protected ICFBamParamEditObj edit;
 	protected ICFBamSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFBamParam rec;
 	protected ICFBamServerMethodObj requiredContainerServerMeth;
 	protected ICFBamSchemaDefObj optionalLookupDefSchema;
@@ -330,12 +330,12 @@ public class CFBamParamObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -412,7 +412,7 @@ public class CFBamParamObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -509,47 +509,47 @@ public class CFBamParamObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredServerMethodId() {
+	public $implJavaAtomType$ getRequiredServerMethodId() {
 		return( getParamRec().getRequiredServerMethodId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getParamRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getParamRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalShortDescription() {
+	public $implJavaAtomType$ getOptionalShortDescription() {
 		return( getParamRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getParamRec().getOptionalDescription() );
 	}
 
 	@Override
-	public boolean getRequiredIsNullable() {
+	public $implJavaAtomType$ getRequiredIsNullable() {
 		return( getParamRec().getRequiredIsNullable() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalTypeId() {
+	public $implJavaAtomType$ getOptionalTypeId() {
 		return( getParamRec().getOptionalTypeId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalPrevId() {
+	public $implJavaAtomType$ getOptionalPrevId() {
 		return( getParamRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalNextId() {
+	public $implJavaAtomType$ getOptionalNextId() {
 		return( getParamRec().getOptionalNextId() );
 	}
 

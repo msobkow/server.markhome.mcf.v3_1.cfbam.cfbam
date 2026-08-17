@@ -122,7 +122,7 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	The FloatDef-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamFloatDefObj readFloatDef( CFLibDbKeyHash256 pkey );
+	ICFBamFloatDefObj readFloatDef( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a FloatDef-derived instance by it's primary key.
@@ -132,19 +132,19 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	The FloatDef-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamFloatDefObj readFloatDef( CFLibDbKeyHash256 pkey,
+	ICFBamFloatDefObj readFloatDef( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamFloatDefObj readCachedFloatDef( CFLibDbKeyHash256 pkey );
+	ICFBamFloatDefObj readCachedFloatDef( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeFloatDef( ICFBamFloatDefObj obj );
 
-	void deepDisposeFloatDef( CFLibDbKeyHash256 pkey );
+	void deepDisposeFloatDef( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamFloatDefObj lockFloatDef( CFLibDbKeyHash256 pkey );
+	ICFBamFloatDefObj lockFloatDef( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the FloatDef-derived instances in the database.
@@ -172,7 +172,7 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	CFBamValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamFloatDefObj readFloatDefByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamFloatDefObj readFloatDefByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamValueObj instance for the primary key attributes.
@@ -182,7 +182,7 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	CFBamValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamFloatDefObj readFloatDefByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamFloatDefObj readFloatDefByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -195,7 +195,7 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	CFBamValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamFloatDefObj readFloatDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamFloatDefObj readFloatDefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -208,7 +208,7 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	CFBamValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamFloatDefObj readFloatDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamFloatDefObj readFloatDefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -220,7 +220,7 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	List of CFBamFloatDefObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamFloatDefObj> readFloatDefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamFloatDefObj> readFloatDefByScopeIdx( ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamFloatDefObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -230,7 +230,7 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	List of CFBamFloatDefObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamFloatDefObj> readFloatDefByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	List<ICFBamFloatDefObj> readFloatDefByScopeIdx( ICFLibKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -241,7 +241,7 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	List of CFBamFloatDefObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamFloatDefObj> readFloatDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamFloatDefObj> readFloatDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamFloatDefObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -251,7 +251,7 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	List of CFBamFloatDefObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamFloatDefObj> readFloatDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamFloatDefObj> readFloatDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -262,7 +262,7 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	List of CFBamFloatDefObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamFloatDefObj> readFloatDefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamFloatDefObj> readFloatDefByPrevIdx( ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamFloatDefObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -272,7 +272,7 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	List of CFBamFloatDefObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamFloatDefObj> readFloatDefByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamFloatDefObj> readFloatDefByPrevIdx( ICFLibKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -283,7 +283,7 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	List of CFBamFloatDefObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamFloatDefObj> readFloatDefByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamFloatDefObj> readFloatDefByNextIdx( ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamFloatDefObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -293,7 +293,7 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	List of CFBamFloatDefObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamFloatDefObj> readFloatDefByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamFloatDefObj> readFloatDefByNextIdx( ICFLibKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -306,8 +306,8 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	List of CFBamFloatDefObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamFloatDefObj> readFloatDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamFloatDefObj> readFloatDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamFloatDefObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -319,8 +319,8 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	List of CFBamFloatDefObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamFloatDefObj> readFloatDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamFloatDefObj> readFloatDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -333,8 +333,8 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	List of CFBamFloatDefObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamFloatDefObj> readFloatDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamFloatDefObj> readFloatDefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamFloatDefObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -346,47 +346,47 @@ public interface ICFBamFloatDefTableObj
 	 *	@return	List of CFBamFloatDefObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamFloatDefObj> readFloatDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamFloatDefObj> readFloatDefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId,
 		boolean forceRead );
 
-	ICFBamFloatDefObj readCachedFloatDefByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamFloatDefObj readCachedFloatDefByIdIdx( ICFLibKeyHash256 Id );
 
-	ICFBamFloatDefObj readCachedFloatDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamFloatDefObj readCachedFloatDefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamFloatDefObj> readCachedFloatDefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamFloatDefObj> readCachedFloatDefByScopeIdx( ICFLibKeyHash256 ScopeId );
 
-	List<ICFBamFloatDefObj> readCachedFloatDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamFloatDefObj> readCachedFloatDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
-	List<ICFBamFloatDefObj> readCachedFloatDefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamFloatDefObj> readCachedFloatDefByPrevIdx( ICFLibKeyHash256 PrevId );
 
-	List<ICFBamFloatDefObj> readCachedFloatDefByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamFloatDefObj> readCachedFloatDefByNextIdx( ICFLibKeyHash256 NextId );
 
-	List<ICFBamFloatDefObj> readCachedFloatDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamFloatDefObj> readCachedFloatDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
-	List<ICFBamFloatDefObj> readCachedFloatDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamFloatDefObj> readCachedFloatDefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
-	void deepDisposeFloatDefByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeFloatDefByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeFloatDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deepDisposeFloatDefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeFloatDefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deepDisposeFloatDefByScopeIdx( ICFLibKeyHash256 ScopeId );
 
-	void deepDisposeFloatDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeFloatDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
-	void deepDisposeFloatDefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeFloatDefByPrevIdx( ICFLibKeyHash256 PrevId );
 
-	void deepDisposeFloatDefByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeFloatDefByNextIdx( ICFLibKeyHash256 NextId );
 
-	void deepDisposeFloatDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeFloatDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
-	void deepDisposeFloatDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeFloatDefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -403,7 +403,7 @@ public interface ICFBamFloatDefTableObj
 	 *
 	 *	@param	Id	The FloatDef key attribute of the instance generating the id.
 	 */
-	void deleteFloatDefByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteFloatDefByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -412,7 +412,7 @@ public interface ICFBamFloatDefTableObj
 	 *
 	 *	@param	Name	The FloatDef key attribute of the instance generating the id.
 	 */
-	void deleteFloatDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deleteFloatDefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -420,28 +420,28 @@ public interface ICFBamFloatDefTableObj
 	 *
 	 *	@param	ScopeId	The FloatDef key attribute of the instance generating the id.
 	 */
-	void deleteFloatDefByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deleteFloatDefByScopeIdx( ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The FloatDef key attribute of the instance generating the id.
 	 */
-	void deleteFloatDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteFloatDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The FloatDef key attribute of the instance generating the id.
 	 */
-	void deleteFloatDefByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteFloatDefByPrevIdx( ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The FloatDef key attribute of the instance generating the id.
 	 */
-	void deleteFloatDefByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteFloatDefByNextIdx( ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -450,8 +450,8 @@ public interface ICFBamFloatDefTableObj
 	 *
 	 *	@param	PrevId	The FloatDef key attribute of the instance generating the id.
 	 */
-	void deleteFloatDefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteFloatDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -460,8 +460,8 @@ public interface ICFBamFloatDefTableObj
 	 *
 	 *	@param	NextId	The FloatDef key attribute of the instance generating the id.
 	 */
-	void deleteFloatDefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteFloatDefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Move the CFBamFloatDefObj instance up in the chain.  The instance is always refreshed.

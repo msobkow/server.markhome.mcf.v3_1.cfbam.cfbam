@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffDateDefH extends CFBamBuffAtomH
     implements ICFBamDateDefH
 {
-	protected String optionalDummy;
+	protected $implJavaAtomType$ optionalDummy;
 
     public CFBamBuffDateDefH() {
             super();

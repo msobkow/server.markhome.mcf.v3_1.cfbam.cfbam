@@ -78,7 +78,7 @@ public interface ICFBamClearSubDep1
 
 	public ICFBamClearTopDep getRequiredContainerClearTopDep();
 
-	public void setRequiredContainerClearTopDep(CFLibDbKeyHash256 argClearTopDepId);
+	public void setRequiredContainerClearTopDep(ICFLibKeyHash256 argClearTopDepId);
 
 	public void setRequiredContainerClearTopDep(ICFBamClearTopDep argObj);
 

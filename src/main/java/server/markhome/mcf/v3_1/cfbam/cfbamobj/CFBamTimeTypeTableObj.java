@@ -71,30 +71,30 @@ public class CFBamTimeTypeTableObj
 	protected ICFBamSchemaObj schema;
 	protected static int runtimeClassCode = ICFBamTimeType.CLASS_CODE;
 	protected static final int backingClassCode = ICFBamTimeType.CLASS_CODE;
-	private Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> members;
-	private Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> allTimeType;
+	private Map<ICFLibKeyHash256, ICFBamTimeTypeObj> members;
+	private Map<ICFLibKeyHash256, ICFBamTimeTypeObj> allTimeType;
 	private Map< ICFBamValueByUNameIdxKey,
 		ICFBamTimeTypeObj > indexByUNameIdx;
 	private Map< ICFBamValueByScopeIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > > indexByScopeIdx;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj > > indexByScopeIdx;
 	private Map< ICFBamValueByDefSchemaIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > > indexByDefSchemaIdx;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj > > indexByDefSchemaIdx;
 	private Map< ICFBamValueByPrevIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > > indexByPrevIdx;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj > > indexByPrevIdx;
 	private Map< ICFBamValueByNextIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > > indexByNextIdx;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj > > indexByNextIdx;
 	private Map< ICFBamValueByContPrevIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > > indexByContPrevIdx;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj > > indexByContPrevIdx;
 	private Map< ICFBamValueByContNextIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > > indexByContNextIdx;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj > > indexByContNextIdx;
 	private Map< ICFBamTimeTypeBySchemaIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > > indexBySchemaIdx;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj > > indexBySchemaIdx;
 	public static String TABLE_NAME = "TimeType";
 	public static String TABLE_DBNAME = "tmtyp";
 
 	public CFBamTimeTypeTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamTimeTypeObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamTimeTypeObj>();
 		allTimeType = null;
 		indexByUNameIdx = null;
 		indexByScopeIdx = null;
@@ -108,7 +108,7 @@ public class CFBamTimeTypeTableObj
 
 	public CFBamTimeTypeTableObj( ICFBamSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamTimeTypeObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamTimeTypeObj>();
 		allTimeType = null;
 		indexByUNameIdx = null;
 		indexByScopeIdx = null;
@@ -245,7 +245,7 @@ public class CFBamTimeTypeTableObj
 	@Override
 	public ICFBamTimeTypeObj realiseTimeType( ICFBamTimeTypeObj Obj ) {
 		ICFBamTimeTypeObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamTimeTypeObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFBamTimeTypeObj existingObj = members.get( pkey );
@@ -270,7 +270,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamValueByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					indexByScopeIdx.remove( keyScopeIdx );
 				}
@@ -280,7 +280,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					indexByDefSchemaIdx.remove( keyDefSchemaIdx );
 				}
@@ -290,7 +290,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamValueByPrevIdxKey keyPrevIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
 					indexByPrevIdx.remove( keyPrevIdx );
 				}
@@ -300,7 +300,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamValueByNextIdxKey keyNextIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
 					indexByNextIdx.remove( keyNextIdx );
 				}
@@ -311,7 +311,7 @@ public class CFBamTimeTypeTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
 				if( mapContPrevIdx != null ) {
 					indexByContPrevIdx.remove( keyContPrevIdx );
 				}
@@ -322,7 +322,7 @@ public class CFBamTimeTypeTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
 				if( mapContNextIdx != null ) {
 					indexByContNextIdx.remove( keyContNextIdx );
 				}
@@ -332,7 +332,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamTimeTypeBySchemaIdxKey keySchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryTimeType().newBySchemaIdxKey();
 				keySchemaIdx.setRequiredSchemaDefId( keepObj.getRequiredSchemaDefId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
 				if( mapSchemaIdx != null ) {
 					mapSchemaIdx.remove( keepObj.getPKey() );
 					if( mapSchemaIdx.size() <= 0 ) {
@@ -359,7 +359,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamValueByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					mapScopeIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -369,7 +369,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -379,7 +379,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamValueByPrevIdxKey keyPrevIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
 					mapPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -389,7 +389,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamValueByNextIdxKey keyNextIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
 					mapNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -400,7 +400,7 @@ public class CFBamTimeTypeTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
 				if( mapContPrevIdx != null ) {
 					mapContPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -411,7 +411,7 @@ public class CFBamTimeTypeTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
 				if( mapContNextIdx != null ) {
 					mapContNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -421,7 +421,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamTimeTypeBySchemaIdxKey keySchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryTimeType().newBySchemaIdxKey();
 				keySchemaIdx.setRequiredSchemaDefId( keepObj.getRequiredSchemaDefId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
 				if( mapSchemaIdx != null ) {
 					mapSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -453,7 +453,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamValueByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					mapScopeIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -463,7 +463,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -473,7 +473,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamValueByPrevIdxKey keyPrevIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
 					mapPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -483,7 +483,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamValueByNextIdxKey keyNextIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
 					mapNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -494,7 +494,7 @@ public class CFBamTimeTypeTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
 				if( mapContPrevIdx != null ) {
 					mapContPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -505,7 +505,7 @@ public class CFBamTimeTypeTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
 				if( mapContNextIdx != null ) {
 					mapContNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -515,7 +515,7 @@ public class CFBamTimeTypeTableObj
 				ICFBamTimeTypeBySchemaIdxKey keySchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryTimeType().newBySchemaIdxKey();
 				keySchemaIdx.setRequiredSchemaDefId( keepObj.getRequiredSchemaDefId() );
-				Map<CFLibDbKeyHash256, ICFBamTimeTypeObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamTimeTypeObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
 				if( mapSchemaIdx != null ) {
 					mapSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -545,12 +545,12 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public ICFBamTimeTypeObj readTimeType( CFLibDbKeyHash256 pkey ) {
+	public ICFBamTimeTypeObj readTimeType( ICFLibKeyHash256 pkey ) {
 		return( readTimeType( pkey, false ) );
 	}
 
 	@Override
-	public ICFBamTimeTypeObj readTimeType( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFBamTimeTypeObj readTimeType( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFBamTimeTypeObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -569,7 +569,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public ICFBamTimeTypeObj readCachedTimeType( CFLibDbKeyHash256 pkey ) {
+	public ICFBamTimeTypeObj readCachedTimeType( ICFLibKeyHash256 pkey ) {
 		ICFBamTimeTypeObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -585,7 +585,7 @@ public class CFBamTimeTypeTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamTimeTypeObj existing = readCachedTimeType( pkey );
 		if( existing == null ) {
 			return;
@@ -611,7 +611,7 @@ public class CFBamTimeTypeTableObj
 		schema.getTimeDefTableObj().reallyDeepDisposeTimeDef( obj );
 	}
 	@Override
-	public void deepDisposeTimeType( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeTimeType( ICFLibKeyHash256 pkey ) {
 		ICFBamTimeTypeObj obj = readCachedTimeType( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -619,7 +619,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public ICFBamTimeTypeObj lockTimeType( CFLibDbKeyHash256 pkey ) {
+	public ICFBamTimeTypeObj lockTimeType( ICFLibKeyHash256 pkey ) {
 		ICFBamTimeTypeObj locked = null;
 		ICFBamTimeType lockRec = schema.getCFBamBackingStore().getTableTimeType().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -643,7 +643,7 @@ public class CFBamTimeTypeTableObj
 	public List<ICFBamTimeTypeObj> readAllTimeType( boolean forceRead ) {
 		final String S_ProcName = "readAllTimeType";
 		if( ( allTimeType == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> map = new HashMap<CFLibDbKeyHash256,ICFBamTimeTypeObj>();
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> map = new HashMap<ICFLibKeyHash256,ICFBamTimeTypeObj>();
 			allTimeType = map;
 			ICFBamTimeType[] recList = schema.getCFBamBackingStore().getTableTimeType().readAllDerived( null );
 			ICFBamTimeType rec;
@@ -699,8 +699,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -757,8 +757,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -769,21 +769,21 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public ICFBamTimeTypeObj readTimeTypeByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamTimeTypeObj readTimeTypeByIdIdx( ICFLibKeyHash256 Id )
 	{
 		return( readTimeTypeByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamTimeTypeObj readTimeTypeByIdIdx( CFLibDbKeyHash256 Id, boolean forceRead )
+	public ICFBamTimeTypeObj readTimeTypeByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamTimeTypeObj obj = readTimeType( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamTimeTypeObj readTimeTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamTimeTypeObj readTimeTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readTimeTypeByUNameIdx( ScopeId,
@@ -792,7 +792,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public ICFBamTimeTypeObj readTimeTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamTimeTypeObj readTimeTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -821,29 +821,29 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public List<ICFBamTimeTypeObj> readTimeTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		return( readTimeTypeByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	public List<ICFBamTimeTypeObj> readTimeTypeByScopeIdx( ICFLibKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimeTypeByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 		if( indexByScopeIdx == null ) {
 			indexByScopeIdx = new HashMap< ICFBamValueByScopeIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexByScopeIdx.containsKey( key ) ) {
 			dict = indexByScopeIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamTimeTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamTimeTypeObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByScopeIdx( null,
 				ScopeId );
@@ -901,8 +901,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -914,29 +914,29 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamTimeTypeObj> readTimeTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		return( readTimeTypeByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	public List<ICFBamTimeTypeObj> readTimeTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimeTypeByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamValueByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexByDefSchemaIdx.containsKey( key ) ) {
 			dict = indexByDefSchemaIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamTimeTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamTimeTypeObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByDefSchemaIdx( null,
 				DefSchemaId );
@@ -994,8 +994,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1007,29 +1007,29 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public List<ICFBamTimeTypeObj> readTimeTypeByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		return( readTimeTypeByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeByPrevIdx( CFLibDbKeyHash256 PrevId,
+	public List<ICFBamTimeTypeObj> readTimeTypeByPrevIdx( ICFLibKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimeTypeByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 		if( indexByPrevIdx == null ) {
 			indexByPrevIdx = new HashMap< ICFBamValueByPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexByPrevIdx.containsKey( key ) ) {
 			dict = indexByPrevIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamTimeTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamTimeTypeObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByPrevIdx( null,
 				PrevId );
@@ -1087,8 +1087,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1100,29 +1100,29 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeByNextIdx( CFLibDbKeyHash256 NextId )
+	public List<ICFBamTimeTypeObj> readTimeTypeByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		return( readTimeTypeByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeByNextIdx( CFLibDbKeyHash256 NextId,
+	public List<ICFBamTimeTypeObj> readTimeTypeByNextIdx( ICFLibKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimeTypeByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 		if( indexByNextIdx == null ) {
 			indexByNextIdx = new HashMap< ICFBamValueByNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexByNextIdx.containsKey( key ) ) {
 			dict = indexByNextIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamTimeTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamTimeTypeObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByNextIdx( null,
 				NextId );
@@ -1180,8 +1180,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1193,8 +1193,8 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public List<ICFBamTimeTypeObj> readTimeTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		return( readTimeTypeByContPrevIdx( ScopeId,
 			PrevId,
@@ -1202,24 +1202,24 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	public List<ICFBamTimeTypeObj> readTimeTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimeTypeByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalPrevId( PrevId );
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 		if( indexByContPrevIdx == null ) {
 			indexByContPrevIdx = new HashMap< ICFBamValueByContPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexByContPrevIdx.containsKey( key ) ) {
 			dict = indexByContPrevIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamTimeTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamTimeTypeObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByContPrevIdx( null,
 				ScopeId,
@@ -1278,8 +1278,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1291,8 +1291,8 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public List<ICFBamTimeTypeObj> readTimeTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		return( readTimeTypeByContNextIdx( ScopeId,
 			NextId,
@@ -1300,24 +1300,24 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	public List<ICFBamTimeTypeObj> readTimeTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimeTypeByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalNextId( NextId );
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 		if( indexByContNextIdx == null ) {
 			indexByContNextIdx = new HashMap< ICFBamValueByContNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexByContNextIdx.containsKey( key ) ) {
 			dict = indexByContNextIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamTimeTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamTimeTypeObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByContNextIdx( null,
 				ScopeId,
@@ -1376,8 +1376,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1389,29 +1389,29 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId )
+	public List<ICFBamTimeTypeObj> readTimeTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
 	{
 		return( readTimeTypeBySchemaIdx( SchemaDefId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readTimeTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId,
+	public List<ICFBamTimeTypeObj> readTimeTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTimeTypeBySchemaIdx";
 		ICFBamTimeTypeBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTimeType().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );
-		Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 		if( indexBySchemaIdx == null ) {
 			indexBySchemaIdx = new HashMap< ICFBamTimeTypeBySchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexBySchemaIdx.containsKey( key ) ) {
 			dict = indexBySchemaIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamTimeTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamTimeTypeObj>();
 			ICFBamTimeTypeObj obj;
 			ICFBamTimeType[] recList = schema.getCFBamBackingStore().getTableTimeType().readDerivedBySchemaIdx( null,
 				SchemaDefId );
@@ -1469,8 +1469,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1482,7 +1482,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public ICFBamTimeTypeObj readCachedTimeTypeByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamTimeTypeObj readCachedTimeTypeByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamTimeTypeObj obj = null;
 		obj = readCachedTimeType( Id );
@@ -1490,7 +1490,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public ICFBamTimeTypeObj readCachedTimeTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamTimeTypeObj readCachedTimeTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamTimeTypeObj obj = null;
@@ -1528,14 +1528,14 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readCachedTimeTypeByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public List<ICFBamTimeTypeObj> readCachedTimeTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedTimeTypeByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		ArrayList<ICFBamTimeTypeObj> arrayList = new ArrayList<ICFBamTimeTypeObj>();
 		if( indexByScopeIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 			if( indexByScopeIdx.containsKey( key ) ) {
 				dict = indexByScopeIdx.get( key );
 				int len = dict.size();
@@ -1593,8 +1593,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1605,14 +1605,14 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readCachedTimeTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamTimeTypeObj> readCachedTimeTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedTimeTypeByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamTimeTypeObj> arrayList = new ArrayList<ICFBamTimeTypeObj>();
 		if( indexByDefSchemaIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 			if( indexByDefSchemaIdx.containsKey( key ) ) {
 				dict = indexByDefSchemaIdx.get( key );
 				int len = dict.size();
@@ -1670,8 +1670,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1682,14 +1682,14 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readCachedTimeTypeByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public List<ICFBamTimeTypeObj> readCachedTimeTypeByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedTimeTypeByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamTimeTypeObj> arrayList = new ArrayList<ICFBamTimeTypeObj>();
 		if( indexByPrevIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 			if( indexByPrevIdx.containsKey( key ) ) {
 				dict = indexByPrevIdx.get( key );
 				int len = dict.size();
@@ -1747,8 +1747,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1759,14 +1759,14 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readCachedTimeTypeByNextIdx( CFLibDbKeyHash256 NextId )
+	public List<ICFBamTimeTypeObj> readCachedTimeTypeByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedTimeTypeByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamTimeTypeObj> arrayList = new ArrayList<ICFBamTimeTypeObj>();
 		if( indexByNextIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 			if( indexByNextIdx.containsKey( key ) ) {
 				dict = indexByNextIdx.get( key );
 				int len = dict.size();
@@ -1824,8 +1824,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1836,8 +1836,8 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readCachedTimeTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public List<ICFBamTimeTypeObj> readCachedTimeTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedTimeTypeByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1845,7 +1845,7 @@ public class CFBamTimeTypeTableObj
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamTimeTypeObj> arrayList = new ArrayList<ICFBamTimeTypeObj>();
 		if( indexByContPrevIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 			if( indexByContPrevIdx.containsKey( key ) ) {
 				dict = indexByContPrevIdx.get( key );
 				int len = dict.size();
@@ -1903,8 +1903,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1915,8 +1915,8 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readCachedTimeTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public List<ICFBamTimeTypeObj> readCachedTimeTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedTimeTypeByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1924,7 +1924,7 @@ public class CFBamTimeTypeTableObj
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamTimeTypeObj> arrayList = new ArrayList<ICFBamTimeTypeObj>();
 		if( indexByContNextIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 			if( indexByContNextIdx.containsKey( key ) ) {
 				dict = indexByContNextIdx.get( key );
 				int len = dict.size();
@@ -1982,8 +1982,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1994,14 +1994,14 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamTimeTypeObj> readCachedTimeTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId )
+	public List<ICFBamTimeTypeObj> readCachedTimeTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "readCachedTimeTypeBySchemaIdx";
 		ICFBamTimeTypeBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTimeType().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );
 		ArrayList<ICFBamTimeTypeObj> arrayList = new ArrayList<ICFBamTimeTypeObj>();
 		if( indexBySchemaIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict;
 			if( indexBySchemaIdx.containsKey( key ) ) {
 				dict = indexBySchemaIdx.get( key );
 				int len = dict.size();
@@ -2059,8 +2059,8 @@ public class CFBamTimeTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -2071,7 +2071,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTimeTypeByIdIdx( CFLibDbKeyHash256 Id )
+	public void deepDisposeTimeTypeByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamTimeTypeObj obj = readCachedTimeTypeByIdIdx( Id );
 		if( obj != null ) {
@@ -2080,7 +2080,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTimeTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public void deepDisposeTimeTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamTimeTypeObj obj = readCachedTimeTypeByUNameIdx( ScopeId,
@@ -2091,7 +2091,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTimeTypeByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public void deepDisposeTimeTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeTimeTypeByScopeIdx";
 		ICFBamTimeTypeObj obj;
@@ -2108,7 +2108,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTimeTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deepDisposeTimeTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeTimeTypeByDefSchemaIdx";
 		ICFBamTimeTypeObj obj;
@@ -2125,7 +2125,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTimeTypeByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public void deepDisposeTimeTypeByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeTimeTypeByPrevIdx";
 		ICFBamTimeTypeObj obj;
@@ -2142,7 +2142,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTimeTypeByNextIdx( CFLibDbKeyHash256 NextId )
+	public void deepDisposeTimeTypeByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeTimeTypeByNextIdx";
 		ICFBamTimeTypeObj obj;
@@ -2159,8 +2159,8 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTimeTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public void deepDisposeTimeTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeTimeTypeByContPrevIdx";
 		ICFBamTimeTypeObj obj;
@@ -2178,8 +2178,8 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTimeTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public void deepDisposeTimeTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeTimeTypeByContNextIdx";
 		ICFBamTimeTypeObj obj;
@@ -2197,7 +2197,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeTimeTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId )
+	public void deepDisposeTimeTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "deepDisposeTimeTypeBySchemaIdx";
 		ICFBamTimeTypeObj obj;
@@ -2242,7 +2242,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deleteTimeTypeByIdIdx( CFLibDbKeyHash256 Id )
+	public void deleteTimeTypeByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamTimeTypeObj obj = readTimeType(Id);
 		if( obj != null ) {
@@ -2272,7 +2272,7 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deleteTimeTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public void deleteTimeTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2300,16 +2300,16 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deleteTimeTypeByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public void deleteTimeTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		if( indexByScopeIdx == null ) {
 			indexByScopeIdx = new HashMap< ICFBamValueByScopeIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( indexByScopeIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict = indexByScopeIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict = indexByScopeIdx.get( key );
 			schema.getCFBamBackingStore().getTableTimeType().deleteTimeTypeByScopeIdx( null,
 				ScopeId );
 			Iterator<ICFBamTimeTypeObj> iter = dict.values().iterator();
@@ -2334,16 +2334,16 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deleteTimeTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deleteTimeTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamValueByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( indexByDefSchemaIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict = indexByDefSchemaIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict = indexByDefSchemaIdx.get( key );
 			schema.getCFBamBackingStore().getTableTimeType().deleteTimeTypeByDefSchemaIdx( null,
 				DefSchemaId );
 			Iterator<ICFBamTimeTypeObj> iter = dict.values().iterator();
@@ -2368,16 +2368,16 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deleteTimeTypeByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public void deleteTimeTypeByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		if( indexByPrevIdx == null ) {
 			indexByPrevIdx = new HashMap< ICFBamValueByPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( indexByPrevIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict = indexByPrevIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict = indexByPrevIdx.get( key );
 			schema.getCFBamBackingStore().getTableTimeType().deleteTimeTypeByPrevIdx( null,
 				PrevId );
 			Iterator<ICFBamTimeTypeObj> iter = dict.values().iterator();
@@ -2402,16 +2402,16 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deleteTimeTypeByNextIdx( CFLibDbKeyHash256 NextId )
+	public void deleteTimeTypeByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		if( indexByNextIdx == null ) {
 			indexByNextIdx = new HashMap< ICFBamValueByNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( indexByNextIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict = indexByNextIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict = indexByNextIdx.get( key );
 			schema.getCFBamBackingStore().getTableTimeType().deleteTimeTypeByNextIdx( null,
 				NextId );
 			Iterator<ICFBamTimeTypeObj> iter = dict.values().iterator();
@@ -2436,18 +2436,18 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deleteTimeTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public void deleteTimeTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalPrevId( PrevId );
 		if( indexByContPrevIdx == null ) {
 			indexByContPrevIdx = new HashMap< ICFBamValueByContPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( indexByContPrevIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict = indexByContPrevIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict = indexByContPrevIdx.get( key );
 			schema.getCFBamBackingStore().getTableTimeType().deleteTimeTypeByContPrevIdx( null,
 				ScopeId,
 				PrevId );
@@ -2475,18 +2475,18 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deleteTimeTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public void deleteTimeTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalNextId( NextId );
 		if( indexByContNextIdx == null ) {
 			indexByContNextIdx = new HashMap< ICFBamValueByContNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( indexByContNextIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict = indexByContNextIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict = indexByContNextIdx.get( key );
 			schema.getCFBamBackingStore().getTableTimeType().deleteTimeTypeByContNextIdx( null,
 				ScopeId,
 				NextId );
@@ -2514,16 +2514,16 @@ public class CFBamTimeTypeTableObj
 	}
 
 	@Override
-	public void deleteTimeTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId )
+	public void deleteTimeTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
 	{
 		ICFBamTimeTypeBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTimeType().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );
 		if( indexBySchemaIdx == null ) {
 			indexBySchemaIdx = new HashMap< ICFBamTimeTypeBySchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamTimeTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamTimeTypeObj > >();
 		}
 		if( indexBySchemaIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamTimeTypeObj> dict = indexBySchemaIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamTimeTypeObj> dict = indexBySchemaIdx.get( key );
 			schema.getCFBamBackingStore().getTableTimeType().deleteTimeTypeBySchemaIdx( null,
 				SchemaDefId );
 			Iterator<ICFBamTimeTypeObj> iter = dict.values().iterator();

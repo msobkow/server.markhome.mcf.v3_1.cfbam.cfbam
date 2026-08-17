@@ -74,10 +74,10 @@ public class CFBamBuffBoolDef
 	extends CFBamBuffAtom
 	implements ICFBamBoolDef
 {
-	protected Boolean optionalInitValue;
-	protected String optionalFalseString;
-	protected String optionalTrueString;
-	protected String optionalNullString;
+	protected $implJavaAtomType$ optionalInitValue;
+	protected $implJavaAtomType$ optionalFalseString;
+	protected $implJavaAtomType$ optionalTrueString;
+	protected $implJavaAtomType$ optionalNullString;
 
 	public CFBamBuffBoolDef() {
 		super();
@@ -724,9 +724,9 @@ public class CFBamBuffBoolDef
 				return( cmp );
 			}
 			if( getOptionalInitValue() != null ) {
-				Boolean lhsInitValue = getOptionalInitValue();
+				$implJavaAtomType$ lhsInitValue = getOptionalInitValue();
 				if( rhs.getOptionalInitValue() ) {
-					Boolean rhsInitValue = rhs.getOptionalInitValue();
+					$implJavaAtomType$ rhsInitValue = rhs.getOptionalInitValue();
 					if( lhsInitValue ) {
 						if( ! rhsInitValue ) {
 							return( 1 );
@@ -826,9 +826,9 @@ public class CFBamBuffBoolDef
 				return( cmp );
 			}
 			if( getOptionalInitValue() != null ) {
-				Boolean lhsInitValue = getOptionalInitValue();
+				$implJavaAtomType$ lhsInitValue = getOptionalInitValue();
 				if( rhs.getOptionalInitValue() ) {
-					Boolean rhsInitValue = rhs.getOptionalInitValue();
+					$implJavaAtomType$ rhsInitValue = rhs.getOptionalInitValue();
 					if( lhsInitValue ) {
 						if( ! rhsInitValue ) {
 							return( 1 );
@@ -905,9 +905,9 @@ public class CFBamBuffBoolDef
 				return( cmp );
 			}
 			if( getOptionalInitValue() != null ) {
-				Boolean lhsInitValue = getOptionalInitValue();
+				$implJavaAtomType$ lhsInitValue = getOptionalInitValue();
 				if( rhs.getOptionalInitValue() ) {
-					Boolean rhsInitValue = rhs.getOptionalInitValue();
+					$implJavaAtomType$ rhsInitValue = rhs.getOptionalInitValue();
 					if( lhsInitValue ) {
 						if( ! rhsInitValue ) {
 							return( 1 );
@@ -1007,9 +1007,9 @@ public class CFBamBuffBoolDef
 				return( cmp );
 			}
 			if( getOptionalInitValue() != null ) {
-				Boolean lhsInitValue = getOptionalInitValue();
+				$implJavaAtomType$ lhsInitValue = getOptionalInitValue();
 				if( rhs.getOptionalInitValue() ) {
-					Boolean rhsInitValue = rhs.getOptionalInitValue();
+					$implJavaAtomType$ rhsInitValue = rhs.getOptionalInitValue();
 					if( lhsInitValue ) {
 						if( ! rhsInitValue ) {
 							return( 1 );
@@ -1086,9 +1086,9 @@ public class CFBamBuffBoolDef
 				return( cmp );
 			}
 			if( getOptionalInitValue() != null ) {
-				Boolean lhsInitValue = getOptionalInitValue();
+				$implJavaAtomType$ lhsInitValue = getOptionalInitValue();
 				if( rhs.getOptionalInitValue() ) {
-					Boolean rhsInitValue = rhs.getOptionalInitValue();
+					$implJavaAtomType$ rhsInitValue = rhs.getOptionalInitValue();
 					if( lhsInitValue ) {
 						if( ! rhsInitValue ) {
 							return( 1 );
@@ -1188,9 +1188,9 @@ public class CFBamBuffBoolDef
 				return( cmp );
 			}
 			if( getOptionalInitValue() != null ) {
-				Boolean lhsInitValue = getOptionalInitValue();
+				$implJavaAtomType$ lhsInitValue = getOptionalInitValue();
 				if( rhs.getOptionalInitValue() ) {
-					Boolean rhsInitValue = rhs.getOptionalInitValue();
+					$implJavaAtomType$ rhsInitValue = rhs.getOptionalInitValue();
 					if( lhsInitValue ) {
 						if( ! rhsInitValue ) {
 							return( 1 );

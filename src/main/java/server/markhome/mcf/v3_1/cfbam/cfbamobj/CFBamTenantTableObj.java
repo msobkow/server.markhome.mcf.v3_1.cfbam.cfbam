@@ -66,10 +66,10 @@ public class CFBamTenantTableObj
 	implements ICFBamTenantTableObj
 {
 	protected ICFBamSchemaObj schema;
-	private Map<CFLibDbKeyHash256, ICFSecTenantObj> members;
-	private Map<CFLibDbKeyHash256, ICFSecTenantObj> allTenant;
+	private Map<ICFLibKeyHash256, ICFSecTenantObj> members;
+	private Map<ICFLibKeyHash256, ICFSecTenantObj> allTenant;
 	private Map< ICFSecTenantByClusterIdxKey,
-		Map<CFLibDbKeyHash256, ICFSecTenantObj > > indexByClusterIdx;
+		Map<ICFLibKeyHash256, ICFSecTenantObj > > indexByClusterIdx;
 	private Map< ICFSecTenantByUNameIdxKey,
 		ICFSecTenantObj > indexByUNameIdx;
 	public static String TABLE_NAME = "Tenant";
@@ -77,7 +77,7 @@ public class CFBamTenantTableObj
 
 	public CFBamTenantTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecTenantObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecTenantObj>();
 		allTenant = null;
 		indexByClusterIdx = null;
 		indexByUNameIdx = null;
@@ -85,7 +85,7 @@ public class CFBamTenantTableObj
 
 	public CFBamTenantTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecTenantObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecTenantObj>();
 		allTenant = null;
 		indexByClusterIdx = null;
 		indexByUNameIdx = null;
@@ -196,7 +196,7 @@ public class CFBamTenantTableObj
 	@Override
 	public ICFSecTenantObj realiseTenant( ICFSecTenantObj Obj ) {
 		ICFSecTenantObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecTenantObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecTenantObj existingObj = members.get( pkey );
@@ -213,7 +213,7 @@ public class CFBamTenantTableObj
 				ICFSecTenantByClusterIdxKey keyClusterIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
-				Map<CFLibDbKeyHash256, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
+				Map<ICFLibKeyHash256, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
 					mapClusterIdx.remove( keepObj.getPKey() );
 					if( mapClusterIdx.size() <= 0 ) {
@@ -237,7 +237,7 @@ public class CFBamTenantTableObj
 				ICFSecTenantByClusterIdxKey keyClusterIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
-				Map<CFLibDbKeyHash256, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
+				Map<ICFLibKeyHash256, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
 					mapClusterIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -269,7 +269,7 @@ public class CFBamTenantTableObj
 				ICFSecTenantByClusterIdxKey keyClusterIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 				keyClusterIdx.setRequiredClusterId( keepObj.getRequiredClusterId() );
-				Map<CFLibDbKeyHash256, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
+				Map<ICFLibKeyHash256, ICFSecTenantObj > mapClusterIdx = indexByClusterIdx.get( keyClusterIdx );
 				if( mapClusterIdx != null ) {
 					mapClusterIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -301,12 +301,12 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readTenant( CFLibDbKeyHash256 pkey ) {
+	public ICFSecTenantObj readTenant( ICFLibKeyHash256 pkey ) {
 		return( readTenant( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecTenantObj readTenant( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFSecTenantObj readTenant( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFSecTenantObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -325,7 +325,7 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readCachedTenant( CFLibDbKeyHash256 pkey ) {
+	public ICFSecTenantObj readCachedTenant( ICFLibKeyHash256 pkey ) {
 		ICFSecTenantObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -341,7 +341,7 @@ public class CFBamTenantTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecTenantObj existing = readCachedTenant( pkey );
 		if( existing == null ) {
 			return;
@@ -454,7 +454,7 @@ public class CFBamTenantTableObj
 
 	}
 	@Override
-	public void deepDisposeTenant( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeTenant( ICFLibKeyHash256 pkey ) {
 		ICFSecTenantObj obj = readCachedTenant( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -462,7 +462,7 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj lockTenant( CFLibDbKeyHash256 pkey ) {
+	public ICFSecTenantObj lockTenant( ICFLibKeyHash256 pkey ) {
 		ICFSecTenantObj locked = null;
 		ICFSecTenant lockRec = schema.getCFSecBackingStore().getTableTenant().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -486,7 +486,7 @@ public class CFBamTenantTableObj
 	public List<ICFSecTenantObj> readAllTenant( boolean forceRead ) {
 		final String S_ProcName = "readAllTenant";
 		if( ( allTenant == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFSecTenantObj> map = new HashMap<CFLibDbKeyHash256,ICFSecTenantObj>();
+			Map<ICFLibKeyHash256, ICFSecTenantObj> map = new HashMap<ICFLibKeyHash256,ICFSecTenantObj>();
 			allTenant = map;
 			ICFSecTenant[] recList = schema.getCFSecBackingStore().getTableTenant().readAllDerived( null );
 			ICFSecTenant rec;
@@ -542,8 +542,8 @@ public class CFBamTenantTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -600,8 +600,8 @@ public class CFBamTenantTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -618,10 +618,10 @@ public class CFBamTenantTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecTenantObj> pageAllTenant(CFLibDbKeyHash256 priorId )
+	public List<ICFSecTenantObj> pageAllTenant(ICFLibKeyHash256 priorId )
 	{
 		final String S_ProcName = "pageAllTenant";
-		Map<CFLibDbKeyHash256, ICFSecTenantObj> map = new HashMap<CFLibDbKeyHash256,ICFSecTenantObj>();
+		Map<ICFLibKeyHash256, ICFSecTenantObj> map = new HashMap<ICFLibKeyHash256,ICFSecTenantObj>();
 		ICFSecTenant[] recList = schema.getCFSecBackingStore().getTableTenant().pageAllRec( null,
 			priorId );
 		ICFSecTenant rec;
@@ -640,43 +640,43 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readTenantByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFSecTenantObj readTenantByIdIdx( ICFLibKeyHash256 Id )
 	{
 		return( readTenantByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFSecTenantObj readTenantByIdIdx( CFLibDbKeyHash256 Id, boolean forceRead )
+	public ICFSecTenantObj readTenantByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
 	{
 		ICFSecTenantObj obj = readTenant( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFSecTenantObj> readTenantByClusterIdx( CFLibDbKeyHash256 ClusterId )
+	public List<ICFSecTenantObj> readTenantByClusterIdx( ICFLibKeyHash256 ClusterId )
 	{
 		return( readTenantByClusterIdx( ClusterId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecTenantObj> readTenantByClusterIdx( CFLibDbKeyHash256 ClusterId,
+	public List<ICFSecTenantObj> readTenantByClusterIdx( ICFLibKeyHash256 ClusterId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTenantByClusterIdx";
 		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
-		Map<CFLibDbKeyHash256, ICFSecTenantObj> dict;
+		Map<ICFLibKeyHash256, ICFSecTenantObj> dict;
 		if( indexByClusterIdx == null ) {
 			indexByClusterIdx = new HashMap< ICFSecTenantByClusterIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecTenantObj > >();
+				Map< ICFLibKeyHash256, ICFSecTenantObj > >();
 		}
 		if( ( ! forceRead ) && indexByClusterIdx.containsKey( key ) ) {
 			dict = indexByClusterIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFSecTenantObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFSecTenantObj>();
 			ICFSecTenantObj obj;
 			ICFSecTenant[] recList = schema.getCFSecBackingStore().getTableTenant().readDerivedByClusterIdx( null,
 				ClusterId );
@@ -734,8 +734,8 @@ public class CFBamTenantTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -747,7 +747,7 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readTenantByUNameIdx( CFLibDbKeyHash256 ClusterId,
+	public ICFSecTenantObj readTenantByUNameIdx( ICFLibKeyHash256 ClusterId,
 		String TenantName )
 	{
 		return( readTenantByUNameIdx( ClusterId,
@@ -756,7 +756,7 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readTenantByUNameIdx( CFLibDbKeyHash256 ClusterId,
+	public ICFSecTenantObj readTenantByUNameIdx( ICFLibKeyHash256 ClusterId,
 		String TenantName, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -785,7 +785,7 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readCachedTenantByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFSecTenantObj readCachedTenantByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFSecTenantObj obj = null;
 		obj = readCachedTenant( Id );
@@ -793,14 +793,14 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public List<ICFSecTenantObj> readCachedTenantByClusterIdx( CFLibDbKeyHash256 ClusterId )
+	public List<ICFSecTenantObj> readCachedTenantByClusterIdx( ICFLibKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "readCachedTenantByClusterIdx";
 		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		ArrayList<ICFSecTenantObj> arrayList = new ArrayList<ICFSecTenantObj>();
 		if( indexByClusterIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFSecTenantObj> dict;
+			Map<ICFLibKeyHash256, ICFSecTenantObj> dict;
 			if( indexByClusterIdx.containsKey( key ) ) {
 				dict = indexByClusterIdx.get( key );
 				int len = dict.size();
@@ -858,8 +858,8 @@ public class CFBamTenantTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -870,7 +870,7 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public ICFSecTenantObj readCachedTenantByUNameIdx( CFLibDbKeyHash256 ClusterId,
+	public ICFSecTenantObj readCachedTenantByUNameIdx( ICFLibKeyHash256 ClusterId,
 		String TenantName )
 	{
 		ICFSecTenantObj obj = null;
@@ -908,7 +908,7 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public void deepDisposeTenantByIdIdx( CFLibDbKeyHash256 Id )
+	public void deepDisposeTenantByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFSecTenantObj obj = readCachedTenantByIdIdx( Id );
 		if( obj != null ) {
@@ -917,7 +917,7 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public void deepDisposeTenantByClusterIdx( CFLibDbKeyHash256 ClusterId )
+	public void deepDisposeTenantByClusterIdx( ICFLibKeyHash256 ClusterId )
 	{
 		final String S_ProcName = "deepDisposeTenantByClusterIdx";
 		ICFSecTenantObj obj;
@@ -934,7 +934,7 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public void deepDisposeTenantByUNameIdx( CFLibDbKeyHash256 ClusterId,
+	public void deepDisposeTenantByUNameIdx( ICFLibKeyHash256 ClusterId,
 		String TenantName )
 	{
 		ICFSecTenantObj obj = readCachedTenantByUNameIdx( ClusterId,
@@ -954,8 +954,8 @@ public class CFBamTenantTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecTenantObj> pageTenantByClusterIdx( CFLibDbKeyHash256 ClusterId,
-		CFLibDbKeyHash256 priorId )
+	public List<ICFSecTenantObj> pageTenantByClusterIdx( ICFLibKeyHash256 ClusterId,
+		ICFLibKeyHash256 priorId )
 	{
 		final String S_ProcName = "pageTenantByClusterIdx";
 		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
@@ -996,7 +996,7 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public void deleteTenantByIdIdx( CFLibDbKeyHash256 Id )
+	public void deleteTenantByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFSecTenantObj obj = readTenant(Id);
 		if( obj != null ) {
@@ -1026,16 +1026,16 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public void deleteTenantByClusterIdx( CFLibDbKeyHash256 ClusterId )
+	public void deleteTenantByClusterIdx( ICFLibKeyHash256 ClusterId )
 	{
 		ICFSecTenantByClusterIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactoryTenant().newByClusterIdxKey();
 		key.setRequiredClusterId( ClusterId );
 		if( indexByClusterIdx == null ) {
 			indexByClusterIdx = new HashMap< ICFSecTenantByClusterIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecTenantObj > >();
+				Map< ICFLibKeyHash256, ICFSecTenantObj > >();
 		}
 		if( indexByClusterIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFSecTenantObj> dict = indexByClusterIdx.get( key );
+			Map<ICFLibKeyHash256, ICFSecTenantObj> dict = indexByClusterIdx.get( key );
 			schema.getCFSecBackingStore().getTableTenant().deleteTenantByClusterIdx( null,
 				ClusterId );
 			Iterator<ICFSecTenantObj> iter = dict.values().iterator();
@@ -1060,7 +1060,7 @@ public class CFBamTenantTableObj
 	}
 
 	@Override
-	public void deleteTenantByUNameIdx( CFLibDbKeyHash256 ClusterId,
+	public void deleteTenantByUNameIdx( ICFLibKeyHash256 ClusterId,
 		String TenantName )
 	{
 		if( indexByUNameIdx == null ) {

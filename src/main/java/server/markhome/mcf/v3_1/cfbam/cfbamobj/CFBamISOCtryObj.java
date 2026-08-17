@@ -375,7 +375,7 @@ public class CFBamISOCtryObj
 	}
 
 	@Override
-	public short getRequiredISOCtryId() {
+	public $implJavaAtomType$ getRequiredISOCtryId() {
 		return( getPKey() );
 	}
 
@@ -412,12 +412,12 @@ public class CFBamISOCtryObj
 	}
 
 	@Override
-	public String getRequiredISOCode() {
+	public $implJavaAtomType$ getRequiredISOCode() {
 		return( getISOCtryRec().getRequiredISOCode() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getISOCtryRec().getRequiredName() );
 	}
 

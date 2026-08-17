@@ -308,7 +308,7 @@ public class CFBamServerMethodObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -364,72 +364,72 @@ public class CFBamServerMethodObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTableId() {
+	public $implJavaAtomType$ getRequiredTableId() {
 		return( getServerMethodRec().getRequiredTableId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getServerMethodRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getServerMethodRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalShortName() {
+	public $implJavaAtomType$ getOptionalShortName() {
 		return( getServerMethodRec().getOptionalShortName() );
 	}
 
 	@Override
-	public String getOptionalLabel() {
+	public $implJavaAtomType$ getOptionalLabel() {
 		return( getServerMethodRec().getOptionalLabel() );
 	}
 
 	@Override
-	public String getOptionalShortDescription() {
+	public $implJavaAtomType$ getOptionalShortDescription() {
 		return( getServerMethodRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getServerMethodRec().getOptionalDescription() );
 	}
 
 	@Override
-	public String getOptionalSuffix() {
+	public $implJavaAtomType$ getOptionalSuffix() {
 		return( getServerMethodRec().getOptionalSuffix() );
 	}
 
 	@Override
-	public boolean getRequiredIsInstanceMethod() {
+	public $implJavaAtomType$ getRequiredIsInstanceMethod() {
 		return( getServerMethodRec().getRequiredIsInstanceMethod() );
 	}
 
 	@Override
-	public boolean getRequiredIsServerOnly() {
+	public $implJavaAtomType$ getRequiredIsServerOnly() {
 		return( getServerMethodRec().getRequiredIsServerOnly() );
 	}
 
 	@Override
-	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
+	public $implJavaAtomType$ getRequiredCodeVis() {
 		return( getServerMethodRec().getRequiredCodeVis() );
 	}
 
 	@Override
-	public String getRequiredJMethodBody() {
+	public $implJavaAtomType$ getRequiredJMethodBody() {
 		return( getServerMethodRec().getRequiredJMethodBody() );
 	}
 
 	@Override
-	public String getRequiredCppMethodBody() {
+	public $implJavaAtomType$ getRequiredCppMethodBody() {
 		return( getServerMethodRec().getRequiredCppMethodBody() );
 	}
 
 	@Override
-	public String getRequiredCsMethodBody() {
+	public $implJavaAtomType$ getRequiredCsMethodBody() {
 		return( getServerMethodRec().getRequiredCsMethodBody() );
 	}
 }

@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTableByCodeVisIdxKey
 	implements ICFBamTableByCodeVisIdxKey, Comparable<Object>, Serializable
 {
-	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
+	protected $implJavaAtomType$ requiredCodeVis;
 	public CFBamBuffTableByCodeVisIdxKey() {
 		requiredCodeVis = ICFBamPubTable.CODEVIS_INIT_VALUE;
 	}

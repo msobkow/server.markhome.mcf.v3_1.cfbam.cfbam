@@ -74,7 +74,7 @@ public class CFBamBuffDoubleType
 	extends CFBamBuffDoubleDef
 	implements ICFBamDoubleType
 {
-	protected CFLibDbKeyHash256 requiredSchemaDefId;
+	protected $implJavaAtomType$ requiredSchemaDefId;
 
 	public CFBamBuffDoubleType() {
 		super();

@@ -122,7 +122,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	The DbKeyHash512Type-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamDbKeyHash512TypeObj readDbKeyHash512Type( CFLibDbKeyHash256 pkey );
+	ICFBamDbKeyHash512TypeObj readDbKeyHash512Type( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a DbKeyHash512Type-derived instance by it's primary key.
@@ -132,19 +132,19 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	The DbKeyHash512Type-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamDbKeyHash512TypeObj readDbKeyHash512Type( CFLibDbKeyHash256 pkey,
+	ICFBamDbKeyHash512TypeObj readDbKeyHash512Type( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamDbKeyHash512TypeObj readCachedDbKeyHash512Type( CFLibDbKeyHash256 pkey );
+	ICFBamDbKeyHash512TypeObj readCachedDbKeyHash512Type( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeDbKeyHash512Type( ICFBamDbKeyHash512TypeObj obj );
 
-	void deepDisposeDbKeyHash512Type( CFLibDbKeyHash256 pkey );
+	void deepDisposeDbKeyHash512Type( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamDbKeyHash512TypeObj lockDbKeyHash512Type( CFLibDbKeyHash256 pkey );
+	ICFBamDbKeyHash512TypeObj lockDbKeyHash512Type( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the DbKeyHash512Type-derived instances in the database.
@@ -172,7 +172,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	CFBamValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDbKeyHash512TypeObj readDbKeyHash512TypeByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamDbKeyHash512TypeObj readDbKeyHash512TypeByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamValueObj instance for the primary key attributes.
@@ -182,7 +182,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	CFBamValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDbKeyHash512TypeObj readDbKeyHash512TypeByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamDbKeyHash512TypeObj readDbKeyHash512TypeByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -195,7 +195,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	CFBamValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDbKeyHash512TypeObj readDbKeyHash512TypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamDbKeyHash512TypeObj readDbKeyHash512TypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -208,7 +208,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	CFBamValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDbKeyHash512TypeObj readDbKeyHash512TypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamDbKeyHash512TypeObj readDbKeyHash512TypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -220,7 +220,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByScopeIdx( ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash512TypeObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -230,7 +230,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByScopeIdx( ICFLibKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -241,7 +241,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash512TypeObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -251,7 +251,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -262,7 +262,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByPrevIdx( ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash512TypeObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -272,7 +272,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByPrevIdx( ICFLibKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -283,7 +283,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByNextIdx( ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash512TypeObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -293,7 +293,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByNextIdx( ICFLibKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -306,8 +306,8 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash512TypeObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -319,8 +319,8 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -333,8 +333,8 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash512TypeObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -346,8 +346,8 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -358,7 +358,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
 
 	/**
 	 *	Get the map of CFBamDbKeyHash512TypeObj instances sorted by their primary keys for the duplicate SchemaIdx key.
@@ -368,50 +368,50 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *	@return	List of CFBamDbKeyHash512TypeObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId,
+	List<ICFBamDbKeyHash512TypeObj> readDbKeyHash512TypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId,
 		boolean forceRead );
 
-	ICFBamDbKeyHash512TypeObj readCachedDbKeyHash512TypeByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamDbKeyHash512TypeObj readCachedDbKeyHash512TypeByIdIdx( ICFLibKeyHash256 Id );
 
-	ICFBamDbKeyHash512TypeObj readCachedDbKeyHash512TypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamDbKeyHash512TypeObj readCachedDbKeyHash512TypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeByScopeIdx( ICFLibKeyHash256 ScopeId );
 
-	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
-	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeByPrevIdx( ICFLibKeyHash256 PrevId );
 
-	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeByNextIdx( ICFLibKeyHash256 NextId );
 
-	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
-	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
-	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	List<ICFBamDbKeyHash512TypeObj> readCachedDbKeyHash512TypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
 
-	void deepDisposeDbKeyHash512TypeByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeDbKeyHash512TypeByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeDbKeyHash512TypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deepDisposeDbKeyHash512TypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeDbKeyHash512TypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deepDisposeDbKeyHash512TypeByScopeIdx( ICFLibKeyHash256 ScopeId );
 
-	void deepDisposeDbKeyHash512TypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeDbKeyHash512TypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
-	void deepDisposeDbKeyHash512TypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeDbKeyHash512TypeByPrevIdx( ICFLibKeyHash256 PrevId );
 
-	void deepDisposeDbKeyHash512TypeByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeDbKeyHash512TypeByNextIdx( ICFLibKeyHash256 NextId );
 
-	void deepDisposeDbKeyHash512TypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeDbKeyHash512TypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
-	void deepDisposeDbKeyHash512TypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeDbKeyHash512TypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
-	void deepDisposeDbKeyHash512TypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	void deepDisposeDbKeyHash512TypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
 
 	/**
 	 *	Internal use only.
@@ -428,7 +428,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *
 	 *	@param	Id	The DbKeyHash512Type key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash512TypeByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteDbKeyHash512TypeByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -437,7 +437,7 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *
 	 *	@param	Name	The DbKeyHash512Type key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash512TypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deleteDbKeyHash512TypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -445,28 +445,28 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *
 	 *	@param	ScopeId	The DbKeyHash512Type key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash512TypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deleteDbKeyHash512TypeByScopeIdx( ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The DbKeyHash512Type key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash512TypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteDbKeyHash512TypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The DbKeyHash512Type key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash512TypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteDbKeyHash512TypeByPrevIdx( ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The DbKeyHash512Type key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash512TypeByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteDbKeyHash512TypeByNextIdx( ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -475,8 +475,8 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *
 	 *	@param	PrevId	The DbKeyHash512Type key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash512TypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteDbKeyHash512TypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -485,15 +485,15 @@ public interface ICFBamDbKeyHash512TypeTableObj
 	 *
 	 *	@param	NextId	The DbKeyHash512Type key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash512TypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteDbKeyHash512TypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SchemaDefId	The DbKeyHash512Type key attribute of the instance generating the id.
 	 */
-	void deleteDbKeyHash512TypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	void deleteDbKeyHash512TypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
 
 	/**
 	 *	Move the CFBamDbKeyHash512TypeObj instance up in the chain.  The instance is always refreshed.

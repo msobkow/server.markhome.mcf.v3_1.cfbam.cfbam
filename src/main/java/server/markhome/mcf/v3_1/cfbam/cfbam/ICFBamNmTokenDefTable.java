@@ -114,7 +114,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteNmTokenDefByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the NmTokenDef instances identified by the key UNameIdx.
 	 *
@@ -125,7 +125,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@param	Name	The NmTokenDef key attribute of the instance generating the id.
 	 */
 	void deleteNmTokenDefByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
+		ICFLibKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -145,7 +145,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@param	ScopeId	The NmTokenDef key attribute of the instance generating the id.
 	 */
 	void deleteNmTokenDefByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId );
+		ICFLibKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the NmTokenDef instances identified by the key ScopeIdx.
@@ -164,7 +164,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@param	DefSchemaId	The NmTokenDef key attribute of the instance generating the id.
 	 */
 	void deleteNmTokenDefByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		ICFLibKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the NmTokenDef instances identified by the key DefSchemaIdx.
@@ -183,7 +183,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@param	PrevId	The NmTokenDef key attribute of the instance generating the id.
 	 */
 	void deleteNmTokenDefByPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		ICFLibKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the NmTokenDef instances identified by the key PrevIdx.
@@ -202,7 +202,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@param	NextId	The NmTokenDef key attribute of the instance generating the id.
 	 */
 	void deleteNmTokenDefByNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		ICFLibKeyHash256 argNextId );
 
 	/**
 	 *	Delete the NmTokenDef instances identified by the key NextIdx.
@@ -223,8 +223,8 @@ public interface ICFBamNmTokenDefTable
 	 *	@param	PrevId	The NmTokenDef key attribute of the instance generating the id.
 	 */
 	void deleteNmTokenDefByContPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argPrevId );
+		ICFLibKeyHash256 argScopeId,
+		ICFLibKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the NmTokenDef instances identified by the key ContPrevIdx.
@@ -245,8 +245,8 @@ public interface ICFBamNmTokenDefTable
 	 *	@param	NextId	The NmTokenDef key attribute of the instance generating the id.
 	 */
 	void deleteNmTokenDefByContNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argNextId );
+		ICFLibKeyHash256 argScopeId,
+		ICFLibKeyHash256 argNextId );
 
 	/**
 	 *	Delete the NmTokenDef instances identified by the key ContNextIdx.
@@ -270,7 +270,7 @@ public interface ICFBamNmTokenDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamNmTokenDef readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived NmTokenDef record instance by primary key.
@@ -283,7 +283,7 @@ public interface ICFBamNmTokenDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamNmTokenDef lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all NmTokenDef instances.
@@ -305,7 +305,7 @@ public interface ICFBamNmTokenDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamNmTokenDef readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read the derived NmTokenDef record instance identified by the unique key UNameIdx.
@@ -320,7 +320,7 @@ public interface ICFBamNmTokenDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamNmTokenDef readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -333,7 +333,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamNmTokenDef[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived NmTokenDef record instances identified by the duplicate key DefSchemaIdx.
@@ -345,7 +345,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamNmTokenDef[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived NmTokenDef record instances identified by the duplicate key PrevIdx.
@@ -357,7 +357,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamNmTokenDef[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived NmTokenDef record instances identified by the duplicate key NextIdx.
@@ -369,7 +369,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamNmTokenDef[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived NmTokenDef record instances identified by the duplicate key ContPrevIdx.
@@ -383,8 +383,8 @@ public interface ICFBamNmTokenDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamNmTokenDef[] readDerivedByContPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived NmTokenDef record instances identified by the duplicate key ContNextIdx.
@@ -398,8 +398,8 @@ public interface ICFBamNmTokenDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamNmTokenDef[] readDerivedByContNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read the specific NmTokenDef record instance identified by the primary key.
@@ -414,7 +414,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamNmTokenDef readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific NmTokenDef record instance identified by the primary key.
@@ -429,7 +429,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamNmTokenDef lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific NmTokenDef record instances.
@@ -453,7 +453,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamNmTokenDef readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read the specific NmTokenDef record instance identified by the unique key UNameIdx.
@@ -470,7 +470,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamNmTokenDef readRecByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -485,7 +485,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamNmTokenDef[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific NmTokenDef record instances identified by the duplicate key DefSchemaIdx.
@@ -499,7 +499,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamNmTokenDef[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific NmTokenDef record instances identified by the duplicate key PrevIdx.
@@ -513,7 +513,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamNmTokenDef[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific NmTokenDef record instances identified by the duplicate key NextIdx.
@@ -527,7 +527,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamNmTokenDef[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific NmTokenDef record instances identified by the duplicate key ContPrevIdx.
@@ -543,8 +543,8 @@ public interface ICFBamNmTokenDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamNmTokenDef[] readRecByContPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific NmTokenDef record instances identified by the duplicate key ContNextIdx.
@@ -560,8 +560,8 @@ public interface ICFBamNmTokenDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamNmTokenDef[] readRecByContNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -569,7 +569,7 @@ public interface ICFBamNmTokenDefTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamNmTokenDef moveRecUp( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id,
+		ICFLibKeyHash256 Id,
 		int revision );
 
 	/**
@@ -578,6 +578,6 @@ public interface ICFBamNmTokenDefTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamNmTokenDef moveRecDown( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id,
+		ICFLibKeyHash256 Id,
 		int revision );
 }

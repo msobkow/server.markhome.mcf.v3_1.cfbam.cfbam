@@ -313,22 +313,22 @@ public class CFBamDoubleDefObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public Double getOptionalInitValue() {
+	public $implJavaAtomType$ getOptionalInitValue() {
 		return( getDoubleDefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public Double getOptionalMinValue() {
+	public $implJavaAtomType$ getOptionalMinValue() {
 		return( getDoubleDefRec().getOptionalMinValue() );
 	}
 
 	@Override
-	public Double getOptionalMaxValue() {
+	public $implJavaAtomType$ getOptionalMaxValue() {
 		return( getDoubleDefRec().getOptionalMaxValue() );
 	}
 }

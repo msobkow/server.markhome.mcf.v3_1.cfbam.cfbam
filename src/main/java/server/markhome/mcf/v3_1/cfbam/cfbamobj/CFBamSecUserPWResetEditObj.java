@@ -397,12 +397,12 @@ public class CFBamSecUserPWResetEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -418,41 +418,41 @@ public class CFBamSecUserPWResetEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
+	public $implJavaAtomType$ getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public String getRequiredSentToEMailAddr() {
+	public $implJavaAtomType$ getRequiredSentToEMailAddr() {
 		return( getSecUserPWResetRec().getRequiredSentToEMailAddr() );
 	}
 
 	@Override
-	public void setRequiredSentToEMailAddr( String value ) {
+	public void setRequiredSentToEMailAddr( $implJavaAtomType$ value ) {
 		if( getSecUserPWResetRec().getRequiredSentToEMailAddr() != value ) {
 			getSecUserPWResetRec().setRequiredSentToEMailAddr( value );
 		}
 	}
 
 	@Override
-	public CFLibUuid6 getRequiredPasswordResetUuid6() {
+	public $implJavaAtomType$ getRequiredPasswordResetUuid6() {
 		return( getSecUserPWResetRec().getRequiredPasswordResetUuid6() );
 	}
 
 	@Override
-	public void setRequiredPasswordResetUuid6( CFLibUuid6 value ) {
+	public void setRequiredPasswordResetUuid6( $implJavaAtomType$ value ) {
 		if( getSecUserPWResetRec().getRequiredPasswordResetUuid6() != value ) {
 			getSecUserPWResetRec().setRequiredPasswordResetUuid6( value );
 		}
 	}
 
 	@Override
-	public boolean getRequiredNewAccount() {
+	public $implJavaAtomType$ getRequiredNewAccount() {
 		return( getSecUserPWResetRec().getRequiredNewAccount() );
 	}
 
 	@Override
-	public void setRequiredNewAccount( boolean value ) {
+	public void setRequiredNewAccount( $implJavaAtomType$ value ) {
 		if( getSecUserPWResetRec().getRequiredNewAccount() != value ) {
 			getSecUserPWResetRec().setRequiredNewAccount( value );
 		}

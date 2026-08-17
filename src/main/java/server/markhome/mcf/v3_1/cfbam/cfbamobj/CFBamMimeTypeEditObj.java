@@ -408,36 +408,36 @@ public class CFBamMimeTypeEditObj
 	}
 
 	@Override
-	public int getRequiredMimeTypeId() {
+	public $implJavaAtomType$ getRequiredMimeTypeId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredMimeTypeId(int value) {
+	public void setRequiredMimeTypeId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getMimeTypeRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getMimeTypeRec().getRequiredName() != value ) {
 			getMimeTypeRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalFileTypes() {
+	public $implJavaAtomType$ getOptionalFileTypes() {
 		return( getMimeTypeRec().getOptionalFileTypes() );
 	}
 
 	@Override
-	public void setOptionalFileTypes( String value ) {
+	public void setOptionalFileTypes( $implJavaAtomType$ value ) {
 		if( getMimeTypeRec().getOptionalFileTypes() != value ) {
 			getMimeTypeRec().setOptionalFileTypes( value );
 		}

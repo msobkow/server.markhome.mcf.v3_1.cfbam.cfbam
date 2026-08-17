@@ -73,7 +73,7 @@ public class CFBamEnumTagObj
 	protected boolean isNew;
 	protected ICFBamEnumTagEditObj edit;
 	protected ICFBamSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFBamEnumTag rec;
 	protected ICFBamEnumDefObj requiredContainerEnumDef;
 	protected ICFBamSchemaDefObj optionalLookupDefSchema;
@@ -326,12 +326,12 @@ public class CFBamEnumTagObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -408,7 +408,7 @@ public class CFBamEnumTagObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -486,32 +486,32 @@ public class CFBamEnumTagObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getEnumTagRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredEnumId() {
+	public $implJavaAtomType$ getRequiredEnumId() {
 		return( getEnumTagRec().getRequiredEnumId() );
 	}
 
 	@Override
-	public Short getOptionalEnumCode() {
+	public $implJavaAtomType$ getOptionalEnumCode() {
 		return( getEnumTagRec().getOptionalEnumCode() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getEnumTagRec().getRequiredName() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalPrevId() {
+	public $implJavaAtomType$ getOptionalPrevId() {
 		return( getEnumTagRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalNextId() {
+	public $implJavaAtomType$ getOptionalNextId() {
 		return( getEnumTagRec().getOptionalNextId() );
 	}
 

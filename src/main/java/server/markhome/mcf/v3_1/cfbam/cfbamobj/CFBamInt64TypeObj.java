@@ -318,7 +318,7 @@ public class CFBamInt64TypeObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -339,7 +339,7 @@ public class CFBamInt64TypeObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
+	public $implJavaAtomType$ getRequiredSchemaDefId() {
 		return( getInt64TypeRec().getRequiredSchemaDefId() );
 	}
 }

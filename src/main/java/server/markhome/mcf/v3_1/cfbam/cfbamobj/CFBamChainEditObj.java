@@ -406,12 +406,12 @@ public class CFBamChainEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -427,106 +427,106 @@ public class CFBamChainEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getChainRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getChainRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getChainRec().getRequiredName() != value ) {
 			getChainRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalShortName() {
+	public $implJavaAtomType$ getOptionalShortName() {
 		return( getChainRec().getOptionalShortName() );
 	}
 
 	@Override
-	public void setOptionalShortName( String value ) {
+	public void setOptionalShortName( $implJavaAtomType$ value ) {
 		if( getChainRec().getOptionalShortName() != value ) {
 			getChainRec().setOptionalShortName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalLabel() {
+	public $implJavaAtomType$ getOptionalLabel() {
 		return( getChainRec().getOptionalLabel() );
 	}
 
 	@Override
-	public void setOptionalLabel( String value ) {
+	public void setOptionalLabel( $implJavaAtomType$ value ) {
 		if( getChainRec().getOptionalLabel() != value ) {
 			getChainRec().setOptionalLabel( value );
 		}
 	}
 
 	@Override
-	public String getOptionalShortDescription() {
+	public $implJavaAtomType$ getOptionalShortDescription() {
 		return( getChainRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public void setOptionalShortDescription( String value ) {
+	public void setOptionalShortDescription( $implJavaAtomType$ value ) {
 		if( getChainRec().getOptionalShortDescription() != value ) {
 			getChainRec().setOptionalShortDescription( value );
 		}
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getChainRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( String value ) {
+	public void setOptionalDescription( $implJavaAtomType$ value ) {
 		if( getChainRec().getOptionalDescription() != value ) {
 			getChainRec().setOptionalDescription( value );
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTableId() {
+	public $implJavaAtomType$ getRequiredTableId() {
 		return( getChainRec().getRequiredTableId() );
 	}
 
 	@Override
-	public String getOptionalSuffix() {
+	public $implJavaAtomType$ getOptionalSuffix() {
 		return( getChainRec().getOptionalSuffix() );
 	}
 
 	@Override
-	public void setOptionalSuffix( String value ) {
+	public void setOptionalSuffix( $implJavaAtomType$ value ) {
 		if( getChainRec().getOptionalSuffix() != value ) {
 			getChainRec().setOptionalSuffix( value );
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredPrevRelationId() {
+	public $implJavaAtomType$ getRequiredPrevRelationId() {
 		return( getChainRec().getRequiredPrevRelationId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredNextRelationId() {
+	public $implJavaAtomType$ getRequiredNextRelationId() {
 		return( getChainRec().getRequiredNextRelationId() );
 	}
 

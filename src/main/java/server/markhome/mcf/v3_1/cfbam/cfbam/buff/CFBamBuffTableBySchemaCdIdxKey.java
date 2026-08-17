@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTableBySchemaCdIdxKey
 	implements ICFBamTableBySchemaCdIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredSchemaDefId;
-	protected String requiredTableClassCode;
+	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected $implJavaAtomType$ requiredTableClassCode;
 	public CFBamBuffTableBySchemaCdIdxKey() {
 		requiredSchemaDefId = CFLibDbKeyHash256.fromHex( ICFBamPubTable.SCHEMADEFID_INIT_VALUE.toString() );
 		requiredTableClassCode = ICFBamPubTable.TABLECLASSCODE_INIT_VALUE;

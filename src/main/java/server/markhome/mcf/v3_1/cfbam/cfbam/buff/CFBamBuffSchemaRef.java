@@ -74,13 +74,13 @@ public class CFBamBuffSchemaRef
 	extends CFBamBuffScope
 	implements ICFBamSchemaRef
 {
-	protected CFLibDbKeyHash256 requiredSchemaId;
-	protected String requiredName;
-	protected String requiredRefModelName;
-	protected String requiredIncludeRoot;
-	protected CFLibDbKeyHash256 optionalRefSchemaId;
-	protected CFLibDbKeyHash256 optionalPrevId;
-	protected CFLibDbKeyHash256 optionalNextId;
+	protected $implJavaAtomType$ requiredSchemaId;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ requiredRefModelName;
+	protected $implJavaAtomType$ requiredIncludeRoot;
+	protected $implJavaAtomType$ optionalRefSchemaId;
+	protected $implJavaAtomType$ optionalPrevId;
+	protected $implJavaAtomType$ optionalNextId;
 
 	public CFBamBuffSchemaRef() {
 		super();

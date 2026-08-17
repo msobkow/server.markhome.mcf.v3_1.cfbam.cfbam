@@ -261,166 +261,166 @@ public class CFBamServerMethodEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTableId() {
+	public $implJavaAtomType$ getRequiredTableId() {
 		return( getServerMethodRec().getRequiredTableId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getServerMethodRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getServerMethodRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getServerMethodRec().getRequiredName() != value ) {
 			getServerMethodRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalShortName() {
+	public $implJavaAtomType$ getOptionalShortName() {
 		return( getServerMethodRec().getOptionalShortName() );
 	}
 
 	@Override
-	public void setOptionalShortName( String value ) {
+	public void setOptionalShortName( $implJavaAtomType$ value ) {
 		if( getServerMethodRec().getOptionalShortName() != value ) {
 			getServerMethodRec().setOptionalShortName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalLabel() {
+	public $implJavaAtomType$ getOptionalLabel() {
 		return( getServerMethodRec().getOptionalLabel() );
 	}
 
 	@Override
-	public void setOptionalLabel( String value ) {
+	public void setOptionalLabel( $implJavaAtomType$ value ) {
 		if( getServerMethodRec().getOptionalLabel() != value ) {
 			getServerMethodRec().setOptionalLabel( value );
 		}
 	}
 
 	@Override
-	public String getOptionalShortDescription() {
+	public $implJavaAtomType$ getOptionalShortDescription() {
 		return( getServerMethodRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public void setOptionalShortDescription( String value ) {
+	public void setOptionalShortDescription( $implJavaAtomType$ value ) {
 		if( getServerMethodRec().getOptionalShortDescription() != value ) {
 			getServerMethodRec().setOptionalShortDescription( value );
 		}
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getServerMethodRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( String value ) {
+	public void setOptionalDescription( $implJavaAtomType$ value ) {
 		if( getServerMethodRec().getOptionalDescription() != value ) {
 			getServerMethodRec().setOptionalDescription( value );
 		}
 	}
 
 	@Override
-	public String getOptionalSuffix() {
+	public $implJavaAtomType$ getOptionalSuffix() {
 		return( getServerMethodRec().getOptionalSuffix() );
 	}
 
 	@Override
-	public void setOptionalSuffix( String value ) {
+	public void setOptionalSuffix( $implJavaAtomType$ value ) {
 		if( getServerMethodRec().getOptionalSuffix() != value ) {
 			getServerMethodRec().setOptionalSuffix( value );
 		}
 	}
 
 	@Override
-	public boolean getRequiredIsInstanceMethod() {
+	public $implJavaAtomType$ getRequiredIsInstanceMethod() {
 		return( getServerMethodRec().getRequiredIsInstanceMethod() );
 	}
 
 	@Override
-	public void setRequiredIsInstanceMethod( boolean value ) {
+	public void setRequiredIsInstanceMethod( $implJavaAtomType$ value ) {
 		if( getServerMethodRec().getRequiredIsInstanceMethod() != value ) {
 			getServerMethodRec().setRequiredIsInstanceMethod( value );
 		}
 	}
 
 	@Override
-	public boolean getRequiredIsServerOnly() {
+	public $implJavaAtomType$ getRequiredIsServerOnly() {
 		return( getServerMethodRec().getRequiredIsServerOnly() );
 	}
 
 	@Override
-	public void setRequiredIsServerOnly( boolean value ) {
+	public void setRequiredIsServerOnly( $implJavaAtomType$ value ) {
 		if( getServerMethodRec().getRequiredIsServerOnly() != value ) {
 			getServerMethodRec().setRequiredIsServerOnly( value );
 		}
 	}
 
 	@Override
-	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
+	public $implJavaAtomType$ getRequiredCodeVis() {
 		return( getServerMethodRec().getRequiredCodeVis() );
 	}
 
 	@Override
-	public void setRequiredCodeVis( ICFBamPubSchema.CodeVisibilityEnum value ) {
+	public void setRequiredCodeVis( $implJavaAtomType$ value ) {
 		if( getServerMethodRec().getRequiredCodeVis() != value ) {
 			getServerMethodRec().setRequiredCodeVis( value );
 		}
 	}
 
 	@Override
-	public String getRequiredJMethodBody() {
+	public $implJavaAtomType$ getRequiredJMethodBody() {
 		return( getServerMethodRec().getRequiredJMethodBody() );
 	}
 
 	@Override
-	public void setRequiredJMethodBody( String value ) {
+	public void setRequiredJMethodBody( $implJavaAtomType$ value ) {
 		if( getServerMethodRec().getRequiredJMethodBody() != value ) {
 			getServerMethodRec().setRequiredJMethodBody( value );
 		}
 	}
 
 	@Override
-	public String getRequiredCppMethodBody() {
+	public $implJavaAtomType$ getRequiredCppMethodBody() {
 		return( getServerMethodRec().getRequiredCppMethodBody() );
 	}
 
 	@Override
-	public void setRequiredCppMethodBody( String value ) {
+	public void setRequiredCppMethodBody( $implJavaAtomType$ value ) {
 		if( getServerMethodRec().getRequiredCppMethodBody() != value ) {
 			getServerMethodRec().setRequiredCppMethodBody( value );
 		}
 	}
 
 	@Override
-	public String getRequiredCsMethodBody() {
+	public $implJavaAtomType$ getRequiredCsMethodBody() {
 		return( getServerMethodRec().getRequiredCsMethodBody() );
 	}
 
 	@Override
-	public void setRequiredCsMethodBody( String value ) {
+	public void setRequiredCsMethodBody( $implJavaAtomType$ value ) {
 		if( getServerMethodRec().getRequiredCsMethodBody() != value ) {
 			getServerMethodRec().setRequiredCsMethodBody( value );
 		}

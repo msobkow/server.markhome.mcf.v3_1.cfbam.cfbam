@@ -74,8 +74,8 @@ public class CFBamBuffPopTopDep
 	extends CFBamBuffPopDep
 	implements ICFBamPopTopDep
 {
-	protected CFLibDbKeyHash256 requiredContRelationId;
-	protected String requiredName;
+	protected $implJavaAtomType$ requiredContRelationId;
+	protected $implJavaAtomType$ requiredName;
 
 	public CFBamBuffPopTopDep() {
 		super();

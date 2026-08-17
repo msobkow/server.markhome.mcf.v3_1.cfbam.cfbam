@@ -172,7 +172,7 @@ public class CFBamRelationObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getRelationColTableObj().readRelationColByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -338,7 +338,7 @@ public class CFBamRelationObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -477,97 +477,97 @@ public class CFBamRelationObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTableId() {
+	public $implJavaAtomType$ getRequiredTableId() {
 		return( getRelationRec().getRequiredTableId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getRelationRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getRelationRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalShortName() {
+	public $implJavaAtomType$ getOptionalShortName() {
 		return( getRelationRec().getOptionalShortName() );
 	}
 
 	@Override
-	public String getOptionalLabel() {
+	public $implJavaAtomType$ getOptionalLabel() {
 		return( getRelationRec().getOptionalLabel() );
 	}
 
 	@Override
-	public String getOptionalShortDescription() {
+	public $implJavaAtomType$ getOptionalShortDescription() {
 		return( getRelationRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getRelationRec().getOptionalDescription() );
 	}
 
 	@Override
-	public ICFBamPubSchema.RelationTypeEnum getRequiredRelationType() {
+	public $implJavaAtomType$ getRequiredRelationType() {
 		return( getRelationRec().getRequiredRelationType() );
 	}
 
 	@Override
-	public String getOptionalDbName() {
+	public $implJavaAtomType$ getOptionalDbName() {
 		return( getRelationRec().getOptionalDbName() );
 	}
 
 	@Override
-	public String getOptionalSuffix() {
+	public $implJavaAtomType$ getOptionalSuffix() {
 		return( getRelationRec().getOptionalSuffix() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredFromIndexId() {
+	public $implJavaAtomType$ getRequiredFromIndexId() {
 		return( getRelationRec().getRequiredFromIndexId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredToTableId() {
+	public $implJavaAtomType$ getRequiredToTableId() {
 		return( getRelationRec().getRequiredToTableId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredToIndexId() {
+	public $implJavaAtomType$ getRequiredToIndexId() {
 		return( getRelationRec().getRequiredToIndexId() );
 	}
 
 	@Override
-	public boolean getRequiredIsRequired() {
+	public $implJavaAtomType$ getRequiredIsRequired() {
 		return( getRelationRec().getRequiredIsRequired() );
 	}
 
 	@Override
-	public boolean getRequiredIsXsdContainer() {
+	public $implJavaAtomType$ getRequiredIsXsdContainer() {
 		return( getRelationRec().getRequiredIsXsdContainer() );
 	}
 
 	@Override
-	public boolean getRequiredIsLateResolver() {
+	public $implJavaAtomType$ getRequiredIsLateResolver() {
 		return( getRelationRec().getRequiredIsLateResolver() );
 	}
 
 	@Override
-	public boolean getRequiredAllowAddendum() {
+	public $implJavaAtomType$ getRequiredAllowAddendum() {
 		return( getRelationRec().getRequiredAllowAddendum() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalNarrowedId() {
+	public $implJavaAtomType$ getOptionalNarrowedId() {
 		return( getRelationRec().getOptionalNarrowedId() );
 	}
 
 	@Override
-	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
+	public $implJavaAtomType$ getRequiredCodeVis() {
 		return( getRelationRec().getRequiredCodeVis() );
 	}
 

@@ -313,17 +313,17 @@ public class CFBamNmTokenDefObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public int getRequiredMaxLen() {
+	public $implJavaAtomType$ getRequiredMaxLen() {
 		return( getNmTokenDefRec().getRequiredMaxLen() );
 	}
 
 	@Override
-	public String getOptionalInitValue() {
+	public $implJavaAtomType$ getOptionalInitValue() {
 		return( getNmTokenDefRec().getOptionalInitValue() );
 	}
 }

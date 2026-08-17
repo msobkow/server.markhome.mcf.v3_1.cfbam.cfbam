@@ -80,15 +80,15 @@ public class CFBamBuffParamH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 requiredServerMethodId;
-	protected CFLibDbKeyHash256 optionalDefSchemaId;
-	protected String requiredName;
-	protected String optionalShortDescription;
-	protected String optionalDescription;
-	protected boolean requiredIsNullable;
-	protected CFLibDbKeyHash256 optionalTypeId;
-	protected CFLibDbKeyHash256 optionalPrevId;
-	protected CFLibDbKeyHash256 optionalNextId;
+	protected $implJavaAtomType$ requiredServerMethodId;
+	protected $implJavaAtomType$ optionalDefSchemaId;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalShortDescription;
+	protected $implJavaAtomType$ optionalDescription;
+	protected $implJavaAtomType$ requiredIsNullable;
+	protected $implJavaAtomType$ optionalTypeId;
+	protected $implJavaAtomType$ optionalPrevId;
+	protected $implJavaAtomType$ optionalNextId;
 
     public CFBamBuffParamH() {
             // The primary key member attributes are initialized on construction

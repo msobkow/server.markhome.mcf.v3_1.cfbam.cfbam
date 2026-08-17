@@ -73,9 +73,9 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffRoleDefByUDefIdxKey
 	implements ICFBamRoleDefByUDefIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredScopeId;
-	protected CFLibDbKeyHash256 optionalDefSchemaId;
-	protected String requiredName;
+	protected $implJavaAtomType$ requiredScopeId;
+	protected $implJavaAtomType$ optionalDefSchemaId;
+	protected $implJavaAtomType$ requiredName;
 	public CFBamBuffRoleDefByUDefIdxKey() {
 		requiredScopeId = CFLibDbKeyHash256.fromHex( ICFBamPubRoleDef.SCOPEID_INIT_VALUE.toString() );
 		optionalDefSchemaId = CFLibDbKeyHash256.nullGet();

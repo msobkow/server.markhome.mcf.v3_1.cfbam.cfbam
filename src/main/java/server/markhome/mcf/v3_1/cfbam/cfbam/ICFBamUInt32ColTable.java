@@ -114,7 +114,7 @@ public interface ICFBamUInt32ColTable
 	 *	@param	TableId	The UInt32Col key attribute of the instance generating the id.
 	 */
 	void deleteUInt32ColByTableIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId );
+		ICFLibKeyHash256 argTableId );
 
 	/**
 	 *	Delete the UInt32Col instances identified by the key TableIdx.
@@ -133,7 +133,7 @@ public interface ICFBamUInt32ColTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteUInt32ColByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the UInt32Col instances identified by the key UNameIdx.
 	 *
@@ -144,7 +144,7 @@ public interface ICFBamUInt32ColTable
 	 *	@param	Name	The UInt32Col key attribute of the instance generating the id.
 	 */
 	void deleteUInt32ColByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
+		ICFLibKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -164,7 +164,7 @@ public interface ICFBamUInt32ColTable
 	 *	@param	ScopeId	The UInt32Col key attribute of the instance generating the id.
 	 */
 	void deleteUInt32ColByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId );
+		ICFLibKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the UInt32Col instances identified by the key ScopeIdx.
@@ -183,7 +183,7 @@ public interface ICFBamUInt32ColTable
 	 *	@param	DefSchemaId	The UInt32Col key attribute of the instance generating the id.
 	 */
 	void deleteUInt32ColByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		ICFLibKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the UInt32Col instances identified by the key DefSchemaIdx.
@@ -202,7 +202,7 @@ public interface ICFBamUInt32ColTable
 	 *	@param	PrevId	The UInt32Col key attribute of the instance generating the id.
 	 */
 	void deleteUInt32ColByPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argPrevId );
+		ICFLibKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the UInt32Col instances identified by the key PrevIdx.
@@ -221,7 +221,7 @@ public interface ICFBamUInt32ColTable
 	 *	@param	NextId	The UInt32Col key attribute of the instance generating the id.
 	 */
 	void deleteUInt32ColByNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argNextId );
+		ICFLibKeyHash256 argNextId );
 
 	/**
 	 *	Delete the UInt32Col instances identified by the key NextIdx.
@@ -242,8 +242,8 @@ public interface ICFBamUInt32ColTable
 	 *	@param	PrevId	The UInt32Col key attribute of the instance generating the id.
 	 */
 	void deleteUInt32ColByContPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argPrevId );
+		ICFLibKeyHash256 argScopeId,
+		ICFLibKeyHash256 argPrevId );
 
 	/**
 	 *	Delete the UInt32Col instances identified by the key ContPrevIdx.
@@ -264,8 +264,8 @@ public interface ICFBamUInt32ColTable
 	 *	@param	NextId	The UInt32Col key attribute of the instance generating the id.
 	 */
 	void deleteUInt32ColByContNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argNextId );
+		ICFLibKeyHash256 argScopeId,
+		ICFLibKeyHash256 argNextId );
 
 	/**
 	 *	Delete the UInt32Col instances identified by the key ContNextIdx.
@@ -289,7 +289,7 @@ public interface ICFBamUInt32ColTable
 	 *		no such existing key value.
 	 */
 	ICFBamUInt32Col readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived UInt32Col record instance by primary key.
@@ -302,7 +302,7 @@ public interface ICFBamUInt32ColTable
 	 *		no such existing key value.
 	 */
 	ICFBamUInt32Col lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all UInt32Col instances.
@@ -324,7 +324,7 @@ public interface ICFBamUInt32ColTable
 	 *		no such existing key value.
 	 */
 	ICFBamUInt32Col readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read the derived UInt32Col record instance identified by the unique key UNameIdx.
@@ -339,7 +339,7 @@ public interface ICFBamUInt32ColTable
 	 *		no such existing key value.
 	 */
 	ICFBamUInt32Col readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -352,7 +352,7 @@ public interface ICFBamUInt32ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamUInt32Col[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived UInt32Col record instances identified by the duplicate key DefSchemaIdx.
@@ -364,7 +364,7 @@ public interface ICFBamUInt32ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamUInt32Col[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived UInt32Col record instances identified by the duplicate key PrevIdx.
@@ -376,7 +376,7 @@ public interface ICFBamUInt32ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamUInt32Col[] readDerivedByPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived UInt32Col record instances identified by the duplicate key NextIdx.
@@ -388,7 +388,7 @@ public interface ICFBamUInt32ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamUInt32Col[] readDerivedByNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived UInt32Col record instances identified by the duplicate key ContPrevIdx.
@@ -402,8 +402,8 @@ public interface ICFBamUInt32ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamUInt32Col[] readDerivedByContPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the derived UInt32Col record instances identified by the duplicate key ContNextIdx.
@@ -417,8 +417,8 @@ public interface ICFBamUInt32ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamUInt32Col[] readDerivedByContNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the derived UInt32Col record instances identified by the duplicate key TableIdx.
@@ -430,7 +430,7 @@ public interface ICFBamUInt32ColTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamUInt32Col[] readDerivedByTableIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		ICFLibKeyHash256 TableId );
 
 	/**
 	 *	Read the specific UInt32Col record instance identified by the primary key.
@@ -445,7 +445,7 @@ public interface ICFBamUInt32ColTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt32Col readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific UInt32Col record instance identified by the primary key.
@@ -460,7 +460,7 @@ public interface ICFBamUInt32ColTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt32Col lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific UInt32Col record instances.
@@ -484,7 +484,7 @@ public interface ICFBamUInt32ColTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt32Col readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read the specific UInt32Col record instance identified by the unique key UNameIdx.
@@ -501,7 +501,7 @@ public interface ICFBamUInt32ColTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt32Col readRecByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -516,7 +516,7 @@ public interface ICFBamUInt32ColTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt32Col[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific UInt32Col record instances identified by the duplicate key DefSchemaIdx.
@@ -530,7 +530,7 @@ public interface ICFBamUInt32ColTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt32Col[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific UInt32Col record instances identified by the duplicate key PrevIdx.
@@ -544,7 +544,7 @@ public interface ICFBamUInt32ColTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt32Col[] readRecByPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific UInt32Col record instances identified by the duplicate key NextIdx.
@@ -558,7 +558,7 @@ public interface ICFBamUInt32ColTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt32Col[] readRecByNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific UInt32Col record instances identified by the duplicate key ContPrevIdx.
@@ -574,8 +574,8 @@ public interface ICFBamUInt32ColTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt32Col[] readRecByContPrevIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Read an array of the specific UInt32Col record instances identified by the duplicate key ContNextIdx.
@@ -591,8 +591,8 @@ public interface ICFBamUInt32ColTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt32Col[] readRecByContNextIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Read an array of the specific UInt32Col record instances identified by the duplicate key TableIdx.
@@ -606,7 +606,7 @@ public interface ICFBamUInt32ColTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamUInt32Col[] readRecByTableIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		ICFLibKeyHash256 TableId );
 
 	/**
 	 *	Move the specified record up in the chain (i.e. to the previous position.)
@@ -614,7 +614,7 @@ public interface ICFBamUInt32ColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamUInt32Col moveRecUp( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id,
+		ICFLibKeyHash256 Id,
 		int revision );
 
 	/**
@@ -623,6 +623,6 @@ public interface ICFBamUInt32ColTable
 	 *	@return	The refreshed record after it has been moved
 	 */
 	ICFBamUInt32Col moveRecDown( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id,
+		ICFLibKeyHash256 Id,
 		int revision );
 }

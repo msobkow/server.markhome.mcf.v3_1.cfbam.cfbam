@@ -160,7 +160,7 @@ public class CFBamIndexObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getIndexColTableObj().readIndexColByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -324,7 +324,7 @@ public class CFBamIndexObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -396,62 +396,62 @@ public class CFBamIndexObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTableId() {
+	public $implJavaAtomType$ getRequiredTableId() {
 		return( getIndexRec().getRequiredTableId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getIndexRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getIndexRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalShortName() {
+	public $implJavaAtomType$ getOptionalShortName() {
 		return( getIndexRec().getOptionalShortName() );
 	}
 
 	@Override
-	public String getOptionalLabel() {
+	public $implJavaAtomType$ getOptionalLabel() {
 		return( getIndexRec().getOptionalLabel() );
 	}
 
 	@Override
-	public String getOptionalShortDescription() {
+	public $implJavaAtomType$ getOptionalShortDescription() {
 		return( getIndexRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getIndexRec().getOptionalDescription() );
 	}
 
 	@Override
-	public String getOptionalDbName() {
+	public $implJavaAtomType$ getOptionalDbName() {
 		return( getIndexRec().getOptionalDbName() );
 	}
 
 	@Override
-	public String getOptionalSuffix() {
+	public $implJavaAtomType$ getOptionalSuffix() {
 		return( getIndexRec().getOptionalSuffix() );
 	}
 
 	@Override
-	public boolean getRequiredIsUnique() {
+	public $implJavaAtomType$ getRequiredIsUnique() {
 		return( getIndexRec().getRequiredIsUnique() );
 	}
 
 	@Override
-	public boolean getRequiredIsDbMapped() {
+	public $implJavaAtomType$ getRequiredIsDbMapped() {
 		return( getIndexRec().getRequiredIsDbMapped() );
 	}
 
 	@Override
-	public ICFBamPubSchema.CodeVisibilityEnum getRequiredCodeVis() {
+	public $implJavaAtomType$ getRequiredCodeVis() {
 		return( getIndexRec().getRequiredCodeVis() );
 	}
 }

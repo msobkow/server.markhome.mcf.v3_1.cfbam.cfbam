@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffChain
 	implements ICFBamChain, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredId;
+	protected $implJavaAtomType$ requiredId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -81,16 +81,16 @@ public class CFBamBuffChain
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 optionalDefSchemaId;
-	protected String requiredName;
-	protected String optionalShortName;
-	protected String optionalLabel;
-	protected String optionalShortDescription;
-	protected String optionalDescription;
-	protected CFLibDbKeyHash256 requiredTableId;
-	protected String optionalSuffix;
-	protected CFLibDbKeyHash256 requiredPrevRelationId;
-	protected CFLibDbKeyHash256 requiredNextRelationId;
+	protected $implJavaAtomType$ optionalDefSchemaId;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalShortName;
+	protected $implJavaAtomType$ optionalLabel;
+	protected $implJavaAtomType$ optionalShortDescription;
+	protected $implJavaAtomType$ optionalDescription;
+	protected $implJavaAtomType$ requiredTableId;
+	protected $implJavaAtomType$ optionalSuffix;
+	protected $implJavaAtomType$ requiredPrevRelationId;
+	protected $implJavaAtomType$ requiredNextRelationId;
 
 	public CFBamBuffChain() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubChain.ID_INIT_VALUE.toString() );
@@ -107,12 +107,12 @@ public class CFBamBuffChain
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public $implJavaOptAtomType$ getPKey() {
 		return (requiredId);
 	}
 
 	@Override
-	public void setPKey(CFLibDbKeyHash256 requiredId) {
+	public void setPKey($implJavaOptAtomType$ requiredId) {
 		if(requiredId != null) {
 			this.requiredId = requiredId;
 		}

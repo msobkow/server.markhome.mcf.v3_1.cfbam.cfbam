@@ -68,7 +68,7 @@ public class CFBamSecUserPasswordObj
 	protected boolean isNew;
 	protected ICFSecSecUserPasswordEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFSecSecUserPassword rec;
 	protected ICFSecSecUserObj requiredContainerUser;
 
@@ -300,12 +300,12 @@ public class CFBamSecUserPasswordObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -354,7 +354,7 @@ public class CFBamSecUserPasswordObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
+	public $implJavaAtomType$ getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
@@ -375,12 +375,12 @@ public class CFBamSecUserPasswordObj
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWSetStamp() {
+	public $implJavaAtomType$ getRequiredPWSetStamp() {
 		return( getSecUserPasswordRec().getRequiredPWSetStamp() );
 	}
 
 	@Override
-	public String getRequiredPasswordHash() {
+	public $implJavaAtomType$ getRequiredPasswordHash() {
 		return( getSecUserPasswordRec().getRequiredPasswordHash() );
 	}
 

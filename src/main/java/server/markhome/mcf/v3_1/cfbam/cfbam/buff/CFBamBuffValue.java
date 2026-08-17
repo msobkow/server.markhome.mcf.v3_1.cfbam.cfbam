@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffValue
 	implements ICFBamValue, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredId;
+	protected $implJavaAtomType$ requiredId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -81,19 +81,19 @@ public class CFBamBuffValue
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 requiredScopeId;
-	protected CFLibDbKeyHash256 optionalDefSchemaId;
-	protected String requiredName;
-	protected String optionalShortName;
-	protected String optionalLabel;
-	protected String optionalShortDescription;
-	protected String optionalDescription;
-	protected String optionalDefaultXmlValue;
-	protected boolean requiredIsNullable;
-	protected Boolean optionalGenerateId;
-	protected boolean requiredImplementsPolymorph;
-	protected CFLibDbKeyHash256 optionalPrevId;
-	protected CFLibDbKeyHash256 optionalNextId;
+	protected $implJavaAtomType$ requiredScopeId;
+	protected $implJavaAtomType$ optionalDefSchemaId;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalShortName;
+	protected $implJavaAtomType$ optionalLabel;
+	protected $implJavaAtomType$ optionalShortDescription;
+	protected $implJavaAtomType$ optionalDescription;
+	protected $implJavaAtomType$ optionalDefaultXmlValue;
+	protected $implJavaAtomType$ requiredIsNullable;
+	protected $implJavaAtomType$ optionalGenerateId;
+	protected $implJavaAtomType$ requiredImplementsPolymorph;
+	protected $implJavaAtomType$ optionalPrevId;
+	protected $implJavaAtomType$ optionalNextId;
 
 	public CFBamBuffValue() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubValue.ID_INIT_VALUE.toString() );
@@ -113,12 +113,12 @@ public class CFBamBuffValue
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public $implJavaOptAtomType$ getPKey() {
 		return (requiredId);
 	}
 
 	@Override
-	public void setPKey(CFLibDbKeyHash256 requiredId) {
+	public void setPKey($implJavaOptAtomType$ requiredId) {
 		if(requiredId != null) {
 			this.requiredId = requiredId;
 		}
@@ -2463,9 +2463,9 @@ public class CFBamBuffValue
 				}
 			}
 			if( getOptionalGenerateId() != null ) {
-				Boolean lhsGenerateId = getOptionalGenerateId();
+				$implJavaAtomType$ lhsGenerateId = getOptionalGenerateId();
 				if( rhs.getOptionalGenerateId() ) {
-					Boolean rhsGenerateId = rhs.getOptionalGenerateId();
+					$implJavaAtomType$ rhsGenerateId = rhs.getOptionalGenerateId();
 					if( lhsGenerateId ) {
 						if( ! rhsGenerateId ) {
 							return( 1 );
@@ -2704,9 +2704,9 @@ public class CFBamBuffValue
 				}
 			}
 			if( getOptionalGenerateId() != null ) {
-				Boolean lhsGenerateId = getOptionalGenerateId();
+				$implJavaAtomType$ lhsGenerateId = getOptionalGenerateId();
 				if( rhs.getOptionalGenerateId() ) {
-					Boolean rhsGenerateId = rhs.getOptionalGenerateId();
+					$implJavaAtomType$ rhsGenerateId = rhs.getOptionalGenerateId();
 					if( lhsGenerateId ) {
 						if( ! rhsGenerateId ) {
 							return( 1 );
@@ -3107,9 +3107,9 @@ public class CFBamBuffValue
 				}
 			}
 			if( getOptionalGenerateId() != null ) {
-				Boolean lhsGenerateId = getOptionalGenerateId();
+				$implJavaAtomType$ lhsGenerateId = getOptionalGenerateId();
 				if( rhs.getOptionalGenerateId() ) {
-					Boolean rhsGenerateId = rhs.getOptionalGenerateId();
+					$implJavaAtomType$ rhsGenerateId = rhs.getOptionalGenerateId();
 					if( lhsGenerateId ) {
 						if( ! rhsGenerateId ) {
 							return( 1 );
@@ -3348,9 +3348,9 @@ public class CFBamBuffValue
 				}
 			}
 			if( getOptionalGenerateId() != null ) {
-				Boolean lhsGenerateId = getOptionalGenerateId();
+				$implJavaAtomType$ lhsGenerateId = getOptionalGenerateId();
 				if( rhs.getOptionalGenerateId() ) {
-					Boolean rhsGenerateId = rhs.getOptionalGenerateId();
+					$implJavaAtomType$ rhsGenerateId = rhs.getOptionalGenerateId();
 					if( lhsGenerateId ) {
 						if( ! rhsGenerateId ) {
 							return( 1 );
@@ -3751,9 +3751,9 @@ public class CFBamBuffValue
 				}
 			}
 			if( getOptionalGenerateId() != null ) {
-				Boolean lhsGenerateId = getOptionalGenerateId();
+				$implJavaAtomType$ lhsGenerateId = getOptionalGenerateId();
 				if( rhs.getOptionalGenerateId() ) {
-					Boolean rhsGenerateId = rhs.getOptionalGenerateId();
+					$implJavaAtomType$ rhsGenerateId = rhs.getOptionalGenerateId();
 					if( lhsGenerateId ) {
 						if( ! rhsGenerateId ) {
 							return( 1 );
@@ -3992,9 +3992,9 @@ public class CFBamBuffValue
 				}
 			}
 			if( getOptionalGenerateId() != null ) {
-				Boolean lhsGenerateId = getOptionalGenerateId();
+				$implJavaAtomType$ lhsGenerateId = getOptionalGenerateId();
 				if( rhs.getOptionalGenerateId() ) {
-					Boolean rhsGenerateId = rhs.getOptionalGenerateId();
+					$implJavaAtomType$ rhsGenerateId = rhs.getOptionalGenerateId();
 					if( lhsGenerateId ) {
 						if( ! rhsGenerateId ) {
 							return( 1 );

@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffSchemaRefBySchemaIdxKey
 	implements ICFBamSchemaRefBySchemaIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredSchemaId;
+	protected $implJavaAtomType$ requiredSchemaId;
 	public CFBamBuffSchemaRefBySchemaIdxKey() {
 		requiredSchemaId = CFLibDbKeyHash256.fromHex( ICFBamPubSchemaRef.SCHEMAID_INIT_VALUE.toString() );
 	}

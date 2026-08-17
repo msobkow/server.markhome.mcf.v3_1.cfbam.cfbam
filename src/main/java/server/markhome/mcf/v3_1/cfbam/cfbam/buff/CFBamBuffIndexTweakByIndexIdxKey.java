@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffIndexTweakByIndexIdxKey
 	implements ICFBamIndexTweakByIndexIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredIndexId;
+	protected $implJavaAtomType$ requiredIndexId;
 	public CFBamBuffIndexTweakByIndexIdxKey() {
 		requiredIndexId = CFLibDbKeyHash256.fromHex( ICFBamPubIndexTweak.INDEXID_INIT_VALUE.toString() );
 	}

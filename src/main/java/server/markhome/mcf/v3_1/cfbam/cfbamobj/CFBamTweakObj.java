@@ -73,7 +73,7 @@ public class CFBamTweakObj
 	protected boolean isNew;
 	protected ICFBamTweakEditObj edit;
 	protected ICFBamSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFBamTweak rec;
 	protected ICFBamScopeObj requiredContainerScopeDef;
 	protected ICFBamSchemaDefObj optionalLookupDefSchema;
@@ -306,12 +306,12 @@ public class CFBamTweakObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -388,7 +388,7 @@ public class CFBamTweakObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -428,37 +428,37 @@ public class CFBamTweakObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTenantId() {
+	public $implJavaAtomType$ getRequiredTenantId() {
 		return( getTweakRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredScopeId() {
+	public $implJavaAtomType$ getRequiredScopeId() {
 		return( getTweakRec().getRequiredScopeId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaTenantId() {
+	public $implJavaAtomType$ getOptionalDefSchemaTenantId() {
 		return( getTweakRec().getOptionalDefSchemaTenantId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getTweakRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getTweakRec().getRequiredName() );
 	}
 
 	@Override
-	public boolean getRequiredReplacesInherited() {
+	public $implJavaAtomType$ getRequiredReplacesInherited() {
 		return( getTweakRec().getRequiredReplacesInherited() );
 	}
 
 	@Override
-	public String getRequiredTweakGelText() {
+	public $implJavaAtomType$ getRequiredTweakGelText() {
 		return( getTweakRec().getRequiredTweakGelText() );
 	}
 

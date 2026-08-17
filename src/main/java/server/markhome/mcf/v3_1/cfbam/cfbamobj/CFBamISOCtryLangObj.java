@@ -389,12 +389,12 @@ public class CFBamISOCtryLangObj
 	}
 
 	@Override
-	public short getRequiredISOCtryId() {
+	public $implJavaAtomType$ getRequiredISOCtryId() {
 		return( getPKey().getRequiredISOCtryId() );
 	}
 
 	@Override
-	public short getRequiredISOLangId() {
+	public $implJavaAtomType$ getRequiredISOLangId() {
 		return( getPKey().getRequiredISOLangId() );
 	}
 

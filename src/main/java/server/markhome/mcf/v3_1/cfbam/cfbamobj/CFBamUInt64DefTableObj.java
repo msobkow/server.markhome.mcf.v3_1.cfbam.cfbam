@@ -71,28 +71,28 @@ public class CFBamUInt64DefTableObj
 	protected ICFBamSchemaObj schema;
 	protected static int runtimeClassCode = ICFBamUInt64Def.CLASS_CODE;
 	protected static final int backingClassCode = ICFBamUInt64Def.CLASS_CODE;
-	private Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> members;
-	private Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> allUInt64Def;
+	private Map<ICFLibKeyHash256, ICFBamUInt64DefObj> members;
+	private Map<ICFLibKeyHash256, ICFBamUInt64DefObj> allUInt64Def;
 	private Map< ICFBamValueByUNameIdxKey,
 		ICFBamUInt64DefObj > indexByUNameIdx;
 	private Map< ICFBamValueByScopeIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > > indexByScopeIdx;
+		Map<ICFLibKeyHash256, ICFBamUInt64DefObj > > indexByScopeIdx;
 	private Map< ICFBamValueByDefSchemaIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > > indexByDefSchemaIdx;
+		Map<ICFLibKeyHash256, ICFBamUInt64DefObj > > indexByDefSchemaIdx;
 	private Map< ICFBamValueByPrevIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > > indexByPrevIdx;
+		Map<ICFLibKeyHash256, ICFBamUInt64DefObj > > indexByPrevIdx;
 	private Map< ICFBamValueByNextIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > > indexByNextIdx;
+		Map<ICFLibKeyHash256, ICFBamUInt64DefObj > > indexByNextIdx;
 	private Map< ICFBamValueByContPrevIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > > indexByContPrevIdx;
+		Map<ICFLibKeyHash256, ICFBamUInt64DefObj > > indexByContPrevIdx;
 	private Map< ICFBamValueByContNextIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > > indexByContNextIdx;
+		Map<ICFLibKeyHash256, ICFBamUInt64DefObj > > indexByContNextIdx;
 	public static String TABLE_NAME = "UInt64Def";
 	public static String TABLE_DBNAME = "u64def";
 
 	public CFBamUInt64DefTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamUInt64DefObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamUInt64DefObj>();
 		allUInt64Def = null;
 		indexByUNameIdx = null;
 		indexByScopeIdx = null;
@@ -105,7 +105,7 @@ public class CFBamUInt64DefTableObj
 
 	public CFBamUInt64DefTableObj( ICFBamSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamUInt64DefObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamUInt64DefObj>();
 		allUInt64Def = null;
 		indexByUNameIdx = null;
 		indexByScopeIdx = null;
@@ -240,7 +240,7 @@ public class CFBamUInt64DefTableObj
 	@Override
 	public ICFBamUInt64DefObj realiseUInt64Def( ICFBamUInt64DefObj Obj ) {
 		ICFBamUInt64DefObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamUInt64DefObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFBamUInt64DefObj existingObj = members.get( pkey );
@@ -265,7 +265,7 @@ public class CFBamUInt64DefTableObj
 				ICFBamValueByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					indexByScopeIdx.remove( keyScopeIdx );
 				}
@@ -275,7 +275,7 @@ public class CFBamUInt64DefTableObj
 				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					indexByDefSchemaIdx.remove( keyDefSchemaIdx );
 				}
@@ -285,7 +285,7 @@ public class CFBamUInt64DefTableObj
 				ICFBamValueByPrevIdxKey keyPrevIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
 					indexByPrevIdx.remove( keyPrevIdx );
 				}
@@ -295,7 +295,7 @@ public class CFBamUInt64DefTableObj
 				ICFBamValueByNextIdxKey keyNextIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
 					indexByNextIdx.remove( keyNextIdx );
 				}
@@ -306,7 +306,7 @@ public class CFBamUInt64DefTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
 				if( mapContPrevIdx != null ) {
 					indexByContPrevIdx.remove( keyContPrevIdx );
 				}
@@ -317,7 +317,7 @@ public class CFBamUInt64DefTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
 				if( mapContNextIdx != null ) {
 					indexByContNextIdx.remove( keyContNextIdx );
 				}
@@ -341,7 +341,7 @@ public class CFBamUInt64DefTableObj
 				ICFBamValueByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					mapScopeIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -351,7 +351,7 @@ public class CFBamUInt64DefTableObj
 				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -361,7 +361,7 @@ public class CFBamUInt64DefTableObj
 				ICFBamValueByPrevIdxKey keyPrevIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
 					mapPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -371,7 +371,7 @@ public class CFBamUInt64DefTableObj
 				ICFBamValueByNextIdxKey keyNextIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
 					mapNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -382,7 +382,7 @@ public class CFBamUInt64DefTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
 				if( mapContPrevIdx != null ) {
 					mapContPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -393,7 +393,7 @@ public class CFBamUInt64DefTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
 				if( mapContNextIdx != null ) {
 					mapContNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -425,7 +425,7 @@ public class CFBamUInt64DefTableObj
 				ICFBamValueByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					mapScopeIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -435,7 +435,7 @@ public class CFBamUInt64DefTableObj
 				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -445,7 +445,7 @@ public class CFBamUInt64DefTableObj
 				ICFBamValueByPrevIdxKey keyPrevIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
 					mapPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -455,7 +455,7 @@ public class CFBamUInt64DefTableObj
 				ICFBamValueByNextIdxKey keyNextIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
 					mapNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -466,7 +466,7 @@ public class CFBamUInt64DefTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
 				if( mapContPrevIdx != null ) {
 					mapContPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -477,7 +477,7 @@ public class CFBamUInt64DefTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamUInt64DefObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				Map<ICFLibKeyHash256, ICFBamUInt64DefObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
 				if( mapContNextIdx != null ) {
 					mapContNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -507,12 +507,12 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public ICFBamUInt64DefObj readUInt64Def( CFLibDbKeyHash256 pkey ) {
+	public ICFBamUInt64DefObj readUInt64Def( ICFLibKeyHash256 pkey ) {
 		return( readUInt64Def( pkey, false ) );
 	}
 
 	@Override
-	public ICFBamUInt64DefObj readUInt64Def( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFBamUInt64DefObj readUInt64Def( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFBamUInt64DefObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -531,7 +531,7 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public ICFBamUInt64DefObj readCachedUInt64Def( CFLibDbKeyHash256 pkey ) {
+	public ICFBamUInt64DefObj readCachedUInt64Def( ICFLibKeyHash256 pkey ) {
 		ICFBamUInt64DefObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -547,7 +547,7 @@ public class CFBamUInt64DefTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamUInt64DefObj existing = readCachedUInt64Def( pkey );
 		if( existing == null ) {
 			return;
@@ -561,7 +561,7 @@ public class CFBamUInt64DefTableObj
 		schema.getAtomTableObj().reallyDeepDisposeAtom( obj );
 	}
 	@Override
-	public void deepDisposeUInt64Def( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeUInt64Def( ICFLibKeyHash256 pkey ) {
 		ICFBamUInt64DefObj obj = readCachedUInt64Def( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -569,7 +569,7 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public ICFBamUInt64DefObj lockUInt64Def( CFLibDbKeyHash256 pkey ) {
+	public ICFBamUInt64DefObj lockUInt64Def( ICFLibKeyHash256 pkey ) {
 		ICFBamUInt64DefObj locked = null;
 		ICFBamUInt64Def lockRec = schema.getCFBamBackingStore().getTableUInt64Def().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -593,7 +593,7 @@ public class CFBamUInt64DefTableObj
 	public List<ICFBamUInt64DefObj> readAllUInt64Def( boolean forceRead ) {
 		final String S_ProcName = "readAllUInt64Def";
 		if( ( allUInt64Def == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> map = new HashMap<CFLibDbKeyHash256,ICFBamUInt64DefObj>();
+			Map<ICFLibKeyHash256, ICFBamUInt64DefObj> map = new HashMap<ICFLibKeyHash256,ICFBamUInt64DefObj>();
 			allUInt64Def = map;
 			ICFBamUInt64Def[] recList = schema.getCFBamBackingStore().getTableUInt64Def().readAllDerived( null );
 			ICFBamUInt64Def rec;
@@ -649,8 +649,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -707,8 +707,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -719,21 +719,21 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public ICFBamUInt64DefObj readUInt64DefByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamUInt64DefObj readUInt64DefByIdIdx( ICFLibKeyHash256 Id )
 	{
 		return( readUInt64DefByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamUInt64DefObj readUInt64DefByIdIdx( CFLibDbKeyHash256 Id, boolean forceRead )
+	public ICFBamUInt64DefObj readUInt64DefByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamUInt64DefObj obj = readUInt64Def( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamUInt64DefObj readUInt64DefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamUInt64DefObj readUInt64DefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readUInt64DefByUNameIdx( ScopeId,
@@ -742,7 +742,7 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public ICFBamUInt64DefObj readUInt64DefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamUInt64DefObj readUInt64DefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -771,29 +771,29 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readUInt64DefByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public List<ICFBamUInt64DefObj> readUInt64DefByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		return( readUInt64DefByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readUInt64DefByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	public List<ICFBamUInt64DefObj> readUInt64DefByScopeIdx( ICFLibKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readUInt64DefByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
-		Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict;
+		Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict;
 		if( indexByScopeIdx == null ) {
 			indexByScopeIdx = new HashMap< ICFBamValueByScopeIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamUInt64DefObj > >();
+				Map< ICFLibKeyHash256, ICFBamUInt64DefObj > >();
 		}
 		if( ( ! forceRead ) && indexByScopeIdx.containsKey( key ) ) {
 			dict = indexByScopeIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamUInt64DefObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamUInt64DefObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByScopeIdx( null,
 				ScopeId );
@@ -851,8 +851,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -864,29 +864,29 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readUInt64DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamUInt64DefObj> readUInt64DefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		return( readUInt64DefByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readUInt64DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	public List<ICFBamUInt64DefObj> readUInt64DefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readUInt64DefByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
-		Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict;
+		Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict;
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamValueByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamUInt64DefObj > >();
+				Map< ICFLibKeyHash256, ICFBamUInt64DefObj > >();
 		}
 		if( ( ! forceRead ) && indexByDefSchemaIdx.containsKey( key ) ) {
 			dict = indexByDefSchemaIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamUInt64DefObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamUInt64DefObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByDefSchemaIdx( null,
 				DefSchemaId );
@@ -944,8 +944,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -957,29 +957,29 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readUInt64DefByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public List<ICFBamUInt64DefObj> readUInt64DefByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		return( readUInt64DefByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readUInt64DefByPrevIdx( CFLibDbKeyHash256 PrevId,
+	public List<ICFBamUInt64DefObj> readUInt64DefByPrevIdx( ICFLibKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readUInt64DefByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
-		Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict;
+		Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict;
 		if( indexByPrevIdx == null ) {
 			indexByPrevIdx = new HashMap< ICFBamValueByPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamUInt64DefObj > >();
+				Map< ICFLibKeyHash256, ICFBamUInt64DefObj > >();
 		}
 		if( ( ! forceRead ) && indexByPrevIdx.containsKey( key ) ) {
 			dict = indexByPrevIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamUInt64DefObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamUInt64DefObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByPrevIdx( null,
 				PrevId );
@@ -1037,8 +1037,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1050,29 +1050,29 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readUInt64DefByNextIdx( CFLibDbKeyHash256 NextId )
+	public List<ICFBamUInt64DefObj> readUInt64DefByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		return( readUInt64DefByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readUInt64DefByNextIdx( CFLibDbKeyHash256 NextId,
+	public List<ICFBamUInt64DefObj> readUInt64DefByNextIdx( ICFLibKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readUInt64DefByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
-		Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict;
+		Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict;
 		if( indexByNextIdx == null ) {
 			indexByNextIdx = new HashMap< ICFBamValueByNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamUInt64DefObj > >();
+				Map< ICFLibKeyHash256, ICFBamUInt64DefObj > >();
 		}
 		if( ( ! forceRead ) && indexByNextIdx.containsKey( key ) ) {
 			dict = indexByNextIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamUInt64DefObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamUInt64DefObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByNextIdx( null,
 				NextId );
@@ -1130,8 +1130,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1143,8 +1143,8 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readUInt64DefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public List<ICFBamUInt64DefObj> readUInt64DefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		return( readUInt64DefByContPrevIdx( ScopeId,
 			PrevId,
@@ -1152,24 +1152,24 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readUInt64DefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	public List<ICFBamUInt64DefObj> readUInt64DefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readUInt64DefByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalPrevId( PrevId );
-		Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict;
+		Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict;
 		if( indexByContPrevIdx == null ) {
 			indexByContPrevIdx = new HashMap< ICFBamValueByContPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamUInt64DefObj > >();
+				Map< ICFLibKeyHash256, ICFBamUInt64DefObj > >();
 		}
 		if( ( ! forceRead ) && indexByContPrevIdx.containsKey( key ) ) {
 			dict = indexByContPrevIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamUInt64DefObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamUInt64DefObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByContPrevIdx( null,
 				ScopeId,
@@ -1228,8 +1228,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1241,8 +1241,8 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readUInt64DefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public List<ICFBamUInt64DefObj> readUInt64DefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		return( readUInt64DefByContNextIdx( ScopeId,
 			NextId,
@@ -1250,24 +1250,24 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readUInt64DefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	public List<ICFBamUInt64DefObj> readUInt64DefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readUInt64DefByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalNextId( NextId );
-		Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict;
+		Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict;
 		if( indexByContNextIdx == null ) {
 			indexByContNextIdx = new HashMap< ICFBamValueByContNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamUInt64DefObj > >();
+				Map< ICFLibKeyHash256, ICFBamUInt64DefObj > >();
 		}
 		if( ( ! forceRead ) && indexByContNextIdx.containsKey( key ) ) {
 			dict = indexByContNextIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamUInt64DefObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamUInt64DefObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByContNextIdx( null,
 				ScopeId,
@@ -1326,8 +1326,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1339,7 +1339,7 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public ICFBamUInt64DefObj readCachedUInt64DefByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamUInt64DefObj readCachedUInt64DefByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamUInt64DefObj obj = null;
 		obj = readCachedUInt64Def( Id );
@@ -1347,7 +1347,7 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public ICFBamUInt64DefObj readCachedUInt64DefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamUInt64DefObj readCachedUInt64DefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamUInt64DefObj obj = null;
@@ -1385,14 +1385,14 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readCachedUInt64DefByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public List<ICFBamUInt64DefObj> readCachedUInt64DefByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedUInt64DefByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		ArrayList<ICFBamUInt64DefObj> arrayList = new ArrayList<ICFBamUInt64DefObj>();
 		if( indexByScopeIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict;
+			Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict;
 			if( indexByScopeIdx.containsKey( key ) ) {
 				dict = indexByScopeIdx.get( key );
 				int len = dict.size();
@@ -1450,8 +1450,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1462,14 +1462,14 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readCachedUInt64DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamUInt64DefObj> readCachedUInt64DefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedUInt64DefByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamUInt64DefObj> arrayList = new ArrayList<ICFBamUInt64DefObj>();
 		if( indexByDefSchemaIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict;
+			Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict;
 			if( indexByDefSchemaIdx.containsKey( key ) ) {
 				dict = indexByDefSchemaIdx.get( key );
 				int len = dict.size();
@@ -1527,8 +1527,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1539,14 +1539,14 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readCachedUInt64DefByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public List<ICFBamUInt64DefObj> readCachedUInt64DefByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedUInt64DefByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamUInt64DefObj> arrayList = new ArrayList<ICFBamUInt64DefObj>();
 		if( indexByPrevIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict;
+			Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict;
 			if( indexByPrevIdx.containsKey( key ) ) {
 				dict = indexByPrevIdx.get( key );
 				int len = dict.size();
@@ -1604,8 +1604,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1616,14 +1616,14 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readCachedUInt64DefByNextIdx( CFLibDbKeyHash256 NextId )
+	public List<ICFBamUInt64DefObj> readCachedUInt64DefByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedUInt64DefByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamUInt64DefObj> arrayList = new ArrayList<ICFBamUInt64DefObj>();
 		if( indexByNextIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict;
+			Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict;
 			if( indexByNextIdx.containsKey( key ) ) {
 				dict = indexByNextIdx.get( key );
 				int len = dict.size();
@@ -1681,8 +1681,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1693,8 +1693,8 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readCachedUInt64DefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public List<ICFBamUInt64DefObj> readCachedUInt64DefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedUInt64DefByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1702,7 +1702,7 @@ public class CFBamUInt64DefTableObj
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamUInt64DefObj> arrayList = new ArrayList<ICFBamUInt64DefObj>();
 		if( indexByContPrevIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict;
+			Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict;
 			if( indexByContPrevIdx.containsKey( key ) ) {
 				dict = indexByContPrevIdx.get( key );
 				int len = dict.size();
@@ -1760,8 +1760,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1772,8 +1772,8 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public List<ICFBamUInt64DefObj> readCachedUInt64DefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public List<ICFBamUInt64DefObj> readCachedUInt64DefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedUInt64DefByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1781,7 +1781,7 @@ public class CFBamUInt64DefTableObj
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamUInt64DefObj> arrayList = new ArrayList<ICFBamUInt64DefObj>();
 		if( indexByContNextIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict;
+			Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict;
 			if( indexByContNextIdx.containsKey( key ) ) {
 				dict = indexByContNextIdx.get( key );
 				int len = dict.size();
@@ -1839,8 +1839,8 @@ public class CFBamUInt64DefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1851,7 +1851,7 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deepDisposeUInt64DefByIdIdx( CFLibDbKeyHash256 Id )
+	public void deepDisposeUInt64DefByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamUInt64DefObj obj = readCachedUInt64DefByIdIdx( Id );
 		if( obj != null ) {
@@ -1860,7 +1860,7 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deepDisposeUInt64DefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public void deepDisposeUInt64DefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamUInt64DefObj obj = readCachedUInt64DefByUNameIdx( ScopeId,
@@ -1871,7 +1871,7 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deepDisposeUInt64DefByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public void deepDisposeUInt64DefByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeUInt64DefByScopeIdx";
 		ICFBamUInt64DefObj obj;
@@ -1888,7 +1888,7 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deepDisposeUInt64DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deepDisposeUInt64DefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeUInt64DefByDefSchemaIdx";
 		ICFBamUInt64DefObj obj;
@@ -1905,7 +1905,7 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deepDisposeUInt64DefByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public void deepDisposeUInt64DefByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeUInt64DefByPrevIdx";
 		ICFBamUInt64DefObj obj;
@@ -1922,7 +1922,7 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deepDisposeUInt64DefByNextIdx( CFLibDbKeyHash256 NextId )
+	public void deepDisposeUInt64DefByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeUInt64DefByNextIdx";
 		ICFBamUInt64DefObj obj;
@@ -1939,8 +1939,8 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deepDisposeUInt64DefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public void deepDisposeUInt64DefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeUInt64DefByContPrevIdx";
 		ICFBamUInt64DefObj obj;
@@ -1958,8 +1958,8 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deepDisposeUInt64DefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public void deepDisposeUInt64DefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeUInt64DefByContNextIdx";
 		ICFBamUInt64DefObj obj;
@@ -2005,7 +2005,7 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deleteUInt64DefByIdIdx( CFLibDbKeyHash256 Id )
+	public void deleteUInt64DefByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamUInt64DefObj obj = readUInt64Def(Id);
 		if( obj != null ) {
@@ -2035,7 +2035,7 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deleteUInt64DefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public void deleteUInt64DefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2063,16 +2063,16 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deleteUInt64DefByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public void deleteUInt64DefByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		if( indexByScopeIdx == null ) {
 			indexByScopeIdx = new HashMap< ICFBamValueByScopeIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamUInt64DefObj > >();
+				Map< ICFLibKeyHash256, ICFBamUInt64DefObj > >();
 		}
 		if( indexByScopeIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict = indexByScopeIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict = indexByScopeIdx.get( key );
 			schema.getCFBamBackingStore().getTableUInt64Def().deleteUInt64DefByScopeIdx( null,
 				ScopeId );
 			Iterator<ICFBamUInt64DefObj> iter = dict.values().iterator();
@@ -2097,16 +2097,16 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deleteUInt64DefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deleteUInt64DefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamValueByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamUInt64DefObj > >();
+				Map< ICFLibKeyHash256, ICFBamUInt64DefObj > >();
 		}
 		if( indexByDefSchemaIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict = indexByDefSchemaIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict = indexByDefSchemaIdx.get( key );
 			schema.getCFBamBackingStore().getTableUInt64Def().deleteUInt64DefByDefSchemaIdx( null,
 				DefSchemaId );
 			Iterator<ICFBamUInt64DefObj> iter = dict.values().iterator();
@@ -2131,16 +2131,16 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deleteUInt64DefByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public void deleteUInt64DefByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		if( indexByPrevIdx == null ) {
 			indexByPrevIdx = new HashMap< ICFBamValueByPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamUInt64DefObj > >();
+				Map< ICFLibKeyHash256, ICFBamUInt64DefObj > >();
 		}
 		if( indexByPrevIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict = indexByPrevIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict = indexByPrevIdx.get( key );
 			schema.getCFBamBackingStore().getTableUInt64Def().deleteUInt64DefByPrevIdx( null,
 				PrevId );
 			Iterator<ICFBamUInt64DefObj> iter = dict.values().iterator();
@@ -2165,16 +2165,16 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deleteUInt64DefByNextIdx( CFLibDbKeyHash256 NextId )
+	public void deleteUInt64DefByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		if( indexByNextIdx == null ) {
 			indexByNextIdx = new HashMap< ICFBamValueByNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamUInt64DefObj > >();
+				Map< ICFLibKeyHash256, ICFBamUInt64DefObj > >();
 		}
 		if( indexByNextIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict = indexByNextIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict = indexByNextIdx.get( key );
 			schema.getCFBamBackingStore().getTableUInt64Def().deleteUInt64DefByNextIdx( null,
 				NextId );
 			Iterator<ICFBamUInt64DefObj> iter = dict.values().iterator();
@@ -2199,18 +2199,18 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deleteUInt64DefByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public void deleteUInt64DefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalPrevId( PrevId );
 		if( indexByContPrevIdx == null ) {
 			indexByContPrevIdx = new HashMap< ICFBamValueByContPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamUInt64DefObj > >();
+				Map< ICFLibKeyHash256, ICFBamUInt64DefObj > >();
 		}
 		if( indexByContPrevIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict = indexByContPrevIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict = indexByContPrevIdx.get( key );
 			schema.getCFBamBackingStore().getTableUInt64Def().deleteUInt64DefByContPrevIdx( null,
 				ScopeId,
 				PrevId );
@@ -2238,18 +2238,18 @@ public class CFBamUInt64DefTableObj
 	}
 
 	@Override
-	public void deleteUInt64DefByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public void deleteUInt64DefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalNextId( NextId );
 		if( indexByContNextIdx == null ) {
 			indexByContNextIdx = new HashMap< ICFBamValueByContNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamUInt64DefObj > >();
+				Map< ICFLibKeyHash256, ICFBamUInt64DefObj > >();
 		}
 		if( indexByContNextIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamUInt64DefObj> dict = indexByContNextIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamUInt64DefObj> dict = indexByContNextIdx.get( key );
 			schema.getCFBamBackingStore().getTableUInt64Def().deleteUInt64DefByContNextIdx( null,
 				ScopeId,
 				NextId );

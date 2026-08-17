@@ -249,11 +249,11 @@ public interface ICFBamSecSysGrpIncObj
 	ICFSecSecSysGrpObj getRequiredParentSubGroup( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecSysGrpId.
+	 *	Get the required ICFLibKeyHash256 attribute SecSysGrpId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecSysGrpId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecSysGrpId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecSysGrpId();
+	ICFLibKeyHash256 getRequiredSecSysGrpId();
 
 	/**
 	 *	Get the required String attribute InclName.

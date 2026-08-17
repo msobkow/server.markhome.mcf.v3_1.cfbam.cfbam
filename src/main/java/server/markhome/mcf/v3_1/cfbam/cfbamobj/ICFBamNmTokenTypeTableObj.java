@@ -122,7 +122,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	The NmTokenType-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamNmTokenTypeObj readNmTokenType( CFLibDbKeyHash256 pkey );
+	ICFBamNmTokenTypeObj readNmTokenType( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a NmTokenType-derived instance by it's primary key.
@@ -132,19 +132,19 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	The NmTokenType-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamNmTokenTypeObj readNmTokenType( CFLibDbKeyHash256 pkey,
+	ICFBamNmTokenTypeObj readNmTokenType( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamNmTokenTypeObj readCachedNmTokenType( CFLibDbKeyHash256 pkey );
+	ICFBamNmTokenTypeObj readCachedNmTokenType( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeNmTokenType( ICFBamNmTokenTypeObj obj );
 
-	void deepDisposeNmTokenType( CFLibDbKeyHash256 pkey );
+	void deepDisposeNmTokenType( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamNmTokenTypeObj lockNmTokenType( CFLibDbKeyHash256 pkey );
+	ICFBamNmTokenTypeObj lockNmTokenType( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the NmTokenType-derived instances in the database.
@@ -172,7 +172,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	CFBamValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamNmTokenTypeObj readNmTokenTypeByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamNmTokenTypeObj readNmTokenTypeByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamValueObj instance for the primary key attributes.
@@ -182,7 +182,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	CFBamValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamNmTokenTypeObj readNmTokenTypeByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamNmTokenTypeObj readNmTokenTypeByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -195,7 +195,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	CFBamValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamNmTokenTypeObj readNmTokenTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamNmTokenTypeObj readNmTokenTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -208,7 +208,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	CFBamValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamNmTokenTypeObj readNmTokenTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamNmTokenTypeObj readNmTokenTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -220,7 +220,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeByScopeIdx( ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamNmTokenTypeObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -230,7 +230,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeByScopeIdx( ICFLibKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -241,7 +241,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamNmTokenTypeObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -251,7 +251,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -262,7 +262,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeByPrevIdx( ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamNmTokenTypeObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -272,7 +272,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeByPrevIdx( ICFLibKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -283,7 +283,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeByNextIdx( ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamNmTokenTypeObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -293,7 +293,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeByNextIdx( ICFLibKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -306,8 +306,8 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamNmTokenTypeObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -319,8 +319,8 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -333,8 +333,8 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamNmTokenTypeObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -346,8 +346,8 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -358,7 +358,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
 
 	/**
 	 *	Get the map of CFBamNmTokenTypeObj instances sorted by their primary keys for the duplicate SchemaIdx key.
@@ -368,50 +368,50 @@ public interface ICFBamNmTokenTypeTableObj
 	 *	@return	List of CFBamNmTokenTypeObj cached instances sorted by their primary keys for the duplicate SchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamNmTokenTypeObj> readNmTokenTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId,
+	List<ICFBamNmTokenTypeObj> readNmTokenTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId,
 		boolean forceRead );
 
-	ICFBamNmTokenTypeObj readCachedNmTokenTypeByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamNmTokenTypeObj readCachedNmTokenTypeByIdIdx( ICFLibKeyHash256 Id );
 
-	ICFBamNmTokenTypeObj readCachedNmTokenTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamNmTokenTypeObj readCachedNmTokenTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeByScopeIdx( ICFLibKeyHash256 ScopeId );
 
-	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
-	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeByPrevIdx( ICFLibKeyHash256 PrevId );
 
-	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeByNextIdx( ICFLibKeyHash256 NextId );
 
-	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
-	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
-	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	List<ICFBamNmTokenTypeObj> readCachedNmTokenTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
 
-	void deepDisposeNmTokenTypeByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeNmTokenTypeByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeNmTokenTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deepDisposeNmTokenTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeNmTokenTypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deepDisposeNmTokenTypeByScopeIdx( ICFLibKeyHash256 ScopeId );
 
-	void deepDisposeNmTokenTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeNmTokenTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
-	void deepDisposeNmTokenTypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeNmTokenTypeByPrevIdx( ICFLibKeyHash256 PrevId );
 
-	void deepDisposeNmTokenTypeByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeNmTokenTypeByNextIdx( ICFLibKeyHash256 NextId );
 
-	void deepDisposeNmTokenTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeNmTokenTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
-	void deepDisposeNmTokenTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeNmTokenTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
-	void deepDisposeNmTokenTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	void deepDisposeNmTokenTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
 
 	/**
 	 *	Internal use only.
@@ -428,7 +428,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *
 	 *	@param	Id	The NmTokenType key attribute of the instance generating the id.
 	 */
-	void deleteNmTokenTypeByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteNmTokenTypeByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -437,7 +437,7 @@ public interface ICFBamNmTokenTypeTableObj
 	 *
 	 *	@param	Name	The NmTokenType key attribute of the instance generating the id.
 	 */
-	void deleteNmTokenTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deleteNmTokenTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -445,28 +445,28 @@ public interface ICFBamNmTokenTypeTableObj
 	 *
 	 *	@param	ScopeId	The NmTokenType key attribute of the instance generating the id.
 	 */
-	void deleteNmTokenTypeByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deleteNmTokenTypeByScopeIdx( ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The NmTokenType key attribute of the instance generating the id.
 	 */
-	void deleteNmTokenTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteNmTokenTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The NmTokenType key attribute of the instance generating the id.
 	 */
-	void deleteNmTokenTypeByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteNmTokenTypeByPrevIdx( ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The NmTokenType key attribute of the instance generating the id.
 	 */
-	void deleteNmTokenTypeByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteNmTokenTypeByNextIdx( ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -475,8 +475,8 @@ public interface ICFBamNmTokenTypeTableObj
 	 *
 	 *	@param	PrevId	The NmTokenType key attribute of the instance generating the id.
 	 */
-	void deleteNmTokenTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteNmTokenTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -485,15 +485,15 @@ public interface ICFBamNmTokenTypeTableObj
 	 *
 	 *	@param	NextId	The NmTokenType key attribute of the instance generating the id.
 	 */
-	void deleteNmTokenTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteNmTokenTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	SchemaDefId	The NmTokenType key attribute of the instance generating the id.
 	 */
-	void deleteNmTokenTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId );
+	void deleteNmTokenTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId );
 
 	/**
 	 *	Move the CFBamNmTokenTypeObj instance up in the chain.  The instance is always refreshed.

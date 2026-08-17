@@ -263,12 +263,12 @@ public class CFBamNmTokenDefEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,24 +281,24 @@ public class CFBamNmTokenDefEditObj
 	}
 
 	@Override
-	public int getRequiredMaxLen() {
+	public $implJavaAtomType$ getRequiredMaxLen() {
 		return( getNmTokenDefRec().getRequiredMaxLen() );
 	}
 
 	@Override
-	public void setRequiredMaxLen( int value ) {
+	public void setRequiredMaxLen( $implJavaAtomType$ value ) {
 		if( getNmTokenDefRec().getRequiredMaxLen() != value ) {
 			getNmTokenDefRec().setRequiredMaxLen( value );
 		}
 	}
 
 	@Override
-	public String getOptionalInitValue() {
+	public $implJavaAtomType$ getOptionalInitValue() {
 		return( getNmTokenDefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public void setOptionalInitValue( String value ) {
+	public void setOptionalInitValue( $implJavaAtomType$ value ) {
 		if( getNmTokenDefRec().getOptionalInitValue() != value ) {
 			getNmTokenDefRec().setOptionalInitValue( value );
 		}

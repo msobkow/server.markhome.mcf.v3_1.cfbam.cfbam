@@ -70,7 +70,7 @@ public class CFBamSubProjectObj
 	protected boolean isNew;
 	protected ICFIntSubProjectEditObj edit;
 	protected ICFIntSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFIntSubProject rec;
 	protected ICFSecTenantObj requiredOwnerTenant;
 	protected ICFIntTopProjectObj requiredContainerParentTPrj;
@@ -174,7 +174,7 @@ public class CFBamSubProjectObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getMajorVersionTableObj().readMajorVersionByNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -317,12 +317,12 @@ public class CFBamSubProjectObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -399,7 +399,7 @@ public class CFBamSubProjectObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -452,22 +452,22 @@ public class CFBamSubProjectObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTenantId() {
+	public $implJavaAtomType$ getRequiredTenantId() {
 		return( getSubProjectRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTopProjectId() {
+	public $implJavaAtomType$ getRequiredTopProjectId() {
 		return( getSubProjectRec().getRequiredTopProjectId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getSubProjectRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getSubProjectRec().getOptionalDescription() );
 	}
 

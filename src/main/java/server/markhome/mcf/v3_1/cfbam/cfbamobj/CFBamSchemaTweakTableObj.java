@@ -71,26 +71,26 @@ public class CFBamSchemaTweakTableObj
 	protected ICFBamSchemaObj schema;
 	protected static int runtimeClassCode = ICFBamSchemaTweak.CLASS_CODE;
 	protected static final int backingClassCode = ICFBamSchemaTweak.CLASS_CODE;
-	private Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> members;
-	private Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> allSchemaTweak;
+	private Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> members;
+	private Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> allSchemaTweak;
 	private Map< ICFBamTweakByUNameIdxKey,
 		ICFBamSchemaTweakObj > indexByUNameIdx;
 	private Map< ICFBamTweakByValTentIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > > indexByValTentIdx;
+		Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > > indexByValTentIdx;
 	private Map< ICFBamTweakByScopeIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > > indexByScopeIdx;
+		Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > > indexByScopeIdx;
 	private Map< ICFBamTweakByDefSchemaIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > > indexByDefSchemaIdx;
+		Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > > indexByDefSchemaIdx;
 	private Map< ICFBamTweakByUDefIdxKey,
 		ICFBamSchemaTweakObj > indexByUDefIdx;
 	private Map< ICFBamSchemaTweakBySchemaIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > > indexBySchemaIdx;
+		Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > > indexBySchemaIdx;
 	public static String TABLE_NAME = "SchemaTweak";
 	public static String TABLE_DBNAME = "schtwk";
 
 	public CFBamSchemaTweakTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamSchemaTweakObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamSchemaTweakObj>();
 		allSchemaTweak = null;
 		indexByUNameIdx = null;
 		indexByValTentIdx = null;
@@ -102,7 +102,7 @@ public class CFBamSchemaTweakTableObj
 
 	public CFBamSchemaTweakTableObj( ICFBamSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamSchemaTweakObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamSchemaTweakObj>();
 		allSchemaTweak = null;
 		indexByUNameIdx = null;
 		indexByValTentIdx = null;
@@ -235,7 +235,7 @@ public class CFBamSchemaTweakTableObj
 	@Override
 	public ICFBamSchemaTweakObj realiseSchemaTweak( ICFBamSchemaTweakObj Obj ) {
 		ICFBamSchemaTweakObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamSchemaTweakObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFBamSchemaTweakObj existingObj = members.get( pkey );
@@ -260,7 +260,7 @@ public class CFBamSchemaTweakTableObj
 				ICFBamTweakByValTentIdxKey keyValTentIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByValTentIdxKey();
 				keyValTentIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > mapValTentIdx = indexByValTentIdx.get( keyValTentIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > mapValTentIdx = indexByValTentIdx.get( keyValTentIdx );
 				if( mapValTentIdx != null ) {
 					indexByValTentIdx.remove( keyValTentIdx );
 				}
@@ -270,7 +270,7 @@ public class CFBamSchemaTweakTableObj
 				ICFBamTweakByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					indexByScopeIdx.remove( keyScopeIdx );
 				}
@@ -280,7 +280,7 @@ public class CFBamSchemaTweakTableObj
 				ICFBamTweakByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					indexByDefSchemaIdx.remove( keyDefSchemaIdx );
 				}
@@ -301,7 +301,7 @@ public class CFBamSchemaTweakTableObj
 				ICFBamSchemaTweakBySchemaIdxKey keySchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaTweak().newBySchemaIdxKey();
 				keySchemaIdx.setRequiredSchemaDefId( keepObj.getRequiredSchemaDefId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
 				if( mapSchemaIdx != null ) {
 					mapSchemaIdx.remove( keepObj.getPKey() );
 					if( mapSchemaIdx.size() <= 0 ) {
@@ -328,7 +328,7 @@ public class CFBamSchemaTweakTableObj
 				ICFBamTweakByValTentIdxKey keyValTentIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByValTentIdxKey();
 				keyValTentIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > mapValTentIdx = indexByValTentIdx.get( keyValTentIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > mapValTentIdx = indexByValTentIdx.get( keyValTentIdx );
 				if( mapValTentIdx != null ) {
 					mapValTentIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -338,7 +338,7 @@ public class CFBamSchemaTweakTableObj
 				ICFBamTweakByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					mapScopeIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -348,7 +348,7 @@ public class CFBamSchemaTweakTableObj
 				ICFBamTweakByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -369,7 +369,7 @@ public class CFBamSchemaTweakTableObj
 				ICFBamSchemaTweakBySchemaIdxKey keySchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaTweak().newBySchemaIdxKey();
 				keySchemaIdx.setRequiredSchemaDefId( keepObj.getRequiredSchemaDefId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
 				if( mapSchemaIdx != null ) {
 					mapSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -401,7 +401,7 @@ public class CFBamSchemaTweakTableObj
 				ICFBamTweakByValTentIdxKey keyValTentIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByValTentIdxKey();
 				keyValTentIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > mapValTentIdx = indexByValTentIdx.get( keyValTentIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > mapValTentIdx = indexByValTentIdx.get( keyValTentIdx );
 				if( mapValTentIdx != null ) {
 					mapValTentIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -411,7 +411,7 @@ public class CFBamSchemaTweakTableObj
 				ICFBamTweakByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					mapScopeIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -421,7 +421,7 @@ public class CFBamSchemaTweakTableObj
 				ICFBamTweakByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -442,7 +442,7 @@ public class CFBamSchemaTweakTableObj
 				ICFBamSchemaTweakBySchemaIdxKey keySchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaTweak().newBySchemaIdxKey();
 				keySchemaIdx.setRequiredSchemaDefId( keepObj.getRequiredSchemaDefId() );
-				Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamSchemaTweakObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
 				if( mapSchemaIdx != null ) {
 					mapSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -468,12 +468,12 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public ICFBamSchemaTweakObj readSchemaTweak( CFLibDbKeyHash256 pkey ) {
+	public ICFBamSchemaTweakObj readSchemaTweak( ICFLibKeyHash256 pkey ) {
 		return( readSchemaTweak( pkey, false ) );
 	}
 
 	@Override
-	public ICFBamSchemaTweakObj readSchemaTweak( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFBamSchemaTweakObj readSchemaTweak( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFBamSchemaTweakObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -492,7 +492,7 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public ICFBamSchemaTweakObj readCachedSchemaTweak( CFLibDbKeyHash256 pkey ) {
+	public ICFBamSchemaTweakObj readCachedSchemaTweak( ICFLibKeyHash256 pkey ) {
 		ICFBamSchemaTweakObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -508,7 +508,7 @@ public class CFBamSchemaTweakTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamSchemaTweakObj existing = readCachedSchemaTweak( pkey );
 		if( existing == null ) {
 			return;
@@ -532,7 +532,7 @@ public class CFBamSchemaTweakTableObj
 		schema.getTweakTableObj().reallyDeepDisposeTweak( obj );
 	}
 	@Override
-	public void deepDisposeSchemaTweak( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeSchemaTweak( ICFLibKeyHash256 pkey ) {
 		ICFBamSchemaTweakObj obj = readCachedSchemaTweak( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -540,7 +540,7 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public ICFBamSchemaTweakObj lockSchemaTweak( CFLibDbKeyHash256 pkey ) {
+	public ICFBamSchemaTweakObj lockSchemaTweak( ICFLibKeyHash256 pkey ) {
 		ICFBamSchemaTweakObj locked = null;
 		ICFBamSchemaTweak lockRec = schema.getCFBamBackingStore().getTableSchemaTweak().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -564,7 +564,7 @@ public class CFBamSchemaTweakTableObj
 	public List<ICFBamSchemaTweakObj> readAllSchemaTweak( boolean forceRead ) {
 		final String S_ProcName = "readAllSchemaTweak";
 		if( ( allSchemaTweak == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> map = new HashMap<CFLibDbKeyHash256,ICFBamSchemaTweakObj>();
+			Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> map = new HashMap<ICFLibKeyHash256,ICFBamSchemaTweakObj>();
 			allSchemaTweak = map;
 			ICFBamSchemaTweak[] recList = schema.getCFBamBackingStore().getTableSchemaTweak().readAllDerived( null );
 			ICFBamSchemaTweak rec;
@@ -620,8 +620,8 @@ public class CFBamSchemaTweakTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -678,8 +678,8 @@ public class CFBamSchemaTweakTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -690,21 +690,21 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public ICFBamSchemaTweakObj readSchemaTweakByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamSchemaTweakObj readSchemaTweakByIdIdx( ICFLibKeyHash256 Id )
 	{
 		return( readSchemaTweakByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamSchemaTweakObj readSchemaTweakByIdIdx( CFLibDbKeyHash256 Id, boolean forceRead )
+	public ICFBamSchemaTweakObj readSchemaTweakByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamSchemaTweakObj obj = readSchemaTweak( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamSchemaTweakObj readSchemaTweakByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamSchemaTweakObj readSchemaTweakByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readSchemaTweakByUNameIdx( ScopeId,
@@ -713,7 +713,7 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public ICFBamSchemaTweakObj readSchemaTweakByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamSchemaTweakObj readSchemaTweakByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -742,29 +742,29 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaTweakObj> readSchemaTweakByValTentIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFBamSchemaTweakObj> readSchemaTweakByValTentIdx( ICFLibKeyHash256 TenantId )
 	{
 		return( readSchemaTweakByValTentIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamSchemaTweakObj> readSchemaTweakByValTentIdx( CFLibDbKeyHash256 TenantId,
+	public List<ICFBamSchemaTweakObj> readSchemaTweakByValTentIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSchemaTweakByValTentIdx";
 		ICFBamTweakByValTentIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByValTentIdxKey();
 		key.setRequiredTenantId( TenantId );
-		Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> dict;
+		Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> dict;
 		if( indexByValTentIdx == null ) {
 			indexByValTentIdx = new HashMap< ICFBamTweakByValTentIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaTweakObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaTweakObj > >();
 		}
 		if( ( ! forceRead ) && indexByValTentIdx.containsKey( key ) ) {
 			dict = indexByValTentIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamSchemaTweakObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamSchemaTweakObj>();
 			ICFBamTweakObj obj;
 			ICFBamTweak[] recList = schema.getCFBamBackingStore().getTableTweak().readDerivedByValTentIdx( null,
 				TenantId );
@@ -822,8 +822,8 @@ public class CFBamSchemaTweakTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -835,29 +835,29 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaTweakObj> readSchemaTweakByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public List<ICFBamSchemaTweakObj> readSchemaTweakByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		return( readSchemaTweakByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamSchemaTweakObj> readSchemaTweakByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	public List<ICFBamSchemaTweakObj> readSchemaTweakByScopeIdx( ICFLibKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSchemaTweakByScopeIdx";
 		ICFBamTweakByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
-		Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> dict;
+		Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> dict;
 		if( indexByScopeIdx == null ) {
 			indexByScopeIdx = new HashMap< ICFBamTweakByScopeIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaTweakObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaTweakObj > >();
 		}
 		if( ( ! forceRead ) && indexByScopeIdx.containsKey( key ) ) {
 			dict = indexByScopeIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamSchemaTweakObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamSchemaTweakObj>();
 			ICFBamTweakObj obj;
 			ICFBamTweak[] recList = schema.getCFBamBackingStore().getTableTweak().readDerivedByScopeIdx( null,
 				ScopeId );
@@ -915,8 +915,8 @@ public class CFBamSchemaTweakTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -928,29 +928,29 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaTweakObj> readSchemaTweakByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamSchemaTweakObj> readSchemaTweakByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		return( readSchemaTweakByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamSchemaTweakObj> readSchemaTweakByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	public List<ICFBamSchemaTweakObj> readSchemaTweakByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSchemaTweakByDefSchemaIdx";
 		ICFBamTweakByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
-		Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> dict;
+		Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> dict;
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamTweakByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaTweakObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaTweakObj > >();
 		}
 		if( ( ! forceRead ) && indexByDefSchemaIdx.containsKey( key ) ) {
 			dict = indexByDefSchemaIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamSchemaTweakObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamSchemaTweakObj>();
 			ICFBamTweakObj obj;
 			ICFBamTweak[] recList = schema.getCFBamBackingStore().getTableTweak().readDerivedByDefSchemaIdx( null,
 				DefSchemaId );
@@ -1008,8 +1008,8 @@ public class CFBamSchemaTweakTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1021,10 +1021,10 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public ICFBamSchemaTweakObj readSchemaTweakByUDefIdx( CFLibDbKeyHash256 TenantId,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaTenantId,
-		CFLibDbKeyHash256 DefSchemaId,
+	public ICFBamSchemaTweakObj readSchemaTweakByUDefIdx( ICFLibKeyHash256 TenantId,
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 DefSchemaTenantId,
+		ICFLibKeyHash256 DefSchemaId,
 		String Name )
 	{
 		return( readSchemaTweakByUDefIdx( TenantId,
@@ -1036,10 +1036,10 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public ICFBamSchemaTweakObj readSchemaTweakByUDefIdx( CFLibDbKeyHash256 TenantId,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaTenantId,
-		CFLibDbKeyHash256 DefSchemaId,
+	public ICFBamSchemaTweakObj readSchemaTweakByUDefIdx( ICFLibKeyHash256 TenantId,
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 DefSchemaTenantId,
+		ICFLibKeyHash256 DefSchemaId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUDefIdx == null ) {
@@ -1074,29 +1074,29 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaTweakObj> readSchemaTweakBySchemaIdx( CFLibDbKeyHash256 SchemaDefId )
+	public List<ICFBamSchemaTweakObj> readSchemaTweakBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
 	{
 		return( readSchemaTweakBySchemaIdx( SchemaDefId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamSchemaTweakObj> readSchemaTweakBySchemaIdx( CFLibDbKeyHash256 SchemaDefId,
+	public List<ICFBamSchemaTweakObj> readSchemaTweakBySchemaIdx( ICFLibKeyHash256 SchemaDefId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSchemaTweakBySchemaIdx";
 		ICFBamSchemaTweakBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaTweak().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );
-		Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> dict;
+		Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> dict;
 		if( indexBySchemaIdx == null ) {
 			indexBySchemaIdx = new HashMap< ICFBamSchemaTweakBySchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaTweakObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaTweakObj > >();
 		}
 		if( ( ! forceRead ) && indexBySchemaIdx.containsKey( key ) ) {
 			dict = indexBySchemaIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamSchemaTweakObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamSchemaTweakObj>();
 			ICFBamSchemaTweakObj obj;
 			ICFBamSchemaTweak[] recList = schema.getCFBamBackingStore().getTableSchemaTweak().readDerivedBySchemaIdx( null,
 				SchemaDefId );
@@ -1154,8 +1154,8 @@ public class CFBamSchemaTweakTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1167,7 +1167,7 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public ICFBamSchemaTweakObj readCachedSchemaTweakByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamSchemaTweakObj readCachedSchemaTweakByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamSchemaTweakObj obj = null;
 		obj = readCachedSchemaTweak( Id );
@@ -1175,7 +1175,7 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public ICFBamSchemaTweakObj readCachedSchemaTweakByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamSchemaTweakObj readCachedSchemaTweakByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamSchemaTweakObj obj = null;
@@ -1213,14 +1213,14 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaTweakObj> readCachedSchemaTweakByValTentIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFBamSchemaTweakObj> readCachedSchemaTweakByValTentIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedSchemaTweakByValTentIdx";
 		ICFBamTweakByValTentIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByValTentIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFBamSchemaTweakObj> arrayList = new ArrayList<ICFBamSchemaTweakObj>();
 		if( indexByValTentIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> dict;
+			Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> dict;
 			if( indexByValTentIdx.containsKey( key ) ) {
 				dict = indexByValTentIdx.get( key );
 				int len = dict.size();
@@ -1278,8 +1278,8 @@ public class CFBamSchemaTweakTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1290,14 +1290,14 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaTweakObj> readCachedSchemaTweakByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public List<ICFBamSchemaTweakObj> readCachedSchemaTweakByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedSchemaTweakByScopeIdx";
 		ICFBamTweakByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		ArrayList<ICFBamSchemaTweakObj> arrayList = new ArrayList<ICFBamSchemaTweakObj>();
 		if( indexByScopeIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> dict;
+			Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> dict;
 			if( indexByScopeIdx.containsKey( key ) ) {
 				dict = indexByScopeIdx.get( key );
 				int len = dict.size();
@@ -1355,8 +1355,8 @@ public class CFBamSchemaTweakTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1367,14 +1367,14 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaTweakObj> readCachedSchemaTweakByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamSchemaTweakObj> readCachedSchemaTweakByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedSchemaTweakByDefSchemaIdx";
 		ICFBamTweakByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamSchemaTweakObj> arrayList = new ArrayList<ICFBamSchemaTweakObj>();
 		if( indexByDefSchemaIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> dict;
+			Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> dict;
 			if( indexByDefSchemaIdx.containsKey( key ) ) {
 				dict = indexByDefSchemaIdx.get( key );
 				int len = dict.size();
@@ -1432,8 +1432,8 @@ public class CFBamSchemaTweakTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1444,10 +1444,10 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public ICFBamSchemaTweakObj readCachedSchemaTweakByUDefIdx( CFLibDbKeyHash256 TenantId,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaTenantId,
-		CFLibDbKeyHash256 DefSchemaId,
+	public ICFBamSchemaTweakObj readCachedSchemaTweakByUDefIdx( ICFLibKeyHash256 TenantId,
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 DefSchemaTenantId,
+		ICFLibKeyHash256 DefSchemaId,
 		String Name )
 	{
 		ICFBamSchemaTweakObj obj = null;
@@ -1488,14 +1488,14 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public List<ICFBamSchemaTweakObj> readCachedSchemaTweakBySchemaIdx( CFLibDbKeyHash256 SchemaDefId )
+	public List<ICFBamSchemaTweakObj> readCachedSchemaTweakBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "readCachedSchemaTweakBySchemaIdx";
 		ICFBamSchemaTweakBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaTweak().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );
 		ArrayList<ICFBamSchemaTweakObj> arrayList = new ArrayList<ICFBamSchemaTweakObj>();
 		if( indexBySchemaIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> dict;
+			Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> dict;
 			if( indexBySchemaIdx.containsKey( key ) ) {
 				dict = indexBySchemaIdx.get( key );
 				int len = dict.size();
@@ -1553,8 +1553,8 @@ public class CFBamSchemaTweakTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1565,7 +1565,7 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaTweakByIdIdx( CFLibDbKeyHash256 Id )
+	public void deepDisposeSchemaTweakByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamSchemaTweakObj obj = readCachedSchemaTweakByIdIdx( Id );
 		if( obj != null ) {
@@ -1574,7 +1574,7 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaTweakByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public void deepDisposeSchemaTweakByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamSchemaTweakObj obj = readCachedSchemaTweakByUNameIdx( ScopeId,
@@ -1585,7 +1585,7 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaTweakByValTentIdx( CFLibDbKeyHash256 TenantId )
+	public void deepDisposeSchemaTweakByValTentIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeSchemaTweakByValTentIdx";
 		ICFBamSchemaTweakObj obj;
@@ -1602,7 +1602,7 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaTweakByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public void deepDisposeSchemaTweakByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeSchemaTweakByScopeIdx";
 		ICFBamSchemaTweakObj obj;
@@ -1619,7 +1619,7 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaTweakByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deepDisposeSchemaTweakByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeSchemaTweakByDefSchemaIdx";
 		ICFBamSchemaTweakObj obj;
@@ -1636,10 +1636,10 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaTweakByUDefIdx( CFLibDbKeyHash256 TenantId,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaTenantId,
-		CFLibDbKeyHash256 DefSchemaId,
+	public void deepDisposeSchemaTweakByUDefIdx( ICFLibKeyHash256 TenantId,
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 DefSchemaTenantId,
+		ICFLibKeyHash256 DefSchemaId,
 		String Name )
 	{
 		ICFBamSchemaTweakObj obj = readCachedSchemaTweakByUDefIdx( TenantId,
@@ -1653,7 +1653,7 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deepDisposeSchemaTweakBySchemaIdx( CFLibDbKeyHash256 SchemaDefId )
+	public void deepDisposeSchemaTweakBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "deepDisposeSchemaTweakBySchemaIdx";
 		ICFBamSchemaTweakObj obj;
@@ -1690,7 +1690,7 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deleteSchemaTweakByIdIdx( CFLibDbKeyHash256 Id )
+	public void deleteSchemaTweakByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamSchemaTweakObj obj = readSchemaTweak(Id);
 		if( obj != null ) {
@@ -1720,7 +1720,7 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deleteSchemaTweakByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public void deleteSchemaTweakByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -1748,16 +1748,16 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deleteSchemaTweakByValTentIdx( CFLibDbKeyHash256 TenantId )
+	public void deleteSchemaTweakByValTentIdx( ICFLibKeyHash256 TenantId )
 	{
 		ICFBamTweakByValTentIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByValTentIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByValTentIdx == null ) {
 			indexByValTentIdx = new HashMap< ICFBamTweakByValTentIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaTweakObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaTweakObj > >();
 		}
 		if( indexByValTentIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> dict = indexByValTentIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> dict = indexByValTentIdx.get( key );
 			schema.getCFBamBackingStore().getTableSchemaTweak().deleteSchemaTweakByValTentIdx( null,
 				TenantId );
 			Iterator<ICFBamSchemaTweakObj> iter = dict.values().iterator();
@@ -1782,16 +1782,16 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deleteSchemaTweakByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public void deleteSchemaTweakByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		ICFBamTweakByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		if( indexByScopeIdx == null ) {
 			indexByScopeIdx = new HashMap< ICFBamTweakByScopeIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaTweakObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaTweakObj > >();
 		}
 		if( indexByScopeIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> dict = indexByScopeIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> dict = indexByScopeIdx.get( key );
 			schema.getCFBamBackingStore().getTableSchemaTweak().deleteSchemaTweakByScopeIdx( null,
 				ScopeId );
 			Iterator<ICFBamSchemaTweakObj> iter = dict.values().iterator();
@@ -1816,16 +1816,16 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deleteSchemaTweakByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deleteSchemaTweakByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		ICFBamTweakByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryTweak().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamTweakByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaTweakObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaTweakObj > >();
 		}
 		if( indexByDefSchemaIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> dict = indexByDefSchemaIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> dict = indexByDefSchemaIdx.get( key );
 			schema.getCFBamBackingStore().getTableSchemaTweak().deleteSchemaTweakByDefSchemaIdx( null,
 				DefSchemaId );
 			Iterator<ICFBamSchemaTweakObj> iter = dict.values().iterator();
@@ -1850,10 +1850,10 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deleteSchemaTweakByUDefIdx( CFLibDbKeyHash256 TenantId,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaTenantId,
-		CFLibDbKeyHash256 DefSchemaId,
+	public void deleteSchemaTweakByUDefIdx( ICFLibKeyHash256 TenantId,
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 DefSchemaTenantId,
+		ICFLibKeyHash256 DefSchemaId,
 		String Name )
 	{
 		if( indexByUDefIdx == null ) {
@@ -1893,16 +1893,16 @@ public class CFBamSchemaTweakTableObj
 	}
 
 	@Override
-	public void deleteSchemaTweakBySchemaIdx( CFLibDbKeyHash256 SchemaDefId )
+	public void deleteSchemaTweakBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
 	{
 		ICFBamSchemaTweakBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactorySchemaTweak().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );
 		if( indexBySchemaIdx == null ) {
 			indexBySchemaIdx = new HashMap< ICFBamSchemaTweakBySchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamSchemaTweakObj > >();
+				Map< ICFLibKeyHash256, ICFBamSchemaTweakObj > >();
 		}
 		if( indexBySchemaIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamSchemaTweakObj> dict = indexBySchemaIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamSchemaTweakObj> dict = indexBySchemaIdx.get( key );
 			schema.getCFBamBackingStore().getTableSchemaTweak().deleteSchemaTweakBySchemaIdx( null,
 				SchemaDefId );
 			Iterator<ICFBamSchemaTweakObj> iter = dict.values().iterator();

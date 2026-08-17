@@ -190,25 +190,25 @@ public interface ICFBamSchemaDefObj
 	ICFSecTenantObj getRequiredOwnerCTenant( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required ICFLibKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required ICFLibKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	ICFLibKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute CTenantId.
+	 *	Get the required ICFLibKeyHash256 attribute CTenantId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute CTenantId.
+	 *	@return	The required ICFLibKeyHash256 attribute CTenantId.
 	 */
-	CFLibDbKeyHash256 getRequiredCTenantId();
+	ICFLibKeyHash256 getRequiredCTenantId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute MinorVersionId.
+	 *	Get the required ICFLibKeyHash256 attribute MinorVersionId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute MinorVersionId.
+	 *	@return	The required ICFLibKeyHash256 attribute MinorVersionId.
 	 */
-	CFLibDbKeyHash256 getRequiredMinorVersionId();
+	ICFLibKeyHash256 getRequiredMinorVersionId();
 
 	/**
 	 *	Get the required String attribute Name.

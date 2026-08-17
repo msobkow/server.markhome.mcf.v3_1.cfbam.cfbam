@@ -304,7 +304,7 @@ public class CFBamIndexTweakObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -325,7 +325,7 @@ public class CFBamIndexTweakObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredIndexId() {
+	public $implJavaAtomType$ getRequiredIndexId() {
 		return( getIndexTweakRec().getRequiredIndexId() );
 	}
 }

@@ -74,7 +74,7 @@ public class CFBamBuffServerObjFunc
 	extends CFBamBuffServerMethod
 	implements ICFBamServerObjFunc
 {
-	protected CFLibDbKeyHash256 optionalRetTableId;
+	protected $implJavaAtomType$ optionalRetTableId;
 
 	public CFBamBuffServerObjFunc() {
 		super();

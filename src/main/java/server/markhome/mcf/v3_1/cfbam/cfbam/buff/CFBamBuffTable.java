@@ -74,28 +74,28 @@ public class CFBamBuffTable
 	extends CFBamBuffScope
 	implements ICFBamTable
 {
-	protected CFLibDbKeyHash256 requiredSchemaDefId;
-	protected CFLibDbKeyHash256 optionalDefSchemaId;
-	protected String requiredName;
-	protected String optionalDbName;
-	protected String optionalShortName;
-	protected String optionalLabel;
-	protected String optionalShortDescription;
-	protected String optionalDescription;
-	protected boolean requiredPageData;
-	protected CFLibDbKeyHash256 optionalPrimaryIndexId;
-	protected String requiredTableClassCode;
-	protected CFLibDbKeyHash256 optionalLookupIndexId;
-	protected CFLibDbKeyHash256 optionalAltIndexId;
-	protected CFLibDbKeyHash256 optionalQualifyingTableId;
-	protected boolean requiredIsInstantiable;
-	protected boolean requiredHasHistory;
-	protected boolean requiredHasAuditColumns;
-	protected boolean requiredIsMutable;
-	protected boolean requiredIsServerOnly;
-	protected ICFBamPubSchema.LoaderBehaviourEnum requiredLoaderBehaviour;
-	protected ICFBamPubSchema.SecScopeEnum requiredSecScope;
-	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
+	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected $implJavaAtomType$ optionalDefSchemaId;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalDbName;
+	protected $implJavaAtomType$ optionalShortName;
+	protected $implJavaAtomType$ optionalLabel;
+	protected $implJavaAtomType$ optionalShortDescription;
+	protected $implJavaAtomType$ optionalDescription;
+	protected $implJavaAtomType$ requiredPageData;
+	protected $implJavaAtomType$ optionalPrimaryIndexId;
+	protected $implJavaAtomType$ requiredTableClassCode;
+	protected $implJavaAtomType$ optionalLookupIndexId;
+	protected $implJavaAtomType$ optionalAltIndexId;
+	protected $implJavaAtomType$ optionalQualifyingTableId;
+	protected $implJavaAtomType$ requiredIsInstantiable;
+	protected $implJavaAtomType$ requiredHasHistory;
+	protected $implJavaAtomType$ requiredHasAuditColumns;
+	protected $implJavaAtomType$ requiredIsMutable;
+	protected $implJavaAtomType$ requiredIsServerOnly;
+	protected $implJavaAtomType$ requiredLoaderBehaviour;
+	protected $implJavaAtomType$ requiredSecScope;
+	protected $implJavaAtomType$ requiredCodeVis;
 
 	public CFBamBuffTable() {
 		super();

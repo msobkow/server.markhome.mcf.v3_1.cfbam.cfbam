@@ -73,7 +73,7 @@ public class CFBamScopeObj
 	protected boolean isNew;
 	protected ICFBamScopeEditObj edit;
 	protected ICFBamSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFBamScope rec;
 	protected ICFSecTenantObj requiredOwnerTenant;
 
@@ -304,12 +304,12 @@ public class CFBamScopeObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -386,7 +386,7 @@ public class CFBamScopeObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -407,7 +407,7 @@ public class CFBamScopeObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTenantId() {
+	public $implJavaAtomType$ getRequiredTenantId() {
 		return( getScopeRec().getRequiredTenantId() );
 	}
 

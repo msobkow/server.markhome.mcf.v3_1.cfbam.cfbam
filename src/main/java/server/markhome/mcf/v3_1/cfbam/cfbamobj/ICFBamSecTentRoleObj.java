@@ -263,18 +263,18 @@ public interface ICFBamSecTentRoleObj
 	List<ICFSecSecTentRoleMembObj> getOptionalChildrenMembByRole( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecTentRoleId.
+	 *	Get the required ICFLibKeyHash256 attribute SecTentRoleId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecTentRoleId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecTentRoleId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecTentRoleId();
+	ICFLibKeyHash256 getRequiredSecTentRoleId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TenantId.
+	 *	Get the required ICFLibKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TenantId.
+	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
 	 */
-	CFLibDbKeyHash256 getRequiredTenantId();
+	ICFLibKeyHash256 getRequiredTenantId();
 
 	/**
 	 *	Get the required String attribute Name.

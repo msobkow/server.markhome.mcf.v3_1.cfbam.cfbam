@@ -70,7 +70,7 @@ public class CFBamClusterObj
 	protected boolean isNew;
 	protected ICFSecClusterEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFSecCluster rec;
 	protected List<ICFSecTenantObj> optionalComponentsTenant;
 	protected List<ICFSecSecClusGrpObj> optionalComponentsSecGroup;
@@ -170,7 +170,7 @@ public class CFBamClusterObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredTenantName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTenantTableObj().readTenantByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -308,12 +308,12 @@ public class CFBamClusterObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -390,7 +390,7 @@ public class CFBamClusterObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -459,12 +459,12 @@ public class CFBamClusterObj
 	}
 
 	@Override
-	public String getRequiredFullDomName() {
+	public $implJavaAtomType$ getRequiredFullDomName() {
 		return( getClusterRec().getRequiredFullDomName() );
 	}
 
 	@Override
-	public String getRequiredDescription() {
+	public $implJavaAtomType$ getRequiredDescription() {
 		return( getClusterRec().getRequiredDescription() );
 	}
 

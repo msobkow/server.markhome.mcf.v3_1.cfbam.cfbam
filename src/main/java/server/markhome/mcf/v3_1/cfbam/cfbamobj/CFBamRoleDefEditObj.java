@@ -400,12 +400,12 @@ public class CFBamRoleDefEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -421,58 +421,58 @@ public class CFBamRoleDefEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredScopeId() {
+	public $implJavaAtomType$ getRequiredScopeId() {
 		return( getRoleDefRec().getRequiredScopeId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getRoleDefRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getRoleDefRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getRoleDefRec().getRequiredName() != value ) {
 			getRoleDefRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public String getRequiredEnables() {
+	public $implJavaAtomType$ getRequiredEnables() {
 		return( getRoleDefRec().getRequiredEnables() );
 	}
 
 	@Override
-	public void setRequiredEnables( String value ) {
+	public void setRequiredEnables( $implJavaAtomType$ value ) {
 		if( getRoleDefRec().getRequiredEnables() != value ) {
 			getRoleDefRec().setRequiredEnables( value );
 		}
 	}
 
 	@Override
-	public String getRequiredIncludes() {
+	public $implJavaAtomType$ getRequiredIncludes() {
 		return( getRoleDefRec().getRequiredIncludes() );
 	}
 
 	@Override
-	public void setRequiredIncludes( String value ) {
+	public void setRequiredIncludes( $implJavaAtomType$ value ) {
 		if( getRoleDefRec().getRequiredIncludes() != value ) {
 			getRoleDefRec().setRequiredIncludes( value );
 		}

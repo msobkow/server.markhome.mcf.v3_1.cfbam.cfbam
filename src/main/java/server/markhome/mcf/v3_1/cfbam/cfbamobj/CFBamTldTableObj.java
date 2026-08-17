@@ -66,10 +66,10 @@ public class CFBamTldTableObj
 	implements ICFBamTldTableObj
 {
 	protected ICFBamSchemaObj schema;
-	private Map<CFLibDbKeyHash256, ICFIntTldObj> members;
-	private Map<CFLibDbKeyHash256, ICFIntTldObj> allTld;
+	private Map<ICFLibKeyHash256, ICFIntTldObj> members;
+	private Map<ICFLibKeyHash256, ICFIntTldObj> allTld;
 	private Map< ICFIntTldByTenantIdxKey,
-		Map<CFLibDbKeyHash256, ICFIntTldObj > > indexByTenantIdx;
+		Map<ICFLibKeyHash256, ICFIntTldObj > > indexByTenantIdx;
 	private Map< ICFIntTldByNameIdxKey,
 		ICFIntTldObj > indexByNameIdx;
 	public static String TABLE_NAME = "Tld";
@@ -77,7 +77,7 @@ public class CFBamTldTableObj
 
 	public CFBamTldTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFIntTldObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFIntTldObj>();
 		allTld = null;
 		indexByTenantIdx = null;
 		indexByNameIdx = null;
@@ -85,7 +85,7 @@ public class CFBamTldTableObj
 
 	public CFBamTldTableObj( ICFIntSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFIntTldObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFIntTldObj>();
 		allTld = null;
 		indexByTenantIdx = null;
 		indexByNameIdx = null;
@@ -196,7 +196,7 @@ public class CFBamTldTableObj
 	@Override
 	public ICFIntTldObj realiseTld( ICFIntTldObj Obj ) {
 		ICFIntTldObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFIntTldObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFIntTldObj existingObj = members.get( pkey );
@@ -213,7 +213,7 @@ public class CFBamTldTableObj
 				ICFIntTldByTenantIdxKey keyTenantIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFIntTldObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFIntTldObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.remove( keepObj.getPKey() );
 					if( mapTenantIdx.size() <= 0 ) {
@@ -236,7 +236,7 @@ public class CFBamTldTableObj
 				ICFIntTldByTenantIdxKey keyTenantIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFIntTldObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFIntTldObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -267,7 +267,7 @@ public class CFBamTldTableObj
 				ICFIntTldByTenantIdxKey keyTenantIdx =
 					schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFIntTldObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFIntTldObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -298,12 +298,12 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public ICFIntTldObj readTld( CFLibDbKeyHash256 pkey ) {
+	public ICFIntTldObj readTld( ICFLibKeyHash256 pkey ) {
 		return( readTld( pkey, false ) );
 	}
 
 	@Override
-	public ICFIntTldObj readTld( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFIntTldObj readTld( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFIntTldObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -322,7 +322,7 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public ICFIntTldObj readCachedTld( CFLibDbKeyHash256 pkey ) {
+	public ICFIntTldObj readCachedTld( ICFLibKeyHash256 pkey ) {
 		ICFIntTldObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -338,7 +338,7 @@ public class CFBamTldTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFIntTldObj existing = readCachedTld( pkey );
 		if( existing == null ) {
 			return;
@@ -369,7 +369,7 @@ public class CFBamTldTableObj
 
 	}
 	@Override
-	public void deepDisposeTld( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeTld( ICFLibKeyHash256 pkey ) {
 		ICFIntTldObj obj = readCachedTld( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -377,7 +377,7 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public ICFIntTldObj lockTld( CFLibDbKeyHash256 pkey ) {
+	public ICFIntTldObj lockTld( ICFLibKeyHash256 pkey ) {
 		ICFIntTldObj locked = null;
 		ICFIntTld lockRec = schema.getCFIntBackingStore().getTableTld().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -401,7 +401,7 @@ public class CFBamTldTableObj
 	public List<ICFIntTldObj> readAllTld( boolean forceRead ) {
 		final String S_ProcName = "readAllTld";
 		if( ( allTld == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFIntTldObj> map = new HashMap<CFLibDbKeyHash256,ICFIntTldObj>();
+			Map<ICFLibKeyHash256, ICFIntTldObj> map = new HashMap<ICFLibKeyHash256,ICFIntTldObj>();
 			allTld = map;
 			ICFIntTld[] recList = schema.getCFIntBackingStore().getTableTld().readAllDerived( null );
 			ICFIntTld rec;
@@ -457,8 +457,8 @@ public class CFBamTldTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -515,8 +515,8 @@ public class CFBamTldTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -527,43 +527,43 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public ICFIntTldObj readTldByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFIntTldObj readTldByIdIdx( ICFLibKeyHash256 Id )
 	{
 		return( readTldByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFIntTldObj readTldByIdIdx( CFLibDbKeyHash256 Id, boolean forceRead )
+	public ICFIntTldObj readTldByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
 	{
 		ICFIntTldObj obj = readTld( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFIntTldObj> readTldByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFIntTldObj> readTldByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		return( readTldByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFIntTldObj> readTldByTenantIdx( CFLibDbKeyHash256 TenantId,
+	public List<ICFIntTldObj> readTldByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readTldByTenantIdx";
 		ICFIntTldByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
-		Map<CFLibDbKeyHash256, ICFIntTldObj> dict;
+		Map<ICFLibKeyHash256, ICFIntTldObj> dict;
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFIntTldByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFIntTldObj > >();
+				Map< ICFLibKeyHash256, ICFIntTldObj > >();
 		}
 		if( ( ! forceRead ) && indexByTenantIdx.containsKey( key ) ) {
 			dict = indexByTenantIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFIntTldObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFIntTldObj>();
 			ICFIntTldObj obj;
 			ICFIntTld[] recList = schema.getCFIntBackingStore().getTableTld().readDerivedByTenantIdx( null,
 				TenantId );
@@ -621,8 +621,8 @@ public class CFBamTldTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -667,7 +667,7 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public ICFIntTldObj readCachedTldByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFIntTldObj readCachedTldByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFIntTldObj obj = null;
 		obj = readCachedTld( Id );
@@ -675,14 +675,14 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public List<ICFIntTldObj> readCachedTldByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFIntTldObj> readCachedTldByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedTldByTenantIdx";
 		ICFIntTldByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFIntTldObj> arrayList = new ArrayList<ICFIntTldObj>();
 		if( indexByTenantIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFIntTldObj> dict;
+			Map<ICFLibKeyHash256, ICFIntTldObj> dict;
 			if( indexByTenantIdx.containsKey( key ) ) {
 				dict = indexByTenantIdx.get( key );
 				int len = dict.size();
@@ -740,8 +740,8 @@ public class CFBamTldTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -788,7 +788,7 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public void deepDisposeTldByIdIdx( CFLibDbKeyHash256 Id )
+	public void deepDisposeTldByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFIntTldObj obj = readCachedTldByIdIdx( Id );
 		if( obj != null ) {
@@ -797,7 +797,7 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public void deepDisposeTldByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deepDisposeTldByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeTldByTenantIdx";
 		ICFIntTldObj obj;
@@ -841,7 +841,7 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public void deleteTldByIdIdx( CFLibDbKeyHash256 Id )
+	public void deleteTldByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFIntTldObj obj = readTld(Id);
 		if( obj != null ) {
@@ -871,16 +871,16 @@ public class CFBamTldTableObj
 	}
 
 	@Override
-	public void deleteTldByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deleteTldByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		ICFIntTldByTenantIdxKey key = schema.getCFIntBackingStore().getCFIntFactory().getFactoryTld().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFIntTldByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFIntTldObj > >();
+				Map< ICFLibKeyHash256, ICFIntTldObj > >();
 		}
 		if( indexByTenantIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFIntTldObj> dict = indexByTenantIdx.get( key );
+			Map<ICFLibKeyHash256, ICFIntTldObj> dict = indexByTenantIdx.get( key );
 			schema.getCFIntBackingStore().getTableTld().deleteTldByTenantIdx( null,
 				TenantId );
 			Iterator<ICFIntTldObj> iter = dict.values().iterator();

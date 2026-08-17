@@ -397,12 +397,12 @@ public class CFBamSecUserEMConfEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -418,53 +418,53 @@ public class CFBamSecUserEMConfEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
+	public $implJavaAtomType$ getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public String getRequiredConfirmEMailAddr() {
+	public $implJavaAtomType$ getRequiredConfirmEMailAddr() {
 		return( getSecUserEMConfRec().getRequiredConfirmEMailAddr() );
 	}
 
 	@Override
-	public void setRequiredConfirmEMailAddr( String value ) {
+	public void setRequiredConfirmEMailAddr( $implJavaAtomType$ value ) {
 		if( getSecUserEMConfRec().getRequiredConfirmEMailAddr() != value ) {
 			getSecUserEMConfRec().setRequiredConfirmEMailAddr( value );
 		}
 	}
 
 	@Override
-	public LocalDateTime getRequiredEMailSentStamp() {
+	public $implJavaAtomType$ getRequiredEMailSentStamp() {
 		return( getSecUserEMConfRec().getRequiredEMailSentStamp() );
 	}
 
 	@Override
-	public void setRequiredEMailSentStamp( LocalDateTime value ) {
+	public void setRequiredEMailSentStamp( $implJavaAtomType$ value ) {
 		if( getSecUserEMConfRec().getRequiredEMailSentStamp() != value ) {
 			getSecUserEMConfRec().setRequiredEMailSentStamp( value );
 		}
 	}
 
 	@Override
-	public CFLibUuid6 getRequiredEMConfirmationUuid6() {
+	public $implJavaAtomType$ getRequiredEMConfirmationUuid6() {
 		return( getSecUserEMConfRec().getRequiredEMConfirmationUuid6() );
 	}
 
 	@Override
-	public void setRequiredEMConfirmationUuid6( CFLibUuid6 value ) {
+	public void setRequiredEMConfirmationUuid6( $implJavaAtomType$ value ) {
 		if( getSecUserEMConfRec().getRequiredEMConfirmationUuid6() != value ) {
 			getSecUserEMConfRec().setRequiredEMConfirmationUuid6( value );
 		}
 	}
 
 	@Override
-	public boolean getRequiredNewAccount() {
+	public $implJavaAtomType$ getRequiredNewAccount() {
 		return( getSecUserEMConfRec().getRequiredNewAccount() );
 	}
 
 	@Override
-	public void setRequiredNewAccount( boolean value ) {
+	public void setRequiredNewAccount( $implJavaAtomType$ value ) {
 		if( getSecUserEMConfRec().getRequiredNewAccount() != value ) {
 			getSecUserEMConfRec().setRequiredNewAccount( value );
 		}

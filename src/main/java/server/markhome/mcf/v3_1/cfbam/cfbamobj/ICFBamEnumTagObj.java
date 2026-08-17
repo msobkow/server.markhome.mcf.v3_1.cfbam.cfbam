@@ -222,18 +222,18 @@ public interface ICFBamEnumTagObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	CFLibDbKeyHash256 primary key for this instance.
+	 *	@return	ICFLibKeyHash256 primary key for this instance.
 	 */
-	CFLibDbKeyHash256 getPKey();
+	ICFLibKeyHash256 getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param CFLibDbKeyHash256 primary key value for this instance.
+	 *	@param ICFLibKeyHash256 primary key value for this instance.
 	 */
-	void setPKey( CFLibDbKeyHash256 value );
+	void setPKey( ICFLibKeyHash256 value );
 
 	/**
 	 *	Is this a new instance?
@@ -309,25 +309,25 @@ public interface ICFBamEnumTagObj
 	ICFBamEnumTagObj getOptionalLookupNext( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required ICFLibKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required ICFLibKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	ICFLibKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional ICFLibKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional ICFLibKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	ICFLibKeyHash256 getOptionalDefSchemaId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute EnumId.
+	 *	Get the required ICFLibKeyHash256 attribute EnumId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute EnumId.
+	 *	@return	The required ICFLibKeyHash256 attribute EnumId.
 	 */
-	CFLibDbKeyHash256 getRequiredEnumId();
+	ICFLibKeyHash256 getRequiredEnumId();
 
 	/**
 	 *	Get the optional Short attribute EnumCode.
@@ -344,18 +344,18 @@ public interface ICFBamEnumTagObj
 	String getRequiredName();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute PrevId.
+	 *	Get the optional ICFLibKeyHash256 attribute PrevId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute PrevId.
+	 *	@return	The optional ICFLibKeyHash256 attribute PrevId.
 	 */
-	CFLibDbKeyHash256 getOptionalPrevId();
+	ICFLibKeyHash256 getOptionalPrevId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute NextId.
+	 *	Get the optional ICFLibKeyHash256 attribute NextId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute NextId.
+	 *	@return	The optional ICFLibKeyHash256 attribute NextId.
 	 */
-	CFLibDbKeyHash256 getOptionalNextId();
+	ICFLibKeyHash256 getOptionalNextId();
 
 	/**
 	 *	Internal use only.

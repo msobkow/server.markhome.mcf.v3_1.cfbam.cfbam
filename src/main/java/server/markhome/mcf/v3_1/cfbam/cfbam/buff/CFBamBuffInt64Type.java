@@ -74,7 +74,7 @@ public class CFBamBuffInt64Type
 	extends CFBamBuffInt64Def
 	implements ICFBamInt64Type
 {
-	protected CFLibDbKeyHash256 requiredSchemaDefId;
+	protected $implJavaAtomType$ requiredSchemaDefId;
 
 	public CFBamBuffInt64Type() {
 		super();

@@ -416,12 +416,12 @@ public class CFBamEnumTagEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -437,58 +437,58 @@ public class CFBamEnumTagEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getEnumTagRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredEnumId() {
+	public $implJavaAtomType$ getRequiredEnumId() {
 		return( getEnumTagRec().getRequiredEnumId() );
 	}
 
 	@Override
-	public Short getOptionalEnumCode() {
+	public $implJavaAtomType$ getOptionalEnumCode() {
 		return( getEnumTagRec().getOptionalEnumCode() );
 	}
 
 	@Override
-	public void setOptionalEnumCode( Short value ) {
+	public void setOptionalEnumCode( $implJavaAtomType$ value ) {
 		if( getEnumTagRec().getOptionalEnumCode() != value ) {
 			getEnumTagRec().setOptionalEnumCode( value );
 		}
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getEnumTagRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getEnumTagRec().getRequiredName() != value ) {
 			getEnumTagRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalPrevId() {
+	public $implJavaAtomType$ getOptionalPrevId() {
 		return( getEnumTagRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalNextId() {
+	public $implJavaAtomType$ getOptionalNextId() {
 		return( getEnumTagRec().getOptionalNextId() );
 	}
 

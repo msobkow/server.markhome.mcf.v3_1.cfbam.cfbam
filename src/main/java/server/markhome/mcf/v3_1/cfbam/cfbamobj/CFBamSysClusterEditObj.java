@@ -357,19 +357,19 @@ public class CFBamSysClusterEditObj
 	}
 
 	@Override
-	public int getRequiredSingletonId() {
+	public $implJavaAtomType$ getRequiredSingletonId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSingletonId(int value) {
+	public void setRequiredSingletonId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredClusterId() {
+	public $implJavaAtomType$ getRequiredClusterId() {
 		return( getSysClusterRec().getRequiredClusterId() );
 	}
 

@@ -74,8 +74,8 @@ public class CFBamBuffSchemaRole
 	extends CFBamBuffRoleDef
 	implements ICFBamSchemaRole
 {
-	protected CFLibDbKeyHash256 requiredSchemaDefId;
-	protected ICFBamPubSchema.RoleScopeEnum requiredRoleScope;
+	protected $implJavaAtomType$ requiredSchemaDefId;
+	protected $implJavaAtomType$ requiredRoleScope;
 
 	public CFBamBuffSchemaRole() {
 		super();

@@ -313,12 +313,12 @@ public class CFBamDbKeyHash512DefObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public String getOptionalInitValue() {
+	public $implJavaAtomType$ getOptionalInitValue() {
 		return( getDbKeyHash512DefRec().getOptionalInitValue() );
 	}
 }

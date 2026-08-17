@@ -265,18 +265,18 @@ public interface ICFBamTableEditObj
 	List<ICFBamTweakObj> getOptionalComponentsTweaks();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SchemaDefId.
+	 *	Get the required ICFLibKeyHash256 attribute SchemaDefId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SchemaDefId.
+	 *	@return	The required ICFLibKeyHash256 attribute SchemaDefId.
 	 */
-	CFLibDbKeyHash256 getRequiredSchemaDefId();
+	ICFLibKeyHash256 getRequiredSchemaDefId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional ICFLibKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional ICFLibKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	ICFLibKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -377,11 +377,11 @@ public interface ICFBamTableEditObj
 	void setRequiredPageData(boolean value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute PrimaryIndexId.
+	 *	Get the optional ICFLibKeyHash256 attribute PrimaryIndexId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute PrimaryIndexId.
+	 *	@return	The optional ICFLibKeyHash256 attribute PrimaryIndexId.
 	 */
-	CFLibDbKeyHash256 getOptionalPrimaryIndexId();
+	ICFLibKeyHash256 getOptionalPrimaryIndexId();
 
 	/**
 	 *	Get the required String attribute TableClassCode.
@@ -398,25 +398,25 @@ public interface ICFBamTableEditObj
 	void setRequiredTableClassCode(String value);
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute LookupIndexId.
+	 *	Get the optional ICFLibKeyHash256 attribute LookupIndexId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute LookupIndexId.
+	 *	@return	The optional ICFLibKeyHash256 attribute LookupIndexId.
 	 */
-	CFLibDbKeyHash256 getOptionalLookupIndexId();
+	ICFLibKeyHash256 getOptionalLookupIndexId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute AltIndexId.
+	 *	Get the optional ICFLibKeyHash256 attribute AltIndexId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute AltIndexId.
+	 *	@return	The optional ICFLibKeyHash256 attribute AltIndexId.
 	 */
-	CFLibDbKeyHash256 getOptionalAltIndexId();
+	ICFLibKeyHash256 getOptionalAltIndexId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute QualifyingTableId.
+	 *	Get the optional ICFLibKeyHash256 attribute QualifyingTableId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute QualifyingTableId.
+	 *	@return	The optional ICFLibKeyHash256 attribute QualifyingTableId.
 	 */
-	CFLibDbKeyHash256 getOptionalQualifyingTableId();
+	ICFLibKeyHash256 getOptionalQualifyingTableId();
 
 	/**
 	 *	Get the required boolean attribute IsInstantiable.

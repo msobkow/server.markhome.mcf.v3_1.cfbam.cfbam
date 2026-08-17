@@ -74,7 +74,7 @@ public class CFBamBuffTextType
 	extends CFBamBuffTextDef
 	implements ICFBamTextType
 {
-	protected CFLibDbKeyHash256 requiredSchemaDefId;
+	protected $implJavaAtomType$ requiredSchemaDefId;
 
 	public CFBamBuffTextType() {
 		super();

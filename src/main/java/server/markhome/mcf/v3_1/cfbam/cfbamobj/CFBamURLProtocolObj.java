@@ -373,22 +373,22 @@ public class CFBamURLProtocolObj
 	}
 
 	@Override
-	public int getRequiredURLProtocolId() {
+	public $implJavaAtomType$ getRequiredURLProtocolId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getURLProtocolRec().getRequiredName() );
 	}
 
 	@Override
-	public String getRequiredDescription() {
+	public $implJavaAtomType$ getRequiredDescription() {
 		return( getURLProtocolRec().getRequiredDescription() );
 	}
 
 	@Override
-	public boolean getRequiredIsSecure() {
+	public $implJavaAtomType$ getRequiredIsSecure() {
 		return( getURLProtocolRec().getRequiredIsSecure() );
 	}
 

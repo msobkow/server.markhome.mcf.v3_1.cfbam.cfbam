@@ -82,7 +82,7 @@ public interface ICFBamDelTopDep
 
 	public ICFBamTable getRequiredContainerTable();
 
-	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId);
+	public void setRequiredContainerTable(ICFLibKeyHash256 argTableId);
 
 	public void setRequiredContainerTable(ICFBamTable argObj);
 
@@ -92,7 +92,7 @@ public interface ICFBamDelTopDep
 
 	public ICFBamDelTopDep getOptionalLookupPrev();
 
-	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
+	public void setOptionalLookupPrev(ICFLibKeyHash256 argPrevId);
 
 	public void setOptionalLookupPrev(ICFBamDelTopDep argObj);
 
@@ -102,7 +102,7 @@ public interface ICFBamDelTopDep
 
 	public ICFBamDelTopDep getOptionalLookupNext();
 
-	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
+	public void setOptionalLookupNext(ICFLibKeyHash256 argNextId);
 
 	public void setOptionalLookupNext(ICFBamDelTopDep argObj);
 

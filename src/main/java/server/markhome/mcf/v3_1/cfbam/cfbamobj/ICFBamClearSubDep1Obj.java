@@ -120,18 +120,18 @@ public interface ICFBamClearSubDep1Obj
 	List<ICFBamClearSubDep2Obj> getOptionalComponentsClearDep( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required ICFLibKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required ICFLibKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	ICFLibKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute ClearTopDepId.
+	 *	Get the required ICFLibKeyHash256 attribute ClearTopDepId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute ClearTopDepId.
+	 *	@return	The required ICFLibKeyHash256 attribute ClearTopDepId.
 	 */
-	CFLibDbKeyHash256 getRequiredClearTopDepId();
+	ICFLibKeyHash256 getRequiredClearTopDepId();
 
 	/**
 	 *	Get the required String attribute Name.

@@ -257,29 +257,29 @@ public class CFBamSchemaRoleEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSchemaDefId() {
+	public $implJavaAtomType$ getRequiredSchemaDefId() {
 		return( getSchemaRoleRec().getRequiredSchemaDefId() );
 	}
 
 	@Override
-	public ICFBamPubSchema.RoleScopeEnum getRequiredRoleScope() {
+	public $implJavaAtomType$ getRequiredRoleScope() {
 		return( getSchemaRoleRec().getRequiredRoleScope() );
 	}
 
 	@Override
-	public void setRequiredRoleScope( ICFBamPubSchema.RoleScopeEnum value ) {
+	public void setRequiredRoleScope( $implJavaAtomType$ value ) {
 		if( getSchemaRoleRec().getRequiredRoleScope() != value ) {
 			getSchemaRoleRec().setRequiredRoleScope( value );
 		}

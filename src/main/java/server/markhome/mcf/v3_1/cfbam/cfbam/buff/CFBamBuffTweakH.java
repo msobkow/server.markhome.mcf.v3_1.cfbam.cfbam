@@ -80,13 +80,13 @@ public class CFBamBuffTweakH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 requiredTenantId;
-	protected CFLibDbKeyHash256 requiredScopeId;
-	protected CFLibDbKeyHash256 optionalDefSchemaTenantId;
-	protected CFLibDbKeyHash256 optionalDefSchemaId;
-	protected String requiredName;
-	protected boolean requiredReplacesInherited;
-	protected String requiredTweakGelText;
+	protected $implJavaAtomType$ requiredTenantId;
+	protected $implJavaAtomType$ requiredScopeId;
+	protected $implJavaAtomType$ optionalDefSchemaTenantId;
+	protected $implJavaAtomType$ optionalDefSchemaId;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ requiredReplacesInherited;
+	protected $implJavaAtomType$ requiredTweakGelText;
 
     public CFBamBuffTweakH() {
             // The primary key member attributes are initialized on construction

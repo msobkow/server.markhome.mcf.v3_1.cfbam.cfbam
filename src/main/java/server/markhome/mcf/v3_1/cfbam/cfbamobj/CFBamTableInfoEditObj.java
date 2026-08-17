@@ -356,36 +356,36 @@ public class CFBamTableInfoEditObj
 	}
 
 	@Override
-	public int getRequiredTableInfoId() {
+	public $implJavaAtomType$ getRequiredTableInfoId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredTableInfoId(int value) {
+	public void setRequiredTableInfoId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public String getRequiredSchemaName() {
+	public $implJavaAtomType$ getRequiredSchemaName() {
 		return( getTableInfoRec().getRequiredSchemaName() );
 	}
 
 	@Override
-	public void setRequiredSchemaName( String value ) {
+	public void setRequiredSchemaName( $implJavaAtomType$ value ) {
 		if( getTableInfoRec().getRequiredSchemaName() != value ) {
 			getTableInfoRec().setRequiredSchemaName( value );
 		}
 	}
 
 	@Override
-	public String getRequiredTableName() {
+	public $implJavaAtomType$ getRequiredTableName() {
 		return( getTableInfoRec().getRequiredTableName() );
 	}
 
 	@Override
-	public void setRequiredTableName( String value ) {
+	public void setRequiredTableName( $implJavaAtomType$ value ) {
 		if( getTableInfoRec().getRequiredTableName() != value ) {
 			getTableInfoRec().setRequiredTableName( value );
 			optionalParentSuperRef = null;
@@ -394,77 +394,77 @@ public class CFBamTableInfoEditObj
 	}
 
 	@Override
-	public String getOptionalSuperName() {
+	public $implJavaAtomType$ getOptionalSuperName() {
 		return( getTableInfoRec().getOptionalSuperName() );
 	}
 
 	@Override
-	public int getRequiredBackingClassCode() {
+	public $implJavaAtomType$ getRequiredBackingClassCode() {
 		return( getTableInfoRec().getRequiredBackingClassCode() );
 	}
 
 	@Override
-	public void setRequiredBackingClassCode( int value ) {
+	public void setRequiredBackingClassCode( $implJavaAtomType$ value ) {
 		if( getTableInfoRec().getRequiredBackingClassCode() != value ) {
 			getTableInfoRec().setRequiredBackingClassCode( value );
 		}
 	}
 
 	@Override
-	public int getRequiredRuntimeClassCode() {
+	public $implJavaAtomType$ getRequiredRuntimeClassCode() {
 		return( getTableInfoRec().getRequiredRuntimeClassCode() );
 	}
 
 	@Override
-	public void setRequiredRuntimeClassCode( int value ) {
+	public void setRequiredRuntimeClassCode( $implJavaAtomType$ value ) {
 		if( getTableInfoRec().getRequiredRuntimeClassCode() != value ) {
 			getTableInfoRec().setRequiredRuntimeClassCode( value );
 		}
 	}
 
 	@Override
-	public boolean getRequiredHasHistory() {
+	public $implJavaAtomType$ getRequiredHasHistory() {
 		return( getTableInfoRec().getRequiredHasHistory() );
 	}
 
 	@Override
-	public void setRequiredHasHistory( boolean value ) {
+	public void setRequiredHasHistory( $implJavaAtomType$ value ) {
 		if( getTableInfoRec().getRequiredHasHistory() != value ) {
 			getTableInfoRec().setRequiredHasHistory( value );
 		}
 	}
 
 	@Override
-	public boolean getRequiredIsMutable() {
+	public $implJavaAtomType$ getRequiredIsMutable() {
 		return( getTableInfoRec().getRequiredIsMutable() );
 	}
 
 	@Override
-	public void setRequiredIsMutable( boolean value ) {
+	public void setRequiredIsMutable( $implJavaAtomType$ value ) {
 		if( getTableInfoRec().getRequiredIsMutable() != value ) {
 			getTableInfoRec().setRequiredIsMutable( value );
 		}
 	}
 
 	@Override
-	public String getRequiredSecScopeName() {
+	public $implJavaAtomType$ getRequiredSecScopeName() {
 		return( getTableInfoRec().getRequiredSecScopeName() );
 	}
 
 	@Override
-	public void setRequiredSecScopeName( String value ) {
+	public void setRequiredSecScopeName( $implJavaAtomType$ value ) {
 		if( getTableInfoRec().getRequiredSecScopeName() != value ) {
 			getTableInfoRec().setRequiredSecScopeName( value );
 		}
 	}
 
 	@Override
-	public String getRequiredCodeVis() {
+	public $implJavaAtomType$ getRequiredCodeVis() {
 		return( getTableInfoRec().getRequiredCodeVis() );
 	}
 
 	@Override
-	public void setRequiredCodeVis( String value ) {
+	public void setRequiredCodeVis( $implJavaAtomType$ value ) {
 		if( getTableInfoRec().getRequiredCodeVis() != value ) {
 			getTableInfoRec().setRequiredCodeVis( value );
 		}

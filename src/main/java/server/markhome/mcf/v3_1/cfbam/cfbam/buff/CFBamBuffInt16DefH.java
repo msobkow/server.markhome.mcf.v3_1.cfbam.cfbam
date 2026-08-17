@@ -73,9 +73,9 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffInt16DefH extends CFBamBuffAtomH
     implements ICFBamInt16DefH
 {
-	protected Short optionalInitValue;
-	protected Short optionalMinValue;
-	protected Short optionalMaxValue;
+	protected $implJavaAtomType$ optionalInitValue;
+	protected $implJavaAtomType$ optionalMinValue;
+	protected $implJavaAtomType$ optionalMaxValue;
 
     public CFBamBuffInt16DefH() {
             super();
@@ -324,9 +324,9 @@ public class CFBamBuffInt16DefH extends CFBamBuffAtomH
         }
         ICFBamInt16Def rhs = (ICFBamInt16Def)obj;
 			if( getOptionalInitValue() != null ) {
-				Short lhsInitValue = getOptionalInitValue();
+				$implJavaAtomType$ lhsInitValue = getOptionalInitValue();
 				if( rhs.getOptionalInitValue() != null ) {
-					Short rhsInitValue = rhs.getOptionalInitValue();
+					$implJavaAtomType$ rhsInitValue = rhs.getOptionalInitValue();
 					cmp = lhsInitValue.compareTo( rhsInitValue );
 					if( cmp != 0 ) {
 						return( cmp );
@@ -342,9 +342,9 @@ public class CFBamBuffInt16DefH extends CFBamBuffAtomH
 				}
 			}
 			if( getOptionalMinValue() != null ) {
-				Short lhsMinValue = getOptionalMinValue();
+				$implJavaAtomType$ lhsMinValue = getOptionalMinValue();
 				if( rhs.getOptionalMinValue() != null ) {
-					Short rhsMinValue = rhs.getOptionalMinValue();
+					$implJavaAtomType$ rhsMinValue = rhs.getOptionalMinValue();
 					cmp = lhsMinValue.compareTo( rhsMinValue );
 					if( cmp != 0 ) {
 						return( cmp );
@@ -360,9 +360,9 @@ public class CFBamBuffInt16DefH extends CFBamBuffAtomH
 				}
 			}
 			if( getOptionalMaxValue() != null ) {
-				Short lhsMaxValue = getOptionalMaxValue();
+				$implJavaAtomType$ lhsMaxValue = getOptionalMaxValue();
 				if( rhs.getOptionalMaxValue() != null ) {
-					Short rhsMaxValue = rhs.getOptionalMaxValue();
+					$implJavaAtomType$ rhsMaxValue = rhs.getOptionalMaxValue();
 					cmp = lhsMaxValue.compareTo( rhsMaxValue );
 					if( cmp != 0 ) {
 						return( cmp );
@@ -389,9 +389,9 @@ public class CFBamBuffInt16DefH extends CFBamBuffAtomH
         }
         ICFBamInt16DefH rhs = (ICFBamInt16DefH)obj;
 			if( getOptionalInitValue() != null ) {
-				Short lhsInitValue = getOptionalInitValue();
+				$implJavaAtomType$ lhsInitValue = getOptionalInitValue();
 				if( rhs.getOptionalInitValue() != null ) {
-					Short rhsInitValue = rhs.getOptionalInitValue();
+					$implJavaAtomType$ rhsInitValue = rhs.getOptionalInitValue();
 					cmp = lhsInitValue.compareTo( rhsInitValue );
 					if( cmp != 0 ) {
 						return( cmp );
@@ -407,9 +407,9 @@ public class CFBamBuffInt16DefH extends CFBamBuffAtomH
 				}
 			}
 			if( getOptionalMinValue() != null ) {
-				Short lhsMinValue = getOptionalMinValue();
+				$implJavaAtomType$ lhsMinValue = getOptionalMinValue();
 				if( rhs.getOptionalMinValue() != null ) {
-					Short rhsMinValue = rhs.getOptionalMinValue();
+					$implJavaAtomType$ rhsMinValue = rhs.getOptionalMinValue();
 					cmp = lhsMinValue.compareTo( rhsMinValue );
 					if( cmp != 0 ) {
 						return( cmp );
@@ -425,9 +425,9 @@ public class CFBamBuffInt16DefH extends CFBamBuffAtomH
 				}
 			}
 			if( getOptionalMaxValue() != null ) {
-				Short lhsMaxValue = getOptionalMaxValue();
+				$implJavaAtomType$ lhsMaxValue = getOptionalMaxValue();
 				if( rhs.getOptionalMaxValue() != null ) {
-					Short rhsMaxValue = rhs.getOptionalMaxValue();
+					$implJavaAtomType$ rhsMaxValue = rhs.getOptionalMaxValue();
 					cmp = lhsMaxValue.compareTo( rhsMaxValue );
 					if( cmp != 0 ) {
 						return( cmp );

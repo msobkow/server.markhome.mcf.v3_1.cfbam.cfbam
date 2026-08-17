@@ -313,12 +313,12 @@ public class CFBamTimestampDefObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public String getOptionalDummy() {
+	public $implJavaAtomType$ getOptionalDummy() {
 		return( getTimestampDefRec().getOptionalDummy() );
 	}
 }

@@ -313,12 +313,12 @@ public class CFBamUuidDefObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public UUID getOptionalInitValue() {
+	public $implJavaAtomType$ getOptionalInitValue() {
 		return( getUuidDefRec().getOptionalInitValue() );
 	}
 }

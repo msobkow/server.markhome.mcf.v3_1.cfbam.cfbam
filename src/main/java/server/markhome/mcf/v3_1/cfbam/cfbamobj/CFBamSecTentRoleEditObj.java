@@ -395,12 +395,12 @@ public class CFBamSecTentRoleEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -416,12 +416,12 @@ public class CFBamSecTentRoleEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
+	public $implJavaAtomType$ getRequiredSecTentRoleId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredSecTentRoleId(CFLibDbKeyHash256 value) {
+	public void setRequiredSecTentRoleId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredOwnerTenant = null;
@@ -431,12 +431,12 @@ public class CFBamSecTentRoleEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTenantId() {
+	public $implJavaAtomType$ getRequiredTenantId() {
 		return( getSecTentRoleRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getSecTentRoleRec().getRequiredName() );
 	}
 

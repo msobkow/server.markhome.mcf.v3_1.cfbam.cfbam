@@ -409,12 +409,12 @@ public class CFBamISOCcyEditObj
 	}
 
 	@Override
-	public short getRequiredISOCcyId() {
+	public $implJavaAtomType$ getRequiredISOCcyId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredISOCcyId(short value) {
+	public void setRequiredISOCcyId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalChildrenCtry = null;
@@ -422,48 +422,48 @@ public class CFBamISOCcyEditObj
 	}
 
 	@Override
-	public String getRequiredISOCode() {
+	public $implJavaAtomType$ getRequiredISOCode() {
 		return( getISOCcyRec().getRequiredISOCode() );
 	}
 
 	@Override
-	public void setRequiredISOCode( String value ) {
+	public void setRequiredISOCode( $implJavaAtomType$ value ) {
 		if( getISOCcyRec().getRequiredISOCode() != value ) {
 			getISOCcyRec().setRequiredISOCode( value );
 		}
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getISOCcyRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getISOCcyRec().getRequiredName() != value ) {
 			getISOCcyRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalUnitSymbol() {
+	public $implJavaAtomType$ getOptionalUnitSymbol() {
 		return( getISOCcyRec().getOptionalUnitSymbol() );
 	}
 
 	@Override
-	public void setOptionalUnitSymbol( String value ) {
+	public void setOptionalUnitSymbol( $implJavaAtomType$ value ) {
 		if( getISOCcyRec().getOptionalUnitSymbol() != value ) {
 			getISOCcyRec().setOptionalUnitSymbol( value );
 		}
 	}
 
 	@Override
-	public short getRequiredPrecis() {
+	public $implJavaAtomType$ getRequiredPrecis() {
 		return( getISOCcyRec().getRequiredPrecis() );
 	}
 
 	@Override
-	public void setRequiredPrecis( short value ) {
+	public void setRequiredPrecis( $implJavaAtomType$ value ) {
 		if( getISOCcyRec().getRequiredPrecis() != value ) {
 			getISOCcyRec().setRequiredPrecis( value );
 		}

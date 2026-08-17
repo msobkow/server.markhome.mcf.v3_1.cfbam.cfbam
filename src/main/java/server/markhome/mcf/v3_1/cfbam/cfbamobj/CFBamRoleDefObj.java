@@ -73,7 +73,7 @@ public class CFBamRoleDefObj
 	protected boolean isNew;
 	protected ICFBamRoleDefEditObj edit;
 	protected ICFBamSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFBamRoleDef rec;
 	protected ICFBamScopeObj requiredContainerScopeDef;
 	protected ICFBamSchemaDefObj optionalLookupDefSchema;
@@ -306,12 +306,12 @@ public class CFBamRoleDefObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -388,7 +388,7 @@ public class CFBamRoleDefObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -428,27 +428,27 @@ public class CFBamRoleDefObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredScopeId() {
+	public $implJavaAtomType$ getRequiredScopeId() {
 		return( getRoleDefRec().getRequiredScopeId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getRoleDefRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getRoleDefRec().getRequiredName() );
 	}
 
 	@Override
-	public String getRequiredEnables() {
+	public $implJavaAtomType$ getRequiredEnables() {
 		return( getRoleDefRec().getRequiredEnables() );
 	}
 
 	@Override
-	public String getRequiredIncludes() {
+	public $implJavaAtomType$ getRequiredIncludes() {
 		return( getRoleDefRec().getRequiredIncludes() );
 	}
 

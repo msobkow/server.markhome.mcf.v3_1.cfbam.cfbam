@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffServerMethodByMethTableVisIdxKey
 	implements ICFBamServerMethodByMethTableVisIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredTableId;
-	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
+	protected $implJavaAtomType$ requiredTableId;
+	protected $implJavaAtomType$ requiredCodeVis;
 	public CFBamBuffServerMethodByMethTableVisIdxKey() {
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubServerMethod.TABLEID_INIT_VALUE.toString() );
 		requiredCodeVis = ICFBamPubServerMethod.CODEVIS_INIT_VALUE;

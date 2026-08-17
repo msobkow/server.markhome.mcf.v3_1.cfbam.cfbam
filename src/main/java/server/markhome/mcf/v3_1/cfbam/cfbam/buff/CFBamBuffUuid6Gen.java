@@ -74,8 +74,8 @@ public class CFBamBuffUuid6Gen
 	extends CFBamBuffUuid6Type
 	implements ICFBamUuid6Gen
 {
-	protected short requiredSlice;
-	protected int requiredBlockSize;
+	protected $implJavaAtomType$ requiredSlice;
+	protected $implJavaAtomType$ requiredBlockSize;
 
 	public CFBamBuffUuid6Gen() {
 		super();

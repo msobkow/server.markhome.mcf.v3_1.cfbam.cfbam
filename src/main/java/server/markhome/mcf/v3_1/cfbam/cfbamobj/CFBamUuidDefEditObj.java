@@ -263,12 +263,12 @@ public class CFBamUuidDefEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,12 +281,12 @@ public class CFBamUuidDefEditObj
 	}
 
 	@Override
-	public UUID getOptionalInitValue() {
+	public $implJavaAtomType$ getOptionalInitValue() {
 		return( getUuidDefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public void setOptionalInitValue( UUID value ) {
+	public void setOptionalInitValue( $implJavaAtomType$ value ) {
 		if( getUuidDefRec().getOptionalInitValue() != value ) {
 			getUuidDefRec().setOptionalInitValue( value );
 		}

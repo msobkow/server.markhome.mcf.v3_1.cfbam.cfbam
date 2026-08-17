@@ -335,14 +335,14 @@ public class CFBamSecSysRoleMembTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleMembObj readSecSysRoleMemb( CFLibDbKeyHash256 SecSysRoleId,
+	public ICFSecSecSysRoleMembObj readSecSysRoleMemb( ICFLibKeyHash256 SecSysRoleId,
 		String LoginId ) {
 		return( readSecSysRoleMemb( SecSysRoleId,
 			LoginId, false ) );
 	}
 
 	@Override
-	public ICFSecSecSysRoleMembObj readSecSysRoleMemb( CFLibDbKeyHash256 SecSysRoleId,
+	public ICFSecSecSysRoleMembObj readSecSysRoleMemb( ICFLibKeyHash256 SecSysRoleId,
 		String LoginId, boolean forceRead ) {
 		ICFSecSecSysRoleMembObj obj = null;
 		ICFSecSecSysRoleMemb readRec = schema.getCFSecBackingStore().getTableSecSysRoleMemb().readDerivedByIdIdx( null,
@@ -573,7 +573,7 @@ public class CFBamSecSysRoleMembTableObj
 	 *		may include an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSysRoleMembObj> pageAllSecSysRoleMemb(CFLibDbKeyHash256 priorSecSysRoleId,
+	public List<ICFSecSecSysRoleMembObj> pageAllSecSysRoleMemb(ICFLibKeyHash256 priorSecSysRoleId,
 		String priorLoginId )
 	{
 		final String S_ProcName = "pageAllSecSysRoleMemb";
@@ -597,7 +597,7 @@ public class CFBamSecSysRoleMembTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleMembObj readSecSysRoleMembByIdIdx( CFLibDbKeyHash256 SecSysRoleId,
+	public ICFSecSecSysRoleMembObj readSecSysRoleMembByIdIdx( ICFLibKeyHash256 SecSysRoleId,
 		String LoginId )
 	{
 		return( readSecSysRoleMembByIdIdx( SecSysRoleId,
@@ -606,7 +606,7 @@ public class CFBamSecSysRoleMembTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleMembObj readSecSysRoleMembByIdIdx( CFLibDbKeyHash256 SecSysRoleId,
+	public ICFSecSecSysRoleMembObj readSecSysRoleMembByIdIdx( ICFLibKeyHash256 SecSysRoleId,
 		String LoginId, boolean forceRead )
 	{
 		ICFSecSecSysRoleMembPKey pkey = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newPKey();
@@ -617,14 +617,14 @@ public class CFBamSecSysRoleMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleMembObj> readSecSysRoleMembBySysRoleIdx( CFLibDbKeyHash256 SecSysRoleId )
+	public List<ICFSecSecSysRoleMembObj> readSecSysRoleMembBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId )
 	{
 		return( readSecSysRoleMembBySysRoleIdx( SecSysRoleId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleMembObj> readSecSysRoleMembBySysRoleIdx( CFLibDbKeyHash256 SecSysRoleId,
+	public List<ICFSecSecSysRoleMembObj> readSecSysRoleMembBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readSecSysRoleMembBySysRoleIdx";
@@ -803,7 +803,7 @@ public class CFBamSecSysRoleMembTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleMembObj readCachedSecSysRoleMembByIdIdx( CFLibDbKeyHash256 SecSysRoleId,
+	public ICFSecSecSysRoleMembObj readCachedSecSysRoleMembByIdIdx( ICFLibKeyHash256 SecSysRoleId,
 		String LoginId )
 	{
 		ICFSecSecSysRoleMembObj obj = null;
@@ -817,7 +817,7 @@ public class CFBamSecSysRoleMembTableObj
 	}
 
 	@Override
-	public List<ICFSecSecSysRoleMembObj> readCachedSecSysRoleMembBySysRoleIdx( CFLibDbKeyHash256 SecSysRoleId )
+	public List<ICFSecSecSysRoleMembObj> readCachedSecSysRoleMembBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId )
 	{
 		final String S_ProcName = "readCachedSecSysRoleMembBySysRoleIdx";
 		ICFSecSecSysRoleMembBySysRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
@@ -971,7 +971,7 @@ public class CFBamSecSysRoleMembTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysRoleMembByIdIdx( CFLibDbKeyHash256 SecSysRoleId,
+	public void deepDisposeSecSysRoleMembByIdIdx( ICFLibKeyHash256 SecSysRoleId,
 		String LoginId )
 	{
 		ICFSecSecSysRoleMembObj obj = readCachedSecSysRoleMembByIdIdx( SecSysRoleId,
@@ -982,7 +982,7 @@ public class CFBamSecSysRoleMembTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysRoleMembBySysRoleIdx( CFLibDbKeyHash256 SecSysRoleId )
+	public void deepDisposeSecSysRoleMembBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId )
 	{
 		final String S_ProcName = "deepDisposeSecSysRoleMembBySysRoleIdx";
 		ICFSecSecSysRoleMembObj obj;
@@ -1025,8 +1025,8 @@ public class CFBamSecSysRoleMembTableObj
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
 	@Override
-	public List<ICFSecSecSysRoleMembObj> pageSecSysRoleMembBySysRoleIdx( CFLibDbKeyHash256 SecSysRoleId,
-		CFLibDbKeyHash256 priorSecSysRoleId,
+	public List<ICFSecSecSysRoleMembObj> pageSecSysRoleMembBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId,
+		ICFLibKeyHash256 priorSecSysRoleId,
 		String priorLoginId )
 	{
 		final String S_ProcName = "pageSecSysRoleMembBySysRoleIdx";
@@ -1061,7 +1061,7 @@ public class CFBamSecSysRoleMembTableObj
 	 */
 	@Override
 	public List<ICFSecSecSysRoleMembObj> pageSecSysRoleMembByLoginIdx( String LoginId,
-		CFLibDbKeyHash256 priorSecSysRoleId,
+		ICFLibKeyHash256 priorSecSysRoleId,
 		String priorLoginId )
 	{
 		final String S_ProcName = "pageSecSysRoleMembByLoginIdx";
@@ -1104,7 +1104,7 @@ public class CFBamSecSysRoleMembTableObj
 	}
 
 	@Override
-	public void deleteSecSysRoleMembByIdIdx( CFLibDbKeyHash256 SecSysRoleId,
+	public void deleteSecSysRoleMembByIdIdx( ICFLibKeyHash256 SecSysRoleId,
 		String LoginId )
 	{
 		ICFSecSecSysRoleMembObj obj = readSecSysRoleMemb(SecSysRoleId,
@@ -1137,7 +1137,7 @@ public class CFBamSecSysRoleMembTableObj
 	}
 
 	@Override
-	public void deleteSecSysRoleMembBySysRoleIdx( CFLibDbKeyHash256 SecSysRoleId )
+	public void deleteSecSysRoleMembBySysRoleIdx( ICFLibKeyHash256 SecSysRoleId )
 	{
 		ICFSecSecSysRoleMembBySysRoleIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecSysRoleMemb().newBySysRoleIdxKey();
 		key.setRequiredSecSysRoleId( SecSysRoleId );

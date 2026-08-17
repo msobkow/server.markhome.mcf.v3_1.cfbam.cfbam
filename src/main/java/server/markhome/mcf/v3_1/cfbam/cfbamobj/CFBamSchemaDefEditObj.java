@@ -158,7 +158,7 @@ public class CFBamSchemaDefEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTableTableObj().readTableByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -171,7 +171,7 @@ public class CFBamSchemaDefEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getValueTableObj().readValueByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -184,7 +184,7 @@ public class CFBamSchemaDefEditObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -306,154 +306,154 @@ public class CFBamSchemaDefEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredCTenantId() {
+	public $implJavaAtomType$ getRequiredCTenantId() {
 		return( getSchemaDefRec().getRequiredCTenantId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredMinorVersionId() {
+	public $implJavaAtomType$ getRequiredMinorVersionId() {
 		return( getSchemaDefRec().getRequiredMinorVersionId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getSchemaDefRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getSchemaDefRec().getRequiredName() != value ) {
 			getSchemaDefRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalDbName() {
+	public $implJavaAtomType$ getOptionalDbName() {
 		return( getSchemaDefRec().getOptionalDbName() );
 	}
 
 	@Override
-	public void setOptionalDbName( String value ) {
+	public void setOptionalDbName( $implJavaAtomType$ value ) {
 		if( getSchemaDefRec().getOptionalDbName() != value ) {
 			getSchemaDefRec().setOptionalDbName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalShortName() {
+	public $implJavaAtomType$ getOptionalShortName() {
 		return( getSchemaDefRec().getOptionalShortName() );
 	}
 
 	@Override
-	public void setOptionalShortName( String value ) {
+	public void setOptionalShortName( $implJavaAtomType$ value ) {
 		if( getSchemaDefRec().getOptionalShortName() != value ) {
 			getSchemaDefRec().setOptionalShortName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalLabel() {
+	public $implJavaAtomType$ getOptionalLabel() {
 		return( getSchemaDefRec().getOptionalLabel() );
 	}
 
 	@Override
-	public void setOptionalLabel( String value ) {
+	public void setOptionalLabel( $implJavaAtomType$ value ) {
 		if( getSchemaDefRec().getOptionalLabel() != value ) {
 			getSchemaDefRec().setOptionalLabel( value );
 		}
 	}
 
 	@Override
-	public String getOptionalShortDescription() {
+	public $implJavaAtomType$ getOptionalShortDescription() {
 		return( getSchemaDefRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public void setOptionalShortDescription( String value ) {
+	public void setOptionalShortDescription( $implJavaAtomType$ value ) {
 		if( getSchemaDefRec().getOptionalShortDescription() != value ) {
 			getSchemaDefRec().setOptionalShortDescription( value );
 		}
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getSchemaDefRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( String value ) {
+	public void setOptionalDescription( $implJavaAtomType$ value ) {
 		if( getSchemaDefRec().getOptionalDescription() != value ) {
 			getSchemaDefRec().setOptionalDescription( value );
 		}
 	}
 
 	@Override
-	public String getRequiredCopyrightPeriod() {
+	public $implJavaAtomType$ getRequiredCopyrightPeriod() {
 		return( getSchemaDefRec().getRequiredCopyrightPeriod() );
 	}
 
 	@Override
-	public void setRequiredCopyrightPeriod( String value ) {
+	public void setRequiredCopyrightPeriod( $implJavaAtomType$ value ) {
 		if( getSchemaDefRec().getRequiredCopyrightPeriod() != value ) {
 			getSchemaDefRec().setRequiredCopyrightPeriod( value );
 		}
 	}
 
 	@Override
-	public String getRequiredCopyrightHolder() {
+	public $implJavaAtomType$ getRequiredCopyrightHolder() {
 		return( getSchemaDefRec().getRequiredCopyrightHolder() );
 	}
 
 	@Override
-	public void setRequiredCopyrightHolder( String value ) {
+	public void setRequiredCopyrightHolder( $implJavaAtomType$ value ) {
 		if( getSchemaDefRec().getRequiredCopyrightHolder() != value ) {
 			getSchemaDefRec().setRequiredCopyrightHolder( value );
 		}
 	}
 
 	@Override
-	public String getRequiredAuthorEMail() {
+	public $implJavaAtomType$ getRequiredAuthorEMail() {
 		return( getSchemaDefRec().getRequiredAuthorEMail() );
 	}
 
 	@Override
-	public void setRequiredAuthorEMail( String value ) {
+	public void setRequiredAuthorEMail( $implJavaAtomType$ value ) {
 		if( getSchemaDefRec().getRequiredAuthorEMail() != value ) {
 			getSchemaDefRec().setRequiredAuthorEMail( value );
 		}
 	}
 
 	@Override
-	public String getRequiredProjectURL() {
+	public $implJavaAtomType$ getRequiredProjectURL() {
 		return( getSchemaDefRec().getRequiredProjectURL() );
 	}
 
 	@Override
-	public void setRequiredProjectURL( String value ) {
+	public void setRequiredProjectURL( $implJavaAtomType$ value ) {
 		if( getSchemaDefRec().getRequiredProjectURL() != value ) {
 			getSchemaDefRec().setRequiredProjectURL( value );
 		}
 	}
 
 	@Override
-	public String getRequiredPublishURI() {
+	public $implJavaAtomType$ getRequiredPublishURI() {
 		return( getSchemaDefRec().getRequiredPublishURI() );
 	}
 
 	@Override
-	public void setRequiredPublishURI( String value ) {
+	public void setRequiredPublishURI( $implJavaAtomType$ value ) {
 		if( getSchemaDefRec().getRequiredPublishURI() != value ) {
 			getSchemaDefRec().setRequiredPublishURI( value );
 		}

@@ -73,7 +73,7 @@ public class CFBamValueObj
 	protected boolean isNew;
 	protected ICFBamValueEditObj edit;
 	protected ICFBamSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFBamValue rec;
 	protected ICFBamScopeObj requiredContainerScope;
 	protected ICFBamSchemaDefObj optionalLookupDefSchema;
@@ -328,12 +328,12 @@ public class CFBamValueObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -410,7 +410,7 @@ public class CFBamValueObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -520,67 +520,67 @@ public class CFBamValueObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredScopeId() {
+	public $implJavaAtomType$ getRequiredScopeId() {
 		return( getValueRec().getRequiredScopeId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getValueRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getValueRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalShortName() {
+	public $implJavaAtomType$ getOptionalShortName() {
 		return( getValueRec().getOptionalShortName() );
 	}
 
 	@Override
-	public String getOptionalLabel() {
+	public $implJavaAtomType$ getOptionalLabel() {
 		return( getValueRec().getOptionalLabel() );
 	}
 
 	@Override
-	public String getOptionalShortDescription() {
+	public $implJavaAtomType$ getOptionalShortDescription() {
 		return( getValueRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getValueRec().getOptionalDescription() );
 	}
 
 	@Override
-	public String getOptionalDefaultXmlValue() {
+	public $implJavaAtomType$ getOptionalDefaultXmlValue() {
 		return( getValueRec().getOptionalDefaultXmlValue() );
 	}
 
 	@Override
-	public boolean getRequiredIsNullable() {
+	public $implJavaAtomType$ getRequiredIsNullable() {
 		return( getValueRec().getRequiredIsNullable() );
 	}
 
 	@Override
-	public Boolean getOptionalGenerateId() {
+	public $implJavaAtomType$ getOptionalGenerateId() {
 		return( getValueRec().getOptionalGenerateId() );
 	}
 
 	@Override
-	public boolean getRequiredImplementsPolymorph() {
+	public $implJavaAtomType$ getRequiredImplementsPolymorph() {
 		return( getValueRec().getRequiredImplementsPolymorph() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalPrevId() {
+	public $implJavaAtomType$ getOptionalPrevId() {
 		return( getValueRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalNextId() {
+	public $implJavaAtomType$ getOptionalNextId() {
 		return( getValueRec().getOptionalNextId() );
 	}
 

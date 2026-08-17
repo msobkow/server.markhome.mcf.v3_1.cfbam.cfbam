@@ -114,7 +114,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@param	ClearTopDepId	The ClearSubDep1 key attribute of the instance generating the id.
 	 */
 	void deleteClearSubDep1ByClearTopDepIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argClearTopDepId );
+		ICFLibKeyHash256 argClearTopDepId );
 
 	/**
 	 *	Delete the ClearSubDep1 instances identified by the key ClearTopDepIdx.
@@ -135,7 +135,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@param	Name	The ClearSubDep1 key attribute of the instance generating the id.
 	 */
 	void deleteClearSubDep1ByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argClearTopDepId,
+		ICFLibKeyHash256 argClearTopDepId,
 		String argName );
 
 	/**
@@ -155,7 +155,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@param	RelationId	The ClearSubDep1 key attribute of the instance generating the id.
 	 */
 	void deleteClearSubDep1ByClearDepIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argRelationId );
+		ICFLibKeyHash256 argRelationId );
 
 	/**
 	 *	Delete the ClearSubDep1 instances identified by the key ClearDepIdx.
@@ -174,7 +174,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@param	DefSchemaId	The ClearSubDep1 key attribute of the instance generating the id.
 	 */
 	void deleteClearSubDep1ByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		ICFLibKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the ClearSubDep1 instances identified by the key DefSchemaIdx.
@@ -193,7 +193,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteClearSubDep1ByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the ClearSubDep1 instances identified by the key TenantIdx.
 	 *
@@ -202,7 +202,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@param	TenantId	The ClearSubDep1 key attribute of the instance generating the id.
 	 */
 	void deleteClearSubDep1ByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the ClearSubDep1 instances identified by the key TenantIdx.
@@ -226,7 +226,7 @@ public interface ICFBamClearSubDep1Table
 	 *		no such existing key value.
 	 */
 	ICFBamClearSubDep1 readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived ClearSubDep1 record instance by primary key.
@@ -239,7 +239,7 @@ public interface ICFBamClearSubDep1Table
 	 *		no such existing key value.
 	 */
 	ICFBamClearSubDep1 lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all ClearSubDep1 instances.
@@ -261,7 +261,7 @@ public interface ICFBamClearSubDep1Table
 	 *		no such existing key value.
 	 */
 	ICFBamClearSubDep1 readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived ClearSubDep1 record instances identified by the duplicate key TenantIdx.
@@ -273,7 +273,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamClearSubDep1[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the derived ClearSubDep1 record instances identified by the duplicate key ClearDepIdx.
@@ -285,7 +285,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamClearSubDep1[] readDerivedByClearDepIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 RelationId );
+		ICFLibKeyHash256 RelationId );
 
 	/**
 	 *	Read an array of the derived ClearSubDep1 record instances identified by the duplicate key DefSchemaIdx.
@@ -297,7 +297,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamClearSubDep1[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the derived ClearSubDep1 record instances identified by the duplicate key ClearTopDepIdx.
@@ -309,7 +309,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamClearSubDep1[] readDerivedByClearTopDepIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClearTopDepId );
+		ICFLibKeyHash256 ClearTopDepId );
 
 	/**
 	 *	Read the derived ClearSubDep1 record instance identified by the unique key UNameIdx.
@@ -324,7 +324,7 @@ public interface ICFBamClearSubDep1Table
 	 *		no such existing key value.
 	 */
 	ICFBamClearSubDep1 readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClearTopDepId,
+		ICFLibKeyHash256 ClearTopDepId,
 		String Name );
 
 	/**
@@ -340,7 +340,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearSubDep1 readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific ClearSubDep1 record instance identified by the primary key.
@@ -355,7 +355,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearSubDep1 lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific ClearSubDep1 record instances.
@@ -379,7 +379,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearSubDep1 readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific ClearSubDep1 record instances identified by the duplicate key TenantIdx.
@@ -393,7 +393,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearSubDep1[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read an array of the specific ClearSubDep1 record instances identified by the duplicate key ClearDepIdx.
@@ -407,7 +407,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearSubDep1[] readRecByClearDepIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 RelationId );
+		ICFLibKeyHash256 RelationId );
 
 	/**
 	 *	Read an array of the specific ClearSubDep1 record instances identified by the duplicate key DefSchemaIdx.
@@ -421,7 +421,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearSubDep1[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read an array of the specific ClearSubDep1 record instances identified by the duplicate key ClearTopDepIdx.
@@ -435,7 +435,7 @@ public interface ICFBamClearSubDep1Table
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearSubDep1[] readRecByClearTopDepIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClearTopDepId );
+		ICFLibKeyHash256 ClearTopDepId );
 
 	/**
 	 *	Read the specific ClearSubDep1 record instance identified by the unique key UNameIdx.
@@ -452,6 +452,6 @@ public interface ICFBamClearSubDep1Table
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamClearSubDep1 readRecByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ClearTopDepId,
+		ICFLibKeyHash256 ClearTopDepId,
 		String Name );
 }

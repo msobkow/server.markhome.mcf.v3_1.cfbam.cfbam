@@ -116,7 +116,7 @@ public interface ICFBamIndexTable
 	 *	@param	Name	The Index key attribute of the instance generating the id.
 	 */
 	void deleteIndexByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId,
+		ICFLibKeyHash256 argTableId,
 		String argName );
 
 	/**
@@ -136,7 +136,7 @@ public interface ICFBamIndexTable
 	 *	@param	TableId	The Index key attribute of the instance generating the id.
 	 */
 	void deleteIndexByIdxTableIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId );
+		ICFLibKeyHash256 argTableId );
 
 	/**
 	 *	Delete the Index instances identified by the key IdxTableIdx.
@@ -176,7 +176,7 @@ public interface ICFBamIndexTable
 	 *	@param	CodeVis	The Index key attribute of the instance generating the id.
 	 */
 	void deleteIndexByIdxTblCdVisX( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTableId,
+		ICFLibKeyHash256 argTableId,
 		ICFBamPubSchema.CodeVisibilityEnum argCodeVis );
 
 	/**
@@ -196,7 +196,7 @@ public interface ICFBamIndexTable
 	 *	@param	DefSchemaId	The Index key attribute of the instance generating the id.
 	 */
 	void deleteIndexByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		ICFLibKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the Index instances identified by the key DefSchemaIdx.
@@ -215,7 +215,7 @@ public interface ICFBamIndexTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteIndexByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the Index instances identified by the key TenantIdx.
 	 *
@@ -224,7 +224,7 @@ public interface ICFBamIndexTable
 	 *	@param	TenantId	The Index key attribute of the instance generating the id.
 	 */
 	void deleteIndexByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argTenantId );
+		ICFLibKeyHash256 argTenantId );
 
 	/**
 	 *	Delete the Index instances identified by the key TenantIdx.
@@ -248,7 +248,7 @@ public interface ICFBamIndexTable
 	 *		no such existing key value.
 	 */
 	ICFBamIndex readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived Index record instance by primary key.
@@ -261,7 +261,7 @@ public interface ICFBamIndexTable
 	 *		no such existing key value.
 	 */
 	ICFBamIndex lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all Index instances.
@@ -283,7 +283,7 @@ public interface ICFBamIndexTable
 	 *		no such existing key value.
 	 */
 	ICFBamIndex readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the derived Index record instances identified by the duplicate key TenantIdx.
@@ -295,7 +295,7 @@ public interface ICFBamIndexTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamIndex[] readDerivedByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read the derived Index record instance identified by the unique key UNameIdx.
@@ -310,7 +310,7 @@ public interface ICFBamIndexTable
 	 *		no such existing key value.
 	 */
 	ICFBamIndex readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		ICFLibKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -323,7 +323,7 @@ public interface ICFBamIndexTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamIndex[] readDerivedByIdxTableIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		ICFLibKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the derived Index record instances identified by the duplicate key IdxCodeVisIdx.
@@ -349,7 +349,7 @@ public interface ICFBamIndexTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamIndex[] readDerivedByIdxTblCdVisX( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		ICFLibKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -362,7 +362,7 @@ public interface ICFBamIndexTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamIndex[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the specific Index record instance identified by the primary key.
@@ -377,7 +377,7 @@ public interface ICFBamIndexTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamIndex readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific Index record instance identified by the primary key.
@@ -392,7 +392,7 @@ public interface ICFBamIndexTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamIndex lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific Index record instances.
@@ -416,7 +416,7 @@ public interface ICFBamIndexTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamIndex readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read an array of the specific Index record instances identified by the duplicate key TenantIdx.
@@ -430,7 +430,7 @@ public interface ICFBamIndexTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamIndex[] readRecByTenantIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TenantId );
+		ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Read the specific Index record instance identified by the unique key UNameIdx.
@@ -447,7 +447,7 @@ public interface ICFBamIndexTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamIndex readRecByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		ICFLibKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -462,7 +462,7 @@ public interface ICFBamIndexTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamIndex[] readRecByIdxTableIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TableId );
+		ICFLibKeyHash256 TableId );
 
 	/**
 	 *	Read an array of the specific Index record instances identified by the duplicate key IdxCodeVisIdx.
@@ -492,7 +492,7 @@ public interface ICFBamIndexTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamIndex[] readRecByIdxTblCdVisX( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 TableId,
+		ICFLibKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -507,5 +507,5 @@ public interface ICFBamIndexTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamIndex[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 }

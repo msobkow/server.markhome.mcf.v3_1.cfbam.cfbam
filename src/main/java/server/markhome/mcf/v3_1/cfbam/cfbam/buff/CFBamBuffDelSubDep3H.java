@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffDelSubDep3H extends CFBamBuffDelDepH
     implements ICFBamDelSubDep3H
 {
-	protected CFLibDbKeyHash256 requiredDelSubDep2Id;
-	protected String requiredName;
+	protected $implJavaAtomType$ requiredDelSubDep2Id;
+	protected $implJavaAtomType$ requiredName;
 
     public CFBamBuffDelSubDep3H() {
             super();

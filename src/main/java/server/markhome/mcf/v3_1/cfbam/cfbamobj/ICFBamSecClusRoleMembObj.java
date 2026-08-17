@@ -249,11 +249,11 @@ public interface ICFBamSecClusRoleMembObj
 	ICFSecSecUserObj getRequiredParentUser( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecClusRoleId.
+	 *	Get the required ICFLibKeyHash256 attribute SecClusRoleId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecClusRoleId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecClusRoleId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecClusRoleId();
+	ICFLibKeyHash256 getRequiredSecClusRoleId();
 
 	/**
 	 *	Get the required String attribute LoginId.

@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffRelationByNarrowedIdxKey
 	implements ICFBamRelationByNarrowedIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 optionalNarrowedId;
+	protected $implJavaAtomType$ optionalNarrowedId;
 	public CFBamBuffRelationByNarrowedIdxKey() {
 		optionalNarrowedId = CFLibDbKeyHash256.nullGet();
 	}

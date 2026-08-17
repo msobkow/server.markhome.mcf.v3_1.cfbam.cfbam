@@ -78,7 +78,7 @@ public interface ICFBamPopSubDep1
 
 	public ICFBamPopTopDep getRequiredContainerContPopTopDep();
 
-	public void setRequiredContainerContPopTopDep(CFLibDbKeyHash256 argPopTopDepId);
+	public void setRequiredContainerContPopTopDep(ICFLibKeyHash256 argPopTopDepId);
 
 	public void setRequiredContainerContPopTopDep(ICFBamPopTopDep argObj);
 

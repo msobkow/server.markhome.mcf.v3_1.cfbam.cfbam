@@ -106,18 +106,18 @@ public interface ICFBamDelSubDep3Obj
 	ICFBamDelSubDep2Obj getRequiredContainerDelSubDep2( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required ICFLibKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required ICFLibKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	ICFLibKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute DelSubDep2Id.
+	 *	Get the required ICFLibKeyHash256 attribute DelSubDep2Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute DelSubDep2Id.
+	 *	@return	The required ICFLibKeyHash256 attribute DelSubDep2Id.
 	 */
-	CFLibDbKeyHash256 getRequiredDelSubDep2Id();
+	ICFLibKeyHash256 getRequiredDelSubDep2Id();
 
 	/**
 	 *	Get the required String attribute Name.

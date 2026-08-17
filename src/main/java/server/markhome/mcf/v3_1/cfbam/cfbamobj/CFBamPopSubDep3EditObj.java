@@ -257,29 +257,29 @@ public class CFBamPopSubDep3EditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredPopSubDep2Id() {
+	public $implJavaAtomType$ getRequiredPopSubDep2Id() {
 		return( getPopSubDep3Rec().getRequiredPopSubDep2Id() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getPopSubDep3Rec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getPopSubDep3Rec().getRequiredName() != value ) {
 			getPopSubDep3Rec().setRequiredName( value );
 		}

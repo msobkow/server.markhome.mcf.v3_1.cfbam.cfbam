@@ -70,7 +70,7 @@ public class CFBamSecUserEMConfObj
 	protected boolean isNew;
 	protected ICFSecSecUserEMConfEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFSecSecUserEMConf rec;
 	protected ICFSecSecUserObj requiredContainerUser;
 
@@ -302,12 +302,12 @@ public class CFBamSecUserEMConfObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -384,7 +384,7 @@ public class CFBamSecUserEMConfObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
+	public $implJavaAtomType$ getRequiredSecUserId() {
 		return( getPKey() );
 	}
 
@@ -405,22 +405,22 @@ public class CFBamSecUserEMConfObj
 	}
 
 	@Override
-	public String getRequiredConfirmEMailAddr() {
+	public $implJavaAtomType$ getRequiredConfirmEMailAddr() {
 		return( getSecUserEMConfRec().getRequiredConfirmEMailAddr() );
 	}
 
 	@Override
-	public LocalDateTime getRequiredEMailSentStamp() {
+	public $implJavaAtomType$ getRequiredEMailSentStamp() {
 		return( getSecUserEMConfRec().getRequiredEMailSentStamp() );
 	}
 
 	@Override
-	public CFLibUuid6 getRequiredEMConfirmationUuid6() {
+	public $implJavaAtomType$ getRequiredEMConfirmationUuid6() {
 		return( getSecUserEMConfRec().getRequiredEMConfirmationUuid6() );
 	}
 
 	@Override
-	public boolean getRequiredNewAccount() {
+	public $implJavaAtomType$ getRequiredNewAccount() {
 		return( getSecUserEMConfRec().getRequiredNewAccount() );
 	}
 

@@ -355,22 +355,22 @@ public class CFBamSecUserPWHistoryObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
+	public $implJavaAtomType$ getRequiredSecUserId() {
 		return( getPKey().getRequiredSecUserId() );
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWSetStamp() {
+	public $implJavaAtomType$ getRequiredPWSetStamp() {
 		return( getPKey().getRequiredPWSetStamp() );
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWReplacedStamp() {
+	public $implJavaAtomType$ getRequiredPWReplacedStamp() {
 		return( getSecUserPWHistoryRec().getRequiredPWReplacedStamp() );
 	}
 
 	@Override
-	public String getRequiredPasswordHash() {
+	public $implJavaAtomType$ getRequiredPasswordHash() {
 		return( getSecUserPWHistoryRec().getRequiredPasswordHash() );
 	}
 

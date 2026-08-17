@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffBlobDefH extends CFBamBuffAtomH
     implements ICFBamBlobDefH
 {
-	protected int requiredMaxLen;
-	protected byte[] optionalInitValue;
+	protected $implJavaAtomType$ requiredMaxLen;
+	protected $implJavaAtomType$ optionalInitValue;
 
     public CFBamBuffBlobDefH() {
             super();

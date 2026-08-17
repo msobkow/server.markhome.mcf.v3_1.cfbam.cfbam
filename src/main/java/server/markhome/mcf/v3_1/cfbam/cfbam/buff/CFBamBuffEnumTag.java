@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffEnumTag
 	implements ICFBamEnumTag, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredId;
+	protected $implJavaAtomType$ requiredId;
 	protected int requiredRevision;
 	protected CFLibDbKeyHash256 createdByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_CREATED_BY);
 	protected CFLibDbKeyHash256 createdBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
@@ -81,12 +81,12 @@ public class CFBamBuffEnumTag
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 optionalDefSchemaId;
-	protected CFLibDbKeyHash256 requiredEnumId;
-	protected Short optionalEnumCode;
-	protected String requiredName;
-	protected CFLibDbKeyHash256 optionalPrevId;
-	protected CFLibDbKeyHash256 optionalNextId;
+	protected $implJavaAtomType$ optionalDefSchemaId;
+	protected $implJavaAtomType$ requiredEnumId;
+	protected $implJavaAtomType$ optionalEnumCode;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalPrevId;
+	protected $implJavaAtomType$ optionalNextId;
 
 	public CFBamBuffEnumTag() {
 		requiredId = CFLibDbKeyHash256.fromHex( ICFBamPubEnumTag.ID_INIT_VALUE.toString() );
@@ -99,12 +99,12 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public $implJavaOptAtomType$ getPKey() {
 		return (requiredId);
 	}
 
 	@Override
-	public void setPKey(CFLibDbKeyHash256 requiredId) {
+	public void setPKey($implJavaOptAtomType$ requiredId) {
 		if(requiredId != null) {
 			this.requiredId = requiredId;
 		}
@@ -1496,9 +1496,9 @@ public class CFBamBuffEnumTag
 				return( -1 );
 			}
 			if( getOptionalEnumCode() != null ) {
-				Short lhsEnumCode = getOptionalEnumCode();
+				$implJavaAtomType$ lhsEnumCode = getOptionalEnumCode();
 				if( rhs.getOptionalEnumCode() != null ) {
-					Short rhsEnumCode = rhs.getOptionalEnumCode();
+					$implJavaAtomType$ rhsEnumCode = rhs.getOptionalEnumCode();
 					cmp = lhsEnumCode.compareTo( rhsEnumCode );
 					if( cmp != 0 ) {
 						return( cmp );
@@ -1631,9 +1631,9 @@ public class CFBamBuffEnumTag
 				return( -1 );
 			}
 			if( getOptionalEnumCode() != null ) {
-				Short lhsEnumCode = getOptionalEnumCode();
+				$implJavaAtomType$ lhsEnumCode = getOptionalEnumCode();
 				if( rhs.getOptionalEnumCode() != null ) {
-					Short rhsEnumCode = rhs.getOptionalEnumCode();
+					$implJavaAtomType$ rhsEnumCode = rhs.getOptionalEnumCode();
 					cmp = lhsEnumCode.compareTo( rhsEnumCode );
 					if( cmp != 0 ) {
 						return( cmp );
@@ -1864,9 +1864,9 @@ public class CFBamBuffEnumTag
 				return( -1 );
 			}
 			if( getOptionalEnumCode() != null ) {
-				Short lhsEnumCode = getOptionalEnumCode();
+				$implJavaAtomType$ lhsEnumCode = getOptionalEnumCode();
 				if( rhs.getOptionalEnumCode() != null ) {
-					Short rhsEnumCode = rhs.getOptionalEnumCode();
+					$implJavaAtomType$ rhsEnumCode = rhs.getOptionalEnumCode();
 					cmp = lhsEnumCode.compareTo( rhsEnumCode );
 					if( cmp != 0 ) {
 						return( cmp );
@@ -1999,9 +1999,9 @@ public class CFBamBuffEnumTag
 				return( -1 );
 			}
 			if( getOptionalEnumCode() != null ) {
-				Short lhsEnumCode = getOptionalEnumCode();
+				$implJavaAtomType$ lhsEnumCode = getOptionalEnumCode();
 				if( rhs.getOptionalEnumCode() != null ) {
-					Short rhsEnumCode = rhs.getOptionalEnumCode();
+					$implJavaAtomType$ rhsEnumCode = rhs.getOptionalEnumCode();
 					cmp = lhsEnumCode.compareTo( rhsEnumCode );
 					if( cmp != 0 ) {
 						return( cmp );
@@ -2232,9 +2232,9 @@ public class CFBamBuffEnumTag
 				return( -1 );
 			}
 			if( getOptionalEnumCode() != null ) {
-				Short lhsEnumCode = getOptionalEnumCode();
+				$implJavaAtomType$ lhsEnumCode = getOptionalEnumCode();
 				if( rhs.getOptionalEnumCode() != null ) {
-					Short rhsEnumCode = rhs.getOptionalEnumCode();
+					$implJavaAtomType$ rhsEnumCode = rhs.getOptionalEnumCode();
 					cmp = lhsEnumCode.compareTo( rhsEnumCode );
 					if( cmp != 0 ) {
 						return( cmp );
@@ -2367,9 +2367,9 @@ public class CFBamBuffEnumTag
 				return( -1 );
 			}
 			if( getOptionalEnumCode() != null ) {
-				Short lhsEnumCode = getOptionalEnumCode();
+				$implJavaAtomType$ lhsEnumCode = getOptionalEnumCode();
 				if( rhs.getOptionalEnumCode() != null ) {
-					Short rhsEnumCode = rhs.getOptionalEnumCode();
+					$implJavaAtomType$ rhsEnumCode = rhs.getOptionalEnumCode();
 					cmp = lhsEnumCode.compareTo( rhsEnumCode );
 					if( cmp != 0 ) {
 						return( cmp );

@@ -263,12 +263,12 @@ public class CFBamBlobDefEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,24 +281,24 @@ public class CFBamBlobDefEditObj
 	}
 
 	@Override
-	public int getRequiredMaxLen() {
+	public $implJavaAtomType$ getRequiredMaxLen() {
 		return( getBlobDefRec().getRequiredMaxLen() );
 	}
 
 	@Override
-	public void setRequiredMaxLen( int value ) {
+	public void setRequiredMaxLen( $implJavaAtomType$ value ) {
 		if( getBlobDefRec().getRequiredMaxLen() != value ) {
 			getBlobDefRec().setRequiredMaxLen( value );
 		}
 	}
 
 	@Override
-	public byte[] getOptionalInitValue() {
+	public $implJavaAtomType$ getOptionalInitValue() {
 		return( getBlobDefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public void setOptionalInitValue( byte[] value ) {
+	public void setOptionalInitValue( $implJavaAtomType$ value ) {
 		if( getBlobDefRec().getOptionalInitValue() != value ) {
 			getBlobDefRec().setOptionalInitValue( value );
 		}

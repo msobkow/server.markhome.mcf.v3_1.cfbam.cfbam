@@ -71,23 +71,23 @@ public class CFBamScopeTableObj
 	protected ICFBamSchemaObj schema;
 	protected static int runtimeClassCode = ICFBamScope.CLASS_CODE;
 	protected static final int backingClassCode = ICFBamScope.CLASS_CODE;
-	private Map<CFLibDbKeyHash256, ICFBamScopeObj> members;
-	private Map<CFLibDbKeyHash256, ICFBamScopeObj> allScope;
+	private Map<ICFLibKeyHash256, ICFBamScopeObj> members;
+	private Map<ICFLibKeyHash256, ICFBamScopeObj> allScope;
 	private Map< ICFBamScopeByTenantIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamScopeObj > > indexByTenantIdx;
+		Map<ICFLibKeyHash256, ICFBamScopeObj > > indexByTenantIdx;
 	public static String TABLE_NAME = "Scope";
 	public static String TABLE_DBNAME = "scopedef";
 
 	public CFBamScopeTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamScopeObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamScopeObj>();
 		allScope = null;
 		indexByTenantIdx = null;
 	}
 
 	public CFBamScopeTableObj( ICFBamSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamScopeObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamScopeObj>();
 		allScope = null;
 		indexByTenantIdx = null;
 	}
@@ -291,7 +291,7 @@ public class CFBamScopeTableObj
 	@Override
 	public ICFBamScopeObj realiseScope( ICFBamScopeObj Obj ) {
 		ICFBamScopeObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamScopeObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFBamScopeObj existingObj = members.get( pkey );
@@ -308,7 +308,7 @@ public class CFBamScopeTableObj
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamScopeObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFBamScopeObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.remove( keepObj.getPKey() );
 					if( mapTenantIdx.size() <= 0 ) {
@@ -324,7 +324,7 @@ public class CFBamScopeTableObj
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamScopeObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFBamScopeObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -348,7 +348,7 @@ public class CFBamScopeTableObj
 				ICFBamScopeByTenantIdxKey keyTenantIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
-				Map<CFLibDbKeyHash256, ICFBamScopeObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				Map<ICFLibKeyHash256, ICFBamScopeObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
 				if( mapTenantIdx != null ) {
 					mapTenantIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -374,12 +374,12 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public ICFBamScopeObj readScope( CFLibDbKeyHash256 pkey ) {
+	public ICFBamScopeObj readScope( ICFLibKeyHash256 pkey ) {
 		return( readScope( pkey, false ) );
 	}
 
 	@Override
-	public ICFBamScopeObj readScope( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFBamScopeObj readScope( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFBamScopeObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -398,7 +398,7 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public ICFBamScopeObj readCachedScope( CFLibDbKeyHash256 pkey ) {
+	public ICFBamScopeObj readCachedScope( ICFLibKeyHash256 pkey ) {
 		ICFBamScopeObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -414,7 +414,7 @@ public class CFBamScopeTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamScopeObj existing = readCachedScope( pkey );
 		if( existing == null ) {
 			return;
@@ -437,7 +437,7 @@ public class CFBamScopeTableObj
 
 	}
 	@Override
-	public void deepDisposeScope( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeScope( ICFLibKeyHash256 pkey ) {
 		ICFBamScopeObj obj = readCachedScope( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -445,7 +445,7 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public ICFBamScopeObj lockScope( CFLibDbKeyHash256 pkey ) {
+	public ICFBamScopeObj lockScope( ICFLibKeyHash256 pkey ) {
 		ICFBamScopeObj locked = null;
 		ICFBamScope lockRec = schema.getCFBamBackingStore().getTableScope().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -469,7 +469,7 @@ public class CFBamScopeTableObj
 	public List<ICFBamScopeObj> readAllScope( boolean forceRead ) {
 		final String S_ProcName = "readAllScope";
 		if( ( allScope == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFBamScopeObj> map = new HashMap<CFLibDbKeyHash256,ICFBamScopeObj>();
+			Map<ICFLibKeyHash256, ICFBamScopeObj> map = new HashMap<ICFLibKeyHash256,ICFBamScopeObj>();
 			allScope = map;
 			ICFBamScope[] recList = schema.getCFBamBackingStore().getTableScope().readAllDerived( null );
 			ICFBamScope rec;
@@ -525,8 +525,8 @@ public class CFBamScopeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -583,8 +583,8 @@ public class CFBamScopeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -595,43 +595,43 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public ICFBamScopeObj readScopeByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamScopeObj readScopeByIdIdx( ICFLibKeyHash256 Id )
 	{
 		return( readScopeByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamScopeObj readScopeByIdIdx( CFLibDbKeyHash256 Id, boolean forceRead )
+	public ICFBamScopeObj readScopeByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamScopeObj obj = readScope( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public List<ICFBamScopeObj> readScopeByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFBamScopeObj> readScopeByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		return( readScopeByTenantIdx( TenantId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamScopeObj> readScopeByTenantIdx( CFLibDbKeyHash256 TenantId,
+	public List<ICFBamScopeObj> readScopeByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readScopeByTenantIdx";
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
-		Map<CFLibDbKeyHash256, ICFBamScopeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamScopeObj> dict;
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamScopeObj > >();
+				Map< ICFLibKeyHash256, ICFBamScopeObj > >();
 		}
 		if( ( ! forceRead ) && indexByTenantIdx.containsKey( key ) ) {
 			dict = indexByTenantIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamScopeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamScopeObj>();
 			ICFBamScopeObj obj;
 			ICFBamScope[] recList = schema.getCFBamBackingStore().getTableScope().readDerivedByTenantIdx( null,
 				TenantId );
@@ -689,8 +689,8 @@ public class CFBamScopeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -702,7 +702,7 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public ICFBamScopeObj readCachedScopeByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamScopeObj readCachedScopeByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamScopeObj obj = null;
 		obj = readCachedScope( Id );
@@ -710,14 +710,14 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public List<ICFBamScopeObj> readCachedScopeByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public List<ICFBamScopeObj> readCachedScopeByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "readCachedScopeByTenantIdx";
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		ArrayList<ICFBamScopeObj> arrayList = new ArrayList<ICFBamScopeObj>();
 		if( indexByTenantIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamScopeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamScopeObj> dict;
 			if( indexByTenantIdx.containsKey( key ) ) {
 				dict = indexByTenantIdx.get( key );
 				int len = dict.size();
@@ -775,8 +775,8 @@ public class CFBamScopeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -787,7 +787,7 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public void deepDisposeScopeByIdIdx( CFLibDbKeyHash256 Id )
+	public void deepDisposeScopeByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamScopeObj obj = readCachedScopeByIdIdx( Id );
 		if( obj != null ) {
@@ -796,7 +796,7 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public void deepDisposeScopeByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deepDisposeScopeByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		final String S_ProcName = "deepDisposeScopeByTenantIdx";
 		ICFBamScopeObj obj;
@@ -833,7 +833,7 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public void deleteScopeByIdIdx( CFLibDbKeyHash256 Id )
+	public void deleteScopeByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamScopeObj obj = readScope(Id);
 		if( obj != null ) {
@@ -863,16 +863,16 @@ public class CFBamScopeTableObj
 	}
 
 	@Override
-	public void deleteScopeByTenantIdx( CFLibDbKeyHash256 TenantId )
+	public void deleteScopeByTenantIdx( ICFLibKeyHash256 TenantId )
 	{
 		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
 		key.setRequiredTenantId( TenantId );
 		if( indexByTenantIdx == null ) {
 			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamScopeObj > >();
+				Map< ICFLibKeyHash256, ICFBamScopeObj > >();
 		}
 		if( indexByTenantIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamScopeObj> dict = indexByTenantIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamScopeObj> dict = indexByTenantIdx.get( key );
 			schema.getCFBamBackingStore().getTableScope().deleteScopeByTenantIdx( null,
 				TenantId );
 			Iterator<ICFBamScopeObj> iter = dict.values().iterator();

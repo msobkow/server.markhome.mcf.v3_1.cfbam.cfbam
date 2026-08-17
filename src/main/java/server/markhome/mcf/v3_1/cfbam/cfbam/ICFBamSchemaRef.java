@@ -86,7 +86,7 @@ public interface ICFBamSchemaRef
 
 	public ICFBamSchemaDef getRequiredContainerSchema();
 
-	public void setRequiredContainerSchema(CFLibDbKeyHash256 argSchemaId);
+	public void setRequiredContainerSchema(ICFLibKeyHash256 argSchemaId);
 
 	public void setRequiredContainerSchema(ICFBamSchemaDef argObj);
 
@@ -96,7 +96,7 @@ public interface ICFBamSchemaRef
 
 	public ICFBamSchemaDef getOptionalLookupRefSchema();
 
-	public void setOptionalLookupRefSchema(CFLibDbKeyHash256 argRefSchemaId);
+	public void setOptionalLookupRefSchema(ICFLibKeyHash256 argRefSchemaId);
 
 	public void setOptionalLookupRefSchema(ICFBamSchemaDef argObj);
 
@@ -106,7 +106,7 @@ public interface ICFBamSchemaRef
 
 	public ICFBamSchemaRef getOptionalLookupPrev();
 
-	public void setOptionalLookupPrev(CFLibDbKeyHash256 argPrevId);
+	public void setOptionalLookupPrev(ICFLibKeyHash256 argPrevId);
 
 	public void setOptionalLookupPrev(ICFBamSchemaRef argObj);
 
@@ -116,7 +116,7 @@ public interface ICFBamSchemaRef
 
 	public ICFBamSchemaRef getOptionalLookupNext();
 
-	public void setOptionalLookupNext(CFLibDbKeyHash256 argNextId);
+	public void setOptionalLookupNext(ICFLibKeyHash256 argNextId);
 
 	public void setOptionalLookupNext(ICFBamSchemaRef argObj);
 

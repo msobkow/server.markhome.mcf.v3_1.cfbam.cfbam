@@ -74,7 +74,7 @@ public class CFBamBuffUInt16Col
 	extends CFBamBuffUInt16Def
 	implements ICFBamUInt16Col
 {
-	protected CFLibDbKeyHash256 requiredTableId;
+	protected $implJavaAtomType$ requiredTableId;
 
 	public CFBamBuffUInt16Col() {
 		super();

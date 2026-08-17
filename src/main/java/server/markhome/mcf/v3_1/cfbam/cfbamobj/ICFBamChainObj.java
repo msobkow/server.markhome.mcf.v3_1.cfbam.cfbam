@@ -208,18 +208,18 @@ public interface ICFBamChainObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	CFLibDbKeyHash256 primary key for this instance.
+	 *	@return	ICFLibKeyHash256 primary key for this instance.
 	 */
-	CFLibDbKeyHash256 getPKey();
+	ICFLibKeyHash256 getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param CFLibDbKeyHash256 primary key value for this instance.
+	 *	@param ICFLibKeyHash256 primary key value for this instance.
 	 */
-	void setPKey( CFLibDbKeyHash256 value );
+	void setPKey( ICFLibKeyHash256 value );
 
 	/**
 	 *	Is this a new instance?
@@ -295,18 +295,18 @@ public interface ICFBamChainObj
 	ICFBamRelationObj getRequiredLookupNextRel( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required ICFLibKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required ICFLibKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	ICFLibKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	Get the optional ICFLibKeyHash256 attribute DefSchemaId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DefSchemaId.
+	 *	@return	The optional ICFLibKeyHash256 attribute DefSchemaId.
 	 */
-	CFLibDbKeyHash256 getOptionalDefSchemaId();
+	ICFLibKeyHash256 getOptionalDefSchemaId();
 
 	/**
 	 *	Get the required String attribute Name.
@@ -344,11 +344,11 @@ public interface ICFBamChainObj
 	String getOptionalDescription();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TableId.
+	 *	Get the required ICFLibKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TableId.
+	 *	@return	The required ICFLibKeyHash256 attribute TableId.
 	 */
-	CFLibDbKeyHash256 getRequiredTableId();
+	ICFLibKeyHash256 getRequiredTableId();
 
 	/**
 	 *	Get the optional String attribute Suffix.
@@ -358,18 +358,18 @@ public interface ICFBamChainObj
 	String getOptionalSuffix();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute PrevRelationId.
+	 *	Get the required ICFLibKeyHash256 attribute PrevRelationId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute PrevRelationId.
+	 *	@return	The required ICFLibKeyHash256 attribute PrevRelationId.
 	 */
-	CFLibDbKeyHash256 getRequiredPrevRelationId();
+	ICFLibKeyHash256 getRequiredPrevRelationId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute NextRelationId.
+	 *	Get the required ICFLibKeyHash256 attribute NextRelationId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute NextRelationId.
+	 *	@return	The required ICFLibKeyHash256 attribute NextRelationId.
 	 */
-	CFLibDbKeyHash256 getRequiredNextRelationId();
+	ICFLibKeyHash256 getRequiredNextRelationId();
 
 	/**
 	 *	Internal use only.

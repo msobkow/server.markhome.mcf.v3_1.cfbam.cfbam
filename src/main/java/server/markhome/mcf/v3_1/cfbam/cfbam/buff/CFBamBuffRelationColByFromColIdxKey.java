@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffRelationColByFromColIdxKey
 	implements ICFBamRelationColByFromColIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredFromColId;
+	protected $implJavaAtomType$ requiredFromColId;
 	public CFBamBuffRelationColByFromColIdxKey() {
 		requiredFromColId = CFLibDbKeyHash256.fromHex( ICFBamPubRelationCol.FROMCOLID_INIT_VALUE.toString() );
 	}

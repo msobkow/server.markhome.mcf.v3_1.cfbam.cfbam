@@ -74,8 +74,8 @@ public class CFBamBuffBlobDef
 	extends CFBamBuffAtom
 	implements ICFBamBlobDef
 {
-	protected int requiredMaxLen;
-	protected byte[] optionalInitValue;
+	protected $implJavaAtomType$ requiredMaxLen;
+	protected $implJavaAtomType$ optionalInitValue;
 
 	public CFBamBuffBlobDef() {
 		super();

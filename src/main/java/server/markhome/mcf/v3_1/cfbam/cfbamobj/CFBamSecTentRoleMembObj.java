@@ -388,12 +388,12 @@ public class CFBamSecTentRoleMembObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
+	public $implJavaAtomType$ getRequiredSecTentRoleId() {
 		return( getPKey().getRequiredSecTentRoleId() );
 	}
 
 	@Override
-	public String getRequiredLoginId() {
+	public $implJavaAtomType$ getRequiredLoginId() {
 		return( getPKey().getRequiredLoginId() );
 	}
 

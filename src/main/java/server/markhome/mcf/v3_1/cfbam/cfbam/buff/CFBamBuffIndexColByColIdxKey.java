@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffIndexColByColIdxKey
 	implements ICFBamIndexColByColIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredColumnId;
+	protected $implJavaAtomType$ requiredColumnId;
 	public CFBamBuffIndexColByColIdxKey() {
 		requiredColumnId = CFLibDbKeyHash256.fromHex( ICFBamPubIndexCol.COLUMNID_INIT_VALUE.toString() );
 	}

@@ -73,7 +73,7 @@ public class CFBamRelationColObj
 	protected boolean isNew;
 	protected ICFBamRelationColEditObj edit;
 	protected ICFBamSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFBamRelationCol rec;
 	protected ICFBamRelationObj requiredContainerRelation;
 	protected ICFBamSchemaDefObj optionalLookupDefSchema;
@@ -334,12 +334,12 @@ public class CFBamRelationColObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -416,7 +416,7 @@ public class CFBamRelationColObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -526,57 +526,57 @@ public class CFBamRelationColObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredRelationId() {
+	public $implJavaAtomType$ getRequiredRelationId() {
 		return( getRelationColRec().getRequiredRelationId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getRelationColRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getRelationColRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalShortName() {
+	public $implJavaAtomType$ getOptionalShortName() {
 		return( getRelationColRec().getOptionalShortName() );
 	}
 
 	@Override
-	public String getOptionalLabel() {
+	public $implJavaAtomType$ getOptionalLabel() {
 		return( getRelationColRec().getOptionalLabel() );
 	}
 
 	@Override
-	public String getOptionalShortDescription() {
+	public $implJavaAtomType$ getOptionalShortDescription() {
 		return( getRelationColRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getRelationColRec().getOptionalDescription() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredFromColId() {
+	public $implJavaAtomType$ getRequiredFromColId() {
 		return( getRelationColRec().getRequiredFromColId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredToColId() {
+	public $implJavaAtomType$ getRequiredToColId() {
 		return( getRelationColRec().getRequiredToColId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalPrevId() {
+	public $implJavaAtomType$ getOptionalPrevId() {
 		return( getRelationColRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalNextId() {
+	public $implJavaAtomType$ getOptionalNextId() {
 		return( getRelationColRec().getOptionalNextId() );
 	}
 

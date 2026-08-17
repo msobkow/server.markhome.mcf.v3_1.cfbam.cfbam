@@ -373,37 +373,37 @@ public class CFBamISOTZoneObj
 	}
 
 	@Override
-	public short getRequiredISOTZoneId() {
+	public $implJavaAtomType$ getRequiredISOTZoneId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public String getRequiredIso8601() {
+	public $implJavaAtomType$ getRequiredIso8601() {
 		return( getISOTZoneRec().getRequiredIso8601() );
 	}
 
 	@Override
-	public String getRequiredTZName() {
+	public $implJavaAtomType$ getRequiredTZName() {
 		return( getISOTZoneRec().getRequiredTZName() );
 	}
 
 	@Override
-	public short getRequiredTZHourOffset() {
+	public $implJavaAtomType$ getRequiredTZHourOffset() {
 		return( getISOTZoneRec().getRequiredTZHourOffset() );
 	}
 
 	@Override
-	public short getRequiredTZMinOffset() {
+	public $implJavaAtomType$ getRequiredTZMinOffset() {
 		return( getISOTZoneRec().getRequiredTZMinOffset() );
 	}
 
 	@Override
-	public String getRequiredDescription() {
+	public $implJavaAtomType$ getRequiredDescription() {
 		return( getISOTZoneRec().getRequiredDescription() );
 	}
 
 	@Override
-	public boolean getRequiredVisible() {
+	public $implJavaAtomType$ getRequiredVisible() {
 		return( getISOTZoneRec().getRequiredVisible() );
 	}
 

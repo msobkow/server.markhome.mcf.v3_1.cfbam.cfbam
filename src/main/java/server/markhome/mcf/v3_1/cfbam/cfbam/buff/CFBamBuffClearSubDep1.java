@@ -74,8 +74,8 @@ public class CFBamBuffClearSubDep1
 	extends CFBamBuffClearDep
 	implements ICFBamClearSubDep1
 {
-	protected CFLibDbKeyHash256 requiredClearTopDepId;
-	protected String requiredName;
+	protected $implJavaAtomType$ requiredClearTopDepId;
+	protected $implJavaAtomType$ requiredName;
 
 	public CFBamBuffClearSubDep1() {
 		super();

@@ -74,7 +74,7 @@ public class CFBamBuffNumberCol
 	extends CFBamBuffNumberDef
 	implements ICFBamNumberCol
 {
-	protected CFLibDbKeyHash256 requiredTableId;
+	protected $implJavaAtomType$ requiredTableId;
 
 	public CFBamBuffNumberCol() {
 		super();

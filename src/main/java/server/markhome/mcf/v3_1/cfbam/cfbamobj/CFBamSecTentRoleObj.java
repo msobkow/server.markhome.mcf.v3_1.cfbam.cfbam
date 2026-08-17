@@ -70,7 +70,7 @@ public class CFBamSecTentRoleObj
 	protected boolean isNew;
 	protected ICFSecSecTentRoleEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFSecSecTentRole rec;
 	protected ICFSecTenantObj requiredOwnerTenant;
 	protected ICFSecSecSysGrpObj requiredContainerSysRole;
@@ -301,12 +301,12 @@ public class CFBamSecTentRoleObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -383,7 +383,7 @@ public class CFBamSecTentRoleObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecTentRoleId() {
+	public $implJavaAtomType$ getRequiredSecTentRoleId() {
 		return( getPKey() );
 	}
 
@@ -436,12 +436,12 @@ public class CFBamSecTentRoleObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTenantId() {
+	public $implJavaAtomType$ getRequiredTenantId() {
 		return( getSecTentRoleRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getSecTentRoleRec().getRequiredName() );
 	}
 

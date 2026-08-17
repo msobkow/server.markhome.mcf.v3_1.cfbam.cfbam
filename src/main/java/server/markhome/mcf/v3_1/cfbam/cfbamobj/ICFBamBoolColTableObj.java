@@ -122,7 +122,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	The BoolCol-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamBoolColObj readBoolCol( CFLibDbKeyHash256 pkey );
+	ICFBamBoolColObj readBoolCol( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a BoolCol-derived instance by it's primary key.
@@ -132,19 +132,19 @@ public interface ICFBamBoolColTableObj
 	 *	@return	The BoolCol-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamBoolColObj readBoolCol( CFLibDbKeyHash256 pkey,
+	ICFBamBoolColObj readBoolCol( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamBoolColObj readCachedBoolCol( CFLibDbKeyHash256 pkey );
+	ICFBamBoolColObj readCachedBoolCol( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeBoolCol( ICFBamBoolColObj obj );
 
-	void deepDisposeBoolCol( CFLibDbKeyHash256 pkey );
+	void deepDisposeBoolCol( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamBoolColObj lockBoolCol( CFLibDbKeyHash256 pkey );
+	ICFBamBoolColObj lockBoolCol( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the BoolCol-derived instances in the database.
@@ -172,7 +172,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	CFBamValueObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamBoolColObj readBoolColByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamBoolColObj readBoolColByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamValueObj instance for the primary key attributes.
@@ -182,7 +182,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	CFBamValueObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamBoolColObj readBoolColByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamBoolColObj readBoolColByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -195,7 +195,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	CFBamValueObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamBoolColObj readBoolColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamBoolColObj readBoolColByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -208,7 +208,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	CFBamValueObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamBoolColObj readBoolColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamBoolColObj readBoolColByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name,
 		boolean forceRead );
 
@@ -220,7 +220,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamBoolColObj> readBoolColByScopeIdx( ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Get the map of CFBamBoolColObj instances sorted by their primary keys for the duplicate ScopeIdx key.
@@ -230,7 +230,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate ScopeIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	List<ICFBamBoolColObj> readBoolColByScopeIdx( ICFLibKeyHash256 ScopeId,
 		boolean forceRead );
 
 	/**
@@ -241,7 +241,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamBoolColObj> readBoolColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamBoolColObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -251,7 +251,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamBoolColObj> readBoolColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -262,7 +262,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamBoolColObj> readBoolColByPrevIdx( ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamBoolColObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -272,7 +272,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamBoolColObj> readBoolColByPrevIdx( ICFLibKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -283,7 +283,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamBoolColObj> readBoolColByNextIdx( ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamBoolColObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -293,7 +293,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamBoolColObj> readBoolColByNextIdx( ICFLibKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -306,8 +306,8 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamBoolColObj> readBoolColByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamBoolColObj instances sorted by their primary keys for the duplicate ContPrevIdx key.
@@ -319,8 +319,8 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate ContPrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	List<ICFBamBoolColObj> readBoolColByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -333,8 +333,8 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamBoolColObj> readBoolColByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamBoolColObj instances sorted by their primary keys for the duplicate ContNextIdx key.
@@ -346,8 +346,8 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate ContNextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	List<ICFBamBoolColObj> readBoolColByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId,
 		boolean forceRead );
 
 	/**
@@ -358,7 +358,7 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate TableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByTableIdx( CFLibDbKeyHash256 TableId );
+	List<ICFBamBoolColObj> readBoolColByTableIdx( ICFLibKeyHash256 TableId );
 
 	/**
 	 *	Get the map of CFBamBoolColObj instances sorted by their primary keys for the duplicate TableIdx key.
@@ -368,50 +368,50 @@ public interface ICFBamBoolColTableObj
 	 *	@return	List of CFBamBoolColObj cached instances sorted by their primary keys for the duplicate TableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamBoolColObj> readBoolColByTableIdx( CFLibDbKeyHash256 TableId,
+	List<ICFBamBoolColObj> readBoolColByTableIdx( ICFLibKeyHash256 TableId,
 		boolean forceRead );
 
-	ICFBamBoolColObj readCachedBoolColByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamBoolColObj readCachedBoolColByIdIdx( ICFLibKeyHash256 Id );
 
-	ICFBamBoolColObj readCachedBoolColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	ICFBamBoolColObj readCachedBoolColByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
-	List<ICFBamBoolColObj> readCachedBoolColByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	List<ICFBamBoolColObj> readCachedBoolColByScopeIdx( ICFLibKeyHash256 ScopeId );
 
-	List<ICFBamBoolColObj> readCachedBoolColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamBoolColObj> readCachedBoolColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
-	List<ICFBamBoolColObj> readCachedBoolColByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamBoolColObj> readCachedBoolColByPrevIdx( ICFLibKeyHash256 PrevId );
 
-	List<ICFBamBoolColObj> readCachedBoolColByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamBoolColObj> readCachedBoolColByNextIdx( ICFLibKeyHash256 NextId );
 
-	List<ICFBamBoolColObj> readCachedBoolColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	List<ICFBamBoolColObj> readCachedBoolColByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
-	List<ICFBamBoolColObj> readCachedBoolColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	List<ICFBamBoolColObj> readCachedBoolColByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
-	List<ICFBamBoolColObj> readCachedBoolColByTableIdx( CFLibDbKeyHash256 TableId );
+	List<ICFBamBoolColObj> readCachedBoolColByTableIdx( ICFLibKeyHash256 TableId );
 
-	void deepDisposeBoolColByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeBoolColByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeBoolColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deepDisposeBoolColByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
-	void deepDisposeBoolColByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deepDisposeBoolColByScopeIdx( ICFLibKeyHash256 ScopeId );
 
-	void deepDisposeBoolColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeBoolColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
-	void deepDisposeBoolColByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeBoolColByPrevIdx( ICFLibKeyHash256 PrevId );
 
-	void deepDisposeBoolColByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeBoolColByNextIdx( ICFLibKeyHash256 NextId );
 
-	void deepDisposeBoolColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deepDisposeBoolColByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
-	void deepDisposeBoolColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deepDisposeBoolColByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
-	void deepDisposeBoolColByTableIdx( CFLibDbKeyHash256 TableId );
+	void deepDisposeBoolColByTableIdx( ICFLibKeyHash256 TableId );
 
 	/**
 	 *	Internal use only.
@@ -428,7 +428,7 @@ public interface ICFBamBoolColTableObj
 	 *
 	 *	@param	Id	The BoolCol key attribute of the instance generating the id.
 	 */
-	void deleteBoolColByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteBoolColByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
@@ -437,7 +437,7 @@ public interface ICFBamBoolColTableObj
 	 *
 	 *	@param	Name	The BoolCol key attribute of the instance generating the id.
 	 */
-	void deleteBoolColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	void deleteBoolColByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -445,28 +445,28 @@ public interface ICFBamBoolColTableObj
 	 *
 	 *	@param	ScopeId	The BoolCol key attribute of the instance generating the id.
 	 */
-	void deleteBoolColByScopeIdx( CFLibDbKeyHash256 ScopeId );
+	void deleteBoolColByScopeIdx( ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The BoolCol key attribute of the instance generating the id.
 	 */
-	void deleteBoolColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteBoolColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	PrevId	The BoolCol key attribute of the instance generating the id.
 	 */
-	void deleteBoolColByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteBoolColByPrevIdx( ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The BoolCol key attribute of the instance generating the id.
 	 */
-	void deleteBoolColByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteBoolColByNextIdx( ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -475,8 +475,8 @@ public interface ICFBamBoolColTableObj
 	 *
 	 *	@param	PrevId	The BoolCol key attribute of the instance generating the id.
 	 */
-	void deleteBoolColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId );
+	void deleteBoolColByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
@@ -485,15 +485,15 @@ public interface ICFBamBoolColTableObj
 	 *
 	 *	@param	NextId	The BoolCol key attribute of the instance generating the id.
 	 */
-	void deleteBoolColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId );
+	void deleteBoolColByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TableId	The BoolCol key attribute of the instance generating the id.
 	 */
-	void deleteBoolColByTableIdx( CFLibDbKeyHash256 TableId );
+	void deleteBoolColByTableIdx( ICFLibKeyHash256 TableId );
 
 	/**
 	 *	Move the CFBamBoolColObj instance up in the chain.  The instance is always refreshed.

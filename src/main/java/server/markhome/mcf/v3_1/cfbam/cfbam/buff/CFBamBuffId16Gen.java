@@ -74,8 +74,8 @@ public class CFBamBuffId16Gen
 	extends CFBamBuffInt16Type
 	implements ICFBamId16Gen
 {
-	protected short requiredSlice;
-	protected short requiredBlockSize;
+	protected $implJavaAtomType$ requiredSlice;
+	protected $implJavaAtomType$ requiredBlockSize;
 
 	public CFBamBuffId16Gen() {
 		super();

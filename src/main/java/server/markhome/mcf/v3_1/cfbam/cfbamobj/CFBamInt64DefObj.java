@@ -313,22 +313,22 @@ public class CFBamInt64DefObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public Long getOptionalInitValue() {
+	public $implJavaAtomType$ getOptionalInitValue() {
 		return( getInt64DefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public Long getOptionalMinValue() {
+	public $implJavaAtomType$ getOptionalMinValue() {
 		return( getInt64DefRec().getOptionalMinValue() );
 	}
 
 	@Override
-	public Long getOptionalMaxValue() {
+	public $implJavaAtomType$ getOptionalMaxValue() {
 		return( getInt64DefRec().getOptionalMaxValue() );
 	}
 }

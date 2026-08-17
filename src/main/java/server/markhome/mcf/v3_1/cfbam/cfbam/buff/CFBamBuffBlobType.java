@@ -74,7 +74,7 @@ public class CFBamBuffBlobType
 	extends CFBamBuffBlobDef
 	implements ICFBamBlobType
 {
-	protected CFLibDbKeyHash256 requiredSchemaDefId;
+	protected $implJavaAtomType$ requiredSchemaDefId;
 
 	public CFBamBuffBlobType() {
 		super();

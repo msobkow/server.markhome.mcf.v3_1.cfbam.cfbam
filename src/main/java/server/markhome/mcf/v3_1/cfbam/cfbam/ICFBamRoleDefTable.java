@@ -114,7 +114,7 @@ public interface ICFBamRoleDefTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteRoleDefByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argKey );
+		ICFLibKeyHash256 argKey );
 	/**
 	 *	Delete the RoleDef instances identified by the key UNameIdx.
 	 *
@@ -125,7 +125,7 @@ public interface ICFBamRoleDefTable
 	 *	@param	Name	The RoleDef key attribute of the instance generating the id.
 	 */
 	void deleteRoleDefByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
+		ICFLibKeyHash256 argScopeId,
 		String argName );
 
 	/**
@@ -145,7 +145,7 @@ public interface ICFBamRoleDefTable
 	 *	@param	ScopeId	The RoleDef key attribute of the instance generating the id.
 	 */
 	void deleteRoleDefByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId );
+		ICFLibKeyHash256 argScopeId );
 
 	/**
 	 *	Delete the RoleDef instances identified by the key ScopeIdx.
@@ -164,7 +164,7 @@ public interface ICFBamRoleDefTable
 	 *	@param	DefSchemaId	The RoleDef key attribute of the instance generating the id.
 	 */
 	void deleteRoleDefByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argDefSchemaId );
+		ICFLibKeyHash256 argDefSchemaId );
 
 	/**
 	 *	Delete the RoleDef instances identified by the key DefSchemaIdx.
@@ -187,8 +187,8 @@ public interface ICFBamRoleDefTable
 	 *	@param	Name	The RoleDef key attribute of the instance generating the id.
 	 */
 	void deleteRoleDefByUDefIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 argScopeId,
-		CFLibDbKeyHash256 argDefSchemaId,
+		ICFLibKeyHash256 argScopeId,
+		ICFLibKeyHash256 argDefSchemaId,
 		String argName );
 
 	/**
@@ -213,7 +213,7 @@ public interface ICFBamRoleDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamRoleDef readDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived RoleDef record instance by primary key.
@@ -226,7 +226,7 @@ public interface ICFBamRoleDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamRoleDef lockDerived( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all RoleDef instances.
@@ -248,7 +248,7 @@ public interface ICFBamRoleDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamRoleDef readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read the derived RoleDef record instance identified by the unique key UNameIdx.
@@ -263,7 +263,7 @@ public interface ICFBamRoleDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamRoleDef readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -276,7 +276,7 @@ public interface ICFBamRoleDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamRoleDef[] readDerivedByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the derived RoleDef record instances identified by the duplicate key DefSchemaIdx.
@@ -288,7 +288,7 @@ public interface ICFBamRoleDefTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFBamRoleDef[] readDerivedByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the derived RoleDef record instance identified by the unique key UDefIdx.
@@ -305,8 +305,8 @@ public interface ICFBamRoleDefTable
 	 *		no such existing key value.
 	 */
 	ICFBamRoleDef readDerivedByUDefIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaId,
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 DefSchemaId,
 		String Name );
 
 	/**
@@ -322,7 +322,7 @@ public interface ICFBamRoleDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRoleDef readRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific RoleDef record instance identified by the primary key.
@@ -337,7 +337,7 @@ public interface ICFBamRoleDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRoleDef lockRec( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 PKey );
+		ICFLibKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific RoleDef record instances.
@@ -361,7 +361,7 @@ public interface ICFBamRoleDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRoleDef readRecByIdIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 Id );
+		ICFLibKeyHash256 Id );
 
 	/**
 	 *	Read the specific RoleDef record instance identified by the unique key UNameIdx.
@@ -378,7 +378,7 @@ public interface ICFBamRoleDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRoleDef readRecByUNameIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
+		ICFLibKeyHash256 ScopeId,
 		String Name );
 
 	/**
@@ -393,7 +393,7 @@ public interface ICFBamRoleDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRoleDef[] readRecByScopeIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId );
+		ICFLibKeyHash256 ScopeId );
 
 	/**
 	 *	Read an array of the specific RoleDef record instances identified by the duplicate key DefSchemaIdx.
@@ -407,7 +407,7 @@ public interface ICFBamRoleDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRoleDef[] readRecByDefSchemaIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 DefSchemaId );
+		ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Read the specific RoleDef record instance identified by the unique key UDefIdx.
@@ -426,7 +426,7 @@ public interface ICFBamRoleDefTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFBamRoleDef readRecByUDefIdx( ICFSecAuthorization Authorization,
-		CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaId,
+		ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 DefSchemaId,
 		String Name );
 }

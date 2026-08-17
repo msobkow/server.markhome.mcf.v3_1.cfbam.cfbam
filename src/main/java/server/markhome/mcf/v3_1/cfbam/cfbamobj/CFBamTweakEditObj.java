@@ -400,12 +400,12 @@ public class CFBamTweakEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -421,82 +421,82 @@ public class CFBamTweakEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredTenantId() {
+	public $implJavaAtomType$ getRequiredTenantId() {
 		return( getTweakRec().getRequiredTenantId() );
 	}
 
 	@Override
-	public void setRequiredTenantId( CFLibDbKeyHash256 value ) {
+	public void setRequiredTenantId( $implJavaAtomType$ value ) {
 		if( getTweakRec().getRequiredTenantId() != value ) {
 			getTweakRec().setRequiredTenantId( value );
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredScopeId() {
+	public $implJavaAtomType$ getRequiredScopeId() {
 		return( getTweakRec().getRequiredScopeId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaTenantId() {
+	public $implJavaAtomType$ getOptionalDefSchemaTenantId() {
 		return( getTweakRec().getOptionalDefSchemaTenantId() );
 	}
 
 	@Override
-	public void setOptionalDefSchemaTenantId( CFLibDbKeyHash256 value ) {
+	public void setOptionalDefSchemaTenantId( $implJavaAtomType$ value ) {
 		if( getTweakRec().getOptionalDefSchemaTenantId() != value ) {
 			getTweakRec().setOptionalDefSchemaTenantId( value );
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getTweakRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getTweakRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getTweakRec().getRequiredName() != value ) {
 			getTweakRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public boolean getRequiredReplacesInherited() {
+	public $implJavaAtomType$ getRequiredReplacesInherited() {
 		return( getTweakRec().getRequiredReplacesInherited() );
 	}
 
 	@Override
-	public void setRequiredReplacesInherited( boolean value ) {
+	public void setRequiredReplacesInherited( $implJavaAtomType$ value ) {
 		if( getTweakRec().getRequiredReplacesInherited() != value ) {
 			getTweakRec().setRequiredReplacesInherited( value );
 		}
 	}
 
 	@Override
-	public String getRequiredTweakGelText() {
+	public $implJavaAtomType$ getRequiredTweakGelText() {
 		return( getTweakRec().getRequiredTweakGelText() );
 	}
 
 	@Override
-	public void setRequiredTweakGelText( String value ) {
+	public void setRequiredTweakGelText( $implJavaAtomType$ value ) {
 		if( getTweakRec().getRequiredTweakGelText() != value ) {
 			getTweakRec().setRequiredTweakGelText( value );
 		}

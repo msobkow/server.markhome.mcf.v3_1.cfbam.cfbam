@@ -263,12 +263,12 @@ public class CFBamId64GenEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,24 +281,24 @@ public class CFBamId64GenEditObj
 	}
 
 	@Override
-	public short getRequiredSlice() {
+	public $implJavaAtomType$ getRequiredSlice() {
 		return( getId64GenRec().getRequiredSlice() );
 	}
 
 	@Override
-	public void setRequiredSlice( short value ) {
+	public void setRequiredSlice( $implJavaAtomType$ value ) {
 		if( getId64GenRec().getRequiredSlice() != value ) {
 			getId64GenRec().setRequiredSlice( value );
 		}
 	}
 
 	@Override
-	public long getRequiredBlockSize() {
+	public $implJavaAtomType$ getRequiredBlockSize() {
 		return( getId64GenRec().getRequiredBlockSize() );
 	}
 
 	@Override
-	public void setRequiredBlockSize( long value ) {
+	public void setRequiredBlockSize( $implJavaAtomType$ value ) {
 		if( getId64GenRec().getRequiredBlockSize() != value ) {
 			getId64GenRec().setRequiredBlockSize( value );
 		}

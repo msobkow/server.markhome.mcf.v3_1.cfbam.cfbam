@@ -221,25 +221,25 @@ public interface ICFBamLicenseObj
 	ICFIntTopDomainObj getRequiredContainerTopDomain( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required ICFLibKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required ICFLibKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	ICFLibKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TenantId.
+	 *	Get the required ICFLibKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TenantId.
+	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
 	 */
-	CFLibDbKeyHash256 getRequiredTenantId();
+	ICFLibKeyHash256 getRequiredTenantId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TopDomainId.
+	 *	Get the required ICFLibKeyHash256 attribute TopDomainId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TopDomainId.
+	 *	@return	The required ICFLibKeyHash256 attribute TopDomainId.
 	 */
-	CFLibDbKeyHash256 getRequiredTopDomainId();
+	ICFLibKeyHash256 getRequiredTopDomainId();
 
 	/**
 	 *	Get the required String attribute Name.

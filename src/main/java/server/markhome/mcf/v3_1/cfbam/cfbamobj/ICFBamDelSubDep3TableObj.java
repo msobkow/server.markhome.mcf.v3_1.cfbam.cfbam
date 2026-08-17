@@ -122,7 +122,7 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	The DelSubDep3-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamDelSubDep3Obj readDelSubDep3( CFLibDbKeyHash256 pkey );
+	ICFBamDelSubDep3Obj readDelSubDep3( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a DelSubDep3-derived instance by it's primary key.
@@ -132,19 +132,19 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	The DelSubDep3-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamDelSubDep3Obj readDelSubDep3( CFLibDbKeyHash256 pkey,
+	ICFBamDelSubDep3Obj readDelSubDep3( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamDelSubDep3Obj readCachedDelSubDep3( CFLibDbKeyHash256 pkey );
+	ICFBamDelSubDep3Obj readCachedDelSubDep3( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeDelSubDep3( ICFBamDelSubDep3Obj obj );
 
-	void deepDisposeDelSubDep3( CFLibDbKeyHash256 pkey );
+	void deepDisposeDelSubDep3( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamDelSubDep3Obj lockDelSubDep3( CFLibDbKeyHash256 pkey );
+	ICFBamDelSubDep3Obj lockDelSubDep3( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the DelSubDep3-derived instances in the database.
@@ -172,7 +172,7 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	CFBamScopeObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDelSubDep3Obj readDelSubDep3ByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamDelSubDep3Obj readDelSubDep3ByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamScopeObj instance for the primary key attributes.
@@ -182,7 +182,7 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	CFBamScopeObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDelSubDep3Obj readDelSubDep3ByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamDelSubDep3Obj readDelSubDep3ByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -193,7 +193,7 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	List of CFBamDelSubDep3Obj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelSubDep3Obj> readDelSubDep3ByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamDelSubDep3Obj> readDelSubDep3ByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFBamDelSubDep3Obj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -203,7 +203,7 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	List of CFBamDelSubDep3Obj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelSubDep3Obj> readDelSubDep3ByTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFBamDelSubDep3Obj> readDelSubDep3ByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -214,7 +214,7 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	List of CFBamDelSubDep3Obj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelSubDep3Obj> readDelSubDep3ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamDelSubDep3Obj> readDelSubDep3ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamDelSubDep3Obj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -224,7 +224,7 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	List of CFBamDelSubDep3Obj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelSubDep3Obj> readDelSubDep3ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamDelSubDep3Obj> readDelSubDep3ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -235,7 +235,7 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	List of CFBamDelSubDep3Obj cached instances sorted by their primary keys for the duplicate DelDepIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelSubDep3Obj> readDelSubDep3ByDelDepIdx( CFLibDbKeyHash256 RelationId );
+	List<ICFBamDelSubDep3Obj> readDelSubDep3ByDelDepIdx( ICFLibKeyHash256 RelationId );
 
 	/**
 	 *	Get the map of CFBamDelSubDep3Obj instances sorted by their primary keys for the duplicate DelDepIdx key.
@@ -245,7 +245,7 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	List of CFBamDelSubDep3Obj cached instances sorted by their primary keys for the duplicate DelDepIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelSubDep3Obj> readDelSubDep3ByDelDepIdx( CFLibDbKeyHash256 RelationId,
+	List<ICFBamDelSubDep3Obj> readDelSubDep3ByDelDepIdx( ICFLibKeyHash256 RelationId,
 		boolean forceRead );
 
 	/**
@@ -256,7 +256,7 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	List of CFBamDelSubDep3Obj cached instances sorted by their primary keys for the duplicate DelSubDep2Idx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelSubDep3Obj> readDelSubDep3ByDelSubDep2Idx( CFLibDbKeyHash256 DelSubDep2Id );
+	List<ICFBamDelSubDep3Obj> readDelSubDep3ByDelSubDep2Idx( ICFLibKeyHash256 DelSubDep2Id );
 
 	/**
 	 *	Get the map of CFBamDelSubDep3Obj instances sorted by their primary keys for the duplicate DelSubDep2Idx key.
@@ -266,7 +266,7 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	List of CFBamDelSubDep3Obj cached instances sorted by their primary keys for the duplicate DelSubDep2Idx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelSubDep3Obj> readDelSubDep3ByDelSubDep2Idx( CFLibDbKeyHash256 DelSubDep2Id,
+	List<ICFBamDelSubDep3Obj> readDelSubDep3ByDelSubDep2Idx( ICFLibKeyHash256 DelSubDep2Id,
 		boolean forceRead );
 
 	/**
@@ -279,7 +279,7 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	CFBamDelSubDep3Obj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDelSubDep3Obj readDelSubDep3ByUNameIdx(CFLibDbKeyHash256 DelSubDep2Id,
+	ICFBamDelSubDep3Obj readDelSubDep3ByUNameIdx(ICFLibKeyHash256 DelSubDep2Id,
 		String Name );
 
 	/**
@@ -292,34 +292,34 @@ public interface ICFBamDelSubDep3TableObj
 	 *	@return	CFBamDelSubDep3Obj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDelSubDep3Obj readDelSubDep3ByUNameIdx(CFLibDbKeyHash256 DelSubDep2Id,
+	ICFBamDelSubDep3Obj readDelSubDep3ByUNameIdx(ICFLibKeyHash256 DelSubDep2Id,
 		String Name,
 		boolean forceRead );
 
-	ICFBamDelSubDep3Obj readCachedDelSubDep3ByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamDelSubDep3Obj readCachedDelSubDep3ByIdIdx( ICFLibKeyHash256 Id );
 
-	List<ICFBamDelSubDep3Obj> readCachedDelSubDep3ByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamDelSubDep3Obj> readCachedDelSubDep3ByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	List<ICFBamDelSubDep3Obj> readCachedDelSubDep3ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamDelSubDep3Obj> readCachedDelSubDep3ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
-	List<ICFBamDelSubDep3Obj> readCachedDelSubDep3ByDelDepIdx( CFLibDbKeyHash256 RelationId );
+	List<ICFBamDelSubDep3Obj> readCachedDelSubDep3ByDelDepIdx( ICFLibKeyHash256 RelationId );
 
-	List<ICFBamDelSubDep3Obj> readCachedDelSubDep3ByDelSubDep2Idx( CFLibDbKeyHash256 DelSubDep2Id );
+	List<ICFBamDelSubDep3Obj> readCachedDelSubDep3ByDelSubDep2Idx( ICFLibKeyHash256 DelSubDep2Id );
 
-	ICFBamDelSubDep3Obj readCachedDelSubDep3ByUNameIdx( CFLibDbKeyHash256 DelSubDep2Id,
+	ICFBamDelSubDep3Obj readCachedDelSubDep3ByUNameIdx( ICFLibKeyHash256 DelSubDep2Id,
 		String Name );
 
-	void deepDisposeDelSubDep3ByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeDelSubDep3ByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeDelSubDep3ByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeDelSubDep3ByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	void deepDisposeDelSubDep3ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeDelSubDep3ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
-	void deepDisposeDelSubDep3ByDelDepIdx( CFLibDbKeyHash256 RelationId );
+	void deepDisposeDelSubDep3ByDelDepIdx( ICFLibKeyHash256 RelationId );
 
-	void deepDisposeDelSubDep3ByDelSubDep2Idx( CFLibDbKeyHash256 DelSubDep2Id );
+	void deepDisposeDelSubDep3ByDelSubDep2Idx( ICFLibKeyHash256 DelSubDep2Id );
 
-	void deepDisposeDelSubDep3ByUNameIdx( CFLibDbKeyHash256 DelSubDep2Id,
+	void deepDisposeDelSubDep3ByUNameIdx( ICFLibKeyHash256 DelSubDep2Id,
 		String Name );
 
 	/**
@@ -337,35 +337,35 @@ public interface ICFBamDelSubDep3TableObj
 	 *
 	 *	@param	Id	The DelSubDep3 key attribute of the instance generating the id.
 	 */
-	void deleteDelSubDep3ByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteDelSubDep3ByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The DelSubDep3 key attribute of the instance generating the id.
 	 */
-	void deleteDelSubDep3ByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteDelSubDep3ByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The DelSubDep3 key attribute of the instance generating the id.
 	 */
-	void deleteDelSubDep3ByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteDelSubDep3ByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	RelationId	The DelSubDep3 key attribute of the instance generating the id.
 	 */
-	void deleteDelSubDep3ByDelDepIdx( CFLibDbKeyHash256 RelationId );
+	void deleteDelSubDep3ByDelDepIdx( ICFLibKeyHash256 RelationId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DelSubDep2Id	The DelSubDep3 key attribute of the instance generating the id.
 	 */
-	void deleteDelSubDep3ByDelSubDep2Idx( CFLibDbKeyHash256 DelSubDep2Id );
+	void deleteDelSubDep3ByDelSubDep2Idx( ICFLibKeyHash256 DelSubDep2Id );
 
 	/**
 	 *	Internal use only.
@@ -374,6 +374,6 @@ public interface ICFBamDelSubDep3TableObj
 	 *
 	 *	@param	Name	The DelSubDep3 key attribute of the instance generating the id.
 	 */
-	void deleteDelSubDep3ByUNameIdx(CFLibDbKeyHash256 DelSubDep2Id,
+	void deleteDelSubDep3ByUNameIdx(ICFLibKeyHash256 DelSubDep2Id,
 		String Name );
 }

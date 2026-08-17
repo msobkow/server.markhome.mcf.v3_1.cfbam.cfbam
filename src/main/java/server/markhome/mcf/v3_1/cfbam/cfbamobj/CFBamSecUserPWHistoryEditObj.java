@@ -358,12 +358,12 @@ public class CFBamSecUserPWHistoryEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredSecUserId() {
+	public $implJavaAtomType$ getRequiredSecUserId() {
 		return( getPKey().getRequiredSecUserId() );
 	}
 
 	@Override
-	public void setRequiredSecUserId(CFLibDbKeyHash256 value) {
+	public void setRequiredSecUserId($implJavaAtomType$ value) {
 		if ((getPKey().getRequiredSecUserId() != value ) || ( getSecUserPWHistoryRec().getRequiredSecUserId() != value )) {
 			getPKey().setRequiredSecUserId(value);
 			getSecUserPWHistoryRec().setRequiredSecUserId( value );
@@ -371,12 +371,12 @@ public class CFBamSecUserPWHistoryEditObj
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWSetStamp() {
+	public $implJavaAtomType$ getRequiredPWSetStamp() {
 		return( getPKey().getRequiredPWSetStamp() );
 	}
 
 	@Override
-	public void setRequiredPWSetStamp(LocalDateTime value) {
+	public void setRequiredPWSetStamp($implJavaAtomType$ value) {
 		if ((getPKey().getRequiredPWSetStamp() != value ) || ( getSecUserPWHistoryRec().getRequiredPWSetStamp() != value )) {
 			getPKey().setRequiredPWSetStamp(value);
 			getSecUserPWHistoryRec().setRequiredPWSetStamp( value );
@@ -384,24 +384,24 @@ public class CFBamSecUserPWHistoryEditObj
 	}
 
 	@Override
-	public LocalDateTime getRequiredPWReplacedStamp() {
+	public $implJavaAtomType$ getRequiredPWReplacedStamp() {
 		return( getSecUserPWHistoryRec().getRequiredPWReplacedStamp() );
 	}
 
 	@Override
-	public void setRequiredPWReplacedStamp( LocalDateTime value ) {
+	public void setRequiredPWReplacedStamp( $implJavaAtomType$ value ) {
 		if( getSecUserPWHistoryRec().getRequiredPWReplacedStamp() != value ) {
 			getSecUserPWHistoryRec().setRequiredPWReplacedStamp( value );
 		}
 	}
 
 	@Override
-	public String getRequiredPasswordHash() {
+	public $implJavaAtomType$ getRequiredPasswordHash() {
 		return( getSecUserPWHistoryRec().getRequiredPasswordHash() );
 	}
 
 	@Override
-	public void setRequiredPasswordHash( String value ) {
+	public void setRequiredPasswordHash( $implJavaAtomType$ value ) {
 		if( getSecUserPWHistoryRec().getRequiredPasswordHash() != value ) {
 			getSecUserPWHistoryRec().setRequiredPasswordHash( value );
 		}

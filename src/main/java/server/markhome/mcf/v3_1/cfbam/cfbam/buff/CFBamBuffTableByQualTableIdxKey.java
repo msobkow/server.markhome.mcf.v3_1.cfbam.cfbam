@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTableByQualTableIdxKey
 	implements ICFBamTableByQualTableIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 optionalQualifyingTableId;
+	protected $implJavaAtomType$ optionalQualifyingTableId;
 	public CFBamBuffTableByQualTableIdxKey() {
 		optionalQualifyingTableId = CFLibDbKeyHash256.nullGet();
 	}

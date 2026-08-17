@@ -80,12 +80,12 @@ public class CFBamBuffEnumTagH
 	protected CFLibDbKeyHash256 updatedByUserId = CFLibDbKeyHash256.fromHex(ICFBamPubSecUser.S_INIT_UPDATED_BY);
 	protected CFLibDbKeyHash256 updatedBySessionId = CFLibDbKeyHash256.fromHex(ICFBamPubSecSession.S_SECSESSIONID_INIT_VALUE);
 	protected LocalDateTime updatedAt = LocalDateTime.now();
-	protected CFLibDbKeyHash256 optionalDefSchemaId;
-	protected CFLibDbKeyHash256 requiredEnumId;
-	protected Short optionalEnumCode;
-	protected String requiredName;
-	protected CFLibDbKeyHash256 optionalPrevId;
-	protected CFLibDbKeyHash256 optionalNextId;
+	protected $implJavaAtomType$ optionalDefSchemaId;
+	protected $implJavaAtomType$ requiredEnumId;
+	protected $implJavaAtomType$ optionalEnumCode;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalPrevId;
+	protected $implJavaAtomType$ optionalNextId;
 
     public CFBamBuffEnumTagH() {
             // The primary key member attributes are initialized on construction
@@ -763,9 +763,9 @@ public class CFBamBuffEnumTagH
 				return( -1 );
 			}
 			if( getOptionalEnumCode() != null ) {
-				Short lhsEnumCode = getOptionalEnumCode();
+				$implJavaAtomType$ lhsEnumCode = getOptionalEnumCode();
 				if( rhs.getOptionalEnumCode() != null ) {
-					Short rhsEnumCode = rhs.getOptionalEnumCode();
+					$implJavaAtomType$ rhsEnumCode = rhs.getOptionalEnumCode();
 					cmp = lhsEnumCode.compareTo( rhsEnumCode );
 					if( cmp != 0 ) {
 						return( cmp );
@@ -885,9 +885,9 @@ public class CFBamBuffEnumTagH
 				return( -1 );
 			}
 			if( getOptionalEnumCode() != null ) {
-				Short lhsEnumCode = getOptionalEnumCode();
+				$implJavaAtomType$ lhsEnumCode = getOptionalEnumCode();
 				if( rhs.getOptionalEnumCode() != null ) {
-					Short rhsEnumCode = rhs.getOptionalEnumCode();
+					$implJavaAtomType$ rhsEnumCode = rhs.getOptionalEnumCode();
 					cmp = lhsEnumCode.compareTo( rhsEnumCode );
 					if( cmp != 0 ) {
 						return( cmp );

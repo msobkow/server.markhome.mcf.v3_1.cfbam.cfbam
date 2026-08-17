@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffIndexTweakH extends CFBamBuffTweakH
     implements ICFBamIndexTweakH
 {
-	protected CFLibDbKeyHash256 requiredIndexId;
+	protected $implJavaAtomType$ requiredIndexId;
 
     public CFBamBuffIndexTweakH() {
             super();

@@ -418,12 +418,12 @@ public class CFBamValueEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -439,12 +439,12 @@ public class CFBamValueEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -457,130 +457,130 @@ public class CFBamValueEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredScopeId() {
+	public $implJavaAtomType$ getRequiredScopeId() {
 		return( getValueRec().getRequiredScopeId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getValueRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getValueRec().getRequiredName() );
 	}
 
 	@Override
-	public void setRequiredName( String value ) {
+	public void setRequiredName( $implJavaAtomType$ value ) {
 		if( getValueRec().getRequiredName() != value ) {
 			getValueRec().setRequiredName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalShortName() {
+	public $implJavaAtomType$ getOptionalShortName() {
 		return( getValueRec().getOptionalShortName() );
 	}
 
 	@Override
-	public void setOptionalShortName( String value ) {
+	public void setOptionalShortName( $implJavaAtomType$ value ) {
 		if( getValueRec().getOptionalShortName() != value ) {
 			getValueRec().setOptionalShortName( value );
 		}
 	}
 
 	@Override
-	public String getOptionalLabel() {
+	public $implJavaAtomType$ getOptionalLabel() {
 		return( getValueRec().getOptionalLabel() );
 	}
 
 	@Override
-	public void setOptionalLabel( String value ) {
+	public void setOptionalLabel( $implJavaAtomType$ value ) {
 		if( getValueRec().getOptionalLabel() != value ) {
 			getValueRec().setOptionalLabel( value );
 		}
 	}
 
 	@Override
-	public String getOptionalShortDescription() {
+	public $implJavaAtomType$ getOptionalShortDescription() {
 		return( getValueRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public void setOptionalShortDescription( String value ) {
+	public void setOptionalShortDescription( $implJavaAtomType$ value ) {
 		if( getValueRec().getOptionalShortDescription() != value ) {
 			getValueRec().setOptionalShortDescription( value );
 		}
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getValueRec().getOptionalDescription() );
 	}
 
 	@Override
-	public void setOptionalDescription( String value ) {
+	public void setOptionalDescription( $implJavaAtomType$ value ) {
 		if( getValueRec().getOptionalDescription() != value ) {
 			getValueRec().setOptionalDescription( value );
 		}
 	}
 
 	@Override
-	public String getOptionalDefaultXmlValue() {
+	public $implJavaAtomType$ getOptionalDefaultXmlValue() {
 		return( getValueRec().getOptionalDefaultXmlValue() );
 	}
 
 	@Override
-	public void setOptionalDefaultXmlValue( String value ) {
+	public void setOptionalDefaultXmlValue( $implJavaAtomType$ value ) {
 		if( getValueRec().getOptionalDefaultXmlValue() != value ) {
 			getValueRec().setOptionalDefaultXmlValue( value );
 		}
 	}
 
 	@Override
-	public boolean getRequiredIsNullable() {
+	public $implJavaAtomType$ getRequiredIsNullable() {
 		return( getValueRec().getRequiredIsNullable() );
 	}
 
 	@Override
-	public void setRequiredIsNullable( boolean value ) {
+	public void setRequiredIsNullable( $implJavaAtomType$ value ) {
 		if( getValueRec().getRequiredIsNullable() != value ) {
 			getValueRec().setRequiredIsNullable( value );
 		}
 	}
 
 	@Override
-	public Boolean getOptionalGenerateId() {
+	public $implJavaAtomType$ getOptionalGenerateId() {
 		return( getValueRec().getOptionalGenerateId() );
 	}
 
 	@Override
-	public void setOptionalGenerateId( Boolean value ) {
+	public void setOptionalGenerateId( $implJavaAtomType$ value ) {
 		if( getValueRec().getOptionalGenerateId() != value ) {
 			getValueRec().setOptionalGenerateId( value );
 		}
 	}
 
 	@Override
-	public boolean getRequiredImplementsPolymorph() {
+	public $implJavaAtomType$ getRequiredImplementsPolymorph() {
 		return( getValueRec().getRequiredImplementsPolymorph() );
 	}
 
 	@Override
-	public void setRequiredImplementsPolymorph( boolean value ) {
+	public void setRequiredImplementsPolymorph( $implJavaAtomType$ value ) {
 		if( getValueRec().getRequiredImplementsPolymorph() != value ) {
 			getValueRec().setRequiredImplementsPolymorph( value );
 		}
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalPrevId() {
+	public $implJavaAtomType$ getOptionalPrevId() {
 		return( getValueRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalNextId() {
+	public $implJavaAtomType$ getOptionalNextId() {
 		return( getValueRec().getOptionalNextId() );
 	}
 

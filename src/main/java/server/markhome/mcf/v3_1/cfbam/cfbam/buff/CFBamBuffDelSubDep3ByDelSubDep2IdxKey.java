@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffDelSubDep3ByDelSubDep2IdxKey
 	implements ICFBamDelSubDep3ByDelSubDep2IdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredDelSubDep2Id;
+	protected $implJavaAtomType$ requiredDelSubDep2Id;
 	public CFBamBuffDelSubDep3ByDelSubDep2IdxKey() {
 		requiredDelSubDep2Id = CFLibDbKeyHash256.fromHex( ICFBamPubDelSubDep3.DELSUBDEP2ID_INIT_VALUE.toString() );
 	}

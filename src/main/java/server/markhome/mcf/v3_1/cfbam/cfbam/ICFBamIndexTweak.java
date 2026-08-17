@@ -77,7 +77,7 @@ public interface ICFBamIndexTweak
 
 	public ICFBamIndex getRequiredContainerIndexDef();
 
-	public void setRequiredContainerIndexDef(CFLibDbKeyHash256 argIndexId);
+	public void setRequiredContainerIndexDef(ICFLibKeyHash256 argIndexId);
 
 	public void setRequiredContainerIndexDef(ICFBamIndex argObj);
 

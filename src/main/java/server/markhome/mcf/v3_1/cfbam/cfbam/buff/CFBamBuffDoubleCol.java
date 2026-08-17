@@ -74,7 +74,7 @@ public class CFBamBuffDoubleCol
 	extends CFBamBuffDoubleDef
 	implements ICFBamDoubleCol
 {
-	protected CFLibDbKeyHash256 requiredTableId;
+	protected $implJavaAtomType$ requiredTableId;
 
 	public CFBamBuffDoubleCol() {
 		super();

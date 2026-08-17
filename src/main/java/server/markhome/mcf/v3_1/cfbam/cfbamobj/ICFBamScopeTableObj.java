@@ -131,7 +131,7 @@ public interface ICFBamScopeTableObj
 	 *	@return	The Scope-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamScopeObj readScope( CFLibDbKeyHash256 pkey );
+	ICFBamScopeObj readScope( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a Scope-derived instance by it's primary key.
@@ -141,19 +141,19 @@ public interface ICFBamScopeTableObj
 	 *	@return	The Scope-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamScopeObj readScope( CFLibDbKeyHash256 pkey,
+	ICFBamScopeObj readScope( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamScopeObj readCachedScope( CFLibDbKeyHash256 pkey );
+	ICFBamScopeObj readCachedScope( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeScope( ICFBamScopeObj obj );
 
-	void deepDisposeScope( CFLibDbKeyHash256 pkey );
+	void deepDisposeScope( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamScopeObj lockScope( CFLibDbKeyHash256 pkey );
+	ICFBamScopeObj lockScope( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the Scope-derived instances in the database.
@@ -181,7 +181,7 @@ public interface ICFBamScopeTableObj
 	 *	@return	CFBamScopeObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamScopeObj readScopeByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamScopeObj readScopeByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamScopeObj instance for the primary key attributes.
@@ -191,7 +191,7 @@ public interface ICFBamScopeTableObj
 	 *	@return	CFBamScopeObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamScopeObj readScopeByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamScopeObj readScopeByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -202,7 +202,7 @@ public interface ICFBamScopeTableObj
 	 *	@return	List of CFBamScopeObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamScopeObj> readScopeByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamScopeObj> readScopeByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFBamScopeObj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -212,16 +212,16 @@ public interface ICFBamScopeTableObj
 	 *	@return	List of CFBamScopeObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamScopeObj> readScopeByTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFBamScopeObj> readScopeByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead );
 
-	ICFBamScopeObj readCachedScopeByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamScopeObj readCachedScopeByIdIdx( ICFLibKeyHash256 Id );
 
-	List<ICFBamScopeObj> readCachedScopeByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamScopeObj> readCachedScopeByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	void deepDisposeScopeByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeScopeByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeScopeByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeScopeByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
@@ -238,12 +238,12 @@ public interface ICFBamScopeTableObj
 	 *
 	 *	@param	Id	The Scope key attribute of the instance generating the id.
 	 */
-	void deleteScopeByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteScopeByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The Scope key attribute of the instance generating the id.
 	 */
-	void deleteScopeByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteScopeByTenantIdx( ICFLibKeyHash256 TenantId );
 }

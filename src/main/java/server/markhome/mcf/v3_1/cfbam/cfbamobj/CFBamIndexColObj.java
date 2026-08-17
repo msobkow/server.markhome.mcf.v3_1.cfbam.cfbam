@@ -73,7 +73,7 @@ public class CFBamIndexColObj
 	protected boolean isNew;
 	protected ICFBamIndexColEditObj edit;
 	protected ICFBamSchemaObj schema;
-	protected CFLibDbKeyHash256 pKey;
+	protected ICFLibKeyHash256 pKey;
 	protected ICFBamIndexCol rec;
 	protected ICFBamIndexObj requiredContainerIndex;
 	protected ICFBamSchemaDefObj optionalLookupDefSchema;
@@ -332,12 +332,12 @@ public class CFBamIndexColObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getPKey() {
+	public ICFLibKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( CFLibDbKeyHash256 value ) {
+	public void setPKey( ICFLibKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -414,7 +414,7 @@ public class CFBamIndexColObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -540,57 +540,57 @@ public class CFBamIndexColObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredIndexId() {
+	public $implJavaAtomType$ getRequiredIndexId() {
 		return( getIndexColRec().getRequiredIndexId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getIndexColRec().getOptionalDefSchemaId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getIndexColRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalShortName() {
+	public $implJavaAtomType$ getOptionalShortName() {
 		return( getIndexColRec().getOptionalShortName() );
 	}
 
 	@Override
-	public String getOptionalLabel() {
+	public $implJavaAtomType$ getOptionalLabel() {
 		return( getIndexColRec().getOptionalLabel() );
 	}
 
 	@Override
-	public String getOptionalShortDescription() {
+	public $implJavaAtomType$ getOptionalShortDescription() {
 		return( getIndexColRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getIndexColRec().getOptionalDescription() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredColumnId() {
+	public $implJavaAtomType$ getRequiredColumnId() {
 		return( getIndexColRec().getRequiredColumnId() );
 	}
 
 	@Override
-	public boolean getRequiredIsAscending() {
+	public $implJavaAtomType$ getRequiredIsAscending() {
 		return( getIndexColRec().getRequiredIsAscending() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalPrevId() {
+	public $implJavaAtomType$ getOptionalPrevId() {
 		return( getIndexColRec().getOptionalPrevId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalNextId() {
+	public $implJavaAtomType$ getOptionalNextId() {
 		return( getIndexColRec().getOptionalNextId() );
 	}
 

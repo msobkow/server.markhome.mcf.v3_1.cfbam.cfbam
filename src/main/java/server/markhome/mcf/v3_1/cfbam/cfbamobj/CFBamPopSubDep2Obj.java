@@ -306,7 +306,7 @@ public class CFBamPopSubDep2Obj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -343,12 +343,12 @@ public class CFBamPopSubDep2Obj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredPopSubDep1Id() {
+	public $implJavaAtomType$ getRequiredPopSubDep1Id() {
 		return( getPopSubDep2Rec().getRequiredPopSubDep1Id() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getPopSubDep2Rec().getRequiredName() );
 	}
 }

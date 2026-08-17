@@ -263,18 +263,18 @@ public interface ICFBamSecClusRoleObj
 	List<ICFSecSecClusRoleMembObj> getOptionalChildrenMembByGrp( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute SecClusRoleId.
+	 *	Get the required ICFLibKeyHash256 attribute SecClusRoleId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute SecClusRoleId.
+	 *	@return	The required ICFLibKeyHash256 attribute SecClusRoleId.
 	 */
-	CFLibDbKeyHash256 getRequiredSecClusRoleId();
+	ICFLibKeyHash256 getRequiredSecClusRoleId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute ClusterId.
+	 *	Get the required ICFLibKeyHash256 attribute ClusterId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute ClusterId.
+	 *	@return	The required ICFLibKeyHash256 attribute ClusterId.
 	 */
-	CFLibDbKeyHash256 getRequiredClusterId();
+	ICFLibKeyHash256 getRequiredClusterId();
 
 	/**
 	 *	Get the required String attribute Name.

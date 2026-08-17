@@ -304,7 +304,7 @@ public class CFBamServerListFuncObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -328,7 +328,7 @@ public class CFBamServerListFuncObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalRetTableId() {
+	public $implJavaAtomType$ getOptionalRetTableId() {
 		return( getServerListFuncRec().getOptionalRetTableId() );
 	}
 }

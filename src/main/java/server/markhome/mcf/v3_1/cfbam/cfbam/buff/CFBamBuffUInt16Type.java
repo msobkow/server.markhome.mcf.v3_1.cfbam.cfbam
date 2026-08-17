@@ -74,7 +74,7 @@ public class CFBamBuffUInt16Type
 	extends CFBamBuffUInt16Def
 	implements ICFBamUInt16Type
 {
-	protected CFLibDbKeyHash256 requiredSchemaDefId;
+	protected $implJavaAtomType$ requiredSchemaDefId;
 
 	public CFBamBuffUInt16Type() {
 		super();

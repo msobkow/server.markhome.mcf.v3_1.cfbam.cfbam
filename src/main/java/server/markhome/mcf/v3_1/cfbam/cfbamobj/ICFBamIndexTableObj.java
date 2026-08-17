@@ -122,7 +122,7 @@ public interface ICFBamIndexTableObj
 	 *	@return	The Index-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamIndexObj readIndex( CFLibDbKeyHash256 pkey );
+	ICFBamIndexObj readIndex( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a Index-derived instance by it's primary key.
@@ -132,19 +132,19 @@ public interface ICFBamIndexTableObj
 	 *	@return	The Index-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamIndexObj readIndex( CFLibDbKeyHash256 pkey,
+	ICFBamIndexObj readIndex( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamIndexObj readCachedIndex( CFLibDbKeyHash256 pkey );
+	ICFBamIndexObj readCachedIndex( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeIndex( ICFBamIndexObj obj );
 
-	void deepDisposeIndex( CFLibDbKeyHash256 pkey );
+	void deepDisposeIndex( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamIndexObj lockIndex( CFLibDbKeyHash256 pkey );
+	ICFBamIndexObj lockIndex( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the Index-derived instances in the database.
@@ -172,7 +172,7 @@ public interface ICFBamIndexTableObj
 	 *	@return	CFBamScopeObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamIndexObj readIndexByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamIndexObj readIndexByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamScopeObj instance for the primary key attributes.
@@ -182,7 +182,7 @@ public interface ICFBamIndexTableObj
 	 *	@return	CFBamScopeObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamIndexObj readIndexByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamIndexObj readIndexByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -193,7 +193,7 @@ public interface ICFBamIndexTableObj
 	 *	@return	List of CFBamIndexObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamIndexObj> readIndexByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamIndexObj> readIndexByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFBamIndexObj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -203,7 +203,7 @@ public interface ICFBamIndexTableObj
 	 *	@return	List of CFBamIndexObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamIndexObj> readIndexByTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFBamIndexObj> readIndexByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -216,7 +216,7 @@ public interface ICFBamIndexTableObj
 	 *	@return	CFBamIndexObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamIndexObj readIndexByUNameIdx(CFLibDbKeyHash256 TableId,
+	ICFBamIndexObj readIndexByUNameIdx(ICFLibKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -229,7 +229,7 @@ public interface ICFBamIndexTableObj
 	 *	@return	CFBamIndexObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamIndexObj readIndexByUNameIdx(CFLibDbKeyHash256 TableId,
+	ICFBamIndexObj readIndexByUNameIdx(ICFLibKeyHash256 TableId,
 		String Name,
 		boolean forceRead );
 
@@ -241,7 +241,7 @@ public interface ICFBamIndexTableObj
 	 *	@return	List of CFBamIndexObj cached instances sorted by their primary keys for the duplicate IdxTableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamIndexObj> readIndexByIdxTableIdx( CFLibDbKeyHash256 TableId );
+	List<ICFBamIndexObj> readIndexByIdxTableIdx( ICFLibKeyHash256 TableId );
 
 	/**
 	 *	Get the map of CFBamIndexObj instances sorted by their primary keys for the duplicate IdxTableIdx key.
@@ -251,7 +251,7 @@ public interface ICFBamIndexTableObj
 	 *	@return	List of CFBamIndexObj cached instances sorted by their primary keys for the duplicate IdxTableIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamIndexObj> readIndexByIdxTableIdx( CFLibDbKeyHash256 TableId,
+	List<ICFBamIndexObj> readIndexByIdxTableIdx( ICFLibKeyHash256 TableId,
 		boolean forceRead );
 
 	/**
@@ -285,7 +285,7 @@ public interface ICFBamIndexTableObj
 	 *	@return	List of CFBamIndexObj cached instances sorted by their primary keys for the duplicate IdxTblCdVisX key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamIndexObj> readIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
+	List<ICFBamIndexObj> readIndexByIdxTblCdVisX( ICFLibKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -298,7 +298,7 @@ public interface ICFBamIndexTableObj
 	 *	@return	List of CFBamIndexObj cached instances sorted by their primary keys for the duplicate IdxTblCdVisX key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamIndexObj> readIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
+	List<ICFBamIndexObj> readIndexByIdxTblCdVisX( ICFLibKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis,
 		boolean forceRead );
 
@@ -310,7 +310,7 @@ public interface ICFBamIndexTableObj
 	 *	@return	List of CFBamIndexObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamIndexObj> readIndexByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamIndexObj> readIndexByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamIndexObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -320,40 +320,40 @@ public interface ICFBamIndexTableObj
 	 *	@return	List of CFBamIndexObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamIndexObj> readIndexByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamIndexObj> readIndexByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead );
 
-	ICFBamIndexObj readCachedIndexByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamIndexObj readCachedIndexByIdIdx( ICFLibKeyHash256 Id );
 
-	List<ICFBamIndexObj> readCachedIndexByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamIndexObj> readCachedIndexByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	ICFBamIndexObj readCachedIndexByUNameIdx( CFLibDbKeyHash256 TableId,
+	ICFBamIndexObj readCachedIndexByUNameIdx( ICFLibKeyHash256 TableId,
 		String Name );
 
-	List<ICFBamIndexObj> readCachedIndexByIdxTableIdx( CFLibDbKeyHash256 TableId );
+	List<ICFBamIndexObj> readCachedIndexByIdxTableIdx( ICFLibKeyHash256 TableId );
 
 	List<ICFBamIndexObj> readCachedIndexByIdxCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	List<ICFBamIndexObj> readCachedIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
+	List<ICFBamIndexObj> readCachedIndexByIdxTblCdVisX( ICFLibKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	List<ICFBamIndexObj> readCachedIndexByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamIndexObj> readCachedIndexByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
-	void deepDisposeIndexByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeIndexByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeIndexByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeIndexByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	void deepDisposeIndexByUNameIdx( CFLibDbKeyHash256 TableId,
+	void deepDisposeIndexByUNameIdx( ICFLibKeyHash256 TableId,
 		String Name );
 
-	void deepDisposeIndexByIdxTableIdx( CFLibDbKeyHash256 TableId );
+	void deepDisposeIndexByIdxTableIdx( ICFLibKeyHash256 TableId );
 
 	void deepDisposeIndexByIdxCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	void deepDisposeIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
+	void deepDisposeIndexByIdxTblCdVisX( ICFLibKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
-	void deepDisposeIndexByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeIndexByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
@@ -370,14 +370,14 @@ public interface ICFBamIndexTableObj
 	 *
 	 *	@param	Id	The Index key attribute of the instance generating the id.
 	 */
-	void deleteIndexByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteIndexByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The Index key attribute of the instance generating the id.
 	 */
-	void deleteIndexByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteIndexByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
@@ -386,7 +386,7 @@ public interface ICFBamIndexTableObj
 	 *
 	 *	@param	Name	The Index key attribute of the instance generating the id.
 	 */
-	void deleteIndexByUNameIdx(CFLibDbKeyHash256 TableId,
+	void deleteIndexByUNameIdx(ICFLibKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -394,7 +394,7 @@ public interface ICFBamIndexTableObj
 	 *
 	 *	@param	TableId	The Index key attribute of the instance generating the id.
 	 */
-	void deleteIndexByIdxTableIdx( CFLibDbKeyHash256 TableId );
+	void deleteIndexByIdxTableIdx( ICFLibKeyHash256 TableId );
 
 	/**
 	 *	Internal use only.
@@ -410,7 +410,7 @@ public interface ICFBamIndexTableObj
 	 *
 	 *	@param	CodeVis	The Index key attribute of the instance generating the id.
 	 */
-	void deleteIndexByIdxTblCdVisX( CFLibDbKeyHash256 TableId,
+	void deleteIndexByIdxTblCdVisX( ICFLibKeyHash256 TableId,
 		ICFBamPubSchema.CodeVisibilityEnum CodeVis );
 
 	/**
@@ -418,5 +418,5 @@ public interface ICFBamIndexTableObj
 	 *
 	 *	@param	DefSchemaId	The Index key attribute of the instance generating the id.
 	 */
-	void deleteIndexByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteIndexByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 }

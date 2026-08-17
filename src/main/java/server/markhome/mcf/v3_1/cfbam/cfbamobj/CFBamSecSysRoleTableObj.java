@@ -66,8 +66,8 @@ public class CFBamSecSysRoleTableObj
 	implements ICFBamSecSysRoleTableObj
 {
 	protected ICFBamSchemaObj schema;
-	private Map<CFLibDbKeyHash256, ICFSecSecSysRoleObj> members;
-	private Map<CFLibDbKeyHash256, ICFSecSecSysRoleObj> allSecSysRole;
+	private Map<ICFLibKeyHash256, ICFSecSecSysRoleObj> members;
+	private Map<ICFLibKeyHash256, ICFSecSecSysRoleObj> allSecSysRole;
 	private Map< ICFSecSecSysRoleByUNameIdxKey,
 		ICFSecSecSysRoleObj > indexByUNameIdx;
 	public static String TABLE_NAME = "SecSysRole";
@@ -75,14 +75,14 @@ public class CFBamSecSysRoleTableObj
 
 	public CFBamSecSysRoleTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecSysRoleObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecSecSysRoleObj>();
 		allSecSysRole = null;
 		indexByUNameIdx = null;
 	}
 
 	public CFBamSecSysRoleTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecSysRoleObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecSecSysRoleObj>();
 		allSecSysRole = null;
 		indexByUNameIdx = null;
 	}
@@ -191,7 +191,7 @@ public class CFBamSecSysRoleTableObj
 	@Override
 	public ICFSecSecSysRoleObj realiseSecSysRole( ICFSecSecSysRoleObj Obj ) {
 		ICFSecSecSysRoleObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecSecSysRoleObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecSecSysRoleObj existingObj = members.get( pkey );
@@ -260,12 +260,12 @@ public class CFBamSecSysRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleObj readSecSysRole( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecSysRoleObj readSecSysRole( ICFLibKeyHash256 pkey ) {
 		return( readSecSysRole( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecSecSysRoleObj readSecSysRole( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFSecSecSysRoleObj readSecSysRole( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFSecSecSysRoleObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -284,7 +284,7 @@ public class CFBamSecSysRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleObj readCachedSecSysRole( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecSysRoleObj readCachedSecSysRole( ICFLibKeyHash256 pkey ) {
 		ICFSecSecSysRoleObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -300,7 +300,7 @@ public class CFBamSecSysRoleTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecSecSysRoleObj existing = readCachedSecSysRole( pkey );
 		if( existing == null ) {
 			return;
@@ -320,7 +320,7 @@ public class CFBamSecSysRoleTableObj
 
 	}
 	@Override
-	public void deepDisposeSecSysRole( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeSecSysRole( ICFLibKeyHash256 pkey ) {
 		ICFSecSecSysRoleObj obj = readCachedSecSysRole( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -328,7 +328,7 @@ public class CFBamSecSysRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleObj lockSecSysRole( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecSysRoleObj lockSecSysRole( ICFLibKeyHash256 pkey ) {
 		ICFSecSecSysRoleObj locked = null;
 		ICFSecSecSysRole lockRec = schema.getCFSecBackingStore().getTableSecSysRole().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -352,7 +352,7 @@ public class CFBamSecSysRoleTableObj
 	public List<ICFSecSecSysRoleObj> readAllSecSysRole( boolean forceRead ) {
 		final String S_ProcName = "readAllSecSysRole";
 		if( ( allSecSysRole == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFSecSecSysRoleObj> map = new HashMap<CFLibDbKeyHash256,ICFSecSecSysRoleObj>();
+			Map<ICFLibKeyHash256, ICFSecSecSysRoleObj> map = new HashMap<ICFLibKeyHash256,ICFSecSecSysRoleObj>();
 			allSecSysRole = map;
 			ICFSecSecSysRole[] recList = schema.getCFSecBackingStore().getTableSecSysRole().readAllDerived( null );
 			ICFSecSecSysRole rec;
@@ -408,8 +408,8 @@ public class CFBamSecSysRoleTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -466,8 +466,8 @@ public class CFBamSecSysRoleTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -478,14 +478,14 @@ public class CFBamSecSysRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleObj readSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId )
+	public ICFSecSecSysRoleObj readSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId )
 	{
 		return( readSecSysRoleByIdIdx( SecSysRoleId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecSysRoleObj readSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId, boolean forceRead )
+	public ICFSecSecSysRoleObj readSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId, boolean forceRead )
 	{
 		ICFSecSecSysRoleObj obj = readSecSysRole( SecSysRoleId, forceRead );
 		return( obj );
@@ -525,7 +525,7 @@ public class CFBamSecSysRoleTableObj
 	}
 
 	@Override
-	public ICFSecSecSysRoleObj readCachedSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId )
+	public ICFSecSecSysRoleObj readCachedSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId )
 	{
 		ICFSecSecSysRoleObj obj = null;
 		obj = readCachedSecSysRole( SecSysRoleId );
@@ -569,7 +569,7 @@ public class CFBamSecSysRoleTableObj
 	}
 
 	@Override
-	public void deepDisposeSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId )
+	public void deepDisposeSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId )
 	{
 		ICFSecSecSysRoleObj obj = readCachedSecSysRoleByIdIdx( SecSysRoleId );
 		if( obj != null ) {
@@ -605,7 +605,7 @@ public class CFBamSecSysRoleTableObj
 	}
 
 	@Override
-	public void deleteSecSysRoleByIdIdx( CFLibDbKeyHash256 SecSysRoleId )
+	public void deleteSecSysRoleByIdIdx( ICFLibKeyHash256 SecSysRoleId )
 	{
 		ICFSecSecSysRoleObj obj = readSecSysRole(SecSysRoleId);
 		if( obj != null ) {

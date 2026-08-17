@@ -66,23 +66,23 @@ public class CFBamSecUserPasswordTableObj
 	implements ICFBamSecUserPasswordTableObj
 {
 	protected ICFBamSchemaObj schema;
-	private Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj> members;
-	private Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj> allSecUserPassword;
+	private Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj> members;
+	private Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj> allSecUserPassword;
 	private Map< ICFSecSecUserPasswordBySetStampIdxKey,
-		Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj > > indexBySetStampIdx;
+		Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj > > indexBySetStampIdx;
 	public static String TABLE_NAME = "SecUserPassword";
 	public static String TABLE_DBNAME = "secuserpw";
 
 	public CFBamSecUserPasswordTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecUserPasswordObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecSecUserPasswordObj>();
 		allSecUserPassword = null;
 		indexBySetStampIdx = null;
 	}
 
 	public CFBamSecUserPasswordTableObj( ICFSecSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFSecSecUserPasswordObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFSecSecUserPasswordObj>();
 		allSecUserPassword = null;
 		indexBySetStampIdx = null;
 	}
@@ -191,7 +191,7 @@ public class CFBamSecUserPasswordTableObj
 	@Override
 	public ICFSecSecUserPasswordObj realiseSecUserPassword( ICFSecSecUserPasswordObj Obj ) {
 		ICFSecSecUserPasswordObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecSecUserPasswordObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFSecSecUserPasswordObj existingObj = members.get( pkey );
@@ -208,7 +208,7 @@ public class CFBamSecUserPasswordTableObj
 				ICFSecSecUserPasswordBySetStampIdxKey keySetStampIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPassword().newBySetStampIdxKey();
 				keySetStampIdx.setRequiredPWSetStamp( keepObj.getRequiredPWSetStamp() );
-				Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
+				Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
 				if( mapSetStampIdx != null ) {
 					mapSetStampIdx.remove( keepObj.getPKey() );
 					if( mapSetStampIdx.size() <= 0 ) {
@@ -224,7 +224,7 @@ public class CFBamSecUserPasswordTableObj
 				ICFSecSecUserPasswordBySetStampIdxKey keySetStampIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPassword().newBySetStampIdxKey();
 				keySetStampIdx.setRequiredPWSetStamp( keepObj.getRequiredPWSetStamp() );
-				Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
+				Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
 				if( mapSetStampIdx != null ) {
 					mapSetStampIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -248,7 +248,7 @@ public class CFBamSecUserPasswordTableObj
 				ICFSecSecUserPasswordBySetStampIdxKey keySetStampIdx =
 					schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPassword().newBySetStampIdxKey();
 				keySetStampIdx.setRequiredPWSetStamp( keepObj.getRequiredPWSetStamp() );
-				Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
+				Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj > mapSetStampIdx = indexBySetStampIdx.get( keySetStampIdx );
 				if( mapSetStampIdx != null ) {
 					mapSetStampIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -272,12 +272,12 @@ public class CFBamSecUserPasswordTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readSecUserPassword( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecUserPasswordObj readSecUserPassword( ICFLibKeyHash256 pkey ) {
 		return( readSecUserPassword( pkey, false ) );
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readSecUserPassword( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFSecSecUserPasswordObj readSecUserPassword( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFSecSecUserPasswordObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -296,7 +296,7 @@ public class CFBamSecUserPasswordTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readCachedSecUserPassword( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecUserPasswordObj readCachedSecUserPassword( ICFLibKeyHash256 pkey ) {
 		ICFSecSecUserPasswordObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -312,7 +312,7 @@ public class CFBamSecUserPasswordTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFSecSecUserPasswordObj existing = readCachedSecUserPassword( pkey );
 		if( existing == null ) {
 			return;
@@ -335,7 +335,7 @@ public class CFBamSecUserPasswordTableObj
 
 	}
 	@Override
-	public void deepDisposeSecUserPassword( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeSecUserPassword( ICFLibKeyHash256 pkey ) {
 		ICFSecSecUserPasswordObj obj = readCachedSecUserPassword( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -343,7 +343,7 @@ public class CFBamSecUserPasswordTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj lockSecUserPassword( CFLibDbKeyHash256 pkey ) {
+	public ICFSecSecUserPasswordObj lockSecUserPassword( ICFLibKeyHash256 pkey ) {
 		ICFSecSecUserPasswordObj locked = null;
 		ICFSecSecUserPassword lockRec = schema.getCFSecBackingStore().getTableSecUserPassword().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -367,7 +367,7 @@ public class CFBamSecUserPasswordTableObj
 	public List<ICFSecSecUserPasswordObj> readAllSecUserPassword( boolean forceRead ) {
 		final String S_ProcName = "readAllSecUserPassword";
 		if( ( allSecUserPassword == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj> map = new HashMap<CFLibDbKeyHash256,ICFSecSecUserPasswordObj>();
+			Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj> map = new HashMap<ICFLibKeyHash256,ICFSecSecUserPasswordObj>();
 			allSecUserPassword = map;
 			ICFSecSecUserPassword[] recList = schema.getCFSecBackingStore().getTableSecUserPassword().readAllDerived( null );
 			ICFSecSecUserPassword rec;
@@ -423,8 +423,8 @@ public class CFBamSecUserPasswordTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -481,8 +481,8 @@ public class CFBamSecUserPasswordTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -493,14 +493,14 @@ public class CFBamSecUserPasswordTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( CFLibDbKeyHash256 SecUserId )
+	public ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId )
 	{
 		return( readSecUserPasswordByIdIdx( SecUserId,
 			false ) );
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( CFLibDbKeyHash256 SecUserId, boolean forceRead )
+	public ICFSecSecUserPasswordObj readSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId, boolean forceRead )
 	{
 		ICFSecSecUserPasswordObj obj = readSecUserPassword( SecUserId, forceRead );
 		return( obj );
@@ -520,16 +520,16 @@ public class CFBamSecUserPasswordTableObj
 		final String S_ProcName = "readSecUserPasswordBySetStampIdx";
 		ICFSecSecUserPasswordBySetStampIdxKey key = schema.getCFSecBackingStore().getCFSecFactory().getFactorySecUserPassword().newBySetStampIdxKey();
 		key.setRequiredPWSetStamp( PWSetStamp );
-		Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj> dict;
+		Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj> dict;
 		if( indexBySetStampIdx == null ) {
 			indexBySetStampIdx = new HashMap< ICFSecSecUserPasswordBySetStampIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecUserPasswordObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecUserPasswordObj > >();
 		}
 		if( ( ! forceRead ) && indexBySetStampIdx.containsKey( key ) ) {
 			dict = indexBySetStampIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFSecSecUserPasswordObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFSecSecUserPasswordObj>();
 			ICFSecSecUserPasswordObj obj;
 			ICFSecSecUserPassword[] recList = schema.getCFSecBackingStore().getTableSecUserPassword().readDerivedBySetStampIdx( null,
 				PWSetStamp );
@@ -587,8 +587,8 @@ public class CFBamSecUserPasswordTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -600,7 +600,7 @@ public class CFBamSecUserPasswordTableObj
 	}
 
 	@Override
-	public ICFSecSecUserPasswordObj readCachedSecUserPasswordByIdIdx( CFLibDbKeyHash256 SecUserId )
+	public ICFSecSecUserPasswordObj readCachedSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId )
 	{
 		ICFSecSecUserPasswordObj obj = null;
 		obj = readCachedSecUserPassword( SecUserId );
@@ -615,7 +615,7 @@ public class CFBamSecUserPasswordTableObj
 		key.setRequiredPWSetStamp( PWSetStamp );
 		ArrayList<ICFSecSecUserPasswordObj> arrayList = new ArrayList<ICFSecSecUserPasswordObj>();
 		if( indexBySetStampIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj> dict;
+			Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj> dict;
 			if( indexBySetStampIdx.containsKey( key ) ) {
 				dict = indexBySetStampIdx.get( key );
 				int len = dict.size();
@@ -673,8 +673,8 @@ public class CFBamSecUserPasswordTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -685,7 +685,7 @@ public class CFBamSecUserPasswordTableObj
 	}
 
 	@Override
-	public void deepDisposeSecUserPasswordByIdIdx( CFLibDbKeyHash256 SecUserId )
+	public void deepDisposeSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId )
 	{
 		ICFSecSecUserPasswordObj obj = readCachedSecUserPasswordByIdIdx( SecUserId );
 		if( obj != null ) {
@@ -729,7 +729,7 @@ public class CFBamSecUserPasswordTableObj
 	}
 
 	@Override
-	public void deleteSecUserPasswordByIdIdx( CFLibDbKeyHash256 SecUserId )
+	public void deleteSecUserPasswordByIdIdx( ICFLibKeyHash256 SecUserId )
 	{
 		ICFSecSecUserPasswordObj obj = readSecUserPassword(SecUserId);
 		if( obj != null ) {
@@ -765,10 +765,10 @@ public class CFBamSecUserPasswordTableObj
 		key.setRequiredPWSetStamp( PWSetStamp );
 		if( indexBySetStampIdx == null ) {
 			indexBySetStampIdx = new HashMap< ICFSecSecUserPasswordBySetStampIdxKey,
-				Map< CFLibDbKeyHash256, ICFSecSecUserPasswordObj > >();
+				Map< ICFLibKeyHash256, ICFSecSecUserPasswordObj > >();
 		}
 		if( indexBySetStampIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFSecSecUserPasswordObj> dict = indexBySetStampIdx.get( key );
+			Map<ICFLibKeyHash256, ICFSecSecUserPasswordObj> dict = indexBySetStampIdx.get( key );
 			schema.getCFSecBackingStore().getTableSecUserPassword().deleteSecUserPasswordBySetStampIdx( null,
 				PWSetStamp );
 			Iterator<ICFSecSecUserPasswordObj> iter = dict.values().iterator();

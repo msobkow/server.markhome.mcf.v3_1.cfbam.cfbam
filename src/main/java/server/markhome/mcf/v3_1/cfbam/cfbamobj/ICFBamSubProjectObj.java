@@ -262,25 +262,25 @@ public interface ICFBamSubProjectObj
 	List<ICFIntMajorVersionObj> getOptionalComponentsMajorVer( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required ICFLibKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required ICFLibKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	ICFLibKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TenantId.
+	 *	Get the required ICFLibKeyHash256 attribute TenantId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TenantId.
+	 *	@return	The required ICFLibKeyHash256 attribute TenantId.
 	 */
-	CFLibDbKeyHash256 getRequiredTenantId();
+	ICFLibKeyHash256 getRequiredTenantId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TopProjectId.
+	 *	Get the required ICFLibKeyHash256 attribute TopProjectId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TopProjectId.
+	 *	@return	The required ICFLibKeyHash256 attribute TopProjectId.
 	 */
-	CFLibDbKeyHash256 getRequiredTopProjectId();
+	ICFLibKeyHash256 getRequiredTopProjectId();
 
 	/**
 	 *	Get the required String attribute Name.

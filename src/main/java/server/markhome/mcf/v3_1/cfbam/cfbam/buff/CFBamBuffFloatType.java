@@ -74,7 +74,7 @@ public class CFBamBuffFloatType
 	extends CFBamBuffFloatDef
 	implements ICFBamFloatType
 {
-	protected CFLibDbKeyHash256 requiredSchemaDefId;
+	protected $implJavaAtomType$ requiredSchemaDefId;
 
 	public CFBamBuffFloatType() {
 		super();

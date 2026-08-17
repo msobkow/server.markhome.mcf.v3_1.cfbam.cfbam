@@ -74,7 +74,7 @@ public class CFBamBuffServerProc
 	extends CFBamBuffServerMethod
 	implements ICFBamServerProc
 {
-	protected String optionalDummy;
+	protected $implJavaAtomType$ optionalDummy;
 
 	public CFBamBuffServerProc() {
 		super();

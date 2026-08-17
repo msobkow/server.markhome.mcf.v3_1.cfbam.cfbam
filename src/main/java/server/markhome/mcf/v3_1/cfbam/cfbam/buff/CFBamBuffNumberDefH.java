@@ -73,11 +73,11 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffNumberDefH extends CFBamBuffAtomH
     implements ICFBamNumberDefH
 {
-	protected short requiredDigits;
-	protected short requiredPrecis;
-	protected BigDecimal optionalInitValue;
-	protected BigDecimal optionalMinValue;
-	protected BigDecimal optionalMaxValue;
+	protected $implJavaAtomType$ requiredDigits;
+	protected $implJavaAtomType$ requiredPrecis;
+	protected $implJavaAtomType$ optionalInitValue;
+	protected $implJavaAtomType$ optionalMinValue;
+	protected $implJavaAtomType$ optionalMaxValue;
 
     public CFBamBuffNumberDefH() {
             super();

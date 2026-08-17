@@ -73,8 +73,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffRelationByRelTableCodeVisXKey
 	implements ICFBamRelationByRelTableCodeVisXKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 requiredTableId;
-	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
+	protected $implJavaAtomType$ requiredTableId;
+	protected $implJavaAtomType$ requiredCodeVis;
 	public CFBamBuffRelationByRelTableCodeVisXKey() {
 		requiredTableId = CFLibDbKeyHash256.fromHex( ICFBamPubRelation.TABLEID_INIT_VALUE.toString() );
 		requiredCodeVis = ICFBamPubRelation.CODEVIS_INIT_VALUE;

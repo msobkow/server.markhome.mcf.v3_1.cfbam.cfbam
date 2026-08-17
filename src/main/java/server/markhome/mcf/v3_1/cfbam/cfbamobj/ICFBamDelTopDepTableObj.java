@@ -122,7 +122,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	The DelTopDep-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamDelTopDepObj readDelTopDep( CFLibDbKeyHash256 pkey );
+	ICFBamDelTopDepObj readDelTopDep( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Read a DelTopDep-derived instance by it's primary key.
@@ -132,19 +132,19 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	The DelTopDep-derived instance identified by the primary key,
 	 *		or null if no such key value exists.
 	 */
-	ICFBamDelTopDepObj readDelTopDep( CFLibDbKeyHash256 pkey,
+	ICFBamDelTopDepObj readDelTopDep( ICFLibKeyHash256 pkey,
 		boolean forceRead );
 
-	ICFBamDelTopDepObj readCachedDelTopDep( CFLibDbKeyHash256 pkey );
+	ICFBamDelTopDepObj readCachedDelTopDep( ICFLibKeyHash256 pkey );
 
 	public void reallyDeepDisposeDelTopDep( ICFBamDelTopDepObj obj );
 
-	void deepDisposeDelTopDep( CFLibDbKeyHash256 pkey );
+	void deepDisposeDelTopDep( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Internal use only.
 	 */
-	ICFBamDelTopDepObj lockDelTopDep( CFLibDbKeyHash256 pkey );
+	ICFBamDelTopDepObj lockDelTopDep( ICFLibKeyHash256 pkey );
 
 	/**
 	 *	Return a sorted list of all the DelTopDep-derived instances in the database.
@@ -172,7 +172,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	CFBamScopeObj cached instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDelTopDepObj readDelTopDepByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamDelTopDepObj readDelTopDepByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Get the CFBamScopeObj instance for the primary key attributes.
@@ -182,7 +182,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	CFBamScopeObj refreshed instance for the primary key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDelTopDepObj readDelTopDepByIdIdx( CFLibDbKeyHash256 Id,
+	ICFBamDelTopDepObj readDelTopDepByIdIdx( ICFLibKeyHash256 Id,
 		boolean forceRead );
 
 	/**
@@ -193,7 +193,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	List of CFBamDelTopDepObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelTopDepObj> readDelTopDepByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamDelTopDepObj> readDelTopDepByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Get the map of CFBamDelTopDepObj instances sorted by their primary keys for the duplicate TenantIdx key.
@@ -203,7 +203,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	List of CFBamDelTopDepObj cached instances sorted by their primary keys for the duplicate TenantIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelTopDepObj> readDelTopDepByTenantIdx( CFLibDbKeyHash256 TenantId,
+	List<ICFBamDelTopDepObj> readDelTopDepByTenantIdx( ICFLibKeyHash256 TenantId,
 		boolean forceRead );
 
 	/**
@@ -214,7 +214,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	List of CFBamDelTopDepObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelTopDepObj> readDelTopDepByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamDelTopDepObj> readDelTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Get the map of CFBamDelTopDepObj instances sorted by their primary keys for the duplicate DefSchemaIdx key.
@@ -224,7 +224,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	List of CFBamDelTopDepObj cached instances sorted by their primary keys for the duplicate DefSchemaIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelTopDepObj> readDelTopDepByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	List<ICFBamDelTopDepObj> readDelTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead );
 
 	/**
@@ -235,7 +235,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	List of CFBamDelTopDepObj cached instances sorted by their primary keys for the duplicate DelDepIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelTopDepObj> readDelTopDepByDelDepIdx( CFLibDbKeyHash256 RelationId );
+	List<ICFBamDelTopDepObj> readDelTopDepByDelDepIdx( ICFLibKeyHash256 RelationId );
 
 	/**
 	 *	Get the map of CFBamDelTopDepObj instances sorted by their primary keys for the duplicate DelDepIdx key.
@@ -245,7 +245,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	List of CFBamDelTopDepObj cached instances sorted by their primary keys for the duplicate DelDepIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelTopDepObj> readDelTopDepByDelDepIdx( CFLibDbKeyHash256 RelationId,
+	List<ICFBamDelTopDepObj> readDelTopDepByDelDepIdx( ICFLibKeyHash256 RelationId,
 		boolean forceRead );
 
 	/**
@@ -256,7 +256,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	List of CFBamDelTopDepObj cached instances sorted by their primary keys for the duplicate DelTopDepTblIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelTopDepObj> readDelTopDepByDelTopDepTblIdx( CFLibDbKeyHash256 TableId );
+	List<ICFBamDelTopDepObj> readDelTopDepByDelTopDepTblIdx( ICFLibKeyHash256 TableId );
 
 	/**
 	 *	Get the map of CFBamDelTopDepObj instances sorted by their primary keys for the duplicate DelTopDepTblIdx key.
@@ -266,7 +266,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	List of CFBamDelTopDepObj cached instances sorted by their primary keys for the duplicate DelTopDepTblIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelTopDepObj> readDelTopDepByDelTopDepTblIdx( CFLibDbKeyHash256 TableId,
+	List<ICFBamDelTopDepObj> readDelTopDepByDelTopDepTblIdx( ICFLibKeyHash256 TableId,
 		boolean forceRead );
 
 	/**
@@ -279,7 +279,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	CFBamDelTopDepObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDelTopDepObj readDelTopDepByUNameIdx(CFLibDbKeyHash256 TableId,
+	ICFBamDelTopDepObj readDelTopDepByUNameIdx(ICFLibKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -292,7 +292,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	CFBamDelTopDepObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFBamDelTopDepObj readDelTopDepByUNameIdx(CFLibDbKeyHash256 TableId,
+	ICFBamDelTopDepObj readDelTopDepByUNameIdx(ICFLibKeyHash256 TableId,
 		String Name,
 		boolean forceRead );
 
@@ -304,7 +304,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	List of CFBamDelTopDepObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelTopDepObj> readDelTopDepByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamDelTopDepObj> readDelTopDepByPrevIdx( ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Get the map of CFBamDelTopDepObj instances sorted by their primary keys for the duplicate PrevIdx key.
@@ -314,7 +314,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	List of CFBamDelTopDepObj cached instances sorted by their primary keys for the duplicate PrevIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelTopDepObj> readDelTopDepByPrevIdx( CFLibDbKeyHash256 PrevId,
+	List<ICFBamDelTopDepObj> readDelTopDepByPrevIdx( ICFLibKeyHash256 PrevId,
 		boolean forceRead );
 
 	/**
@@ -325,7 +325,7 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	List of CFBamDelTopDepObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelTopDepObj> readDelTopDepByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamDelTopDepObj> readDelTopDepByNextIdx( ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Get the map of CFBamDelTopDepObj instances sorted by their primary keys for the duplicate NextIdx key.
@@ -335,42 +335,42 @@ public interface ICFBamDelTopDepTableObj
 	 *	@return	List of CFBamDelTopDepObj cached instances sorted by their primary keys for the duplicate NextIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFBamDelTopDepObj> readDelTopDepByNextIdx( CFLibDbKeyHash256 NextId,
+	List<ICFBamDelTopDepObj> readDelTopDepByNextIdx( ICFLibKeyHash256 NextId,
 		boolean forceRead );
 
-	ICFBamDelTopDepObj readCachedDelTopDepByIdIdx( CFLibDbKeyHash256 Id );
+	ICFBamDelTopDepObj readCachedDelTopDepByIdIdx( ICFLibKeyHash256 Id );
 
-	List<ICFBamDelTopDepObj> readCachedDelTopDepByTenantIdx( CFLibDbKeyHash256 TenantId );
+	List<ICFBamDelTopDepObj> readCachedDelTopDepByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	List<ICFBamDelTopDepObj> readCachedDelTopDepByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	List<ICFBamDelTopDepObj> readCachedDelTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
-	List<ICFBamDelTopDepObj> readCachedDelTopDepByDelDepIdx( CFLibDbKeyHash256 RelationId );
+	List<ICFBamDelTopDepObj> readCachedDelTopDepByDelDepIdx( ICFLibKeyHash256 RelationId );
 
-	List<ICFBamDelTopDepObj> readCachedDelTopDepByDelTopDepTblIdx( CFLibDbKeyHash256 TableId );
+	List<ICFBamDelTopDepObj> readCachedDelTopDepByDelTopDepTblIdx( ICFLibKeyHash256 TableId );
 
-	ICFBamDelTopDepObj readCachedDelTopDepByUNameIdx( CFLibDbKeyHash256 TableId,
+	ICFBamDelTopDepObj readCachedDelTopDepByUNameIdx( ICFLibKeyHash256 TableId,
 		String Name );
 
-	List<ICFBamDelTopDepObj> readCachedDelTopDepByPrevIdx( CFLibDbKeyHash256 PrevId );
+	List<ICFBamDelTopDepObj> readCachedDelTopDepByPrevIdx( ICFLibKeyHash256 PrevId );
 
-	List<ICFBamDelTopDepObj> readCachedDelTopDepByNextIdx( CFLibDbKeyHash256 NextId );
+	List<ICFBamDelTopDepObj> readCachedDelTopDepByNextIdx( ICFLibKeyHash256 NextId );
 
-	void deepDisposeDelTopDepByIdIdx( CFLibDbKeyHash256 Id );
+	void deepDisposeDelTopDepByIdIdx( ICFLibKeyHash256 Id );
 
-	void deepDisposeDelTopDepByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deepDisposeDelTopDepByTenantIdx( ICFLibKeyHash256 TenantId );
 
-	void deepDisposeDelTopDepByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deepDisposeDelTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
-	void deepDisposeDelTopDepByDelDepIdx( CFLibDbKeyHash256 RelationId );
+	void deepDisposeDelTopDepByDelDepIdx( ICFLibKeyHash256 RelationId );
 
-	void deepDisposeDelTopDepByDelTopDepTblIdx( CFLibDbKeyHash256 TableId );
+	void deepDisposeDelTopDepByDelTopDepTblIdx( ICFLibKeyHash256 TableId );
 
-	void deepDisposeDelTopDepByUNameIdx( CFLibDbKeyHash256 TableId,
+	void deepDisposeDelTopDepByUNameIdx( ICFLibKeyHash256 TableId,
 		String Name );
 
-	void deepDisposeDelTopDepByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deepDisposeDelTopDepByPrevIdx( ICFLibKeyHash256 PrevId );
 
-	void deepDisposeDelTopDepByNextIdx( CFLibDbKeyHash256 NextId );
+	void deepDisposeDelTopDepByNextIdx( ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Internal use only.
@@ -387,35 +387,35 @@ public interface ICFBamDelTopDepTableObj
 	 *
 	 *	@param	Id	The DelTopDep key attribute of the instance generating the id.
 	 */
-	void deleteDelTopDepByIdIdx( CFLibDbKeyHash256 Id );
+	void deleteDelTopDepByIdIdx( ICFLibKeyHash256 Id );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TenantId	The DelTopDep key attribute of the instance generating the id.
 	 */
-	void deleteDelTopDepByTenantIdx( CFLibDbKeyHash256 TenantId );
+	void deleteDelTopDepByTenantIdx( ICFLibKeyHash256 TenantId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	DefSchemaId	The DelTopDep key attribute of the instance generating the id.
 	 */
-	void deleteDelTopDepByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId );
+	void deleteDelTopDepByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	RelationId	The DelTopDep key attribute of the instance generating the id.
 	 */
-	void deleteDelTopDepByDelDepIdx( CFLibDbKeyHash256 RelationId );
+	void deleteDelTopDepByDelDepIdx( ICFLibKeyHash256 RelationId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	TableId	The DelTopDep key attribute of the instance generating the id.
 	 */
-	void deleteDelTopDepByDelTopDepTblIdx( CFLibDbKeyHash256 TableId );
+	void deleteDelTopDepByDelTopDepTblIdx( ICFLibKeyHash256 TableId );
 
 	/**
 	 *	Internal use only.
@@ -424,7 +424,7 @@ public interface ICFBamDelTopDepTableObj
 	 *
 	 *	@param	Name	The DelTopDep key attribute of the instance generating the id.
 	 */
-	void deleteDelTopDepByUNameIdx(CFLibDbKeyHash256 TableId,
+	void deleteDelTopDepByUNameIdx(ICFLibKeyHash256 TableId,
 		String Name );
 
 	/**
@@ -432,14 +432,14 @@ public interface ICFBamDelTopDepTableObj
 	 *
 	 *	@param	PrevId	The DelTopDep key attribute of the instance generating the id.
 	 */
-	void deleteDelTopDepByPrevIdx( CFLibDbKeyHash256 PrevId );
+	void deleteDelTopDepByPrevIdx( ICFLibKeyHash256 PrevId );
 
 	/**
 	 *	Internal use only.
 	 *
 	 *	@param	NextId	The DelTopDep key attribute of the instance generating the id.
 	 */
-	void deleteDelTopDepByNextIdx( CFLibDbKeyHash256 NextId );
+	void deleteDelTopDepByNextIdx( ICFLibKeyHash256 NextId );
 
 	/**
 	 *	Move the CFBamDelTopDepObj instance up in the chain.  The instance is always refreshed.

@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffParamByServerTypeIdxKey
 	implements ICFBamParamByServerTypeIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 optionalTypeId;
+	protected $implJavaAtomType$ optionalTypeId;
 	public CFBamBuffParamByServerTypeIdxKey() {
 		optionalTypeId = CFLibDbKeyHash256.nullGet();
 	}

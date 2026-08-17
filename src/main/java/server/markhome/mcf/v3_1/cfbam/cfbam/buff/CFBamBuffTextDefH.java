@@ -73,9 +73,9 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTextDefH extends CFBamBuffAtomH
     implements ICFBamTextDefH
 {
-	protected int requiredMaxLen;
-	protected String optionalInitValue;
-	protected String optionalXmlElementName;
+	protected $implJavaAtomType$ requiredMaxLen;
+	protected $implJavaAtomType$ optionalInitValue;
+	protected $implJavaAtomType$ optionalXmlElementName;
 
     public CFBamBuffTextDefH() {
             super();

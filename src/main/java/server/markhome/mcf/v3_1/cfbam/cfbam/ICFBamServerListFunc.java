@@ -77,7 +77,7 @@ public interface ICFBamServerListFunc
 
 	public ICFBamTable getOptionalLookupRetTable();
 
-	public void setOptionalLookupRetTable(CFLibDbKeyHash256 argRetTableId);
+	public void setOptionalLookupRetTable(ICFLibKeyHash256 argRetTableId);
 
 	public void setOptionalLookupRetTable(ICFBamTable argObj);
 

@@ -313,17 +313,17 @@ public class CFBamBlobDefObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public int getRequiredMaxLen() {
+	public $implJavaAtomType$ getRequiredMaxLen() {
 		return( getBlobDefRec().getRequiredMaxLen() );
 	}
 
 	@Override
-	public byte[] getOptionalInitValue() {
+	public $implJavaAtomType$ getOptionalInitValue() {
 		return( getBlobDefRec().getOptionalInitValue() );
 	}
 }

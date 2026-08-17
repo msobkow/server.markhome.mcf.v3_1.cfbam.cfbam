@@ -263,12 +263,12 @@ public class CFBamNumberDefEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,60 +281,60 @@ public class CFBamNumberDefEditObj
 	}
 
 	@Override
-	public short getRequiredDigits() {
+	public $implJavaAtomType$ getRequiredDigits() {
 		return( getNumberDefRec().getRequiredDigits() );
 	}
 
 	@Override
-	public void setRequiredDigits( short value ) {
+	public void setRequiredDigits( $implJavaAtomType$ value ) {
 		if( getNumberDefRec().getRequiredDigits() != value ) {
 			getNumberDefRec().setRequiredDigits( value );
 		}
 	}
 
 	@Override
-	public short getRequiredPrecis() {
+	public $implJavaAtomType$ getRequiredPrecis() {
 		return( getNumberDefRec().getRequiredPrecis() );
 	}
 
 	@Override
-	public void setRequiredPrecis( short value ) {
+	public void setRequiredPrecis( $implJavaAtomType$ value ) {
 		if( getNumberDefRec().getRequiredPrecis() != value ) {
 			getNumberDefRec().setRequiredPrecis( value );
 		}
 	}
 
 	@Override
-	public BigDecimal getOptionalInitValue() {
+	public $implJavaAtomType$ getOptionalInitValue() {
 		return( getNumberDefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public void setOptionalInitValue( BigDecimal value ) {
+	public void setOptionalInitValue( $implJavaAtomType$ value ) {
 		if( getNumberDefRec().getOptionalInitValue() != value ) {
 			getNumberDefRec().setOptionalInitValue( value );
 		}
 	}
 
 	@Override
-	public BigDecimal getOptionalMinValue() {
+	public $implJavaAtomType$ getOptionalMinValue() {
 		return( getNumberDefRec().getOptionalMinValue() );
 	}
 
 	@Override
-	public void setOptionalMinValue( BigDecimal value ) {
+	public void setOptionalMinValue( $implJavaAtomType$ value ) {
 		if( getNumberDefRec().getOptionalMinValue() != value ) {
 			getNumberDefRec().setOptionalMinValue( value );
 		}
 	}
 
 	@Override
-	public BigDecimal getOptionalMaxValue() {
+	public $implJavaAtomType$ getOptionalMaxValue() {
 		return( getNumberDefRec().getOptionalMaxValue() );
 	}
 
 	@Override
-	public void setOptionalMaxValue( BigDecimal value ) {
+	public void setOptionalMaxValue( $implJavaAtomType$ value ) {
 		if( getNumberDefRec().getOptionalMaxValue() != value ) {
 			getNumberDefRec().setOptionalMaxValue( value );
 		}

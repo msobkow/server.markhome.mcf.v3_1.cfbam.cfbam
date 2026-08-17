@@ -314,17 +314,17 @@ public class CFBamDbKeyHash512GenObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public short getRequiredSlice() {
+	public $implJavaAtomType$ getRequiredSlice() {
 		return( getDbKeyHash512GenRec().getRequiredSlice() );
 	}
 
 	@Override
-	public int getRequiredBlockSize() {
+	public $implJavaAtomType$ getRequiredBlockSize() {
 		return( getDbKeyHash512GenRec().getRequiredBlockSize() );
 	}
 }

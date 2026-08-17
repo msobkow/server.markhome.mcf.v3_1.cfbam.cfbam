@@ -307,7 +307,7 @@ public class CFBamClearDepObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -347,12 +347,12 @@ public class CFBamClearDepObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredRelationId() {
+	public $implJavaAtomType$ getRequiredRelationId() {
 		return( getClearDepRec().getRequiredRelationId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getOptionalDefSchemaId() {
+	public $implJavaAtomType$ getOptionalDefSchemaId() {
 		return( getClearDepRec().getOptionalDefSchemaId() );
 	}
 }

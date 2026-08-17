@@ -79,7 +79,7 @@ public interface ICFBamPopDep
 
 	public ICFBamRelation getRequiredLookupRelation();
 
-	public void setRequiredLookupRelation(CFLibDbKeyHash256 argRelationId);
+	public void setRequiredLookupRelation(ICFLibKeyHash256 argRelationId);
 
 	public void setRequiredLookupRelation(ICFBamRelation argObj);
 
@@ -89,7 +89,7 @@ public interface ICFBamPopDep
 
 	public ICFBamSchemaDef getOptionalLookupDefSchema();
 
-	public void setOptionalLookupDefSchema(CFLibDbKeyHash256 argDefSchemaId);
+	public void setOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId);
 
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj);
 

@@ -163,7 +163,7 @@ public class CFBamSchemaDefObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTableTableObj().readTableByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -176,7 +176,7 @@ public class CFBamSchemaDefObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getValueTableObj().readValueByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -189,7 +189,7 @@ public class CFBamSchemaDefObj
 				if (nextName == null) {
 					throw new CFLibNullArgumentException(getClass(), "getNamedObject", 0, "RequiredName");
 				}
-				String natNextName = nextName;
+				$implJavaAtomType$ natNextName = nextName;
 				subObj = ((ICFBamSchemaObj)getSchema()).getTweakTableObj().readTweakByUNameIdx( getRequiredId(),
 				natNextName, false );
 			}
@@ -353,7 +353,7 @@ public class CFBamSchemaDefObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
@@ -470,67 +470,67 @@ public class CFBamSchemaDefObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredCTenantId() {
+	public $implJavaAtomType$ getRequiredCTenantId() {
 		return( getSchemaDefRec().getRequiredCTenantId() );
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredMinorVersionId() {
+	public $implJavaAtomType$ getRequiredMinorVersionId() {
 		return( getSchemaDefRec().getRequiredMinorVersionId() );
 	}
 
 	@Override
-	public String getRequiredName() {
+	public $implJavaAtomType$ getRequiredName() {
 		return( getSchemaDefRec().getRequiredName() );
 	}
 
 	@Override
-	public String getOptionalDbName() {
+	public $implJavaAtomType$ getOptionalDbName() {
 		return( getSchemaDefRec().getOptionalDbName() );
 	}
 
 	@Override
-	public String getOptionalShortName() {
+	public $implJavaAtomType$ getOptionalShortName() {
 		return( getSchemaDefRec().getOptionalShortName() );
 	}
 
 	@Override
-	public String getOptionalLabel() {
+	public $implJavaAtomType$ getOptionalLabel() {
 		return( getSchemaDefRec().getOptionalLabel() );
 	}
 
 	@Override
-	public String getOptionalShortDescription() {
+	public $implJavaAtomType$ getOptionalShortDescription() {
 		return( getSchemaDefRec().getOptionalShortDescription() );
 	}
 
 	@Override
-	public String getOptionalDescription() {
+	public $implJavaAtomType$ getOptionalDescription() {
 		return( getSchemaDefRec().getOptionalDescription() );
 	}
 
 	@Override
-	public String getRequiredCopyrightPeriod() {
+	public $implJavaAtomType$ getRequiredCopyrightPeriod() {
 		return( getSchemaDefRec().getRequiredCopyrightPeriod() );
 	}
 
 	@Override
-	public String getRequiredCopyrightHolder() {
+	public $implJavaAtomType$ getRequiredCopyrightHolder() {
 		return( getSchemaDefRec().getRequiredCopyrightHolder() );
 	}
 
 	@Override
-	public String getRequiredAuthorEMail() {
+	public $implJavaAtomType$ getRequiredAuthorEMail() {
 		return( getSchemaDefRec().getRequiredAuthorEMail() );
 	}
 
 	@Override
-	public String getRequiredProjectURL() {
+	public $implJavaAtomType$ getRequiredProjectURL() {
 		return( getSchemaDefRec().getRequiredProjectURL() );
 	}
 
 	@Override
-	public String getRequiredPublishURI() {
+	public $implJavaAtomType$ getRequiredPublishURI() {
 		return( getSchemaDefRec().getRequiredPublishURI() );
 	}
 }

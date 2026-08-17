@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffTableByLookupIndexIdxKey
 	implements ICFBamTableByLookupIndexIdxKey, Comparable<Object>, Serializable
 {
-	protected CFLibDbKeyHash256 optionalLookupIndexId;
+	protected $implJavaAtomType$ optionalLookupIndexId;
 	public CFBamBuffTableByLookupIndexIdxKey() {
 		optionalLookupIndexId = CFLibDbKeyHash256.nullGet();
 	}

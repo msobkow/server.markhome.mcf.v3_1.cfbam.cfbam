@@ -74,7 +74,7 @@ public class CFBamBuffDbKeyHash512Type
 	extends CFBamBuffDbKeyHash512Def
 	implements ICFBamDbKeyHash512Type
 {
-	protected CFLibDbKeyHash256 requiredSchemaDefId;
+	protected $implJavaAtomType$ requiredSchemaDefId;
 
 	public CFBamBuffDbKeyHash512Type() {
 		super();

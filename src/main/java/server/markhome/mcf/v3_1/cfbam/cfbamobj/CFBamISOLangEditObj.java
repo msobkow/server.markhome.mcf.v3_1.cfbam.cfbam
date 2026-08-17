@@ -409,12 +409,12 @@ public class CFBamISOLangEditObj
 	}
 
 	@Override
-	public short getRequiredISOLangId() {
+	public $implJavaAtomType$ getRequiredISOLangId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredISOLangId(short value) {
+	public void setRequiredISOLangId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			optionalChildrenCtry = null;
@@ -422,36 +422,36 @@ public class CFBamISOLangEditObj
 	}
 
 	@Override
-	public String getRequiredISO6392Code() {
+	public $implJavaAtomType$ getRequiredISO6392Code() {
 		return( getISOLangRec().getRequiredISO6392Code() );
 	}
 
 	@Override
-	public void setRequiredISO6392Code( String value ) {
+	public void setRequiredISO6392Code( $implJavaAtomType$ value ) {
 		if( getISOLangRec().getRequiredISO6392Code() != value ) {
 			getISOLangRec().setRequiredISO6392Code( value );
 		}
 	}
 
 	@Override
-	public String getOptionalISO6391Code() {
+	public $implJavaAtomType$ getOptionalISO6391Code() {
 		return( getISOLangRec().getOptionalISO6391Code() );
 	}
 
 	@Override
-	public void setOptionalISO6391Code( String value ) {
+	public void setOptionalISO6391Code( $implJavaAtomType$ value ) {
 		if( getISOLangRec().getOptionalISO6391Code() != value ) {
 			getISOLangRec().setOptionalISO6391Code( value );
 		}
 	}
 
 	@Override
-	public String getRequiredEnglishName() {
+	public $implJavaAtomType$ getRequiredEnglishName() {
 		return( getISOLangRec().getRequiredEnglishName() );
 	}
 
 	@Override
-	public void setRequiredEnglishName( String value ) {
+	public void setRequiredEnglishName( $implJavaAtomType$ value ) {
 		if( getISOLangRec().getRequiredEnglishName() != value ) {
 			getISOLangRec().setRequiredEnglishName( value );
 		}

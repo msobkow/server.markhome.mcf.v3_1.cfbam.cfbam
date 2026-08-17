@@ -73,7 +73,7 @@ import server.markhome.mcf.v3_1.cfbam.cfbamobj.*;
 public class CFBamBuffAtomH extends CFBamBuffValueH
     implements ICFBamAtomH
 {
-	protected String optionalDbName;
+	protected $implJavaAtomType$ optionalDbName;
 
     public CFBamBuffAtomH() {
             super();

@@ -74,25 +74,25 @@ public class CFBamBuffRelation
 	extends CFBamBuffScope
 	implements ICFBamRelation
 {
-	protected CFLibDbKeyHash256 requiredTableId;
-	protected CFLibDbKeyHash256 optionalDefSchemaId;
-	protected String requiredName;
-	protected String optionalShortName;
-	protected String optionalLabel;
-	protected String optionalShortDescription;
-	protected String optionalDescription;
-	protected ICFBamPubSchema.RelationTypeEnum requiredRelationType;
-	protected String optionalDbName;
-	protected String optionalSuffix;
-	protected CFLibDbKeyHash256 requiredFromIndexId;
-	protected CFLibDbKeyHash256 requiredToTableId;
-	protected CFLibDbKeyHash256 requiredToIndexId;
-	protected boolean requiredIsRequired;
-	protected boolean requiredIsXsdContainer;
-	protected boolean requiredIsLateResolver;
-	protected boolean requiredAllowAddendum;
-	protected CFLibDbKeyHash256 optionalNarrowedId;
-	protected ICFBamPubSchema.CodeVisibilityEnum requiredCodeVis;
+	protected $implJavaAtomType$ requiredTableId;
+	protected $implJavaAtomType$ optionalDefSchemaId;
+	protected $implJavaAtomType$ requiredName;
+	protected $implJavaAtomType$ optionalShortName;
+	protected $implJavaAtomType$ optionalLabel;
+	protected $implJavaAtomType$ optionalShortDescription;
+	protected $implJavaAtomType$ optionalDescription;
+	protected $implJavaAtomType$ requiredRelationType;
+	protected $implJavaAtomType$ optionalDbName;
+	protected $implJavaAtomType$ optionalSuffix;
+	protected $implJavaAtomType$ requiredFromIndexId;
+	protected $implJavaAtomType$ requiredToTableId;
+	protected $implJavaAtomType$ requiredToIndexId;
+	protected $implJavaAtomType$ requiredIsRequired;
+	protected $implJavaAtomType$ requiredIsXsdContainer;
+	protected $implJavaAtomType$ requiredIsLateResolver;
+	protected $implJavaAtomType$ requiredAllowAddendum;
+	protected $implJavaAtomType$ optionalNarrowedId;
+	protected $implJavaAtomType$ requiredCodeVis;
 
 	public CFBamBuffRelation() {
 		super();

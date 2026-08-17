@@ -74,7 +74,7 @@ public class CFBamBuffTZDateCol
 	extends CFBamBuffTZDateDef
 	implements ICFBamTZDateCol
 {
-	protected CFLibDbKeyHash256 requiredTableId;
+	protected $implJavaAtomType$ requiredTableId;
 
 	public CFBamBuffTZDateCol() {
 		super();

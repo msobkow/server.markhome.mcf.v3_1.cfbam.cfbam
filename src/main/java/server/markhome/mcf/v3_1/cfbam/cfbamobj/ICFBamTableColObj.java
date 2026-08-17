@@ -120,18 +120,18 @@ public interface ICFBamTableColObj
 	ICFBamValueObj getRequiredParentDataType( boolean forceRead );
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute Id.
+	 *	Get the required ICFLibKeyHash256 attribute Id.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute Id.
+	 *	@return	The required ICFLibKeyHash256 attribute Id.
 	 */
-	CFLibDbKeyHash256 getRequiredId();
+	ICFLibKeyHash256 getRequiredId();
 
 	/**
-	 *	Get the required CFLibDbKeyHash256 attribute TableId.
+	 *	Get the required ICFLibKeyHash256 attribute TableId.
 	 *
-	 *	@return	The required CFLibDbKeyHash256 attribute TableId.
+	 *	@return	The required ICFLibKeyHash256 attribute TableId.
 	 */
-	CFLibDbKeyHash256 getRequiredTableId();
+	ICFLibKeyHash256 getRequiredTableId();
 
 	/**
 	 *	Get the optional String attribute DbName.
@@ -141,11 +141,11 @@ public interface ICFBamTableColObj
 	String getOptionalDbName();
 
 	/**
-	 *	Get the optional CFLibDbKeyHash256 attribute DataId.
+	 *	Get the optional ICFLibKeyHash256 attribute DataId.
 	 *
-	 *	@return	The optional CFLibDbKeyHash256 attribute DataId.
+	 *	@return	The optional ICFLibKeyHash256 attribute DataId.
 	 */
-	CFLibDbKeyHash256 getOptionalDataId();
+	ICFLibKeyHash256 getOptionalDataId();
 
 	/**
 	 *	Get the optional String attribute XmlElementName.

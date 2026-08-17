@@ -71,30 +71,30 @@ public class CFBamEnumTypeTableObj
 	protected ICFBamSchemaObj schema;
 	protected static int runtimeClassCode = ICFBamEnumType.CLASS_CODE;
 	protected static final int backingClassCode = ICFBamEnumType.CLASS_CODE;
-	private Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> members;
-	private Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> allEnumType;
+	private Map<ICFLibKeyHash256, ICFBamEnumTypeObj> members;
+	private Map<ICFLibKeyHash256, ICFBamEnumTypeObj> allEnumType;
 	private Map< ICFBamValueByUNameIdxKey,
 		ICFBamEnumTypeObj > indexByUNameIdx;
 	private Map< ICFBamValueByScopeIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > > indexByScopeIdx;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj > > indexByScopeIdx;
 	private Map< ICFBamValueByDefSchemaIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > > indexByDefSchemaIdx;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj > > indexByDefSchemaIdx;
 	private Map< ICFBamValueByPrevIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > > indexByPrevIdx;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj > > indexByPrevIdx;
 	private Map< ICFBamValueByNextIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > > indexByNextIdx;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj > > indexByNextIdx;
 	private Map< ICFBamValueByContPrevIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > > indexByContPrevIdx;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj > > indexByContPrevIdx;
 	private Map< ICFBamValueByContNextIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > > indexByContNextIdx;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj > > indexByContNextIdx;
 	private Map< ICFBamEnumTypeBySchemaIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > > indexBySchemaIdx;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj > > indexBySchemaIdx;
 	public static String TABLE_NAME = "EnumType";
 	public static String TABLE_DBNAME = "enumtyp";
 
 	public CFBamEnumTypeTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamEnumTypeObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamEnumTypeObj>();
 		allEnumType = null;
 		indexByUNameIdx = null;
 		indexByScopeIdx = null;
@@ -108,7 +108,7 @@ public class CFBamEnumTypeTableObj
 
 	public CFBamEnumTypeTableObj( ICFBamSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamEnumTypeObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamEnumTypeObj>();
 		allEnumType = null;
 		indexByUNameIdx = null;
 		indexByScopeIdx = null;
@@ -245,7 +245,7 @@ public class CFBamEnumTypeTableObj
 	@Override
 	public ICFBamEnumTypeObj realiseEnumType( ICFBamEnumTypeObj Obj ) {
 		ICFBamEnumTypeObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamEnumTypeObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFBamEnumTypeObj existingObj = members.get( pkey );
@@ -270,7 +270,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamValueByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					indexByScopeIdx.remove( keyScopeIdx );
 				}
@@ -280,7 +280,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					indexByDefSchemaIdx.remove( keyDefSchemaIdx );
 				}
@@ -290,7 +290,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamValueByPrevIdxKey keyPrevIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
 					indexByPrevIdx.remove( keyPrevIdx );
 				}
@@ -300,7 +300,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamValueByNextIdxKey keyNextIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
 					indexByNextIdx.remove( keyNextIdx );
 				}
@@ -311,7 +311,7 @@ public class CFBamEnumTypeTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
 				if( mapContPrevIdx != null ) {
 					indexByContPrevIdx.remove( keyContPrevIdx );
 				}
@@ -322,7 +322,7 @@ public class CFBamEnumTypeTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
 				if( mapContNextIdx != null ) {
 					indexByContNextIdx.remove( keyContNextIdx );
 				}
@@ -332,7 +332,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamEnumTypeBySchemaIdxKey keySchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumType().newBySchemaIdxKey();
 				keySchemaIdx.setRequiredSchemaDefId( keepObj.getRequiredSchemaDefId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
 				if( mapSchemaIdx != null ) {
 					mapSchemaIdx.remove( keepObj.getPKey() );
 					if( mapSchemaIdx.size() <= 0 ) {
@@ -359,7 +359,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamValueByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					mapScopeIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -369,7 +369,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -379,7 +379,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamValueByPrevIdxKey keyPrevIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
 					mapPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -389,7 +389,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamValueByNextIdxKey keyNextIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
 					mapNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -400,7 +400,7 @@ public class CFBamEnumTypeTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
 				if( mapContPrevIdx != null ) {
 					mapContPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -411,7 +411,7 @@ public class CFBamEnumTypeTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
 				if( mapContNextIdx != null ) {
 					mapContNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -421,7 +421,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamEnumTypeBySchemaIdxKey keySchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumType().newBySchemaIdxKey();
 				keySchemaIdx.setRequiredSchemaDefId( keepObj.getRequiredSchemaDefId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
 				if( mapSchemaIdx != null ) {
 					mapSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -453,7 +453,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamValueByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					mapScopeIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -463,7 +463,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -473,7 +473,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamValueByPrevIdxKey keyPrevIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
 					mapPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -483,7 +483,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamValueByNextIdxKey keyNextIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
 					mapNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -494,7 +494,7 @@ public class CFBamEnumTypeTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
 				if( mapContPrevIdx != null ) {
 					mapContPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -505,7 +505,7 @@ public class CFBamEnumTypeTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
 				if( mapContNextIdx != null ) {
 					mapContNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -515,7 +515,7 @@ public class CFBamEnumTypeTableObj
 				ICFBamEnumTypeBySchemaIdxKey keySchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumType().newBySchemaIdxKey();
 				keySchemaIdx.setRequiredSchemaDefId( keepObj.getRequiredSchemaDefId() );
-				Map<CFLibDbKeyHash256, ICFBamEnumTypeObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamEnumTypeObj > mapSchemaIdx = indexBySchemaIdx.get( keySchemaIdx );
 				if( mapSchemaIdx != null ) {
 					mapSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -545,12 +545,12 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readEnumType( CFLibDbKeyHash256 pkey ) {
+	public ICFBamEnumTypeObj readEnumType( ICFLibKeyHash256 pkey ) {
 		return( readEnumType( pkey, false ) );
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readEnumType( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFBamEnumTypeObj readEnumType( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFBamEnumTypeObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -569,7 +569,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readCachedEnumType( CFLibDbKeyHash256 pkey ) {
+	public ICFBamEnumTypeObj readCachedEnumType( ICFLibKeyHash256 pkey ) {
 		ICFBamEnumTypeObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -585,7 +585,7 @@ public class CFBamEnumTypeTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamEnumTypeObj existing = readCachedEnumType( pkey );
 		if( existing == null ) {
 			return;
@@ -612,7 +612,7 @@ public class CFBamEnumTypeTableObj
 		schema.getEnumDefTableObj().reallyDeepDisposeEnumDef( obj );
 	}
 	@Override
-	public void deepDisposeEnumType( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeEnumType( ICFLibKeyHash256 pkey ) {
 		ICFBamEnumTypeObj obj = readCachedEnumType( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -620,7 +620,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public ICFBamEnumTypeObj lockEnumType( CFLibDbKeyHash256 pkey ) {
+	public ICFBamEnumTypeObj lockEnumType( ICFLibKeyHash256 pkey ) {
 		ICFBamEnumTypeObj locked = null;
 		ICFBamEnumType lockRec = schema.getCFBamBackingStore().getTableEnumType().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -644,7 +644,7 @@ public class CFBamEnumTypeTableObj
 	public List<ICFBamEnumTypeObj> readAllEnumType( boolean forceRead ) {
 		final String S_ProcName = "readAllEnumType";
 		if( ( allEnumType == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> map = new HashMap<CFLibDbKeyHash256,ICFBamEnumTypeObj>();
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> map = new HashMap<ICFLibKeyHash256,ICFBamEnumTypeObj>();
 			allEnumType = map;
 			ICFBamEnumType[] recList = schema.getCFBamBackingStore().getTableEnumType().readAllDerived( null );
 			ICFBamEnumType rec;
@@ -700,8 +700,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -758,8 +758,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -770,21 +770,21 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readEnumTypeByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamEnumTypeObj readEnumTypeByIdIdx( ICFLibKeyHash256 Id )
 	{
 		return( readEnumTypeByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readEnumTypeByIdIdx( CFLibDbKeyHash256 Id, boolean forceRead )
+	public ICFBamEnumTypeObj readEnumTypeByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamEnumTypeObj obj = readEnumType( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readEnumTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamEnumTypeObj readEnumTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readEnumTypeByUNameIdx( ScopeId,
@@ -793,7 +793,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readEnumTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamEnumTypeObj readEnumTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -822,29 +822,29 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public List<ICFBamEnumTypeObj> readEnumTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		return( readEnumTypeByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	public List<ICFBamEnumTypeObj> readEnumTypeByScopeIdx( ICFLibKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 		if( indexByScopeIdx == null ) {
 			indexByScopeIdx = new HashMap< ICFBamValueByScopeIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexByScopeIdx.containsKey( key ) ) {
 			dict = indexByScopeIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamEnumTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamEnumTypeObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByScopeIdx( null,
 				ScopeId );
@@ -902,8 +902,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -915,29 +915,29 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamEnumTypeObj> readEnumTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		return( readEnumTypeByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	public List<ICFBamEnumTypeObj> readEnumTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamValueByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexByDefSchemaIdx.containsKey( key ) ) {
 			dict = indexByDefSchemaIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamEnumTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamEnumTypeObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByDefSchemaIdx( null,
 				DefSchemaId );
@@ -995,8 +995,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1008,29 +1008,29 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public List<ICFBamEnumTypeObj> readEnumTypeByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		return( readEnumTypeByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByPrevIdx( CFLibDbKeyHash256 PrevId,
+	public List<ICFBamEnumTypeObj> readEnumTypeByPrevIdx( ICFLibKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 		if( indexByPrevIdx == null ) {
 			indexByPrevIdx = new HashMap< ICFBamValueByPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexByPrevIdx.containsKey( key ) ) {
 			dict = indexByPrevIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamEnumTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamEnumTypeObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByPrevIdx( null,
 				PrevId );
@@ -1088,8 +1088,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1101,29 +1101,29 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByNextIdx( CFLibDbKeyHash256 NextId )
+	public List<ICFBamEnumTypeObj> readEnumTypeByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		return( readEnumTypeByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByNextIdx( CFLibDbKeyHash256 NextId,
+	public List<ICFBamEnumTypeObj> readEnumTypeByNextIdx( ICFLibKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 		if( indexByNextIdx == null ) {
 			indexByNextIdx = new HashMap< ICFBamValueByNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexByNextIdx.containsKey( key ) ) {
 			dict = indexByNextIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamEnumTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamEnumTypeObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByNextIdx( null,
 				NextId );
@@ -1181,8 +1181,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1194,8 +1194,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public List<ICFBamEnumTypeObj> readEnumTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		return( readEnumTypeByContPrevIdx( ScopeId,
 			PrevId,
@@ -1203,24 +1203,24 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	public List<ICFBamEnumTypeObj> readEnumTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalPrevId( PrevId );
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 		if( indexByContPrevIdx == null ) {
 			indexByContPrevIdx = new HashMap< ICFBamValueByContPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexByContPrevIdx.containsKey( key ) ) {
 			dict = indexByContPrevIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamEnumTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamEnumTypeObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByContPrevIdx( null,
 				ScopeId,
@@ -1279,8 +1279,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1292,8 +1292,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public List<ICFBamEnumTypeObj> readEnumTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		return( readEnumTypeByContNextIdx( ScopeId,
 			NextId,
@@ -1301,24 +1301,24 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	public List<ICFBamEnumTypeObj> readEnumTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalNextId( NextId );
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 		if( indexByContNextIdx == null ) {
 			indexByContNextIdx = new HashMap< ICFBamValueByContNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexByContNextIdx.containsKey( key ) ) {
 			dict = indexByContNextIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamEnumTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamEnumTypeObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByContNextIdx( null,
 				ScopeId,
@@ -1377,8 +1377,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1390,29 +1390,29 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId )
+	public List<ICFBamEnumTypeObj> readEnumTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
 	{
 		return( readEnumTypeBySchemaIdx( SchemaDefId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readEnumTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId,
+	public List<ICFBamEnumTypeObj> readEnumTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readEnumTypeBySchemaIdx";
 		ICFBamEnumTypeBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumType().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );
-		Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+		Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 		if( indexBySchemaIdx == null ) {
 			indexBySchemaIdx = new HashMap< ICFBamEnumTypeBySchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( ( ! forceRead ) && indexBySchemaIdx.containsKey( key ) ) {
 			dict = indexBySchemaIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamEnumTypeObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamEnumTypeObj>();
 			ICFBamEnumTypeObj obj;
 			ICFBamEnumType[] recList = schema.getCFBamBackingStore().getTableEnumType().readDerivedBySchemaIdx( null,
 				SchemaDefId );
@@ -1470,8 +1470,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1483,7 +1483,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readCachedEnumTypeByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamEnumTypeObj readCachedEnumTypeByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamEnumTypeObj obj = null;
 		obj = readCachedEnumType( Id );
@@ -1491,7 +1491,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public ICFBamEnumTypeObj readCachedEnumTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamEnumTypeObj readCachedEnumTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamEnumTypeObj obj = null;
@@ -1529,14 +1529,14 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedEnumTypeByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		ArrayList<ICFBamEnumTypeObj> arrayList = new ArrayList<ICFBamEnumTypeObj>();
 		if( indexByScopeIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 			if( indexByScopeIdx.containsKey( key ) ) {
 				dict = indexByScopeIdx.get( key );
 				int len = dict.size();
@@ -1594,8 +1594,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1606,14 +1606,14 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedEnumTypeByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamEnumTypeObj> arrayList = new ArrayList<ICFBamEnumTypeObj>();
 		if( indexByDefSchemaIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 			if( indexByDefSchemaIdx.containsKey( key ) ) {
 				dict = indexByDefSchemaIdx.get( key );
 				int len = dict.size();
@@ -1671,8 +1671,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1683,14 +1683,14 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedEnumTypeByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamEnumTypeObj> arrayList = new ArrayList<ICFBamEnumTypeObj>();
 		if( indexByPrevIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 			if( indexByPrevIdx.containsKey( key ) ) {
 				dict = indexByPrevIdx.get( key );
 				int len = dict.size();
@@ -1748,8 +1748,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1760,14 +1760,14 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeByNextIdx( CFLibDbKeyHash256 NextId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedEnumTypeByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamEnumTypeObj> arrayList = new ArrayList<ICFBamEnumTypeObj>();
 		if( indexByNextIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 			if( indexByNextIdx.containsKey( key ) ) {
 				dict = indexByNextIdx.get( key );
 				int len = dict.size();
@@ -1825,8 +1825,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1837,8 +1837,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedEnumTypeByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1846,7 +1846,7 @@ public class CFBamEnumTypeTableObj
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamEnumTypeObj> arrayList = new ArrayList<ICFBamEnumTypeObj>();
 		if( indexByContPrevIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 			if( indexByContPrevIdx.containsKey( key ) ) {
 				dict = indexByContPrevIdx.get( key );
 				int len = dict.size();
@@ -1904,8 +1904,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1916,8 +1916,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedEnumTypeByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1925,7 +1925,7 @@ public class CFBamEnumTypeTableObj
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamEnumTypeObj> arrayList = new ArrayList<ICFBamEnumTypeObj>();
 		if( indexByContNextIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 			if( indexByContNextIdx.containsKey( key ) ) {
 				dict = indexByContNextIdx.get( key );
 				int len = dict.size();
@@ -1983,8 +1983,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1995,14 +1995,14 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public List<ICFBamEnumTypeObj> readCachedEnumTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId )
+	public List<ICFBamEnumTypeObj> readCachedEnumTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "readCachedEnumTypeBySchemaIdx";
 		ICFBamEnumTypeBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumType().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );
 		ArrayList<ICFBamEnumTypeObj> arrayList = new ArrayList<ICFBamEnumTypeObj>();
 		if( indexBySchemaIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict;
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict;
 			if( indexBySchemaIdx.containsKey( key ) ) {
 				dict = indexBySchemaIdx.get( key );
 				int len = dict.size();
@@ -2060,8 +2060,8 @@ public class CFBamEnumTypeTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -2072,7 +2072,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByIdIdx( CFLibDbKeyHash256 Id )
+	public void deepDisposeEnumTypeByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamEnumTypeObj obj = readCachedEnumTypeByIdIdx( Id );
 		if( obj != null ) {
@@ -2081,7 +2081,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public void deepDisposeEnumTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamEnumTypeObj obj = readCachedEnumTypeByUNameIdx( ScopeId,
@@ -2092,7 +2092,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public void deepDisposeEnumTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeByScopeIdx";
 		ICFBamEnumTypeObj obj;
@@ -2109,7 +2109,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deepDisposeEnumTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeByDefSchemaIdx";
 		ICFBamEnumTypeObj obj;
@@ -2126,7 +2126,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public void deepDisposeEnumTypeByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeByPrevIdx";
 		ICFBamEnumTypeObj obj;
@@ -2143,7 +2143,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByNextIdx( CFLibDbKeyHash256 NextId )
+	public void deepDisposeEnumTypeByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeByNextIdx";
 		ICFBamEnumTypeObj obj;
@@ -2160,8 +2160,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public void deepDisposeEnumTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeByContPrevIdx";
 		ICFBamEnumTypeObj obj;
@@ -2179,8 +2179,8 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public void deepDisposeEnumTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeByContNextIdx";
 		ICFBamEnumTypeObj obj;
@@ -2198,7 +2198,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deepDisposeEnumTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId )
+	public void deepDisposeEnumTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
 	{
 		final String S_ProcName = "deepDisposeEnumTypeBySchemaIdx";
 		ICFBamEnumTypeObj obj;
@@ -2243,7 +2243,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByIdIdx( CFLibDbKeyHash256 Id )
+	public void deleteEnumTypeByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamEnumTypeObj obj = readEnumType(Id);
 		if( obj != null ) {
@@ -2273,7 +2273,7 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public void deleteEnumTypeByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2301,16 +2301,16 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public void deleteEnumTypeByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		if( indexByScopeIdx == null ) {
 			indexByScopeIdx = new HashMap< ICFBamValueByScopeIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( indexByScopeIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict = indexByScopeIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict = indexByScopeIdx.get( key );
 			schema.getCFBamBackingStore().getTableEnumType().deleteEnumTypeByScopeIdx( null,
 				ScopeId );
 			Iterator<ICFBamEnumTypeObj> iter = dict.values().iterator();
@@ -2335,16 +2335,16 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deleteEnumTypeByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamValueByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( indexByDefSchemaIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict = indexByDefSchemaIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict = indexByDefSchemaIdx.get( key );
 			schema.getCFBamBackingStore().getTableEnumType().deleteEnumTypeByDefSchemaIdx( null,
 				DefSchemaId );
 			Iterator<ICFBamEnumTypeObj> iter = dict.values().iterator();
@@ -2369,16 +2369,16 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public void deleteEnumTypeByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		if( indexByPrevIdx == null ) {
 			indexByPrevIdx = new HashMap< ICFBamValueByPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( indexByPrevIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict = indexByPrevIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict = indexByPrevIdx.get( key );
 			schema.getCFBamBackingStore().getTableEnumType().deleteEnumTypeByPrevIdx( null,
 				PrevId );
 			Iterator<ICFBamEnumTypeObj> iter = dict.values().iterator();
@@ -2403,16 +2403,16 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByNextIdx( CFLibDbKeyHash256 NextId )
+	public void deleteEnumTypeByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		if( indexByNextIdx == null ) {
 			indexByNextIdx = new HashMap< ICFBamValueByNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( indexByNextIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict = indexByNextIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict = indexByNextIdx.get( key );
 			schema.getCFBamBackingStore().getTableEnumType().deleteEnumTypeByNextIdx( null,
 				NextId );
 			Iterator<ICFBamEnumTypeObj> iter = dict.values().iterator();
@@ -2437,18 +2437,18 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public void deleteEnumTypeByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalPrevId( PrevId );
 		if( indexByContPrevIdx == null ) {
 			indexByContPrevIdx = new HashMap< ICFBamValueByContPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( indexByContPrevIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict = indexByContPrevIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict = indexByContPrevIdx.get( key );
 			schema.getCFBamBackingStore().getTableEnumType().deleteEnumTypeByContPrevIdx( null,
 				ScopeId,
 				PrevId );
@@ -2476,18 +2476,18 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public void deleteEnumTypeByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalNextId( NextId );
 		if( indexByContNextIdx == null ) {
 			indexByContNextIdx = new HashMap< ICFBamValueByContNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( indexByContNextIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict = indexByContNextIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict = indexByContNextIdx.get( key );
 			schema.getCFBamBackingStore().getTableEnumType().deleteEnumTypeByContNextIdx( null,
 				ScopeId,
 				NextId );
@@ -2515,16 +2515,16 @@ public class CFBamEnumTypeTableObj
 	}
 
 	@Override
-	public void deleteEnumTypeBySchemaIdx( CFLibDbKeyHash256 SchemaDefId )
+	public void deleteEnumTypeBySchemaIdx( ICFLibKeyHash256 SchemaDefId )
 	{
 		ICFBamEnumTypeBySchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryEnumType().newBySchemaIdxKey();
 		key.setRequiredSchemaDefId( SchemaDefId );
 		if( indexBySchemaIdx == null ) {
 			indexBySchemaIdx = new HashMap< ICFBamEnumTypeBySchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamEnumTypeObj > >();
+				Map< ICFLibKeyHash256, ICFBamEnumTypeObj > >();
 		}
 		if( indexBySchemaIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamEnumTypeObj> dict = indexBySchemaIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamEnumTypeObj> dict = indexBySchemaIdx.get( key );
 			schema.getCFBamBackingStore().getTableEnumType().deleteEnumTypeBySchemaIdx( null,
 				SchemaDefId );
 			Iterator<ICFBamEnumTypeObj> iter = dict.values().iterator();

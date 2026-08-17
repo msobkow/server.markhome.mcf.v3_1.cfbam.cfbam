@@ -71,14 +71,14 @@ public class CFBamRoleDefTableObj
 	protected ICFBamSchemaObj schema;
 	protected static int runtimeClassCode = ICFBamRoleDef.CLASS_CODE;
 	protected static final int backingClassCode = ICFBamRoleDef.CLASS_CODE;
-	private Map<CFLibDbKeyHash256, ICFBamRoleDefObj> members;
-	private Map<CFLibDbKeyHash256, ICFBamRoleDefObj> allRoleDef;
+	private Map<ICFLibKeyHash256, ICFBamRoleDefObj> members;
+	private Map<ICFLibKeyHash256, ICFBamRoleDefObj> allRoleDef;
 	private Map< ICFBamRoleDefByUNameIdxKey,
 		ICFBamRoleDefObj > indexByUNameIdx;
 	private Map< ICFBamRoleDefByScopeIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamRoleDefObj > > indexByScopeIdx;
+		Map<ICFLibKeyHash256, ICFBamRoleDefObj > > indexByScopeIdx;
 	private Map< ICFBamRoleDefByDefSchemaIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamRoleDefObj > > indexByDefSchemaIdx;
+		Map<ICFLibKeyHash256, ICFBamRoleDefObj > > indexByDefSchemaIdx;
 	private Map< ICFBamRoleDefByUDefIdxKey,
 		ICFBamRoleDefObj > indexByUDefIdx;
 	public static String TABLE_NAME = "RoleDef";
@@ -86,7 +86,7 @@ public class CFBamRoleDefTableObj
 
 	public CFBamRoleDefTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamRoleDefObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamRoleDefObj>();
 		allRoleDef = null;
 		indexByUNameIdx = null;
 		indexByScopeIdx = null;
@@ -96,7 +96,7 @@ public class CFBamRoleDefTableObj
 
 	public CFBamRoleDefTableObj( ICFBamSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamRoleDefObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamRoleDefObj>();
 		allRoleDef = null;
 		indexByUNameIdx = null;
 		indexByScopeIdx = null;
@@ -237,7 +237,7 @@ public class CFBamRoleDefTableObj
 	@Override
 	public ICFBamRoleDefObj realiseRoleDef( ICFBamRoleDefObj Obj ) {
 		ICFBamRoleDefObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamRoleDefObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFBamRoleDefObj existingObj = members.get( pkey );
@@ -262,7 +262,7 @@ public class CFBamRoleDefTableObj
 				ICFBamRoleDefByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamRoleDefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamRoleDefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					mapScopeIdx.remove( keepObj.getPKey() );
 					if( mapScopeIdx.size() <= 0 ) {
@@ -275,7 +275,7 @@ public class CFBamRoleDefTableObj
 				ICFBamRoleDefByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamRoleDefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamRoleDefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.remove( keepObj.getPKey() );
 					if( mapDefSchemaIdx.size() <= 0 ) {
@@ -308,7 +308,7 @@ public class CFBamRoleDefTableObj
 				ICFBamRoleDefByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamRoleDefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamRoleDefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					mapScopeIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -318,7 +318,7 @@ public class CFBamRoleDefTableObj
 				ICFBamRoleDefByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamRoleDefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamRoleDefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -359,7 +359,7 @@ public class CFBamRoleDefTableObj
 				ICFBamRoleDefByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamRoleDefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamRoleDefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					mapScopeIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -369,7 +369,7 @@ public class CFBamRoleDefTableObj
 				ICFBamRoleDefByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamRoleDefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamRoleDefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -404,12 +404,12 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDef( CFLibDbKeyHash256 pkey ) {
+	public ICFBamRoleDefObj readRoleDef( ICFLibKeyHash256 pkey ) {
 		return( readRoleDef( pkey, false ) );
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDef( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFBamRoleDefObj readRoleDef( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFBamRoleDefObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -428,7 +428,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readCachedRoleDef( CFLibDbKeyHash256 pkey ) {
+	public ICFBamRoleDefObj readCachedRoleDef( ICFLibKeyHash256 pkey ) {
 		ICFBamRoleDefObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -444,7 +444,7 @@ public class CFBamRoleDefTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamRoleDefObj existing = readCachedRoleDef( pkey );
 		if( existing == null ) {
 			return;
@@ -496,7 +496,7 @@ public class CFBamRoleDefTableObj
 
 	}
 	@Override
-	public void deepDisposeRoleDef( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeRoleDef( ICFLibKeyHash256 pkey ) {
 		ICFBamRoleDefObj obj = readCachedRoleDef( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -504,7 +504,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj lockRoleDef( CFLibDbKeyHash256 pkey ) {
+	public ICFBamRoleDefObj lockRoleDef( ICFLibKeyHash256 pkey ) {
 		ICFBamRoleDefObj locked = null;
 		ICFBamRoleDef lockRec = schema.getCFBamBackingStore().getTableRoleDef().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -528,7 +528,7 @@ public class CFBamRoleDefTableObj
 	public List<ICFBamRoleDefObj> readAllRoleDef( boolean forceRead ) {
 		final String S_ProcName = "readAllRoleDef";
 		if( ( allRoleDef == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFBamRoleDefObj> map = new HashMap<CFLibDbKeyHash256,ICFBamRoleDefObj>();
+			Map<ICFLibKeyHash256, ICFBamRoleDefObj> map = new HashMap<ICFLibKeyHash256,ICFBamRoleDefObj>();
 			allRoleDef = map;
 			ICFBamRoleDef[] recList = schema.getCFBamBackingStore().getTableRoleDef().readAllDerived( null );
 			ICFBamRoleDef rec;
@@ -584,8 +584,8 @@ public class CFBamRoleDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -642,8 +642,8 @@ public class CFBamRoleDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -654,21 +654,21 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDefByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamRoleDefObj readRoleDefByIdIdx( ICFLibKeyHash256 Id )
 	{
 		return( readRoleDefByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDefByIdIdx( CFLibDbKeyHash256 Id, boolean forceRead )
+	public ICFBamRoleDefObj readRoleDefByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamRoleDefObj obj = readRoleDef( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamRoleDefObj readRoleDefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readRoleDefByUNameIdx( ScopeId,
@@ -677,7 +677,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamRoleDefObj readRoleDefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -706,29 +706,29 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public List<ICFBamRoleDefObj> readRoleDefByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public List<ICFBamRoleDefObj> readRoleDefByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		return( readRoleDefByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamRoleDefObj> readRoleDefByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	public List<ICFBamRoleDefObj> readRoleDefByScopeIdx( ICFLibKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRoleDefByScopeIdx";
 		ICFBamRoleDefByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
-		Map<CFLibDbKeyHash256, ICFBamRoleDefObj> dict;
+		Map<ICFLibKeyHash256, ICFBamRoleDefObj> dict;
 		if( indexByScopeIdx == null ) {
 			indexByScopeIdx = new HashMap< ICFBamRoleDefByScopeIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamRoleDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamRoleDefObj > >();
 		}
 		if( ( ! forceRead ) && indexByScopeIdx.containsKey( key ) ) {
 			dict = indexByScopeIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamRoleDefObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamRoleDefObj>();
 			ICFBamRoleDefObj obj;
 			ICFBamRoleDef[] recList = schema.getCFBamBackingStore().getTableRoleDef().readDerivedByScopeIdx( null,
 				ScopeId );
@@ -786,8 +786,8 @@ public class CFBamRoleDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -799,29 +799,29 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public List<ICFBamRoleDefObj> readRoleDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamRoleDefObj> readRoleDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		return( readRoleDefByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamRoleDefObj> readRoleDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	public List<ICFBamRoleDefObj> readRoleDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readRoleDefByDefSchemaIdx";
 		ICFBamRoleDefByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
-		Map<CFLibDbKeyHash256, ICFBamRoleDefObj> dict;
+		Map<ICFLibKeyHash256, ICFBamRoleDefObj> dict;
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamRoleDefByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamRoleDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamRoleDefObj > >();
 		}
 		if( ( ! forceRead ) && indexByDefSchemaIdx.containsKey( key ) ) {
 			dict = indexByDefSchemaIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamRoleDefObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamRoleDefObj>();
 			ICFBamRoleDefObj obj;
 			ICFBamRoleDef[] recList = schema.getCFBamBackingStore().getTableRoleDef().readDerivedByDefSchemaIdx( null,
 				DefSchemaId );
@@ -879,8 +879,8 @@ public class CFBamRoleDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -892,8 +892,8 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDefByUDefIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaId,
+	public ICFBamRoleDefObj readRoleDefByUDefIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 DefSchemaId,
 		String Name )
 	{
 		return( readRoleDefByUDefIdx( ScopeId,
@@ -903,8 +903,8 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readRoleDefByUDefIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaId,
+	public ICFBamRoleDefObj readRoleDefByUDefIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 DefSchemaId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUDefIdx == null ) {
@@ -935,7 +935,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readCachedRoleDefByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamRoleDefObj readCachedRoleDefByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamRoleDefObj obj = null;
 		obj = readCachedRoleDef( Id );
@@ -943,7 +943,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readCachedRoleDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamRoleDefObj readCachedRoleDefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamRoleDefObj obj = null;
@@ -981,14 +981,14 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public List<ICFBamRoleDefObj> readCachedRoleDefByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public List<ICFBamRoleDefObj> readCachedRoleDefByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedRoleDefByScopeIdx";
 		ICFBamRoleDefByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		ArrayList<ICFBamRoleDefObj> arrayList = new ArrayList<ICFBamRoleDefObj>();
 		if( indexByScopeIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamRoleDefObj> dict;
+			Map<ICFLibKeyHash256, ICFBamRoleDefObj> dict;
 			if( indexByScopeIdx.containsKey( key ) ) {
 				dict = indexByScopeIdx.get( key );
 				int len = dict.size();
@@ -1046,8 +1046,8 @@ public class CFBamRoleDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1058,14 +1058,14 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public List<ICFBamRoleDefObj> readCachedRoleDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamRoleDefObj> readCachedRoleDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedRoleDefByDefSchemaIdx";
 		ICFBamRoleDefByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamRoleDefObj> arrayList = new ArrayList<ICFBamRoleDefObj>();
 		if( indexByDefSchemaIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamRoleDefObj> dict;
+			Map<ICFLibKeyHash256, ICFBamRoleDefObj> dict;
 			if( indexByDefSchemaIdx.containsKey( key ) ) {
 				dict = indexByDefSchemaIdx.get( key );
 				int len = dict.size();
@@ -1123,8 +1123,8 @@ public class CFBamRoleDefTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1135,8 +1135,8 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public ICFBamRoleDefObj readCachedRoleDefByUDefIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaId,
+	public ICFBamRoleDefObj readCachedRoleDefByUDefIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 DefSchemaId,
 		String Name )
 	{
 		ICFBamRoleDefObj obj = null;
@@ -1175,7 +1175,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deepDisposeRoleDefByIdIdx( CFLibDbKeyHash256 Id )
+	public void deepDisposeRoleDefByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamRoleDefObj obj = readCachedRoleDefByIdIdx( Id );
 		if( obj != null ) {
@@ -1184,7 +1184,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deepDisposeRoleDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public void deepDisposeRoleDefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamRoleDefObj obj = readCachedRoleDefByUNameIdx( ScopeId,
@@ -1195,7 +1195,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deepDisposeRoleDefByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public void deepDisposeRoleDefByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeRoleDefByScopeIdx";
 		ICFBamRoleDefObj obj;
@@ -1212,7 +1212,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deepDisposeRoleDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deepDisposeRoleDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeRoleDefByDefSchemaIdx";
 		ICFBamRoleDefObj obj;
@@ -1229,8 +1229,8 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deepDisposeRoleDefByUDefIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaId,
+	public void deepDisposeRoleDefByUDefIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 DefSchemaId,
 		String Name )
 	{
 		ICFBamRoleDefObj obj = readCachedRoleDefByUDefIdx( ScopeId,
@@ -1262,7 +1262,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deleteRoleDefByIdIdx( CFLibDbKeyHash256 Id )
+	public void deleteRoleDefByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamRoleDefObj obj = readRoleDef(Id);
 		if( obj != null ) {
@@ -1292,7 +1292,7 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deleteRoleDefByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public void deleteRoleDefByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -1320,16 +1320,16 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deleteRoleDefByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public void deleteRoleDefByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		ICFBamRoleDefByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		if( indexByScopeIdx == null ) {
 			indexByScopeIdx = new HashMap< ICFBamRoleDefByScopeIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamRoleDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamRoleDefObj > >();
 		}
 		if( indexByScopeIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamRoleDefObj> dict = indexByScopeIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamRoleDefObj> dict = indexByScopeIdx.get( key );
 			schema.getCFBamBackingStore().getTableRoleDef().deleteRoleDefByScopeIdx( null,
 				ScopeId );
 			Iterator<ICFBamRoleDefObj> iter = dict.values().iterator();
@@ -1354,16 +1354,16 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deleteRoleDefByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deleteRoleDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		ICFBamRoleDefByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRoleDef().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamRoleDefByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamRoleDefObj > >();
+				Map< ICFLibKeyHash256, ICFBamRoleDefObj > >();
 		}
 		if( indexByDefSchemaIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamRoleDefObj> dict = indexByDefSchemaIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamRoleDefObj> dict = indexByDefSchemaIdx.get( key );
 			schema.getCFBamBackingStore().getTableRoleDef().deleteRoleDefByDefSchemaIdx( null,
 				DefSchemaId );
 			Iterator<ICFBamRoleDefObj> iter = dict.values().iterator();
@@ -1388,8 +1388,8 @@ public class CFBamRoleDefTableObj
 	}
 
 	@Override
-	public void deleteRoleDefByUDefIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 DefSchemaId,
+	public void deleteRoleDefByUDefIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 DefSchemaId,
 		String Name )
 	{
 		if( indexByUDefIdx == null ) {

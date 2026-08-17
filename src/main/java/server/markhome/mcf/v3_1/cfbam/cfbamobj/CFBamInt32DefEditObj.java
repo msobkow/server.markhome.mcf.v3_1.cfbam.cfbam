@@ -263,12 +263,12 @@ public class CFBamInt32DefEditObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(CFLibDbKeyHash256 value) {
+	public void setRequiredId($implJavaAtomType$ value) {
 		if (getPKey() != value) {
 			setPKey(value);
 			requiredContainerScope = null;
@@ -281,36 +281,36 @@ public class CFBamInt32DefEditObj
 	}
 
 	@Override
-	public Integer getOptionalInitValue() {
+	public $implJavaAtomType$ getOptionalInitValue() {
 		return( getInt32DefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public void setOptionalInitValue( Integer value ) {
+	public void setOptionalInitValue( $implJavaAtomType$ value ) {
 		if( getInt32DefRec().getOptionalInitValue() != value ) {
 			getInt32DefRec().setOptionalInitValue( value );
 		}
 	}
 
 	@Override
-	public Integer getOptionalMinValue() {
+	public $implJavaAtomType$ getOptionalMinValue() {
 		return( getInt32DefRec().getOptionalMinValue() );
 	}
 
 	@Override
-	public void setOptionalMinValue( Integer value ) {
+	public void setOptionalMinValue( $implJavaAtomType$ value ) {
 		if( getInt32DefRec().getOptionalMinValue() != value ) {
 			getInt32DefRec().setOptionalMinValue( value );
 		}
 	}
 
 	@Override
-	public Integer getOptionalMaxValue() {
+	public $implJavaAtomType$ getOptionalMaxValue() {
 		return( getInt32DefRec().getOptionalMaxValue() );
 	}
 
 	@Override
-	public void setOptionalMaxValue( Integer value ) {
+	public void setOptionalMaxValue( $implJavaAtomType$ value ) {
 		if( getInt32DefRec().getOptionalMaxValue() != value ) {
 			getInt32DefRec().setOptionalMaxValue( value );
 		}

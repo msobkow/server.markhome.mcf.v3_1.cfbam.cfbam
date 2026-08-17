@@ -71,30 +71,30 @@ public class CFBamFloatColTableObj
 	protected ICFBamSchemaObj schema;
 	protected static int runtimeClassCode = ICFBamFloatCol.CLASS_CODE;
 	protected static final int backingClassCode = ICFBamFloatCol.CLASS_CODE;
-	private Map<CFLibDbKeyHash256, ICFBamFloatColObj> members;
-	private Map<CFLibDbKeyHash256, ICFBamFloatColObj> allFloatCol;
+	private Map<ICFLibKeyHash256, ICFBamFloatColObj> members;
+	private Map<ICFLibKeyHash256, ICFBamFloatColObj> allFloatCol;
 	private Map< ICFBamValueByUNameIdxKey,
 		ICFBamFloatColObj > indexByUNameIdx;
 	private Map< ICFBamValueByScopeIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj > > indexByScopeIdx;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj > > indexByScopeIdx;
 	private Map< ICFBamValueByDefSchemaIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj > > indexByDefSchemaIdx;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj > > indexByDefSchemaIdx;
 	private Map< ICFBamValueByPrevIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj > > indexByPrevIdx;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj > > indexByPrevIdx;
 	private Map< ICFBamValueByNextIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj > > indexByNextIdx;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj > > indexByNextIdx;
 	private Map< ICFBamValueByContPrevIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj > > indexByContPrevIdx;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj > > indexByContPrevIdx;
 	private Map< ICFBamValueByContNextIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj > > indexByContNextIdx;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj > > indexByContNextIdx;
 	private Map< ICFBamFloatColByTableIdxKey,
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj > > indexByTableIdx;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj > > indexByTableIdx;
 	public static String TABLE_NAME = "FloatCol";
 	public static String TABLE_DBNAME = "fltcol";
 
 	public CFBamFloatColTableObj() {
 		schema = null;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamFloatColObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamFloatColObj>();
 		allFloatCol = null;
 		indexByUNameIdx = null;
 		indexByScopeIdx = null;
@@ -108,7 +108,7 @@ public class CFBamFloatColTableObj
 
 	public CFBamFloatColTableObj( ICFBamSchemaObj argSchema ) {
 		schema = (ICFBamSchemaObj)argSchema;
-		members = new HashMap<CFLibDbKeyHash256, ICFBamFloatColObj>();
+		members = new HashMap<ICFLibKeyHash256, ICFBamFloatColObj>();
 		allFloatCol = null;
 		indexByUNameIdx = null;
 		indexByScopeIdx = null;
@@ -245,7 +245,7 @@ public class CFBamFloatColTableObj
 	@Override
 	public ICFBamFloatColObj realiseFloatCol( ICFBamFloatColObj Obj ) {
 		ICFBamFloatColObj obj = Obj;
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamFloatColObj keepObj = null;
 		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
 			ICFBamFloatColObj existingObj = members.get( pkey );
@@ -270,7 +270,7 @@ public class CFBamFloatColTableObj
 				ICFBamValueByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					indexByScopeIdx.remove( keyScopeIdx );
 				}
@@ -280,7 +280,7 @@ public class CFBamFloatColTableObj
 				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					indexByDefSchemaIdx.remove( keyDefSchemaIdx );
 				}
@@ -290,7 +290,7 @@ public class CFBamFloatColTableObj
 				ICFBamValueByPrevIdxKey keyPrevIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
 					indexByPrevIdx.remove( keyPrevIdx );
 				}
@@ -300,7 +300,7 @@ public class CFBamFloatColTableObj
 				ICFBamValueByNextIdxKey keyNextIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
 					indexByNextIdx.remove( keyNextIdx );
 				}
@@ -311,7 +311,7 @@ public class CFBamFloatColTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
 				if( mapContPrevIdx != null ) {
 					indexByContPrevIdx.remove( keyContPrevIdx );
 				}
@@ -322,7 +322,7 @@ public class CFBamFloatColTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
 				if( mapContNextIdx != null ) {
 					indexByContNextIdx.remove( keyContNextIdx );
 				}
@@ -332,7 +332,7 @@ public class CFBamFloatColTableObj
 				ICFBamFloatColByTableIdxKey keyTableIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryFloatCol().newByTableIdxKey();
 				keyTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapTableIdx = indexByTableIdx.get( keyTableIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapTableIdx = indexByTableIdx.get( keyTableIdx );
 				if( mapTableIdx != null ) {
 					mapTableIdx.remove( keepObj.getPKey() );
 					if( mapTableIdx.size() <= 0 ) {
@@ -359,7 +359,7 @@ public class CFBamFloatColTableObj
 				ICFBamValueByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					mapScopeIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -369,7 +369,7 @@ public class CFBamFloatColTableObj
 				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -379,7 +379,7 @@ public class CFBamFloatColTableObj
 				ICFBamValueByPrevIdxKey keyPrevIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
 					mapPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -389,7 +389,7 @@ public class CFBamFloatColTableObj
 				ICFBamValueByNextIdxKey keyNextIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
 					mapNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -400,7 +400,7 @@ public class CFBamFloatColTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
 				if( mapContPrevIdx != null ) {
 					mapContPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -411,7 +411,7 @@ public class CFBamFloatColTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
 				if( mapContNextIdx != null ) {
 					mapContNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -421,7 +421,7 @@ public class CFBamFloatColTableObj
 				ICFBamFloatColByTableIdxKey keyTableIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryFloatCol().newByTableIdxKey();
 				keyTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapTableIdx = indexByTableIdx.get( keyTableIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapTableIdx = indexByTableIdx.get( keyTableIdx );
 				if( mapTableIdx != null ) {
 					mapTableIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -453,7 +453,7 @@ public class CFBamFloatColTableObj
 				ICFBamValueByScopeIdxKey keyScopeIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
 				if( mapScopeIdx != null ) {
 					mapScopeIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -463,7 +463,7 @@ public class CFBamFloatColTableObj
 				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
 				if( mapDefSchemaIdx != null ) {
 					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -473,7 +473,7 @@ public class CFBamFloatColTableObj
 				ICFBamValueByPrevIdxKey keyPrevIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
 				if( mapPrevIdx != null ) {
 					mapPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -483,7 +483,7 @@ public class CFBamFloatColTableObj
 				ICFBamValueByNextIdxKey keyNextIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
 				if( mapNextIdx != null ) {
 					mapNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -494,7 +494,7 @@ public class CFBamFloatColTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
 				if( mapContPrevIdx != null ) {
 					mapContPrevIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -505,7 +505,7 @@ public class CFBamFloatColTableObj
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
 				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
 				if( mapContNextIdx != null ) {
 					mapContNextIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -515,7 +515,7 @@ public class CFBamFloatColTableObj
 				ICFBamFloatColByTableIdxKey keyTableIdx =
 					schema.getCFBamBackingStore().getCFBamFactory().getFactoryFloatCol().newByTableIdxKey();
 				keyTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
-				Map<CFLibDbKeyHash256, ICFBamFloatColObj > mapTableIdx = indexByTableIdx.get( keyTableIdx );
+				Map<ICFLibKeyHash256, ICFBamFloatColObj > mapTableIdx = indexByTableIdx.get( keyTableIdx );
 				if( mapTableIdx != null ) {
 					mapTableIdx.put( keepObj.getPKey(), keepObj );
 				}
@@ -545,12 +545,12 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public ICFBamFloatColObj readFloatCol( CFLibDbKeyHash256 pkey ) {
+	public ICFBamFloatColObj readFloatCol( ICFLibKeyHash256 pkey ) {
 		return( readFloatCol( pkey, false ) );
 	}
 
 	@Override
-	public ICFBamFloatColObj readFloatCol( CFLibDbKeyHash256 pkey, boolean forceRead ) {
+	public ICFBamFloatColObj readFloatCol( ICFLibKeyHash256 pkey, boolean forceRead ) {
 		ICFBamFloatColObj obj = null;
 		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -569,7 +569,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public ICFBamFloatColObj readCachedFloatCol( CFLibDbKeyHash256 pkey ) {
+	public ICFBamFloatColObj readCachedFloatCol( ICFLibKeyHash256 pkey ) {
 		ICFBamFloatColObj obj = null;
 		if( members.containsKey( pkey ) ) {
 			obj = members.get( pkey );
@@ -585,7 +585,7 @@ public class CFBamFloatColTableObj
 		if( obj == null ) {
 			return;
 		}
-		CFLibDbKeyHash256 pkey = obj.getPKey();
+		ICFLibKeyHash256 pkey = obj.getPKey();
 		ICFBamFloatColObj existing = readCachedFloatCol( pkey );
 		if( existing == null ) {
 			return;
@@ -611,7 +611,7 @@ public class CFBamFloatColTableObj
 		schema.getFloatDefTableObj().reallyDeepDisposeFloatDef( obj );
 	}
 	@Override
-	public void deepDisposeFloatCol( CFLibDbKeyHash256 pkey ) {
+	public void deepDisposeFloatCol( ICFLibKeyHash256 pkey ) {
 		ICFBamFloatColObj obj = readCachedFloatCol( pkey );
 		if( obj != null ) {
 			obj.forget();
@@ -619,7 +619,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public ICFBamFloatColObj lockFloatCol( CFLibDbKeyHash256 pkey ) {
+	public ICFBamFloatColObj lockFloatCol( ICFLibKeyHash256 pkey ) {
 		ICFBamFloatColObj locked = null;
 		ICFBamFloatCol lockRec = schema.getCFBamBackingStore().getTableFloatCol().lockDerived( null, pkey );
 		if( lockRec != null ) {
@@ -643,7 +643,7 @@ public class CFBamFloatColTableObj
 	public List<ICFBamFloatColObj> readAllFloatCol( boolean forceRead ) {
 		final String S_ProcName = "readAllFloatCol";
 		if( ( allFloatCol == null ) || forceRead ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> map = new HashMap<CFLibDbKeyHash256,ICFBamFloatColObj>();
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> map = new HashMap<ICFLibKeyHash256,ICFBamFloatColObj>();
 			allFloatCol = map;
 			ICFBamFloatCol[] recList = schema.getCFBamBackingStore().getTableFloatCol().readAllDerived( null );
 			ICFBamFloatCol rec;
@@ -699,8 +699,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -757,8 +757,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -769,21 +769,21 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public ICFBamFloatColObj readFloatColByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamFloatColObj readFloatColByIdIdx( ICFLibKeyHash256 Id )
 	{
 		return( readFloatColByIdIdx( Id,
 			false ) );
 	}
 
 	@Override
-	public ICFBamFloatColObj readFloatColByIdIdx( CFLibDbKeyHash256 Id, boolean forceRead )
+	public ICFBamFloatColObj readFloatColByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
 	{
 		ICFBamFloatColObj obj = readFloatCol( Id, forceRead );
 		return( obj );
 	}
 
 	@Override
-	public ICFBamFloatColObj readFloatColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamFloatColObj readFloatColByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		return( readFloatColByUNameIdx( ScopeId,
@@ -792,7 +792,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public ICFBamFloatColObj readFloatColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamFloatColObj readFloatColByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name, boolean forceRead )
 	{
 		if( indexByUNameIdx == null ) {
@@ -821,29 +821,29 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public List<ICFBamFloatColObj> readFloatColByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		return( readFloatColByScopeIdx( ScopeId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByScopeIdx( CFLibDbKeyHash256 ScopeId,
+	public List<ICFBamFloatColObj> readFloatColByScopeIdx( ICFLibKeyHash256 ScopeId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readFloatColByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 		if( indexByScopeIdx == null ) {
 			indexByScopeIdx = new HashMap< ICFBamValueByScopeIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( ( ! forceRead ) && indexByScopeIdx.containsKey( key ) ) {
 			dict = indexByScopeIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamFloatColObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamFloatColObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByScopeIdx( null,
 				ScopeId );
@@ -901,8 +901,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -914,29 +914,29 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamFloatColObj> readFloatColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		return( readFloatColByDefSchemaIdx( DefSchemaId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId,
+	public List<ICFBamFloatColObj> readFloatColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readFloatColByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamValueByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( ( ! forceRead ) && indexByDefSchemaIdx.containsKey( key ) ) {
 			dict = indexByDefSchemaIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamFloatColObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamFloatColObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByDefSchemaIdx( null,
 				DefSchemaId );
@@ -994,8 +994,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1007,29 +1007,29 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public List<ICFBamFloatColObj> readFloatColByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		return( readFloatColByPrevIdx( PrevId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByPrevIdx( CFLibDbKeyHash256 PrevId,
+	public List<ICFBamFloatColObj> readFloatColByPrevIdx( ICFLibKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readFloatColByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 		if( indexByPrevIdx == null ) {
 			indexByPrevIdx = new HashMap< ICFBamValueByPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( ( ! forceRead ) && indexByPrevIdx.containsKey( key ) ) {
 			dict = indexByPrevIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamFloatColObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamFloatColObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByPrevIdx( null,
 				PrevId );
@@ -1087,8 +1087,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1100,29 +1100,29 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByNextIdx( CFLibDbKeyHash256 NextId )
+	public List<ICFBamFloatColObj> readFloatColByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		return( readFloatColByNextIdx( NextId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByNextIdx( CFLibDbKeyHash256 NextId,
+	public List<ICFBamFloatColObj> readFloatColByNextIdx( ICFLibKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readFloatColByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 		if( indexByNextIdx == null ) {
 			indexByNextIdx = new HashMap< ICFBamValueByNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( ( ! forceRead ) && indexByNextIdx.containsKey( key ) ) {
 			dict = indexByNextIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamFloatColObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamFloatColObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByNextIdx( null,
 				NextId );
@@ -1180,8 +1180,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1193,8 +1193,8 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public List<ICFBamFloatColObj> readFloatColByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		return( readFloatColByContPrevIdx( ScopeId,
 			PrevId,
@@ -1202,24 +1202,24 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId,
+	public List<ICFBamFloatColObj> readFloatColByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readFloatColByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalPrevId( PrevId );
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 		if( indexByContPrevIdx == null ) {
 			indexByContPrevIdx = new HashMap< ICFBamValueByContPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( ( ! forceRead ) && indexByContPrevIdx.containsKey( key ) ) {
 			dict = indexByContPrevIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamFloatColObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamFloatColObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByContPrevIdx( null,
 				ScopeId,
@@ -1278,8 +1278,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1291,8 +1291,8 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public List<ICFBamFloatColObj> readFloatColByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		return( readFloatColByContNextIdx( ScopeId,
 			NextId,
@@ -1300,24 +1300,24 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId,
+	public List<ICFBamFloatColObj> readFloatColByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readFloatColByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalNextId( NextId );
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 		if( indexByContNextIdx == null ) {
 			indexByContNextIdx = new HashMap< ICFBamValueByContNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( ( ! forceRead ) && indexByContNextIdx.containsKey( key ) ) {
 			dict = indexByContNextIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamFloatColObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamFloatColObj>();
 			ICFBamValueObj obj;
 			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByContNextIdx( null,
 				ScopeId,
@@ -1376,8 +1376,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1389,29 +1389,29 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByTableIdx( CFLibDbKeyHash256 TableId )
+	public List<ICFBamFloatColObj> readFloatColByTableIdx( ICFLibKeyHash256 TableId )
 	{
 		return( readFloatColByTableIdx( TableId,
 			false ) );
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readFloatColByTableIdx( CFLibDbKeyHash256 TableId,
+	public List<ICFBamFloatColObj> readFloatColByTableIdx( ICFLibKeyHash256 TableId,
 		boolean forceRead )
 	{
 		final String S_ProcName = "readFloatColByTableIdx";
 		ICFBamFloatColByTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryFloatCol().newByTableIdxKey();
 		key.setRequiredTableId( TableId );
-		Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+		Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 		if( indexByTableIdx == null ) {
 			indexByTableIdx = new HashMap< ICFBamFloatColByTableIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( ( ! forceRead ) && indexByTableIdx.containsKey( key ) ) {
 			dict = indexByTableIdx.get( key );
 		}
 		else {
-			dict = new HashMap<CFLibDbKeyHash256, ICFBamFloatColObj>();
+			dict = new HashMap<ICFLibKeyHash256, ICFBamFloatColObj>();
 			ICFBamFloatColObj obj;
 			ICFBamFloatCol[] recList = schema.getCFBamBackingStore().getTableFloatCol().readDerivedByTableIdx( null,
 				TableId );
@@ -1469,8 +1469,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1482,7 +1482,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public ICFBamFloatColObj readCachedFloatColByIdIdx( CFLibDbKeyHash256 Id )
+	public ICFBamFloatColObj readCachedFloatColByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamFloatColObj obj = null;
 		obj = readCachedFloatCol( Id );
@@ -1490,7 +1490,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public ICFBamFloatColObj readCachedFloatColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public ICFBamFloatColObj readCachedFloatColByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamFloatColObj obj = null;
@@ -1528,14 +1528,14 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readCachedFloatColByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public List<ICFBamFloatColObj> readCachedFloatColByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "readCachedFloatColByScopeIdx";
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		ArrayList<ICFBamFloatColObj> arrayList = new ArrayList<ICFBamFloatColObj>();
 		if( indexByScopeIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 			if( indexByScopeIdx.containsKey( key ) ) {
 				dict = indexByScopeIdx.get( key );
 				int len = dict.size();
@@ -1593,8 +1593,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1605,14 +1605,14 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readCachedFloatColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public List<ICFBamFloatColObj> readCachedFloatColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "readCachedFloatColByDefSchemaIdx";
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		ArrayList<ICFBamFloatColObj> arrayList = new ArrayList<ICFBamFloatColObj>();
 		if( indexByDefSchemaIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 			if( indexByDefSchemaIdx.containsKey( key ) ) {
 				dict = indexByDefSchemaIdx.get( key );
 				int len = dict.size();
@@ -1670,8 +1670,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1682,14 +1682,14 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readCachedFloatColByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public List<ICFBamFloatColObj> readCachedFloatColByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedFloatColByPrevIdx";
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamFloatColObj> arrayList = new ArrayList<ICFBamFloatColObj>();
 		if( indexByPrevIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 			if( indexByPrevIdx.containsKey( key ) ) {
 				dict = indexByPrevIdx.get( key );
 				int len = dict.size();
@@ -1747,8 +1747,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1759,14 +1759,14 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readCachedFloatColByNextIdx( CFLibDbKeyHash256 NextId )
+	public List<ICFBamFloatColObj> readCachedFloatColByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedFloatColByNextIdx";
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamFloatColObj> arrayList = new ArrayList<ICFBamFloatColObj>();
 		if( indexByNextIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 			if( indexByNextIdx.containsKey( key ) ) {
 				dict = indexByNextIdx.get( key );
 				int len = dict.size();
@@ -1824,8 +1824,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1836,8 +1836,8 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readCachedFloatColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public List<ICFBamFloatColObj> readCachedFloatColByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "readCachedFloatColByContPrevIdx";
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
@@ -1845,7 +1845,7 @@ public class CFBamFloatColTableObj
 		key.setOptionalPrevId( PrevId );
 		ArrayList<ICFBamFloatColObj> arrayList = new ArrayList<ICFBamFloatColObj>();
 		if( indexByContPrevIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 			if( indexByContPrevIdx.containsKey( key ) ) {
 				dict = indexByContPrevIdx.get( key );
 				int len = dict.size();
@@ -1903,8 +1903,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1915,8 +1915,8 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readCachedFloatColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public List<ICFBamFloatColObj> readCachedFloatColByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "readCachedFloatColByContNextIdx";
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
@@ -1924,7 +1924,7 @@ public class CFBamFloatColTableObj
 		key.setOptionalNextId( NextId );
 		ArrayList<ICFBamFloatColObj> arrayList = new ArrayList<ICFBamFloatColObj>();
 		if( indexByContNextIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 			if( indexByContNextIdx.containsKey( key ) ) {
 				dict = indexByContNextIdx.get( key );
 				int len = dict.size();
@@ -1982,8 +1982,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -1994,14 +1994,14 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public List<ICFBamFloatColObj> readCachedFloatColByTableIdx( CFLibDbKeyHash256 TableId )
+	public List<ICFBamFloatColObj> readCachedFloatColByTableIdx( ICFLibKeyHash256 TableId )
 	{
 		final String S_ProcName = "readCachedFloatColByTableIdx";
 		ICFBamFloatColByTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryFloatCol().newByTableIdxKey();
 		key.setRequiredTableId( TableId );
 		ArrayList<ICFBamFloatColObj> arrayList = new ArrayList<ICFBamFloatColObj>();
 		if( indexByTableIdx != null ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict;
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict;
 			if( indexByTableIdx.containsKey( key ) ) {
 				dict = indexByTableIdx.get( key );
 				int len = dict.size();
@@ -2059,8 +2059,8 @@ public class CFBamFloatColTableObj
 					return( 1 );
 				}
 				else {
-					CFLibDbKeyHash256 lhsPKey = lhs.getPKey();
-					CFLibDbKeyHash256 rhsPKey = rhs.getPKey();
+					ICFLibKeyHash256 lhsPKey = lhs.getPKey();
+					ICFLibKeyHash256 rhsPKey = rhs.getPKey();
 					int ret = lhsPKey.compareTo( rhsPKey );
 					return( ret );
 				}
@@ -2071,7 +2071,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deepDisposeFloatColByIdIdx( CFLibDbKeyHash256 Id )
+	public void deepDisposeFloatColByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamFloatColObj obj = readCachedFloatColByIdIdx( Id );
 		if( obj != null ) {
@@ -2080,7 +2080,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deepDisposeFloatColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public void deepDisposeFloatColByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		ICFBamFloatColObj obj = readCachedFloatColByUNameIdx( ScopeId,
@@ -2091,7 +2091,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deepDisposeFloatColByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public void deepDisposeFloatColByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		final String S_ProcName = "deepDisposeFloatColByScopeIdx";
 		ICFBamFloatColObj obj;
@@ -2108,7 +2108,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deepDisposeFloatColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deepDisposeFloatColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		final String S_ProcName = "deepDisposeFloatColByDefSchemaIdx";
 		ICFBamFloatColObj obj;
@@ -2125,7 +2125,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deepDisposeFloatColByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public void deepDisposeFloatColByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeFloatColByPrevIdx";
 		ICFBamFloatColObj obj;
@@ -2142,7 +2142,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deepDisposeFloatColByNextIdx( CFLibDbKeyHash256 NextId )
+	public void deepDisposeFloatColByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeFloatColByNextIdx";
 		ICFBamFloatColObj obj;
@@ -2159,8 +2159,8 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deepDisposeFloatColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public void deepDisposeFloatColByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		final String S_ProcName = "deepDisposeFloatColByContPrevIdx";
 		ICFBamFloatColObj obj;
@@ -2178,8 +2178,8 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deepDisposeFloatColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public void deepDisposeFloatColByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		final String S_ProcName = "deepDisposeFloatColByContNextIdx";
 		ICFBamFloatColObj obj;
@@ -2197,7 +2197,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deepDisposeFloatColByTableIdx( CFLibDbKeyHash256 TableId )
+	public void deepDisposeFloatColByTableIdx( ICFLibKeyHash256 TableId )
 	{
 		final String S_ProcName = "deepDisposeFloatColByTableIdx";
 		ICFBamFloatColObj obj;
@@ -2242,7 +2242,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deleteFloatColByIdIdx( CFLibDbKeyHash256 Id )
+	public void deleteFloatColByIdIdx( ICFLibKeyHash256 Id )
 	{
 		ICFBamFloatColObj obj = readFloatCol(Id);
 		if( obj != null ) {
@@ -2272,7 +2272,7 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deleteFloatColByUNameIdx( CFLibDbKeyHash256 ScopeId,
+	public void deleteFloatColByUNameIdx( ICFLibKeyHash256 ScopeId,
 		String Name )
 	{
 		if( indexByUNameIdx == null ) {
@@ -2300,16 +2300,16 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deleteFloatColByScopeIdx( CFLibDbKeyHash256 ScopeId )
+	public void deleteFloatColByScopeIdx( ICFLibKeyHash256 ScopeId )
 	{
 		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		if( indexByScopeIdx == null ) {
 			indexByScopeIdx = new HashMap< ICFBamValueByScopeIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( indexByScopeIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict = indexByScopeIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict = indexByScopeIdx.get( key );
 			schema.getCFBamBackingStore().getTableFloatCol().deleteFloatColByScopeIdx( null,
 				ScopeId );
 			Iterator<ICFBamFloatColObj> iter = dict.values().iterator();
@@ -2334,16 +2334,16 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deleteFloatColByDefSchemaIdx( CFLibDbKeyHash256 DefSchemaId )
+	public void deleteFloatColByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
 	{
 		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
 		key.setOptionalDefSchemaId( DefSchemaId );
 		if( indexByDefSchemaIdx == null ) {
 			indexByDefSchemaIdx = new HashMap< ICFBamValueByDefSchemaIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( indexByDefSchemaIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict = indexByDefSchemaIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict = indexByDefSchemaIdx.get( key );
 			schema.getCFBamBackingStore().getTableFloatCol().deleteFloatColByDefSchemaIdx( null,
 				DefSchemaId );
 			Iterator<ICFBamFloatColObj> iter = dict.values().iterator();
@@ -2368,16 +2368,16 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deleteFloatColByPrevIdx( CFLibDbKeyHash256 PrevId )
+	public void deleteFloatColByPrevIdx( ICFLibKeyHash256 PrevId )
 	{
 		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
 		key.setOptionalPrevId( PrevId );
 		if( indexByPrevIdx == null ) {
 			indexByPrevIdx = new HashMap< ICFBamValueByPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( indexByPrevIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict = indexByPrevIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict = indexByPrevIdx.get( key );
 			schema.getCFBamBackingStore().getTableFloatCol().deleteFloatColByPrevIdx( null,
 				PrevId );
 			Iterator<ICFBamFloatColObj> iter = dict.values().iterator();
@@ -2402,16 +2402,16 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deleteFloatColByNextIdx( CFLibDbKeyHash256 NextId )
+	public void deleteFloatColByNextIdx( ICFLibKeyHash256 NextId )
 	{
 		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
 		key.setOptionalNextId( NextId );
 		if( indexByNextIdx == null ) {
 			indexByNextIdx = new HashMap< ICFBamValueByNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( indexByNextIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict = indexByNextIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict = indexByNextIdx.get( key );
 			schema.getCFBamBackingStore().getTableFloatCol().deleteFloatColByNextIdx( null,
 				NextId );
 			Iterator<ICFBamFloatColObj> iter = dict.values().iterator();
@@ -2436,18 +2436,18 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deleteFloatColByContPrevIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 PrevId )
+	public void deleteFloatColByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
 	{
 		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalPrevId( PrevId );
 		if( indexByContPrevIdx == null ) {
 			indexByContPrevIdx = new HashMap< ICFBamValueByContPrevIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( indexByContPrevIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict = indexByContPrevIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict = indexByContPrevIdx.get( key );
 			schema.getCFBamBackingStore().getTableFloatCol().deleteFloatColByContPrevIdx( null,
 				ScopeId,
 				PrevId );
@@ -2475,18 +2475,18 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deleteFloatColByContNextIdx( CFLibDbKeyHash256 ScopeId,
-		CFLibDbKeyHash256 NextId )
+	public void deleteFloatColByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
 	{
 		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
 		key.setRequiredScopeId( ScopeId );
 		key.setOptionalNextId( NextId );
 		if( indexByContNextIdx == null ) {
 			indexByContNextIdx = new HashMap< ICFBamValueByContNextIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( indexByContNextIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict = indexByContNextIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict = indexByContNextIdx.get( key );
 			schema.getCFBamBackingStore().getTableFloatCol().deleteFloatColByContNextIdx( null,
 				ScopeId,
 				NextId );
@@ -2514,16 +2514,16 @@ public class CFBamFloatColTableObj
 	}
 
 	@Override
-	public void deleteFloatColByTableIdx( CFLibDbKeyHash256 TableId )
+	public void deleteFloatColByTableIdx( ICFLibKeyHash256 TableId )
 	{
 		ICFBamFloatColByTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryFloatCol().newByTableIdxKey();
 		key.setRequiredTableId( TableId );
 		if( indexByTableIdx == null ) {
 			indexByTableIdx = new HashMap< ICFBamFloatColByTableIdxKey,
-				Map< CFLibDbKeyHash256, ICFBamFloatColObj > >();
+				Map< ICFLibKeyHash256, ICFBamFloatColObj > >();
 		}
 		if( indexByTableIdx.containsKey( key ) ) {
-			Map<CFLibDbKeyHash256, ICFBamFloatColObj> dict = indexByTableIdx.get( key );
+			Map<ICFLibKeyHash256, ICFBamFloatColObj> dict = indexByTableIdx.get( key );
 			schema.getCFBamBackingStore().getTableFloatCol().deleteFloatColByTableIdx( null,
 				TableId );
 			Iterator<ICFBamFloatColObj> iter = dict.values().iterator();

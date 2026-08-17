@@ -74,7 +74,7 @@ public class CFBamBuffDateDef
 	extends CFBamBuffAtom
 	implements ICFBamDateDef
 {
-	protected String optionalDummy;
+	protected $implJavaAtomType$ optionalDummy;
 
 	public CFBamBuffDateDef() {
 		super();

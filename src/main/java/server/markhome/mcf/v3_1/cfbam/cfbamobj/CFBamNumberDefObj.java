@@ -313,32 +313,32 @@ public class CFBamNumberDefObj
 	}
 
 	@Override
-	public CFLibDbKeyHash256 getRequiredId() {
+	public $implJavaAtomType$ getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public short getRequiredDigits() {
+	public $implJavaAtomType$ getRequiredDigits() {
 		return( getNumberDefRec().getRequiredDigits() );
 	}
 
 	@Override
-	public short getRequiredPrecis() {
+	public $implJavaAtomType$ getRequiredPrecis() {
 		return( getNumberDefRec().getRequiredPrecis() );
 	}
 
 	@Override
-	public BigDecimal getOptionalInitValue() {
+	public $implJavaAtomType$ getOptionalInitValue() {
 		return( getNumberDefRec().getOptionalInitValue() );
 	}
 
 	@Override
-	public BigDecimal getOptionalMinValue() {
+	public $implJavaAtomType$ getOptionalMinValue() {
 		return( getNumberDefRec().getOptionalMinValue() );
 	}
 
 	@Override
-	public BigDecimal getOptionalMaxValue() {
+	public $implJavaAtomType$ getOptionalMaxValue() {
 		return( getNumberDefRec().getOptionalMaxValue() );
 	}
 }

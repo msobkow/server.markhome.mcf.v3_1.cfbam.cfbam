@@ -77,7 +77,7 @@ public interface ICFBamDbKeyHash512Col
 
 	public ICFBamTable getRequiredContainerTable();
 
-	public void setRequiredContainerTable(CFLibDbKeyHash256 argTableId);
+	public void setRequiredContainerTable(ICFLibKeyHash256 argTableId);
 
 	public void setRequiredContainerTable(ICFBamTable argObj);
 
