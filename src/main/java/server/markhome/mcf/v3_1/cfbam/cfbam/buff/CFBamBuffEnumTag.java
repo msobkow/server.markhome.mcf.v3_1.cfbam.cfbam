@@ -196,6 +196,58 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
+	public void setRequiredContainerEnumDef(ICFLibKeyHash256 argEnumId) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerEnumDef-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamEnumDefTable targetTable = targetBackingCFBam.getTableEnumDef();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerEnumDef", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamEnumDef found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argEnumId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerEnumDef-args", 0, "found");
+		}
+		else if ((found instanceof ICFBamEnumDef) || (found instanceof ICFBamProtEnumDef) || (found instanceof ICFBamPubEnumDef)) {
+		setRequiredEnumId(argEnumId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerEnumDef-args", "found", found, "ICFBamEnumDefICFBamProtEnumDefICFBamPubEnumDef");
+		}
+	}
+
+	@Override
+	public void setRequiredContainerEnumDef(ICFBamEnumDef argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerEnumDef", 1, "argObj");
+		}
+		else {
+			setRequiredEnumId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerEnumDef(ICFBamProtEnumDef argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerEnumDef", 1, "argObj");
+		}
+		else {
+			setRequiredEnumId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerEnumDef(ICFBamPubEnumDef argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerEnumDef", 1, "argObj");
+		}
+		else {
+			setRequiredEnumId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
 	public ICFBamSchemaDef getOptionalLookupDefSchema() {
 		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
@@ -207,6 +259,55 @@ public class CFBamBuffEnumTag
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFLibKeyHash256 argDefSchemaId) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamSchemaDefTable targetTable = targetBackingCFBam.getTableSchemaDef();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamSchemaDef found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDefSchemaId);
+		if (found == null || (found != null && ((found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)))) {
+		setOptionalDefSchemaId(argDefSchemaId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
+		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
+		if(argObj == null) {
+			setOptionalDefSchemaId(null);
+		}
+		else {
+			setOptionalDefSchemaId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
+		if(argObj == null) {
+			setOptionalDefSchemaId(null);
+		}
+		else {
+			setOptionalDefSchemaId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
+		if(argObj == null) {
+			setOptionalDefSchemaId(null);
+		}
+		else {
+			setOptionalDefSchemaId(argObj.getRequiredId());
+		}
 	}
 
 	@Override
@@ -224,6 +325,55 @@ public class CFBamBuffEnumTag
 	}
 
 	@Override
+	public void setOptionalLookupPrev(ICFLibKeyHash256 argPrevId) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupPrev-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamEnumTagTable targetTable = targetBackingCFBam.getTableEnumTag();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupPrev", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamEnumTag found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argPrevId);
+		if (found == null || (found != null && ((found instanceof ICFBamEnumTag) || (found instanceof ICFBamProtEnumTag) || (found instanceof ICFBamPubEnumTag)))) {
+		setOptionalPrevId(argPrevId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupPrev-args", "found", found, "ICFBamEnumTagICFBamProtEnumTagICFBamPubEnumTag");
+		}
+	}
+
+	@Override
+	public void setOptionalLookupPrev(ICFBamEnumTag argObj) {
+		if(argObj == null) {
+			setOptionalPrevId(null);
+		}
+		else {
+			setOptionalPrevId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setOptionalLookupPrev(ICFBamProtEnumTag argObj) {
+		if(argObj == null) {
+			setOptionalPrevId(null);
+		}
+		else {
+			setOptionalPrevId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setOptionalLookupPrev(ICFBamPubEnumTag argObj) {
+		if(argObj == null) {
+			setOptionalPrevId(null);
+		}
+		else {
+			setOptionalPrevId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
 	public ICFBamEnumTag getOptionalLookupNext() {
 		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
@@ -235,6 +385,55 @@ public class CFBamBuffEnumTag
 		}
 		ICFBamEnumTag targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalNextId());
 		return(targetRec);
+	}
+
+	@Override
+	public void setOptionalLookupNext(ICFLibKeyHash256 argNextId) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupNext-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamEnumTagTable targetTable = targetBackingCFBam.getTableEnumTag();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setOptionalLookupNext", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamEnumTag found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argNextId);
+		if (found == null || (found != null && ((found instanceof ICFBamEnumTag) || (found instanceof ICFBamProtEnumTag) || (found instanceof ICFBamPubEnumTag)))) {
+		setOptionalNextId(argNextId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupNext-args", "found", found, "ICFBamEnumTagICFBamProtEnumTagICFBamPubEnumTag");
+		}
+	}
+
+	@Override
+	public void setOptionalLookupNext(ICFBamEnumTag argObj) {
+		if(argObj == null) {
+			setOptionalNextId(null);
+		}
+		else {
+			setOptionalNextId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setOptionalLookupNext(ICFBamProtEnumTag argObj) {
+		if(argObj == null) {
+			setOptionalNextId(null);
+		}
+		else {
+			setOptionalNextId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setOptionalLookupNext(ICFBamPubEnumTag argObj) {
+		if(argObj == null) {
+			setOptionalNextId(null);
+		}
+		else {
+			setOptionalNextId(argObj.getRequiredId());
+		}
 	}
 
 	@Override

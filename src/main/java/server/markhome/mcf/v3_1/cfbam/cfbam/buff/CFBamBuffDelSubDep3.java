@@ -104,6 +104,58 @@ public class CFBamBuffDelSubDep3
 	}
 
 	@Override
+	public void setRequiredContainerDelSubDep2(ICFLibKeyHash256 argDelSubDep2Id) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelSubDep2-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamDelSubDep2Table targetTable = targetBackingCFBam.getTableDelSubDep2();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelSubDep2", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamDelSubDep2 found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDelSubDep2Id);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelSubDep2-args", 0, "found");
+		}
+		else if ((found instanceof ICFBamDelSubDep2) || (found instanceof ICFBamProtDelSubDep2) || (found instanceof ICFBamPubDelSubDep2)) {
+		setRequiredDelSubDep2Id(argDelSubDep2Id);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerDelSubDep2-args", "found", found, "ICFBamDelSubDep2ICFBamProtDelSubDep2ICFBamPubDelSubDep2");
+		}
+	}
+
+	@Override
+	public void setRequiredContainerDelSubDep2(ICFBamDelSubDep2 argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerDelSubDep2", 1, "argObj");
+		}
+		else {
+			setRequiredDelSubDep2Id(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerDelSubDep2(ICFBamProtDelSubDep2 argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerDelSubDep2", 1, "argObj");
+		}
+		else {
+			setRequiredDelSubDep2Id(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerDelSubDep2(ICFBamPubDelSubDep2 argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerDelSubDep2", 1, "argObj");
+		}
+		else {
+			setRequiredDelSubDep2Id(argObj.getRequiredId());
+		}
+	}
+
+	@Override
 	public ICFLibKeyHash256 getRequiredDelSubDep2Id() {
 		return(requiredDelSubDep2Id);
 	}

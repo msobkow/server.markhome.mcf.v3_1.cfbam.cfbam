@@ -104,6 +104,58 @@ public class CFBamBuffDelSubDep2
 	}
 
 	@Override
+	public void setRequiredContainerDelSubDep1(ICFLibKeyHash256 argDelSubDep1Id) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelSubDep1-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamDelSubDep1Table targetTable = targetBackingCFBam.getTableDelSubDep1();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelSubDep1", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamDelSubDep1 found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDelSubDep1Id);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelSubDep1-args", 0, "found");
+		}
+		else if ((found instanceof ICFBamDelSubDep1) || (found instanceof ICFBamProtDelSubDep1) || (found instanceof ICFBamPubDelSubDep1)) {
+		setRequiredDelSubDep1Id(argDelSubDep1Id);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerDelSubDep1-args", "found", found, "ICFBamDelSubDep1ICFBamProtDelSubDep1ICFBamPubDelSubDep1");
+		}
+	}
+
+	@Override
+	public void setRequiredContainerDelSubDep1(ICFBamDelSubDep1 argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerDelSubDep1", 1, "argObj");
+		}
+		else {
+			setRequiredDelSubDep1Id(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerDelSubDep1(ICFBamProtDelSubDep1 argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerDelSubDep1", 1, "argObj");
+		}
+		else {
+			setRequiredDelSubDep1Id(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerDelSubDep1(ICFBamPubDelSubDep1 argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerDelSubDep1", 1, "argObj");
+		}
+		else {
+			setRequiredDelSubDep1Id(argObj.getRequiredId());
+		}
+	}
+
+	@Override
 	public List<ICFBamDelSubDep3> getOptionalComponentsDelDep() {
 		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {

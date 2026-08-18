@@ -104,6 +104,58 @@ public class CFBamBuffClearSubDep1
 	}
 
 	@Override
+	public void setRequiredContainerClearTopDep(ICFLibKeyHash256 argClearTopDepId) {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearTopDep-args", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamClearTopDepTable targetTable = targetBackingCFBam.getTableClearTopDep();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearTopDep", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamClearTopDep found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argClearTopDepId);
+		if (found == null) {
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearTopDep-args", 0, "found");
+		}
+		else if ((found instanceof ICFBamClearTopDep) || (found instanceof ICFBamProtClearTopDep) || (found instanceof ICFBamPubClearTopDep)) {
+		setRequiredClearTopDepId(argClearTopDepId);
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerClearTopDep-args", "found", found, "ICFBamClearTopDepICFBamProtClearTopDepICFBamPubClearTopDep");
+		}
+	}
+
+	@Override
+	public void setRequiredContainerClearTopDep(ICFBamClearTopDep argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerClearTopDep", 1, "argObj");
+		}
+		else {
+			setRequiredClearTopDepId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerClearTopDep(ICFBamProtClearTopDep argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerClearTopDep", 1, "argObj");
+		}
+		else {
+			setRequiredClearTopDepId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
+	public void setRequiredContainerClearTopDep(ICFBamPubClearTopDep argObj) {
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerClearTopDep", 1, "argObj");
+		}
+		else {
+			setRequiredClearTopDepId(argObj.getRequiredId());
+		}
+	}
+
+	@Override
 	public List<ICFBamClearSubDep2> getOptionalComponentsClearDep() {
 		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
