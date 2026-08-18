@@ -104,6 +104,34 @@ public class CFBamBuffClearSubDep2
 	}
 
 	@Override
+	public ICFBamClearSubDep1 getRequiredContainerClearSubDep1() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerClearSubDep1", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamClearSubDep1Table targetTable = targetBackingCFBam.getTableClearSubDep1();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerClearSubDep1", 0, "ICFBamSchema.getBackingCFBam().getTableClearSubDep1()");
+		}
+		ICFBamClearSubDep1 targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClearSubDep1Id());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFBamClearSubDep1 getRequiredContainerClearSubDep1() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerClearSubDep1", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamClearSubDep1Table targetTable = targetBackingCFBam.getTableClearSubDep1();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerClearSubDep1", 0, "ICFBamSchema.getBackingCFBam().getTableClearSubDep1()");
+		}
+		ICFBamPubClearSubDep1 targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredClearSubDep1Id());
+		return(targetRec);
+	}
+
+	@Override
 	public void setRequiredContainerClearSubDep1(ICFLibKeyHash256 argClearSubDep1Id) {
 		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
@@ -136,22 +164,26 @@ public class CFBamBuffClearSubDep2
 	}
 
 	@Override
-	public void setRequiredContainerClearSubDep1(ICFBamProtClearSubDep1 argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerClearSubDep1", 1, "argObj");
+	public List<ICFBamClearSubDep3> getOptionalComponentsClearDep() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsClearDep", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamClearSubDep3Table targetTable = targetBackingCFBam.getTableClearSubDep3();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsClearDep", 0, "ICFBamSchema.getBackingCFBam().getTableClearSubDep3()");
+		}
+		ICFBamClearSubDep3[] targetArr = targetTable.readDerivedByClearSubDep2Idx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamClearSubDep3> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
 		}
 		else {
-			setRequiredClearSubDep1Id(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerClearSubDep1(ICFBamPubClearSubDep1 argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerClearSubDep1", 1, "argObj");
-		}
-		else {
-			setRequiredClearSubDep1Id(argObj.getRequiredId());
+			List<ICFBamClearSubDep3> results = new ArrayList<>();
+			return( results );
 		}
 	}
 
@@ -175,6 +207,30 @@ public class CFBamBuffClearSubDep2
 		}
 		else {
 			List<ICFBamClearSubDep3> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFBamClearSubDep3> getOptionalComponentsClearDep() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsClearDep", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamClearSubDep3Table targetTable = targetBackingCFBam.getTableClearSubDep3();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsClearDep", 0, "ICFBamSchema.getBackingCFBam().getTableClearSubDep3()");
+		}
+		ICFBamPubClearSubDep3[] targetArr = targetTable.readDerivedByClearSubDep2Idx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamPubClearSubDep3> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamPubClearSubDep3> results = new ArrayList<>();
 			return( results );
 		}
 	}
@@ -1202,7 +1258,7 @@ public class CFBamBuffClearSubDep2
 	@Override
 	public void setClearSubDep2( ICFBamClearSubDep2H src ) {
 		super.setClearDep( src );
-		setRequiredContainerClearSubDep1(src.getRequiredClearSubDep1Id());
+		setRequiredContainerClearSubDep1(src.getRequiredContainerClearSubDep1());
 		setRequiredClearSubDep1Id(src.getRequiredClearSubDep1Id());
 		setRequiredName(src.getRequiredName());
 	}
@@ -1246,7 +1302,7 @@ public class CFBamBuffClearSubDep2
 	@Override
 	public void setClearSubDep2( ICFBamProtClearSubDep2H src ) {
 		super.setClearDep( src );
-		setRequiredContainerClearSubDep1(src.getRequiredClearSubDep1Id());
+		setRequiredContainerClearSubDep1(src.getRequiredContainerClearSubDep1());
 		setRequiredClearSubDep1Id(src.getRequiredClearSubDep1Id());
 		setRequiredName(src.getRequiredName());
 	}
@@ -1290,7 +1346,7 @@ public class CFBamBuffClearSubDep2
 	@Override
 	public void setClearSubDep2( ICFBamPubClearSubDep2H src ) {
 		super.setClearDep( src );
-		setRequiredContainerClearSubDep1(src.getRequiredClearSubDep1Id());
+		setRequiredContainerClearSubDep1(src.getRequiredContainerClearSubDep1());
 		setRequiredClearSubDep1Id(src.getRequiredClearSubDep1Id());
 		setRequiredName(src.getRequiredName());
 	}

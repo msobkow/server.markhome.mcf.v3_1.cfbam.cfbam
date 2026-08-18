@@ -194,6 +194,34 @@ public class CFBamBuffRoleDef
 	}
 
 	@Override
+	public ICFBamScope getRequiredContainerScopeDef() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerScopeDef", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamScopeTable targetTable = targetBackingCFBam.getTableScope();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerScopeDef", 0, "ICFBamSchema.getBackingCFBam().getTableScope()");
+		}
+		ICFBamScope targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredScopeId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFBamScope getRequiredContainerScopeDef() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerScopeDef", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamScopeTable targetTable = targetBackingCFBam.getTableScope();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerScopeDef", 0, "ICFBamSchema.getBackingCFBam().getTableScope()");
+		}
+		ICFBamPubScope targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredScopeId());
+		return(targetRec);
+	}
+
+	@Override
 	public void setRequiredContainerScopeDef(ICFLibKeyHash256 argScopeId) {
 		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
@@ -226,23 +254,17 @@ public class CFBamBuffRoleDef
 	}
 
 	@Override
-	public void setRequiredContainerScopeDef(ICFBamProtScope argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerScopeDef", 1, "argObj");
+	public ICFBamSchemaDef getOptionalLookupDefSchema() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		else {
-			setRequiredScopeId(argObj.getRequiredId());
+		ICFBamSchemaDefTable targetTable = targetBackingCFBam.getTableSchemaDef();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
 		}
-	}
-
-	@Override
-	public void setRequiredContainerScopeDef(ICFBamPubScope argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerScopeDef", 1, "argObj");
-		}
-		else {
-			setRequiredScopeId(argObj.getRequiredId());
-		}
+		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
+		return(targetRec);
 	}
 
 	@Override
@@ -256,6 +278,20 @@ public class CFBamBuffRoleDef
 			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFBamSchemaDef getOptionalLookupDefSchema() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamSchemaDefTable targetTable = targetBackingCFBam.getTableSchemaDef();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
+		}
+		ICFBamPubSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
 	}
 
@@ -280,26 +316,6 @@ public class CFBamBuffRoleDef
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		if(argObj == null) {
-			setOptionalDefSchemaId(null);
-		}
-		else {
-			setOptionalDefSchemaId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		if(argObj == null) {
-			setOptionalDefSchemaId(null);
-		}
-		else {
-			setOptionalDefSchemaId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
 		if(argObj == null) {
 			setOptionalDefSchemaId(null);
 		}
@@ -2482,8 +2498,8 @@ public class CFBamBuffRoleDef
 	@Override
 	public void setRoleDef( ICFBamRoleDefH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredContainerScopeDef(src.getRequiredScopeId());
-		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
+		setRequiredContainerScopeDef(src.getRequiredContainerScopeDef());
+		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
 		setRequiredScopeId(src.getRequiredScopeId());
 		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
@@ -2521,8 +2537,8 @@ public class CFBamBuffRoleDef
 	@Override
 	public void setRoleDef( ICFBamProtRoleDefH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredContainerScopeDef(src.getRequiredScopeId());
-		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
+		setRequiredContainerScopeDef(src.getRequiredContainerScopeDef());
+		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
 		setRequiredScopeId(src.getRequiredScopeId());
 		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());
@@ -2560,8 +2576,8 @@ public class CFBamBuffRoleDef
 	@Override
 	public void setRoleDef( ICFBamPubRoleDefH src ) {
 		setRequiredId(src.getRequiredId());
-		setRequiredContainerScopeDef(src.getRequiredScopeId());
-		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
+		setRequiredContainerScopeDef(src.getRequiredContainerScopeDef());
+		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
 		setRequiredScopeId(src.getRequiredScopeId());
 		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredName(src.getRequiredName());

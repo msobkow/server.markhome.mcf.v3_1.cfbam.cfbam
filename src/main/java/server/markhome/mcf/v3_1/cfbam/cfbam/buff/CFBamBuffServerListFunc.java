@@ -102,6 +102,34 @@ public class CFBamBuffServerListFunc
 	}
 
 	@Override
+	public ICFBamTable getOptionalLookupRetTable() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTableTable targetTable = targetBackingCFBam.getTableTable();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+		}
+		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalRetTableId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFBamTable getOptionalLookupRetTable() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTableTable targetTable = targetBackingCFBam.getTableTable();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupRetTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+		}
+		ICFBamPubTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalRetTableId());
+		return(targetRec);
+	}
+
+	@Override
 	public void setOptionalLookupRetTable(ICFLibKeyHash256 argRetTableId) {
 		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
@@ -122,26 +150,6 @@ public class CFBamBuffServerListFunc
 
 	@Override
 	public void setOptionalLookupRetTable(ICFBamTable argObj) {
-		if(argObj == null) {
-			setOptionalRetTableId(null);
-		}
-		else {
-			setOptionalRetTableId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setOptionalLookupRetTable(ICFBamProtTable argObj) {
-		if(argObj == null) {
-			setOptionalRetTableId(null);
-		}
-		else {
-			setOptionalRetTableId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setOptionalLookupRetTable(ICFBamPubTable argObj) {
 		if(argObj == null) {
 			setOptionalRetTableId(null);
 		}
@@ -797,7 +805,7 @@ public class CFBamBuffServerListFunc
 	@Override
 	public void setServerListFunc( ICFBamServerListFuncH src ) {
 		super.setServerMethod( src );
-		setOptionalLookupRetTable(src.getOptionalRetTableId());
+		setOptionalLookupRetTable(src.getOptionalLookupRetTable());
 		setOptionalRetTableId(src.getOptionalRetTableId());
 	}
 
@@ -839,7 +847,7 @@ public class CFBamBuffServerListFunc
 	@Override
 	public void setServerListFunc( ICFBamProtServerListFuncH src ) {
 		super.setServerMethod( src );
-		setOptionalLookupRetTable(src.getOptionalRetTableId());
+		setOptionalLookupRetTable(src.getOptionalLookupRetTable());
 		setOptionalRetTableId(src.getOptionalRetTableId());
 	}
 
@@ -881,7 +889,7 @@ public class CFBamBuffServerListFunc
 	@Override
 	public void setServerListFunc( ICFBamPubServerListFuncH src ) {
 		super.setServerMethod( src );
-		setOptionalLookupRetTable(src.getOptionalRetTableId());
+		setOptionalLookupRetTable(src.getOptionalLookupRetTable());
 		setOptionalRetTableId(src.getOptionalRetTableId());
 	}
 

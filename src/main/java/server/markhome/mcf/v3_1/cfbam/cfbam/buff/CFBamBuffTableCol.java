@@ -130,6 +130,33 @@ public class CFBamBuffTableCol
 	}
 
 	@Override
+	public void setRequiredContainerScope(ICFBamProtTable argObj) {
+
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else if ((argObj instanceof ICFBamProtTable) || (argObj instanceof ICFBamPubTable)) {
+			setRequiredTableId(argObj.getRequiredId());
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setContainerTable", "argObj", argObj, "ICFBamProtTable, ICFBamPubTable)");
+		}
+	}
+
+	@Override
+	public void setRequiredContainerScope(ICFBamPubTable argObj) {
+
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else if (argObj instanceof ICFBamPubTable) {
+			setRequiredTableId(argObj.getRequiredId());
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setContainerTable", "argObj", argObj, "ICFBamPubTable");
+		}
+	}
+
+	@Override
 	public ICFBamTable getRequiredContainerTable() {
 		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
@@ -140,6 +167,34 @@ public class CFBamBuffTableCol
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
 		}
 		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFBamTable getRequiredContainerTable() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTableTable targetTable = targetBackingCFBam.getTableTable();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+		}
+		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFBamTable getRequiredContainerTable() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTableTable targetTable = targetBackingCFBam.getTableTable();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+		}
+		ICFBamPubTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableId());
 		return(targetRec);
 	}
 
@@ -200,50 +255,17 @@ public class CFBamBuffTableCol
 	}
 
 	@Override
-	public void setRequiredContainerScope(ICFBamProtTable argObj) {
-
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+	public ICFBamValue getRequiredParentDataType() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredParentDataType", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		else if ((argObj instanceof ICFBamProtTable) || (argObj instanceof ICFBamPubTable)) {
-			setRequiredTableId(argObj.getRequiredId());
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setContainerTable", "argObj", argObj, "ICFBamProtTable, ICFBamPubTable)");
+		ICFBamValueTable targetTable = targetBackingCFBam.getTableValue();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredParentDataType", 0, "ICFBamSchema.getBackingCFBam().getTableValue()");
 		}
-	}
-
-	@Override
-	public void setRequiredContainerTable(ICFBamProtTable argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
-		}
-		else {
-			setRequiredTableId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerScope(ICFBamPubTable argObj) {
-
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
-		}
-		else if (argObj instanceof ICFBamPubTable) {
-			setRequiredTableId(argObj.getRequiredId());
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setContainerTable", "argObj", argObj, "ICFBamPubTable");
-		}
-	}
-
-	@Override
-	public void setRequiredContainerTable(ICFBamPubTable argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
-		}
-		else {
-			setRequiredTableId(argObj.getRequiredId());
-		}
+		ICFBamValue targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDataId());
+		return(targetRec);
 	}
 
 	@Override
@@ -257,6 +279,20 @@ public class CFBamBuffTableCol
 			throw new CFLibNullArgumentException(getClass(), "getRequiredParentDataType", 0, "ICFBamSchema.getBackingCFBam().getTableValue()");
 		}
 		ICFBamValue targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDataId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFBamValue getRequiredParentDataType() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredParentDataType", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamValueTable targetTable = targetBackingCFBam.getTableValue();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredParentDataType", 0, "ICFBamSchema.getBackingCFBam().getTableValue()");
+		}
+		ICFBamPubValue targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDataId());
 		return(targetRec);
 	}
 
@@ -284,26 +320,6 @@ public class CFBamBuffTableCol
 
 	@Override
 	public void setRequiredParentDataType(ICFBamValue argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setParentDataType", 1, "argObj");
-		}
-		else {
-			setOptionalDataId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredParentDataType(ICFBamProtValue argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setParentDataType", 1, "argObj");
-		}
-		else {
-			setOptionalDataId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredParentDataType(ICFBamPubValue argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setParentDataType", 1, "argObj");
 		}
@@ -1667,8 +1683,8 @@ public class CFBamBuffTableCol
 	@Override
 	public void setTableCol( ICFBamTableColH src ) {
 		super.setValue( src );
-		setRequiredContainerTable(src.getRequiredTableId());
-		setRequiredParentDataType(src.getOptionalDataId());
+		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredParentDataType(src.getRequiredParentDataType());
 		setRequiredTableId(src.getRequiredTableId());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalDataId(src.getOptionalDataId());
@@ -1717,8 +1733,8 @@ public class CFBamBuffTableCol
 	@Override
 	public void setTableCol( ICFBamProtTableColH src ) {
 		super.setValue( src );
-		setRequiredContainerTable(src.getRequiredTableId());
-		setRequiredParentDataType(src.getOptionalDataId());
+		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredParentDataType(src.getRequiredParentDataType());
 		setRequiredTableId(src.getRequiredTableId());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalDataId(src.getOptionalDataId());
@@ -1767,8 +1783,8 @@ public class CFBamBuffTableCol
 	@Override
 	public void setTableCol( ICFBamPubTableColH src ) {
 		super.setValue( src );
-		setRequiredContainerTable(src.getRequiredTableId());
-		setRequiredParentDataType(src.getOptionalDataId());
+		setRequiredContainerTable(src.getRequiredContainerTable());
+		setRequiredParentDataType(src.getRequiredParentDataType());
 		setRequiredTableId(src.getRequiredTableId());
 		setOptionalDbName(src.getOptionalDbName());
 		setOptionalDataId(src.getOptionalDataId());

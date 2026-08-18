@@ -110,6 +110,54 @@ public class CFBamBuffEnumDef
 	}
 
 	@Override
+	public List<ICFBamEnumTag> getRequiredComponentsTag() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredComponentsTag", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamEnumTagTable targetTable = targetBackingCFBam.getTableEnumTag();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredComponentsTag", 0, "ICFBamSchema.getBackingCFBam().getTableEnumTag()");
+		}
+		ICFBamEnumTag[] targetArr = targetTable.readDerivedByEnumIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamEnumTag> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamEnumTag> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFBamEnumTag> getRequiredComponentsTag() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredComponentsTag", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamEnumTagTable targetTable = targetBackingCFBam.getTableEnumTag();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredComponentsTag", 0, "ICFBamSchema.getBackingCFBam().getTableEnumTag()");
+		}
+		ICFBamPubEnumTag[] targetArr = targetTable.readDerivedByEnumIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamPubEnumTag> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamPubEnumTag> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
 	public boolean equals( Object obj ) {
 		if( obj == null ) {
 			return( false );

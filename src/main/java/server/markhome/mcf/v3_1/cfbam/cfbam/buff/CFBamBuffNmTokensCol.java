@@ -124,6 +124,33 @@ public class CFBamBuffNmTokensCol
 	}
 
 	@Override
+	public void setRequiredContainerScope(ICFBamProtTable argObj) {
+
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else if ((argObj instanceof ICFBamProtTable) || (argObj instanceof ICFBamPubTable)) {
+			setRequiredTableId(argObj.getRequiredId());
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setContainerTable", "argObj", argObj, "ICFBamProtTable, ICFBamPubTable)");
+		}
+	}
+
+	@Override
+	public void setRequiredContainerScope(ICFBamPubTable argObj) {
+
+		if(argObj == null) {
+			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
+		}
+		else if (argObj instanceof ICFBamPubTable) {
+			setRequiredTableId(argObj.getRequiredId());
+		}
+		else {
+			throw new CFLibUnsupportedClassException(getClass(), "setContainerTable", "argObj", argObj, "ICFBamPubTable");
+		}
+	}
+
+	@Override
 	public ICFBamTable getRequiredContainerTable() {
 		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
@@ -134,6 +161,34 @@ public class CFBamBuffNmTokensCol
 			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
 		}
 		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFBamTable getRequiredContainerTable() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTableTable targetTable = targetBackingCFBam.getTableTable();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+		}
+		ICFBamTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFBamTable getRequiredContainerTable() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTableTable targetTable = targetBackingCFBam.getTableTable();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerTable", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+		}
+		ICFBamPubTable targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredTableId());
 		return(targetRec);
 	}
 
@@ -185,53 +240,6 @@ public class CFBamBuffNmTokensCol
 
 	@Override
 	public void setRequiredContainerTable(ICFBamTable argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
-		}
-		else {
-			setRequiredTableId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerScope(ICFBamProtTable argObj) {
-
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
-		}
-		else if ((argObj instanceof ICFBamProtTable) || (argObj instanceof ICFBamPubTable)) {
-			setRequiredTableId(argObj.getRequiredId());
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setContainerTable", "argObj", argObj, "ICFBamProtTable, ICFBamPubTable)");
-		}
-	}
-
-	@Override
-	public void setRequiredContainerTable(ICFBamProtTable argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
-		}
-		else {
-			setRequiredTableId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setRequiredContainerScope(ICFBamPubTable argObj) {
-
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
-		}
-		else if (argObj instanceof ICFBamPubTable) {
-			setRequiredTableId(argObj.getRequiredId());
-		}
-		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setContainerTable", "argObj", argObj, "ICFBamPubTable");
-		}
-	}
-
-	@Override
-	public void setRequiredContainerTable(ICFBamPubTable argObj) {
 		if(argObj == null) {
 			throw new CFLibNullArgumentException(getClass(), "setContainerTable", 1, "argObj");
 		}
@@ -873,7 +881,7 @@ public class CFBamBuffNmTokensCol
 	@Override
 	public void setNmTokensCol( ICFBamNmTokensColH src ) {
 		super.setNmTokensDef( src );
-		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredContainerTable(src.getRequiredContainerTable());
 		setRequiredTableId(src.getRequiredTableId());
 	}
 
@@ -915,7 +923,7 @@ public class CFBamBuffNmTokensCol
 	@Override
 	public void setNmTokensCol( ICFBamProtNmTokensColH src ) {
 		super.setNmTokensDef( src );
-		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredContainerTable(src.getRequiredContainerTable());
 		setRequiredTableId(src.getRequiredTableId());
 	}
 
@@ -957,7 +965,7 @@ public class CFBamBuffNmTokensCol
 	@Override
 	public void setNmTokensCol( ICFBamPubNmTokensColH src ) {
 		super.setNmTokensDef( src );
-		setRequiredContainerTable(src.getRequiredTableId());
+		setRequiredContainerTable(src.getRequiredContainerTable());
 		setRequiredTableId(src.getRequiredTableId());
 	}
 

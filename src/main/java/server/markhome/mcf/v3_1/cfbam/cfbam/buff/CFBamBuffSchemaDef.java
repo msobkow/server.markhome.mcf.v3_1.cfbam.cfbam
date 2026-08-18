@@ -110,40 +110,54 @@ public class CFBamBuffSchemaDef
 	public int getClassCode() {
 		return( ICFBamSchemaDef.CLASS_CODE );
 	}
-$implSchemaBuffTablePubRelationGetterWithArgs$
+
+	@Override
+	public ICFIntMinorVersion getRequiredContainerMinorVersion() {
+		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
+		if (targetBackingCFInt == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerMinorVersion", 0, "ICFIntSchema.getBackingCFInt()");
+		}
+		ICFIntMinorVersionTable targetTable = targetBackingCFInt.getTableMinorVersion();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredContainerMinorVersion", 0, "ICFIntSchema.getBackingCFInt().getTableMinorVersion()");
+		}
+		ICFIntPubMinorVersion targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredMinorVersionId());
+		return(targetRec);
+	}
+
 	@Override
 	public void setRequiredContainerMinorVersion(ICFLibKeyHash256 argMinorVersionId) {
-		ICFIntPubSchema targetBackingCFInt = ICFIntPubSchema.getBackingCFInt();
+		ICFIntSchema targetBackingCFInt = ICFIntSchema.getBackingCFInt();
 		if (targetBackingCFInt == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerMinorVersion-args", 0, "ICFIntPubSchema.getBackingCFInt()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerMinorVersion-args", 0, "ICFIntSchema.getBackingCFInt()");
 		}
-		ICFIntPubMinorVersionTable targetTable = targetBackingCFInt.getTableMinorVersion();
+		ICFIntMinorVersionTable targetTable = targetBackingCFInt.getTableMinorVersion();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerMinorVersion", 0, "ICFIntPubSchema.getBackingCFInt().getTableMinorVersion()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerMinorVersion", 0, "ICFIntSchema.getBackingCFInt()");
 		}
-		ICFIntPubMinorVersion found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argMinorVersionId);
+		ICFIntMinorVersion found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argMinorVersionId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerMinorVersion-args", 0, "found");
 		}
-		else if ((found instanceof ICFIntProtMinorVersion) || (found instanceof ICFIntPubMinorVersion)) {
+		else if ((found instanceof ICFIntMinorVersion) || (found instanceof ICFIntProtMinorVersion) || (found instanceof ICFIntPubMinorVersion)) {
 		setRequiredMinorVersionId(argMinorVersionId);
 		}
 		else {
-			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerMinorVersion-args", "found", found, "ICFIntProtMinorVersionICFIntPubMinorVersion");
+			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerMinorVersion-args", "found", found, "ICFIntMinorVersionICFIntProtMinorVersionICFIntPubMinorVersion");
 		}
 	}
 
 	@Override
 	public void setRequiredOwnerTenant(ICFLibKeyHash256 argCTenantId) {
-		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCTenant-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
 		}
-		ICFSecPubTenant found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argCTenantId);
+		ICFSecTenant found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argCTenantId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
 		}
@@ -155,7 +169,7 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
 		}
 	}
-
+$reimplSchemaBuffTableNarrowedPubRelationSetter$
 	@Override
 	public void setRequiredOwnerTenant(ICFSecPubTenant argObj) {
 
@@ -169,18 +183,32 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 			throw new CFLibUnsupportedClassException(getClass(), "setOwnerCTenant", "argObj", argObj, "ICFSecPubTenant");
 		}
 	}
-$implSchemaBuffTablePubRelationGetterWithArgs$
+
+	@Override
+	public ICFSecTenant getRequiredOwnerCTenant() {
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
+		if (targetBackingCFSec == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerCTenant", 0, "ICFSecSchema.getBackingCFSec()");
+		}
+		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredOwnerCTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
+		}
+		ICFSecPubTenant targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredCTenantId());
+		return(targetRec);
+	}
+
 	@Override
 	public void setRequiredOwnerTenant(ICFLibKeyHash256 argCTenantId) {
-		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCTenant-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
 		}
-		ICFSecPubTenant found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argCTenantId);
+		ICFSecTenant found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argCTenantId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
 		}
@@ -192,18 +220,18 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
 		}
 	}
-
+$reimplSchemaBuffTableNarrowedPubRelationSetter$
 	@Override
 	public void setRequiredOwnerCTenant(ICFLibKeyHash256 argCTenantId) {
-		ICFSecPubSchema targetBackingCFSec = ICFSecPubSchema.getBackingCFSec();
+		ICFSecSchema targetBackingCFSec = ICFSecSchema.getBackingCFSec();
 		if (targetBackingCFSec == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCTenant-args", 0, "ICFSecPubSchema.getBackingCFSec()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerCTenant-args", 0, "ICFSecSchema.getBackingCFSec()");
 		}
-		ICFSecPubTenantTable targetTable = targetBackingCFSec.getTableTenant();
+		ICFSecTenantTable targetTable = targetBackingCFSec.getTableTenant();
 		if (targetTable == null) {
-			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecPubSchema.getBackingCFSec().getTableTenant()");
+			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant", 0, "ICFSecSchema.getBackingCFSec().getTableTenant()");
 		}
-		ICFSecPubTenant found = targetTable.pubreadDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argCTenantId);
+		ICFSecTenant found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argCTenantId);
 		if (found == null) {
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
 		}
@@ -241,6 +269,54 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	}
 
 	@Override
+	public List<ICFBamTable> getOptionalComponentsTables() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTables", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTableTable targetTable = targetBackingCFBam.getTableTable();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTables", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+		}
+		ICFBamTable[] targetArr = targetTable.readDerivedBySchemaDefIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamTable> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamTable> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFBamTable> getOptionalComponentsTables() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTables", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTableTable targetTable = targetBackingCFBam.getTableTable();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTables", 0, "ICFBamSchema.getBackingCFBam().getTableTable()");
+		}
+		ICFBamPubTable[] targetArr = targetTable.readDerivedBySchemaDefIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamPubTable> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamPubTable> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
 	public List<ICFBamValue> getOptionalComponentsTypes() {
 		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
@@ -260,6 +336,54 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 		}
 		else {
 			List<ICFBamValue> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFBamValue> getOptionalComponentsTypes() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTypes", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamValueTable targetTable = targetBackingCFBam.getTableValue();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTypes", 0, "ICFBamSchema.getBackingCFBam().getTableValue()");
+		}
+		ICFBamValue[] targetArr = targetTable.readDerivedByScopeIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamValue> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamValue> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFBamValue> getOptionalComponentsTypes() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTypes", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamValueTable targetTable = targetBackingCFBam.getTableValue();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTypes", 0, "ICFBamSchema.getBackingCFBam().getTableValue()");
+		}
+		ICFBamPubValue[] targetArr = targetTable.readDerivedByScopeIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamPubValue> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamPubValue> results = new ArrayList<>();
 			return( results );
 		}
 	}
@@ -289,6 +413,54 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	}
 
 	@Override
+	public List<ICFBamSchemaRef> getOptionalComponentsSchemaRefs() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSchemaRefs", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamSchemaRefTable targetTable = targetBackingCFBam.getTableSchemaRef();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSchemaRefs", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaRef()");
+		}
+		ICFBamSchemaRef[] targetArr = targetTable.readDerivedBySchemaIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamSchemaRef> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamSchemaRef> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFBamSchemaRef> getOptionalComponentsSchemaRefs() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSchemaRefs", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamSchemaRefTable targetTable = targetBackingCFBam.getTableSchemaRef();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsSchemaRefs", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaRef()");
+		}
+		ICFBamPubSchemaRef[] targetArr = targetTable.readDerivedBySchemaIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamPubSchemaRef> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamPubSchemaRef> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
 	public List<ICFBamTweak> getOptionalComponentsTweaks() {
 		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
@@ -313,6 +485,54 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	}
 
 	@Override
+	public List<ICFBamTweak> getOptionalComponentsTweaks() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTweaks", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTweakTable targetTable = targetBackingCFBam.getTableTweak();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTweaks", 0, "ICFBamSchema.getBackingCFBam().getTableTweak()");
+		}
+		ICFBamTweak[] targetArr = targetTable.readDerivedByScopeIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamTweak> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamTweak> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFBamTweak> getOptionalComponentsTweaks() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTweaks", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamTweakTable targetTable = targetBackingCFBam.getTableTweak();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsTweaks", 0, "ICFBamSchema.getBackingCFBam().getTableTweak()");
+		}
+		ICFBamPubTweak[] targetArr = targetTable.readDerivedByScopeIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamPubTweak> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamPubTweak> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
 	public List<ICFBamSchemaRole> getOptionalComponentsRoles() {
 		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
@@ -332,6 +552,54 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 		}
 		else {
 			List<ICFBamSchemaRole> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFBamSchemaRole> getOptionalComponentsRoles() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsRoles", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamSchemaRoleTable targetTable = targetBackingCFBam.getTableSchemaRole();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsRoles", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaRole()");
+		}
+		ICFBamSchemaRole[] targetArr = targetTable.readDerivedBySchemaIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamSchemaRole> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamSchemaRole> results = new ArrayList<>();
+			return( results );
+		}
+	}
+
+	@Override
+	public List<ICFBamSchemaRole> getOptionalComponentsRoles() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsRoles", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamSchemaRoleTable targetTable = targetBackingCFBam.getTableSchemaRole();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalComponentsRoles", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaRole()");
+		}
+		ICFBamPubSchemaRole[] targetArr = targetTable.readDerivedBySchemaIdx(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredId());
+		if( targetArr != null ) {
+			List<ICFBamPubSchemaRole> results = new ArrayList<>(targetArr.length);
+			for (int idx = 0; idx < targetArr.length; idx++) {
+				results.add(targetArr[idx]);
+			}
+			return( results );
+		}
+		else {
+			List<ICFBamPubSchemaRole> results = new ArrayList<>();
 			return( results );
 		}
 	}
@@ -4226,8 +4494,8 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setSchemaDef( ICFBamSchemaDef src ) {
 		super.setScope( src );
-		setRequiredContainerMinorVersion(src.getRequiredMinorVersionId());
-		setRequiredOwnerCTenant(src.getRequiredCTenantId());
+		setRequiredContainerMinorVersion(src.getRequiredContainerMinorVersion());
+		setRequiredOwnerCTenant(src.getRequiredOwnerCTenant());
 		setRequiredCTenantId(src.getRequiredCTenantId());
 		setRequiredMinorVersionId(src.getRequiredMinorVersionId());
 		setRequiredName(src.getRequiredName());
@@ -4260,8 +4528,8 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setSchemaDef( ICFBamSchemaDefH src ) {
 		super.setScope( src );
-		setRequiredContainerMinorVersion(src.getRequiredMinorVersionId());
-		setRequiredOwnerCTenant(src.getRequiredCTenantId());
+		setRequiredContainerMinorVersion(src.getRequiredContainerMinorVersion());
+		setRequiredOwnerCTenant(src.getRequiredOwnerCTenant());
 		setRequiredCTenantId(src.getRequiredCTenantId());
 		setRequiredMinorVersionId(src.getRequiredMinorVersionId());
 		setRequiredName(src.getRequiredName());
@@ -4294,8 +4562,8 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setSchemaDef( ICFBamProtSchemaDef src ) {
 		super.setScope( src );
-		setRequiredContainerMinorVersion(src.getRequiredMinorVersionId());
-		setRequiredOwnerCTenant(src.getRequiredCTenantId());
+		setRequiredContainerMinorVersion(src.getRequiredContainerMinorVersion());
+		setRequiredOwnerCTenant(src.getRequiredOwnerCTenant());
 		setRequiredCTenantId(src.getRequiredCTenantId());
 		setRequiredMinorVersionId(src.getRequiredMinorVersionId());
 		setRequiredName(src.getRequiredName());
@@ -4328,8 +4596,8 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setSchemaDef( ICFBamProtSchemaDefH src ) {
 		super.setScope( src );
-		setRequiredContainerMinorVersion(src.getRequiredMinorVersionId());
-		setRequiredOwnerCTenant(src.getRequiredCTenantId());
+		setRequiredContainerMinorVersion(src.getRequiredContainerMinorVersion());
+		setRequiredOwnerCTenant(src.getRequiredOwnerCTenant());
 		setRequiredCTenantId(src.getRequiredCTenantId());
 		setRequiredMinorVersionId(src.getRequiredMinorVersionId());
 		setRequiredName(src.getRequiredName());
@@ -4362,8 +4630,8 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setSchemaDef( ICFBamPubSchemaDef src ) {
 		super.setScope( src );
-		setRequiredContainerMinorVersion(src.getRequiredMinorVersionId());
-		setRequiredOwnerCTenant(src.getRequiredCTenantId());
+		setRequiredContainerMinorVersion(src.getRequiredContainerMinorVersion());
+		setRequiredOwnerCTenant(src.getRequiredOwnerCTenant());
 		setRequiredCTenantId(src.getRequiredCTenantId());
 		setRequiredMinorVersionId(src.getRequiredMinorVersionId());
 		setRequiredName(src.getRequiredName());
@@ -4396,8 +4664,8 @@ $implSchemaBuffTablePubRelationGetterWithArgs$
 	@Override
 	public void setSchemaDef( ICFBamPubSchemaDefH src ) {
 		super.setScope( src );
-		setRequiredContainerMinorVersion(src.getRequiredMinorVersionId());
-		setRequiredOwnerCTenant(src.getRequiredCTenantId());
+		setRequiredContainerMinorVersion(src.getRequiredContainerMinorVersion());
+		setRequiredOwnerCTenant(src.getRequiredOwnerCTenant());
 		setRequiredCTenantId(src.getRequiredCTenantId());
 		setRequiredMinorVersionId(src.getRequiredMinorVersionId());
 		setRequiredName(src.getRequiredName());

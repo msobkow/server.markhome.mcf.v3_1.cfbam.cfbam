@@ -104,6 +104,34 @@ public class CFBamBuffDelDep
 	}
 
 	@Override
+	public ICFBamRelation getRequiredLookupRelation() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredLookupRelation", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamRelationTable targetTable = targetBackingCFBam.getTableRelation();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredLookupRelation", 0, "ICFBamSchema.getBackingCFBam().getTableRelation()");
+		}
+		ICFBamRelation targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredRelationId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFBamRelation getRequiredLookupRelation() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredLookupRelation", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamRelationTable targetTable = targetBackingCFBam.getTableRelation();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getRequiredLookupRelation", 0, "ICFBamSchema.getBackingCFBam().getTableRelation()");
+		}
+		ICFBamPubRelation targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getRequiredRelationId());
+		return(targetRec);
+	}
+
+	@Override
 	public void setRequiredLookupRelation(ICFLibKeyHash256 argRelationId) {
 		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
 		if (targetBackingCFBam == null) {
@@ -136,23 +164,17 @@ public class CFBamBuffDelDep
 	}
 
 	@Override
-	public void setRequiredLookupRelation(ICFBamProtRelation argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setLookupRelation", 1, "argObj");
+	public ICFBamSchemaDef getOptionalLookupDefSchema() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam()");
 		}
-		else {
-			setRequiredRelationId(argObj.getRequiredId());
+		ICFBamSchemaDefTable targetTable = targetBackingCFBam.getTableSchemaDef();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
 		}
-	}
-
-	@Override
-	public void setRequiredLookupRelation(ICFBamPubRelation argObj) {
-		if(argObj == null) {
-			throw new CFLibNullArgumentException(getClass(), "setLookupRelation", 1, "argObj");
-		}
-		else {
-			setRequiredRelationId(argObj.getRequiredId());
-		}
+		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
+		return(targetRec);
 	}
 
 	@Override
@@ -166,6 +188,20 @@ public class CFBamBuffDelDep
 			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
 		}
 		ICFBamSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
+		return(targetRec);
+	}
+
+	@Override
+	public ICFBamSchemaDef getOptionalLookupDefSchema() {
+		ICFBamSchema targetBackingCFBam = ICFBamSchema.getBackingCFBam();
+		if (targetBackingCFBam == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam()");
+		}
+		ICFBamSchemaDefTable targetTable = targetBackingCFBam.getTableSchemaDef();
+		if (targetTable == null) {
+			throw new CFLibNullArgumentException(getClass(), "getOptionalLookupDefSchema", 0, "ICFBamSchema.getBackingCFBam().getTableSchemaDef()");
+		}
+		ICFBamPubSchemaDef targetRec = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), getOptionalDefSchemaId());
 		return(targetRec);
 	}
 
@@ -190,26 +226,6 @@ public class CFBamBuffDelDep
 
 	@Override
 	public void setOptionalLookupDefSchema(ICFBamSchemaDef argObj) {
-		if(argObj == null) {
-			setOptionalDefSchemaId(null);
-		}
-		else {
-			setOptionalDefSchemaId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamProtSchemaDef argObj) {
-		if(argObj == null) {
-			setOptionalDefSchemaId(null);
-		}
-		else {
-			setOptionalDefSchemaId(argObj.getRequiredId());
-		}
-	}
-
-	@Override
-	public void setOptionalLookupDefSchema(ICFBamPubSchemaDef argObj) {
 		if(argObj == null) {
 			setOptionalDefSchemaId(null);
 		}
@@ -1159,8 +1175,8 @@ public class CFBamBuffDelDep
 	@Override
 	public void setDelDep( ICFBamDelDepH src ) {
 		super.setScope( src );
-		setRequiredLookupRelation(src.getRequiredRelationId());
-		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
+		setRequiredLookupRelation(src.getRequiredLookupRelation());
+		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
 		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredRelationId(src.getRequiredRelationId());
 	}
@@ -1205,8 +1221,8 @@ public class CFBamBuffDelDep
 	@Override
 	public void setDelDep( ICFBamProtDelDepH src ) {
 		super.setScope( src );
-		setRequiredLookupRelation(src.getRequiredRelationId());
-		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
+		setRequiredLookupRelation(src.getRequiredLookupRelation());
+		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
 		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredRelationId(src.getRequiredRelationId());
 	}
@@ -1251,8 +1267,8 @@ public class CFBamBuffDelDep
 	@Override
 	public void setDelDep( ICFBamPubDelDepH src ) {
 		super.setScope( src );
-		setRequiredLookupRelation(src.getRequiredRelationId());
-		setOptionalLookupDefSchema(src.getOptionalDefSchemaId());
+		setRequiredLookupRelation(src.getRequiredLookupRelation());
+		setOptionalLookupDefSchema(src.getOptionalLookupDefSchema());
 		setOptionalDefSchemaId(src.getOptionalDefSchemaId());
 		setRequiredRelationId(src.getRequiredRelationId());
 	}
