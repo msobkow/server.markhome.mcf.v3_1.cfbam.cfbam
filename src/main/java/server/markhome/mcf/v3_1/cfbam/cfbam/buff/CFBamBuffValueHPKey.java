@@ -1110,7 +1110,7 @@ public class CFBamBuffValueHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFBamValuePKey, ICFBamValue$emitHPKeyHistoryClassNames$" );
+				"ICFBamValuePKey, ICFBamValue, CFBamValueHPKey, CFBamValueH" );
 		}
 	}
 

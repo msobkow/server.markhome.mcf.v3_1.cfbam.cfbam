@@ -1110,7 +1110,7 @@ public class CFBamBuffEnumTagHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFBamEnumTagPKey, ICFBamEnumTag$emitHPKeyHistoryClassNames$" );
+				"ICFBamEnumTagPKey, ICFBamEnumTag, CFBamEnumTagHPKey, CFBamEnumTagH" );
 		}
 	}
 

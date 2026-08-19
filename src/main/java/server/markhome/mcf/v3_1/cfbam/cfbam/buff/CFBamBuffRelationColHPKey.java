@@ -1110,7 +1110,7 @@ public class CFBamBuffRelationColHPKey
 				"compareTo",
 				"obj",
 				obj,
-				"ICFBamRelationColPKey, ICFBamRelationCol$emitHPKeyHistoryClassNames$" );
+				"ICFBamRelationColPKey, ICFBamRelationCol, CFBamRelationColHPKey, CFBamRelationColH" );
 		}
 	}
 
