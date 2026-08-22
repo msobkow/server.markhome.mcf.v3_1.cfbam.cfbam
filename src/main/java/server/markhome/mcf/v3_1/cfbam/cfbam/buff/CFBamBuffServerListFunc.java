@@ -141,7 +141,7 @@ public class CFBamBuffServerListFunc
 		}
 		ICFBamTable found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argRetTableId);
 		if (found == null || (found != null && ((found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)))) {
-		setOptionalRetTableId(argRetTableId);
+		optionalRetTableId = argRetTableId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupRetTable-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");

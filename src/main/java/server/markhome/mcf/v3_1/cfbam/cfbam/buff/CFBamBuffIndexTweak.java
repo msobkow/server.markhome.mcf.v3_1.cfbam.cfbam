@@ -103,7 +103,7 @@ public class CFBamBuffIndexTweak
 		}
 		else if (found instanceof ICFBamIndex) || (found instanceof ICFBamProtIndex) || (found instanceof ICFBamPubIndex)) {
 			super.setRequiredContainerScopeDef(argIndexId);
-		setRequiredIndexId(argIndexId);
+		requiredIndexId = argIndexId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "found", found, "ICFBamIndexICFBamProtIndexICFBamPubIndex");
@@ -208,7 +208,7 @@ public class CFBamBuffIndexTweak
 		}
 		else if (found instanceof ICFBamIndex) || (found instanceof ICFBamProtIndex) || (found instanceof ICFBamPubIndex)) {
 			super.setRequiredContainerScopeDef(argIndexId);
-		setRequiredIndexId(argIndexId);
+		requiredIndexId = argIndexId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "found", found, "ICFBamIndexICFBamProtIndexICFBamPubIndex");
@@ -231,7 +231,7 @@ public class CFBamBuffIndexTweak
 		}
 		else if (found instanceof ICFBamIndex) || (found instanceof ICFBamProtIndex) || (found instanceof ICFBamPubIndex)) {
 			super.setRequiredContainerScopeDef(argIndexId);
-		setRequiredIndexId(argIndexId);
+		requiredIndexId = argIndexId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "found", found, "ICFBamIndexICFBamProtIndexICFBamPubIndex");

@@ -146,7 +146,7 @@ public class CFBamBuffClearSubDep2
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearSubDep1-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamClearSubDep1) || (found instanceof ICFBamProtClearSubDep1) || (found instanceof ICFBamPubClearSubDep1)) {
-		setRequiredClearSubDep1Id(argClearSubDep1Id);
+		requiredClearSubDep1Id = argClearSubDep1Id;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerClearSubDep1-args", "found", found, "ICFBamClearSubDep1ICFBamProtClearSubDep1ICFBamPubClearSubDep1");

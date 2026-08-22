@@ -146,7 +146,7 @@ public class CFBamBuffDelSubDep1
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelTopDep-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamDelTopDep) || (found instanceof ICFBamProtDelTopDep) || (found instanceof ICFBamPubDelTopDep)) {
-		setRequiredDelTopDepId(argDelTopDepId);
+		requiredDelTopDepId = argDelTopDepId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerDelTopDep-args", "found", found, "ICFBamDelTopDepICFBamProtDelTopDepICFBamPubDelTopDep");

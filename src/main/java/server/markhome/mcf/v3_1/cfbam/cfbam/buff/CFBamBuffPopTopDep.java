@@ -146,7 +146,7 @@ public class CFBamBuffPopTopDep
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerContRelation-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamRelation) || (found instanceof ICFBamProtRelation) || (found instanceof ICFBamPubRelation)) {
-		setRequiredContRelationId(argContRelationId);
+		requiredContRelationId = argContRelationId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerContRelation-args", "found", found, "ICFBamRelationICFBamProtRelationICFBamPubRelation");

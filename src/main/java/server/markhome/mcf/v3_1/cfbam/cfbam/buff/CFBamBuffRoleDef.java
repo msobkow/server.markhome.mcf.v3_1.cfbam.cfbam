@@ -236,7 +236,7 @@ public class CFBamBuffRoleDef
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerScopeDef-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamScope) || (found instanceof ICFBamProtScope) || (found instanceof ICFBamPubScope)) {
-		setRequiredScopeId(argScopeId);
+		requiredScopeId = argScopeId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "found", found, "ICFBamScopeICFBamProtScopeICFBamPubScope");
@@ -307,7 +307,7 @@ public class CFBamBuffRoleDef
 		}
 		ICFBamSchemaDef found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDefSchemaId);
 		if (found == null || (found != null && ((found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)))) {
-		setOptionalDefSchemaId(argDefSchemaId);
+		optionalDefSchemaId = argDefSchemaId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");

@@ -167,7 +167,7 @@ public class CFBamBuffServerMethod
 		}
 		ICFBamSchemaDef found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDefSchemaId);
 		if (found == null || (found != null && ((found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)))) {
-		setOptionalDefSchemaId(argDefSchemaId);
+		optionalDefSchemaId = argDefSchemaId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
@@ -241,7 +241,7 @@ public class CFBamBuffServerMethod
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerForTable-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)) {
-		setRequiredTableId(argTableId);
+		requiredTableId = argTableId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerForTable-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");

@@ -146,7 +146,7 @@ public class CFBamBuffDelSubDep2
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerDelSubDep1-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamDelSubDep1) || (found instanceof ICFBamProtDelSubDep1) || (found instanceof ICFBamPubDelSubDep1)) {
-		setRequiredDelSubDep1Id(argDelSubDep1Id);
+		requiredDelSubDep1Id = argDelSubDep1Id;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerDelSubDep1-args", "found", found, "ICFBamDelSubDep1ICFBamProtDelSubDep1ICFBamPubDelSubDep1");

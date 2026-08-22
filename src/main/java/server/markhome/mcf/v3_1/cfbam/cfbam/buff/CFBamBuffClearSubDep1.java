@@ -146,7 +146,7 @@ public class CFBamBuffClearSubDep1
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerClearTopDep-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamClearTopDep) || (found instanceof ICFBamProtClearTopDep) || (found instanceof ICFBamPubClearTopDep)) {
-		setRequiredClearTopDepId(argClearTopDepId);
+		requiredClearTopDepId = argClearTopDepId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerClearTopDep-args", "found", found, "ICFBamClearTopDepICFBamProtClearTopDepICFBamPubClearTopDep");

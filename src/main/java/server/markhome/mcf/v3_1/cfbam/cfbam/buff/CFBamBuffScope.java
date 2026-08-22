@@ -200,7 +200,7 @@ public class CFBamBuffScope
 			throw new CFLibNullArgumentException(getClass(), "setRequiredOwnerTenant-args", 0, "found");
 		}
 		else if ((found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
-		setRequiredTenantId(argTenantId);
+		requiredTenantId = argTenantId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");

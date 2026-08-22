@@ -177,7 +177,7 @@ public class CFBamBuffRelation
 		}
 		ICFBamSchemaDef found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDefSchemaId);
 		if (found == null || (found != null && ((found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)))) {
-		setOptionalDefSchemaId(argDefSchemaId);
+		optionalDefSchemaId = argDefSchemaId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
@@ -251,7 +251,7 @@ public class CFBamBuffRelation
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerFromTable-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)) {
-		setRequiredTableId(argTableId);
+		requiredTableId = argTableId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerFromTable-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");
@@ -325,7 +325,7 @@ public class CFBamBuffRelation
 			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupFromIndex-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamIndex) || (found instanceof ICFBamProtIndex) || (found instanceof ICFBamPubIndex)) {
-		setRequiredFromIndexId(argFromIndexId);
+		requiredFromIndexId = argFromIndexId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredLookupFromIndex-args", "found", found, "ICFBamIndexICFBamProtIndexICFBamPubIndex");
@@ -399,7 +399,7 @@ public class CFBamBuffRelation
 			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupToTable-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)) {
-		setRequiredToTableId(argToTableId);
+		requiredToTableId = argToTableId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredLookupToTable-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");
@@ -473,7 +473,7 @@ public class CFBamBuffRelation
 			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupToIndex-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamIndex) || (found instanceof ICFBamProtIndex) || (found instanceof ICFBamPubIndex)) {
-		setRequiredToIndexId(argToIndexId);
+		requiredToIndexId = argToIndexId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredLookupToIndex-args", "found", found, "ICFBamIndexICFBamProtIndexICFBamPubIndex");
@@ -544,7 +544,7 @@ public class CFBamBuffRelation
 		}
 		ICFBamRelation found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argNarrowedId);
 		if (found == null || (found != null && ((found instanceof ICFBamRelation) || (found instanceof ICFBamProtRelation) || (found instanceof ICFBamPubRelation)))) {
-		setOptionalNarrowedId(argNarrowedId);
+		optionalNarrowedId = argNarrowedId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupNarrowed-args", "found", found, "ICFBamRelationICFBamProtRelationICFBamPubRelation");

@@ -105,7 +105,7 @@ public class CFBamBuffSchemaRole
 		}
 		else if (found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)) {
 			super.setRequiredContainerScopeDef(argSchemaDefId);
-		setRequiredSchemaDefId(argSchemaDefId);
+		requiredSchemaDefId = argSchemaDefId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
@@ -210,7 +210,7 @@ public class CFBamBuffSchemaRole
 		}
 		else if (found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)) {
 			super.setRequiredContainerScopeDef(argSchemaDefId);
-		setRequiredSchemaDefId(argSchemaDefId);
+		requiredSchemaDefId = argSchemaDefId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
@@ -233,7 +233,7 @@ public class CFBamBuffSchemaRole
 		}
 		else if (found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)) {
 			super.setRequiredContainerScopeDef(argSchemaDefId);
-		setRequiredSchemaDefId(argSchemaDefId);
+		requiredSchemaDefId = argSchemaDefId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScopeDef-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");

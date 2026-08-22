@@ -109,7 +109,7 @@ public class CFBamBuffTableCol
 		}
 		else if (found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)) {
 			super.setRequiredContainerScope(argTableId);
-		setRequiredTableId(argTableId);
+		requiredTableId = argTableId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");
@@ -214,7 +214,7 @@ public class CFBamBuffTableCol
 		}
 		else if (found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)) {
 			super.setRequiredContainerScope(argTableId);
-		setRequiredTableId(argTableId);
+		requiredTableId = argTableId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");
@@ -237,7 +237,7 @@ public class CFBamBuffTableCol
 		}
 		else if (found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)) {
 			super.setRequiredContainerScope(argTableId);
-		setRequiredTableId(argTableId);
+		requiredTableId = argTableId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");
@@ -311,7 +311,7 @@ public class CFBamBuffTableCol
 			throw new CFLibNullArgumentException(getClass(), "setRequiredParentDataType-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamValue) || (found instanceof ICFBamProtValue) || (found instanceof ICFBamPubValue)) {
-		setOptionalDataId(argDataId);
+		optionalDataId = argDataId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredParentDataType-args", "found", found, "ICFBamValueICFBamProtValueICFBamPubValue");

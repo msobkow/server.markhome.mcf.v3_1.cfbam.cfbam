@@ -244,7 +244,7 @@ public class CFBamBuffParam
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerServerMeth-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamServerMethod) || (found instanceof ICFBamProtServerMethod) || (found instanceof ICFBamPubServerMethod)) {
-		setRequiredServerMethodId(argServerMethodId);
+		requiredServerMethodId = argServerMethodId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerServerMeth-args", "found", found, "ICFBamServerMethodICFBamProtServerMethodICFBamPubServerMethod");
@@ -315,7 +315,7 @@ public class CFBamBuffParam
 		}
 		ICFBamSchemaDef found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argDefSchemaId);
 		if (found == null || (found != null && ((found instanceof ICFBamSchemaDef) || (found instanceof ICFBamProtSchemaDef) || (found instanceof ICFBamPubSchemaDef)))) {
-		setOptionalDefSchemaId(argDefSchemaId);
+		optionalDefSchemaId = argDefSchemaId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupDefSchema-args", "found", found, "ICFBamSchemaDefICFBamProtSchemaDefICFBamPubSchemaDef");
@@ -386,7 +386,7 @@ public class CFBamBuffParam
 		}
 		ICFBamParam found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argPrevId);
 		if (found == null || (found != null && ((found instanceof ICFBamParam) || (found instanceof ICFBamProtParam) || (found instanceof ICFBamPubParam)))) {
-		setOptionalPrevId(argPrevId);
+		optionalPrevId = argPrevId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupPrev-args", "found", found, "ICFBamParamICFBamProtParamICFBamPubParam");
@@ -457,7 +457,7 @@ public class CFBamBuffParam
 		}
 		ICFBamParam found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argNextId);
 		if (found == null || (found != null && ((found instanceof ICFBamParam) || (found instanceof ICFBamProtParam) || (found instanceof ICFBamPubParam)))) {
-		setOptionalNextId(argNextId);
+		optionalNextId = argNextId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupNext-args", "found", found, "ICFBamParamICFBamProtParamICFBamPubParam");
@@ -531,7 +531,7 @@ public class CFBamBuffParam
 			throw new CFLibNullArgumentException(getClass(), "setRequiredLookupType-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamValue) || (found instanceof ICFBamProtValue) || (found instanceof ICFBamPubValue)) {
-		setOptionalTypeId(argTypeId);
+		optionalTypeId = argTypeId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredLookupType-args", "found", found, "ICFBamValueICFBamProtValueICFBamPubValue");

@@ -103,7 +103,7 @@ public class CFBamBuffTextCol
 		}
 		else if (found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)) {
 			super.setRequiredContainerScope(argTableId);
-		setRequiredTableId(argTableId);
+		requiredTableId = argTableId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");
@@ -208,7 +208,7 @@ public class CFBamBuffTextCol
 		}
 		else if (found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)) {
 			super.setRequiredContainerScope(argTableId);
-		setRequiredTableId(argTableId);
+		requiredTableId = argTableId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");
@@ -231,7 +231,7 @@ public class CFBamBuffTextCol
 		}
 		else if (found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)) {
 			super.setRequiredContainerScope(argTableId);
-		setRequiredTableId(argTableId);
+		requiredTableId = argTableId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerScope-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");

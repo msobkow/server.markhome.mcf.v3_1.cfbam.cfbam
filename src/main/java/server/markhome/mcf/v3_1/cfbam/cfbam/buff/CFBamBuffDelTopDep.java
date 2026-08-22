@@ -150,7 +150,7 @@ public class CFBamBuffDelTopDep
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerTable-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamTable) || (found instanceof ICFBamProtTable) || (found instanceof ICFBamPubTable)) {
-		setRequiredTableId(argTableId);
+		requiredTableId = argTableId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerTable-args", "found", found, "ICFBamTableICFBamProtTableICFBamPubTable");
@@ -221,7 +221,7 @@ public class CFBamBuffDelTopDep
 		}
 		ICFBamDelTopDep found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argPrevId);
 		if (found == null || (found != null && ((found instanceof ICFBamDelTopDep) || (found instanceof ICFBamProtDelTopDep) || (found instanceof ICFBamPubDelTopDep)))) {
-		setOptionalPrevId(argPrevId);
+		optionalPrevId = argPrevId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupPrev-args", "found", found, "ICFBamDelTopDepICFBamProtDelTopDepICFBamPubDelTopDep");
@@ -292,7 +292,7 @@ public class CFBamBuffDelTopDep
 		}
 		ICFBamDelTopDep found = targetTable.readDerived(ICFSecSchema.getAuthorizationCallback().getEffectiveAuthorization(), argNextId);
 		if (found == null || (found != null && ((found instanceof ICFBamDelTopDep) || (found instanceof ICFBamProtDelTopDep) || (found instanceof ICFBamPubDelTopDep)))) {
-		setOptionalNextId(argNextId);
+		optionalNextId = argNextId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setOptionalLookupNext-args", "found", found, "ICFBamDelTopDepICFBamProtDelTopDepICFBamPubDelTopDep");

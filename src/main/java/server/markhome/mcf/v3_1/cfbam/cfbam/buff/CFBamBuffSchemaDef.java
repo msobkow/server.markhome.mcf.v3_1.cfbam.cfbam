@@ -140,7 +140,7 @@ public class CFBamBuffSchemaDef
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerMinorVersion-args", 0, "found");
 		}
 		else if ((found instanceof ICFIntMinorVersion) || (found instanceof ICFIntProtMinorVersion) || (found instanceof ICFIntPubMinorVersion)) {
-		setRequiredMinorVersionId(argMinorVersionId);
+		requiredMinorVersionId = argMinorVersionId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerMinorVersion-args", "found", found, "ICFIntMinorVersionICFIntProtMinorVersionICFIntPubMinorVersion");
@@ -163,7 +163,7 @@ public class CFBamBuffSchemaDef
 		}
 		else if (found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
 			super.setRequiredOwnerTenant(argCTenantId);
-		setRequiredCTenantId(argCTenantId);
+		requiredCTenantId = argCTenantId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
@@ -214,7 +214,7 @@ $reimplSchemaBuffTableNarrowedPubRelationSetter$
 		}
 		else if (found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
 			super.setRequiredOwnerTenant(argCTenantId);
-		setRequiredCTenantId(argCTenantId);
+		requiredCTenantId = argCTenantId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");
@@ -237,7 +237,7 @@ $reimplSchemaBuffTableNarrowedPubRelationSetter$
 		}
 		else if (found instanceof ICFSecTenant) || (found instanceof ICFSecProtTenant) || (found instanceof ICFSecPubTenant)) {
 			super.setRequiredOwnerTenant(argCTenantId);
-		setRequiredCTenantId(argCTenantId);
+		requiredCTenantId = argCTenantId;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredOwnerTenant-args", "found", found, "ICFSecTenantICFSecProtTenantICFSecPubTenant");

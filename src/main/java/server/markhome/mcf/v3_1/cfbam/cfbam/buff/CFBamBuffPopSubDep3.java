@@ -146,7 +146,7 @@ public class CFBamBuffPopSubDep3
 			throw new CFLibNullArgumentException(getClass(), "setRequiredContainerPopSubDep2-args", 0, "found");
 		}
 		else if ((found instanceof ICFBamPopSubDep2) || (found instanceof ICFBamProtPopSubDep2) || (found instanceof ICFBamPubPopSubDep2)) {
-		setRequiredPopSubDep2Id(argPopSubDep2Id);
+		requiredPopSubDep2Id = argPopSubDep2Id;
 		}
 		else {
 			throw new CFLibUnsupportedClassException(getClass(), "setRequiredContainerPopSubDep2-args", "found", found, "ICFBamPopSubDep2ICFBamProtPopSubDep2ICFBamPubPopSubDep2");
