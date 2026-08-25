@@ -69,8 +69,8 @@ import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
  */
 public interface ICFBamAtomH extends ICFBamValueH
 {
-	public String getOptionalDbName();
-	public void setOptionalDbName( String value );
+	public $implIJavaAtomType$ getOptionalDbName();
+	public void setOptionalDbName( $implIJavaAtomType$ value );
 	@Override
 	public boolean equals( Object obj );
 
