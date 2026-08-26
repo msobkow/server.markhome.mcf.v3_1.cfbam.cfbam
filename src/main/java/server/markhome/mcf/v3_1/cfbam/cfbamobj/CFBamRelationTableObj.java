@@ -1,0 +1,3147 @@
+// Description: Java 25 Table Object implementation for Relation.
+
+/*
+ *	server.markhome.mcf.CFBam
+ *
+ *	Copyright (c) 2016-2026 Mark Stephen Sobkow
+ *	
+ *	Mark's Code Fractal CFBam 3.1 Business Application Model
+ *	
+ *	Copyright 2016-2026 Mark Stephen Sobkow
+ *	
+ *	This file is part of Mark's Code Fractal CFBam.
+ *	
+ *	Mark's Code Fractal CFBam is available under dual commercial license from
+ *	Mark Stephen Sobkow, or under the terms of the GNU General Public License,
+ *	Version 3 or later with classpath and static linking exceptions.
+ *	
+ *	As a special exception, Mark Sobkow gives you permission to link this library
+ *	with independent modules to produce an executable, provided that none of them
+ *	conflict with the intent of the GPLv3; that is, you are not allowed to invoke
+ *	the methods of this library from non-GPLv3-compatibly licensed code. You may not
+ *	implement an LPGLv3 "wedge" to try to bypass this restriction. That said, code which
+ *	does not rely on this library is free to specify whatever license its authors decide
+ *	to use. Mark Sobkow specifically rejects the infectious nature of the GPLv3, and
+ *	considers the mere act of including GPLv3 modules in an executable to be perfectly
+ *	reasonable given tools like modern Java's single-jar deployment options.
+ *	
+ *	Mark's Code Fractal CFBam is free software: you can redistribute it and/or
+ *	modify it under the terms of the GNU General Public License as published by
+ *	the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
+ *	
+ *	Mark's Code Fractal CFBam is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU General Public License for more details.
+ *	
+ *	You should have received a copy of the GNU General Public License
+ *	along with Mark's Code Fractal CFBam.  If not, see <https://www.gnu.org/licenses/>.
+ *	
+ *	If you wish to modify and use this code without publishing your changes,
+ *	or integrate it with proprietary code, please contact Mark Stephen Sobkow
+ *	for a commercial license at mark.sobkow@gmail.com
+ */
+
+package server.markhome.mcf.v3_1.cfbam.cfbamobj;
+
+import java.math.*;
+import java.sql.*;
+import java.text.*;
+import java.time.*;
+import java.util.*;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.text.StringEscapeUtils;
+import server.markhome.mcf.v3_1.cflib.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cflib.keyhash.*;
+
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
+
+public class CFBamRelationTableObj
+	implements ICFBamRelationTableObj
+{
+	protected ICFBamSchemaObj schema;
+	protected static int runtimeClassCode = ICFBamRelation.CLASS_CODE;
+	protected static final int backingClassCode = ICFBamRelation.CLASS_CODE;
+	private Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> members;
+	private Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> allRelation;
+	private Map< ICFBamScopeByTenantIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > > indexByTenantIdx;
+	private Map< ICFBamRelationByUNameIdxKey,
+		ICFBamRelationObj > indexByUNameIdx;
+	private Map< ICFBamRelationByRelTableIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > > indexByRelTableIdx;
+	private Map< ICFBamRelationByRelCodeVisIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > > indexByRelCodeVisIdx;
+	private Map< ICFBamRelationByRelTableCodeVisXKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > > indexByRelTableCodeVisX;
+	private Map< ICFBamRelationByDefSchemaIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > > indexByDefSchemaIdx;
+	private Map< ICFBamRelationByFromKeyIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > > indexByFromKeyIdx;
+	private Map< ICFBamRelationByToTblIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > > indexByToTblIdx;
+	private Map< ICFBamRelationByToKeyIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > > indexByToKeyIdx;
+	private Map< ICFBamRelationByNarrowedIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > > indexByNarrowedIdx;
+	public static String TABLE_NAME = "Relation";
+	public static String TABLE_DBNAME = "reldef";
+
+	public CFBamRelationTableObj() {
+		schema = null;
+		members = new HashMap<$implCommaIJavaOptAtomType$, ICFBamRelationObj>();
+		allRelation = null;
+		indexByTenantIdx = null;
+		indexByUNameIdx = null;
+		indexByRelTableIdx = null;
+		indexByRelCodeVisIdx = null;
+		indexByRelTableCodeVisX = null;
+		indexByDefSchemaIdx = null;
+		indexByFromKeyIdx = null;
+		indexByToTblIdx = null;
+		indexByToKeyIdx = null;
+		indexByNarrowedIdx = null;
+	}
+
+	public CFBamRelationTableObj( ICFBamSchemaObj argSchema ) {
+		schema = (ICFBamSchemaObj)argSchema;
+		members = new HashMap<$implCommaIJavaOptAtomType$, ICFBamRelationObj>();
+		allRelation = null;
+		indexByTenantIdx = null;
+		indexByUNameIdx = null;
+		indexByRelTableIdx = null;
+		indexByRelCodeVisIdx = null;
+		indexByRelTableCodeVisX = null;
+		indexByDefSchemaIdx = null;
+		indexByFromKeyIdx = null;
+		indexByToTblIdx = null;
+		indexByToKeyIdx = null;
+		indexByNarrowedIdx = null;
+	}
+	
+	/**
+	 *	Get class code always returns the runtime class code for the objects, which is not stable until the application is done initializing and registering its objects.
+	 *
+	 *	@return runtime classcode
+	 */ 
+	@Override
+	public int getClassCode() {
+		return CFBamRelationTableObj.getRuntimeClassCode();
+	}	
+
+	/**
+	 *	Get the backing store schema's class code, which is hard-coded into the object hierarchy.
+	 *
+	 *	@return The hardcoded backing store class code for this object, which is only valid in that schema.
+	 */
+	public static int getBackingClassCode() {
+		return( backingClassCode );
+	}
+
+	/**
+	 *	Get the runtime class code for this table; this value is only stable after the application is fully initialized.
+	 *
+	 *	@return runtimeClassCode
+	 */
+	public static int getRuntimeClassCode() {
+		return( runtimeClassCode );
+	}
+
+	/**
+	 *	Set the runtime class code for this table; this is done only during application initialization by the SchemaObj's <tt>initClassCodes()</tt> static method,
+	 *	which will only set the class codes once and never again.  Once set, the class codes are immutable within the application.
+	 *	Application programmers should never invoke this method, so it has package access only.
+	 *
+	 *	@param	argNewClassCode	The runtime class code to be used by clients and integrated application logic to identify this table of this schema.
+	 */
+	static void setRuntimeClassCode(int argNewClassCode ) {
+		if (argNewClassCode <= 0) {
+			throw new CFLibArgumentUnderflowException(CFBamRelationTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+		}
+		runtimeClassCode = argNewClassCode;
+	}
+
+	@Override
+	public ICFBamSchemaObj getSchema() {
+		return( schema );
+	}
+
+	@Override
+	public void setSchema( ICFBamSchemaObj value ) {
+		schema = (ICFBamSchemaObj)value;
+	}
+
+	@Override
+	public String getTableName() {
+		return( TABLE_NAME );
+	}
+
+	@Override
+	public String getTableDbName() {
+		return( TABLE_DBNAME );
+	}
+
+	@Override
+	public Class getObjQualifyingClass() {
+		return( ICFBamSchemaDefObj.class );
+	}
+
+
+	@Override
+	public void minimizeMemory() {
+		allRelation = null;
+		indexByTenantIdx = null;
+		indexByUNameIdx = null;
+		indexByRelTableIdx = null;
+		indexByRelCodeVisIdx = null;
+		indexByRelTableCodeVisX = null;
+		indexByDefSchemaIdx = null;
+		indexByFromKeyIdx = null;
+		indexByToTblIdx = null;
+		indexByToKeyIdx = null;
+		indexByNarrowedIdx = null;
+		List<ICFBamRelationObj> toForget = new LinkedList<ICFBamRelationObj>();
+		ICFBamRelationObj cur = null;
+		Iterator<ICFBamRelationObj> iter = members.values().iterator();
+		while( iter.hasNext() ) {
+			cur = iter.next();
+			toForget.add( cur );
+		}
+		iter = toForget.iterator();
+		while( iter.hasNext() ) {
+			cur = iter.next();
+			cur.forget();
+		}
+	}
+	/**
+	 *	If your implementation subclasses the objects,
+	 *	you'll want to overload the constructByClassCode()
+	 *	implementation to return your implementation's
+	 *	instances instead of the base implementation.
+	 *
+	 *	This is the sole factory for instances derived from
+	 *	CFBamRelationObj.
+	 */
+	@Override
+	public ICFBamRelationObj newInstance() {
+		ICFBamRelationObj inst = new CFBamRelationObj( schema );
+		return( inst );
+	}
+
+	/**
+	 *	If your implementation subclasses the objects,
+	 *	you'll want to overload the constructByClassCode()
+	 *	implementation to return your implementation's
+	 *	instances instead of the base implementation.
+	 *
+	 *	This is the sole factory for instances derived from
+	 *	CFBamRelationObj.
+	 */
+	@Override
+	public ICFBamRelationEditObj newEditInstance( ICFBamRelationObj orig ) {
+		ICFBamRelationEditObj edit = new CFBamRelationEditObj( orig );
+		return( edit );
+	}
+
+	@Override
+	public ICFBamRelationObj realiseRelation( ICFBamRelationObj Obj ) {
+		ICFBamRelationObj obj = Obj;
+		$implCommaIJavaOptAtomType$ pkey = obj.getPKey();
+		ICFBamRelationObj keepObj = null;
+		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
+			ICFBamRelationObj existingObj = members.get( pkey );
+			keepObj = existingObj;
+
+			/*
+			 *	We always rebind the data because if we're being called, some index has
+			 *	been updated and is refreshing it's data, which may or may not have changed
+			 */
+
+			// Detach object from alternate and duplicate indexes, leave PKey alone
+
+			if( indexByTenantIdx != null ) {
+				ICFBamScopeByTenantIdxKey keyTenantIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
+				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				if( mapTenantIdx != null ) {
+					indexByTenantIdx.remove( keyTenantIdx );
+				}
+			}
+
+			if( indexByUNameIdx != null ) {
+				ICFBamRelationByUNameIdxKey keyUNameIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByUNameIdxKey();
+				keyUNameIdx.setRequiredTableId( keepObj.getRequiredTableId() );
+				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
+				indexByUNameIdx.remove( keyUNameIdx );
+			}
+
+			if( indexByRelTableIdx != null ) {
+				ICFBamRelationByRelTableIdxKey keyRelTableIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableIdxKey();
+				keyRelTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapRelTableIdx = indexByRelTableIdx.get( keyRelTableIdx );
+				if( mapRelTableIdx != null ) {
+					mapRelTableIdx.remove( keepObj.getPKey() );
+					if( mapRelTableIdx.size() <= 0 ) {
+						indexByRelTableIdx.remove( keyRelTableIdx );
+					}
+				}
+			}
+
+			if( indexByRelCodeVisIdx != null ) {
+				ICFBamRelationByRelCodeVisIdxKey keyRelCodeVisIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelCodeVisIdxKey();
+				keyRelCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapRelCodeVisIdx = indexByRelCodeVisIdx.get( keyRelCodeVisIdx );
+				if( mapRelCodeVisIdx != null ) {
+					mapRelCodeVisIdx.remove( keepObj.getPKey() );
+					if( mapRelCodeVisIdx.size() <= 0 ) {
+						indexByRelCodeVisIdx.remove( keyRelCodeVisIdx );
+					}
+				}
+			}
+
+			if( indexByRelTableCodeVisX != null ) {
+				ICFBamRelationByRelTableCodeVisXKey keyRelTableCodeVisX =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableCodeVisXKey();
+				keyRelTableCodeVisX.setRequiredTableId( keepObj.getRequiredTableId() );
+				keyRelTableCodeVisX.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapRelTableCodeVisX = indexByRelTableCodeVisX.get( keyRelTableCodeVisX );
+				if( mapRelTableCodeVisX != null ) {
+					mapRelTableCodeVisX.remove( keepObj.getPKey() );
+					if( mapRelTableCodeVisX.size() <= 0 ) {
+						indexByRelTableCodeVisX.remove( keyRelTableCodeVisX );
+					}
+				}
+			}
+
+			if( indexByDefSchemaIdx != null ) {
+				ICFBamRelationByDefSchemaIdxKey keyDefSchemaIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByDefSchemaIdxKey();
+				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				if( mapDefSchemaIdx != null ) {
+					mapDefSchemaIdx.remove( keepObj.getPKey() );
+					if( mapDefSchemaIdx.size() <= 0 ) {
+						indexByDefSchemaIdx.remove( keyDefSchemaIdx );
+					}
+				}
+			}
+
+			if( indexByFromKeyIdx != null ) {
+				ICFBamRelationByFromKeyIdxKey keyFromKeyIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByFromKeyIdxKey();
+				keyFromKeyIdx.setRequiredFromIndexId( keepObj.getRequiredFromIndexId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapFromKeyIdx = indexByFromKeyIdx.get( keyFromKeyIdx );
+				if( mapFromKeyIdx != null ) {
+					mapFromKeyIdx.remove( keepObj.getPKey() );
+					if( mapFromKeyIdx.size() <= 0 ) {
+						indexByFromKeyIdx.remove( keyFromKeyIdx );
+					}
+				}
+			}
+
+			if( indexByToTblIdx != null ) {
+				ICFBamRelationByToTblIdxKey keyToTblIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToTblIdxKey();
+				keyToTblIdx.setRequiredToTableId( keepObj.getRequiredToTableId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapToTblIdx = indexByToTblIdx.get( keyToTblIdx );
+				if( mapToTblIdx != null ) {
+					mapToTblIdx.remove( keepObj.getPKey() );
+					if( mapToTblIdx.size() <= 0 ) {
+						indexByToTblIdx.remove( keyToTblIdx );
+					}
+				}
+			}
+
+			if( indexByToKeyIdx != null ) {
+				ICFBamRelationByToKeyIdxKey keyToKeyIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToKeyIdxKey();
+				keyToKeyIdx.setRequiredToIndexId( keepObj.getRequiredToIndexId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapToKeyIdx = indexByToKeyIdx.get( keyToKeyIdx );
+				if( mapToKeyIdx != null ) {
+					mapToKeyIdx.remove( keepObj.getPKey() );
+					if( mapToKeyIdx.size() <= 0 ) {
+						indexByToKeyIdx.remove( keyToKeyIdx );
+					}
+				}
+			}
+
+			if( indexByNarrowedIdx != null ) {
+				ICFBamRelationByNarrowedIdxKey keyNarrowedIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByNarrowedIdxKey();
+				keyNarrowedIdx.setOptionalNarrowedId( keepObj.getOptionalNarrowedId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapNarrowedIdx = indexByNarrowedIdx.get( keyNarrowedIdx );
+				if( mapNarrowedIdx != null ) {
+					mapNarrowedIdx.remove( keepObj.getPKey() );
+					if( mapNarrowedIdx.size() <= 0 ) {
+						indexByNarrowedIdx.remove( keyNarrowedIdx );
+					}
+				}
+			}
+			// Keep passing the new object because it's the one with the record
+			// that the base table needs to copy to the existing object from
+			// the cache.
+			keepObj = (ICFBamRelationObj)schema.getScopeTableObj().realiseScope( Obj );
+
+			// Attach new object to alternate and duplicate indexes -- PKey stay stable
+
+			if( indexByTenantIdx != null ) {
+				ICFBamScopeByTenantIdxKey keyTenantIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
+				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				if( mapTenantIdx != null ) {
+					mapTenantIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByUNameIdx != null ) {
+				ICFBamRelationByUNameIdxKey keyUNameIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByUNameIdxKey();
+				keyUNameIdx.setRequiredTableId( keepObj.getRequiredTableId() );
+				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
+				indexByUNameIdx.put( keyUNameIdx, keepObj );
+			}
+
+			if( indexByRelTableIdx != null ) {
+				ICFBamRelationByRelTableIdxKey keyRelTableIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableIdxKey();
+				keyRelTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapRelTableIdx = indexByRelTableIdx.get( keyRelTableIdx );
+				if( mapRelTableIdx != null ) {
+					mapRelTableIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByRelCodeVisIdx != null ) {
+				ICFBamRelationByRelCodeVisIdxKey keyRelCodeVisIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelCodeVisIdxKey();
+				keyRelCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapRelCodeVisIdx = indexByRelCodeVisIdx.get( keyRelCodeVisIdx );
+				if( mapRelCodeVisIdx != null ) {
+					mapRelCodeVisIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByRelTableCodeVisX != null ) {
+				ICFBamRelationByRelTableCodeVisXKey keyRelTableCodeVisX =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableCodeVisXKey();
+				keyRelTableCodeVisX.setRequiredTableId( keepObj.getRequiredTableId() );
+				keyRelTableCodeVisX.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapRelTableCodeVisX = indexByRelTableCodeVisX.get( keyRelTableCodeVisX );
+				if( mapRelTableCodeVisX != null ) {
+					mapRelTableCodeVisX.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByDefSchemaIdx != null ) {
+				ICFBamRelationByDefSchemaIdxKey keyDefSchemaIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByDefSchemaIdxKey();
+				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				if( mapDefSchemaIdx != null ) {
+					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByFromKeyIdx != null ) {
+				ICFBamRelationByFromKeyIdxKey keyFromKeyIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByFromKeyIdxKey();
+				keyFromKeyIdx.setRequiredFromIndexId( keepObj.getRequiredFromIndexId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapFromKeyIdx = indexByFromKeyIdx.get( keyFromKeyIdx );
+				if( mapFromKeyIdx != null ) {
+					mapFromKeyIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByToTblIdx != null ) {
+				ICFBamRelationByToTblIdxKey keyToTblIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToTblIdxKey();
+				keyToTblIdx.setRequiredToTableId( keepObj.getRequiredToTableId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapToTblIdx = indexByToTblIdx.get( keyToTblIdx );
+				if( mapToTblIdx != null ) {
+					mapToTblIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByToKeyIdx != null ) {
+				ICFBamRelationByToKeyIdxKey keyToKeyIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToKeyIdxKey();
+				keyToKeyIdx.setRequiredToIndexId( keepObj.getRequiredToIndexId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapToKeyIdx = indexByToKeyIdx.get( keyToKeyIdx );
+				if( mapToKeyIdx != null ) {
+					mapToKeyIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByNarrowedIdx != null ) {
+				ICFBamRelationByNarrowedIdxKey keyNarrowedIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByNarrowedIdxKey();
+				keyNarrowedIdx.setOptionalNarrowedId( keepObj.getOptionalNarrowedId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapNarrowedIdx = indexByNarrowedIdx.get( keyNarrowedIdx );
+				if( mapNarrowedIdx != null ) {
+					mapNarrowedIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( allRelation != null ) {
+				allRelation.put( keepObj.getPKey(), keepObj );
+			}
+		}
+		else {
+			keepObj = obj;
+			keepObj = (ICFBamRelationObj)schema.getScopeTableObj().realiseScope( keepObj );
+
+			// Attach new object to PKey, all, alternate, and duplicate indexes
+			members.put( keepObj.getPKey(), keepObj );
+			if( allRelation != null ) {
+				allRelation.put( keepObj.getPKey(), keepObj );
+			}
+
+			if( indexByTenantIdx != null ) {
+				ICFBamScopeByTenantIdxKey keyTenantIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
+				keyTenantIdx.setRequiredTenantId( keepObj.getRequiredTenantId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapTenantIdx = indexByTenantIdx.get( keyTenantIdx );
+				if( mapTenantIdx != null ) {
+					mapTenantIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByUNameIdx != null ) {
+				ICFBamRelationByUNameIdxKey keyUNameIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByUNameIdxKey();
+				keyUNameIdx.setRequiredTableId( keepObj.getRequiredTableId() );
+				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
+				indexByUNameIdx.put( keyUNameIdx, keepObj );
+			}
+
+			if( indexByRelTableIdx != null ) {
+				ICFBamRelationByRelTableIdxKey keyRelTableIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableIdxKey();
+				keyRelTableIdx.setRequiredTableId( keepObj.getRequiredTableId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapRelTableIdx = indexByRelTableIdx.get( keyRelTableIdx );
+				if( mapRelTableIdx != null ) {
+					mapRelTableIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByRelCodeVisIdx != null ) {
+				ICFBamRelationByRelCodeVisIdxKey keyRelCodeVisIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelCodeVisIdxKey();
+				keyRelCodeVisIdx.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapRelCodeVisIdx = indexByRelCodeVisIdx.get( keyRelCodeVisIdx );
+				if( mapRelCodeVisIdx != null ) {
+					mapRelCodeVisIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByRelTableCodeVisX != null ) {
+				ICFBamRelationByRelTableCodeVisXKey keyRelTableCodeVisX =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableCodeVisXKey();
+				keyRelTableCodeVisX.setRequiredTableId( keepObj.getRequiredTableId() );
+				keyRelTableCodeVisX.setRequiredCodeVis( keepObj.getRequiredCodeVis() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapRelTableCodeVisX = indexByRelTableCodeVisX.get( keyRelTableCodeVisX );
+				if( mapRelTableCodeVisX != null ) {
+					mapRelTableCodeVisX.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByDefSchemaIdx != null ) {
+				ICFBamRelationByDefSchemaIdxKey keyDefSchemaIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByDefSchemaIdxKey();
+				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				if( mapDefSchemaIdx != null ) {
+					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByFromKeyIdx != null ) {
+				ICFBamRelationByFromKeyIdxKey keyFromKeyIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByFromKeyIdxKey();
+				keyFromKeyIdx.setRequiredFromIndexId( keepObj.getRequiredFromIndexId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapFromKeyIdx = indexByFromKeyIdx.get( keyFromKeyIdx );
+				if( mapFromKeyIdx != null ) {
+					mapFromKeyIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByToTblIdx != null ) {
+				ICFBamRelationByToTblIdxKey keyToTblIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToTblIdxKey();
+				keyToTblIdx.setRequiredToTableId( keepObj.getRequiredToTableId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapToTblIdx = indexByToTblIdx.get( keyToTblIdx );
+				if( mapToTblIdx != null ) {
+					mapToTblIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByToKeyIdx != null ) {
+				ICFBamRelationByToKeyIdxKey keyToKeyIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToKeyIdxKey();
+				keyToKeyIdx.setRequiredToIndexId( keepObj.getRequiredToIndexId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapToKeyIdx = indexByToKeyIdx.get( keyToKeyIdx );
+				if( mapToKeyIdx != null ) {
+					mapToKeyIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByNarrowedIdx != null ) {
+				ICFBamRelationByNarrowedIdxKey keyNarrowedIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByNarrowedIdxKey();
+				keyNarrowedIdx.setOptionalNarrowedId( keepObj.getOptionalNarrowedId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj > mapNarrowedIdx = indexByNarrowedIdx.get( keyNarrowedIdx );
+				if( mapNarrowedIdx != null ) {
+					mapNarrowedIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+		}
+		return( keepObj );
+	}
+
+	@Override
+	public ICFBamRelationObj createRelation( ICFBamRelationObj Obj ) {
+		ICFBamRelationObj obj = Obj;
+		ICFBamRelation rec = obj.getRelationRec();
+		schema.getCFBamBackingStore().getTableRelation().createRelation(
+			null,
+			rec );
+		obj.copyRecToPKey();
+		if( obj.getClassCode() == runtimeClassCode ) {
+			obj = (ICFBamRelationObj)(obj.realise());
+		}
+		obj.endEdit();
+		return( obj );
+	}
+
+	@Override
+	public ICFBamRelationObj readRelation( $implCommaIJavaOptAtomType$ pkey ) {
+		return( readRelation( pkey, false ) );
+	}
+
+	@Override
+	public ICFBamRelationObj readRelation( $implCommaIJavaOptAtomType$ pkey, boolean forceRead ) {
+		ICFBamRelationObj obj = null;
+		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
+			obj = members.get( pkey );
+		}
+		else {
+			ICFBamRelation readRec = schema.getCFBamBackingStore().getTableRelation().readDerivedByIdIdx( null,
+						pkey );
+			if( readRec != null ) {
+				obj = (ICFBamRelationObj)schema.getScopeTableObj().constructByClassCode( readRec.getClassCode() );
+				obj.setPKey( readRec.getPKey() );
+				obj.setRec( readRec );
+				obj = (ICFBamRelationObj)obj.realise();
+			}
+		}
+		return( obj );
+	}
+
+	@Override
+	public ICFBamRelationObj readCachedRelation( $implCommaIJavaOptAtomType$ pkey ) {
+		ICFBamRelationObj obj = null;
+		if( members.containsKey( pkey ) ) {
+			obj = members.get( pkey );
+		}
+		return( obj );
+	}
+
+	@Override
+	public void reallyDeepDisposeRelation( ICFBamRelationObj obj )
+	{
+		final String S_ProcName = "CFBamRelationTableObj.reallyDeepDisposeRelation() ";
+		String classCode;
+		if( obj == null ) {
+			return;
+		}
+		$implCommaIJavaOptAtomType$ pkey = obj.getPKey();
+		ICFBamRelationObj existing = readCachedRelation( pkey );
+		if( existing == null ) {
+			return;
+		}
+		members.remove( pkey );
+		ICFBamRelationByUNameIdxKey keyUNameIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByUNameIdxKey();
+		keyUNameIdx.setRequiredTableId( existing.getRequiredTableId() );
+		keyUNameIdx.setRequiredName( existing.getRequiredName() );
+
+		ICFBamRelationByRelTableIdxKey keyRelTableIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableIdxKey();
+		keyRelTableIdx.setRequiredTableId( existing.getRequiredTableId() );
+
+		ICFBamRelationByRelCodeVisIdxKey keyRelCodeVisIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelCodeVisIdxKey();
+		keyRelCodeVisIdx.setRequiredCodeVis( existing.getRequiredCodeVis() );
+
+		ICFBamRelationByRelTableCodeVisXKey keyRelTableCodeVisX = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableCodeVisXKey();
+		keyRelTableCodeVisX.setRequiredTableId( existing.getRequiredTableId() );
+		keyRelTableCodeVisX.setRequiredCodeVis( existing.getRequiredCodeVis() );
+
+		ICFBamRelationByDefSchemaIdxKey keyDefSchemaIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByDefSchemaIdxKey();
+		keyDefSchemaIdx.setOptionalDefSchemaId( existing.getOptionalDefSchemaId() );
+
+		ICFBamRelationByFromKeyIdxKey keyFromKeyIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByFromKeyIdxKey();
+		keyFromKeyIdx.setRequiredFromIndexId( existing.getRequiredFromIndexId() );
+
+		ICFBamRelationByToTblIdxKey keyToTblIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToTblIdxKey();
+		keyToTblIdx.setRequiredToTableId( existing.getRequiredToTableId() );
+
+		ICFBamRelationByToKeyIdxKey keyToKeyIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToKeyIdxKey();
+		keyToKeyIdx.setRequiredToIndexId( existing.getRequiredToIndexId() );
+
+		ICFBamRelationByNarrowedIdxKey keyNarrowedIdx = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByNarrowedIdxKey();
+		keyNarrowedIdx.setOptionalNarrowedId( existing.getOptionalNarrowedId() );
+
+
+					schema.getPopTopDepTableObj().deepDisposePopTopDepByContRelIdx( existing.getRequiredId() );
+					schema.getRelationColTableObj().deepDisposeRelationColByRelationIdx( existing.getRequiredId() );
+
+		if( indexByUNameIdx != null ) {
+			indexByUNameIdx.remove( keyUNameIdx );
+		}
+
+		if( indexByRelTableIdx != null ) {
+			if( indexByRelTableIdx.containsKey( keyRelTableIdx ) ) {
+				indexByRelTableIdx.get( keyRelTableIdx ).remove( pkey );
+				if( indexByRelTableIdx.get( keyRelTableIdx ).size() <= 0 ) {
+					indexByRelTableIdx.remove( keyRelTableIdx );
+				}
+			}
+		}
+
+		if( indexByRelCodeVisIdx != null ) {
+			if( indexByRelCodeVisIdx.containsKey( keyRelCodeVisIdx ) ) {
+				indexByRelCodeVisIdx.get( keyRelCodeVisIdx ).remove( pkey );
+				if( indexByRelCodeVisIdx.get( keyRelCodeVisIdx ).size() <= 0 ) {
+					indexByRelCodeVisIdx.remove( keyRelCodeVisIdx );
+				}
+			}
+		}
+
+		if( indexByRelTableCodeVisX != null ) {
+			if( indexByRelTableCodeVisX.containsKey( keyRelTableCodeVisX ) ) {
+				indexByRelTableCodeVisX.get( keyRelTableCodeVisX ).remove( pkey );
+				if( indexByRelTableCodeVisX.get( keyRelTableCodeVisX ).size() <= 0 ) {
+					indexByRelTableCodeVisX.remove( keyRelTableCodeVisX );
+				}
+			}
+		}
+
+		if( indexByDefSchemaIdx != null ) {
+			if( indexByDefSchemaIdx.containsKey( keyDefSchemaIdx ) ) {
+				indexByDefSchemaIdx.get( keyDefSchemaIdx ).remove( pkey );
+				if( indexByDefSchemaIdx.get( keyDefSchemaIdx ).size() <= 0 ) {
+					indexByDefSchemaIdx.remove( keyDefSchemaIdx );
+				}
+			}
+		}
+
+		if( indexByFromKeyIdx != null ) {
+			if( indexByFromKeyIdx.containsKey( keyFromKeyIdx ) ) {
+				indexByFromKeyIdx.get( keyFromKeyIdx ).remove( pkey );
+				if( indexByFromKeyIdx.get( keyFromKeyIdx ).size() <= 0 ) {
+					indexByFromKeyIdx.remove( keyFromKeyIdx );
+				}
+			}
+		}
+
+		if( indexByToTblIdx != null ) {
+			if( indexByToTblIdx.containsKey( keyToTblIdx ) ) {
+				indexByToTblIdx.get( keyToTblIdx ).remove( pkey );
+				if( indexByToTblIdx.get( keyToTblIdx ).size() <= 0 ) {
+					indexByToTblIdx.remove( keyToTblIdx );
+				}
+			}
+		}
+
+		if( indexByToKeyIdx != null ) {
+			if( indexByToKeyIdx.containsKey( keyToKeyIdx ) ) {
+				indexByToKeyIdx.get( keyToKeyIdx ).remove( pkey );
+				if( indexByToKeyIdx.get( keyToKeyIdx ).size() <= 0 ) {
+					indexByToKeyIdx.remove( keyToKeyIdx );
+				}
+			}
+		}
+
+		if( indexByNarrowedIdx != null ) {
+			if( indexByNarrowedIdx.containsKey( keyNarrowedIdx ) ) {
+				indexByNarrowedIdx.get( keyNarrowedIdx ).remove( pkey );
+				if( indexByNarrowedIdx.get( keyNarrowedIdx ).size() <= 0 ) {
+					indexByNarrowedIdx.remove( keyNarrowedIdx );
+				}
+			}
+		}
+
+
+		schema.getScopeTableObj().reallyDeepDisposeScope( obj );
+	}
+	@Override
+	public void deepDisposeRelation( $implCommaIJavaOptAtomType$ pkey ) {
+		ICFBamRelationObj obj = readCachedRelation( pkey );
+		if( obj != null ) {
+			obj.forget();
+		}
+	}
+
+	@Override
+	public ICFBamRelationObj lockRelation( $implCommaIJavaOptAtomType$ pkey ) {
+		ICFBamRelationObj locked = null;
+		ICFBamRelation lockRec = schema.getCFBamBackingStore().getTableRelation().lockDerived( null, pkey );
+		if( lockRec != null ) {
+				locked = (ICFBamRelationObj)schema.getScopeTableObj().constructByClassCode( lockRec.getClassCode() );
+			locked.setRec( lockRec );
+			locked.setPKey( lockRec.getPKey() );
+			locked = (ICFBamRelationObj)locked.realise();
+		}
+		else {
+			throw new CFLibCollisionDetectedException( getClass(), "lockRelation", pkey );
+		}
+		return( locked );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readAllRelation() {
+		return( readAllRelation( false ) );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readAllRelation( boolean forceRead ) {
+		final String S_ProcName = "readAllRelation";
+		if( ( allRelation == null ) || forceRead ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> map = new HashMap<$implCommaIJavaOptAtomType$,ICFBamRelationObj>();
+			allRelation = map;
+			ICFBamRelation[] recList = schema.getCFBamBackingStore().getTableRelation().readAllDerived( null );
+			ICFBamRelation rec;
+			ICFBamRelationObj obj;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamRelationObj)schema.getScopeTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamRelationObj realised = (ICFBamRelationObj)obj.realise();
+			}
+		}
+		int len = allRelation.size();
+		ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+		Iterator<ICFBamRelationObj> valIter = allRelation.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamRelationObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readCachedAllRelation() {
+		final String S_ProcName = "readCachedAllRelation";
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>();
+		if( allRelation != null ) {
+			int len = allRelation.size();
+			ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+			Iterator<ICFBamRelationObj> valIter = allRelation.values().iterator();
+			int idx = 0;
+			while( ( idx < len ) && valIter.hasNext() ) {
+				arr[idx++] = valIter.next();
+			}
+			if( idx < len ) {
+				throw new CFLibArgumentUnderflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+			}
+			else if( valIter.hasNext() ) {
+				throw new CFLibArgumentOverflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+			}
+			for( idx = 0; idx < len; idx ++ ) {
+				arrayList.add( arr[idx] );
+			}
+		}
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public ICFBamRelationObj readRelationByIdIdx( ICFLibKeyHash256 Id )
+	{
+		return( readRelationByIdIdx( Id,
+			false ) );
+	}
+
+	@Override
+	public ICFBamRelationObj readRelationByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	{
+		ICFBamRelationObj obj = readRelation( Id, forceRead );
+		return( obj );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByTenantIdx( ICFLibKeyHash256 TenantId )
+	{
+		return( readRelationByTenantIdx( TenantId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByTenantIdx( ICFLibKeyHash256 TenantId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readRelationByTenantIdx";
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
+		key.setRequiredTenantId( TenantId );
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+		if( indexByTenantIdx == null ) {
+			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( ( ! forceRead ) && indexByTenantIdx.containsKey( key ) ) {
+			dict = indexByTenantIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamRelationObj>();
+			ICFBamScopeObj obj;
+			ICFBamScope[] recList = schema.getCFBamBackingStore().getTableScope().readDerivedByTenantIdx( null,
+				TenantId );
+			ICFBamScope rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamRelationObj)schema.getScopeTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamRelationObj realised = (ICFBamRelationObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByTenantIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+		Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamRelationObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public ICFBamRelationObj readRelationByUNameIdx( ICFLibKeyHash256 TableId,
+		String Name )
+	{
+		return( readRelationByUNameIdx( TableId,
+			Name,
+			false ) );
+	}
+
+	@Override
+	public ICFBamRelationObj readRelationByUNameIdx( ICFLibKeyHash256 TableId,
+		String Name, boolean forceRead )
+	{
+		if( indexByUNameIdx == null ) {
+			indexByUNameIdx = new HashMap< ICFBamRelationByUNameIdxKey,
+				ICFBamRelationObj >();
+		}
+		ICFBamRelationByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByUNameIdxKey();
+		key.setRequiredTableId( TableId );
+		key.setRequiredName( Name );
+		ICFBamRelationObj obj = null;
+		if( ( ! forceRead ) && indexByUNameIdx.containsKey( key ) ) {
+			obj = indexByUNameIdx.get( key );
+		}
+		else {
+			ICFBamRelation rec = schema.getCFBamBackingStore().getTableRelation().readDerivedByUNameIdx( null,
+				TableId,
+				Name );
+			if( rec != null ) {
+				obj = (ICFBamRelationObj)schema.getScopeTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setRec( rec );
+				obj.setPKey( rec.getPKey() );
+				obj = (ICFBamRelationObj)obj.realise();
+			}
+		}
+		return( obj );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByRelTableIdx( ICFLibKeyHash256 TableId )
+	{
+		return( readRelationByRelTableIdx( TableId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByRelTableIdx( ICFLibKeyHash256 TableId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readRelationByRelTableIdx";
+		ICFBamRelationByRelTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableIdxKey();
+		key.setRequiredTableId( TableId );
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+		if( indexByRelTableIdx == null ) {
+			indexByRelTableIdx = new HashMap< ICFBamRelationByRelTableIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( ( ! forceRead ) && indexByRelTableIdx.containsKey( key ) ) {
+			dict = indexByRelTableIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamRelationObj>();
+			ICFBamRelationObj obj;
+			ICFBamRelation[] recList = schema.getCFBamBackingStore().getTableRelation().readDerivedByRelTableIdx( null,
+				TableId );
+			ICFBamRelation rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamRelationObj)schema.getScopeTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamRelationObj realised = (ICFBamRelationObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByRelTableIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+		Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamRelationObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
+	{
+		return( readRelationByRelCodeVisIdx( CodeVis,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readRelationByRelCodeVisIdx";
+		ICFBamRelationByRelCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelCodeVisIdxKey();
+		key.setRequiredCodeVis( CodeVis );
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+		if( indexByRelCodeVisIdx == null ) {
+			indexByRelCodeVisIdx = new HashMap< ICFBamRelationByRelCodeVisIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( ( ! forceRead ) && indexByRelCodeVisIdx.containsKey( key ) ) {
+			dict = indexByRelCodeVisIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamRelationObj>();
+			ICFBamRelationObj obj;
+			ICFBamRelation[] recList = schema.getCFBamBackingStore().getTableRelation().readDerivedByRelCodeVisIdx( null,
+				CodeVis );
+			ICFBamRelation rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamRelationObj)schema.getScopeTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamRelationObj realised = (ICFBamRelationObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByRelCodeVisIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+		Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamRelationObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByRelTableCodeVisX( ICFLibKeyHash256 TableId,
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
+	{
+		return( readRelationByRelTableCodeVisX( TableId,
+			CodeVis,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByRelTableCodeVisX( ICFLibKeyHash256 TableId,
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readRelationByRelTableCodeVisX";
+		ICFBamRelationByRelTableCodeVisXKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableCodeVisXKey();
+		key.setRequiredTableId( TableId );
+		key.setRequiredCodeVis( CodeVis );
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+		if( indexByRelTableCodeVisX == null ) {
+			indexByRelTableCodeVisX = new HashMap< ICFBamRelationByRelTableCodeVisXKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( ( ! forceRead ) && indexByRelTableCodeVisX.containsKey( key ) ) {
+			dict = indexByRelTableCodeVisX.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamRelationObj>();
+			ICFBamRelationObj obj;
+			ICFBamRelation[] recList = schema.getCFBamBackingStore().getTableRelation().readDerivedByRelTableCodeVisX( null,
+				TableId,
+				CodeVis );
+			ICFBamRelation rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamRelationObj)schema.getScopeTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamRelationObj realised = (ICFBamRelationObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByRelTableCodeVisX.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+		Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamRelationObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	{
+		return( readRelationByDefSchemaIdx( DefSchemaId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readRelationByDefSchemaIdx";
+		ICFBamRelationByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByDefSchemaIdxKey();
+		key.setOptionalDefSchemaId( DefSchemaId );
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+		if( indexByDefSchemaIdx == null ) {
+			indexByDefSchemaIdx = new HashMap< ICFBamRelationByDefSchemaIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( ( ! forceRead ) && indexByDefSchemaIdx.containsKey( key ) ) {
+			dict = indexByDefSchemaIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamRelationObj>();
+			ICFBamRelationObj obj;
+			ICFBamRelation[] recList = schema.getCFBamBackingStore().getTableRelation().readDerivedByDefSchemaIdx( null,
+				DefSchemaId );
+			ICFBamRelation rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamRelationObj)schema.getScopeTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamRelationObj realised = (ICFBamRelationObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByDefSchemaIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+		Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamRelationObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByFromKeyIdx( ICFLibKeyHash256 FromIndexId )
+	{
+		return( readRelationByFromKeyIdx( FromIndexId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByFromKeyIdx( ICFLibKeyHash256 FromIndexId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readRelationByFromKeyIdx";
+		ICFBamRelationByFromKeyIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByFromKeyIdxKey();
+		key.setRequiredFromIndexId( FromIndexId );
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+		if( indexByFromKeyIdx == null ) {
+			indexByFromKeyIdx = new HashMap< ICFBamRelationByFromKeyIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( ( ! forceRead ) && indexByFromKeyIdx.containsKey( key ) ) {
+			dict = indexByFromKeyIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamRelationObj>();
+			ICFBamRelationObj obj;
+			ICFBamRelation[] recList = schema.getCFBamBackingStore().getTableRelation().readDerivedByFromKeyIdx( null,
+				FromIndexId );
+			ICFBamRelation rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamRelationObj)schema.getScopeTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamRelationObj realised = (ICFBamRelationObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByFromKeyIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+		Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamRelationObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByToTblIdx( ICFLibKeyHash256 ToTableId )
+	{
+		return( readRelationByToTblIdx( ToTableId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByToTblIdx( ICFLibKeyHash256 ToTableId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readRelationByToTblIdx";
+		ICFBamRelationByToTblIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToTblIdxKey();
+		key.setRequiredToTableId( ToTableId );
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+		if( indexByToTblIdx == null ) {
+			indexByToTblIdx = new HashMap< ICFBamRelationByToTblIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( ( ! forceRead ) && indexByToTblIdx.containsKey( key ) ) {
+			dict = indexByToTblIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamRelationObj>();
+			ICFBamRelationObj obj;
+			ICFBamRelation[] recList = schema.getCFBamBackingStore().getTableRelation().readDerivedByToTblIdx( null,
+				ToTableId );
+			ICFBamRelation rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamRelationObj)schema.getScopeTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamRelationObj realised = (ICFBamRelationObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByToTblIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+		Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamRelationObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByToKeyIdx( ICFLibKeyHash256 ToIndexId )
+	{
+		return( readRelationByToKeyIdx( ToIndexId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByToKeyIdx( ICFLibKeyHash256 ToIndexId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readRelationByToKeyIdx";
+		ICFBamRelationByToKeyIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToKeyIdxKey();
+		key.setRequiredToIndexId( ToIndexId );
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+		if( indexByToKeyIdx == null ) {
+			indexByToKeyIdx = new HashMap< ICFBamRelationByToKeyIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( ( ! forceRead ) && indexByToKeyIdx.containsKey( key ) ) {
+			dict = indexByToKeyIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamRelationObj>();
+			ICFBamRelationObj obj;
+			ICFBamRelation[] recList = schema.getCFBamBackingStore().getTableRelation().readDerivedByToKeyIdx( null,
+				ToIndexId );
+			ICFBamRelation rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamRelationObj)schema.getScopeTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamRelationObj realised = (ICFBamRelationObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByToKeyIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+		Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamRelationObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByNarrowedIdx( ICFLibKeyHash256 NarrowedId )
+	{
+		return( readRelationByNarrowedIdx( NarrowedId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readRelationByNarrowedIdx( ICFLibKeyHash256 NarrowedId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readRelationByNarrowedIdx";
+		ICFBamRelationByNarrowedIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByNarrowedIdxKey();
+		key.setOptionalNarrowedId( NarrowedId );
+		Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+		if( indexByNarrowedIdx == null ) {
+			indexByNarrowedIdx = new HashMap< ICFBamRelationByNarrowedIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( ( ! forceRead ) && indexByNarrowedIdx.containsKey( key ) ) {
+			dict = indexByNarrowedIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamRelationObj>();
+			ICFBamRelationObj obj;
+			ICFBamRelation[] recList = schema.getCFBamBackingStore().getTableRelation().readDerivedByNarrowedIdx( null,
+				NarrowedId );
+			ICFBamRelation rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamRelationObj)schema.getScopeTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamRelationObj realised = (ICFBamRelationObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByNarrowedIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+		Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamRelationObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public ICFBamRelationObj readCachedRelationByIdIdx( ICFLibKeyHash256 Id )
+	{
+		ICFBamRelationObj obj = null;
+		obj = readCachedRelation( Id );
+		return( obj );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readCachedRelationByTenantIdx( ICFLibKeyHash256 TenantId )
+	{
+		final String S_ProcName = "readCachedRelationByTenantIdx";
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
+		key.setRequiredTenantId( TenantId );
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>();
+		if( indexByTenantIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+			if( indexByTenantIdx.containsKey( key ) ) {
+				dict = indexByTenantIdx.get( key );
+				int len = dict.size();
+				ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+				Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamRelationObj obj;
+			Iterator<ICFBamRelationObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public ICFBamRelationObj readCachedRelationByUNameIdx( ICFLibKeyHash256 TableId,
+		String Name )
+	{
+		ICFBamRelationObj obj = null;
+		ICFBamRelationByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByUNameIdxKey();
+		key.setRequiredTableId( TableId );
+		key.setRequiredName( Name );
+		if( indexByUNameIdx != null ) {
+			if( indexByUNameIdx.containsKey( key ) ) {
+				obj = indexByUNameIdx.get( key );
+			}
+			else {
+				Iterator<ICFBamRelationObj> valIter = members.values().iterator();
+				while( ( obj == null ) && valIter.hasNext() ) {
+					obj = valIter.next();
+					if( obj != null ) {
+						if( obj.getRec().compareTo( key ) != 0 ) {
+							obj = null;
+						}
+					}
+				}
+			}
+		}
+		else {
+			Iterator<ICFBamRelationObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) != 0 ) {
+						obj = null;
+					}
+				}
+			}
+		}
+		return( obj );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readCachedRelationByRelTableIdx( ICFLibKeyHash256 TableId )
+	{
+		final String S_ProcName = "readCachedRelationByRelTableIdx";
+		ICFBamRelationByRelTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableIdxKey();
+		key.setRequiredTableId( TableId );
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>();
+		if( indexByRelTableIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+			if( indexByRelTableIdx.containsKey( key ) ) {
+				dict = indexByRelTableIdx.get( key );
+				int len = dict.size();
+				ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+				Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamRelationObj obj;
+			Iterator<ICFBamRelationObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readCachedRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
+	{
+		final String S_ProcName = "readCachedRelationByRelCodeVisIdx";
+		ICFBamRelationByRelCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelCodeVisIdxKey();
+		key.setRequiredCodeVis( CodeVis );
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>();
+		if( indexByRelCodeVisIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+			if( indexByRelCodeVisIdx.containsKey( key ) ) {
+				dict = indexByRelCodeVisIdx.get( key );
+				int len = dict.size();
+				ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+				Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamRelationObj obj;
+			Iterator<ICFBamRelationObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readCachedRelationByRelTableCodeVisX( ICFLibKeyHash256 TableId,
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
+	{
+		final String S_ProcName = "readCachedRelationByRelTableCodeVisX";
+		ICFBamRelationByRelTableCodeVisXKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableCodeVisXKey();
+		key.setRequiredTableId( TableId );
+		key.setRequiredCodeVis( CodeVis );
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>();
+		if( indexByRelTableCodeVisX != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+			if( indexByRelTableCodeVisX.containsKey( key ) ) {
+				dict = indexByRelTableCodeVisX.get( key );
+				int len = dict.size();
+				ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+				Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamRelationObj obj;
+			Iterator<ICFBamRelationObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readCachedRelationByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	{
+		final String S_ProcName = "readCachedRelationByDefSchemaIdx";
+		ICFBamRelationByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByDefSchemaIdxKey();
+		key.setOptionalDefSchemaId( DefSchemaId );
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>();
+		if( indexByDefSchemaIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+			if( indexByDefSchemaIdx.containsKey( key ) ) {
+				dict = indexByDefSchemaIdx.get( key );
+				int len = dict.size();
+				ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+				Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamRelationObj obj;
+			Iterator<ICFBamRelationObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readCachedRelationByFromKeyIdx( ICFLibKeyHash256 FromIndexId )
+	{
+		final String S_ProcName = "readCachedRelationByFromKeyIdx";
+		ICFBamRelationByFromKeyIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByFromKeyIdxKey();
+		key.setRequiredFromIndexId( FromIndexId );
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>();
+		if( indexByFromKeyIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+			if( indexByFromKeyIdx.containsKey( key ) ) {
+				dict = indexByFromKeyIdx.get( key );
+				int len = dict.size();
+				ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+				Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamRelationObj obj;
+			Iterator<ICFBamRelationObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readCachedRelationByToTblIdx( ICFLibKeyHash256 ToTableId )
+	{
+		final String S_ProcName = "readCachedRelationByToTblIdx";
+		ICFBamRelationByToTblIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToTblIdxKey();
+		key.setRequiredToTableId( ToTableId );
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>();
+		if( indexByToTblIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+			if( indexByToTblIdx.containsKey( key ) ) {
+				dict = indexByToTblIdx.get( key );
+				int len = dict.size();
+				ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+				Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamRelationObj obj;
+			Iterator<ICFBamRelationObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readCachedRelationByToKeyIdx( ICFLibKeyHash256 ToIndexId )
+	{
+		final String S_ProcName = "readCachedRelationByToKeyIdx";
+		ICFBamRelationByToKeyIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToKeyIdxKey();
+		key.setRequiredToIndexId( ToIndexId );
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>();
+		if( indexByToKeyIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+			if( indexByToKeyIdx.containsKey( key ) ) {
+				dict = indexByToKeyIdx.get( key );
+				int len = dict.size();
+				ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+				Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamRelationObj obj;
+			Iterator<ICFBamRelationObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFBamRelationObj> readCachedRelationByNarrowedIdx( ICFLibKeyHash256 NarrowedId )
+	{
+		final String S_ProcName = "readCachedRelationByNarrowedIdx";
+		ICFBamRelationByNarrowedIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByNarrowedIdxKey();
+		key.setOptionalNarrowedId( NarrowedId );
+		ArrayList<ICFBamRelationObj> arrayList = new ArrayList<ICFBamRelationObj>();
+		if( indexByNarrowedIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict;
+			if( indexByNarrowedIdx.containsKey( key ) ) {
+				dict = indexByNarrowedIdx.get( key );
+				int len = dict.size();
+				ICFBamRelationObj arr[] = new ICFBamRelationObj[len];
+				Iterator<ICFBamRelationObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamRelationObj obj;
+			Iterator<ICFBamRelationObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamRelationObj> cmp = new Comparator<ICFBamRelationObj>() {
+			@Override
+			public int compare( ICFBamRelationObj lhs, ICFBamRelationObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public void deepDisposeRelationByIdIdx( ICFLibKeyHash256 Id )
+	{
+		ICFBamRelationObj obj = readCachedRelationByIdIdx( Id );
+		if( obj != null ) {
+			obj.forget();
+		}
+	}
+
+	@Override
+	public void deepDisposeRelationByTenantIdx( ICFLibKeyHash256 TenantId )
+	{
+		final String S_ProcName = "deepDisposeRelationByTenantIdx";
+		ICFBamRelationObj obj;
+		List<ICFBamRelationObj> arrayList = readCachedRelationByTenantIdx( TenantId );
+		if( arrayList != null )  {
+			Iterator<ICFBamRelationObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeRelationByUNameIdx( ICFLibKeyHash256 TableId,
+		String Name )
+	{
+		ICFBamRelationObj obj = readCachedRelationByUNameIdx( TableId,
+				Name );
+		if( obj != null ) {
+			obj.forget();
+		}
+	}
+
+	@Override
+	public void deepDisposeRelationByRelTableIdx( ICFLibKeyHash256 TableId )
+	{
+		final String S_ProcName = "deepDisposeRelationByRelTableIdx";
+		ICFBamRelationObj obj;
+		List<ICFBamRelationObj> arrayList = readCachedRelationByRelTableIdx( TableId );
+		if( arrayList != null )  {
+			Iterator<ICFBamRelationObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
+	{
+		final String S_ProcName = "deepDisposeRelationByRelCodeVisIdx";
+		ICFBamRelationObj obj;
+		List<ICFBamRelationObj> arrayList = readCachedRelationByRelCodeVisIdx( CodeVis );
+		if( arrayList != null )  {
+			Iterator<ICFBamRelationObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeRelationByRelTableCodeVisX( ICFLibKeyHash256 TableId,
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
+	{
+		final String S_ProcName = "deepDisposeRelationByRelTableCodeVisX";
+		ICFBamRelationObj obj;
+		List<ICFBamRelationObj> arrayList = readCachedRelationByRelTableCodeVisX( TableId,
+				CodeVis );
+		if( arrayList != null )  {
+			Iterator<ICFBamRelationObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeRelationByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	{
+		final String S_ProcName = "deepDisposeRelationByDefSchemaIdx";
+		ICFBamRelationObj obj;
+		List<ICFBamRelationObj> arrayList = readCachedRelationByDefSchemaIdx( DefSchemaId );
+		if( arrayList != null )  {
+			Iterator<ICFBamRelationObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeRelationByFromKeyIdx( ICFLibKeyHash256 FromIndexId )
+	{
+		final String S_ProcName = "deepDisposeRelationByFromKeyIdx";
+		ICFBamRelationObj obj;
+		List<ICFBamRelationObj> arrayList = readCachedRelationByFromKeyIdx( FromIndexId );
+		if( arrayList != null )  {
+			Iterator<ICFBamRelationObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeRelationByToTblIdx( ICFLibKeyHash256 ToTableId )
+	{
+		final String S_ProcName = "deepDisposeRelationByToTblIdx";
+		ICFBamRelationObj obj;
+		List<ICFBamRelationObj> arrayList = readCachedRelationByToTblIdx( ToTableId );
+		if( arrayList != null )  {
+			Iterator<ICFBamRelationObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeRelationByToKeyIdx( ICFLibKeyHash256 ToIndexId )
+	{
+		final String S_ProcName = "deepDisposeRelationByToKeyIdx";
+		ICFBamRelationObj obj;
+		List<ICFBamRelationObj> arrayList = readCachedRelationByToKeyIdx( ToIndexId );
+		if( arrayList != null )  {
+			Iterator<ICFBamRelationObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeRelationByNarrowedIdx( ICFLibKeyHash256 NarrowedId )
+	{
+		final String S_ProcName = "deepDisposeRelationByNarrowedIdx";
+		ICFBamRelationObj obj;
+		List<ICFBamRelationObj> arrayList = readCachedRelationByNarrowedIdx( NarrowedId );
+		if( arrayList != null )  {
+			Iterator<ICFBamRelationObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public ICFBamRelationObj updateRelation( ICFBamRelationObj Obj ) {
+		ICFBamRelationObj obj = Obj;
+		schema.getCFBamBackingStore().getTableRelation().updateRelation( null,
+			Obj.getRelationRec() );
+		if( Obj.getClassCode() == ((ICFBamSchemaObj)getSchema()).getRelationTableObj().getClassCode() ) {
+			obj = (ICFBamRelationObj)Obj.realise();
+		}
+		obj.endEdit();
+		return( obj );
+	}
+
+	@Override
+	public void deleteRelation( ICFBamRelationObj Obj ) {
+		ICFBamRelationObj obj = Obj;
+		schema.getCFBamBackingStore().getTableRelation().deleteRelation( null,
+			obj.getRelationRec() );
+		Obj.forget();
+	}
+
+	@Override
+	public void deleteRelationByIdIdx( ICFLibKeyHash256 Id )
+	{
+		ICFBamRelationObj obj = readRelation(Id);
+		if( obj != null ) {
+			ICFBamRelationEditObj editObj = (ICFBamRelationEditObj)obj.getEdit();
+			boolean editStarted;
+			if( editObj == null ) {
+				editObj = (ICFBamRelationEditObj)obj.beginEdit();
+				if( editObj != null ) {
+					editStarted = true;
+				}
+				else {
+					editStarted = false;
+				}
+			}
+			else {
+				editStarted = false;
+			}
+			if( editObj != null ) {
+				editObj.deleteInstance();
+				if( editStarted ) {
+					editObj.endEdit();
+				}
+			}
+			obj.forget();
+		}
+		deepDisposeRelationByIdIdx( Id );
+	}
+
+	@Override
+	public void deleteRelationByTenantIdx( ICFLibKeyHash256 TenantId )
+	{
+		ICFBamScopeByTenantIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryScope().newByTenantIdxKey();
+		key.setRequiredTenantId( TenantId );
+		if( indexByTenantIdx == null ) {
+			indexByTenantIdx = new HashMap< ICFBamScopeByTenantIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( indexByTenantIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict = indexByTenantIdx.get( key );
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByTenantIdx( null,
+				TenantId );
+			Iterator<ICFBamRelationObj> iter = dict.values().iterator();
+			ICFBamRelationObj obj;
+			List<ICFBamRelationObj> toForget = new LinkedList<ICFBamRelationObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByTenantIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByTenantIdx( null,
+				TenantId );
+		}
+		deepDisposeRelationByTenantIdx( TenantId );
+	}
+
+	@Override
+	public void deleteRelationByUNameIdx( ICFLibKeyHash256 TableId,
+		String Name )
+	{
+		if( indexByUNameIdx == null ) {
+			indexByUNameIdx = new HashMap< ICFBamRelationByUNameIdxKey,
+				ICFBamRelationObj >();
+		}
+		ICFBamRelationByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByUNameIdxKey();
+		key.setRequiredTableId( TableId );
+		key.setRequiredName( Name );
+		ICFBamRelationObj obj = null;
+		if( indexByUNameIdx.containsKey( key ) ) {
+			obj = indexByUNameIdx.get( key );
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByUNameIdx( null,
+				TableId,
+				Name );
+			obj.forget();
+		}
+		else {
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByUNameIdx( null,
+				TableId,
+				Name );
+		}
+		deepDisposeRelationByUNameIdx( TableId,
+				Name );
+	}
+
+	@Override
+	public void deleteRelationByRelTableIdx( ICFLibKeyHash256 TableId )
+	{
+		ICFBamRelationByRelTableIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableIdxKey();
+		key.setRequiredTableId( TableId );
+		if( indexByRelTableIdx == null ) {
+			indexByRelTableIdx = new HashMap< ICFBamRelationByRelTableIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( indexByRelTableIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict = indexByRelTableIdx.get( key );
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByRelTableIdx( null,
+				TableId );
+			Iterator<ICFBamRelationObj> iter = dict.values().iterator();
+			ICFBamRelationObj obj;
+			List<ICFBamRelationObj> toForget = new LinkedList<ICFBamRelationObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByRelTableIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByRelTableIdx( null,
+				TableId );
+		}
+		deepDisposeRelationByRelTableIdx( TableId );
+	}
+
+	@Override
+	public void deleteRelationByRelCodeVisIdx( ICFBamPubSchema.CodeVisibilityEnum CodeVis )
+	{
+		ICFBamRelationByRelCodeVisIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelCodeVisIdxKey();
+		key.setRequiredCodeVis( CodeVis );
+		if( indexByRelCodeVisIdx == null ) {
+			indexByRelCodeVisIdx = new HashMap< ICFBamRelationByRelCodeVisIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( indexByRelCodeVisIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict = indexByRelCodeVisIdx.get( key );
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByRelCodeVisIdx( null,
+				CodeVis );
+			Iterator<ICFBamRelationObj> iter = dict.values().iterator();
+			ICFBamRelationObj obj;
+			List<ICFBamRelationObj> toForget = new LinkedList<ICFBamRelationObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByRelCodeVisIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByRelCodeVisIdx( null,
+				CodeVis );
+		}
+		deepDisposeRelationByRelCodeVisIdx( CodeVis );
+	}
+
+	@Override
+	public void deleteRelationByRelTableCodeVisX( ICFLibKeyHash256 TableId,
+		ICFBamPubSchema.CodeVisibilityEnum CodeVis )
+	{
+		ICFBamRelationByRelTableCodeVisXKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByRelTableCodeVisXKey();
+		key.setRequiredTableId( TableId );
+		key.setRequiredCodeVis( CodeVis );
+		if( indexByRelTableCodeVisX == null ) {
+			indexByRelTableCodeVisX = new HashMap< ICFBamRelationByRelTableCodeVisXKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( indexByRelTableCodeVisX.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict = indexByRelTableCodeVisX.get( key );
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByRelTableCodeVisX( null,
+				TableId,
+				CodeVis );
+			Iterator<ICFBamRelationObj> iter = dict.values().iterator();
+			ICFBamRelationObj obj;
+			List<ICFBamRelationObj> toForget = new LinkedList<ICFBamRelationObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByRelTableCodeVisX.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByRelTableCodeVisX( null,
+				TableId,
+				CodeVis );
+		}
+		deepDisposeRelationByRelTableCodeVisX( TableId,
+				CodeVis );
+	}
+
+	@Override
+	public void deleteRelationByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	{
+		ICFBamRelationByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByDefSchemaIdxKey();
+		key.setOptionalDefSchemaId( DefSchemaId );
+		if( indexByDefSchemaIdx == null ) {
+			indexByDefSchemaIdx = new HashMap< ICFBamRelationByDefSchemaIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( indexByDefSchemaIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict = indexByDefSchemaIdx.get( key );
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByDefSchemaIdx( null,
+				DefSchemaId );
+			Iterator<ICFBamRelationObj> iter = dict.values().iterator();
+			ICFBamRelationObj obj;
+			List<ICFBamRelationObj> toForget = new LinkedList<ICFBamRelationObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByDefSchemaIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByDefSchemaIdx( null,
+				DefSchemaId );
+		}
+		deepDisposeRelationByDefSchemaIdx( DefSchemaId );
+	}
+
+	@Override
+	public void deleteRelationByFromKeyIdx( ICFLibKeyHash256 FromIndexId )
+	{
+		ICFBamRelationByFromKeyIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByFromKeyIdxKey();
+		key.setRequiredFromIndexId( FromIndexId );
+		if( indexByFromKeyIdx == null ) {
+			indexByFromKeyIdx = new HashMap< ICFBamRelationByFromKeyIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( indexByFromKeyIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict = indexByFromKeyIdx.get( key );
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByFromKeyIdx( null,
+				FromIndexId );
+			Iterator<ICFBamRelationObj> iter = dict.values().iterator();
+			ICFBamRelationObj obj;
+			List<ICFBamRelationObj> toForget = new LinkedList<ICFBamRelationObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByFromKeyIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByFromKeyIdx( null,
+				FromIndexId );
+		}
+		deepDisposeRelationByFromKeyIdx( FromIndexId );
+	}
+
+	@Override
+	public void deleteRelationByToTblIdx( ICFLibKeyHash256 ToTableId )
+	{
+		ICFBamRelationByToTblIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToTblIdxKey();
+		key.setRequiredToTableId( ToTableId );
+		if( indexByToTblIdx == null ) {
+			indexByToTblIdx = new HashMap< ICFBamRelationByToTblIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( indexByToTblIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict = indexByToTblIdx.get( key );
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByToTblIdx( null,
+				ToTableId );
+			Iterator<ICFBamRelationObj> iter = dict.values().iterator();
+			ICFBamRelationObj obj;
+			List<ICFBamRelationObj> toForget = new LinkedList<ICFBamRelationObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByToTblIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByToTblIdx( null,
+				ToTableId );
+		}
+		deepDisposeRelationByToTblIdx( ToTableId );
+	}
+
+	@Override
+	public void deleteRelationByToKeyIdx( ICFLibKeyHash256 ToIndexId )
+	{
+		ICFBamRelationByToKeyIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByToKeyIdxKey();
+		key.setRequiredToIndexId( ToIndexId );
+		if( indexByToKeyIdx == null ) {
+			indexByToKeyIdx = new HashMap< ICFBamRelationByToKeyIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( indexByToKeyIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict = indexByToKeyIdx.get( key );
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByToKeyIdx( null,
+				ToIndexId );
+			Iterator<ICFBamRelationObj> iter = dict.values().iterator();
+			ICFBamRelationObj obj;
+			List<ICFBamRelationObj> toForget = new LinkedList<ICFBamRelationObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByToKeyIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByToKeyIdx( null,
+				ToIndexId );
+		}
+		deepDisposeRelationByToKeyIdx( ToIndexId );
+	}
+
+	@Override
+	public void deleteRelationByNarrowedIdx( ICFLibKeyHash256 NarrowedId )
+	{
+		ICFBamRelationByNarrowedIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryRelation().newByNarrowedIdxKey();
+		key.setOptionalNarrowedId( NarrowedId );
+		if( indexByNarrowedIdx == null ) {
+			indexByNarrowedIdx = new HashMap< ICFBamRelationByNarrowedIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamRelationObj > >();
+		}
+		if( indexByNarrowedIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamRelationObj> dict = indexByNarrowedIdx.get( key );
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByNarrowedIdx( null,
+				NarrowedId );
+			Iterator<ICFBamRelationObj> iter = dict.values().iterator();
+			ICFBamRelationObj obj;
+			List<ICFBamRelationObj> toForget = new LinkedList<ICFBamRelationObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByNarrowedIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableRelation().deleteRelationByNarrowedIdx( null,
+				NarrowedId );
+		}
+		deepDisposeRelationByNarrowedIdx( NarrowedId );
+	}
+}

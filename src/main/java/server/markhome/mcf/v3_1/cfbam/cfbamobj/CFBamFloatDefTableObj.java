@@ -1,0 +1,2335 @@
+// Description: Java 25 Table Object implementation for FloatDef.
+
+/*
+ *	server.markhome.mcf.CFBam
+ *
+ *	Copyright (c) 2016-2026 Mark Stephen Sobkow
+ *	
+ *	Mark's Code Fractal CFBam 3.1 Business Application Model
+ *	
+ *	Copyright 2016-2026 Mark Stephen Sobkow
+ *	
+ *	This file is part of Mark's Code Fractal CFBam.
+ *	
+ *	Mark's Code Fractal CFBam is available under dual commercial license from
+ *	Mark Stephen Sobkow, or under the terms of the GNU General Public License,
+ *	Version 3 or later with classpath and static linking exceptions.
+ *	
+ *	As a special exception, Mark Sobkow gives you permission to link this library
+ *	with independent modules to produce an executable, provided that none of them
+ *	conflict with the intent of the GPLv3; that is, you are not allowed to invoke
+ *	the methods of this library from non-GPLv3-compatibly licensed code. You may not
+ *	implement an LPGLv3 "wedge" to try to bypass this restriction. That said, code which
+ *	does not rely on this library is free to specify whatever license its authors decide
+ *	to use. Mark Sobkow specifically rejects the infectious nature of the GPLv3, and
+ *	considers the mere act of including GPLv3 modules in an executable to be perfectly
+ *	reasonable given tools like modern Java's single-jar deployment options.
+ *	
+ *	Mark's Code Fractal CFBam is free software: you can redistribute it and/or
+ *	modify it under the terms of the GNU General Public License as published by
+ *	the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
+ *	
+ *	Mark's Code Fractal CFBam is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU General Public License for more details.
+ *	
+ *	You should have received a copy of the GNU General Public License
+ *	along with Mark's Code Fractal CFBam.  If not, see <https://www.gnu.org/licenses/>.
+ *	
+ *	If you wish to modify and use this code without publishing your changes,
+ *	or integrate it with proprietary code, please contact Mark Stephen Sobkow
+ *	for a commercial license at mark.sobkow@gmail.com
+ */
+
+package server.markhome.mcf.v3_1.cfbam.cfbamobj;
+
+import java.math.*;
+import java.sql.*;
+import java.text.*;
+import java.time.*;
+import java.util.*;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.text.StringEscapeUtils;
+import server.markhome.mcf.v3_1.cflib.*;
+import server.markhome.mcf.v3_1.cflib.dbutil.*;
+import server.markhome.mcf.v3_1.cflib.keyhash.*;
+
+import server.markhome.mcf.v3_1.cfsec.cfsecpub.*;
+import server.markhome.mcf.v3_1.cfint.cfintpub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampub.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprot.*;
+import server.markhome.mcf.v3_1.cfbam.cfbam.*;
+import server.markhome.mcf.v3_1.cfsec.cfsecpubobj.*;
+import server.markhome.mcf.v3_1.cfint.cfintpubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbampubobj.*;
+import server.markhome.mcf.v3_1.cfbam.cfbamprotobj.*;
+
+public class CFBamFloatDefTableObj
+	implements ICFBamFloatDefTableObj
+{
+	protected ICFBamSchemaObj schema;
+	protected static int runtimeClassCode = ICFBamFloatDef.CLASS_CODE;
+	protected static final int backingClassCode = ICFBamFloatDef.CLASS_CODE;
+	private Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> members;
+	private Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> allFloatDef;
+	private Map< ICFBamValueByUNameIdxKey,
+		ICFBamFloatDefObj > indexByUNameIdx;
+	private Map< ICFBamValueByScopeIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > > indexByScopeIdx;
+	private Map< ICFBamValueByDefSchemaIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > > indexByDefSchemaIdx;
+	private Map< ICFBamValueByPrevIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > > indexByPrevIdx;
+	private Map< ICFBamValueByNextIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > > indexByNextIdx;
+	private Map< ICFBamValueByContPrevIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > > indexByContPrevIdx;
+	private Map< ICFBamValueByContNextIdxKey,
+		Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > > indexByContNextIdx;
+	public static String TABLE_NAME = "FloatDef";
+	public static String TABLE_DBNAME = "fltdef";
+
+	public CFBamFloatDefTableObj() {
+		schema = null;
+		members = new HashMap<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj>();
+		allFloatDef = null;
+		indexByUNameIdx = null;
+		indexByScopeIdx = null;
+		indexByDefSchemaIdx = null;
+		indexByPrevIdx = null;
+		indexByNextIdx = null;
+		indexByContPrevIdx = null;
+		indexByContNextIdx = null;
+	}
+
+	public CFBamFloatDefTableObj( ICFBamSchemaObj argSchema ) {
+		schema = (ICFBamSchemaObj)argSchema;
+		members = new HashMap<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj>();
+		allFloatDef = null;
+		indexByUNameIdx = null;
+		indexByScopeIdx = null;
+		indexByDefSchemaIdx = null;
+		indexByPrevIdx = null;
+		indexByNextIdx = null;
+		indexByContPrevIdx = null;
+		indexByContNextIdx = null;
+	}
+	
+	/**
+	 *	Get class code always returns the runtime class code for the objects, which is not stable until the application is done initializing and registering its objects.
+	 *
+	 *	@return runtime classcode
+	 */ 
+	@Override
+	public int getClassCode() {
+		return CFBamFloatDefTableObj.getRuntimeClassCode();
+	}	
+
+	/**
+	 *	Get the backing store schema's class code, which is hard-coded into the object hierarchy.
+	 *
+	 *	@return The hardcoded backing store class code for this object, which is only valid in that schema.
+	 */
+	public static int getBackingClassCode() {
+		return( backingClassCode );
+	}
+
+	/**
+	 *	Get the runtime class code for this table; this value is only stable after the application is fully initialized.
+	 *
+	 *	@return runtimeClassCode
+	 */
+	public static int getRuntimeClassCode() {
+		return( runtimeClassCode );
+	}
+
+	/**
+	 *	Set the runtime class code for this table; this is done only during application initialization by the SchemaObj's <tt>initClassCodes()</tt> static method,
+	 *	which will only set the class codes once and never again.  Once set, the class codes are immutable within the application.
+	 *	Application programmers should never invoke this method, so it has package access only.
+	 *
+	 *	@param	argNewClassCode	The runtime class code to be used by clients and integrated application logic to identify this table of this schema.
+	 */
+	static void setRuntimeClassCode(int argNewClassCode ) {
+		if (argNewClassCode <= 0) {
+			throw new CFLibArgumentUnderflowException(CFBamFloatDefTableObj.class, "setRuntimeClassCode", 1, "argNewClassCode", argNewClassCode, 1);
+		}
+		runtimeClassCode = argNewClassCode;
+	}
+
+	@Override
+	public ICFBamSchemaObj getSchema() {
+		return( schema );
+	}
+
+	@Override
+	public void setSchema( ICFBamSchemaObj value ) {
+		schema = (ICFBamSchemaObj)value;
+	}
+
+	@Override
+	public String getTableName() {
+		return( TABLE_NAME );
+	}
+
+	@Override
+	public String getTableDbName() {
+		return( TABLE_DBNAME );
+	}
+
+	@Override
+	public Class getObjQualifyingClass() {
+		return( ICFBamSchemaDefObj.class );
+	}
+
+
+	@Override
+	public void minimizeMemory() {
+		allFloatDef = null;
+		indexByUNameIdx = null;
+		indexByScopeIdx = null;
+		indexByDefSchemaIdx = null;
+		indexByPrevIdx = null;
+		indexByNextIdx = null;
+		indexByContPrevIdx = null;
+		indexByContNextIdx = null;
+		List<ICFBamFloatDefObj> toForget = new LinkedList<ICFBamFloatDefObj>();
+		ICFBamFloatDefObj cur = null;
+		Iterator<ICFBamFloatDefObj> iter = members.values().iterator();
+		while( iter.hasNext() ) {
+			cur = iter.next();
+			toForget.add( cur );
+		}
+		iter = toForget.iterator();
+		while( iter.hasNext() ) {
+			cur = iter.next();
+			cur.forget();
+		}
+	}
+	/**
+	 *	If your implementation subclasses the objects,
+	 *	you'll want to overload the constructByClassCode()
+	 *	implementation to return your implementation's
+	 *	instances instead of the base implementation.
+	 *
+	 *	This is the sole factory for instances derived from
+	 *	CFBamFloatDefObj.
+	 */
+	@Override
+	public ICFBamFloatDefObj newInstance() {
+		ICFBamFloatDefObj inst = new CFBamFloatDefObj( schema );
+		return( inst );
+	}
+
+	/**
+	 *	If your implementation subclasses the objects,
+	 *	you'll want to overload the constructByClassCode()
+	 *	implementation to return your implementation's
+	 *	instances instead of the base implementation.
+	 *
+	 *	This is the sole factory for instances derived from
+	 *	CFBamFloatDefObj.
+	 */
+	@Override
+	public ICFBamFloatDefEditObj newEditInstance( ICFBamFloatDefObj orig ) {
+		ICFBamFloatDefEditObj edit = new CFBamFloatDefEditObj( orig );
+		return( edit );
+	}
+
+	@Override
+	public ICFBamFloatDefObj realiseFloatDef( ICFBamFloatDefObj Obj ) {
+		ICFBamFloatDefObj obj = Obj;
+		$implCommaIJavaOptAtomType$ pkey = obj.getPKey();
+		ICFBamFloatDefObj keepObj = null;
+		if( members.containsKey( pkey ) && ( null != members.get( pkey ) ) ) {
+			ICFBamFloatDefObj existingObj = members.get( pkey );
+			keepObj = existingObj;
+
+			/*
+			 *	We always rebind the data because if we're being called, some index has
+			 *	been updated and is refreshing it's data, which may or may not have changed
+			 */
+
+			// Detach object from alternate and duplicate indexes, leave PKey alone
+
+			if( indexByUNameIdx != null ) {
+				ICFBamValueByUNameIdxKey keyUNameIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByUNameIdxKey();
+				keyUNameIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
+				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
+				indexByUNameIdx.remove( keyUNameIdx );
+			}
+
+			if( indexByScopeIdx != null ) {
+				ICFBamValueByScopeIdxKey keyScopeIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
+				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				if( mapScopeIdx != null ) {
+					indexByScopeIdx.remove( keyScopeIdx );
+				}
+			}
+
+			if( indexByDefSchemaIdx != null ) {
+				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
+				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				if( mapDefSchemaIdx != null ) {
+					indexByDefSchemaIdx.remove( keyDefSchemaIdx );
+				}
+			}
+
+			if( indexByPrevIdx != null ) {
+				ICFBamValueByPrevIdxKey keyPrevIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
+				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				if( mapPrevIdx != null ) {
+					indexByPrevIdx.remove( keyPrevIdx );
+				}
+			}
+
+			if( indexByNextIdx != null ) {
+				ICFBamValueByNextIdxKey keyNextIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
+				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				if( mapNextIdx != null ) {
+					indexByNextIdx.remove( keyNextIdx );
+				}
+			}
+
+			if( indexByContPrevIdx != null ) {
+				ICFBamValueByContPrevIdxKey keyContPrevIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
+				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
+				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				if( mapContPrevIdx != null ) {
+					indexByContPrevIdx.remove( keyContPrevIdx );
+				}
+			}
+
+			if( indexByContNextIdx != null ) {
+				ICFBamValueByContNextIdxKey keyContNextIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
+				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
+				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				if( mapContNextIdx != null ) {
+					indexByContNextIdx.remove( keyContNextIdx );
+				}
+			}
+			// Keep passing the new object because it's the one with the record
+			// that the base table needs to copy to the existing object from
+			// the cache.
+			keepObj = (ICFBamFloatDefObj)schema.getAtomTableObj().realiseAtom( Obj );
+
+			// Attach new object to alternate and duplicate indexes -- PKey stay stable
+
+			if( indexByUNameIdx != null ) {
+				ICFBamValueByUNameIdxKey keyUNameIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByUNameIdxKey();
+				keyUNameIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
+				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
+				indexByUNameIdx.put( keyUNameIdx, keepObj );
+			}
+
+			if( indexByScopeIdx != null ) {
+				ICFBamValueByScopeIdxKey keyScopeIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
+				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				if( mapScopeIdx != null ) {
+					mapScopeIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByDefSchemaIdx != null ) {
+				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
+				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				if( mapDefSchemaIdx != null ) {
+					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByPrevIdx != null ) {
+				ICFBamValueByPrevIdxKey keyPrevIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
+				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				if( mapPrevIdx != null ) {
+					mapPrevIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByNextIdx != null ) {
+				ICFBamValueByNextIdxKey keyNextIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
+				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				if( mapNextIdx != null ) {
+					mapNextIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByContPrevIdx != null ) {
+				ICFBamValueByContPrevIdxKey keyContPrevIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
+				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
+				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				if( mapContPrevIdx != null ) {
+					mapContPrevIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByContNextIdx != null ) {
+				ICFBamValueByContNextIdxKey keyContNextIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
+				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
+				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				if( mapContNextIdx != null ) {
+					mapContNextIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( allFloatDef != null ) {
+				allFloatDef.put( keepObj.getPKey(), keepObj );
+			}
+		}
+		else {
+			keepObj = obj;
+			keepObj = (ICFBamFloatDefObj)schema.getAtomTableObj().realiseAtom( keepObj );
+
+			// Attach new object to PKey, all, alternate, and duplicate indexes
+			members.put( keepObj.getPKey(), keepObj );
+			if( allFloatDef != null ) {
+				allFloatDef.put( keepObj.getPKey(), keepObj );
+			}
+
+			if( indexByUNameIdx != null ) {
+				ICFBamValueByUNameIdxKey keyUNameIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByUNameIdxKey();
+				keyUNameIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
+				keyUNameIdx.setRequiredName( keepObj.getRequiredName() );
+				indexByUNameIdx.put( keyUNameIdx, keepObj );
+			}
+
+			if( indexByScopeIdx != null ) {
+				ICFBamValueByScopeIdxKey keyScopeIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
+				keyScopeIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapScopeIdx = indexByScopeIdx.get( keyScopeIdx );
+				if( mapScopeIdx != null ) {
+					mapScopeIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByDefSchemaIdx != null ) {
+				ICFBamValueByDefSchemaIdxKey keyDefSchemaIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
+				keyDefSchemaIdx.setOptionalDefSchemaId( keepObj.getOptionalDefSchemaId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapDefSchemaIdx = indexByDefSchemaIdx.get( keyDefSchemaIdx );
+				if( mapDefSchemaIdx != null ) {
+					mapDefSchemaIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByPrevIdx != null ) {
+				ICFBamValueByPrevIdxKey keyPrevIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
+				keyPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapPrevIdx = indexByPrevIdx.get( keyPrevIdx );
+				if( mapPrevIdx != null ) {
+					mapPrevIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByNextIdx != null ) {
+				ICFBamValueByNextIdxKey keyNextIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
+				keyNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapNextIdx = indexByNextIdx.get( keyNextIdx );
+				if( mapNextIdx != null ) {
+					mapNextIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByContPrevIdx != null ) {
+				ICFBamValueByContPrevIdxKey keyContPrevIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
+				keyContPrevIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
+				keyContPrevIdx.setOptionalPrevId( keepObj.getOptionalPrevId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapContPrevIdx = indexByContPrevIdx.get( keyContPrevIdx );
+				if( mapContPrevIdx != null ) {
+					mapContPrevIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+			if( indexByContNextIdx != null ) {
+				ICFBamValueByContNextIdxKey keyContNextIdx =
+					schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
+				keyContNextIdx.setRequiredScopeId( keepObj.getRequiredScopeId() );
+				keyContNextIdx.setOptionalNextId( keepObj.getOptionalNextId() );
+				Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj > mapContNextIdx = indexByContNextIdx.get( keyContNextIdx );
+				if( mapContNextIdx != null ) {
+					mapContNextIdx.put( keepObj.getPKey(), keepObj );
+				}
+			}
+
+		}
+		return( keepObj );
+	}
+
+	@Override
+	public ICFBamFloatDefObj createFloatDef( ICFBamFloatDefObj Obj ) {
+		ICFBamFloatDefObj obj = Obj;
+		ICFBamFloatDef rec = obj.getFloatDefRec();
+		schema.getCFBamBackingStore().getTableFloatDef().createFloatDef(
+			null,
+			rec );
+		obj.copyRecToPKey();
+		if( obj.getClassCode() == runtimeClassCode ) {
+			obj = (ICFBamFloatDefObj)(obj.realise());
+		}
+		ICFBamValueObj prev = obj.getOptionalLookupPrev();
+		if( prev != null ) {
+			prev.read( true );
+		}
+		obj.endEdit();
+		return( obj );
+	}
+
+	@Override
+	public ICFBamFloatDefObj readFloatDef( $implCommaIJavaOptAtomType$ pkey ) {
+		return( readFloatDef( pkey, false ) );
+	}
+
+	@Override
+	public ICFBamFloatDefObj readFloatDef( $implCommaIJavaOptAtomType$ pkey, boolean forceRead ) {
+		ICFBamFloatDefObj obj = null;
+		if( ( ! forceRead ) && members.containsKey( pkey ) ) {
+			obj = members.get( pkey );
+		}
+		else {
+			ICFBamFloatDef readRec = schema.getCFBamBackingStore().getTableFloatDef().readDerivedByIdIdx( null,
+						pkey );
+			if( readRec != null ) {
+				obj = (ICFBamFloatDefObj)schema.getValueTableObj().constructByClassCode( readRec.getClassCode() );
+				obj.setPKey( readRec.getPKey() );
+				obj.setRec( readRec );
+				obj = (ICFBamFloatDefObj)obj.realise();
+			}
+		}
+		return( obj );
+	}
+
+	@Override
+	public ICFBamFloatDefObj readCachedFloatDef( $implCommaIJavaOptAtomType$ pkey ) {
+		ICFBamFloatDefObj obj = null;
+		if( members.containsKey( pkey ) ) {
+			obj = members.get( pkey );
+		}
+		return( obj );
+	}
+
+	@Override
+	public void reallyDeepDisposeFloatDef( ICFBamFloatDefObj obj )
+	{
+		final String S_ProcName = "CFBamFloatDefTableObj.reallyDeepDisposeFloatDef() ";
+		String classCode;
+		if( obj == null ) {
+			return;
+		}
+		$implCommaIJavaOptAtomType$ pkey = obj.getPKey();
+		ICFBamFloatDefObj existing = readCachedFloatDef( pkey );
+		if( existing == null ) {
+			return;
+		}
+		members.remove( pkey );
+
+		schema.getTableColTableObj().deepDisposeTableColByDataIdx( existing.getRequiredId() );
+		schema.getIndexColTableObj().deepDisposeIndexColByColIdx( existing.getRequiredId() );
+
+
+		schema.getAtomTableObj().reallyDeepDisposeAtom( obj );
+	}
+	@Override
+	public void deepDisposeFloatDef( $implCommaIJavaOptAtomType$ pkey ) {
+		ICFBamFloatDefObj obj = readCachedFloatDef( pkey );
+		if( obj != null ) {
+			obj.forget();
+		}
+	}
+
+	@Override
+	public ICFBamFloatDefObj lockFloatDef( $implCommaIJavaOptAtomType$ pkey ) {
+		ICFBamFloatDefObj locked = null;
+		ICFBamFloatDef lockRec = schema.getCFBamBackingStore().getTableFloatDef().lockDerived( null, pkey );
+		if( lockRec != null ) {
+				locked = (ICFBamFloatDefObj)schema.getValueTableObj().constructByClassCode( lockRec.getClassCode() );
+			locked.setRec( lockRec );
+			locked.setPKey( lockRec.getPKey() );
+			locked = (ICFBamFloatDefObj)locked.realise();
+		}
+		else {
+			throw new CFLibCollisionDetectedException( getClass(), "lockFloatDef", pkey );
+		}
+		return( locked );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readAllFloatDef() {
+		return( readAllFloatDef( false ) );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readAllFloatDef( boolean forceRead ) {
+		final String S_ProcName = "readAllFloatDef";
+		if( ( allFloatDef == null ) || forceRead ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> map = new HashMap<$implCommaIJavaOptAtomType$,ICFBamFloatDefObj>();
+			allFloatDef = map;
+			ICFBamFloatDef[] recList = schema.getCFBamBackingStore().getTableFloatDef().readAllDerived( null );
+			ICFBamFloatDef rec;
+			ICFBamFloatDefObj obj;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamFloatDefObj)schema.getValueTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamFloatDefObj realised = (ICFBamFloatDefObj)obj.realise();
+			}
+		}
+		int len = allFloatDef.size();
+		ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+		Iterator<ICFBamFloatDefObj> valIter = allFloatDef.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			@Override
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamFloatDefObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readCachedAllFloatDef() {
+		final String S_ProcName = "readCachedAllFloatDef";
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>();
+		if( allFloatDef != null ) {
+			int len = allFloatDef.size();
+			ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+			Iterator<ICFBamFloatDefObj> valIter = allFloatDef.values().iterator();
+			int idx = 0;
+			while( ( idx < len ) && valIter.hasNext() ) {
+				arr[idx++] = valIter.next();
+			}
+			if( idx < len ) {
+				throw new CFLibArgumentUnderflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+			}
+			else if( valIter.hasNext() ) {
+				throw new CFLibArgumentOverflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+			}
+			for( idx = 0; idx < len; idx ++ ) {
+				arrayList.add( arr[idx] );
+			}
+		}
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public ICFBamFloatDefObj readFloatDefByIdIdx( ICFLibKeyHash256 Id )
+	{
+		return( readFloatDefByIdIdx( Id,
+			false ) );
+	}
+
+	@Override
+	public ICFBamFloatDefObj readFloatDefByIdIdx( ICFLibKeyHash256 Id, boolean forceRead )
+	{
+		ICFBamFloatDefObj obj = readFloatDef( Id, forceRead );
+		return( obj );
+	}
+
+	@Override
+	public ICFBamFloatDefObj readFloatDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+		String Name )
+	{
+		return( readFloatDefByUNameIdx( ScopeId,
+			Name,
+			false ) );
+	}
+
+	@Override
+	public ICFBamFloatDefObj readFloatDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+		String Name, boolean forceRead )
+	{
+		if( indexByUNameIdx == null ) {
+			indexByUNameIdx = new HashMap< ICFBamValueByUNameIdxKey,
+				ICFBamFloatDefObj >();
+		}
+		ICFBamValueByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByUNameIdxKey();
+		key.setRequiredScopeId( ScopeId );
+		key.setRequiredName( Name );
+		ICFBamFloatDefObj obj = null;
+		if( ( ! forceRead ) && indexByUNameIdx.containsKey( key ) ) {
+			obj = indexByUNameIdx.get( key );
+		}
+		else {
+			ICFBamValue rec = schema.getCFBamBackingStore().getTableValue().readDerivedByUNameIdx( null,
+				ScopeId,
+				Name );
+			if( rec != null ) {
+				obj = (ICFBamFloatDefObj)schema.getValueTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setRec( rec );
+				obj.setPKey( rec.getPKey() );
+				obj = (ICFBamFloatDefObj)obj.realise();
+			}
+		}
+		return( obj );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readFloatDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	{
+		return( readFloatDefByScopeIdx( ScopeId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readFloatDefByScopeIdx( ICFLibKeyHash256 ScopeId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readFloatDefByScopeIdx";
+		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
+		key.setRequiredScopeId( ScopeId );
+		Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict;
+		if( indexByScopeIdx == null ) {
+			indexByScopeIdx = new HashMap< ICFBamValueByScopeIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamFloatDefObj > >();
+		}
+		if( ( ! forceRead ) && indexByScopeIdx.containsKey( key ) ) {
+			dict = indexByScopeIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj>();
+			ICFBamValueObj obj;
+			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByScopeIdx( null,
+				ScopeId );
+			ICFBamValue rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamFloatDefObj)schema.getValueTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamFloatDefObj realised = (ICFBamFloatDefObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByScopeIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+		Iterator<ICFBamFloatDefObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			@Override
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamFloatDefObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readFloatDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	{
+		return( readFloatDefByDefSchemaIdx( DefSchemaId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readFloatDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readFloatDefByDefSchemaIdx";
+		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
+		key.setOptionalDefSchemaId( DefSchemaId );
+		Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict;
+		if( indexByDefSchemaIdx == null ) {
+			indexByDefSchemaIdx = new HashMap< ICFBamValueByDefSchemaIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamFloatDefObj > >();
+		}
+		if( ( ! forceRead ) && indexByDefSchemaIdx.containsKey( key ) ) {
+			dict = indexByDefSchemaIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj>();
+			ICFBamValueObj obj;
+			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByDefSchemaIdx( null,
+				DefSchemaId );
+			ICFBamValue rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamFloatDefObj)schema.getValueTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamFloatDefObj realised = (ICFBamFloatDefObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByDefSchemaIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+		Iterator<ICFBamFloatDefObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			@Override
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamFloatDefObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readFloatDefByPrevIdx( ICFLibKeyHash256 PrevId )
+	{
+		return( readFloatDefByPrevIdx( PrevId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readFloatDefByPrevIdx( ICFLibKeyHash256 PrevId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readFloatDefByPrevIdx";
+		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
+		key.setOptionalPrevId( PrevId );
+		Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict;
+		if( indexByPrevIdx == null ) {
+			indexByPrevIdx = new HashMap< ICFBamValueByPrevIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamFloatDefObj > >();
+		}
+		if( ( ! forceRead ) && indexByPrevIdx.containsKey( key ) ) {
+			dict = indexByPrevIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj>();
+			ICFBamValueObj obj;
+			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByPrevIdx( null,
+				PrevId );
+			ICFBamValue rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamFloatDefObj)schema.getValueTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamFloatDefObj realised = (ICFBamFloatDefObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByPrevIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+		Iterator<ICFBamFloatDefObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			@Override
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamFloatDefObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readFloatDefByNextIdx( ICFLibKeyHash256 NextId )
+	{
+		return( readFloatDefByNextIdx( NextId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readFloatDefByNextIdx( ICFLibKeyHash256 NextId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readFloatDefByNextIdx";
+		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
+		key.setOptionalNextId( NextId );
+		Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict;
+		if( indexByNextIdx == null ) {
+			indexByNextIdx = new HashMap< ICFBamValueByNextIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamFloatDefObj > >();
+		}
+		if( ( ! forceRead ) && indexByNextIdx.containsKey( key ) ) {
+			dict = indexByNextIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj>();
+			ICFBamValueObj obj;
+			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByNextIdx( null,
+				NextId );
+			ICFBamValue rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamFloatDefObj)schema.getValueTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamFloatDefObj realised = (ICFBamFloatDefObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByNextIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+		Iterator<ICFBamFloatDefObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			@Override
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamFloatDefObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readFloatDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
+	{
+		return( readFloatDefByContPrevIdx( ScopeId,
+			PrevId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readFloatDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readFloatDefByContPrevIdx";
+		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
+		key.setRequiredScopeId( ScopeId );
+		key.setOptionalPrevId( PrevId );
+		Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict;
+		if( indexByContPrevIdx == null ) {
+			indexByContPrevIdx = new HashMap< ICFBamValueByContPrevIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamFloatDefObj > >();
+		}
+		if( ( ! forceRead ) && indexByContPrevIdx.containsKey( key ) ) {
+			dict = indexByContPrevIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj>();
+			ICFBamValueObj obj;
+			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByContPrevIdx( null,
+				ScopeId,
+				PrevId );
+			ICFBamValue rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamFloatDefObj)schema.getValueTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamFloatDefObj realised = (ICFBamFloatDefObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByContPrevIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+		Iterator<ICFBamFloatDefObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			@Override
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamFloatDefObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readFloatDefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
+	{
+		return( readFloatDefByContNextIdx( ScopeId,
+			NextId,
+			false ) );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readFloatDefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId,
+		boolean forceRead )
+	{
+		final String S_ProcName = "readFloatDefByContNextIdx";
+		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
+		key.setRequiredScopeId( ScopeId );
+		key.setOptionalNextId( NextId );
+		Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict;
+		if( indexByContNextIdx == null ) {
+			indexByContNextIdx = new HashMap< ICFBamValueByContNextIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamFloatDefObj > >();
+		}
+		if( ( ! forceRead ) && indexByContNextIdx.containsKey( key ) ) {
+			dict = indexByContNextIdx.get( key );
+		}
+		else {
+			dict = new HashMap<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj>();
+			ICFBamValueObj obj;
+			ICFBamValue[] recList = schema.getCFBamBackingStore().getTableValue().readDerivedByContNextIdx( null,
+				ScopeId,
+				NextId );
+			ICFBamValue rec;
+			for( int idx = 0; idx < recList.length; idx ++ ) {
+				rec = recList[ idx ];
+				obj = (ICFBamFloatDefObj)schema.getValueTableObj().constructByClassCode( rec.getClassCode() );
+				obj.setPKey( rec.getPKey() );
+				obj.setRec( rec );
+				ICFBamFloatDefObj realised = (ICFBamFloatDefObj)obj.realise();
+				dict.put( realised.getPKey(), realised );
+			}
+			indexByContNextIdx.put( key, dict );
+		}
+		int len = dict.size();
+		ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+		Iterator<ICFBamFloatDefObj> valIter = dict.values().iterator();
+		int idx = 0;
+		while( ( idx < len ) && valIter.hasNext() ) {
+			arr[idx++] = valIter.next();
+		}
+		if( idx < len ) {
+			throw new CFLibArgumentUnderflowException( getClass(),
+				S_ProcName,
+				0,
+				"idx",
+				idx,
+				len );
+		}
+		else if( valIter.hasNext() ) {
+			throw new CFLibArgumentOverflowException( getClass(),
+					S_ProcName,
+					0,
+					"idx",
+					idx,
+					len );
+		}
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>(len);
+		for( idx = 0; idx < len; idx ++ ) {
+			arrayList.add( arr[idx] );
+		}
+
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			@Override
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		List<ICFBamFloatDefObj> sortedList = arrayList;
+		return( sortedList );
+	}
+
+	@Override
+	public ICFBamFloatDefObj readCachedFloatDefByIdIdx( ICFLibKeyHash256 Id )
+	{
+		ICFBamFloatDefObj obj = null;
+		obj = readCachedFloatDef( Id );
+		return( obj );
+	}
+
+	@Override
+	public ICFBamFloatDefObj readCachedFloatDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+		String Name )
+	{
+		ICFBamFloatDefObj obj = null;
+		ICFBamValueByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByUNameIdxKey();
+		key.setRequiredScopeId( ScopeId );
+		key.setRequiredName( Name );
+		if( indexByUNameIdx != null ) {
+			if( indexByUNameIdx.containsKey( key ) ) {
+				obj = indexByUNameIdx.get( key );
+			}
+			else {
+				Iterator<ICFBamFloatDefObj> valIter = members.values().iterator();
+				while( ( obj == null ) && valIter.hasNext() ) {
+					obj = valIter.next();
+					if( obj != null ) {
+						if( obj.getRec().compareTo( key ) != 0 ) {
+							obj = null;
+						}
+					}
+				}
+			}
+		}
+		else {
+			Iterator<ICFBamFloatDefObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) != 0 ) {
+						obj = null;
+					}
+				}
+			}
+		}
+		return( obj );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readCachedFloatDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	{
+		final String S_ProcName = "readCachedFloatDefByScopeIdx";
+		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
+		key.setRequiredScopeId( ScopeId );
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>();
+		if( indexByScopeIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict;
+			if( indexByScopeIdx.containsKey( key ) ) {
+				dict = indexByScopeIdx.get( key );
+				int len = dict.size();
+				ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+				Iterator<ICFBamFloatDefObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamFloatDefObj obj;
+			Iterator<ICFBamFloatDefObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			@Override
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readCachedFloatDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	{
+		final String S_ProcName = "readCachedFloatDefByDefSchemaIdx";
+		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
+		key.setOptionalDefSchemaId( DefSchemaId );
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>();
+		if( indexByDefSchemaIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict;
+			if( indexByDefSchemaIdx.containsKey( key ) ) {
+				dict = indexByDefSchemaIdx.get( key );
+				int len = dict.size();
+				ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+				Iterator<ICFBamFloatDefObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamFloatDefObj obj;
+			Iterator<ICFBamFloatDefObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			@Override
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readCachedFloatDefByPrevIdx( ICFLibKeyHash256 PrevId )
+	{
+		final String S_ProcName = "readCachedFloatDefByPrevIdx";
+		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
+		key.setOptionalPrevId( PrevId );
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>();
+		if( indexByPrevIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict;
+			if( indexByPrevIdx.containsKey( key ) ) {
+				dict = indexByPrevIdx.get( key );
+				int len = dict.size();
+				ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+				Iterator<ICFBamFloatDefObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamFloatDefObj obj;
+			Iterator<ICFBamFloatDefObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			@Override
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readCachedFloatDefByNextIdx( ICFLibKeyHash256 NextId )
+	{
+		final String S_ProcName = "readCachedFloatDefByNextIdx";
+		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
+		key.setOptionalNextId( NextId );
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>();
+		if( indexByNextIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict;
+			if( indexByNextIdx.containsKey( key ) ) {
+				dict = indexByNextIdx.get( key );
+				int len = dict.size();
+				ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+				Iterator<ICFBamFloatDefObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamFloatDefObj obj;
+			Iterator<ICFBamFloatDefObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			@Override
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readCachedFloatDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
+	{
+		final String S_ProcName = "readCachedFloatDefByContPrevIdx";
+		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
+		key.setRequiredScopeId( ScopeId );
+		key.setOptionalPrevId( PrevId );
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>();
+		if( indexByContPrevIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict;
+			if( indexByContPrevIdx.containsKey( key ) ) {
+				dict = indexByContPrevIdx.get( key );
+				int len = dict.size();
+				ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+				Iterator<ICFBamFloatDefObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamFloatDefObj obj;
+			Iterator<ICFBamFloatDefObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			@Override
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public List<ICFBamFloatDefObj> readCachedFloatDefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
+	{
+		final String S_ProcName = "readCachedFloatDefByContNextIdx";
+		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
+		key.setRequiredScopeId( ScopeId );
+		key.setOptionalNextId( NextId );
+		ArrayList<ICFBamFloatDefObj> arrayList = new ArrayList<ICFBamFloatDefObj>();
+		if( indexByContNextIdx != null ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict;
+			if( indexByContNextIdx.containsKey( key ) ) {
+				dict = indexByContNextIdx.get( key );
+				int len = dict.size();
+				ICFBamFloatDefObj arr[] = new ICFBamFloatDefObj[len];
+				Iterator<ICFBamFloatDefObj> valIter = dict.values().iterator();
+				int idx = 0;
+				while( ( idx < len ) && valIter.hasNext() ) {
+					arr[idx++] = valIter.next();
+				}
+				if( idx < len ) {
+					throw new CFLibArgumentUnderflowException( getClass(),
+						S_ProcName,
+						0,
+						"idx",
+						idx,
+						len );
+				}
+				else if( valIter.hasNext() ) {
+					throw new CFLibArgumentOverflowException( getClass(),
+							S_ProcName,
+							0,
+							"idx",
+							idx,
+							len );
+				}
+				for( idx = 0; idx < len; idx ++ ) {
+					arrayList.add( arr[idx] );
+				}
+			}
+		}
+		else {
+			ICFBamFloatDefObj obj;
+			Iterator<ICFBamFloatDefObj> valIter = members.values().iterator();
+			while( valIter.hasNext() ) {
+				obj = valIter.next();
+				if( obj != null ) {
+					if( obj.getRec().compareTo( key ) == 0 ) {
+						arrayList.add( obj );
+					}
+				}
+			}
+		}
+		Comparator<ICFBamFloatDefObj> cmp = new Comparator<ICFBamFloatDefObj>() {
+			@Override
+			public int compare( ICFBamFloatDefObj lhs, ICFBamFloatDefObj rhs ) {
+				if( lhs == null ) {
+					if( rhs == null ) {
+						return( 0 );
+					}
+					else {
+						return( -1 );
+					}
+				}
+				else if( rhs == null ) {
+					return( 1 );
+				}
+				else {
+					$implCommaIJavaOptAtomType$ lhsPKey = lhs.getPKey();
+					$implCommaIJavaOptAtomType$ rhsPKey = rhs.getPKey();
+					int ret = lhsPKey.compareTo( rhsPKey );
+					return( ret );
+				}
+			}
+		};
+		Collections.sort( arrayList, cmp );
+		return( arrayList );
+	}
+
+	@Override
+	public void deepDisposeFloatDefByIdIdx( ICFLibKeyHash256 Id )
+	{
+		ICFBamFloatDefObj obj = readCachedFloatDefByIdIdx( Id );
+		if( obj != null ) {
+			obj.forget();
+		}
+	}
+
+	@Override
+	public void deepDisposeFloatDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+		String Name )
+	{
+		ICFBamFloatDefObj obj = readCachedFloatDefByUNameIdx( ScopeId,
+				Name );
+		if( obj != null ) {
+			obj.forget();
+		}
+	}
+
+	@Override
+	public void deepDisposeFloatDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	{
+		final String S_ProcName = "deepDisposeFloatDefByScopeIdx";
+		ICFBamFloatDefObj obj;
+		List<ICFBamFloatDefObj> arrayList = readCachedFloatDefByScopeIdx( ScopeId );
+		if( arrayList != null )  {
+			Iterator<ICFBamFloatDefObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeFloatDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	{
+		final String S_ProcName = "deepDisposeFloatDefByDefSchemaIdx";
+		ICFBamFloatDefObj obj;
+		List<ICFBamFloatDefObj> arrayList = readCachedFloatDefByDefSchemaIdx( DefSchemaId );
+		if( arrayList != null )  {
+			Iterator<ICFBamFloatDefObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeFloatDefByPrevIdx( ICFLibKeyHash256 PrevId )
+	{
+		final String S_ProcName = "deepDisposeFloatDefByPrevIdx";
+		ICFBamFloatDefObj obj;
+		List<ICFBamFloatDefObj> arrayList = readCachedFloatDefByPrevIdx( PrevId );
+		if( arrayList != null )  {
+			Iterator<ICFBamFloatDefObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeFloatDefByNextIdx( ICFLibKeyHash256 NextId )
+	{
+		final String S_ProcName = "deepDisposeFloatDefByNextIdx";
+		ICFBamFloatDefObj obj;
+		List<ICFBamFloatDefObj> arrayList = readCachedFloatDefByNextIdx( NextId );
+		if( arrayList != null )  {
+			Iterator<ICFBamFloatDefObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeFloatDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
+	{
+		final String S_ProcName = "deepDisposeFloatDefByContPrevIdx";
+		ICFBamFloatDefObj obj;
+		List<ICFBamFloatDefObj> arrayList = readCachedFloatDefByContPrevIdx( ScopeId,
+				PrevId );
+		if( arrayList != null )  {
+			Iterator<ICFBamFloatDefObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public void deepDisposeFloatDefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
+	{
+		final String S_ProcName = "deepDisposeFloatDefByContNextIdx";
+		ICFBamFloatDefObj obj;
+		List<ICFBamFloatDefObj> arrayList = readCachedFloatDefByContNextIdx( ScopeId,
+				NextId );
+		if( arrayList != null )  {
+			Iterator<ICFBamFloatDefObj> arrayIter = arrayList.iterator();
+			while( arrayIter.hasNext() ) {
+				obj = arrayIter.next();
+				if( obj != null ) {
+					obj.forget();
+				}
+			}
+		}
+	}
+
+	@Override
+	public ICFBamFloatDefObj updateFloatDef( ICFBamFloatDefObj Obj ) {
+		ICFBamFloatDefObj obj = Obj;
+		schema.getCFBamBackingStore().getTableFloatDef().updateFloatDef( null,
+			Obj.getFloatDefRec() );
+		if( Obj.getClassCode() == ((ICFBamSchemaObj)getSchema()).getFloatDefTableObj().getClassCode() ) {
+			obj = (ICFBamFloatDefObj)Obj.realise();
+		}
+		obj.endEdit();
+		return( obj );
+	}
+
+	@Override
+	public void deleteFloatDef( ICFBamFloatDefObj Obj ) {
+		ICFBamFloatDefObj obj = Obj;
+		ICFBamValueObj prev = obj.getOptionalLookupPrev();
+		ICFBamValueObj next = obj.getOptionalLookupNext();
+		schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDef( null,
+			obj.getFloatDefRec() );
+		Obj.forget();
+		if( prev != null ) {
+			prev.read( true );
+		}
+		if( next != null ) {
+			next.read( true );
+		}
+	}
+
+	@Override
+	public void deleteFloatDefByIdIdx( ICFLibKeyHash256 Id )
+	{
+		ICFBamFloatDefObj obj = readFloatDef(Id);
+		if( obj != null ) {
+			ICFBamFloatDefEditObj editObj = (ICFBamFloatDefEditObj)obj.getEdit();
+			boolean editStarted;
+			if( editObj == null ) {
+				editObj = (ICFBamFloatDefEditObj)obj.beginEdit();
+				if( editObj != null ) {
+					editStarted = true;
+				}
+				else {
+					editStarted = false;
+				}
+			}
+			else {
+				editStarted = false;
+			}
+			if( editObj != null ) {
+				editObj.deleteInstance();
+				if( editStarted ) {
+					editObj.endEdit();
+				}
+			}
+			obj.forget();
+		}
+		deepDisposeFloatDefByIdIdx( Id );
+	}
+
+	@Override
+	public void deleteFloatDefByUNameIdx( ICFLibKeyHash256 ScopeId,
+		String Name )
+	{
+		if( indexByUNameIdx == null ) {
+			indexByUNameIdx = new HashMap< ICFBamValueByUNameIdxKey,
+				ICFBamFloatDefObj >();
+		}
+		ICFBamValueByUNameIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByUNameIdxKey();
+		key.setRequiredScopeId( ScopeId );
+		key.setRequiredName( Name );
+		ICFBamFloatDefObj obj = null;
+		if( indexByUNameIdx.containsKey( key ) ) {
+			obj = indexByUNameIdx.get( key );
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByUNameIdx( null,
+				ScopeId,
+				Name );
+			obj.forget();
+		}
+		else {
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByUNameIdx( null,
+				ScopeId,
+				Name );
+		}
+		deepDisposeFloatDefByUNameIdx( ScopeId,
+				Name );
+	}
+
+	@Override
+	public void deleteFloatDefByScopeIdx( ICFLibKeyHash256 ScopeId )
+	{
+		ICFBamValueByScopeIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByScopeIdxKey();
+		key.setRequiredScopeId( ScopeId );
+		if( indexByScopeIdx == null ) {
+			indexByScopeIdx = new HashMap< ICFBamValueByScopeIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamFloatDefObj > >();
+		}
+		if( indexByScopeIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict = indexByScopeIdx.get( key );
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByScopeIdx( null,
+				ScopeId );
+			Iterator<ICFBamFloatDefObj> iter = dict.values().iterator();
+			ICFBamFloatDefObj obj;
+			List<ICFBamFloatDefObj> toForget = new LinkedList<ICFBamFloatDefObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByScopeIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByScopeIdx( null,
+				ScopeId );
+		}
+		deepDisposeFloatDefByScopeIdx( ScopeId );
+	}
+
+	@Override
+	public void deleteFloatDefByDefSchemaIdx( ICFLibKeyHash256 DefSchemaId )
+	{
+		ICFBamValueByDefSchemaIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByDefSchemaIdxKey();
+		key.setOptionalDefSchemaId( DefSchemaId );
+		if( indexByDefSchemaIdx == null ) {
+			indexByDefSchemaIdx = new HashMap< ICFBamValueByDefSchemaIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamFloatDefObj > >();
+		}
+		if( indexByDefSchemaIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict = indexByDefSchemaIdx.get( key );
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByDefSchemaIdx( null,
+				DefSchemaId );
+			Iterator<ICFBamFloatDefObj> iter = dict.values().iterator();
+			ICFBamFloatDefObj obj;
+			List<ICFBamFloatDefObj> toForget = new LinkedList<ICFBamFloatDefObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByDefSchemaIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByDefSchemaIdx( null,
+				DefSchemaId );
+		}
+		deepDisposeFloatDefByDefSchemaIdx( DefSchemaId );
+	}
+
+	@Override
+	public void deleteFloatDefByPrevIdx( ICFLibKeyHash256 PrevId )
+	{
+		ICFBamValueByPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByPrevIdxKey();
+		key.setOptionalPrevId( PrevId );
+		if( indexByPrevIdx == null ) {
+			indexByPrevIdx = new HashMap< ICFBamValueByPrevIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamFloatDefObj > >();
+		}
+		if( indexByPrevIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict = indexByPrevIdx.get( key );
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByPrevIdx( null,
+				PrevId );
+			Iterator<ICFBamFloatDefObj> iter = dict.values().iterator();
+			ICFBamFloatDefObj obj;
+			List<ICFBamFloatDefObj> toForget = new LinkedList<ICFBamFloatDefObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByPrevIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByPrevIdx( null,
+				PrevId );
+		}
+		deepDisposeFloatDefByPrevIdx( PrevId );
+	}
+
+	@Override
+	public void deleteFloatDefByNextIdx( ICFLibKeyHash256 NextId )
+	{
+		ICFBamValueByNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByNextIdxKey();
+		key.setOptionalNextId( NextId );
+		if( indexByNextIdx == null ) {
+			indexByNextIdx = new HashMap< ICFBamValueByNextIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamFloatDefObj > >();
+		}
+		if( indexByNextIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict = indexByNextIdx.get( key );
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByNextIdx( null,
+				NextId );
+			Iterator<ICFBamFloatDefObj> iter = dict.values().iterator();
+			ICFBamFloatDefObj obj;
+			List<ICFBamFloatDefObj> toForget = new LinkedList<ICFBamFloatDefObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByNextIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByNextIdx( null,
+				NextId );
+		}
+		deepDisposeFloatDefByNextIdx( NextId );
+	}
+
+	@Override
+	public void deleteFloatDefByContPrevIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 PrevId )
+	{
+		ICFBamValueByContPrevIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContPrevIdxKey();
+		key.setRequiredScopeId( ScopeId );
+		key.setOptionalPrevId( PrevId );
+		if( indexByContPrevIdx == null ) {
+			indexByContPrevIdx = new HashMap< ICFBamValueByContPrevIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamFloatDefObj > >();
+		}
+		if( indexByContPrevIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict = indexByContPrevIdx.get( key );
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByContPrevIdx( null,
+				ScopeId,
+				PrevId );
+			Iterator<ICFBamFloatDefObj> iter = dict.values().iterator();
+			ICFBamFloatDefObj obj;
+			List<ICFBamFloatDefObj> toForget = new LinkedList<ICFBamFloatDefObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByContPrevIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByContPrevIdx( null,
+				ScopeId,
+				PrevId );
+		}
+		deepDisposeFloatDefByContPrevIdx( ScopeId,
+				PrevId );
+	}
+
+	@Override
+	public void deleteFloatDefByContNextIdx( ICFLibKeyHash256 ScopeId,
+		ICFLibKeyHash256 NextId )
+	{
+		ICFBamValueByContNextIdxKey key = schema.getCFBamBackingStore().getCFBamFactory().getFactoryValue().newByContNextIdxKey();
+		key.setRequiredScopeId( ScopeId );
+		key.setOptionalNextId( NextId );
+		if( indexByContNextIdx == null ) {
+			indexByContNextIdx = new HashMap< ICFBamValueByContNextIdxKey,
+				Map< $implCommaIJavaOptAtomType$, ICFBamFloatDefObj > >();
+		}
+		if( indexByContNextIdx.containsKey( key ) ) {
+			Map<$implCommaIJavaOptAtomType$, ICFBamFloatDefObj> dict = indexByContNextIdx.get( key );
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByContNextIdx( null,
+				ScopeId,
+				NextId );
+			Iterator<ICFBamFloatDefObj> iter = dict.values().iterator();
+			ICFBamFloatDefObj obj;
+			List<ICFBamFloatDefObj> toForget = new LinkedList<ICFBamFloatDefObj>();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				toForget.add( obj );
+			}
+			iter = toForget.iterator();
+			while( iter.hasNext() ) {
+				obj = iter.next();
+				obj.forget();
+			}
+			indexByContNextIdx.remove( key );
+		}
+		else {
+			schema.getCFBamBackingStore().getTableFloatDef().deleteFloatDefByContNextIdx( null,
+				ScopeId,
+				NextId );
+		}
+		deepDisposeFloatDefByContNextIdx( ScopeId,
+				NextId );
+	}
+
+	/**
+	 *	Move the CFBamFloatDefObj instance up in the chain.  The instance is always refreshed.
+	 *
+	 *	@return	CFBamFloatDefObj refreshed cache instance.
+	 */
+	@Override
+	public ICFBamFloatDefObj moveUpFloatDef( ICFBamFloatDefObj Obj ) {
+		ICFBamFloatDefObj obj = null;
+		if( null != Obj.getEdit() ) {
+			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveUpFloatDef" );
+		}
+		ICFBamFloatDef rec = schema.getCFBamBackingStore().getTableFloatDef().moveRecUp( null,
+			Obj.getRequiredId(),
+			Obj.getRec().getRequiredRevision() );
+		if( rec != null ) {
+			obj = schema.getFloatDefTableObj().newInstance();
+			obj.setPKey( rec.getPKey() );
+			obj.setRec( rec );
+			obj = (ICFBamFloatDefObj)obj.realise();
+			ICFBamValueObj prev = obj.getOptionalLookupPrev( true );
+			ICFBamValueObj next = obj.getOptionalLookupNext( true );
+			if( next != null ) {
+				ICFBamValueObj gnext = next.getOptionalLookupNext( true );
+			}
+		}
+		return( obj );
+	}
+
+	/**
+	 *	Move the CFBamFloatDefObj instance down in the chain.  The instance is always refreshed.
+	 *
+	 *	@return	CFBamFloatDefObj refreshed cache instance.
+	 */
+	@Override
+	public ICFBamFloatDefObj moveDownFloatDef( ICFBamFloatDefObj Obj ) {
+		ICFBamFloatDefObj obj = null;
+		if( null != Obj.getEdit() ) {
+			throw new CFLibCannotMoveEditedObjectException( getClass(),	"moveDownFloatDef" );
+		}
+		ICFBamFloatDef rec = schema.getCFBamBackingStore().getTableFloatDef().moveRecDown( null,
+			Obj.getRequiredId(),
+			Obj.getRec().getRequiredRevision() );
+		if( rec != null ) {
+			obj = schema.getFloatDefTableObj().newInstance();
+			obj.setPKey( rec.getPKey() );
+			obj.setRec( rec );
+			obj = (ICFBamFloatDefObj)obj.realise();
+			ICFBamValueObj prev = obj.getOptionalLookupPrev( true );
+			if( prev != null ) {
+				ICFBamValueObj gprev = prev.getOptionalLookupPrev( true );
+			}
+			ICFBamValueObj next = obj.getOptionalLookupNext( true );
+		}
+		return( obj );
+	}
+}
